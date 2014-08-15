@@ -1,0 +1,149 @@
+\definecolor{lightgrey}{rgb}{0.90,0.90,0.90}
+%
+\newenvironment{tablenotes}{%
+  \begin{list}{}{%
+      \renewcommand{\makelabel}[1]{##1}%
+      \setlength{\itemsep}{0.5ex}%
+      \setlength{\topsep}{0.5ex}%
+      \setlength{\parskip}{0pt}%
+      \setlength{\partopsep}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\itemindent}{0em}%
+      \setlength{\leftmargin}{1.5em}%
+      \setlength{\labelwidth}{1.5em}%
+      \setlength{\labelsep}{0pt}%
+    }}%
+  {\end{list}}
+\newcommand{\tabnudge}[1]{\smash{\raisebox{1.4ex}{#1}}}
+%
+\begin{table}
+\renewcommand{\thefootnote}{\sffamily[\arabic{footnote}]}
+\renewcommand{\arraystretch}{1.3}
+%
+\caption{Summary of key information for each MLS standard product.
+  Essential additional information is given in each product section of
+  chapter~\ref{chap:Results}.}
+\label{tab:ProductSummary}
+\vspace{2mm}
+%
+\begin{center}
+\small\sffamily
+\begin{tabular}{lllllll}
+\toprule
+\rule[-2.5ex]{0pt}{6ex}\textbf{Product name} & 
+\parbox{2.5cm}{\raggedright\bfseries Useful vertical range~/~hPa} &
+\parbox{2.2cm}{\raggedright\bfseries Quality threshold\,\footnotemark[1]} &
+\parbox{2.2cm}{\raggedright\bfseries Convergence threshold\,\footnotemark[2]} &
+\textbf{Notes} &
+\textbf{Contact name} \\
+\midrule
+%
+BrO & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Nathaniel Livesey \\
+%
+\rowcolor{lightgrey} 
+CH3Cl & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee \\
+%
+CH3CN & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee \\
+%
+\rowcolor{lightgrey} 
+ClO & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee \\
+%
+& 100\,--\,0.0046 & 0.2 &  & & Hugh Pumphrey \\
+\tabnudge{CO}  & 215\,--\,146 & 1.1 & \tabnudge{1.4} & \tabnudge{C,O} & Michael Schwartz \\
+%
+\rowcolor{lightgrey} 
+GPH & 261\,--\,0.001 &  
+0.65 & 1.2 & C & Michael Schwartz \\
+%
+& 83\,--\,0.002 & & & -- & Alyn Lambert \\
+\tabnudge{H2O} & 316\,--\,100 & \tabnudge{1.3} & \tabnudge{2.0} & C &
+William Read \\
+%
+\rowcolor{lightgrey} 
+HCl & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux \\
+%
+HCN & 10\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey \\
+%
+\rowcolor{lightgrey} 
+HNO3 & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney \\
+%
+HO2 & 22\,--\,0.046 & N/A & 1.1 & D,N & Shuhui Wang \\
+%
+\rowcolor{lightgrey} 
+HOCl & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux \\
+%
+IWC & 215\,--\,83 & N/A & N/A & B & Alyn Lambert \\
+%
+\rowcolor{lightgrey} 
+IWP & N/A & N/A & N/A & B & Alyn Lambert \\
+%
+N2O & 100\,--\,0.46 & 1.4 & 1.01 & C & Alyn Lambert \\
+%
+\rowcolor{lightgrey} 
+ & 100\,--\,0.02 & & & & Lucien Froidevaux \\
+%
+\rowcolor{lightgrey}
+\tabnudge{O3\,\footnotemark[3]} & 
+ 261\,--\,121 & \tabnudge{0.6} & \tabnudge{1.18} & \tabnudge{C,O} &
+  Michael Schwartz \\
+%
+OH & 32\,--\,0.0032 & N/A & 1.1 & D & Shuhui Wang \\
+%
+\rowcolor{lightgrey} 
+RHI\,\footnotemark[4] & 316\,--\,0.002 & See text & See text & C & William Read \\
+%
+SO2 & 215\,--\,10 & 0.6 & 1.8 & E & William Read \\
+%
+\rowcolor{lightgrey}
+Temperature\,\footnotemark[5] & 261\,--\,0.001 & 0.65 & 1.2 & C &  Michael Schwartz \\
+%
+\bottomrule
+\end{tabular}
+\end{center}
+%
+\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
+  \textbf{Notes:}\par
+  \begin{tablenotes}
+  \item[A] Users should consider using alternative versions of these
+    products, produced (or planned to be produced) using different
+    algorithms, as described in the text.
+  \item[B] This product contains significant biases in certain regions
+    that may need to be accounted or corrected for in scientific studies.
+    See text for details.
+  \item[C] Interference from clouds can affect this product at certain
+    altitudes. See text for details.
+  \item[D] Biases in this product can be ameliorated (in selected
+    conditions) by taking day/night differences.  See text for details.
+  \item[E] At some altitudes, this product contains biases of a magnitude
+    that render the product useful only for the study of `enhancement
+    events' (e.g., volcanic plumes, extreme fire pollution).  See text
+    for details.
+  \end{tablenotes}}%
+\hfill\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
+  \begin{tablenotes}
+  \item[N] This is a `noisy' product requiring significant averaging
+    (e.g., monthly zonal mean).  See text for details.
+  \item[O] This product contains significant outliers (e.g., spikes or
+    oscillations) in some regions (typically related to clouds in the
+    tropical upper troposphere).  These should be screened out as detailed
+    in the text.
+  \end{tablenotes}
+  \rule{\linewidth}{0.5pt}\par
+  \begin{tablenotes}
+  \item[\mbox{[1]}] Only use profiles having `Quality' \emph{higher}
+    than this value.
+  \item[\mbox{[2]}] Only use profiles with `Convergence' \emph{lower} than this value.
+  \item[\mbox{[3]}] File also contains two swaths giving column above the (MLS
+    and GEOS-5 defined) tropopause.
+  \item[\mbox{[4]}] Relative humidity with respect to ice computed from the
+    MLS H\cs2O and Temperature data.
+  \item[\mbox{[5]}] File also contains swaths giving estimates of tropopause.
+    pressure (WMO definition) inferred from MLS and GEOS-5 temperatures.
+  \end{tablenotes}}
+
+\end{table}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

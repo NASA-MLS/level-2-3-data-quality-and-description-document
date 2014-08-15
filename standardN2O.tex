@@ -1,0 +1,249 @@
+\speciestitle{Nitrous Oxide}{N\cs2O}{N2O}
+\begin{description}
+\item[Useful range:] 100\,--\,0.46\,hPa
+\item[Contact:] Alyn Lambert, 
+  \email{Alyn.Lambert@jpl.nasa.gov} 
+\end{description}
+\label{sec:StandardN2O}
+
+\subsection*{Introduction}
+
+\subsubsection*{Aging of the MLS 640\,GHz N\cs2O signals}
+The standard product for \thisv N\cs2O for the period from launch until
+June 26, 2013, is taken from the 640 GHz
+(`Core+R4B') retrieval (N2O-640) and details of the retrieval method and
+validation results are presented in \citep{LambertEtal07}.
+
+Analysis of band 12 (640-GHz) housekeeping data during 2013 showed
+declining output in counts, increasing radiance noise (variance) and
+also increasing correlation between the band 12 radiance channels. As
+the \thisv N\cs2O product began to show 
+further deterioration in quality a decision was made to turn off band 12
+on August 6, 2013.
+
+The standard product for \thisv N\cs2O for the period following June 26, 2013,
+is taken from the 190 GHz (`CorePlusR2') retrieval (N2O-190). The 190 GHz N\cs2O 
+data show slightly worse precision and resolution compared to the 640 GHz
+retrievals. Data from N2O-640 and N2O-190 have been compared from launch until the 
+end of band 12 operations. There is a persistent high bias in N\cs2O-190 of 30\% at
+100 hPa and a smaller bias of 5--10\% at 68 hPa 
+compared to N\cs2O--640. From 46 to 3.2 hPa the biases are less than 5\%.
+
+Other significant differences between the \thisv N2O-640 and N2O-19O
+data such as the resolution, precision, 
+quality and convergence criteria are noted below.
+
+\subsubsection*{Changes from v2.2 for the pre-June 2013 N20-640 data}
+All of the \thisv 640-GHz retrieval phases use the temperature and tangent pressure
+information from and earlier retrieval phase, instead of including a
+joint temperature/pTan retrieval as was done for v2.2.  This change has
+significantly reduced the number of `non convergent' 640-GHz retrievals
+in \thisv compared to v2.2.
+
+\subsection*{Resolution}
+\onestandardavk{N2O}{640\,GHz N\cs2O}%
+
+\onestandardavk{N2O-190}{190\,GHz N\cs2O}
+
+The spatial resolution reported by the averaging kernel matrices shown
+in Figures~\ref{fig:AvkN2O} for the 640\,GHz measurements (pre
+June~26, 2013) and~\ref{fig:AvkN2O-190} for the 190\,GHz measurements
+(post June~26, 2013).  For N2O-640 , the vertical resolution is
+4\,--\,6\,km and the horizontal along-track resolution is
+300\,--\,600\,km over most of the useful range of the retrievals. For
+N2O-190, the vertical resolution is 4\,--\,8\,km and the horizontal
+along-track resolution is 300\,--\,600\,km.
+
+The horizontal cross-track
+resolution is set by the 3\,km width of the MLS 640-GHz field-of-view for
+all pressures (c.f. 7\,km width for the MLS 190-GHz field-of-view).  
+The longitudinal separation of the MLS measurements is
+10\degsym--\,20\degsym\ over middle and lower latitudes, with much
+finer sampling in polar regions.
+
+\subsection*{Precision}
+Precision as defined here is the 1-$\sigma$ uncertainty in the retrieved
+value calculated by the Level~2 algorithms and has been validated
+against the scatter about the mean of coincident ascending/descending
+MLS profile differences.  The estimated precision on a single retrieved
+profile given in Table~\ref{tab:N2OSummary} varies with height from
+\texttildelow12\,--\,24\,ppbv for N2O-640 and \texttildelow15\,--\,21\,ppbv
+for N2O-190.
+
+The N\cs2O values at the 147 hPa pressure level have
+a large a priori influence and practically all precisions are flagged
+negative at this level.
+
+\subsection*{Accuracy}
+
+The `accuracy' values given in Table~\ref{tab:N2OSummary} are taken from
+the detailed analysis presented of MLS 640-GHz v2.2 data in
+\citet{LambertEtal07} to quantify the systematic uncertainties
+associated with the MLS instrument calibration, spectroscopic
+uncertainty and approximations in the retrieval formulation and
+implementation.  Accuracy of \thisv N\cs2O data from the 640\,GHz
+signals (pre June 26, 2013 observations) are expected to be little
+different from that established for v2.2.  Accuracy for the post June
+26, 2013, 190-GHz observations remains to be quantified. \mycomment{Can
+  we say anything more at this point?}
+
+\subsection*{Data screening}
+
+\begin{description}
+\item[Pressure range:] \screeningrule{100\,--\,0.46\,hPa} \standardrangestatement\ In the
+  upper stratosphere and lower mesosphere \thisv N\cs2O requires
+  significant averaging for useful signals, but see the note under
+  `Artifacts' for issues above 0.1\,hPa.
+
+\standardprecisionrule
+\evenstatusrule
+
+
+\item[Convergence (N\cs2O-640, pre June 26, 2013):] \convergencerule{1.01}
+
+  A fraction of the N\cs2O data (typically less than 2\%) at this level
+  will be discarded via this screening.
+
+\item[Quality (N\cs2O-190, post June 26, 2013):] \qualityrule{1.4}
+  
+  A small fraction of N\cs2O profiles (typically less than 0.5\%) will
+  be discarded via this screening.
+
+\item[Convergence (N\cs2O-190, pre June 26, 2013):] \convergencerule{5.0}
+
+  A fraction of the N\cs2O-190 data (typically less than 2\%) at this level
+  will be discarded via this screening.
+
+\item[Quality (N\cs2O-190, post June 26, 2013):] \qualityrule{1.0}
+  
+  A small fraction of N\cs2O-640 profiles (typically less than 0.5\%) will
+  be discarded via this screening.
+
+\item[Clouds:] \screeningrule{Clouds can impact the N\cs2O product at
+    the lowest altitudes.  See below for details.}
+
+  Very thick clouds in the tropics produce a low rate of artifacts in
+  the N\cs2O product, consisting of abnormally high (and, more rarely,
+  low) values at 100\,hPa (and 147\,hPa, not recommended for scientific
+  use).  Such cases are not always detected by the \texttt{Quality} and
+  \texttt{Convergence} flags, and the cloud bits of the \texttt{Status}
+  field are too blunt a tool to identify these cases, needlessly
+  discarding reasonable data.  We recommend checking for the occurrence
+  of N\cs2O values greater than 350\,ppbv on the 68\,hPa MLS retrieval
+  level in order to remove significant outliers from the
+  100\,--\,46\,hPa data.
+
+\end{description}
+
+\subsection*{Artifacts}
+
+The \thisv N\cs2O retrievals are improved at 100\,--\,68\,hPa, where the
+v2.2 retrievals often showed signs of poor convergence resulting in sets
+of consecutive `smooth' profiles. There are occasional nonphysical
+values of N\cs2O in the \thisv data, and screening using the convergence
+and quality fields (see above) is recommended to remove the majority of
+these data points.
+
+The retrieval restricts N\cs2O values to be greater than $-$40 ppbv
+(approximately three times the retrieval noise level in the recommended
+pressure range) in order to prevent problems in the minimization search
+process.  The low bound is applied at all levels, but it is only evident
+in the data for pressures less than 0.1\,hPa, where the vertical
+smoothing is relaxed and the retrieval noise becomes comparable to the
+magnitude of the low bound value.  Accordingly, statistical averaging of
+the data (zonal means or longer time periods) cannot be applied
+successfully for pressures at and less than 0.1\,hPa as the $-$40\,ppbv
+hard limit introduces a positive bias in any average.
+
+\subsection*{Review of comparisons with other datasets}
+
+Average values for \thisv N\cs2O are 20\% larger than in v2.2 for the
+100\,hPa pressure level, up to 10\% smaller at the 46\,--\,32\,hPa
+levels, and within 5\% for pressures greater than 22\,hPa (see
+Figure~\ref{fig:N2OComparison}).
+
+Apart from the differences noted above, the MLS \thisv N\cs2O is similar
+to the MLS v2.2 product described and validated in
+\citet{LambertEtal07}.  Comparisons of v2.2 N\cs2O with coincident
+measuremements by ACE-FTS, Odin/SMR, and Envisat/MIPAS and balloon borne
+observations are shown in \citet{LambertEtal07}.  A revised validation
+paper for N\cs2O is not planned in the near future and users are
+encouraged to read \citet{LambertEtal07} for more information.
+
+\begin{figure}
+\dontincludegraphics[width=\linewidth]{figures/N2O-ZM-May-2008-v22-v33}
+ \caption{MLS v3.3 N\cs2O compared to MLS v2.2 for May 2008}
+\label{fig:N2OComparison}
+\end{figure}
+
+\subsection*{Desired improvements for future data version(s)}
+
+Retrievals of N\cs2O to pressures greater than 147\,hPa \emph{may} be
+possible in later versions from the 190-GHz observations.
+
+\begin{table}[b]
+  \caption{Summary of MLS \thisv N\cs2O (N2O-640) product.}\vspace{0.5ex}
+\label{tab:N2OSummary}
+\begin{minipage}{\linewidth}
+\centering\begin{tabular}{ccccccl}
+\toprule
+\parbox[m]{15mm}{\centering\textbf{Region}} &
+\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
+\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Precision\footnote{Precision on individual profiles}}}} &
+\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Accuracy}}} &
+\textbf{Comments} \\
+\textbf{hPa} & \textbf{km} &  \textbf{ppbv} & \textbf{\%} & \textbf{ppbv} & \textbf{\%} & \\
+\midrule
+$\leq$0.33     & --- & --- & ---              & --- & --- & Unsuitable
+for scientific use \\   
+0.46           & 8.8 $\times$ 530 & 12  & $>$100\% & 0.5 & 16 & \\
+0.68           & 7.3 $\times$ 430 & 13  & $>$100\% & 0.6 & 15 & \\
+1.00           & 6.3 $\times$ 340 & 14  & $>$100\% & 0.6 & 12  & \\
+2.15           & 4.8 $\times$ 300 & 15  & $>$100\% & 1.2 &  9  & \\
+4.64           & 4.2 $\times$ 280 & 14  &  41 & 3  &  9  & \\
+10.0           & 4.0 $\times$ 320 & 13  &  12 & 7  &  9  & \\
+21.5           & 4.7 $\times$ 400 & 13  &   9 & 19 & 13  & \\
+46.4           & 4.8 $\times$ 490 & 16  &   8 & 32 & 14  & \\
+68.1           & 5.8 $\times$ 550 & 20  &   8 & 32 & 13  & \\
+100            & 5.7 $\times$ 610 & 24  &   9 & 70 & 25  & \\
+147            & --- & --- & ---              & --- & --- & Unsuitable for scientific use \\   
+$\geq$215      & --- & --- & ---              & --- & --- & Not retrieved \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\begin{table}[b]
+  \caption{Summary of MLS \thisv N\cs2O (N2O-190) product.}\vspace{0.5ex}
+\label{tab:N2OSummary}
+\begin{minipage}{\linewidth}
+\centering\begin{tabular}{ccccccl}
+\toprule
+\parbox[m]{15mm}{\centering\textbf{Region}} &
+\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
+\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Precision\footnote{Precision on individual profiles}}}} &
+\textbf{Comments} \\
+\textbf{hPa} & \textbf{km} &  \textbf{ppbv} & \textbf{\%} & \\
+\midrule
+$\leq$0.33     & ---              & --- & ---      & Unsuitable for scientific use \\   
+0.46           &11.1 $\times$ 670 & 15  & $>$100\% & \\ 
+0.68           & 9.8 $\times$ 560 & 17  & $>$100\% & \\
+1.00           & 8.7 $\times$ 460 & 19  & $>$100\% & \\
+2.15           & 7.3 $\times$ 360 & 19  & $>$100\% & \\
+4.64           & 6.5 $\times$ 300 & 18  &  53 & \\
+10.0           & 6.1 $\times$ 280 & 16  &  15 & \\
+21.5           & 5.8 $\times$ 320 & 15  &  10 & \\
+46.4           & 5.1 $\times$ 390 & 15  &   8 & \\
+68.1           & 5.6 $\times$ 430 & 16  &   6 & \\
+100            & 3.9 $\times$ 530 & 21  &   8 & \\ 
+147            & ---              & --- & --- & Unsuitable for scientific use \\   
+$\geq$215      & ---              & --- & --- & Not retrieved \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

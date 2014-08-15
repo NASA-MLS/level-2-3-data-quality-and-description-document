@@ -1,0 +1,88 @@
+\usetikzlibrary{calc}
+\begin{figure}[tb]
+\definecolor{bitcolor}{gray}{0.80}
+\newlength{\bitsize}
+\setlength{\bitsize}{1.0cm}
+\newlength{\meaningheight}
+\setlength{\meaningheight}{-1.5cm}
+\newlength{\xpos}
+\setlength{\xpos}{10.8cm}
+\newlength{\ypos}
+\setlength{\ypos}{-1.5cm}
+\begin{tikzpicture}
+\small\sffamily
+%
+% First the bits
+\begin{scope}[minimum size=\bitsize,very thick]
+\node (b11) at (0\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:10] {\small\ttfamily 1024};
+\node (b9) at (1\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:9] {\small\ttfamily 512};
+\node (b8) at (2\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:8] {\small\ttfamily 256};
+\node (b7) at (3\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:7] {\small\ttfamily 128};
+\node (b6) at (4\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:6] {\small\ttfamily 64};
+\node (b5) at (5\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:5] {\small\ttfamily 32};
+\node (b4) at (6\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:4] {\small\ttfamily 16};
+\node (b3) at (7\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:3] {\small\ttfamily 8};
+\node (b2) at (8\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:2] {\small\ttfamily 4};
+\node (b1) at (9\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:1] {\small\ttfamily 2};
+\node (b0) at (10\bitsize,0pt) [rectangle, draw, fill=bitcolor, label=above:0] {\small\ttfamily 1};
+% A key
+\node at (11\bitsize,0pt) [rectangle, minimum size=\bitsize, label=above:Bit, align=left] {\small\ttfamily\null\hspace{1em} Value};
+\end{scope}
+%
+% Now the meanings
+\newcommand{\meaningbox}[2]{\parbox{5cm}{\raggedright\textbf{#1} #2}}
+\begin{scope}[inner sep=0pt, outer sep=4pt, anchor=west]
+\node (m0) at (\xpos,\ypos+0\meaningheight) {\meaningbox{Flag -- Bad Profile:}%
+  {Do not use this profile (see `information' bits for an explanation).}};
+\node (m1) at (\xpos,\ypos+1\meaningheight) {\meaningbox{Flag -- Warning:}%
+  {This profile is questionable (see `information' bits for an explanation).}};
+\node (m2) at (\xpos,\ypos+2\meaningheight) {\meaningbox{Flag -- Comment}%
+  {See `information' bits for additional comments concerning this profile.}};
+%
+% Nudge a bit
+%
+\addtolength{\ypos}{-2mm}
+\node (m4) at (\xpos,\ypos+3\meaningheight) {\meaningbox{Information:}%
+  {(Warning) This profile may have been affected by high altitude clouds.}};
+\node (m5) at (\xpos,\ypos+4\meaningheight) {\meaningbox{Information:}%
+  {(Warning) This profile may have been affected by low altitude clouds.}};
+\node (m6) at (\xpos,\ypos+5\meaningheight) {\meaningbox{Information:}%
+  {(Comment) GEOS-5 \emph{a priori} temperature data were unavailable for this profile.}};
+\node (m7) at (\xpos,\ypos+6\meaningheight) {\meaningbox{Information:}%
+  {(Bad profile) The retrieval for this phase encountered a numerical error.}};
+\node (m8) at (\xpos,\ypos+7\meaningheight) {\meaningbox{Information:}%
+  {(Bad profile) Too few radiances were available for good retrieval of this profile.}};
+\node (m9) at (\xpos,\ypos+8\meaningheight) {\meaningbox{Information:}%
+  {(Bad profile) The task retrieving this profile crashed (typically a computer failure).}};
+\end{scope}
+%
+% Now a separator
+\draw[ultra thick] ($ (m2.west)!0.5!(m4.west) $) -- ($ (m2.east)!0.5!(m4.east) $);
+% \draw[ultra thick] (0,0) -- (10,0);
+%
+% Now the connections
+\begin{scope}[>=stealth,thick]
+\draw[->] (b0) |- (m0);
+\draw[->,dashed] (b1) |- (m1);
+\draw[->] (b2) |- (m2);
+\draw[->,dashed] (b4) |- (m4);
+\draw[->] (b5) |- (m5);
+\draw[->,dashed] (b6) |- (m6);
+\draw[->] (b7) |- (m7);
+\draw[->,dashed] (b8) |- (m8);
+\draw[->] (b9) |- (m9);
+\end{scope}
+\end{tikzpicture}
+\caption{The meaning of the various bits in the \texttt{Status} field.
+  The bits not labeled are not used in \thisv.  Later versions may
+  implement specific meanings for these bits.  Note that bit 6 (GEOS-5
+  data) was not used in v1.5, and that the information in bits 7 and 8
+  were combined into bit 8 in versions~1.5 and~2.2.}
+\label{fig:StatusBits}
+\end{figure}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

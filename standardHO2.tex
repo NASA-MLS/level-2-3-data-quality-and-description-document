@@ -1,0 +1,145 @@
+\speciestitle{Peroxy Radical}{HO\cs2}{HO2}
+\begin{description}
+\item[Useful range:] 22\,--\,0.046\,hPa
+\item[Contact:] Shuhui Wang, \email{Shuhui.Wang@jpl.nasa.gov}
+\end{description}
+\label{sec:StandardHO2}
+
+\subsection*{Introduction}
+
+A description of HO\cs2 data quality, precision, systematic errors, and
+validation for an earlier version, v2.2, is given in
+\citet{PickettEtal08}. An early validation using v1.5 software is also
+described in \citet{PickettEtal06}. While there are significant
+improvements from v1.5 to v2.2, the HO\cs2 data quality in \thisv is
+generally similar to v2.2 except that \thisv has fewer non-convergent
+retrievals and therefore better zonal mean precisions in a given
+latitude bin.  The estimated uncertainties, precisions, and resolution
+for \thisv HO\cs2 are summarized below in Table~\ref{tab:HO2Summary}. Note
+that the systematic uncertainties are from v2.2 and are not expected to
+change significantly in \thisv.
+
+\subsection*{Resolution}
+
+Figure~\ref{fig:AvkHO2} shows the HO\cs2 averaging kernel for daytime at
+70\degsym N and the Equator. The latitudinal variation in the averaging
+kernel is very small. The vertical resolution for pressures greater than
+0.1\,hPa is generally about 5\,km.
+
+\subsection*{Precision}
+
+A typical HO\cs2 profile and the associated precisions (for both v2.2
+and \thisv) are shown in Figure~\ref{fig:HO2profiles}. The profile is
+shown in both volume mixing ratio (vmr) and density units. All MLS data
+are reported in vmr for consistency with the other retrieved molecules.
+However, use of density units (10\cp{6}\,cm\cp{$-$3}) reduces the
+apparent steep gradient of HO\cs2 vertical profile, allowing one to see
+the profile with more detail. The night HO\cs2 profile is expected to
+exhibit a narrow layer near the altitudes of the nighttime OH layer at
+\texttildelow82\,km \citep{PickettEtal06niteOH}, which is not shown in
+Figure~\ref{fig:HO2profiles} since MLS HO\cs2 data is not recommended
+for altitudes above 0.046\,hPa (\texttildelow70\,km). Precisions are such that
+an HO\cs2 zonal average within a 10\degsym\ latitude bin can be
+determined with better than 10\% relative precision with 20 days of data
+(\texttildelow2000 samples) for most pressure levels over 22\,--\,0.046\,hPa.
+
+\oneverticalavk{HO2}{HO\cs2}%
+
+\begin{figure}
+\begin{tabular}{@{}l@{}l@{}}
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-3052profiles-a}&
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-3052profiles-b}\\
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-3052profiles-c}&
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-3052profiles-d}\\
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-2695profiles-e}&
+\dontincludegraphics[width=0.5\linewidth]{figures/plot-HO2-sep1-sep30-2695profiles-f}%
+\end{tabular}
+\caption{Monthly zonal mean of retrieved HO\cs2 and its estimated
+  precision (horizontal error bars) for September, 2005 averaged over
+  29\degsym N to 39\degsym N. Panel (a) shows \thisv HO\cs2 vmr vs.\
+  pressure for day (black) and night (blue). Panel (b) shows the same
+  data plotted for the stratosphere as a day-night difference (note that
+  a day-night difference is required for HO\cs2 for all pressure
+  levels). Panel (c) shows the same data in (a) converted into density
+  units. Panel (d) shows the day-night differences for the data in panel
+  (c). Panels (e) and (f) are equivalent to (c) and (d) but using v2.2
+  data. The average in panels (a)\,--\,(d) using \thisv data includes 3052
+  profiles, while the average in panels (e)\,--\,(f) using v2.2 data
+  includes 2695 profiles.}
+\label{fig:HO2profiles}
+\end{figure}
+
+\subsection*{Accuracy}
+
+Table~\ref{tab:HO2Summary} summarizes the accuracy expected for HO\cs2.
+The scaling uncertainty is the part of the systematic uncertainty that
+scales with HO\cs2 concentration, e.g. spectroscopic line strength. Bias
+uncertainty is the part of the uncertainty that is independent of
+concentration. For both bias and scaling uncertainty, quantification of
+the combined effect in MLS calibration, spectroscopy etc., on the data
+product was determined by calculating the effects of each source of
+uncertainty. These accuracy calculations are for v2.2 products. While no
+significant change is expected from v2.2 to \thisv, a comprehensive error
+analysis for \thisv will be conducted.  Bias uncertainty can be eliminated
+by taking day-night differences over the entire recommended pressure
+range. The accuracy of the HO\cs2 measurement due to systematic errors
+is a product of scaling uncertainty and the observed HO\cs2
+concentration. The overall uncertainty is the square root of the sum of
+squares of the precision and accuracy.
+
+\subsection*{Data screening}
+
+It is recommended that HO\cs2 data values be used in scientific
+investigations if all the following tests are successful:
+\begin{description}
+\item[Pressure range:] \screeningrule{22\,--\,0.046\,hPa}
+  \standardrangestatement \standardprecisionrule \evenstatusrule
+\item[Quality:] \screeningrule{MLS \thisv HO\cs2 data can be used
+    irrespective of the value of the \texttt{Quality} field.}
+\item[Convergence:] \convergencerule{1.1} In version v2.2 this
+  test often fails for 100 out of 3500 profiles in a day. In the current
+  version, \thisv, there are often zero or very few non-convergence
+  profiles.
+\end{description}
+
+\subsection*{Artifacts}
+Currently there are no known artifacts in the HO\cs2 product. The
+primary limitation is the precision and the altitude range.
+
+\subsection*{Review of comparisons with other datasets}
+HO\cs2 data from MLS v2.2 software have been validated with two
+balloon-borne remote-sensing instruments. Details of the comparison are
+given in \citet{PickettEtal08}. The comparison between v2.2 and \thisv
+show no significant differences.
+
+\begin{table}
+  \caption{Summary of precisions, resolution, and uncertainties for
+    the MLS \thisv HO\cs2 product}
+\vspace{\tablecaptionsep}
+\label{tab:HO2Summary}
+\begin{minipage}{\linewidth}
+\small\centering\begin{tabular}{rccccl}
+\toprule
+\parbox{10ex}{\bfseries\centering Pressure\\ /\,hPa} &
+\parbox{10ex}{\bfseries\centering Vertical\\ resolution\\ \,km} &
+\parbox{10ex}{\bfseries\centering Precision\footnote{Precision for a
+    single profile} / \mbox{10\cp6 cm\cp{$-$3}}} &
+\parbox{15ex}{\bfseries\centering Bias uncertainty / \mbox{10\cp6 cm\cp{$-$3}}} &
+\parbox{12ex}{\bfseries\centering Scaling uncertainty / \%} &
+\textbf{Comments} \\
+\midrule
+ $<$ 0.03\,hPa  & ---   & ---               & --- & --- & Unsuitable for scientific use\\
+ 0.046\,hPa     & 10    & 6                 & 0.39& 22  & Use day--night difference \\
+ 0.10\,hPa      & 7     & 10                & 0.46& 16  & Use day--night difference \\
+ 1.0 \,hPa      & 5     & 11                & 1.1 & 6   & Use day--night difference \\
+ 10  \,hPa      & 4     & 50                & 37  & 20  & Use day--night difference \\
+ $>$ 22\,hPa    & ---   & ---               & --- & --- & Unsuitable for scientific use\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End:

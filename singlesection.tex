@@ -1,0 +1,72 @@
+%
+% $Id: singlesection.tex,v 1.1 2010/09/18 02:48:07 livesey Exp $    
+%
+% This is the master file for the EOS MLS Level 2 v1.5 report.
+%
+\documentclass[portrait,twoside,11pt]{report}
+\usepackage{newlargemls}
+\usepackage[mtbold,mtplusscr,mtpluscal]{mathtime}
+\usepackage{times}
+\usepackage{pstcol,pst-node,pst-text}
+\usepackage{graphicx}
+\usepackage{verbatim,array}
+\usepackage[square]{natbib}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xr}
+\usepackage[letterpaper,breaklinks,bookmarksopen=true,linktocpage=true]{hyperref}
+% \newcommand{\UnderscoreCommands}{\do\dontincludegraphics}
+% \usepackage[strings]{underscore}
+% Use underscore in text mode
+%
+%
+% Skip the include graphics possibly
+% \renewcommand{\dontincludegraphics}[2][1]{}
+%
+%-------------------------------------------------------------------------------
+%
+% Now begin the document and set a few various counters and values etc.
+%
+\begin{document}
+\rcsParseName $Name:  $
+\rcsInfo $Id: singlesection.tex,v 1.1 2010/09/18 02:48:07 livesey Exp $
+%
+\setcounter{tocdepth}{2}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\bibliographystyle{plainnat}
+%
+% Define various macros
+%
+\renewcommand{\b}{\mathbf}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\cs}[1]{\ensuremath{_{\text{#1}}}}
+\newcommand{\inv}{^{\mathrm -1}}
+\newcommand{\cp}[1]{\ensuremath{^{\text{#1}}}}
+\newcommand{\degsym}{\ensuremath{^\circ}}
+%
+%
+\newcommand{\mycomment}[1]{{\small\sffamily\color{red}\slshape[#1]}}
+%
+\input{macros.tex}
+%
+\newlength{\tablecaptionsep}
+\setlength{\tablecaptionsep}{0.5ex}
+%
+\newcommand{\citenumfont}{\itshape}
+%
+\setcounter{chapter}{3}
+\pagestyle{fancy}
+\chapter{Results for `standard' MLS data products}
+%
+\input{standardCO}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

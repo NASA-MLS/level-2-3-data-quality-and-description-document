@@ -1,0 +1,177 @@
+%
+% $Id: v4-x-report.tex,v 1.6 2013/05/03 17:42:21 livesey Exp $    
+%
+% This is the master file for the EOS MLS Level 2 v1.5 report.
+%
+\documentclass[portrait,twoside,11pt]{report}
+\usepackage[final]{graphicx}
+\usepackage{newqualdoc}
+\usepackage{verbatim,array}
+\usepackage[square]{natbib}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xr}
+\usepackage{calc}
+\usepackage{tikz}
+\usepackage{inconsolata}
+\usepackage[textlf,mathlf,swash,medfamily]{MinionPro}
+\usepackage[textlf,mathlf,sansmath,medfamily]{MyriadPro}
+%
+%\usepackage{times}
+%\usepackage{mathptm}
+\usepackage[letterpaper,breaklinks,bookmarksopen=true,linktocpage=true]{hyperref}
+\usepackage{xspace}
+% \newcommand{\UnderscoreCommands}{\do\dontincludegraphics}
+% \usepackage[strings]{underscore}
+% Use underscore in text mode
+%
+%
+% \special{header=goodishpdf.ps} % Do nice bitmap compression
+%
+% Skip the include graphics possibly
+% \renewcommand{\includchegraphics}[2][1]{}
+%
+%-------------------------------------------------------------------------------
+%
+% Now begin the document and set a few various counters and values etc.
+%
+\begin{document}
+\rcsParseName $Name:  $
+\rcsInfo $Id: v4-x-report.tex,v 1.6 2013/05/03 17:42:21 livesey Exp $
+%
+\lhead[\fancyplain{}{\large\it Contents}]{\fancyplain{}}
+\rhead[\fancyplain{}]{\fancyplain{}{\large\it Contents}}
+%
+% Fonts
+%
+%\renewcommand{\sfdeafult}{pgs}
+%\renewcommand{\rmdefault}{ptm}
+%\renewcommand{\ttdefault}{pcr}
+%\renewcommand{\familydefault}{rm}
+%
+\setcounter{tocdepth}{2}
+\setlength{\itemsep}{0pt}
+\setlength{\parsep}{0pt}
+\bibliographystyle{plainnat}
+%
+% Define various macros
+%
+\renewcommand{\b}{\mathbf}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\cs}[1]{\ensuremath{_{\text{#1}}}}
+\newcommand{\inv}{^{\mathrm -1}}
+\newcommand{\cp}[1]{\ensuremath{^{\text{#1}}}}
+\newcommand{\degsym}{\ensuremath{^\circ}}
+%
+\newenvironment{myitemize}{%
+  \begin{list}{}{%
+      \renewcommand{\makelabel}[1]{$\bullet$}%
+      \setlength{\itemsep}{0.7ex}%
+      \setlength{\topsep}{0.5ex}%
+      \setlength{\parskip}{0pt}%
+      \setlength{\partopsep}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\itemindent}{0em}%
+      \setlength{\leftmargin}{1.5em}%
+      \setlength{\labelwidth}{1em}%
+      \setlength{\labelsep}{0pt}%
+    }}%
+  {\end{list}}
+% 
+\newcommand{\mycomment}[1]{{\small\sffamily\color{red}\slshape[#1]}}
+%
+\input{macros.tex}
+%
+\newcommand{\dontincludegraphics}[2][]{\framebox{Graphics missing}}
+%
+\newlength{\tablecaptionsep}
+\setlength{\tablecaptionsep}{0.5ex}
+%
+% \newcommand{\citenumfont}{\itshape}
+%
+% ------------------------------------------------------------------------------
+%
+% Now do the title page etc.
+%
+\pagenumbering{roman}
+\jpld{33509}
+\title{Version~4.x Level~2 data quality and description document.}
+\author{%
+Nathaniel~J.~Livesey,
+William~G.~Read,
+Lucien~Froidevaux,
+%
+Alyn~Lambert,
+Gloria~L.~Manney,
+Hugh~C.~Pumphrey,
+Michelle~L.~Santee,
+Michael~J.~Schwartz,
+Shuhui~Wang,
+%
+Richard~E.~Cofield,
+Elmain~Martinez,
+Ryan~A~Fuller,
+Robert~F.~Jarnot,
+Jonathan~H.~Jiang,
+Brian~W.~Knosp,
+Paul~C.~Stek,
+Paul~A.~Wagner}
+%\shortauthor{EOS MLS Science team}
+\newcommand{\myshorttitle}{EOS MLS Level~2 Version 4.x Quality}
+\shorttitle{\myshorttitle}
+\version{4.x-0.1}
+\newcommand{\thisv}{v4.x\xspace}
+\otherrefs{}
+\coverpicture{\rule{1in}{0in}\dontincludegraphics[width=3.5in]{figures/avk-O3_HR}}
+\maketitle
+%
+\chapter*{Acknowledgment}
+This research was carried out at the Jet Propulsion Laboratory,
+California Institute of Technology, under a contract with the National
+Aeronautics and Space Administration.
+%
+\renewcommand{\tinyrcs}{}
+%
+% Do the quick summary
+%
+\input{quicksummary.tex}
+%
+% Do the revision history
+%
+\input{history.tex}
+%
+% Now do the table of contents etc.
+%
+\tableofcontents
+%
+% ------------------------------------------------------------------------------
+%
+% Now call in the various chapters
+%
+\cleardoublepage
+%
+\lhead[\fancyplain{}{\large\it\leftmark}]{\fancyplain{}}
+\rhead[\fancyplain{}]{\fancyplain{}{\large\it\rightmark}}
+%
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+%
+\pagenumbering{arabic}
+\input{chapEssential}
+\input{chapBackground}
+\input{chapResults}
+%
+\renewcommand{\leftmark}{Bibliography}
+\renewcommand{\rightmark}{Bibliography}
+\bibliography{shortnames,mybib}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

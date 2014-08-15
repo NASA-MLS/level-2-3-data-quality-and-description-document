@@ -1,0 +1,177 @@
+\speciestitle{Bromine monoxide}{BrO}{BrO}\startthumbmarks%
+\begin{description}
+\item[Useful range: ] 10\,--\,3.2\,hPa (day/night differences needed)
+\item[Contact:] Nathaniel Livesey, \email{Nathaniel.J.Livesey@jpl.nasa.gov}
+\end{description}%
+\label{sec:StandardBrO}%
+\subsection*{Introduction}
+
+The standard product for BrO is taken from the 640-GHz (Core + R4A)
+retrievals. The spectral signature of BrO in the MLS radiances is very
+small, leading to a very poor signal-to-noise ratio on individual MLS
+observations.  Significant averaging (e.g., monthly zonal means) is
+required to obtain scientifically useful results.  Large biases of
+between 5 to 30\,pptv (typical BrO abundances range from 5 to 15\,pptv)
+are seen in the data. These biases can be minimized by taking day/night
+differences. For pressures of 4.6 hPa and greater, nighttime BrO is
+negligible; however, for lower pressures, nighttime BrO needs to be
+taken into account. Table~\ref{tab:BrOSummary} summarizes the precision,
+accuracy, and resolution of the MLS \thisv BrO product. The accuracy
+assessment is based on v2.2 data, as described in the validation paper
+\citep{KovalenkoEtal07}.
+
+Note, the \thisv `standard' BrO product (as with earlier versions) contain
+systematic biases and horizontal oscillations that present a larger
+challenge than for other species.  Those interested in using MLS BrO in
+scientific studies are strongly advise to contact the MLS team before
+embarking on their research.  Different algorithms for BrO are under
+development by the MLS team, aimed at ameliorating some of these
+artifacts.
+
+\subsection*{Vertical Resolution}
+\oneverticalavk{BrO}{BrO}
+
+Figure~\ref{fig:BrOPrecision} shows that the vertical resolution for the \thisv
+MLS BrO is about 5.5\,km in the 10 to 4.6\,hPa pressure region, 
+degrading to 6\,km at 3.2\,hPa.
+
+\subsection*{Precision}
+
+\begin{figure}
+\begin{center}
+  \dontincludegraphics[width=0.4\linewidth]{figures/bro-precision}
+\end{center}
+\caption{Comparison of the MLS \thisv BrO precision as estimated from
+  scatter in the retrieved data (circles) with that expected from the
+  retrieval (thick line), for a single profile.  Also shown is the
+  expected precision for the day/night difference of 10\degsym\ zonal
+  mean profiles averaged over a day (dotted line), a month (thin line)
+  and a year (dashed line).}
+\label{fig:BrOPrecision}
+\end{figure}
+
+The expected precision in a retrieved profile is calculated from
+radiance noise and reported for each retrieved data point.  The value of
+the expected precision is flagged negative if it is worse than 50\% of
+the value of the a priori precision.  Figure~\ref{fig:BrOPrecision}
+compares the expected precision (thick line) on an individual MLS BrO
+measurement with that deduced from observations of scatter in night-time
+observations (expected to be zero). Also shown are the expected
+precisions for daily, monthly, and yearly 10\degsym\ zonal means. For
+the minimal averaging recommended, a monthly 10\degsym\ zonal mean,
+which corresponds to about 3,000 measurements, the precision is about
+$\pm$4\,ppt. See Table~\ref{tab:BrOSummary} for more details.
+
+\subsection*{Accuracy}
+
+The accuracy of the MLS BrO product is summarized in
+Table~\ref{tab:BrOSummary}. The effect of each identified source of
+systematic error on MLS measurements of radiance has been quantified and
+modeled [see Read et al., 2007]. These quantified effects correspond to
+either 2$\sigma$ estimates of uncertainties in each MLS product, or an
+estimate of the maximum reasonable uncertainty based on instrument
+knowledge and/or design requirements. More discussion is given in
+\cite{KovalenkoEtal07}.  While that paper described v2.2 BrO, findings
+are expected to be applicable also to \thisv. The potential additive bias
+in MLS BrO measurements can be as high as about $\pm$30\,ppt
+(\texttildelow400\%) at 10\,hPa, decreasing to about $\pm$6\,pptv (50\%) at
+3.2\,hPa. The potential scaling uncertainty over the pressure range of
+10 to 3.2\,hPa is about $\pm$20\%. The additive bias is dramatically
+reduced by subtracting the nighttime signal from the daytime signal.
+Taking day/night differences does not affect the scaling uncertainty,
+which remains at about $\pm$20\%. If the MLS BrO data is used at 3.2 hP,
+the day/night difference value will need to be adjusted to compensate
+for the non-negligible nighttime BrO. We note that this method of taking
+day/night differences is not applicable for polar summer and winter,
+where there is no diurnal variation in BrO.
+
+\subsection*{Data screening}
+
+\begin{description}
+\item[Pressure range:] \screeningrule{10\,--\,3.2 hPa} \standardrangestatement
+\item[Averaging required:] \screeningrule{Significant averaging (such as
+    monthly zonal means) is required if useful scientific data are
+    sought.}
+\item[Diurnal differences:] \screeningrule{For use in any scientific
+    study, day / night or ascending / descending differences should be used
+    to alleviate biases.}  Note that, for 3.2\,hPa, the non-zero
+  nighttime expected abundances BrO needs to be taken into account.
+  \standardprecisionrule \evenstatusrule
+\item[Clouds:] \cloudsokrule
+\item[Quality:] \qualityrule{1.3}
+\item[Convergence:] \convergencerule{1.05}
+\end{description}
+
+\subsection*{Artifacts}
+Significant additive biases are seen in the BrO data, as discussed
+above. Day / night (or ascending / descending) differences must be used to
+reduce these.  For 3.2 hPa, nighttime BrO needs to be taken into
+account \citep{KovalenkoEtal07}.
+
+A systematic horizontal (i.e., profile-to-profile) oscillation has been
+discovered in MLS \thisv (and earlier) standard BrO product.  This
+presents a significant challenge to the interpretation of the BrO
+observations.  Users are strongly advised to contact the MLS team before
+embarking on research involving the MLS standard BrO product.  Improved
+versions of the BrO product are under development at the time of
+writing.
+
+\subsection*{Review of comparisons with other data sets}
+We have calculated total bromine, Br$_{y}$, from MLS measurements of BrO
+using a photochemical model, and compared this with Br$_{y}$ similarly
+inferred from balloon-borne measurements of BrO obtained by the
+instruments DOAS, SAOZ, and SLS. When plotted in tracer space (e.g., as
+a function of N$_{2}$O), which accounts for differences in age of air,
+good agreement is seen \citep{KovalenkoEtal07}.
+
+\subsection*{Desired improvements for future data version(s)}
+\begin{itemize}
+\item Improvements will be sought in the stability of the BrO biases
+\item Future versions will also seek to improve the quality of the BrO
+  observations in the mid- and lower stratosphere
+\item Improvements will also be sought in the polar regions, especially
+  during summer / winter, when day / night differences are not possible
+\end{itemize}
+
+\begin{table}
+\caption{Summary of the Aura MLS \thisv BrO product.}
+\vspace{\tablecaptionsep}
+\label{tab:BrOSummary}
+\begin{minipage}{\linewidth}
+\centering\begin{tabular}{cccccl}
+\toprule
+\parbox[m]{5em}{\bfseries\centering Pressure range} &
+\parbox[m]{4em}{\bfseries\centering Vertical res. / km} &
+\parbox[m]{4.5em}{\bfseries\centering Precision\footnote{The precision quoted is for a 10\degsym\
+    monthly zonal mean} / pptv} &
+\parbox[m]{4.5em}{\bfseries\centering Bias uncertainty\footnote{Because of large biases in
+    the data, the daytime and nighttime BrO data are unsuitable for
+    scientific use, so day/night differences must be used. Note that
+    day/night differences are not useful for polar winter and summer,
+     where BrO does not undergo a diurnal variation.} / pptv} &
+\parbox[m]{5em}{\bfseries\centering Scaling uncertainty\footnote{Based on modeled impacts
+    of systematic errors} / \%} &
+\textbf{Comments} \\
+\midrule
+%
+2.2\,hPa and less & -- & -- & -- & -- & Unsuitable for scientific use
+  \\ \addlinespace[2ex]
+%
+3.2\,hPa & 6 & $\pm$5 &$\pm$6 & $\pm$20
+& \parbox[m]{10em}{\raggedright Need to
+account for non-negligible night time BrO} \\ \addlinespace[2ex]
+%
+4.6 & 5.5 & $\pm$4 & $\pm$9  & $\pm$20 \\
+6.8 & 5.5 & $\pm$4 & $\pm$20 & $\pm$20 \\ 
+10  & 5.5 & $\pm$4 & $\pm$30 & $\pm$20 \\ 
+150\,--\,15\,hPa   & -- & -- & -- & -- & Unsuitable for scientific use \\
+1000\,--\,215\,hPa & -- & -- & -- & -- & Not retrieved \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

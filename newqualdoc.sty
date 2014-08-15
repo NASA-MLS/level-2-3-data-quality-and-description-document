@@ -1,0 +1,162 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{newlargemls}
+%
+\RequirePackage{graphicx}
+\RequirePackage{fancyhdr}
+\RequirePackage[nofancy,notoday]{rcsinfo}
+\RequirePackage{ifthen}
+\RequirePackage{njlrcs}
+\RequirePackage{geometry}
+\RequirePackage{calc}
+%
+\ProcessOptions\relax
+%
+% First setup the page sizes etc.
+%
+\geometry{%
+  paperwidth=8.5in,%
+  paperheight=11in,%
+  left=1in,%
+  right=1in,%
+  top=1in,%
+  headheight=14pt,%
+  bottom=1in}
+%
+% -------------------------------------------------------------------------------
+%
+% Now setup the headings etc.
+%
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\plainheadrulewidth}{0pt}
+\renewcommand{\plainfootrulewidth}{0.4pt}
+%
+% For the begining force the contents to the right case.
+%
+% Do some RCS stuff
+%
+\newcommand{\tinyrcs}{\parbox[b]{1in}{\raggedright\tiny\rcsInfoFile\ 
+    v\rcsInfoRevision\\ \today}}
+%
+% -----------------------------------------------------------------------------
+%
+% Now some style definitions
+%
+\def\@makechapterhead#1{%
+   {\parindent 0pt\rule{\textwidth}{1.0pt}\\
+    \centering
+    \ifnum \c@secnumdepth >\m@ne
+      \LARGE\bfseries \@chapapp{} \thechapter\\
+    \fi
+    \LARGE #1\\ \vskip -2mm\rule{\textwidth}{1.0pt}
+    \nobreak
+    \vskip 0.8cm
+  }}
+%
+\def\@makeschapterhead#1{%
+  {\parindent 0pt\rule{\textwidth}{1.0pt}\\
+    \reset@font
+    \centering\LARGE \bfseries  #1\par\vspace{-3mm}\rule{\textwidth}{1.0pt}
+    \nobreak\vskip 0.8cm
+  }}
+%
+\long\def\@makecaption#1#2{%
+  \small\sffamily\vskip\abovecaptionskip
+  \rightskip=1cm \leftskip=1cm
+  \sbox\@tempboxa{{\bfseries #1:} #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\bfseries #1:} #2\par
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+%
+\newcounter{subfigure}[figure]
+\renewcommand{\thesubfigure}{\thefigure\alph{subfigure}}
+\newcommand{\subcaption}[1]{%
+   \refstepcounter{subfigure}%
+   \footnotesize\textbf{(\alph{subfigure})} #1}
+%
+% Need this environment to get the labels right
+%
+\newenvironment{subfigures}{\stepcounter{figure}}{\addtocounter{figure}{-1}}
+%
+% -----------------------------------------------------------------------------
+%
+% Now we redefine the maketitle stuff
+%
+\newcommand{\@coverpicture}{}
+\newcommand{\coverpicture}[1]{\renewcommand{\@coverpicture}{#1}}
+%
+\newcommand{\@jpld}{Not assigned}
+\newcommand{\jpld}[1]{\renewcommand{\@jpld}{#1}}
+\newcommand{\@otherrefs}{}
+\newcommand{\otherrefs}[1]{\renewcommand{\@otherrefs}{#1}}
+\newcommand{\@shorttitle}{}
+\newcommand{\shorttitle}[1]{\renewcommand{\@shorttitle}{#1}}
+\newcommand{\@version}{}
+\newcommand{\version}[1]{\renewcommand{\@version}{#1}}
+%
+\pagestyle{empty}
+%
+\renewcommand{\maketitle}{%
+   \enlargethispage{0.5in}
+   \begin{raggedright}
+   \mdseries\upshape\rmfamily\Large JPL D-\@jpld\\
+   \mdseries\upshape\rmfamily\large\@otherrefs % \\ is in \@otherrefs
+   \mdseries\upshape\rmfamily
+   \vfil
+   \LARGE\bfseries
+   \href{http://aura.gsfc.nasa.gov/}{Earth Observing System (EOS)}\\
+   \vfil %\vspace{0.3in}
+   \href{http://mls.jpl.nasa.gov/}{Aura Microwave Limb Sounder (MLS)}\\
+   \vfil
+   \bfseries\upshape\rmfamily\Huge\@title\\
+   %
+   % Now the pictures
+   %
+   \begin{tabular}{@{}l@{}r@{}}
+     \parbox[m]{5cm}{\includegraphics[width=5cm]{eos_mls_decal_lowres}}
+     &
+     \parbox[m]{\linewidth-5cm}{\@coverpicture}\\
+   \end{tabular}
+   %
+   % Now the lower stuff
+   %
+   \mdseries\upshape\rmfamily\large\@author
+   \vfil
+   \bfseries\upshape\rmfamily\Large Version \@version\\
+   \large\mdseries\@date\\
+   \vfil
+   \includegraphics[width=2cm]{jpllogo-red}\\
+   \large
+   Jet Propulsion Laboratory\\
+   California Institute of Technology\\
+   Pasadena, California, 91109-8099
+
+   \vspace{2ex}\copyright\ 2011 California Institute of Technology.  Government
+   sponsorship acknowledged.
+   \end{raggedright}
+   \clearpage
+   %
+   \pagestyle{fancy}
+   \lhead[\fancyplain{}{\large\it\leftmark}]{}
+   \rhead[]{\fancyplain{}{\large\it\rightmark}}
+   \lfoot[\thepage\hspace{1cm}\tinyrcs]{\@shorttitle}
+   \rfoot[EOS Microwave Limb Sounder]{\tinyrcs\hspace{1cm}\thepage}
+   \cfoot[]{}
+}
+\renewcommand{\chaptermark}[1]{%
+   \markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{%
+   \markright{\thesection.\ #1}{}}
+%
+% -----------------------------------------------------------------------------
+%
+% That's it.
+%
+\endinput
+%
+%% End of file 'njlstyle.sty'
+

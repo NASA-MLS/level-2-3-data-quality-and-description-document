@@ -1,0 +1,142 @@
+% These rather complex beasties are the various macros used to make up
+% The information on a product.
+
+% ---------------------------------------- Defining a product
+% This command sets up a section for a species.
+%
+\newcommand{\thumbmark}{}
+\newcommand{\thumbbackground}{black}
+%
+\newcommand{\speciestitle}[4][]{%
+\cleardoublepage
+\renewcommand{\thumbmark}{#3}%
+\addtolength{\thumbpos}{-0.45in}%
+\section{#2}
+\begin{description}
+\item[Swath name:] \texttt{#4} #1
+\end{description}}
+%
+\newlength{\thumbpos}
+\newcommand{\makethumbmark}[2]{%
+  \begin{tikzpicture}[overlay]
+    \node at (#1,\thumbpos) [rotate=#2,anchor=south]
+    {\colorbox{black}{\parbox{1.5cm}{\centering%
+        \color{white}\sffamily\bfseries\large\selectfont\rule[-0.5ex]{0pt}{2ex}\thumbmark}}};%
+  \end{tikzpicture}}
+%
+\newcommand{\startthumbmarks}{%
+  \setlength{\thumbpos}{9.2in}%
+  \lfoot[\makethumbmark{-1cm}{90}\thepage]{\myshorttitle}%
+  \rfoot[EOS Microwave Limb Sounder]{\thepage\makethumbmark{1cm}{-90}}%
+}
+\newcommand{\killthumbmarks}{%
+   \lfoot[\thepage\hspace{1cm}\tinyrcs]{\myshorttitle} % should be \@shortitle
+   \rfoot[EOS Microwave Limb Sounder]{\tinyrcs\hspace{1cm}\thepage}}
+\newcommand{\email}[1]{\textbf{Email:} $<$\texttt{#1}$>$}
+%
+% Change the figures/table counters
+\makeatletter
+\def\renewcounter#1{%
+    \@ifundefined{c@#1}
+    {\@latex@error{counter #1 undefined}\@ehc}%
+    \relax
+    \let\@ifdefinable\@rc@ifdefinable
+    \@ifnextchar[{\@newctr{#1}}{}}
+\makeatother
+\renewcounter{figure}[section]
+\renewcounter{table}[section]
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+%
+\newcommand{\screeningrule}[1]{\textbf{#1}\par}
+
+% -------------------------- Averaging kernels
+\newcommand{\extracaption}{}
+
+\newcommand{\avkcaption}[2]{%
+  Typical two-dimensional (vertical and horizontal along-track)
+  averaging kernels for the MLS \thisv #2#1 data at 70\degsym N (upper)
+  and the equator (lower); variation in the averaging kernels is
+  sufficiently small that these are representative of typical profiles.
+  Colored lines show the averaging kernels as a function of MLS
+  retrieval level, indicating the region of the atmosphere from which
+  information is contributing to the measurements on the individual
+  retrieval surfaces, which are denoted by plus signs in corresponding
+  colors.  The dashed black line indicates the resolution, determined
+  from the full width at half maximum (FWHM) of the averaging kernels,
+  approximately scaled into kilometers (top axes).  (Left) Vertical
+  averaging kernels (integrated in the horizontal dimension for five
+  along-track profiles) and resolution.  The solid black line shows the
+  integrated area under each kernel (horizontally and vertically);
+  values near unity imply that the majority of information for that MLS
+  data point has come from the measurements, whereas lower values imply
+  substantial contributions from a priori information.  (Right)
+  Horizontal averaging kernels (integrated in the vertical dimension)
+  and resolution.  The horizontal averaging kernels are shown scaled
+  such that a unit averaging kernel amplitude is equivalent to a factor
+  of 10 change in pressure.}
+
+\newcommand{\vertavkcaption}[2]{%
+  Typical vertical averaging kernels for the MLS \thisv #2#1 data at
+  70\degsym N (left) and the equator (right); variation in the averaging
+  kernels is sufficiently small that these are representative of typical
+  profiles.  Colored lines show the averaging kernels as a function of
+  MLS retrieval level, indicating the region of the atmosphere from
+  which information is contributing to the measurements on the
+  individual retrieval surfaces, which are denoted by plus signs in
+  corresponding colors.  The dashed black line indicates the vertical
+  resolution, determined from the full width at half maximum (FWHM) of
+  the averaging kernels, approximately scaled into kilometers (top
+  axes).  The solid black line shows the integrated area under each
+  kernel; values near unity imply that the majority of information for
+  that MLS data point has come from the measurements, whereas lower
+  values imply substantial contributions from a priori information.  The
+  low signal to noise for this product necessitates the use of
+  significant averaging (e.g., monthly zonal mean), making horizontal
+  averaging kernels largely irrelevant.}
+
+\newcommand{\onestandardavk}[2]{%
+\begin{figure}%
+\begin{center}%
+\dontincludegraphics[width=0.8\linewidth]{figures/avk-#1}%
+\end{center}
+\caption{\avkcaption{#2}{}\extracaption}
+\label{fig:Avk#1}%
+\end{figure}}
+
+\newcommand{\oneverticalavk}[2]{%
+\begin{figure}%
+\begin{center}%
+\dontincludegraphics[width=0.8\linewidth]{figures/avk-#1}%
+\end{center}
+\caption{\vertavkcaption{#2}{}\extracaption}
+\label{fig:Avk#1}%
+\end{figure}}
+
+% ------------------------------------ Other boilerplate
+\newcommand{\standardrangestatement}{Values outside this range are not
+  recommended for scientific use.}
+\newcommand{\standardprecisionrule}{%
+\item[Estimated precision:] \screeningrule{Only use values for which the
+    estimated precision is a positive number.} Values where the \emph{a
+    priori} information has a strong influence are flagged with negative
+  precision, and should not be used in scientific analyses (see
+  Section~\ref{sec:NegativePrecision}).}
+\newcommand{\evenstatusrule}{%
+\item[Status flag:] \screeningrule{Only use profiles for which the
+    `Status' field is an even number.}  Odd values of \texttt{Status}
+  indicate that the profile should not be used in scientific studies.
+  See Section~\ref{sec:StatusQuality} for more information on the
+  interpretation of the \texttt{Status} field.}
+\newcommand{\cloudsokrule}{\screeningrule{%
+    Profiles identified as being affected by clouds can be used with no
+    restriction.}}
+\newcommand{\qualityrule}[1]{\screeningrule{Only
+    profiles whose `Quality' field is greater than #1 should be used.}}
+\newcommand{\convergencerule}[1]{\screeningrule{Only profiles whose
+    `Convergence' field is less than #1 should be used.}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

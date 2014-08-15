@@ -1,0 +1,214 @@
+\speciestitle{Methyl chloride}{CH\cs3Cl}{CH3Cl}%
+\begin{description}
+\item[Useful range:] 147\,--\,4.6\,hPa
+\item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}
+\end{description}
+\label{sec:StandardCH3Cl}
+
+\subsection*{Introduction}
+
+The v2.2 MLS ClO measurements were characterized by a substantial
+(\texttildelow0.1\,--\,0.4\,ppbv) negative bias at retrieval levels below (i.e.,
+pressures larger than) 22\,hPa.  \citet{SanteeEtal08clo} suggested that
+contamination from an interfering species such as CH\cs3Cl, which has
+lines in two wing channels of the \mbox{640-GHz} band used to measure
+ClO, could have given rise to the bias; they showed results from early
+v3 algorithms in which CH\cs3Cl was also retrieved that demonstrated
+significant reduction in the bias in lower stratospheric ClO\@.  Further
+refinements in the \thisv algorithms yielded not only an improved ClO
+product, but also a reliable retrieval of CH\cs3Cl.
+
+As for ClO, the standard CH\cs3Cl product is derived from radiances
+measured by the radiometer centered near 640\,GHz. The MLS \thisv CH\cs3Cl
+data are scientifically useful over the range 147 to 4.6\,hPa.  A summary
+of the precision and resolution (vertical and horizontal) of the \thisv
+CH\cs3Cl measurements as a function of altitude is given in
+Table~\ref{tab:CH3ClSummary}.  More details on the quality of the MLS
+\thisv CH\cs3Cl measurements are given below.
+
+\subsection*{Resolution}
+\onestandardavk{CH3Cl}{CH\cs3Cl}%
+
+The resolution of the retrieved data can be described using ``averaging
+kernels'' \citep[e.g.,][]{Rodgers00}; the two-dimensional nature of the
+MLS data processing system means that the kernels describe both vertical
+and horizontal resolution.  Smoothing, imposed on the retrieval system
+in both the vertical and horizontal directions to enhance retrieval
+stability and precision, degrades the inherent resolution of the
+measurements.  Consequently, the vertical resolution of the \thisv
+CH\cs3Cl data, as determined from the full width at half maximum of the
+rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkCH3Cl},
+is \texttildelow4\,--\,6\,km in most of the lower stratosphere, degrading to
+7\,--\,10\,km at and above (i.e., at pressures less than) 14\,hPa.  Note
+that there is overlap in the averaging kernels for the 100 and 147\,hPa
+retrieval surfaces, indicating that the 147\,hPa retrieval does not
+provide as much independent information as is given by retrievals at
+higher altitudes.  Figure~\ref{fig:AvkCH3Cl} also shows horizontal
+averaging kernels, from which the along-track horizontal resolution is
+determined to be \texttildelow600\,km at 147\,hPa, \texttildelow450\,--\,500\,km from
+100 to 22\,hPa, and \texttildelow550\,--\,850\,km at and above 15\,hPa.  The
+cross-track resolution, set by the width of the field of view of the
+\mbox{640-GHz} radiometer, is \texttildelow3\,km.  The along-track separation
+between adjacent retrieved profiles is 1.5\degsym\ great circle angle
+(\texttildelow165\,km), whereas the longitudinal separation of MLS
+measurements, set by the Aura orbit, is 10\degsym--\,20\degsym\ over low
+and middle latitudes, with much finer sampling in the polar regions.
+
+\subsection*{Precision}
+
+\begin{figure}
+\centering\dontincludegraphics[width=12.0cm]{figures/MLSCH3Clascdsc-200502}
+\caption{(left) Ensemble mean profiles for ascending (red) and
+  descending (blue) orbit matching pairs of MLS \thisv CH\cs3Cl in the
+  latitude range 50\degsym S\,--\,50\degsym N averaged over 30 days in April
+  2008.  (right) Mean difference profiles between ascending and
+  descending orbits (cyan), the standard deviation about the mean
+  difference (orange), and the root sum square of the precisions
+  calculated by the retrieval algorithm (magenta).  SD values are scaled
+  by 1/$\sqrt{2}$; thus the observed SD represents the statistical
+  repeatability of the MLS measurements, and the expected SD represents
+  the theoretical \mbox{1-$\sigma$} precision for a single profile.  See
+  \citet{LambertEtal07} for details.  }
+\label{fig:CH3Clascdsc}
+\end{figure}
+
+The precision of the MLS CH\cs3Cl data is estimated empirically by
+computing the standard deviation of the differences between matched
+measurement points at the intersections of the ascending (day) and
+descending (night) sides of the orbit.  Observed scatter, representing
+the statistical repeatability of the measurements, is 100\,pptv or less
+throughout the vertical domain.  This estimate reflects the precision of
+a single profile; in most cases precision can be improved by averaging,
+with the precision of an average of $N$ profiles being 1/$\sqrt{N}$
+times the precision of an individual profile (note that this is not the
+case for averages of successive along-track profiles, which are not
+completely independent because of horizontal smearing).  The theoretical
+precision reported by the Level~2 data processing system exceeds the
+observationally-determined precision throughout the vertical range,
+indicating that the smoothing applied to stabilize the retrieval and
+improve the precision has a nonnegligible influence.  Because the
+theoretical precisions take into account occasional variations in
+instrument performance, the best estimate of the precision of an
+individual data point is the value quoted for that point in the L2GP
+files, but it should be borne in mind that this approach slightly
+overestimates the actual measurement noise.
+
+\subsection*{Range}
+
+Although CH\cs3Cl is retrieved (and reported in the L2GP files) over the
+range 147 to 0.001\,hPa, on the basis of the drop off in precision and
+resolution, the reduction in independent information contributed by the
+measurements, and the results of simulations using synthetic data as
+input radiances to test the closure of the retrieval system, the data
+are not deemed reliable at retrieval levels above (i.e., pressures lower
+than) 4.6\,hPa.  Despite the overlap in the averaging kernels for the
+147 and 100\,hPa surfaces (Figure~\ref{fig:AvkCH3Cl}), maps at 147\,hPa
+display substantial features not seen at 100\,hPa (not shown) that are
+believed to represent real atmospheric variations.  Thus we recommend
+that the \thisv CH\cs3Cl data may be used for scientific studies between
+147 and 4.6\,hPa, inclusive.
+
+\subsection*{Accuracy}
+
+The impact of various sources of systematic uncertainty has not yet been
+quantified for CH\cs3Cl as it has for most other MLS products.  This
+work is planned as part of a dedicated validation exercise for the \thisv
+CH\cs3Cl data.
+
+\subsection*{Review of comparisons with other datasets}
+
+Detailed comparisons with correlative data sets have not yet been
+undertaken.  This work is planned as part of a dedicated validation
+exercise for the \thisv CH\cs3Cl data.
+
+\subsection*{Data screening}
+\begin{description}
+\item[Pressure range:]  \screeningrule{147\,--\,4.6\,hPa}
+
+  \standardrangestatement
+  
+  \standardprecisionrule
+  
+\item[Status flag:] \screeningrule{Only use profiles for which the
+    `Status' field is zero.}  We recommend that all profiles with
+  nonzero values of `Status' be discarded, because of the potential
+  impact of cloud artifacts at lower levels.  See
+  Section~\ref{sec:StatusQuality} for more information on the
+  interpretation of the \texttt{Status} field.
+
+\item[Clouds:] \cloudsokrule
+
+  Nonzero but even values of \texttt{Status} indicate that the profile
+  has been marked as questionable, usually because the measurements may
+  have been affected by the presence of thick clouds.  Globally fewer
+  than \texttildelow1\,--\,2\% of CH\cs3Cl profiles are typically identified in
+  this manner (though this value rises to \texttildelow3\,--\,5\% in the
+  tropics on a typical day), and cloud artifacts may be especially
+  prevalent at 147\,hPa.
+
+\item[Quality:] \qualityrule{1.3}
+
+  This threshold for \texttt{Quality} (see
+  section~\ref{sec:StatusQuality}) typically excludes less than 1\% of
+  CH\cs3Cl profiles on a daily basis; note that it potentially discards
+  some ``good'' data points while not necessarily identifying all
+  ``bad'' ones.
+
+\item[Convergence:] \convergencerule{1.05}
+
+  On a typical day this threshold for \texttt{Convergence} (see
+  Section~\ref{sec:StatusQuality}) discards very few (0.3\% or less) of
+  the CH\cs3Cl profiles, most (but not all) of which are also filtered
+  out by the other quality control measures.
+\end{description}
+
+\subsection*{Artifacts}
+
+\begin{itemize}
+\item To be determined.
+\end{itemize}
+
+\subsection*{Desired improvements for future data version(s)}
+
+\begin{itemize}
+\item To be determined.
+\end{itemize}
+
+\begin{table*}[bp]
+\caption{Summary of Aura MLS \thisv CH\cs3Cl Characteristics}\vspace{0.5ex}
+\label{tab:CH3ClSummary}
+\begin{minipage}{\linewidth}
+\renewcommand{\thefootnote}{\thempfootnote}
+\centering\begin{tabular}{ccccl}
+\toprule
+\parbox[m]{18mm}{\bfseries\centering{Pressure\\ / hPa}} &
+\parbox[m]{24mm}{\bfseries\centering{Resolution\\ V $\times$ H%
+\footnote{Vertical and Horizontal resolution in along-track direction.} \\ / km}} &
+\parbox[m]{18mm}{\bfseries\centering{Precision%
+    \footnote{Precision on individual profiles.} \\/ pptv}} &
+\parbox[m]{20mm}{\bfseries\centering{Accuracy\\ / pptv}} &
+\parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
+%
+\midrule
+%
+3.2\,--\,0.001 & ---   & ---    & ---     & for scientific
+  use\\
+%
+15\,--\,4.6  & 7\,--\,10 $\times$ 550\,--\,850 & $\pm$100 & TBD & \\
+%
+100\,--\,22  & 4\,--\,6 $\times$ 450\,--\,500 & $\pm$100 & TBD &  \\
+%
+147      & 4.5 $\times$ 600 & $\pm$100 & TBD & \\
+%
+1000\,--\,215  & ---    & ---     & ---     & retrieved\\
+%
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table*}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 
+
