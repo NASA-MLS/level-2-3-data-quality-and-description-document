@@ -1,4 +1,3 @@
-\definecolor{lightgrey}{rgb}{0.90,0.90,0.90}
 %
 \newenvironment{tablenotes}{%
   \begin{list}{}{%
@@ -40,61 +39,74 @@
 %
 BrO & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Nathaniel Livesey \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 CH3Cl & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee \\
 %
+\flipfloprow 
 CH3CN & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
+CH3OH &  &  &  & N & Michelle Santee \\
+%
+\flipfloprow 
 ClO & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee \\
 %
+\flipfloprow 
 & 100\,--\,0.0046 & 0.2 &  & & Hugh Pumphrey \\
+\samecolorrow
 \tabnudge{CO}  & 215\,--\,146 & 1.1 & \tabnudge{1.4} & \tabnudge{C,O} & Michael Schwartz \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 GPH & 261\,--\,0.001 &  
 0.65 & 1.2 & C & Michael Schwartz \\
 %
-& 83\,--\,0.002 & & & -- & Alyn Lambert \\
+\flipfloprow & 83\,--\,0.002 & & & -- & Alyn Lambert \\
+\samecolorrow
 \tabnudge{H2O} & 316\,--\,100 & \tabnudge{1.3} & \tabnudge{2.0} & C &
 William Read \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 HCl & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux \\
 %
+\flipfloprow 
 HCN & 10\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 HNO3 & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney \\
 %
+\flipfloprow 
 HO2 & 22\,--\,0.046 & N/A & 1.1 & D,N & Shuhui Wang \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 HOCl & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux \\
 %
+\flipfloprow 
 IWC & 215\,--\,83 & N/A & N/A & B & Alyn Lambert \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 IWP & N/A & N/A & N/A & B & Alyn Lambert \\
 %
+\flipfloprow 
 N2O & 100\,--\,0.46 & 1.4 & 1.01 & C & Alyn Lambert \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
  & 100\,--\,0.02 & & & & Lucien Froidevaux \\
 %
-\rowcolor{lightgrey}
+\samecolorrow
 \tabnudge{O3\,\footnotemark[3]} & 
  261\,--\,121 & \tabnudge{0.6} & \tabnudge{1.18} & \tabnudge{C,O} &
   Michael Schwartz \\
 %
+\flipfloprow 
 OH & 32\,--\,0.0032 & N/A & 1.1 & D & Shuhui Wang \\
 %
-\rowcolor{lightgrey} 
+\flipfloprow 
 RHI\,\footnotemark[4] & 316\,--\,0.002 & See text & See text & C & William Read \\
 %
+\flipfloprow 
 SO2 & 215\,--\,10 & 0.6 & 1.8 & E & William Read \\
 %
-\rowcolor{lightgrey}
+\flipfloprow
 Temperature\,\footnotemark[5] & 261\,--\,0.001 & 0.65 & 1.2 & C &  Michael Schwartz \\
 %
 \bottomrule
@@ -115,13 +127,13 @@ Temperature\,\footnotemark[5] & 261\,--\,0.001 & 0.65 & 1.2 & C &  Michael Schwa
   \item[D] Biases in this product can be ameliorated (in selected
     conditions) by taking day/night differences.  See text for details.
   \item[E] At some altitudes, this product contains biases of a magnitude
-    that render the product useful only for the study of `enhancement
-    events' (e.g., volcanic plumes, extreme fire pollution).  See text
+    that render the product useful only for the study of ``enhancement
+    events'' (e.g., volcanic plumes, extreme fire pollution).  See text
     for details.
   \end{tablenotes}}%
 \hfill\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
   \begin{tablenotes}
-  \item[N] This is a `noisy' product requiring significant averaging
+  \item[N] This is a ``noisy'' product requiring significant averaging
     (e.g., monthly zonal mean).  See text for details.
   \item[O] This product contains significant outliers (e.g., spikes or
     oscillations) in some regions (typically related to clouds in the
@@ -130,9 +142,9 @@ Temperature\,\footnotemark[5] & 261\,--\,0.001 & 0.65 & 1.2 & C &  Michael Schwa
   \end{tablenotes}
   \rule{\linewidth}{0.5pt}\par
   \begin{tablenotes}
-  \item[\mbox{[1]}] Only use profiles having `Quality' \emph{higher}
+  \item[\mbox{[1]}] Only use profiles having ``Quality'' \emph{greater}
     than this value.
-  \item[\mbox{[2]}] Only use profiles with `Convergence' \emph{lower} than this value.
+  \item[\mbox{[2]}] Only use profiles with ``Convergence'' \emph{less} than this value.
   \item[\mbox{[3]}] File also contains two swaths giving column above the (MLS
     and GEOS-5 defined) tropopause.
   \item[\mbox{[4]}] Relative humidity with respect to ice computed from the

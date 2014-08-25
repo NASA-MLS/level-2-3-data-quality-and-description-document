@@ -27,11 +27,11 @@
 \newcommand{\startthumbmarks}{%
   \setlength{\thumbpos}{9.2in}%
   \lfoot[\makethumbmark{-1cm}{90}\thepage]{\myshorttitle}%
-  \rfoot[EOS Microwave Limb Sounder]{\thepage\makethumbmark{1cm}{-90}}%
-}
-\newcommand{\killthumbmarks}{%
-   \lfoot[\thepage\hspace{1cm}\tinyrcs]{\myshorttitle} % should be \@shortitle
-   \rfoot[EOS Microwave Limb Sounder]{\tinyrcs\hspace{1cm}\thepage}}
+  \rfoot[Aura Microwave Limb Sounder]{\thepage\makethumbmark{1cm}{-90}}%
+} \newcommand{\killthumbmarks}{%
+
+  \lfoot[\thepage\hspace{1cm}\tinyrcs]{\myshorttitle} % should be \@shortitle
+  \rfoot[EOS Microwave Limb Sounder]{\tinyrcs\hspace{1cm}\thepage}}
 \newcommand{\email}[1]{\textbf{Email:} $<$\texttt{#1}$>$}
 %
 % Change the figures/table counters
@@ -135,6 +135,25 @@
     profiles whose `Quality' field is greater than #1 should be used.}}
 \newcommand{\convergencerule}[1]{\screeningrule{Only profiles whose
     `Convergence' field is less than #1 should be used.}}
+
+% ----------------------------------- Table flipflopping
+\colorlet{tableoddbackground}{black!10}
+\colorlet{tableevenbackground}{white}
+\newif\ifoddrow\oddrowtrue
+\newcommand{\flipfloprow}{%
+  \ifoddrow
+  \rowcolor{tableoddbackground}
+  \global\oddrowfalse
+  \else
+  \rowcolor{tableevenbackground}
+  \global\oddrowtrue
+  \fi}
+\newcommand{\samecolorrow}{%
+  \ifoddrow
+  \rowcolor{tableevenbackground}
+  \else
+  \rowcolor{tableoddbackground}
+  \fi}  
 
 %%% Local Variables: 
 %%% mode: latex

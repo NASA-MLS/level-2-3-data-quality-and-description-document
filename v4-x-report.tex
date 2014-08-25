@@ -1,9 +1,9 @@
 %
-% $Id: v4-x-report.tex,v 1.6 2013/05/03 17:42:21 livesey Exp $    
+% $Id: v4-x-report.tex,v 1.1 2014/08/15 17:07:41 livesey Exp $    
 %
 % This is the master file for the EOS MLS Level 2 v1.5 report.
 %
-\documentclass[portrait,twoside,11pt]{report}
+\documentclass[portrait,twoside,11pt,draft]{report}
 \usepackage[final]{graphicx}
 \usepackage{newqualdoc}
 \usepackage{verbatim,array}
@@ -41,7 +41,7 @@
 %
 \begin{document}
 \rcsParseName $Name:  $
-\rcsInfo $Id: v4-x-report.tex,v 1.6 2013/05/03 17:42:21 livesey Exp $
+\rcsInfo $Id: v4-x-report.tex,v 1.1 2014/08/15 17:07:41 livesey Exp $
 %
 \lhead[\fancyplain{}{\large\it Contents}]{\fancyplain{}}
 \rhead[\fancyplain{}]{\fancyplain{}{\large\it Contents}}
@@ -121,10 +121,11 @@ Brian~W.~Knosp,
 Paul~C.~Stek,
 Paul~A.~Wagner}
 %\shortauthor{EOS MLS Science team}
-\newcommand{\myshorttitle}{EOS MLS Level~2 Version 4.x Quality}
+\newcommand{\myshorttitle}{Aura MLS Level~2 Version 4.x Quality}
 \shorttitle{\myshorttitle}
 \version{4.x-0.1}
-\newcommand{\thisv}{v4.x\xspace}
+\newcommand{\thisv}{v4.\emph{x}\xspace}
+\newcommand{\prevv}{v3.3\emph{x} and v3.4\emph{x}\xspace}
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\dontincludegraphics[width=3.5in]{figures/avk-O3_HR}}
 \maketitle

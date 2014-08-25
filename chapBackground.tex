@@ -1,8 +1,8 @@
 \chapter{Background reading for users of MLS version~3.3 and~3.4 data}
-\rcsInfo $Id: chapBackground.tex,v 1.4 2013/05/03 00:51:06 livesey Exp $
+\rcsInfo $Id: chapBackground.tex,v 1.1 2014/08/15 17:07:41 livesey Exp $
 \label{chap:Background}
 
-\section{EOS MLS radiance observations}
+\section{Aura MLS radiance observations}
 
 \begin{sidewaysfigure}
   \includegraphics[width=\linewidth]{figures/unfolded-complete}
@@ -66,14 +66,15 @@ retrieval approach \citep{Rodgers76,Rodgers00} that seeks the ``best''
 value for the state vector (the profiles of temperature and abundances)
 based on an optimal combination of the fit to the MLS radiance
 observations, \emph{a priori} estimates of the state vector (from
-climatological fields), and constraints on the smoothness of the result.
-This fit must often be arrived at in an iterative manner because of the
-non-linear nature of the EOS MLS measurement system.
+climatological information and, for temperature in the troposphere and
+lower stratosphere, analysis fields), and constraints on the smoothness
+of the result.  This fit must often be arrived at in an iterative manner
+because of the non-linear nature of the Aura MLS measurement system.
 
-An innovative aspect of the retrieval algorithms for EOS MLS arises from
+An innovative aspect of the retrieval algorithms for Aura MLS arises from
 taking advantage of the fact that the MLS instrument looks in the
 forward direction from the spacecraft.  Figure~\ref{fig:Geometry}
-reviews the EOS MLS measurement geometry and shows that each radiance
+reviews the Aura MLS measurement geometry and shows that each radiance
 observation is influenced by the state of the atmosphere for several
 consecutive profiles.  In the \thisv Level~2 algorithms, the state vector
 consists of ``chunks'' of several profiles of atmospheric temperature and
@@ -98,15 +99,15 @@ spacecraft ephemeris and attitude determination.
 Most of the MLS data products are deduced from observations of spectral
 contrast, that is, variations in radiance as a function of frequency for
 a given limb pointing.  Many of the systematic errors in the MLS
-measurement system manifest themselves as a spectrally flat error in
-radiance.  This is true of both instrumental effects such as variations
-in instrument gain and offset during the limb scan, and ``forward
-model'' effects such as knowledge of continuum emission and the impact
-of some approximations made in the forward model in order to increase
-its speed.  In order to account for such effects, the \thisv algorithms
-also retrieve spectrally flat (or slowly spectrally varying) corrections
-to the MLS radiances, either in terms of an additive radiance offset or
-an additive atmospheric extinction.
+measurement system manifest themselves as a spectrally flat or slowly
+spectrally varying error in radiance.  This is true of both instrumental
+effects such as variations in instrument gain and offset during the limb
+scan, and ``forward model'' effects such as knowledge of continuum
+emission and the impact of some approximations made in the forward model
+in order to increase its speed.  In order to account for such effects,
+the \thisv algorithms also retrieve spectrally flat (or slowly
+spectrally varying) corrections to the MLS radiances, either in terms of
+an additive radiance offset or an additive atmospheric extinction.
 
 \section{The Core, Core+Rn approach}
 
@@ -198,53 +199,57 @@ which phase are given in table~\ref{tab:StandardProducts}.
     Core+R3 phase.} & \textbf{Measurements} &
 \textbf{Comment} \\
 \midrule
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Init-pTan} &
 \species{T, pTan (GHz), GPH} & 
 \measurements{R1A \& R1B~(118\,GHz)} & 
 \tablecomments{Initial estimate of P/T, lower limit 261\,hPa} \\
 
+\flipfloprow
 \phase{Init-R2} &
 \species{H\cs2O, N\cs2O, CH\cs3CN, HCN, ClO, HNO\cs3, O\cs3, SO\cs2} &
 \measurements{R2~(190\,GHz)} &
 \tablecomments{Initial trace gas estimator, lower limit 100\,hPa} \\
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Update-pTan} &
 \species{T, pTan~(GHz), GPH} & 
 \measurements{R1A \& R1B~(118\,GHz)} &
 \tablecomments{Better P/T estimate, lower limit 261\,hPa} \\ 
 
+\flipfloprow
 \phase{Init-Ext} &
 \species{240\,GHz extinction} &
 \measurements{R3~(240\,GHz), single channel} &
 \tablecomments{Initial R3 extinction estimate, lower limit 464\,hPa} \\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Final-Ext} &
 \species{240\,GHz extinction, O\cs3} &
 \measurements{R3~(240\,GHz)} &
 \tablecomments{Better R3 extinction and P/T estimate, lower limit
   261\,hPa.  Also used for cloud flagging later P/T retrievals} \\
 
+\flipfloprow
 \phase{Final-pTan} &
 \species{T, pTan~(GHz), GPH} & 
 \measurements{R1A \& R1B~(118\,GHz), R3~(240\,GHz)} &
 \tablecomments{Best P/T retrieval, lower limit 261\,hPa} \\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Init-RHi} &
 \species{UT RHi} &
 \measurements{R2~(190\,GHz)} &
 \tablecomments{Retrieve RHi in a \texttildelow6\,km-layer centered
   400\,--\,600\,hPa.  Uses only saturated radiances} \\ 
 
+\flipfloprow
 \phase{Init-UTH} &
 \species{Upper tropospheric H\cs2O} & 
 \measurements{R2~(190\,GHz)} &
 \tablecomments{Low vertical resolution (6/decade)} \\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{R3Init-RHi} &
 \species{UT RHi\footnote{\sffamily RHi from the R3 phases serves as an
     extinction/baseline quantity, but expressed in percent RHi units.}} & 
@@ -256,42 +261,45 @@ which phase are given in table~\ref{tab:StandardProducts}.
  --- & --- & \tablecomments{Product collation, and cloud flagging} \\
 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Core+R3} & \species{T, pTan~(GHz), GPH, O\cs3\footnote{\sffamily On high vertical resolution
     grid}, CO, HNO\cs3, SO\cs2,
   RHi$^b$} &
 \measurements{R1A \& R1B~(118\,GHz), R3~(240\,GHz)} &
 \tablecomments{Retrievals down to 316\,hPa}\\ 
 
+\flipfloprow
 \phase{Core+R2} &
 \species{H\cs2O, N\cs2O, HNO\cs3, ClO, O\cs3, HCN, CH\cs3CN, SO\cs2} &
 \measurements{R1A \& R1B~(118\,GHz), R2~(190\,GHz)} & 
 \tablecomments{H\cs2O retrieved down to 316\,hPa, other species 100\,hPa
 (note no T, pTan, GPH retrieval)} \\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{High-Cloud} &
 \species{Cloud induced radiance, IWC, IWP} &
 --- &
 \tablecomments{Used for flagging clouds in Core+R3 and later phases and
   forms basis for cloud ice products.} \\ 
 
+\flipfloprow
 \phase{Core+R4A~(B14)} & \species{ClO, BrO, HO\cs2, HOCl,
   HCl, O\cs3, HNO\cs3, CH\cs3CN, SO\cs2, CH\cs3Cl} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa}\\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Core+R4A~(B13)} & \species{HCl, O\cs3, SO\cs2} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa. This phase only performed when
   MLS band~13 is operating}\\ 
 
+\flipfloprow
 \phase{Core+R4B} & \species{N\cs2O, SO\cs2} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa}\\ 
 
-\rowcolor{lightgrey} 
+\flipfloprow
 \phase{Core+R5} & \species{T, pTan~(GHz,~THz), GPH, OH, O\cs3} &
 \measurements{R1A \& R1B~(118\,GHz), R5H and R5V~(2.5\,THz)} &
 \tablecomments{Retrievals down to 68\,hPa (147\,hPa for Temperature)} \\
@@ -312,33 +320,41 @@ which phase are given in table~\ref{tab:StandardProducts}.
   \textbf{Product} & \textbf{Origin} & \textbf{Spectral region}\\
   \midrule
   BrO       & Core+R4A (B14) & 640\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   CH\cs3Cl  & Core+R4A (B14) & 640\,GHz \\
+  \flipfloprow 
   CH\cs3CN  & Core+R4A (B14) & 640\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   ClO       & Core+R4A (B14) & 640\,GHz \\
+  \flipfloprow 
   CO        & Core+R3 & 240\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   H\cs2O    & Core+R2 & 190\,GHz \\
+  \flipfloprow 
   HCl       & Core+R4A (B14) & 640\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   HCN       & Core+R2 & 190\,GHz \\ 
+  \flipfloprow 
   HNO\cs3   & \mybox{5cm}{Core+R2 (15\,hPa and less) \\ Core+R3 (larger
     than 15\,hPa)} &
   \mybox{2.5cm}{190\,GHz\\240\,GHz} \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   HO\cs2    & Core+R4A (B14) & 640\,GHz \\
+  \flipfloprow 
   HOCl      & Core+R4A (B14) & 640\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   IWC       & High-Cloud & 240\,GHz \\
+  \flipfloprow 
   IWP       & High-Cloud & 240\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   N\cs2O    & Core+R4B & 640\,GHz \\ 
+  \flipfloprow 
   O\cs3     & Core+R3 & 240\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   OH        & Core+R5 & 2.5\,THz \\
+  \flipfloprow 
   RHi       & \parbox[m]{1.5in}{\raggedright Computed from Temperature and H\cs2O} & 190\,GHz \\
-  \rowcolor{lightgrey} 
+  \flipfloprow 
   Temperature & Final-pTan & 118 \& 240\,GHz \\
   \bottomrule
 \end{tabular}
@@ -370,22 +386,14 @@ are pre-computed radiances and derivatives corresponding to the
 pre-selected states, generated by ``off-line'' runs of the full forward
 model.
 
-This model is by its nature approximate.  Many of the biases and
-unexpected scatter seen in the \thisv simulation studies can be attributed
-to inaccuracies in this model.  The model accuracy is a function of the
-proximity of the retrieved state to the pre-selected state used.  The
-pre-selected states are taken from climatological fields for fixed
-latitudes and calendar months.  In regions where the atmosphere departs
-dramatically from the climatological values (e.g.,\ in the winter polar
-vortices), the model will generally be poorer than in other locations,
-giving rise to stronger biases.
-
-In addition, a ``cloud'' forward model can be invoked to model the
-effects of scattering from cloud particles in the troposphere and lower
-stratosphere \citep{EOSMLSCloudATBD}.  This model was used in the
-simulation of radiances based on known model atmospheres for the \thisv
-testing, but is not invoked in the \thisv retrieval algorithms (the
-handling of clouds is described in more detail in
+This model is by its nature approximate, and its use is generally
+confined to the upper stratosphere and mesosphere where retrievals are
+more linear in nature.  In addition, a ``cloud'' forward model can be
+invoked to model the effects of scattering from cloud particles in the
+troposphere and lower stratosphere \citep{EOSMLSCloudATBD}.  This model
+was used in the simulation of radiances based on known model atmospheres
+for the \thisv testing, but is not invoked in the \thisv retrieval
+algorithms (the handling of clouds is described in more detail in
 section~\ref{sec:Clouds}).
 
 \section{The handling of clouds in \thisv}
@@ -397,15 +405,14 @@ composition measurements as the typical particle sizes are much smaller
 than the wavelengths of the radiation being observed. The MLS \thisv
 algorithms can reliably retrieve composition in moderately cloudy cases
 (having small limb radiance perturbations) and in the case of the
-Core+R3 retrieval this is handled by retrieving RHi, acting as a
-frequency squared dependent extinction (including background atmospheric
-absorption from N\cs2, H\cs2O and unknown emitters).  In the other
-retrieval phases, by contrast, a spectrally-flat baseline is used.
-However, optically thick clouds can affect the MLS radiances beyond the
-modeling capability of this approach, mainly through scattering
-processes.  Such situations need to be identified and the affected
-radiances excluded from the retrievals, or their influence
-down-weighted.
+Core+R3 retrieval this is handled by retrieving a frequency squared
+dependent extinction (including background atmospheric absorption from
+N\cs2, H\cs2O and unknown emitters).  In the other retrieval phases, by
+contrast, a spectrally-flat baseline is used.  However, optically thick
+clouds can affect the MLS radiances beyond the modeling capability of
+this approach, mainly through scattering processes.  Such situations are
+and the affected radiances excluded from the retrievals, or their
+influence down-weighted.
 
 The first aspect of handling clouds in \thisv is therefore the flagging of
 radiances that are believed to be significantly contaminated by cloud
@@ -416,13 +423,14 @@ radiance from a forward model calculation assuming clear-sky conditions.
 Specific window channels (those that see deepest into the atmosphere) in
 each radiometer are chosen to set these flags.
 
-In the case of the 240\,GHz radiometer (\texttt{R3:240}), instead of
-computing a \Tcir\ parameter, the fit achieved in an early retrieval
-phase to the \texttt{B8F:PT} band (that measures the 233.9-GHz O\cp{18}O
-line), as quantified by a $\chi^2$-metric is used as an indicator of
-potential significant cloud-contamination.  In computing \Tcir\ for the
-other radiometers, the forward model calculation takes the best
-retrieved atmospheric state, with relative humidity capped at 110\%.
+\mycomment{Check with Bill on this next paragraph} In the case of the
+240\,GHz radiometer (\texttt{R3:240}), instead of computing a \Tcir\
+parameter, the fit achieved in an early retrieval phase to the
+\texttt{B8F:PT} band (that measures the 233.9-GHz O\cp{18}O line), as
+quantified by a $\chi^2$-metric is used as an indicator of potential
+significant cloud-contamination.  In computing \Tcir\ for the other
+radiometers, the forward model calculation takes the best retrieved
+atmospheric state, with relative humidity capped at 110\%.
 
 Where the \Tcir\ (or $\chi^2$ for \texttt{R3:240}) values are
 sufficiently large (see Table~\ref{tab:CloudThresholds}), the radiances
@@ -455,14 +463,14 @@ section~\ref{sec:StandardIWC}.
 \textbf{Low threshold} & \textbf{High threshold} \\
 \midrule
 %
-\rowcolor{lightgrey}
+\flipfloprow
 R1[A/B]:118 & B[32/34]W:PT.C4 & 115.3 (LSB only) & $\Tcir <
 -$4\,K & none \\
 %
 R2:190 & B5F:ClO.C1 & 178.8 / 204.9 & $\Tcir <
 -$20\,K & $\Tcir > $10\,K \\
 %
-\rowcolor{lightgrey}
+\flipfloprow
 R3:240 & B8F:PT & 233.4--234.5 / 244.8--245.9 & none &
 $\chi^2>$30 \\
 %
@@ -500,15 +508,15 @@ has been quantified by running perturbed radiances through the MLS data
 processing algorithms.  Other (typically smaller) uncertainty sources
 have been quantified by simple perturbation calculations.
 
-Although the term `systematic uncertainty' is often associated with
-consistent biases and/or scaling errors, many sources of `systematic'
+Although the term ``systematic uncertainty'' is often associated with
+consistent biases and/or scaling errors, many sources of ``systematic''
 error in the MLS measurement system give rise to additional scatter.
 For example, an error in the O\cs3 spectroscopy, while being a bias on
 the fundamental parameter, will have an impact on the retrievals of
 species with weaker signals (e.g., CO) that is dependent on the amount
 and morphology of atmospheric ozone.  The extent to which such terms can
-be expected to average down is estimated to first order by these `full
-up studies' through their separate consideration of the bias and scatter
+be expected to average down is estimated to first order by these ``full
+up studies'' through their separate consideration of the bias and scatter
 each uncertainty source introduces.
 
 The results of these studies are summarized as ``accuracy'' (and in some
@@ -537,13 +545,15 @@ typical value of one.  For some species, however, because of uncertain
 knowledge of spectroscopy and/or instrument calibration, the \thisv
 algorithms are known to be consistently unable to fit some observed
 radiances to within their predicted noise.  In many of these cases, the
-noise reported on the radiances has been `inflated' to allow the
+noise reported on the radiances has been ``inflated'' to allow the
 retrieval more leeway in fitting to radiances known to be challenging.
 As the noise level is the denominator in the $\chi^2$ statistic, these
 species will have typical $\chi^2$ statistics that are less than one and
 thus typical values of \texttt{Quality} higher than one.  Accordingly,
 differences in \texttt{Quality} from one species to another do not
-reflect the species' relative validity.
+reflect the species' relative validity, nor do version-to-version
+changes in \texttt{Quality} for a given product necessarily reflect an
+improvement.
 
 %%% Local Variables: 
 %%% mode: latex

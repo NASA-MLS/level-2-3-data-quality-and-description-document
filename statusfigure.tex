@@ -6,7 +6,7 @@
 \newlength{\meaningheight}
 \setlength{\meaningheight}{-1.5cm}
 \newlength{\xpos}
-\setlength{\xpos}{10.8cm}
+\setlength{\xpos}{10.6cm}
 \newlength{\ypos}
 \setlength{\ypos}{-1.5cm}
 \begin{tikzpicture}
@@ -33,11 +33,11 @@
 \newcommand{\meaningbox}[2]{\parbox{5cm}{\raggedright\textbf{#1} #2}}
 \begin{scope}[inner sep=0pt, outer sep=4pt, anchor=west]
 \node (m0) at (\xpos,\ypos+0\meaningheight) {\meaningbox{Flag -- Bad Profile:}%
-  {Do not use this profile (see `information' bits for an explanation).}};
+  {Do not use this profile (see ``information'' bits for an explanation).}};
 \node (m1) at (\xpos,\ypos+1\meaningheight) {\meaningbox{Flag -- Warning:}%
-  {This profile is questionable (see `information' bits for an explanation).}};
+  {This profile is questionable (see ``information'' bits for an explanation).}};
 \node (m2) at (\xpos,\ypos+2\meaningheight) {\meaningbox{Flag -- Comment}%
-  {See `information' bits for additional comments concerning this profile.}};
+  {See ``information'' bits for additional comments concerning this profile.}};
 %
 % Nudge a bit
 %
