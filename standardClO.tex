@@ -9,110 +9,114 @@
 
 The quality and reliability of the version~2 (v2.2) Aura MLS ClO
 measurements were assessed in detail by \citet{SanteeEtal08clo}.  The
-ClO product has been significantly improved in \thisv; in particular, the
-substantial (\texttildelow0.1--0.4\,ppbv) negative bias present in the v2.2 ClO
+ClO product was significantly improved in \prevv
+\citep{LiveseyEtal13qualdoc}; in particular, the substantial
+(\textasciitilde0.1--0.4\,ppbv) negative bias present in the v2.2 ClO
 values at retrieval levels below (i.e., pressures larger than) 22\,hPa
-has been largely mitigated, primarily through retrieval of CH\cs3Cl (a
-new MLS product in \thisv).
+was mitigated to a large extent, primarily through retrieval of
+CH\cs3Cl, which was a new MLS product in \prevv.  The ClO retrieval is
+largely unchanged over much of the profile in \thisv.
 
-As in v2.2, in \thisv the standard ClO product is derived from radiances
-measured by the radiometer centered near 640\,GHz.  (ClO is also
-retrieved using radiances from the \mbox{190-GHz} radiometer, but these
-data have poorer precision.)  The MLS \thisv ClO data are scientifically
-useful over the range 147 to 1\,hPa.  A summary of the precision and
-resolution (vertical and horizontal) of the \thisv ClO measurements as a
-function of altitude is given in Table~\ref{tab:ClOSummary}.  The impact
-of various sources of systematic uncertainty on the ClO retrievals was
-quantified in detail for v2.2 data \citep{SanteeEtal08clo};
-Table~\ref{tab:ClOSummary} also includes estimates of the potential
-biases and scaling errors in the measurements compiled from that
-analysis under the assumption that most of the sources of uncertainty 
-affect \thisv retrievals in a similar manner.  The overall uncertainty for
-an individual data point is determined by taking the root sum square
-(RSS) of the precision, bias, and scaling error terms (for averages, the
-single-profile precision value is divided by the square root of the
-number of profiles contributing to the average).  More details on the
-precision, resolution, and accuracy of the MLS \thisv ClO measurements are
-given below.
+As in previous versions, in \thisv the standard ClO product is derived
+from radiances measured by the radiometer centered near 640\,GHz.
+(ClO is also retrieved using radiances from the \mbox{190-GHz}
+radiometer, but these data have poorer precision.)  The MLS \thisv ClO
+data are scientifically useful over the range 147 to 1\,hPa.  A
+summary of the precision and resolution (vertical and horizontal) of
+the \thisv ClO measurements as a function of altitude is given in
+Table~\ref{tab:ClOSummary}.  The impact of various sources of
+systematic uncertainty on the ClO retrievals was quantified in detail
+for v2.2 data \citep{SanteeEtal08clo}; Table~\ref{tab:ClOSummary} also
+includes estimates of the potential biases and scaling errors in the
+measurements compiled from that analysis under the assumption that
+most of the sources of uncertainty affect \thisv retrievals in a
+similar manner.  The overall uncertainty for an individual data point
+is determined by taking the root sum square (RSS) of the precision,
+bias, and scaling error terms (for averages, the single-profile
+precision value is divided by the square root of the number of
+profiles contributing to the average).  More details on the precision,
+resolution, and accuracy of the MLS \thisv ClO measurements are given
+below.
 
 \subsection*{Resolution}
 \onestandardavk{ClO}{ClO}%
 
-The resolution of the retrieved data can be described using ``averaging
-kernels'' \citep[e.g.,][]{Rodgers00}; the two-dimensional nature of the
-MLS data processing system means that the kernels describe both vertical
-and horizontal resolution.  Smoothing, imposed on the retrieval system
-in both the vertical and horizontal directions to enhance retrieval
-stability and precision, degrades the inherent resolution of the
-measurements.  Consequently, the vertical resolution of the \thisv ClO
-data, as determined from the full width at half maximum of the rows of
-the averaging kernel matrix shown in Figure~\ref{fig:AvkClO}, is
-\texttildelow3--4.5\,km (with a mean of 3.5\,km).  Unlike in v2.2, which was
-characterized by considerable overlap in the averaging kernels for the
-100 and 147\,hPa retrieval surfaces, in \thisv the averaging kernels are
-sharply peaked at all levels, including 147\,hPa.  Thus, although some
-degree of overlap is still present, the 147\,hPa surface does provide
-independent information in v3.  Figure~\ref{fig:AvkClO} also shows
-horizontal averaging kernels, from which the along-track horizontal
-resolution is determined to be \texttildelow250--500\,km over most of the
-vertical range.  The cross-track resolution, set by the width of the
-field of view of the \mbox{640-GHz} radiometer, is \texttildelow3\,km.  The
-along-track separation between adjacent retrieved profiles is
-1.5$^\circ$ great circle angle (\texttildelow165\,km), whereas the longitudinal
-separation of MLS measurements, set by the Aura orbit, is
-10$^\circ$--20$^\circ$ over low and middle latitudes, with much finer
-sampling in the polar regions.
+The resolution of the retrieved data can be described using
+``averaging kernels'' \citep[e.g.,][]{Rodgers00}; the two-dimensional
+nature of the MLS data processing system means that the kernels
+describe both vertical and horizontal resolution.  Smoothing, imposed
+on the retrieval system in both the vertical and horizontal directions
+to enhance retrieval stability and precision, degrades the inherent
+resolution of the measurements.  Consequently, the vertical resolution
+of the \thisv ClO data, as determined from the full width at half
+maximum of the rows of the averaging kernel matrix shown in
+Figure~\ref{fig:AvkClO}, is \textasciitilde3--4.5\,km (with a mean of
+\textasciitilde3.5\,km).  As in \prevv, in \thisv the averaging
+kernels are sharply peaked at all levels, including 147\,hPa.  Thus,
+although some degree of overlap is present, the 147\,hPa surface
+provides independent information in \thisv.  Figure~\ref{fig:AvkClO}
+also shows horizontal averaging kernels, from which the along-track
+horizontal resolution is determined to be \textasciitilde250--500\,km
+over most of the vertical range.  The cross-track resolution, set by
+the width of the field of view of the \mbox{640-GHz} radiometer, is
+\textasciitilde3\,km.  The along-track separation between adjacent
+retrieved profiles is 1.5{\degsym} great circle angle
+(\textasciitilde165\,km), whereas the longitudinal separation of MLS
+measurements, set by the Aura orbit, is 10{\degsym}--20{\degsym} over
+low and middle latitudes, with much finer sampling in the polar
+regions.
 
 \subsection*{Precision}
 
 \begin{figure}
-\centering\dontincludegraphics[width=8.4cm]{figures/ComparePrecision2Panel-clo}
-\caption{Precision of the (left) \thisv and (right) v2.2 MLS ClO
+\centering\includegraphics[width=8.4cm]{figures/ComparePrecision2Panel-clo}
+\caption{Precision of the (left) \thisv and (right) \prevv MLS ClO
   measurements for four representative days in different seasons (see
   legend).  Solid lines depict the observed scatter in nighttime-only
   measurements obtained in a narrow equatorial band (see text); dotted
   lines depict the theoretical precision estimated by the retrieval
-  algorithm.  }
+  algorithm.}
 \label{fig:ClOPrecProf}
 \end{figure}
 
 The precision of the MLS ClO measurements is estimated empirically by
 computing the standard deviation of the descending (i.e., nighttime)
-profiles in the 20$^\circ$-wide latitude band centered around the
+profiles in the 20{\degsym}-wide latitude band centered around the
 equator.  For this region and time of day, natural atmospheric
-variability should be negligible relative to the measurement noise.  As
-shown in Figure~\ref{fig:ClOPrecProf}, the observed scatter in the data
-is essentially unchanged in \thisv, rising from \texttildelow0.1\,ppbv over the
-interval 100 -- 3\,hPa to \texttildelow0.3\,ppbv at 1\,hPa (and also 147\,hPa).
-The smoothing of the retrieval is turned off above 1\,hPa, and as a
-consequence the precision rises steeply above this level.  The scatter
-in the data is essentially invariant with time, as seen by comparing the
-results for the different days shown in Figure~\ref{fig:ClOPrecProf}.
+variability should be negligible relative to the measurement noise.
+As shown in Figure~\ref{fig:ClOPrecProf}, the observed scatter in the
+data is essentially unchanged in \thisv, rising from
+\textasciitilde0.1\,ppbv over the interval 100 -- 3\,hPa to
+\textasciitilde0.3\,ppbv at 1\,hPa and 147\,hPa.  The smoothing of the
+retrieval is turned off above 1\,hPa, and as a consequence the
+precision rises steeply above this level.  The scatter in the data is
+essentially invariant with time, as seen by comparing the results for
+the different days shown in Figure~\ref{fig:ClOPrecProf}.
 
 The single-profile precision estimates cited here are, to first order,
-independent of latitude and season, but of course the scientific utility
-of individual MLS profiles (i.e., signal to noise) varies with ClO
-abundance.  Outside of the lower stratospheric winter polar vortices,
-within which ClO is often strongly enhanced, the single-profile
-precision exceeds typical ClO mixing ratios, necessitating the use of
-averages for scientific studies.  In most cases, precision can be
-improved by averaging, with the precision of an average of $N$ profiles
-being 1/$\sqrt{N}$ times the precision of an individual profile (note
-that this is not the case for averages of successive along-track
-profiles, which are not completely independent because of horizontal
-smearing).
+independent of latitude and season, but of course the scientific
+utility of individual MLS profiles (i.e., signal to noise) varies with
+ClO abundance.  Outside of the lower stratospheric winter polar
+vortices, within which ClO is often strongly enhanced, the
+single-profile precision exceeds typical ClO mixing ratios,
+necessitating the use of averages for scientific studies.  Precision
+can generally be improved by averaging, with the precision of an
+average of $N$ profiles being 1/$\sqrt{N}$ times the precision of an
+individual profile (although the actual standard error of the mean can
+in some cases be even smaller \citep{TooheyvonClarmann13}).
 
 The observational determination of the precision is compared in
 Figure~\ref{fig:ClOPrecProf} to the theoretical precision values
 reported by the Level~2 data processing algorithms.  The predicted
 precision exceeds the observed scatter, particularly above 15\,hPa,
-indicating that the vertical smoothing applied to stabilize the
-retrieval and improve the precision has a nonnegligible influence on the
-results at these levels.  Because the theoretical precisions take into
-account occasional variations in instrument performance, the best
-estimate of the precision of an individual data point is the value
-quoted for that point in the L2GP files, but it should be borne in mind
-that this approach slightly overestimates the actual measurement noise.
+indicating that the vertical smoothing (regularization) applied to
+stabilize the retrieval and improve the precision has a nonnegligible
+influence on the results at these levels.  Because the theoretical
+precisions take into account occasional variations in instrument
+performance, the best estimate of the precision of an individual data
+point is the value quoted for that point in the L2GP files, but it
+should be borne in mind that this approach slightly overestimates the
+actual measurement noise.
 
 \subsection*{Accuracy}
 
@@ -120,108 +124,135 @@ The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
 the retrieval formulation and implementation) on the MLS v2.2 ClO
 measurements were quantified through a comprehensive set of retrieval
-simulations; see \citet{SanteeEtal08clo} for details of how the analysis
-was conducted and the magnitude of the expected biases, additional
-scatter, and possible scaling errors each source of uncertainty may
-introduce into the data.  In aggregate, systematic uncertainties were
-estimated to induce in the v2.2 ClO measurements biases of
-\mbox{\texttildelow$\pm$0.1\,ppbv} from 100 to 32\,hPa and less than
-$\pm$0.05\,ppbv above 22\,hPa and multiplicative errors of
-\mbox{\texttildelow$\pm$5--20\%} throughout the stratosphere. 
+simulations; see \citet{SanteeEtal08clo} for details of how the
+analysis was conducted and the magnitude of the expected biases,
+additional scatter, and possible scaling errors each source of
+uncertainty may introduce into the data.  In aggregate, systematic
+uncertainties were estimated to induce in the v2.2 ClO measurements
+biases of \mbox{\textasciitilde$\pm$0.1\,ppbv} from 100 to 32\,hPa and
+less than $\pm$0.05\,ppbv above 22\,hPa and multiplicative errors of
+\mbox{\textasciitilde$\pm$5--20\%} throughout the stratosphere.
+Uncertainties are expected to be of similar magnitude in \thisv, but a
+comprehensive \thisv systematic error analysis will be the subject of
+future work.
 
 \begin{figure}
-\centering\dontincludegraphics[width=10.0cm]{figures/clov3v2bylat}
-\caption{ Nighttime \thisv (red) and v2.2 (black) MLS ClO data as a
+\begin{center}
+\includegraphics[width=0.3\linewidth]{figures/InspectZMContour_ClO--v4-1_ClO--v3-3_2009m04_LatPress-All-noScreen-panel1}
+\includegraphics[width=0.3\linewidth]{figures/InspectZMContour_ClO--v4-1_ClO--v3-3_2009m04_LatPress-All-noScreen-panel2}
+\includegraphics[width=0.3\linewidth]{figures/InspectZMContour_ClO--v4-1_ClO--v3-3_2009m04_LatPress-All-noScreen-panel3}
+\end{center}
+\caption{Zonal averages of MLS ClO profiles from the month of April
+  2009, showing the MLS \thisv mixing ratios (left), the \prevv mixing
+  ratios (middle), and their differences in ppbv (\prevv minus \thisv,
+  right) as a function of pressure.  The month shown represents
+  typical conditions during the Northern Hemisphere late spring /
+  Southern Hemisphere early autumn, when ClO is not enhanced in the
+  polar lower stratosphere in either hemisphere.}
+\label{fig:zmcontourClO}
+\end{figure}
+
+Differences between \thisv and \prevv ClO mixing ratios are generally
+less than 0.04\,ppbv (usually considerably so) at and above (i.e., at
+pressures lower than) 68\,hPa, including around the secondary peak in
+the ClO profile in the upper stratosphere
+(Figure~\ref{fig:zmcontourClO}).  Significant differences (as much as
+0.1\,ppbv) are seen at the lowest retrieval levels, however.
+Figure~\ref{fig:clov3v2bylat} depicts nighttime mixing ratios for a
+single representative day in Southern Hemisphere late spring /
+Northern Hemisphere early autumn for which ClO is not enhanced in the
+polar lower stratosphere in either hemisphere; a similar plot for a
+corresponding day in Northern Hemisphere late spring / Southern
+Hemisphere early autumn gives very similar results. This figure shows
+that a small, somewhat latitude-dependent, negative bias is still
+evident at 68 and 100\,hPa in \thisv, of approximately the same
+magnitude as in \prevv at 68\,hPa but a little larger at 100\,hPa,
+especially in the Northern Hemisphere.  At 147\,hPa, \prevv displays a
+strongly latitudinally varying bias that is positive at middle and low
+latitudes and slightly negative in the polar regions (at least on some
+days).  In \thisv, ClO mixing ratios at 147\,hPa are slightly lower
+than they were in \prevv, and consequently the low-latitude positive
+bias has been reduced, although it remains substantial (exceeding
+0.7\,ppbv in some cases), and the high-latitude negative bias has been
+exacerbated.
+
+\begin{figure}
+\centering\includegraphics[width=10.0cm]{figures/clov4v3bylat-5Nov09}
+\caption{Nighttime \thisv (red) and \prevv (black) MLS ClO data as a
   function of latitude for the six lowest retrieval pressure surfaces
   (21--147\,hPa).  The date shown is representative of a typical
-  northern hemisphere late spring / southern hemisphere early autumn day
-  for which ClO is not enhanced in the lower stratosphere in either
-  hemisphere.}
+  Southern Hemisphere late spring / Northern Hemisphere early autumn
+  day for which ClO is not enhanced in the polar lower stratosphere in
+  either hemisphere.}
 \label{fig:clov3v2bylat}
 \end{figure}
 
-Differences between \thisv and v2.2 ClO mixing ratios are generally less
-than 0.05\,ppbv (often considerably so) above 32\,hPa.
-Figure~\ref{fig:clov3v2bylat}, which depicts results for a single
-representative day, shows that the substantial bias present in the v2.2
-(and earlier) MLS ClO data at the lowest retrieval levels (pressures
-greater than 22\,hPa) is greatly ameliorated in \thisv.  In particular,
-virtually no bias remains at 32 and 46\,hPa.  Although a small negative
-bias is still evident at 68\,hPa, it displays less latitudinal variation
-than in v2.2.  The bias is also considerably smaller at 100\,hPa but
-still varies with latitude, with a smaller correction needed in the
-tropics.  Finally, at 147\,hPa, which was not formerly a recommended
-level, there is a strongly latitudinally-varying bias, positive over
-most of the globe but slightly negative in the polar regions.
-
 In many cases the bias can be essentially eliminated by subtracting
-daily gridded or zonal-mean nighttime values from the individual daytime
-measurements.  This is not a practical approach under conditions of
-continuous daylight or continuous darkness in the summer or winter at
-high latitudes, however.  Moreover, under certain circumstances inside
-the winter polar vortices, chlorine activation leads to nonnegligible
-ClO abundances even at night.  In this case, taking day$-$night
-differences considerably reduces the apparent degree of chlorine
-activation.  It is instead recommended that the estimated value of the
-bias be subtracted from the individual measurements at each affected
-retrieval level.
+daily gridded or zonal-mean nighttime values from the individual
+daytime measurements.  This is not a practical approach under
+conditions of continuous daylight or continuous darkness in the summer
+or winter at high latitudes, however.  Moreover, under certain
+circumstances inside the winter polar vortices, chlorine activation
+leads to nonnegligible ClO abundances even at night.  In this case,
+taking day$-$night differences considerably reduces the apparent
+degree of chlorine activation.  It is instead recommended that the
+estimated value of the bias be subtracted from the individual
+measurements at each affected retrieval level.
 
 \begin{figure}
-\centering\dontincludegraphics[width=15.0cm]{figures/plotBiasV3ByMonth}
-\caption{ Estimates of the bias in MLS \thisv ClO data in 5$^\circ$-wide
-  geographic latitude bands on the 147, 100, and 68\,hPa MLS retrieval
-  pressure surfaces (see legend).  Each panel shows monthly zonal means
-  of MLS nighttime (solar zenith angle (SZA) $>$ 100$^\circ$) ClO
-  measurements from 2005 (filled circles) and 2006 (open circles). The
-  dotted line marks the zero level.  The colored solid lines denote the
-  overall mission (6$^+$ years) global mean bias estimate at each
-  level. }
+\centering\includegraphics[width=15.0cm]{figures/plotBiasV4ByMonth}
+\caption{Estimates of the bias in MLS \thisv ClO data in
+  5{\degsym}-wide geographic latitude bands on the 147, 100, and
+  68\,hPa MLS retrieval pressure surfaces (see legend).  Each panel
+  shows monthly zonal means of \thisv MLS nighttime (solar zenith
+  angle (SZA) $>$ 100{\degsym}) ClO measurements from 2009 (filled
+  circles).  The grey line marks the zero level.  The colored solid
+  lines denote the global mean bias estimate at each level for 2009.
+  The \thisv results are compared against corresponding \prevv data
+  (open circles and dotted lines). To ensure that ClO was not
+  enhanced, consideration was restricted to latitudes equatorward of
+  50{\degsym}S for the days between 1~May and 1~November and to
+  latitudes equatorward of 50{\degsym}N for the days between
+  1~December and 1~April.}
 \label{fig:cloBiasByMonth}
 \end{figure}
 
-To investigate the magnitude of the bias in the \thisv MLS ClO data and
-the temporal variations in it, we show in
-Figure~\ref{fig:cloBiasByMonth} monthly zonal means of MLS nighttime ClO
-measurements from two years (2005 and 2006) for pressure levels
-147--68\,hPa.  For each panel, a calendar month of data in each year is
-binned and averaged in 5$^\circ$-wide latitude bands between
-$\pm$85$^\circ$.  Figure~\ref{fig:cloBiasByPress} is a similar plot, but
-encompasses all of the MLS nighttime ClO data over the entire 6$^+$-year
-mission for pressure levels 147--10\,hPa.  To guide the eye, the overall
-mission global mean value of the bias is indicated for each level
-(colored solid lines) in both figures.  As discussed above, the
+To investigate the magnitude of the bias in the \thisv MLS ClO data
+and the temporal variations in it, we show in
+Figure~\ref{fig:cloBiasByMonth} monthly zonal means of MLS nighttime
+ClO measurements from 2009 for pressure levels 147--68\,hPa.  For each
+panel, a calendar month of data is binned and averaged in
+5{\degsym}-wide latitude bands between $\pm$85{\degsym}.
+Figure~\ref{fig:cloBiasByPress} is a similar plot, but encompasses all
+of the MLS nighttime ClO data from 2009 for pressure levels
+147--10\,hPa.  To guide the eye, the global mean value of the bias
+from 2009 is indicated for each level (colored solid lines) in both
+figures.  In Figure~\ref{fig:cloBiasByMonth}, the corresponding \prevv
+data are also shown for comparison.  As discussed above, the
 magnitude, and at 147\,hPa even the sign, of the bias varies with
 latitude, and Figures~\ref{fig:cloBiasByMonth} and
-\ref{fig:cloBiasByPress} make clear that application of a constant bias
-correction for all latitudes is not appropriate.  However, although
-Figure~\ref{fig:cloBiasByMonth} reveals significant month-to-month and,
-in some cases, interannual variability, for most studies a
-time-invariant latitudinally-varying bias correction is adequate.  An
-ASCII file containing the altitude- and latitude-dependent \thisv ClO bias
-correction values is available from the MLS web site.  We are in the
-process of exploring whether the bias in the ClO data can be
-characterized as a function of geophysical rather than geographic
-variables; for example, we are investigating the efficacy of a
-correction formulated in terms of quantities, such as ozone and
-temperature, most likely to be giving rise to the spectral features that
-induce the bias.
+\ref{fig:cloBiasByPress} make clear that application of a constant
+bias correction for all latitudes is not appropriate.  However,
+although Figure~\ref{fig:cloBiasByMonth} reveals significant
+month-to-month variability, for most studies a time-invariant
+latitudinally varying bias correction is adequate.  An ASCII file
+containing the altitude- and latitude-dependent \thisv ClO bias
+correction values \mycomment{will be made} available from the MLS web
+site \mycomment{once more data from the mission have been reprocessed
+  to \thisv}.
 
 \begin{figure}
-\centering\dontincludegraphics[width=8.4cm]{figures/plotBiasV3}
-\caption{ Estimates of the bias in MLS \thisv ClO data in 5$^\circ$-wide
-  geographic latitude bands on MLS retrieval pressure surfaces from 147
-  to 10\,hPa (see legend) calculated from the entire mission data set
-  for which \thisv data were available at the time of writing (1720 days
-  spanning all seasons).  To ensure that ClO was not enhanced,
-  consideration was restricted to latitudes equatorward of 50$^\circ$S
-  for the days between 1~May and 1~November and to latitudes equatorward
-  of 50$^\circ$N for the days between 1~December and 1~April. Vertical
-  error bars reflect the standard deviations in the averages in each
-  latitude bin of the values from the 24 months (2005 and 2006)
-  represented in Figure~\ref{fig:cloBiasByMonth}. The colored solid
-  lines denote the overall mission global mean bias estimate at each
-  level.  Note that the large positive bias at low latitudes at 147\,hPa
-  is cut off in this figure. }
+  \centering\includegraphics[width=8.4cm]{figures/plotBiasV4}
+\caption{Estimates of the bias in MLS \thisv ClO data in
+  5{\degsym}-wide geographic latitude bands on MLS retrieval pressure
+  surfaces from 147 to 10\,hPa (see legend) calculated for data from
+  2009.  To ensure that ClO was not enhanced, consideration was
+  restricted to latitudes equatorward of 50{\degsym}S for the days
+  between 1~May and 1~November and to latitudes equatorward of
+  50{\degsym}N for the days between 1~December and 1~April.  The
+  colored solid lines denote the global mean bias estimate at each
+  level for 2009.  The large positive bias at low latitudes at
+  147\,hPa is cut off in this figure.}
 \label{fig:cloBiasByPress}
 \end{figure}
 
@@ -229,143 +260,10 @@ induce the bias.
 
 Extensive comparisons of MLS v2.2 ClO data with a variety of different
 platforms (ground-based, balloon-borne, aircraft, and satellite
-instruments) were presented by \citet{SanteeEtal08clo}.  Results from a
-subset of these comparisons repeated with \thisv ClO data are shown here.
-
-\begin{figure}
-\centering\dontincludegraphics[width=8.0cm]{figures/balloonClO-2005d264_v3}
-\caption{(Top) Path traversed by measurements from the balloon-borne
-  \mbox{SLS-2} instrument (cyan diamonds) during the flight from Ft.\
-  Sumner, NM, on 20--21~September 2005.  Measurement tracks from nearby
-  MLS ascending (daytime, open circles) and descending (nighttime,
-  filled circles) orbit legs are also shown.  The two MLS data points
-  closest to the balloon measurements geographically and temporally are
-  indicated by red squares, with the closer one denoted by a solid
-  symbol; the 500-km radius around the closest MLS point is overlaid in
-  black.  (Bottom) Profiles of ClO, corresponding to the symbols in the
-  top panel, from MLS (red squares) and \mbox{SLS-2} (cyan open and
-  solid diamonds).  Error bars represent the estimated precisions of
-  each instrument, taken from the data files.}
-\label{fig:balloon}
-\end{figure}
-
-As part of the Aura validation effort, measurements of ClO were obtained
-near Aura overpasses from the JPL Submillimeterwave Limb
-\mbox{Sounder-2} (\mbox{SLS-2}) during a balloon campaign carried out
-from Ft.\ Sumner, New Mexico, in September 2005. Comparisons between the
-balloon measurements and coincident MLS measurements are shown in
-Figure~\ref{fig:balloon}, where the MLS profiles are within 1$^\circ$ of
-latitude, 12$^\circ$ of longitude, and 4~hours of the balloon
-measurements.  Good agreement is seen in the upper stratosphere, in
-terms of both the altitude and the approximate magnitude of the
-high-altitude peak.  The two data sets also agree well throughout the
-lower stratosphere, except at 100 (147)~hPa, where a significant
-negative (positive) bias in the \thisv MLS ClO data is known to be present
-(see the previous subsection).
-
-\begin{figure}
-\centering\dontincludegraphics[width=8.4cm]{figures/SMRvsMLS_v03-30_CLO__5018_v3-30-AuraValDays-scatter}
-\caption{Scatter plot of coincident ClO profiles from MLS \thisv data
-  (red) and Odin/SMR Chalmers version~2.1 data (blue), as a function of
-  latitude for eight selected retrieval surfaces.  Overplotted are the
-  zonal-mean values calculated in 10$^\circ$-wide latitude bands for
-  both the MLS (yellow triangles) and SMR (cyan squares) data. }
-\label{fig:SMRscat}
-\end{figure}
-
-\begin{figure*}
-\centering
-\dontincludegraphics[width=7.5cm,angle=90.]{figures/SMRvsMLS_v03-30_CLO__5018_v3-30-AuraValDays-summary}
-\caption{Comparison of coincident ClO profiles from MLS \thisv data and
-  Odin/SMR Chalmers version~2.1 data.  (Left) Absolute differences
-  (MLS$-$SMR).  The black line with dots (symbols indicate MLS retrieval
-  surfaces) shows mean differences, the solid line shows the standard
-  deviation about the mean differences, and the dashed line shows the
-  root sum square of the theoretical precisions of the two data sets.
-  (Middle) Same, for percent differences, where percentages have been
-  calculated by dividing the mean differences by the global mean SMR
-  value at each surface. (Right) Global mean profiles for MLS (black
-  line with dots) and SMR (grey).  }
-\label{fig:SMRsum}
-\end{figure*}
-
-Satellite measurements provide the opportunity for more spatially and
-temporally extensive intercomparisons than data sets from other
-platforms.  They are also typically well matched to the MLS horizontal
-and vertical resolution.  Here we focus on comparisons with ClO measured
-by the Submillimetre Radiometer (SMR) onboard the Swedish-led Odin
-satellite \citep{MurtaghEtal02}, launched in February 2001 into a
-near-polar, sun-synchronous, \mbox{\texttildelow600-km} altitude orbit with an
-18:00 ascending node.  SMR observes limb thermal emission from ClO using
-an auto-correlator spectrometer centered at 501.8\,GHz.  Operational
-Level~2 ClO retrievals are produced by the Chalmers University of
-Technology (G{\"o}teborg, Sweden).  Here we use Chalmers version~2.1
-data \citep{UrbanEtal06}, which for ClO are very similar to those in
-version~2.0, with differences typically smaller than \texttildelow50\,pptv.
-The Chalmers version~2.0 ClO data have horizontal resolution of
-\texttildelow300--600\,km, vertical resolution of 2.5--3\,km, and single-scan
-precision better than 0.15\,ppbv over the range from 15 to 50\,km
-\citep{UrbanEtal05,UrbanEtal06}; similar values apply for the
-version~2.1 ClO data.  The estimated total systematic error is less than
-0.1\,ppbv throughout the vertical range \citep{UrbanEtal05,
-  UrbanEtal06}.  Only good quality SMR data points are included in these
-comparisons (i.e., assigned flag QUALITY = 0, and a measurement response
-for each retrieved mixing ratio larger than 0.75 to ensure that the
-information has been derived from the measurements, with a negligible
-contribution from the climatological a priori profile
-\citep{UrbanEtal05, BarretEtal06}).
-
-Figures~\ref{fig:SMRscat} and \ref{fig:SMRsum} compare all coincident
-profiles obtained within $\pm$1$^\circ$ in latitude, $\pm$4$^\circ$ in
-longitude, and $\pm$12\,hours from all days (2004--2010) for which both
-SMR and \thisv MLS data are available.  All seasons are represented in
-this set of comparison days.  Because the vertical resolution of the SMR
-ClO measurements is similar to that of the Aura MLS ClO measurements,
-for these comparisons the SMR profiles have been linearly interpolated
-in log-pressure to the fixed MLS retrieval pressure surfaces.  The
-scatter plots of Figure~\ref{fig:SMRscat} indicate excellent agreement
-in the general morphology of the ClO distribution, although the MLS data
-indicate slightly stronger enhancements in the polar regions,
-particularly in the north; this apparent disparity is most likely
-related to solar zenith angle and local solar time differences between
-the matched profiles.  The small negative bias in the MLS retrievals is
-evident in the comparisons at the lowest levels, with the average
-difference between MLS and SMR ClO reaching \texttildelow0.25\,ppbv at 100\,hPa
-(Figure~\ref{fig:SMRsum}).  A possible high bias of 0.1--0.2\,ppbv in
-the SMR lower stratospheric measurements obtained outside the vortex
-during nighttime, when ClO abundances fall below the detection limit of
-the instrument \citep{BerthetEtal05}, may also contribute to the
-observed offset between the two data sets.  Differences are typically
-within \texttildelow0.05\,ppbv at and above 46\,hPa, with MLS values larger
-throughout most of this region.  The amplitude and the altitude of the
-secondary peak in ClO in the upper stratosphere are matched well.
-
-\begin{figure*}
-\centering
-\dontincludegraphics[width=7.5cm,angle=90.]{figures/SMRvsMLS_v03-30_CLO__5018_v3-30-AuraValDays_SZA_LST2-summary}
-\caption{ As in Figure~\ref{fig:SMRsum}, with additional SZA and LST
-  coincidence criteria imposed (see text).  }
-\label{fig:SMRsumSZA}
-\end{figure*}
-
-The analysis presented in Figures~\ref{fig:SMRscat} and \ref{fig:SMRsum}
-takes no account of the differences in solar zenith angle (SZA) in the
-two ClO data sets.  \citet{BarretEtal06} estimated that a 2$^\circ$
-increase in SZA roughly corresponds to a 0.1\,ppbv decrease in ClO, on
-the order of the estimated single-scan precision of the measurements;
-they concluded that a SZA coincidence criterion of $\pm$2$^\circ$ is
-appropriate for an intercomparison of the ClO measurements from MLS and
-SMR\@.  Because of differences in the observational patterns of the two
-instruments (both in sun-synchronous orbits), measurement points
-satisfying this SZA filter occur only at the highest latitudes, poleward
-of 70$^\circ$ in both hemispheres.  In Figure~\ref{fig:SMRsumSZA} we
-summarize the comparison results obtained by imposing the additional SZA
-criterion and tightening the local solar time criterion to
-$\pm$2\,hours.  Such stringent coincidence criteria greatly reduce the
-number of matched points but significantly improve the agreement between
-the two data sets, with differences less than 0.03\,ppbv (corresponding
-to \texttildelow15\% or less) everywhere except at the bottom two levels, where
-biases are known to be present.
+instruments) were presented by \citet{SanteeEtal08clo}.  A subset of
+those comparisons with \prevv ClO data were reported by
+\citet{LiveseyEtal13qualdoc}.  Repeating similar analyses for \thisv
+data will be the subject of future work.
 
 \subsection*{Data screening}
 \begin{description}
@@ -374,37 +272,44 @@ biases are known to be present.
 
   \standardprecisionrule
 
-  \evenstatusrule
+\item[Status flag:] \screeningrule{Only use profiles for which the
+  \texttt{Status} field is zero.}  
 
-\item[Clouds:] \cloudsokrule
+  We recommend that all profiles with nonzero values of
+  \texttt{Status} be discarded, because of the potential impact of
+  cloud artifacts at lower levels.  Note, however, that rejecting in
+  their entirety all profiles with nonzero \texttt{Status} may be
+  unnecessarily severe at and above (i.e., at pressures equal to or
+  smaller than) 46\,hPa, where clouds have negligible impact; thus
+  otherwise good-quality profiles with nonzero but even
+  \texttt{Status} values may be used without restriction at those
+  levels as long as they are removed at larger pressures.  See
+  Section~\ref{sec:StatusQuality} for more information on the
+  interpretation of the \texttt{Status} field.
 
-  Nonzero but even values of \texttt{Status} indicate that the profile
-  has been marked as questionable, usually because the measurements may
-  have been affected by the presence of thick clouds.  Globally fewer
-  than \texttildelow1--2\% of ClO profiles are typically identified in this
-  manner (though this value rises to \texttildelow3--5\% in the tropics on a
-  typical day), and clouds generally have little influence on the
-  stratospheric ClO data.  Thus profiles with even values of
-  \texttt{Status} may be used without restriction.
-\item[Quality:] \qualityrule{1.3}  This
-  threshold for \texttt{Quality} typically excludes less than 1\% of ClO
-  profiles on a daily basis; note that it potentially discards some
-  ``good'' data points while not necessarily identifying all ``bad''
-  ones.
-\item[Convergence:] \convergencerule{1.05} On a typical day this
-  threshold for \texttt{Convergence} discards very few (0.3\% or less)
-  of the ClO profiles, many (but not all) of which are filtered out by
-  the other quality control measures.
+\item[Quality:] \qualityrule{1.3} 
+
+  This threshold for \texttt{Quality} (unchanged from \prevv)
+  typically excludes less than 1\% of ClO profiles on a daily basis;
+  note that it potentially discards some ``good'' data points while
+  not necessarily identifying all ``bad'' ones.
+
+\item[Convergence:] \convergencerule{1.05} 
+
+  On a typical day this threshold for \texttt{Convergence} (unchanged
+  from \prevv) discards very few (0.3\% or less) of the ClO profiles,
+  many (but not all) of which are filtered out by the other quality
+  control measures.
 \end{description}
 
 \subsection*{Artifacts}
 \begin{itemize}
-\item Significant biases are present in both daytime and nighttime \thisv
-  ClO mixing ratios at and below (i.e., pressures larger than) 68\,hPa.
-  The bias should be corrected by subtracting from the individual
-  measurements at each affected retrieval level the altitude- and
-  latitude-dependent bias estimates given in the ASCII file available
-  from the MLS web site.
+\item Significant biases are present in both daytime and nighttime
+  \thisv ClO mixing ratios at and below (i.e., pressures larger than)
+  68\,hPa.  The bias should be corrected by subtracting from the
+  individual measurements at each affected retrieval level the
+  altitude- and latitude-dependent bias estimates given in the ASCII
+  file \mycomment{to be made} available from the MLS web site.
 \end{itemize}
 
 \subsection*{Desired improvements for future data version(s)}
@@ -428,37 +333,37 @@ biases are known to be present.
  scatter in nighttime (descending) data in a region of minimal atmospheric
  variability.} \\/ ppbv}} &
 \parbox[m]{20mm}{\bfseries\centering{Bias\\uncertainty%
-    \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
-      of the probable magnitude and, at the higher pressures, are the uncertainties
-      after subtraction of the known bias.}\gdef\fnTwoSigma{\value{mpfootnote}}\\ / ppbv}} &
+    \footnote{Values should be interpreted as \mbox{2-$\sigma$}
+      estimates of the probable magnitude and, at the higher
+      pressures, are the uncertainties after subtraction of the known
+      bias.}\gdef\fnTwoSigma{\value{mpfootnote}}\\ / ppbv}} &
 \parbox[m]{20mm}{\bfseries\centering{Scaling\\uncertainty\footnotemark[\fnTwoSigma]\\/ \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
-0.68--0.001 & ---   & ---    & ---     & --- & Unsuitable for scientific
-  use\\
+0.68--0.001 & ---   & ---  & ---  & --- & Unsuitable for scientific use\\
 %
-1.0      & 3 $\times$ 500 & $\pm$0.3 & $\pm$0.05 & $\pm$15\% & \\
+1.0         & 3        $\times$ 500      & $\pm$0.3 & $\pm$0.05 & $\pm$15\% & \\
 %
-15--1.5  & 3.5--4.5 $\times$ 250--400 & $\pm$0.1 & $\pm$0.05 &
-$\pm$5--15\% & \\
+15--1.5     & 3.5--4   $\times$ 250--400 & $\pm$0.1 & $\pm$0.05 & $\pm$5--15\% & \\
 %
-46--22  & 3 $\times$ 300--400 & $\pm$0.1 & $\pm$0.1 & $\pm$20\% & \\
+46--22      & 3        $\times$ 300--400 & $\pm$0.1 & $\pm$0.1  & $\pm$20\% & \\
 %
-68  & 3 $\times$ 450 & $\pm$0.1 & $\pm$0.1 & $\pm$20\% &
+68          & 3        $\times$ 450      & $\pm$0.1 & $\pm$0.1  & $\pm$20\% &
 Latitude-dependent bias\footnote{Correct for the bias by subtracting
   from the individual measurements at this level the
-  latitude-dependent bias estimates given in the ASCII file available
-  from the MLS web site.}\gdef\fnDirect{\value{mpfootnote}} \\
+  latitude-dependent bias estimates given in the ASCII file
+  \mycomment{to be made} available from the MLS web
+  site.}\gdef\fnDirect{\value{mpfootnote}} \\
 %
-100      & 3 $\times$ 500 & $\pm$0.1 & $\pm$0.1 & $\pm$20\% &
+100         & 3        $\times$ 500      & $\pm$0.1 & $\pm$0.1  & $\pm$20\% &
 Latitude-dependent bias\footnotemark[\fnDirect] \\
 %
-147      & 4.5 $\times$ 600 & $\pm$0.3 & $\pm$0.2 & $\pm$40\% &
+147         & 4.5      $\times$ 600      & $\pm$0.3 & $\pm$0.2  & $\pm$40\% &
 Latitude-dependent bias\footnotemark[\fnDirect] \\
 %
-1000--215  & ---    & ---     & ---     & --- & Not retrieved\\
+1000--215   & ---   & ---   & --- & --- & Not retrieved\\
 %
 \bottomrule
 \end{tabular}
@@ -467,6 +372,6 @@ Latitude-dependent bias\footnotemark[\fnDirect] \\
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "v4-x-report"
+%%% TeX-master: "v4-4-report"
 %%% End: 
 
