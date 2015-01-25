@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{newlargemls}
+\ProvidesPackage{newqualdoc}
 %
 \RequirePackage{graphicx}
 \RequirePackage{fancyhdr}
@@ -50,14 +50,13 @@
       \LARGE\bfseries \@chapapp{} \thechapter\\
     \fi
     \LARGE #1\\ \vskip -2mm\rule{\textwidth}{1.0pt}
-    \nobreak
-    \vskip 0.8cm
+    \nobreak\vskip 0.8cm
   }}
 %
 \def\@makeschapterhead#1{%
   {\parindent 0pt\rule{\textwidth}{1.0pt}\\
     \reset@font
-    \centering\LARGE \bfseries  #1\par\vspace{-3mm}\rule{\textwidth}{1.0pt}
+    \centering\LARGE\bfseries  #1\par\vspace{-3mm}\rule{\textwidth}{1.0pt}
     \nobreak\vskip 0.8cm
   }}
 %
@@ -153,11 +152,51 @@
 \renewcommand{\sectionmark}[1]{%
    \markright{\thesection.\ #1}{}}
 %
+% ------------------------------------- Section headings etc.
+%
+\makeatletter
+\renewcommand{\section}{\@startsection%
+  {section}%
+  {1}%
+  {0pt}%
+  {-4pt plus -2pt minus -3pt}%
+  {4pt plus 2pt minus 3pt}%
+  {\Large\fontseries{sb}\selectfont\flushleft\figureversion{tabular}}}%
+\renewcommand{\subsection}{\@startsection%
+  {subsection}%
+  {2}%
+  {0pt}%
+  {-2pt plus -1pt minus -2pt}%
+  {2pt plus 1pt minus 2pt}%
+  {\large\fontseries{sb}\selectfont\flushleft\figureversion{tabular}}}%
+\renewcommand{\subsubsection}{\@startsection%
+  {subsubsection}%
+  {3}%
+  {0pt}%
+  {-0.1ex plus -0.1ex minus -0.1ex}%
+  {0.1ex plus 0.1ex minus 0.1ex}%
+  {\normalsize\fontseries{sb}\selectfont\flushleft\figureversion{tabular}}}%
+\renewcommand{\paragraph}{\@startsection%
+  {paragraph}%
+  {4}%
+  {0pt}%
+  {-0.1ex plus -0.1ex minus -0.1ex}%
+  {0.1ex plus 0.1ex minus 0.1ex}%
+  {\small\flushleft\figureversion{tabular}}}%
+\renewcommand{\subparagraph}{\@startsection%
+  {subparagraph}%
+  {5}%
+  {0pt}%
+  {-0.1ex plus -0.1ex minus -0.1ex}%
+  {0.1ex plus 0.1ex minus 0.1ex}%
+  {\small\itshape\flushleft\figureversion{tabular}}}%
+\makeatother
+%
 % -----------------------------------------------------------------------------
 %
 % That's it.
 %
 \endinput
 %
-%% End of file 'njlstyle.sty'
+%% End of file 'newqualdoc.sty'
 

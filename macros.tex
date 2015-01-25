@@ -7,13 +7,14 @@
 \newcommand{\thumbmark}{}
 \newcommand{\thumbbackground}{black}
 %
-\newcommand{\speciestitle}[4][]{%
+\newcommand{\speciestitle}[5][]{%
 \cleardoublepage
 \renewcommand{\thumbmark}{#3}%
 \addtolength{\thumbpos}{-0.45in}%
 \section{#2}
 \begin{description}
 \item[Swath name:] \texttt{#4} #1
+#5
 \end{description}}
 %
 \newlength{\thumbpos}
