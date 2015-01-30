@@ -5,6 +5,13 @@
 
 \subsection*{Introduction}
 
+There has been little change in the v4.2 HOCl retrieval results, in
+comparison to v3.3/v3.4. We provide below sample mean HOCl distributions
+for the two data versions, and their differences. Otherwise, previous
+information regarding this species remains largely unchanged; the main
+points are mentioned here mainly for new data users.
+
+
 The HOCl retrieval is quite noisy for individual profiles and HOCl data
 require some averaging (e.g., in 10\degsym\ zonal means for one or more
 weeks) to get useful precision of better than 10\,pptv, in comparison to
@@ -15,45 +22,38 @@ discussion and a brief validation summary are given in the following
 sections, along with data screening recommendations, which should be of
 particular interest to MLS data users.
 
-\subsection*{Changes from v2.2}
-While there were no large \thisv algorithmic changes relating to HOCl, one
-difference in the retrievals for HOCl and other products derived from
-the 640-GHz MLS retrieval phase is that temperature information is now
-obtained from the first retrieval phase (`Core'), as opposed to the
-640-GHz phase itself; this led to overall improved efficiency,
-convergence, and stability for the \thisv 640-GHz products.
+\subsection*{Changes from v3.3/v3.4}
+There were no algorithmic changes relating to HOCl for the v4.2
+retrievals.  Small differences in HOCl abundances (see below) are likely
+related mainly to small changes in tangent pressure and/or temperature.
 
-Other changes relating to the treatment of forward model radiance
-continuum had an impact on species in the 640-GHz retrieval phase
-(mainly in the lower stratosphere).  The background observed in the
-\mbox{640-GHz} radiances includes emissions from N\cs2, O\cs2, and
-H\cs2O.  There are laboratory-based and ground-based models for the
-continuum absorptions that are the basis for the MLS absorption model
-\citep[][and references therein]{PardoEtal01}.  These models were tested
-against MLS extinction measurements from the wing channels in the
-640-GHz radiometer; the latitude dependence of this extinction was found
-to agree better with the expected moist plus dry continuum extinction
-values if the dry and moist continuum functions were scaled by factors
-close to 20\%.  The incorporation of this change improved the lower
-stratospheric retrievals of most of the 640-GHz species (generally in
-terms of average biases and their latitude dependence).
+The background observed in the 640 GHz radiances includes emissions from
+N\cs2, O\cs2, and H\cs2O.  There are laboratory-based and ground-based
+models for the continuum absorptions that are the basis for the MLS
+absorption model \citep[][and references therein]{PardoEtal01}.  These
+models were tested against MLS extinction measurements from the wing
+channels in the 640 GHz radiometer.  The latitude dependence of this
+extinction was found to agree better with the expected most plus dry
+continuum extinction values if the dry and moist continuum functions
+were scaled by factors close to 20$\%$; however, this is not a change
+from the v3.3/v3.4 retrievals.
 
 A comparison plot showing zonal average upper stratospheric HOCl
 contours (from 10 to 2\, hPa) and differences between the two data
-versions for a typical month (September, 2006) is provided in Figure
-~\ref{fig:MLSv2v3HOClContour}.  The \thisv HOCl abundances are slightly
-larger than the v2.2 retrievals, typically by \texttildelow20 pptv (or
-\texttildelow20\%).  The estimated precision values are essentially unchanged
-from v2.2.
+versions for a typical month (March, 2009) is provided in Figure
+~\ref{fig:MLSv3v4HOClContour}.  The v4.2 HOCl abundances are mostly
+slightly larger than the v3.3 retrievals, typically by only a few pptv
+(a few \%).  The estimated precision values are essentially unchanged
+from v3.3.
 
 \begin{figure}
-\centering\dontincludegraphics[angle=90,width=1.\linewidth]{figures/HOCl_v2_v3_Contour_2006m09}
-\caption{Zonal averages for upper stratospheric MLS HOCl profiles during
-  September, 2006, showing the MLS v2.2 HOCl mixing ratio contours (top
-  left panel), the \thisv contours (top right panel), and their
-  differences in pptv (\thisv minus v2.2, bottom left panel) and percent
-  (\thisv minus v2.2 versus v2.2, bottom right panel). }
-\label{fig:MLSv2v3HOClContour}
+  \centering\includegraphics[angle=90,width=1.\linewidth]{figures/Fig-HOCl-ZMContours-v3-3-v4-2_2009m03}
+  \caption{Zonal averages for upper stratospheric MLS HOCl profiles
+    during March, 2009, showing the MLS v3.3 HOCl mixing ratio contours
+    (top left panel), the v4.2 contours (top right panel), and their
+    differences in pptv (v4.2 minus v3.3, bottom left panel) and percent
+    (v4.2 minus v3.3 versus v3.3, bottom right panel). }
+\label{fig:MLSv3v4HOClContour}
 \end{figure}
 
 \subsection*{Resolution}
@@ -61,7 +61,7 @@ from v2.2.
 
 Based on the width of the averaging kernels shown in
 Figure~\ref{fig:AvkHOCl}, the vertical resolution for upper
-stratospheric HOCl is \texttildelow6\,km (significantly worse than the 640\,GHz
+stratospheric HOCl is $\sim$6\,km (significantly worse than the 640\,GHz
 radiometer vertical field of view width of 1.4\,km).  This reflects the
 choice of smoothing constraints for HOCl which favor precision over
 vertical resolution.
@@ -71,7 +71,7 @@ vertical resolution.
 The estimated single-profile precision reported by the Level~2 software
 is about 300 to 400\,pptv in the upper stratosphere.  A more useful
 number of 10\,pptv is quoted in Table~\ref{tab:HOClSummary} for the
-typical precision of a 10\degsym\ weekly zonal mean for this product.
+typical precision of a 10\degsym\ weekly zonal means for this product.
 
 \subsection*{Accuracy}
 
@@ -83,7 +83,7 @@ estimates of accuracy.  The largest contributors to possible errors for
 HOCl are contaminant species, gain compression, and sideband ratio
 uncertainties.  The Table gives a range of error estimates (for low and
 high pressures).  The average changes for upper stratospheric HOCl
-between v2.2 and \thisv are well within the quoted accuracy estimates
+between v3.3 and v4.2 are well within the quoted accuracy estimates
 (which may be somewhat conservative).
 
 \subsection*{Data screening}
@@ -91,43 +91,30 @@ between v2.2 and \thisv are well within the quoted accuracy estimates
 \item[Pressure range:] \screeningrule{10\,--\,2.2\,hPa}
   \standardrangestatement\ Artifacts (negative averages) for pressures
   larger than about 10\,hPa currently make this product unsuitable for
-  use in the lower stratosphere, although the negative biases observed
-  in v2.2 for this region have been reduced and positive averages are
-  retrieved in \thisv down to 32\, hPa.  However, we cannot recommend
-  these values for scientific investigations until more checks and
-  validation are performed; we intend to provide updates on this topic
-  in the not too distant future.  Regarding the topmost altitude range,
+  use in the lower stratosphere. Regarding the topmost altitude range,
   the sensitivity to \emph{a priori} increases rapidly at pressures of
   1\,hPa or less; we continue to recommend the use of (average) HOCl
-  values only up to 2.2\, hPa.
-\standardprecisionrule
-\evenstatusrule
-\item[Quality:] \qualityrule{1.2}
+  values only up to 2.2\, hPa.  \standardprecisionrule \evenstatusrule
+
+\item[Quality field:] \screeningrule{Only profiles with a value of the
+    \texttt{Quality} field (see section~\ref{sec:StatusQuality})
+    \emph{greater} than 1.2 should be used.}
 
   This criterion removes profiles with the poorest radiance fits,
-  typically significantly less than 1$\%$ of the daily profiles. Results
-  in this respect have improved, in comparison to v2.2 data.  For HOCl
-  (and for other 640\,GHz MLS products), this screening correlates well
-  with the poorly converged sets of profiles (see below); we recommend
-  the use of both the \texttt{Quality} and \texttt{Convergence} fields
-  for data screening.  The use of this screening criterion sometimes
-  (but rarely) removes up to a few percent of global daily data (for
-  example, during the first half of September, 2006, when some high
-  latitude convergence and quality issues arose).
-\item[Convergence:] \convergencerule{1.05}
+  typically less than 0.1$\%$ of the daily profiles. For HOCl (and for
+  other 640\,GHz MLS products), this screening correlates well with the
+  poorly converged sets of profiles (see below); we recommend the use of
+  both the \texttt{Quality} and \texttt{Convergence} fields for data
+  screening.
 
-  For the vast majority of profiles (99$\%$ or more for most days), this
-  field is less than 1.05.  Results in this respect have improved, in
-  comparison to v2.2 data.  Nevertheless, on occasion, sets of profiles
-  (typically one or more groups of ten profiles, retrieved as a `chunk')
-  have this \texttt{Convergence} field set to larger values.  These
-  profiles are usually almost noise-free and close to the \emph{a
-    priori} profile, and need to be discarded as non-converged.  The
-  \texttt{Quality} field (see above) most often yields poorer quality
-  values for these non-converged profiles. The use of this screening
-  criterion sometimes (but rarely) removes up to a few percent of global
-  daily data (for example, during the first half of September, 2006,
-  when some high latitude convergence and quality issues arose).
+\item[Convergence field:] \screeningrule{Only profiles with a value of
+    the \texttt{Convergence} field (see section~\ref{sec:StatusQuality})
+    \emph{less} than 1.05 should be used.} For the vast majority of
+  profiles (99$\%$ or more for most days), this field is less than 1.05.
+  Nevertheless, on occasion, sets of profiles (typically one or more
+  groups of ten profiles, retrieved as a `chunk') have this
+  \texttt{Convergence} field set to larger values, and should be
+  discarded.
 
 \item[Clouds:] \cloudsokrule
 
@@ -139,12 +126,13 @@ The MLS HOCl retrievals exhibit the expected morphology in monthly mean
 latitude / pressure contour plots; for example, such plots for September
 months from MLS compare favorably, to first-order, with results produced
 by the Michelson Interferometer for Passive Atmospheric Sounding (MIPAS)
-for September, 2002 \citep{VonClarmannEtal06}.  MLS HOCl averages at midlatitudes are
-close to the results from balloon-borne infrared measurements.  The
-slight increase in MLS \thisv values (versus v2.2) should actually improve
-the overall agreement in these comparisons.  As mentioned above, more
-work is needed to review these issues, especially for any altitudes
-below the 10\, hPa level.
+for September, 2002 \citep{VonClarmannEtal06}.  MLS HOCl averages at
+midlatitudes are close to the results from balloon-borne infrared
+measurements. Generally favorable comparisons (within the error bars)
+have been made of the diurnal changes in upper stratospheric HOCl
+between Aura MLS (v3.3), other satellite datasets, and a 1-D
+photochemical model (Khosravi et al., 2013).  \mycomment {Nathaniel,
+  please add this as a reference}
 
 \subsection*{Artifacts}
 \begin{itemize} 
@@ -152,16 +140,13 @@ below the 10\, hPa level.
   turned off for a few time periods in 2006 to investigate degradation
   issues that might affect these channels in the future.  These bands
   were off on April 8,9, and 10, 2006, and also for April 17, 2006
-  (after 19:52 UT) through May 17, 2006.  There are essentially no useful
-  HOCl (or ClO) data for these time periods.  The \thisv software
-  correctly flags these incidents with poor (odd) \texttt{Status} values
-  (which should be screened out); we note that the v2.2 software did not
-  flag these days with odd \texttt{Status}.
+  (after 19:52 UT) through May 17, 2006.  There are essentially no
+  useful HOCl (or ClO) data for these time periods.  The v4.2 (as for
+  the v3.3/v3.4) software correctly flags these incidents with poor
+  (odd) \texttt{Status} values (which should be screened out).
 \item There are still significant artifacts in the mean values (large
   negative values) for HOCl in the lower stratosphere, where the use of
-  this product is not recommended, despite the fact that some
-  seasonal-type changes in both hemispheres appear to be consistent with
-  expectations of realistic atmospheric enhancements in this region.
+  this product is not recommended.
 \item Users should screen out the non-converged and poorest quality HOCl
   profiles, as such profiles (typically a very small number per day)
   tend to behave unlike the majority of the other MLS retrievals.  See
@@ -171,7 +156,7 @@ below the 10\, hPa level.
 \begin{table}
 \caption{Summary for MLS hypochlorous acid}\vspace{0.5ex}
 \label{tab:HOClSummary}
-\begin{minipage}{\linewidth}
+\begin{minipage}{\linewidth}\small
 \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Pressure}} &
@@ -185,7 +170,7 @@ uncertainty characterization tests}\\}}}
 \textbf{hPa} & \textbf{pptv} & \textbf{\%} & \textbf{km}& \textbf{pptv} & \textbf{\%} & \\
 \midrule
 1.5 or less & --- & ---   & ---  & --- & ---  & Unsuitable for scientific use \\ 
-2.2 to 10   &  10 & 10    &   6  & 30\,--\,80 & \texttildelow30\,--\,100 \\ 
+2.2 to 10   &  10 & 10    &   6  & 30\,--\,80 & $\sim$30\,--\,100 \\ 
 15 or more  & --- & ---   & ---  & --- &  --- & Unsuitable for scientific use \\    
 \bottomrule
 \end{tabular}

@@ -1,4 +1,4 @@
-\speciestitle{Carbon monoxide}{CO}{CO}{%
+\speciestitle{Carbon monoxide}{CO}{CO}{
 \item[Useful range:] 215\,--\,0.0046\,hPa
 \item[Contact:] Hugh C. Pumphrey (stratosphere/mesosphere),
    \email{H.C.Pumphrey@ed.ac.uk} \\
@@ -9,35 +9,53 @@
  
 Carbon monoxide is retrieved from radiance measurements of two bands in
 the MLS 240\,GHz radiometer: \texttt{R3:240:B9F:CO} and
-\texttt{R3:240.B25D:CO}\@. Full details are given in \citet
-{PumphreyEtal07} and \citet{LiveseyEtal08}.
+\texttt{R3:240.B25D:CO}\@. Full details are given in
+\citet{PumphreyEtal07} and \citet{LiveseyEtal08}.
 
-\subsection*{Differences between \thisv and v2.2}
+\subsection*{Differences between \thisv and v03.x}
+In the upper troposphere (UT), the primary difference between \thisv CO
+and v03.x CO is the reduction in artifacts caused by deep convective
+clouds.  \mycomment{do we want to mention ``mif baseline'' here?}
+Screening of data has been simplified, fewer profiles are marked 'bad'
+and fewer profiles that appear to contain cloud artifacts pass through
+the recommended screening.
 
-In the stratosphere, the main change has been that the smoothing used in
-the retrieval has been tightened up somewhat. The resulting field is
-rather less noisy at the cost of slightly degraded vertical resolution
-(typically 3.5\,--\,5\,km where v2.2 had 2.7\,--\,4.0\,km). In the
-troposphere, the 50\% positive bias at 215\,hPa has been more-or-less
-eliminated.  However, the ability of the retrieval to separate clouds
-and CO is considerably worse than in v2.2. Users need to screen
-tropospheric data, as described below, in order to avoid
-cloud-contaminated profiles.
+A comparison of the two versions in the UTLS for February 2009, shown in
+Figure~\ref{fig:BlackSatCO}, includes non-spurious high values from the
+plume of the ``Black Saturday'' fire, that are seen in both versions (so
+near the black 1:1 line).  Scattering from large particles in convective
+cores produces mostly high outliers in v03.30 CO at 215\,hPa, 147\,hPa
+and 100\,hPa and low outliers at 68\,hPa and 46\,hPa that are greatly
+reduced in v04.10, resulting in the clouds of points away from the 1:1
+line.  The ``Black Saturday'' plume produces UTLS CO values outside of
+the typically encountered, allowing comparison of non-spurious high
+values from the two version, unobscured by the v03.30 cloud-induced
+scatter present at lower \thisv mixing ratios.  At the highest values of
+the ``Black Saturday'' tails at 100\,hPa and 68\,hPa, values from \thisv
+are lower than those from v03.30 by $\sim$10\%, but fractional
+differences between the versions are lower elsewhere. The screening
+recommended for v03.x results in a significant amount of missing data in
+the tropics, and when the recommended IWC-based component of v03.x
+screening is included, most of the ``Black Saturday'' high values are
+screened out.
 
-At certain times of the year, the CO data are contaminated by a signal
-from the core of the galaxy, as described by \citet{PumphreyEtal09}. In
-v2.2 the affected profiles were not flagged as bad and the user had to
-eliminate them based on time and latitude. In \thisv the profiles affected
-are flagged as having too few radiances and will be rejected by the
-usual procedure of rejecting any profile for which \texttt{Status} is
-odd.
-
+\begin{figure}
+  \centering\includegraphics[width=0.9\textwidth]{figures/BlackSatScat_v3v4_noscreen.png}%
+  \caption{Version v03.30 CO scattered against v04.1x CO for data from
+    February 2009, when the ``Black Saturday'' fire provided a plume of
+    non-spurious high-CO outliers, unprecedented in the MLS record.
+    This data is unscreened. The 316-hPa retrieval level is shown, but
+    is not recommended for scientific use. }
+\label{fig:BlackSatCO}
+\end{figure}
+%
 \subsection*{Resolution}
 \onestandardavk{CO}{CO}%
 
 Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging
-kernels for \thisv MLS CO\@. The vertical resolution is in the range
-3.5\,--\,5\,km from the upper troposphere to the lower mesosphere,
+kernels for \thisv MLS CO\@. Vertical and horizontal resolution are
+essentially unchanged from v03.x. The vertical resolution is in the
+range 3.5\,--\,5\,km from the upper troposphere to the lower mesosphere,
 degrading to 6\,--\,7\,km in the upper mesosphere. Down to the 215\,hPa
 level, the vertical averaging kernels are sharply peaked at the level
 being retrieved, but while the 316-hPa measurement contains contribution
@@ -48,15 +66,17 @@ profile higher in the UTLS than it is an independent measurement at
 316\,hPa, and it is not recommended for scientific use.  The horizontal
 resolution is about 200\,km in the mesosphere, degrading slowly to
 300\,km with decreasing height in the stratosphere and more rapidly to
-about 700\,km in the UT/LS region.
+about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 
 \subsection*{Precision}
 
 The MLS data are supplied with an estimated precision (the field
 \texttt{L2gpPrecision}) which is the a postiori precision as returned by
-the optimal estimation. This precision is usually a smaller number in
-\thisv than in v2.2. In both versions the precision is greater than the
-scatter observed in the data in regions of low natural variability.
+the optimal estimation. The precision of the \thisv CO is very similar
+to that of v03.3 and is usually smaller (better) than that of v2.2.
+\mycomment{can we remake these figures for v4?  I believe that v4 will
+  look like v3 here.}  In all versions, the precision is greater than
+the scatter observed in the data in regions of low natural variability.
 Where the estimated precision is greater than 50\% of the a priori
 precision the data will be influenced by the a priori to an undesirably
 large extent.  In such cases, \texttt{L2gpPrecision} is set to be
@@ -65,16 +85,15 @@ Figure~\ref{fig:COPrecision} shows both the scatter and estimated
 precision for CO, with typical profiles for comparison.
 %
 \begin{figure}
-\centering%
-\dontincludegraphics[width=0.495\textwidth]{figures/co-prec-fig-2005d028}\hfill%
-\dontincludegraphics[width=0.495\textwidth]{figures/co-prec-fig-2006d069}
-\caption{Scatter (standard deviation) and (estimated) precision for MLS
-  \thisv (black) and v2.2 (red) CO.  The statistics shown
-  are generated from all profiles within 20\degsym\ of the equator on 28
-  January 2005 and 10 March 2006. Profiles of the mean volume mixing
-  ratio (VMR) are shown for comparison. The vertical co-ordinate is
-  $16(3-\log_{10}(\mathrm{Pressure / hPa}))$ so that 16\,km on the axis
-  is exactly 100\,hPa. }
+  \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2005d028}\hfill%
+  \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2006d069}
+  \caption{Scatter (standard deviation) and (estimated) precision for
+    MLS \thisv (black) and v2.2 (red) CO.  The statistics shown are
+    generated from all profiles within 20\degsym\ of the equator on 28
+    January 2005 and 10 March 2006. Profiles of the mean volume mixing
+    ratio (VMR) are shown for comparison. The vertical co-ordinate is
+    $16(3-\log_{10}(\mathrm{Pressure / hPa}))$ so that 16\,km on the
+    axis is exactly 100\,hPa. }
 \label{fig:COPrecision}
 \end{figure}
 %
@@ -90,8 +109,8 @@ the middle atmosphere the accuracies are estimated by comparisons with
 the ACE-FTS instrument; see \citet{PumphreyEtal07} for further details.
 Close inspection of the data suggests that the accuracy in this region
 is best represented as a purely multiplicative error.  The MLS v2.2 CO
-data at 215\,hPa showed high (factor of \texttildelow2) biases compared to
-other observations.  The morphology, however, is generally realistic
+data at 215\,hPa showed high (factor of \texttildelow2) biases compared
+to other observations.  The morphology, however, is generally realistic
 \citep{LiveseyEtal08}.  In \thisv this bias has been essentially
 eliminated through a change in the approach to modeling the background
 radiance upon which the CO spectral line sits, and a small reduction in
@@ -107,49 +126,25 @@ the number of MLS spectral channels considered in the retrieval.
 \evenstatusrule
 
 \item[Clouds:] \screeningrule{Clouds have no impact for pressures of
-    31\,hPa or less.  More complex screening rules are needed in the
-    upper troposphere and lower stratosphere, as described below.}
+    31\,hPa or less. \thisv is much less susceptible to cloud-induced
+    artifacts than was v03.x, so screening of the CO product is
+    considerably simplified. }
 
-  Scattering from thick clouds leads to unrealistic values for MLS \thisv
-  CO in the UTLS, mostly in low latitudes. The application of the
-  \texttt{Quality} and \texttt{Convergence} screening approaches
-  described below capture many of these.  For studies of the upper
-  stratosphere and mesosphere, (at pressures of 31\,hPa or smaller) it
-  is not necessary to screen the data for clouds. The low-cloud
-  `warning' bit set in \texttt{Status} identifies most of the profiles
-  that are obviously impacted by clouds, but most of the profiles
-  flagged (11\% of profiles globally and 30\% in the tropics) are not
-  obviously `bad,' either geophysically or from the standpoint of
-  retrieval performance.
-
-  A more discriminating cloud flagging may be accomplished using the MLS
-  Ice Water Content (IWC) product.  Rejection of profiles for which the
-  147-hPa IWC value is greater than 0.008\,g/m\cp{3} discards only 0.8\%
-  of global profiles and 3\% below 20 degrees latitude and, when used in
-  conjunction with recommended \texttt{Quality}$<$1.1 and
-  \texttt{Convergence}$>$1.4 flagging, does a reasonable job of
-  rejecting cloud impacts while discarding 4.5\% of profiles globally
-  and 14\% in the tropics.
  
  
-\item[Quality:] \screeningrule{Only use profiles with quality
-    greater than 0.2 for pressures of 100\,hPa or smaller, and profiles
-    with quality greater than 1.1 at larger pressures}
+\item[Quality:] \screeningrule{Only use profiles with quality greater
+    than 1.5.}  Profiles with Quality less than or equal to 1.5 comprise
+  0.7\% of all data, and $\sim$2\% of profiles in the tropics.  At 215
+  hPa in the tropics, the rejected profiles have mixing ratios that are,
+  on average, 12\% higher than other tropical values and the occurrence
+  rates of high outliers with mixing ratios greater than 150\,ppbv is
+  about twice that of the rest of the tropical ensemble.  At 147\,hPa
+  and 100\,hPa the rejected profiles are
 
-  In the stratosphere and mesosphere ($p\leq100$\,hPa) only profiles
-  with a value of the \texttt{Quality} field (see
-  Section~\ref{sec:StatusQuality}) \emph{greater} than 0.2 should be
-  used in scientific study.  In the UT/LS ($p>100$\,hPa) a stricter
-  cutoff of 1.1 should be used.  This stricter value
-  removes about 4\% of the data globally, 9\% between 30\degsym S and
-  30\degsym N.
-
-\item[Convergence:] \convergencerule{1.4}
-
-  This test rejects about 1\% of profiles; these
-  are typically contiguous blocks of profiles for which
-  the retrieval has failed to converge, so that the retrieved profiles are similar to
-  the a priori. 
+\item[Convergence:] \convergencerule{1.025} This \texttt{Convergence}
+  criterion rejects fewer than 0.1\% of profiles.  Almost all of the
+  retrieval in the retrieval phase that produces \thisv CO converge to
+  their target, so \texttt{Convergence} is of limited use in screening.
 \end{description}
 
 \subsection*{Artifacts}
@@ -163,10 +158,9 @@ the number of MLS spectral channels considered in the retrieval.
 \item There is a tendency for negative values to occur at the level
   below a large positive value. The most striking examples occur in the
   polar vortex, where air with high CO mixing ratios descends to the
-  mid-stratosphere. 
-  This problem is slightly worse in \thisv -- this was considered an
-  acceptable trade-off for the less jagged profiles obtained over most
-  of the middle atmosphere.
+  mid-stratosphere.  This problem is slightly worse in \thisv -- this
+  was considered an acceptable trade-off for the less jagged profiles
+  obtained over most of the middle atmosphere.
 \item As discussed above, the \thisv CO retrievals are sensitive to the
   presence of thick clouds, and the screening procedure described above
   should be applied before any scientific application of the MLS CO data
@@ -175,12 +169,12 @@ the number of MLS spectral channels considered in the retrieval.
 
 \subsection*{Review of comparisons with other datasets}
 
-In the upper troposphere, comparisons with
-various in situ CO observations (NASA DC-8, WB-57 and the MOZAIC
-dataset) indicate that the MLS v2.2 215\,hPa CO product is biased high
-by a factor of \texttildelow2. Initial comparisons show this bias to be
-largely eliminated in \thisv.  Further validation of the \thisv CO UT/LS
-retrival levels are underway at the time of this writing.  
+In the upper troposphere, comparisons with various in situ CO
+observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the
+MLS v2.2 215\,hPa CO product is biased high by a factor of
+\texttildelow2. Initial comparisons show this bias to be largely
+eliminated in \thisv.  Further validation of the \thisv CO UT/LS
+retrival levels are underway at the time of this writing.
 
 In the mesosphere, comparisons of v2.2 MLS CO with ODIN-SMR and ACE-FTS
 suggest a positive bias: 30\%\,--\,50\% against ACE-FTS, 50\%\,--\,100\%
@@ -191,11 +185,6 @@ considered valid for \thisv. What change there is consists of a slight
 lowering of the MLS values, bringing them slightly towards the ACE-FTS
 data; 20\% is now a better estimate than 30\% of the MLS-ACE bias in
 much of the middle atmosphere.
-
-\subsection*{Desired improvements for future data version(s)}
-
-The main goal for future versions is to improve the quality of the CO
-product in the upper troposphere in the presence of clouds.
 
 \begin{table}
   \caption{Data quality summary for MLS version 3.3 CO.}
@@ -217,16 +206,16 @@ product in the upper troposphere in the presence of clouds.
 $<0.001$  &    ---        &   ---   &    ---      & Not retrieved\\
 0.0022-0.001  & ---       &   ---   &    ---    & Unsuitable
 for scientific use \\
-0.0046 &   7   $\times$ 200 &  11000  &   $+$20\% to $+$50\%     &  \\
-0.01   &   6   $\times$ 200 &  4000   &   $+$20\% to $+$50\%  &  \\
-0.046  &   6   $\times$ 200 &  1200   &    $+$20\% to $+$50\%    &  \\
-0.14   &   3.5 $\times$ 200 &  700    &    $+$20\% to $+$50\%    &  \\
-1      &   4   $\times$ 220 &  150    &    $+$20\% to $+$50\%  &  \\
-10     &   5   $\times$ 400 &  15     &    $\pm 10$\%    &  \\
-31     &   5   $\times$ 350 &  14     &    $-$70\% to $-$50\%    &  \\
-100    &   4.5 $\times$ 450 &  14     & $\pm$20\,ppbv and $\pm$30\% & \\
-147    &   5   $\times$ 600 &  15     & $\pm$30\,ppbv and $\pm$30\% & \\
-215    &   5.5 $\times$ 700 &  19     & $\pm$30\,ppbv and $\pm$30\% \\
+0.0046 &   6.2   $\times$ 200 &  11000  &   $+$20\% to $+$50\%     &  \\
+0.01   &   5.9   $\times$ 200 &  4000   &   $+$20\% to $+$50\%  &  \\
+0.046  &   5.9   $\times$ 200 &  1200   &    $+$20\% to $+$50\%    &  \\
+0.14   &   3.8   $\times$ 200 &  700    &    $+$20\% to $+$50\%    &  \\
+1      &   4.1   $\times$ 250 &  130    &    $+$20\% to $+$50\%  &  \\
+10     &   5.0   $\times$ 440 &  16     &    $\pm 10$\%    &  \\
+31     &   4.9   $\times$ 400 &   9     &    $-$70\% to $-$50\%    &  \\
+100    &   4.9   $\times$ 450 &  14     & $\pm$20\,ppbv and $\pm$30\% & \\
+147    &   5.1   $\times$ 570 &  15     & $\pm$30\,ppbv and $\pm$30\% & \\
+215    &   5.4   $\times$ 690 &  19     & $\pm$30\,ppbv and $\pm$30\% \\
 316 & --- & --- & --- & Unsuitable for scientific use\\
 $>$316 & --- & --- & --- & Not retrieved \\
 \bottomrule

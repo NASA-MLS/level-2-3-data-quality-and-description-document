@@ -1,38 +1,69 @@
 \speciestitle{Sulfur Dioxide}{SO\cs2}{SO2}{%
 \item[Useful range:] 215\,--\,10.0\,hPa
-\item[Contact:] William Read, \email{William.G.Read@jpl.nasa.gov}}
+\item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
+\label{sec:StandardSO2}
 
 \subsection*{Introduction}
 
 The standard SO\cs2 product is taken from the 240-GHz retrieval. MLS can
 only measure significantly enhanced concentrations above nominal
-background such as that from volcanic injections.  SO\cs2 has not yet
-been validated.
+background such as that from volcanic injections. Validation of SO\cs2
+is published in \citet{PumphreyEtal14}.
 
-\subsection*{Changes from v2.2}
+\subsection*{Changes from v3}
 
-The \thisv SO\cs2 retrieval will be impacted by the addition of interline
-interference terms in the O\cs3 line shape model, an updated CO line
-width parameter, and using a different set of 240\,GHz channels.
-Another \thisv change is the spectral baseline treatment that now uses a
-frequency-squared extinction term, configured as a relative
-humidity-like (RH) species. The RH treatment responds better to high
-extinction conditions when the middle troposphere is very humid. This
-enhancement eliminated a high bias in 316\,hPa O\cs3 in the tropics that
-is present in v2. An unfortunate side effect of the RH baseline is that
-it is more adversely affected by clouds, causing spikes in the retrieval
-of R3 products including SO\cs2.
+The v4 SO\cs2 retrieval has two significant changes from v3. The first is
+the use of a frequency squared extinction treated as a MIF-like quantity.
+Each radiometric scan retrieves its own extinction
+quantity that is not coupled vertically or horizontally to the radiances
+measured at other scan elevations or along track scan tangent positions.
+The new approach was motivated by having
+better performance in clouds where forcing vertical and horizontal
+coupling can cause errors due to inhomogeniety in the cloud field and
+errors in the forward model which currently doesn't include scattering
+effects. The other change is an improved cloud detection and radiance
+rejection algorithm. These changes have significantly
+improved the convergence and quality performance of the retrieval system and
+eliminated much of the poor in-cloud behavior present in v3. There have
+been no changes to the spectroscopic characteriztion of the major
+species in the 240~GHz bands used to retrieve SO\cs2.
+
+\begin{figure}
+\begin{center}
+\includegraphics[bb = 0 0 1840 510, clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_60n-90n}
+\includegraphics[bb = 0 0 1840 470, clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_30n-60n}
+\includegraphics[bb = 0 0 1840 470, clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_30s-30n}
+\includegraphics[bb = 0 0 1840 470, clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_60s-30s}
+\includegraphics[bb = 0 -50 1840 470, clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_90s-60s}
+\end{center}
+\caption{A comparison of
+  v3.3 (blue) and v4.2 (red) SO\cs2 for Jan-Feb-Mar 2005
+  in 5 latitude bands. Other time periods are similar. The left panel
+  compares mean profiles, the center shows the mean difference (red
+  diamonds) surrounded by each versions' estimated precision, and the
+  right panel shows the estimated retrieval precision (solid and
+  bullets) and measured variability (dotted) which includes atmospheric
+  variability about the mean profile.}
+\label{fig:avgmlsso2prflcomp}
+\end{figure}
+
+Figure~\ref{fig:avgmlsso2prflcomp} compares MLS v4.2 and v3.3. The atmosphere
+typically has $\sim$ 0.1~ppbv SO\cs2, which is well below the MLS detection
+limit. Both version show near zero SO\cs2. The small departures on the order
+of a few ppbv from zero are caused by systematic errors in the MLS measurement
+system. The larger -20~ppbv measured at 215~hPa is also a systematic artifact.
 
 \subsection*{Resolution}
 \onestandardavk{SO2}{SO\cs2}%
 
 Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2 is
-\texttildelow3\,km and the horizontal resolution is 170\,km. The horizontal
-resolution perpendicular to the orbit track is 6\,km for all pressures.
+$\sim$3\,km and the horizontal resolution is 170\,km. The horizontal
+resolution perpendicular to the orbit track is 6\,km, the full width at half
+maximum of the MLS antenna, for all pressures.
 
 \subsection*{Precision}
 
-The estimated precision for SO\cs2 is \texttildelow3\,ppbv for all heights
+The estimated precision for SO\cs2 is $\sim$4\,ppbv for all heights
 between 215\,--\,10\,hPa. The precisions are set to negative values in
 situations when the retrieved precision is larger than 50\% of the a
 priori precision -- an indication that the data is biased toward the a
@@ -40,11 +71,12 @@ priori value.
 
 \subsection*{Accuracy}
 
-The values for accuracy are based on the approach used for the v2.2
-systematic error analysis performed on the MLS measurement system
-\citep{ReadEtal07}, updated for \thisv. The accuracy is estimated to be
-\texttildelow5\,ppbv for pressures less than 147\,hPa increasing to
-\texttildelow20\,ppbv at 215\,hPa.
+The values for accuracy are based on the v3 systematic error analysis
+performed on the MLS measurement system \citep{ReadEtal07}. The
+accuracy is estimated to be $\sim$5\,ppbv for pressures less than 147\,hPa
+increasing to $\sim$20\,ppbv at 215\,hPa. These may change for the v4 SO\cs2
+product. The MLS team plans to repeat the v3 exercise with the v4 software
+and release the results in a subsequent version of this document.
 
 \subsection*{Data screening}
 \begin{description}
@@ -57,42 +89,62 @@ systematic error analysis performed on the MLS measurement system
   with negatively flagged precision (provided that the entire profile is
   not so flagged). High retrieved values of SO\cs2 at the higher
   pressures (e.g. 215 and 147~hPa) will also have larger precision
-  values which are sometimes large enough to trigger the ``too much \emph{a
+  values which are sometimes enough to trigger the ``too much \emph{a
     priori} influence'' flag. While a priori influence is present and
   the retrieved value is probably smaller than reality because the
   retrieval is being pulled towards the a priori value of zero, this
   does not detract from the fact that greatly enhanced SO\cs2 is being
-  reported, reflecting the detection of a plume.
+  observed, reflecting the detection of a plume.
 \evenstatusrule
-\item[Quality:] \qualityrule{0.6}
-\item[Convergence:] \convergencerule{1.8}
+\item[Quality field:] \screeningrule{Only profiles having \texttt{Quality}\,
+    \emph{greater} than 0.95 should be used.} As with water vapor, this
+value represents where the quality versus yield sharply drops indicating
+the transition from well fit profiles toward more poorly fit ones as shown
+in figure~\ref{fig:so2datayields}
+\item[Convergence field:] \screeningrule{Only profiles having
+    \texttt{Convergence}\, \emph{less} than 1.1 should be used.}
 \end{description}
 
 \subsection*{Artifacts}
 
-The product is unvalidated. There is a tendency for the \thisv SO\cs2
-product, as for CO, to have spikes in the presence of clouds.
+High values of SO\cs2 accompanied with negative errors are likely to be
+underestimated due to a priori influence which biases the value toward
+zero. The atmospheric background SO\cs2 ($\sim$0.1~ppbv) cannot be
+measured by MLS even with extensive data averaging because there are
+systematic errors producing biases of a few ppbv. The 215~hPa SO\cs2 has
+a background bias of $\sim$20~ppbv.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figures/so2_data_yields}
+\end{center}
+\caption{Percentage of data having a quality greater than that indicated
+  on the x-axis for v4.2 data processed for June--August 2005.}
+\label{fig:so2datayields}
+\end{figure}
+
 
 \subsection*{Review of comparisons with other datasets}
 
 MLS has successfully detected SO\cs2 from 23 eruptions since launch.
-These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana
-Islands), Sierra Negra (Galapogos Island), Soufriere Hills (Montserrat,
-West Indies), Tunguraua (Ecuador), Rabaul (Papua New Guinea),
-Nyamuragira (Congo), Piton de la Fournaise (Reunion Island), Jebel
-al-Tair (Yemen), Okmok (Alaska), Kasatochi (Alaska), Dalaffilla
-(Ethiopia), Redoubt (Alaska), Sarychev (Kuril Islands, Russia), Pacaya
-(Guatamala), Merapi (Indonesia), Grimsvoth (iceland), Puyehue-Cordon
-Calle (Chile), Nabro (Eritrea) and Paluweh (Indonesia).
+These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana Islands),
+Sierra Negra (Galapogos Island), Soufriere Hills (Montserrat, 
+West Indies -- 2 events),
+Tunguraua (Ecuador), Rabaul (Papua New Guinea), Piton de la Fournaise
+(Reunion Island), Jebel al-Tair (Yemen), Okmok (Alaska), Kasatochi
+(Alaska), Dalaffilla (Ethiopia), Redoubt (Alaska), Sarychev (Kuril Islands,
+Russia), Pacaya (Guatamala), and Merapi (Indonesia), Grimsvotn (iceland),
+Puyehue-Cordon Caulle, (Chile), Nabro (Eritrea), Paluweh (Indonesia),
+Sangeang Api (Indonesia).
 
 \begin{figure}
 \begin{center}
-\dontincludegraphics[width=0.7\linewidth]{figures/kosatochi_11082008}
-\dontincludegraphics[width=0.7\linewidth]{figures/kosatochi_12082008}
+\includegraphics[width=0.7\linewidth]{figures/sarychev_14062009}
+\includegraphics[width=0.7\linewidth]{figures/sarychev_16062009}
 \end{center}
 \caption{An overlay of MLS measurement tracks on an OMI SO\cs2
-  measurement on 11 and 12 August 2008 (separate maps) showing the
-  dispersial of SO\cs2 from the Kasatochi eruption (8 Aug 2008, black
+  measurement on 14 and 16 June 2009 (separate maps) showing the
+  dispersial of SO\cs2 from the Sarychev eruption (13 June 2009, black
   triangle). The color scale indicates the SO\cs2 column measured by
   OMI\@. The daytime MLS tracks are small open circles and the nighttime
   tracks are filled black. When the calculated column from MLS exceeds 1
@@ -107,8 +159,8 @@ Calle (Chile), Nabro (Eritrea) and Paluweh (Indonesia).
 
 Figure~\ref{fig:so2overlay} shows an overlay comparison of column SO\cs2
 measured by OMI and the same calculated by MLS for two days following
-the Kasatochi eruption. It is clear that MLS detects the main plume
-dispersal features. It also appears that MLS columns are much smaller
+the Sarychev eruption. It is clear that MLS detects the main plume
+dispersal features. It also appears that MLS columns are often smaller
 than those from OMI. Interpreting the significance of this is not
 straightforward given that OMI has to make assumptions regarding the
 profile shape and can observe SO\cs2 down to the boundary layer. The MLS
@@ -117,15 +169,26 @@ tropospheric contributions. Another limitation is that OMI can only make
 measurements during the day whereas MLS can make them day and night.
 Since the plume is moving relatively quickly over the 12 hour
 measurement separation time, MLS nighttime measurements often miss
-and/or detect plume features differently than OMI\@. MLS vertically
-resolved measurement shows that this plume has separated into distinct
-layers at different altitudes.  The altitude of SO\cs2 measured by MLS
-usually coincides with the altitude of aerosols measured by CALIPSO,
-providing supporting evidence for the validity of the
-vertically-resolved MLS observations.
+and/or detect plume features differently than OMI\@.
+
+Figure~\ref{fig:so2timeseries} shows a comparison between v4 and v3 for
+a track showing the maximum SO\cs2 measured on 16 June 2009. Although both
+version detect large amounts of SO\cs2 at 100~hPa, v4 shows this being more
+concentrated in the 100~hPa layer than v3 as the newer version shows less
+SO\cs2 at 147~hPa and none at 215~hPa compared to v3. Neither version shows
+any SO\cs2 at 68~hPa.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
+\end{center}
+\caption{Time series overlay where MLS measures more than 500~ppbv at 100~hPa. Blue is version 3, and red is version 4.}
+\label{fig:so2timeseries}
+\end{figure}
+
 
 \begin{table}
-\caption{Summary of MLS \thisv SO\cs2 product.}
+\caption{Summary of MLS v3.3 SO\cs2 product.}
 \label{tab:SO2Summary}
 \vspace{\tablecaptionsep}
 \begin{minipage}{\linewidth}
@@ -139,15 +202,15 @@ vertically-resolved MLS observations.
 \bfseries Comments \\
 \midrule
 $<$ 10 & --- & --- & --- &  Unsuitable for scientific use \\
-     10 & 3 $\times$ 180 &  3.5 &  6  & \\
-     15 & 3 $\times$ 180 &  3.5 &  3  & \\
-     22 & 3 $\times$ 180 &  3.2 &  4  & \\
-     32 & 3 $\times$ 180 &  3.2 &  5  & \\
-     46 & 3 $\times$ 180 &  3.0 &  5  & \\
-     68 & 3 $\times$ 180 &  3.0 &  6  & \\
-    100 & 3 $\times$ 180 &  3.0 &  6  & \\
-    147 & 3 $\times$ 180 &  3.1 &  10 & \\
-    215 & 3 $\times$ 180 &  3.8 &  20 & \\
+     10 & 3.1 $\times$ 165 &  4.5 &  6  & \\
+     15 & 3.1 $\times$ 171 &  5.0 &  3  & \\
+     22 & 3.1 $\times$ 171 &  4.4 &  4  & \\
+     32 & 3.0 $\times$ 176 &  3.8 &  5  & \\
+     46 & 2.9 $\times$ 176 &  3.5 &  5  & \\
+     68 & 2.9 $\times$ 183 &  3.3 &  6  & \\
+    100 & 2.8 $\times$ 180 &  3.2 &  6  & \\
+    147 & 2.8 $\times$ 180 &  2.5 &  10 & \\
+    215 & 3.5 $\times$ 186 &  3.5 &  20 & \\
 $>$215 & --- & --- & --- & Unsuitable for scientific use \\
 \bottomrule
 \end{tabular}

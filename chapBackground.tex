@@ -1,5 +1,5 @@
-\chapter{Background reading for users of MLS version~3.3 and~3.4 data}
-\rcsInfo $Id: chapBackground.tex,v 1.3 2014/08/25 18:38:55 livesey Exp $
+\chapter{Background reading for users of MLS version~4.x data}
+\rcsInfo $Id: chapBackground.tex,v 1.4 2014/11/19 20:56:02 livesey Exp $
 \label{chap:Background}
 
 \section{Aura MLS radiance observations}
@@ -271,7 +271,7 @@ which phase are given in table~\ref{tab:StandardProducts}.
 (note no T, pTan, GPH retrieval)} \\ 
 
 \flipfloprow
-\phase{HCN} &
+\phase{Hydrogen Cyanide} &
 \species{HCN, O\cs3, HNO\cs3} &
 \measurements{R2~(190\,GHz)} & 
 \tablecomments{Retrievals down to 100\,hPa} \\ 
@@ -328,15 +328,15 @@ which phase are given in table~\ref{tab:StandardProducts}.
   \flipfloprow 
   CH\cs3OH  & Methanol & 640\,GHz \\
   \flipfloprow 
-  ClO       & CorePlusR4A (B14) & 640\,GHz \\
+  ClO       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
   CO        & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
   H\cs2O    & CorePlusR2 & 190\,GHz \\
   \flipfloprow 
-  HCl       & CorePlusR4A (B14) & 640\,GHz \\
+  HCl       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
-  HCN       & CorePlusR2 & 190\,GHz \\ 
+  HCN       & HydrogenCyanide & 190\,GHz \\ 
   \flipfloprow 
   HNO\cs3   & \mybox{5cm}{CorePlusR2 (15\,hPa and less) \\ CorePlusR3 (larger
     than 15\,hPa)} &
@@ -411,20 +411,20 @@ algorithms can reliably retrieve composition in moderately cloudy cases
 Core+R3 retrieval this is handled by retrieving a frequency squared
 dependent extinction (including background atmospheric absorption from
 N\cs2, H\cs2O and unknown emitters).  In the other retrieval phases, by
-contrast, a spectrally-flat baseline is used.  However, optically thick
-clouds can affect the MLS radiances beyond the modeling capability of
-this approach, mainly through scattering processes.  Such situations are
-and the affected radiances excluded from the retrievals, or their
-influence down-weighted.
+contrast, a spectrally-flat baseline is used.  Thick clouds can affect
+the MLS radiances beyond the modeling capability of this approach,
+mainly through scattering processes.  Such situations are and the
+affected radiances excluded from the retrievals, or their influence
+down-weighted.
 
-The first aspect of handling clouds in \thisv is therefore the flagging of
-radiances that are believed to be significantly contaminated by cloud
+The first aspect of handling clouds in \thisv is therefore the flagging
+of radiances that are believed to be significantly contaminated by cloud
 effects.  To determine if a cloud is present in each MLS radiance
 measurement, we estimate the so-called cloud-induced radiance (\Tcir).
 This is defined as the difference between the measured radiance and the
 radiance from a forward model calculation assuming clear-sky conditions.
-Specific window channels (those that see deepest into the atmosphere) in
-each radiometer are chosen to set these flags.
+Specific window channels (those that are most transparent deepest into
+the atmosphere) in each radiometer are chosen to set these flags.
 
 Cloud screening in the Core+R2 and Core+R3 phases is based on
 determining the highest altitude limb view contaminated by cloud signals
@@ -434,18 +434,14 @@ precisions.  Clouds are detected by a combination of a radiance fit
 $\chi^2$ quantity from Band~8 (240\,GHz isotopic oxygen line) retrieval
 of temperature and pointing, and a cloud induced radiance calculation,
 also using 240\,GHz measurements.  Cloud radiance scattering causes
-severe line shape distortions which are detectable in the Band~8
-O\cp{18}O line fit, based on extrapolating a tangent pressure estimate
-into the upper troposphere from the pressure information obtained from
-the 118\,GHz Band~1 measurements (unaffected by clouds).  RHi from a
-previous phase is used to compute a cloud induced radiance (T\cs{cir}).
-The vertical profiles of $\chi^2$ and T\cs{cir} are analyzed to find the
-highest limb view affected by cloud scattering, and radiances below are
-handled accordingly.
-
-The retrievals of gas phase species abundances may choose to reject the
-cloud contaminated radiances, or (in the case of some less impacted
-channels) to inflate their estimated radiance precisions.
+severe line shape distortions which are most reliably detectable in the
+Band~8 O\cp{18}O line fit, based on extrapolating a tangent pressure
+estimate into the upper troposphere from the pressure information
+obtained from the 118\,GHz Band~1 measurements (unaffected by clouds).
+RHi from a previous phase is used to compute a cloud induced radiance
+(T\cs{cir}).  The vertical profiles of $\chi^2$ and T\cs{cir} are
+analyzed to find the highest limb view affected by cloud scattering, and
+radiances below are handled accordingly.
 
 The other aspect of cloud handling in \thisv is the estimation of cloud
 ice water content (IWC) and ice water path (IWP) products from the final
@@ -531,7 +527,7 @@ product are given in the MLS validation papers.  In addition Appendix~A
 of \citet{ReadEtal07} gives more specific details of the perturbations
 used in the study.
 
-\section{A brief note on the `Quality' field}
+\section{A brief note on the ``Quality'' field}
 
 As described in section~\ref{sec:StatusQuality}, the \texttt{Quality}
 field in the \texttt{L2GP} files gives a measure of the fit achieved
@@ -557,8 +553,8 @@ species will have typical $\chi^2$ statistics that are less than one and
 thus typical values of \texttt{Quality} higher than one.  Accordingly,
 differences in \texttt{Quality} from one species to another do not
 reflect the species' relative validity, nor do version-to-version
-changes in \texttt{Quality} for a given product necessarily reflect an
-improvement.
+increases in \texttt{Quality} for a given product necessarily
+improvements (or visa versa)
 
 %%% Local Variables: 
 %%% mode: latex

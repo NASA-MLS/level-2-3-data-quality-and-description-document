@@ -5,56 +5,56 @@
 \label{sec:StandardTemperature}%
 \subsection*{Introduction}
 
-The MLS \thisv temperature product is similar to the v2.2
-product that is described in~\citet{SchwartzEtal08}.  MLS temperature
-is retrieved from bands near O\cs2 spectral lines at
-118\,GHz and 239\,GHz that are measured with MLS radiometers R1A/B and R3,
-respectively.  
-The isotopic 239-GHz line is the primary source of
-temperature information in the troposphere, while the 118-GHz line is
-the primary source of temperature in the stratosphere and above.  
-MLS \thisv temperature has a \texttildelow\,$-$1\,K  bias with
-respect to correlative measurements in the troposphere
-and stratosphere, with 2\,--\,3\,K peak-to-peak additional systematic
-vertical structure.  Table~\ref{tab:TSummary} summarizes the measurement
-precision, resolution, and modeled and observed biases.  The following
-sections provide details.
+The MLS \thisv temperature product is similar to both the v3.3 product
+and to the v2.2 product that is described in~\citet{SchwartzEtal08}.
+MLS temperature is retrieved primarily from bands near O\cs2 spectral
+lines at 118\,GHz and 239\,GHz that are measured with MLS radiometers
+R1A/B and R3, respectively.  The isotopic 239-GHz line is the primary
+source of temperature information in the troposphere, while the 118-GHz
+line is the primary source of temperature in the stratosphere and above.
+MLS \thisv temperature has a \texttildelow\,$-$1\,K bias with respect to
+correlative measurements in the troposphere and stratosphere, with
+2\,--\,3\,K peak-to-peak additional systematic vertical structure.
+Table~\ref{tab:TSummary} summarizes the measurement precision,
+resolution, and modeled and observed biases.  The following sections
+provide details.
 
-\subsection*{Differences between \thisv and v2.2 }
-The MLS \thisv temperature retrieval algorithms are largely unchanged from
-those of v2.2, using the same subsets of the same radiance bands, so the
-resulting products are very similar. An exception is the \mbox{316-hPa}
-level, which in \thisv is noisier and has larger biases relative to
-analyses than in v2.2.  The \thisv temperature \mbox{316-hPa} level is not
-recommended for scientific use.  Version \thisv has eight more retrieval
-levels in the upper stratosphere, giving 12 levels per decade from the
-surface to 1\,hPa.  Noise and biases have been reduced at ``chunk
-boundaries'', the breaks between the 10-profile blocks of data that are
-concurrently retrieved by the 2-D algorithms.  The non-convergence of
-the retrieval over substantial sections of the polar autumn in v2.2 has
-been eliminated in version \thisv.  Vertical smoothing has been reduced in
-the mesosphere and lower thermosphere, improving vertical resolution at
-a cost of less than a factor of two in precision, but also resulting in
-what, in preliminary validation, appears to be some vertically
-oscillating profiles in the mesopause region, particularly at the
-equator. The \emph{a priori} temperature profiles used in \thisv are
-consistently GEOS-5.2, while v2.2 used GEOS-5.1 before September of
-2008.  GEOS-5.1 has a low bias in the upper stratosphere of
-0\,--\,15\,K, particularly at high latitudes, and resulted in biases of
-\texttildelow1\,K near the stratopause.
+\subsection*{Differences between \thisv and v3 }
+Mean differences between \thisv temperature and v3.3 temperature are
+typically less than 0.5\,K and exceed 1\,K only in the tropical
+troposphere.  In the tropics, a cold bias in unscreened \thisv relative
+to v3.3 reaches 2\,K, and is reduced to 1.5\,K by the recommended
+screening, discussed below.  The MLS retrieval algorithm is divided into
+``phases'' that retrieve a subset of the products from a subset of the
+radiances.  Versions v3.x and v2.x took the standard temperature product
+from FinalPtan, a preliminary phase using only the O$_2$ bands and
+focused on retrieving only temperature and tangent-point pressure. The
+MLS \thisv temperature product is taken from the CorePlusR3 phase, which
+adds radiances from the 240-GHz radiometer.  This temperature and
+pointing is used for all subsequent constituent retrievals, so \thisv
+temperature, pointing and constituent retrieval algorithms are more
+internally consistent with other retrieved products than were those of
+previous versions.  While in other respects \thisv retrieval algorithms
+are similar to those of v3.x and v2.2, biases with respect to GEOS-5 are
+somewhat different.  The tropospheric and stratospheric \emph{a priori}
+temperature profiles used in \thisv are from GEOS-5.9, and are quite
+similar to the GEOS-5.7 and GEOS-5.2 profiles used in previous version,
+departing most significantly near the stratopause.
+
+ 
 
 \subsection*{Resolution}
 \onestandardavk{Temperature_HR}{Temperature}%
 The vertical and horizontal resolution of the MLS temperature
 measurement is shown by averaging kernels in
 Figure~\ref{fig:AvkTemperature_HR}.  Vertical resolution, shown on the
-left panel, is \texttildelow5\,km from 261\,hPa to 100\,hPa, improves to
-3.6\,km at 31.6\,hPa and then degrades to 4.3\,km at 10\,hPa, 5.5\,km at
-3.16\,hPa and 6\,km at 0.01\,hPa.  Along track resolution is
-\texttildelow170\,km from 261\,hPa to 0.1\,hPa and degrades to 220\,km at
-0.001\,hPa.  The cross-track resolution is set by the 6-km width of the
-MLS 240-GHz field of view in the troposphere and by the 12-km width of
-the MLS 118-GHz field of view in the stratosphere and above.  The
+left panel, is \texttildelow4.5\,km from 261\,hPa to 100\,hPa, improves
+to 3.6\,km at 31.6\,hPa and then degrades to 4.3\,km at 10\,hPa, 5.5\,km
+at 3.16\,hPa and 6\,km at 0.01\,hPa.  Along track resolution is
+\texttildelow165\,km from 261\,hPa to 0.1\,hPa and degrades to 280\,km
+at 0.001\,hPa.  The cross-track resolution is set by the 6-km width of
+the MLS 240-GHz field of view in the troposphere and by the 12-km width
+of the MLS 118-GHz field of view in the stratosphere and above.  The
 longitudinal separation of MLS measurements from a given day, which is
 determined by the Aura orbit, is 10\degsym--\,20\degsym\ over middle and
 low latitudes and much finer in polar regions.
@@ -65,19 +65,20 @@ The precision of the MLS \thisv temperature measurement is summarized in
 Table~\ref{tab:TSummary}.  Precision is the random component of
 measurements which would average down if the measurement were repeated.
 The retrieval software returns an estimate of precision based upon the
-propagation of radiometric noise and \emph{a~priori} uncertainties through the
-measurement system.  These values, which range from 0.6\,K in the lower
-stratosphere to 2.5\,K in the mesosphere, are given, for selected
-levels, in column~2.  Column~3 gives the rms of
-differences of values from successive orbits (divided by the square-root
-of two as we are looking at the difference of two noisy signals) for
-latitudes and seasons where longitudinal variability is small and/or is
-a function only of local solar time.  The smallest values found, which
-are for high-latitude summer, are taken to be those least impacted by
+propagation of radiometric noise and \emph{a~priori} uncertainties
+through the measurement system.  These values, which range from 0.6\,K
+in the lower stratosphere to 2.5\,K in the mesosphere, are given, for
+selected levels, in column~2.  Column~3 gives the rms of differences of
+values from successive orbits (divided by the square-root of two as we
+are looking at the difference of two noisy signals) for latitudes and
+seasons where longitudinal variability is small and/or is a function
+only of local solar time.  The smallest values found, which are for
+high-latitude summer, are taken to be those least impacted by
 atmospheric variability, and are what is reported in column~3.  These
 values are slightly larger than those estimated by the measurement
 system in the troposphere and lower stratosphere, and a factor of
-\texttildelow1.4 larger from the middle stratosphere through the mesosphere.
+\texttildelow1.4 larger from the middle stratosphere through the
+mesosphere.
 
 \subsection*{Accuracy}
 
@@ -127,43 +128,59 @@ correlative measurements is shown in Figure~\ref{fig:TempSummary2}.
 \item[Pressure range:] \screeningrule{261\,--\,0.001\,hPa} \standardrangestatement
 \standardprecisionrule
 \evenstatusrule
-\item[Cloud consideration:] \screeningrule{Observe the higher order bits
-    for the \texttt{Status} field for cloud issues, described below.}
+% \item[Cloud consideration:] \screeningrule{Observe the higher order bits
+%     for the \texttt{Status} field for cloud issues, described below.}
 
-  As an additional screen, the fifth-least-significant bit of
-  \texttt{Status} (the ``low cloud'' bit) is used to flag profiles that
-  may be significantly impacted by clouds.  At pressures of 147\,hPa and
-  lower (higher in the atmosphere), the cloud bits may generally be
-  ignored.  In the troposphere an attempt has been made to screen out
-  radiances that have been influence by clouds, but some cloud-induced
-  negative biases in retrieved temperature of up to 10\,K are still
-  evident, particularly in the tropics.  The ``low-cloud''
-  \texttt{Status} bits from the two profiles which follow a given
-  profile have been found to provide significantly better screening of
-  cloud-induced temperature retrieval outliers than do the profile's own
-  \texttt{Status} bits.  Temperatures in the tropopause
-  (261\,hPa\,--\,178\,hPa) should be rejected as possibly influenced by
-  cloud if the ``low-cloud'' Status bit is set in either of the two
-  profiles following the profile in question.  The screening method
-  flags 16\% of tropical and 5\% of global profiles as cloudy and
-  captures 86\% of the tropical 261\,hPa values for which the difference
-  between MLS~T and its a~priori is more than $-$4.5\,K
-  (\texttildelow2$\sigma$) below the mean of the difference.
+%   As an additional screen, the fifth-least-significant bit of
+%   \texttt{Status} (the ``low cloud'' bit) is used to flag profiles that
+%   may be significantly impacted by clouds.  At pressures of 147\,hPa and
+%   lower (higher in the atmosphere), the cloud bits may generally be
+%   ignored.  In the troposphere an attempt has been made to screen out
+%   radiances that have been influence by clouds, but some cloud-induced
+%   negative biases in retrieved temperature of up to 10\,K are still
+%   evident, particularly in the tropics.  The ``low-cloud''
+%   \texttt{Status} bits from the two profiles which follow a given
+%   profile have been found to provide significantly better screening of
+%   cloud-induced temperature retrieval outliers than do the profile's own
+%   \texttt{Status} bits.  Temperatures in the tropopause
+%   (261\,hPa\,--\,178\,hPa) should be rejected as possibly influenced by
+%   cloud if the ``low-cloud'' Status bit is set in either of the two
+%   profiles following the profile in question.  The screening method
+%   flags 16\% of tropical and 5\% of global profiles as cloudy and
+%   captures 86\% of the tropical 261\,hPa values for which the difference
+%   between MLS~T and its a~priori is more than $-$4.5\,K
+%   (\texttildelow2$\sigma$) below the mean of the difference.
 
-\item[Quality field:] \qualityrule{0.65}
+\item[Quality:] \screeningrule{Only use profiles with quality
+    %greater than 0.2 for pressures of 100\,hPa or smaller, and profiles
+    %with quality greater than 1.1 at larger pressures
+greater than 0.9.}
+Profiles with Quality less than or equal to 0.9 comprise 1.4\% of all
+data, and 4.8\% of profiles in the tropics.  At 215 hPa in the
+tropics, the rejected profiles have mixing ratios that are, on
+average, 12\% higher than other tropical values and the occurrence rates of high
+outliers with mixing ratios greater than 150\,ppbv is about twice that
+of the rest of the tropical ensemble.  At 147\,hPa and 100\,hPa the
+rejected profiles are 
 
-  The \texttt{Quality} diagnostic in \thisv is has fewer low values that
-  did v2.2, reflecting better closure of the radiances used in the
-  temperature retrieval.  This threshold typically excludes 1\% of
-  profiles.
+\item[Convergence:] \convergencerule{1.021}
+  This  \texttt{Convergence} criterion rejects 0.12\% of profiles.
+Profiles that fail to meet the convergence criterion of 1.02 are only very slightly noisier than those that converge more fully and they are only 0.12\% of profiles, so this screening criterion is only of very limited utility and \texttt{Convergence} can generally be ignored without peril.  
+Almost all of the retrieval in the retrieval phase that produces \thisv CO 
+converge to their target.
 
-\item[Convergence field:] \convergencerule{1.2}
-
-  The \texttt{Convergence} diagnostic has far fewer high values in \thisv
-  than it had in v2.2, as there are far fewer poorly-converged
-  ``chunks'' in the new version.  Use of this threshold typically
-  discards 0.1\% of profiles, compared to 2\% or profiles flagged in
-  v2.2.
+\item[Precision:]
+\thisv temperature does not have the ``low cloud'' flag that was used
+to screen previous versions, the L2gpPrecision field can be used to
+further eliminate outliers that are believed to be the result of thick
+clouds, primarily in the tropics.  If careful screening of the
+troposphere is required, levels 261--147\,hPa should be avoided if any
+of the following criteria are met: 
+\begin{itemize}
+\item 316-hPa L2gpPrecision > 1.1\,K AND Latitude > -60$^\circ$ 
+\item 261-hPa L2gpPrecision > 0.7\,K 
+\item 215-hPa L2gpPrecision > 0.825\,K 
+\end{itemize}
 \end{description}
 
 \subsection*{Artifacts}
@@ -186,7 +203,7 @@ in~\citet{SchwartzEtal08}.
 \label{sec:TComparisons}
 
 \begin{figure}
-\centering\dontincludegraphics[width=0.7\linewidth]{figures/TempSummary2}
+\centering\includegraphics[width=0.7\linewidth]{figures/TempSummary2}
 \caption{The left panel shows globally-averaged mean differences
   between MLS temperature and eight correlative data sets.  Criteria for
   coincidences are described in detain in~\citet{SchwartzEtal08}.  The
@@ -195,7 +212,7 @@ in~\citet{SchwartzEtal08}.
 \end{figure}
 
 \begin{figure}
-\centering\dontincludegraphics[width=0.7\linewidth]{figures/MLSv33TminusGEOS5}
+\centering\includegraphics[width=0.7\linewidth]{figures/MLSv33TminusGEOS5}
 \caption{Zonal mean of the difference between MLS \thisv temperature and
   GEOS-5.2 temperature (upper), and variability
   about that mean (lower), averaged for 2005--2010.}
@@ -212,23 +229,24 @@ Unit (AIRS/AMSU), the Sounding of the Atmosphere using Broadband
 Radiometry (SABER)~\citep{MlynczakAndRussell95}, the Halogen Occultation
 Experiment~\citep{HervigEtal96} (HALOE) and the Atmospheric Chemistry
 Experiment~\citep{BernathEtal04} (ACE), as well as to radiosondes from
-the global network.  From 261\,hPa to \texttildelow10\,hPa there is generally
-agreement to \texttildelow1\,K between the assimilations (ECMWF and GEOS-5) and
-AIRS, radiosondes and CHAMP, with SABER and ACE having generally warm
-biases of \texttildelow2\,K relative to this group.
-Figure~\ref{fig:TempSummary2} shows the global mean biases in the left
-panel and the 1\,$\sigma$ scatter about the mean in the right panel for
-these eight comparisons.  Between 1\,hPa and 0.001\,hPa, MLS has biases
-with respect to SABER of $+$1\,K~to~$-$5\,K between 1\,hPa and 0.1\,hPa,
-of 0\,K~to~$-$3\,K between 0.1\,K and 0.01\,K and increasing in
-magnitude to $-$10\,K at 0.001\,hPa.  Estimates of systematic error in
-the MLS temperature are shown in black, with 2-$\sigma$ uncertainty
-shown with gray shading.  The black line is the modeled contribution of
-``gain compression,'' which was hoped would explain much of the vertical
-structure of MLS biases in the upper troposphere and lower stratosphere.
-As discussed above, the gain-compression model used in this study does
-not adequately close the retrieval's radiance residuals, so further
-study is needed to understand the forward-model inadequacies.
+the global network.  From 261\,hPa to \texttildelow10\,hPa there is
+generally agreement to \texttildelow1\,K between the assimilations
+(ECMWF and GEOS-5) and AIRS, radiosondes and CHAMP, with SABER and ACE
+having generally warm biases of \texttildelow2\,K relative to this
+group.  Figure~\ref{fig:TempSummary2} shows the global mean biases in
+the left panel and the 1\,$\sigma$ scatter about the mean in the right
+panel for these eight comparisons.  Between 1\,hPa and 0.001\,hPa, MLS
+has biases with respect to SABER of $+$1\,K~to~$-$5\,K between 1\,hPa
+and 0.1\,hPa, of 0\,K~to~$-$3\,K between 0.1\,K and 0.01\,K and
+increasing in magnitude to $-$10\,K at 0.001\,hPa.  Estimates of
+systematic error in the MLS temperature are shown in black, with
+2-$\sigma$ uncertainty shown with gray shading.  The black line is the
+modeled contribution of ``gain compression,'' which was hoped would
+explain much of the vertical structure of MLS biases in the upper
+troposphere and lower stratosphere.  As discussed above, the
+gain-compression model used in this study does not adequately close the
+retrieval's radiance residuals, so further study is needed to understand
+the forward-model inadequacies.
 
 Figure~\ref{fig:MLSminusGEOS5_zonalmean} shows zonal mean temperature
 and its variability averaged over 93 days processed with v2.2.
@@ -239,14 +257,6 @@ general warm bias relative to GEOS-5 at mid and high latitude that
 increases to more than 10\,K in the poles at 1\,hPa.  The bias at 1\,hPa
 is much smaller in polar summer, but persists in polar winter.
 
-\subsection*{Desired improvements}
-Improvement of the forward model, perhaps through inclusion of some
-combination of amplifier non-linearity or filter shifts to
-better-closed radiance residuals, would permit the concurrent use of
-all of the 118-GHz and 239-GHz O$_2$ bands, and improve accuracy
-throughout the profile and precision and resolution in the stratosphere. 
-
-
 \begin{sidewaystable}
 \caption{Summary of MLS Temperature product}\vspace{0.5ex}
 \label{tab:TSummary}
@@ -254,29 +264,29 @@ throughout the profile and precision and resolution in the stratosphere.
 \centering\begin{tabular}{ccccccl}
 \toprule
 \textbf{Pressure} & 
-\parbox[m]{4em}{\centering\textbf{Precision\footnote{Precision on individual profiles} \\/ K}} &
+\parbox[m]{4.5em}{\centering\textbf{Precision\footnote{Precision on individual profiles} \\/ K}} &
 \parbox[m]{4em}{\centering\textbf{Observed Scatter\footnote{Precision
       inferred from differences of
       individual profiles from successive orbits (v2.2 results shown)} \\/ K}} &
-\parbox[m]{4em}{\centering\textbf{Resolution\\ V $\times$ H\\ / km}} &
+\parbox[m]{4.5em}{\centering\textbf{Resolution\\ V $\times$ H\\ / km}} &
 \parbox[m]{6em}{\centering\textbf{Modeled Bias\\uncertainty\\ / K}} &
 \parbox[m]{6em}{\centering\textbf{Observed Bias\\uncertainty\\ / K}} &
 \textbf{Comments} \\
 \midrule
 $<$0.001\,hPa      & ---       & ---      &  ---             & --- & --- & Unsuitable for scientific use \\
-0.001\,hPa         & $\pm$2.5  & $\pm$3.5 & 10--13  $\times$ 220 & $+$2\,$\pm$\,3    & $-$9     & \\
-0.01\,hPa          & $\pm$2.2  & $\pm$3   & 8--12  $\times$ 185 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
-0.1\,hPa           & $\pm$2    & $\pm$2.3 & 6 $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
-0.316\,hPa         & $\pm$1    & $\pm$1.5 & 7.5 $\times$ 165 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
-1\,hPa             & $\pm$1    & $\pm$1.4 & 7.0 $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
+0.001\,hPa         & $\pm$3.8  & $\pm$3.5 & 11--14 $\times$ 280 & $+$2\,$\pm$\,3    & $-$9     & \\
+0.01\,hPa          & $\pm$3.7  & $\pm$3   & 10--11 $\times$ 260 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
+0.1\,hPa           & $\pm$2.5  & $\pm$2.3 & 6   $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
+0.316\,hPa         & $\pm$1.2  & $\pm$1.5 & 8   $\times$ 170 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
+1\,hPa             & $\pm$1.2  & $\pm$1.4 & 6.8 $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
 3.16\,hPa          & $\pm$0.8  & $\pm$1   & 5.5 $\times$ 165 & $+$2\,$\pm$\,2    & $+$1 & \\
-10\,hPa            & $\pm$0.6  & $\pm$1   & 4.3 $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
+10\,hPa            & $\pm$0.6  & $\pm$1   & 4.1 $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
 14.7\,hPa          & $\pm$0.6  & $\pm$1   & 3.9 $\times$ 165 & $+$4\,$\pm$\,2    &  0\,to\,$+$1 & \\
-31.6\,hPa          & $\pm$0.6  & $\pm$1   & 3.6 $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-56.2\,hPa          & $\pm$0.8  & $\pm$0.8 & 3.8 $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-100\,hPa           & $\pm$0.8  & $\pm$0.8 & 5.0 $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
-215\,hPa           & $\pm$1    & $\pm$1   & 5.0 $\times$ 170 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
-261\,hPa           & $\pm$1    & $\pm$1   & 5.0 $\times$ 170 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
+31.6\,hPa          & $\pm$0.5  & $\pm$1   & 3.6 $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+56.2\,hPa          & $\pm$0.5  & $\pm$0.8 & 3.8 $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+100\,hPa           & $\pm$0.7  & $\pm$0.8 & 4.6 $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
+215\,hPa           & $\pm$0.7  & $\pm$1   & 3.5 $\times$ 165 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
+261\,hPa           & $\pm$0.7  & $\pm$1   & 4.0 $\times$ 167 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
 1000\,--\,316\,hPa & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}

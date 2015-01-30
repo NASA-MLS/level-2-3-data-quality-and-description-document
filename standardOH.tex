@@ -6,19 +6,29 @@
 \subsection*{Introduction}
 
 The THz radiometer is dedicated to measuring OH in the 2.5\,THz spectral
-region.  A description of OH data quality, precision and systematic
-errors for an earlier version, v2.2, is given in \citet{PickettEtal08}.
-The validation studies are described in \citet{PickettEtal08} and
-\citet{WangEtal08}. An early validation using v1.5 software is also
-described in \citet{PickettEtal06}. While there are significant
-improvements from v1.5 to v2.2, the OH data quality in \thisv is generally
-similar to v2.2. One noticeable difference is the larger nighttime
-offset below 10\,hPa in \thisv. This offset can be removed with the
-day-night difference, which is recommended for altitudes below 10\,hPa.
+region. A description of OH data quality, precision and systematic
+errors for an earlier version, v2.2, is given in
+\citet{PickettEtal08}. The validation studies are described in
+\citet{PickettEtal08} and \citet{WangEtal08}. While the OH data quality
+is generally similar between v2.2 and \prevv, there are significant
+improvements in the current version \thisv. In previous versions, OH
+data near the mesospheric density peak, \texttildelow0.032 hPa, often
+show considerable amount of bad data due to negative precision,
+particularly in the summer hemisphere (or tropics when near equinox) and
+sometimes causes gaps in zonal mean time series. The \thisv software
+resolves this issue by fixing the too tight a priori constraints. The
+resulting mesospheric OH data are less noisy and generally have somewhat
+larger values than previous versions for the problematic
+seasons/latitudes. Another improvement is the smaller bias at
+10\,--\,15\,hPa. Therefore, the day-night correction for bias is only
+required for pressure levels at 21 and 32\,hPa. Note that users may
+notice more zig-zags in \thisv nighttime mesospheric OH vertical
+profiles. This is a side effect when fixing the possible positive bias
+introduced by tight lower limits set in previous version retrievals.
 
 The estimated uncertainties, precisions, and resolution for \thisv OH are
 summarized in Table~\ref{tab:OHSummary}. Note that the systematic
-uncertainties are from v2.2, but are not expected to change significantly
+uncertainties are from \prevv, but are not expected to change significantly
 in \thisv.
 
 
@@ -30,20 +40,20 @@ is that the largest natural variability in OH is diurnal. The vertical
 resolution is slightly different between day and night. The nighttime
 resolution is sufficient to allow the study of (for example) the
 ``nighttime OH layer'' around 82\,km.  The vertical width of the
-averaging kernel for pressures greater than 0.01\,hPa is 2.5\,km.  The
+averaging kernel for pressures greater than 0.01\,hPa is\,2.5 km.  The
 horizontal width of the averaging kernel is equivalent to a width of
-1.5\degsym\ (165\,km distance) along the orbit. The changes in vertical
+1.5\degsym (165\,km distance) along the orbit.  The changes in vertical
 resolution above 0.01\,hPa are due mainly to use of a faster instrument
-vertical scan rate for tangent heights above 70\,km. The horizontal
+vertical scan rate for tangent heights above 70\,km.  The horizontal
 resolution across track is 2.5\,km. The averaging kernel and resolution
-for high and low latitudes are very similar to Figure~\ref{fig:AvkOH} for
-most pressure levels.  At the topmost two pressure levels, 0.0046\,hPa
-and 0.0032\,hPa, the vertical resolution is slightly better at the
-equator than at 70\degsym N.
+for high and low latitudes are very similar to Figure~\ref{fig:AvkOH}
+for most pressure levels.  At the topmost two pressure levels,
+0.0046\,hPa and 0.0032\,hPa, the vertical resolution is slightly better
+at the equator than at 70\degsym N.
 
 \subsection*{Precision}
 
-A typical OH profile and the associated precisions (for both v2.2 and
+A typical OH profile and the associated precisions (for both \prevv and
 \thisv) are shown in Figure~\ref{fig:OHprofiles}. The profile is shown in
 both volume mixing ratio (vmr) and density units. All MLS data are
 reported in vmr for consistency with the other retrieved molecules.
@@ -64,7 +74,7 @@ over 21\,--\,0.01\,hPa. With 4 days of data, the 10\% precision limits
 can be extended to 32\,--\,0.0046\,hPa.
 
 \begin{figure}
-  \centering\dontincludegraphics[width=0.7\linewidth]{figures/avk-OH_day_night_35N}
+\centering\includegraphics[width=0.7\linewidth]{figures/avk-OH}
   \caption{Typical two-dimensional (vertical and horizontal along-track)
     averaging kernels for the MLS \thisv OH data at 35\degsym N for
     daytime (upper) and nighttime (lower); variation in the averaging
@@ -122,10 +132,10 @@ uncertainty is the part of the uncertainty that is independent of
 concentration. For both bias and scaling uncertainty, quantification of
 the combined effect in MLS calibration, spectroscopy etc., on the data
 product was determined by calculating the effects of each source of
-uncertainty. These accuracy calculations are for v2.2 products. While no
-significant change is expected from v2.2 to \thisv, a comprehensive error
-analysis for \thisv will be conducted.  Bias uncertainty can be eliminated
-by taking day-night differences from 32\,--\,14\,hPa. For
+uncertainty. These accuracy calculations are for \prevv products. While
+no significant change is expected from \prevv to \thisv, a comprehensive
+error analysis for \thisv will be conducted.  Bias uncertainty can be
+eliminated by taking day-night differences from 32\,--\,14\,hPa. For
 10\,--\,0.1\,hPa, the observed night OH concentration is small and
 day-night differencing is not ordinarily needed. The accuracy of the OH
 measurement due to systematic errors is a product of scaling uncertainty
@@ -158,35 +168,22 @@ ignored. This can present a problem when compiling maps, because the
 missing data may appear at the same latitude and longitude on successive
 days.
 
-\subsection*{Data for 2009 and beyond under investigation}
-
-As discussed in section~\ref{sec:OHNote}, we have performed the 30-day OH
-measurement during 2011 and 2012 and plan to continue it in the coming
-years as the solar maximum approaches (expected to be in
-2013\,--\,2015). However, due to the aging of the instrument and the
-rather long suspension period during 2009\,--\,2011, ``new'' OH data
-acquired since 2011 are significantly noisier than the previous years
-and likely require additional calibration.  We have been examining the
-data carefully.  The release of the ``new'' OH data for scientific use
-will depend on the results of this continuing effort.  
-
-Scientists interested in these observations are advised to consult the
-MLS science team.
-
 \subsection*{Review of comparisons with other datasets}
 
 Data from MLS v2.2 software have been validated with two balloon-borne
 remote-sensing instruments and with ground-based column measurements.
 Details of the comparison are given in \citet{PickettEtal08} and
-\citet{WangEtal08}. The comparison between v2.2 and \thisv show no
-significant differences.
+\citet{WangEtal08}.  The comparison among v2.2, \prevv, and \thisv show
+no significant differences except for the mesosphere where \thisv OH
+daytime values are somewhat larger and less noisy in the summer
+hemisphere (or tropics when near equinox).
 
 \begin{table}
 \caption{Summary of precisions, resolution, and uncertainties for the
   MLS OH product}
 \vspace{\tablecaptionsep}
 \label{tab:OHSummary}
-\begin{minipage}{\textwidth}
+\begin{minipage}{\textwidth}\small
 \centering\begin{tabular}{rccccl}
 \toprule
 \textbf{Pressure} &

@@ -8,15 +8,15 @@
 In \thisv, as in \prevv, the standard CH\cs3CN product is taken from
 radiances measured by the radiometer centered near 640\,GHz.  The
 CH\cs3CN retrieval is largely unchanged in \thisv. Neither the \prevv
-nor the \thisv CH\cs3CN data have been validated extensively at the
-time of writing; such validation is planned for the future.  However,
-the \thisv CH\cs3CN data are deemed to be scientifically useful over
-the range 46 to 1\,hPa, except in the winter polar vortex regions,
-where they may exhibit large biases below 10\,hPa.  Data retrieved at
-higher pressures may be used with caution in certain circumstances.  A
-summary of the estimated precision and resolution (vertical and
-horizontal) of the \thisv CH\cs3CN measurements as a function of
-altitude is given in Table~\ref{tab:CH3CNSummary}.
+nor the \thisv CH\cs3CN data have been validated extensively at the time
+of writing; such validation is planned for the future.  However, the
+\thisv CH\cs3CN data are deemed to be scientifically useful over the
+range 46 to 1\,hPa, except in the winter polar regions, where they may
+exhibit large biases below 10\,hPa.  Data retrieved at higher pressures
+may be used with caution in certain circumstances.  A summary of the
+estimated precision and resolution (vertical and horizontal) of the
+\thisv CH\cs3CN measurements as a function of altitude is given in
+Table~\ref{tab:CH3CNSummary}.
 
 \subsection*{Differences between \prevv and \thisv}
 
@@ -26,12 +26,11 @@ altitude is given in Table~\ref{tab:CH3CNSummary}.
 \includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel2}\\
 \includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel3}&
 \raisebox{2cm}{\parbox[b]{0.5\textwidth}{%
-\caption{Zonal averages of MLS CH\cs3CN profiles for a representative
-  month (July 2009), showing the MLS \thisv mixing ratios (left), the
-  \prevv mixing ratios (middle), and their differences in pptv (\prevv
-  minus \thisv, right) as a function of pressure.}}}%
+    \caption{Zonal averages of MLS CH\cs3CN profiles for a representative
+      month (July 2009), showing the MLS \thisv mixing ratios (upper left), the
+      \prevv mixing ratios (upper right), and their differences in pptv (\prevv
+      minus \thisv, lower left) as a function of pressure.\label{fig:zmcontourCH3CN}}}}%
 \end{tabular}
-\label{fig:zmcontourCH3CN}
 \end{figure}
 
 \mycomment{Start off with some words summarizing the differences in
@@ -56,23 +55,23 @@ retrieval system in both the vertical and horizontal directions to
 enhance retrieval stability and precision, degrades the inherent
 resolution of the measurements.  Thus, although CH\cs3CN measurements
 are reported at six pressure levels per decade change in pressure
-(spacing of \textasciitilde2.7\,km), the vertical resolution of the
+(spacing of \texttildelow2.7\,km), the vertical resolution of the
 \thisv CH\cs3CN data as determined from the full width at half maximum
 of the rows of the averaging kernel matrix shown in
 Figure~\ref{fig:AvkCH3CN} degrades from 4\,km at 147\,hPa to
-\textasciitilde5\,--\,6\,km in the lower stratosphere, and then
-further worsens to \textasciitilde7\,--\,8\,km in the upper
+\texttildelow5\,--\,6\,km in the lower stratosphere, and then
+further worsens to \texttildelow7\,--\,8\,km in the upper
 stratosphere.  Substantial overlap in the averaging kernels for the
 100 and 147\,hPa retrieval surfaces (which both peak at 100\,hPa)
 indicates that the 147\,hPa retrieval does not provide as much
 independent information as is given by retrievals at higher altitudes.
 Figure~\ref{fig:AvkCH3CN} also shows horizontal averaging kernels,
 from which the along-track horizontal resolution is determined to be
-\textasciitilde400\,--\,700\,km over most of the vertical range.  The
+\texttildelow400\,--\,700\,km over most of the vertical range.  The
 cross-track resolution, set by the width of the field of view of the
-\mbox{640-GHz} radiometer, is \textasciitilde3\,km.  The along-track
+\mbox{640-GHz} radiometer, is \texttildelow3\,km.  The along-track
 separation between adjacent retrieved profiles is 1.5\degsym\ great
-circle angle (\textasciitilde165\,km), whereas the longitudinal
+circle angle (\texttildelow165\,km), whereas the longitudinal
 separation of MLS measurements, set by the Aura orbit, is
 10\degsym--\,20\degsym\ over low and middle latitudes, with much finer
 sampling in the polar regions.
@@ -80,7 +79,7 @@ sampling in the polar regions.
 \subsection*{Precision}
 
 \begin{figure}
-\centering\includegraphics[width=12.0cm]{figures/MLSascdsc_CH3CN}
+\centering\includegraphics[width=10.0cm]{figures/MLSascdsc_CH3CN}
 \caption{(left) Ensemble mean profiles for ascending (light red) and
   descending (dark red) orbit matching pairs of MLS \thisv CH\cs3CN
   profiles averaged over a representative year of data (2009).
@@ -98,8 +97,7 @@ sampling in the polar regions.
   \mbox{1-$\sigma$} precision for a single profile.  The thin black
   lines mark zero in each panel.  The number of crossing pairs of
   measurements being compared at each pressure level is noted in the
-  space between the panels.}
-\label{fig:mlsascdscCH3CN}
+  space between the panels.\label{fig:mlsascdscCH3CN}}
 \end{figure}
 
 The precision of the MLS CH\cs3CN data is estimated empirically by
@@ -115,7 +113,7 @@ assuming that the a priori has a negligible influence on the
 retrieval. The precision estimates were found to be essentially
 invariant with time; results for a representative year of data are
 shown in Figure~\ref{fig:mlsascdscCH3CN}. The observed standard
-deviation values are \textasciitilde50\,pptv or less throughout most
+deviation values are \texttildelow50\,pptv or less throughout most
 of the vertical domain, increasing to 100\,pptv at 147 and
 1\,hPa. Mean differences between paired crossing profiles are
 negligible, indicating the absence of significant
@@ -136,31 +134,31 @@ pressure level of a single profile; precision can generally be
 improved by averaging, with the precision of an average of $N$
 profiles being 1/$\sqrt{N}$ times the precision of an individual
 profile (although the actual standard error of the mean can in some
-cases be even smaller \citep{TooheyvonClarmann13}).
+cases be even smaller \citep{TooheyAndVonClarmann13}).
 
 \subsection*{Range}
 
-Although CH\cs3CN is retrieved (and reported in the L2GP files) over
-the range 147 to 0.001\,hPa, on the basis of the drop off in precision
-and resolution, the lack of independent information contributed by the
+Although CH\cs3CN is retrieved (and reported in the L2GP files) over the
+range 147 to 0.001\,hPa, on the basis of the drop off in precision and
+resolution, the lack of independent information contributed by the
 measurements, and the results of simulations using synthetic data as
 input radiances to test the closure of the retrieval system, the data
-are not deemed reliable at the extremes of the retrieval range.  Thus
-we recommend that \thisv CH\cs3CN be used for scientific studies only
-at the levels between 46 and 1\,hPa.  However, although the 147, 100,
-and 68\,hPa retrievals are not generally recommended, they may be
-scientifically useful in some circumstances.  For example, the data
-display unphysical sharp latitudinal gradients at $\pm$30\degsym\ at
-100 and 68\,hPa, yet the large-scale longitudinal variations within
+are not deemed reliable at the extremes of the retrieval range.  Thus we
+recommend that \thisv CH\cs3CN be used for scientific studies only at
+the levels between 46 and 1\,hPa, except in the winter polar regions,
+where they may exhibit large biases below 10\,hPa.  However, although
+the 147, 100, and 68\,hPa retrievals are not generally recommended, they
+may be scientifically useful in some circumstances.  For example, the
+data display unphysical sharp latitudinal gradients at $\pm$30\degsym\
+at 100 and 68\,hPa, yet the large-scale longitudinal variations within
 the tropics are probably robust.  Similarly, confined regions of
-significant enhancement at 147\,hPa unaccompanied by comparably
-enhanced values at 100\,hPa may reflect real atmospheric features.
-Indeed, many of the ``hotspots'' apparent in MLS CH\cs3CN measurements
-in the upper troposphere / lower stratosphere closely track similar
-enhancements in other pollution markers measured by MLS, such as CO
-and CH\cs3Cl.  The \thisv CH\cs3CN data at the lowest retrieval levels
-(147\,--\,68\,hPa) should only be used in consultation with the MLS
-science team.
+significant enhancement at 147\,hPa unaccompanied by comparably enhanced
+values at 100\,hPa may reflect real atmospheric features.  Indeed, many
+of the ``hotspots'' apparent in MLS CH\cs3CN measurements in the upper
+troposphere / lower stratosphere closely track similar enhancements in
+other pollution markers measured by MLS, such as CO and CH\cs3Cl.  The
+\thisv CH\cs3CN data at the lowest retrieval levels (147\,--\,68\,hPa)
+should only be used in consultation with the MLS science team.
 
 \subsection*{Accuracy}
 
