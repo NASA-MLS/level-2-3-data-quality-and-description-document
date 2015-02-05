@@ -2,115 +2,139 @@
 \item[Useful range:] 261\,--\,0.001\,hPa
 \item[Contact:] Michael J. Schwartz,
   \email{Michael.J.Schwartz@jpl.nasa.gov}}
-\label{sec:StandardGPH}%
 
 \subsection*{Introduction}
 
 Geopotential height (GPH) is retrieved, along with temperature and the
 related assignment of tangent pressures to limb views, primarily from
-bands near O\cs2 spectral lines at 118-GHz and 234\,GHz.  \thisv GPH
-product is taken from the CorePlusR3 retrieval phase that also produces
-a number of standard products dependent upon radiances of the 240-GHz
-radiometer while the previously released v02.2x and v03.x GPH products
-were taken from a preliminary ``core'' retrieval phase.  Despite this
-difference, the \thisv GPH product is quite similar to the v03.x product
-and to the v02.2 product described in \citet{SchwartzEtal08}.
+bands near O\cs2 spectral lines at 118-GHz and 234\,GHz.  The \thisv GPH
+product is generally similar to both the v03.x product and to the v02.2
+product that is described in \citet{SchwartzEtal08}.
 
-The heights of surfaces of constant geopotential is a property of the
-Earth's magnetic field and does not depend upon atmospheric conditions.
-Differences in geopotential between surfaces between surfaces are equal
-to the integral with height of the gravitational acceleration, $g$.  GPH
-is integral of $g$ with height from the Earth surface geopotential to a
-given surface, scaled by $g_0$, the standard gravitational acceleration
-at mean sea level, to give units of height.
+The heights of surfaces of constant geopotential are a property of the
+Earth's gravitational field and do not depend upon atmospheric
+conditions.  Geopotential differences between surfaces are equal to the
+integral with height of the gravitational acceleration, $g$.  GPH is
+geopotential difference from the Earth surface geopotential to a given
+location, scaled by the standard gravitational acceleration at mean sea
+level, $g_0$, to give units of height.
 
-MLS retrieves on pressure surfaces, and the pressures of GPH surfaces do
-depend upon temperature and height through hydrostatic balance and the
-gas law.
-
+MLS products, including GPH, are reported on pressure surfaces and
+these pressures depend upon temperature and height
+through hydrostatic balance and the gas law.
 \begin{equation}
 \frac{1}{g_o} \int g\,dh = \frac{R}{M g_o}\int T\,dP/P,
 \end{equation}
-
 where $M$ is the molar mass of air and $R$ is the gas constant.
 
-MLS retrievals use the 100-hPa surface as a reference level from which
-integrations are performed because MLS does not retrieve temperature
-down to the Earth's surface.  Differences of GPH from the 100\,hPa
-reference surface used by MLS are equal to the integrated temperature
-with respect to log-pressure between the levels, scaled by $R/M/g_0$,
-where $R$ is the gas constant, $M$ is the molar mass of air, and $g_0$
-is mean sea-level gravity.  Only one element of GPH (chosen to be the
-value at 100\,hPa in the MLS Level~2 processing) is independent of the
-temperature profile.  Table~\ref{tab:GPHSummary} summarizes the
-measurement precision, modeled accuracy and observed biases.  The
-following sections provide details.
+MLS retrieves temperature and pressure from radiometric measurements,
+and in concert with precise differences in limb pointing provided by the
+scan model, GPH differences between pressure surfaces are
+inferred. Absolute pointing cannot be inferred from radiometric
+information and must be provided for each retrieved profile by the
+spacecraft orbit/attitude system and the instrument scan model.  By
+convention, this additional degree of freedom is taken to be the height
+of the 100-hPa reference level, but this choice is arbitrary, as the
+reference is an additive offset to the entire profile.
 
-\subsection*{Biases}
-Comparison of MLS retrieved 100-hPa with that of GEOS-5 reveals
-persistent and seasonally-varying biases that can exceed 300\,m, much
-larger than systematic uncertainties in GEOS-5 100-hPa GPH.  Results
-shown in this section are between GEOS-5.2 and MLS v03.3x GPH, but are
-beleived to be generally consistent with those of \thisv GPH.
+Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
+modeled accuracy and observed biases.  The following sections provide
+details.
 
-MLS calculations are made assuming that the the World Geodetic System
-1984 ellipsoid (WGS84) as the Earth's surface, whereas GEOS-5 uses a
-reference geoid,the Earth Gravitational Model 1996 (EGM96), a model of a
-geopotential surface.  The use by MLS of the simplified model, WGS84, in
-its ray-tracing calculations is reasonable in that retrievals are made
-on pressure rather than height surfaces and in that atmospheric opacity
-at the frequencies at which MLS observes are such that MLS does not
-``see'' the Earth's surface, so accurate representation of its height is
-not important for tracing of reflected rays.  However, MLS \thisv and
-previous versions of GPH are reported as heights \emph{from the WGS84}.
-Comparisons of the WGS84 with a reference geoid
-(Figure~\ref{fig:geoidheight}), show differences that can exceed 100\,m.
-Ideally, these biases should be subtracted from MLS GPH on pressure
-surfaces before (for example) geostrophic winds are calculated from GPH
-gradients.
+\subsection*{Differences between \thisv and previous versions}
+The \thisv GPH product is taken from the CorePlusR3 retrieval phase
+along with a number of standard products that depend upon radiances of
+the 240-GHz radiometer.  The previously released v02.2x and v03.x GPH
+products were taken from a preliminary ``core'' retrieval phase.  Since
+these GPH profiles are retrieved simultaneously with the CorePlusR3
+products and are assumed in the CorePlusR2 and CorePlusR4 retrievals,
+GPH and the retrieved constituents should be, in some sense, more
+internally consistent than they were in previous versions.
+
+These previous versions of MLS GPH were referenced to the WGS84
+ellipsoid, a simple model of the Earth's surface but not a surface of
+constant geopotential.  \thisv uses a surface of constant geopotential,
+the Earth Gravitational Model 1996 (EGM96) geoid, as its zero GPH
+surface.  The magnitude of the static, latitude/longitude-dependent
+difference between the geoid and ellipsoid exceeds $\pm$100\,m in
+places, as is shown in Figure~\ref{fig:geoidheight}.  This EGM96-WGS84
+difference is a bias that should be subtracted from previous versions'
+GPH before they are compared to \thisv GPH.  These differences, if not
+corrected, will result in an erroneous contribution to geostrophic winds
+calculated from v03.x and v02.x GPH that will add to all levels.
 \begin{figure}
-\centering\includegraphics[width=0.7\linewidth]{figures/geoidheight}
+\centering\includegraphics[width=0.7\linewidth]{figures/EGM96-WGS84}
 \caption{The height of the EGM96 geoid from the WGS84 ellipsoid.  These
-  values should be subtracted from MLS GPH reported values to give
-  geopotential heights referenced to the Earth's mean sealevel
-  geopotential. (I will remake this figure as a native eps.)}
+  values should be subtracted from MLS v03.x and earlier GPH values to give
+  geopotential heights referenced to the Earth's mean sea level
+  geopotential.  \thisv GPH does not include this bias term.)}
 \label{fig:geoidheight}
 \end{figure}
 
-After removal of the geoid correction, there remain latitudinally and
-seasonally-varying biases between MLS and GEOS-5   
+After correction of v03.3x for the EGM96-WGS84 bias, \thisv GPH values
+are found to be somewhat higher at high latitudes than are those of the
+v03.3x product, with typical 100-hPa mean differences of 50\,m in the
+high northern latitudes, 30\,m in high southern latitudes and close to
+zero bias in the tropics.  \thisv-v03.3x differences from the ascending
+and descending parts of the orbits are not appreciably different and
+differences are similar from year to year.  The annual cycle of \thisv
+minus v03.30 100-hPa GPH is shown in
+Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.  The
+details of these differences vary between the two years, but the
+morphology is similar.
+\begin{figure}
+\centering\includegraphics[width=0.7\linewidth]{figures/v4-v3_100hPaGPH_2005-2009_bylat}
+\caption{Differences between \thisv and v03.30 100-hPa GPH for 2005 and
+  2009 are shown as functions of latitude and day of year.}
+\label{fig:v4-v3_100hPaGPH_2005}
+\end{figure}
+
+\subsection*{Comparison to GEOS-5 Analysis}
+After removal of the geoid correction from v03.3x GPH, there remains a
+latitudinally and seasonally-varying bias between MLS and GEOS-5 that is
+also present in \thisv GPH.  Figure~\ref{fig:GPHv3_lat_annual} shows
+this pattern for in the difference between geoid-corrected v03.3x and
+GEOS-5 100-hPa GPH.  This pattern is essentially unchanged in \thisv.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/GPH_geoid_correction2A}
 \caption{Annually-repeating biases between MLS 100-hPa GPH and GEOS-5.2
   100-hPa GPH as functions of ascending and descending latitude and of
   day of year.  These biases were computed based upon data from the
-  years 2005--2012. (I will remake this figure as a native eps.)}
-\label{fig:GPH_lat_annual}
+  years 2005--2012.}
+\label{fig:GPHv3_lat_annual}
 \end{figure}
-Some of this annually-repeating ``bias'' is likely annually-repeating
-geophysical information captured by MLS that is not in the GEOS-5
-analysis, but the large ascending-descending are almost certainly not
-primarily diurnal effects.  After removal of this annually-repeating
-bias and a there is a residual global decreasing trend in the MLS
-100-hPa GPH relative to GEOS-5 of $\sim$100\,m in the first 4 years of
-the mission, 2005--2008, with a further $\sim$15\,m decrease in
-2009--2012.  The standard deviation of the differences between the
-bias-corrected MLS and GEOS-5 100-hpa GPH is on the order of 20\,m.
 
-\subsection*{Differences between \thisv and previous versions}
+Some of this annually-repeating ``bias'' may result from
+annually-repeating geophysical information captured by MLS that is not
+in the GEOS-5 analysis, but the large ascending-descending differences
+are almost certainly not primarily diurnal effects.  The fidelity with
+which these patterns annually repeat suggests that they may result from
+thermal distortions of the spacecraft/instrument that vary annually due
+to the eccentricity of the Earth's orbit or perhaps from orbit/attitude
+errors from the star trackers that provide the spacecraft-attitude
+information.
 
-The \thisv GPH values are typically slightly higher than those of the
-v3.3 product, with typical mean differences ranging from 20\,--\,40\,m
-in the stratosphere, increasing by $\sim$10\,m in the upper troposphere
-and in the mesosphere.  Typical scatter about the mean difference is
-$\sim$40\,m at 100\,hPa, increaing to 60\,m at 1\,hPa and 100\,m at
-0.01\,hPa.  Seasonal and latitudinal variations in the mean difference
-between \thisv and v3.3 GPH are typically less than 20\,m, with somewhat
-larger seasonal differences in the high southern latitudes and above
-0.01\,hPa.  As with temperature, the 316-hPa level of \thisv GPH is not
-recommended for scientific use.  The standard \thisv GPH product is
-reported on the same 55-level grid as is the \thisv temperature.
+\begin{figure}
+\centering\includegraphics[width=0.7\linewidth]{figures/v4GPH_2005_2009_byOGA}
+\caption{Daily-binned differences between \thisv and GEOS-5.9 100-hPa
+  GPH as functions of orbital position.  Orbital position, from the bottom of each
+  panel, ascends from the equator to the northern terminator, descends
+through the equator to the southern terminator and then ascends to the
+equator.}
+\label{fig:v4GPH_2005_2009_byOGA}
+\end{figure}
 
+Figure~\ref{fig:v4GPH_2005_2009_byOGA} shows daily-binned differences
+between \thisv and GEOS-5.9 100-hPa GPH as functions of orbital
+position. The patterns are extremely similar in the two years, but 2009
+is $\sim$80\,m lower than 2005 due to a decreasing trend in MLS \thisv
+GPH.  Analysis of v03.x GPH, for which the entire MLS record has been
+processed, show a similar, perhaps slightly larger residual global
+decreasing trend of $\sim$100\,m in the first 4 years of the mission,
+2005--2008, with a further $\sim$15\,m decrease in 2009--2012.  The
+standard deviation of the differences between the bias-corrected MLS and
+GEOS-5 100-hPa GPH is on the order of 20\,m.  The origins of this trend,
+which is not seen in the analysis, is a topic of current research.
 \subsection*{Vertical resolution}
 
 The GPH profile is vertically-integrated temperature, so its vertical
@@ -138,7 +162,7 @@ errors are believed to be small (\texttildelow5\,m near 100\,hPa.)
 
 The accuracy of the v2.2 GPH was modeled based upon consideration of a
 variety of sources of systematic error, as discussed in
-\citep{SchwartzEtal08}. \thisv accuracy is believed to be substantially
+\citet{SchwartzEtal08}. \thisv accuracy is believed to be substantially
 similar and the results of the v2.2 calculations are given in column
 four of Table\,\ref{tab:GPHSummary}. Of the error sources considered,
 modeled amplifier non-linearity had the largest impact, just as is the
@@ -155,19 +179,19 @@ estimate of bias based upon comparisons with analyses and with other
 previously-validated satellite-based measurements.  These comparisons
 were made using MLS v2.2, but as the biases between v2.2 and \thisv GPH
 are generally less than 50\,m from 261\,--0.1\,hPa and reasonably
-constant, so these results hold for \thisv as well.  The primary sources
-of correlative data were the Goddard Earth Observing System, Version
-5.0.1 data assimilation system (GEOS-5) \citep{ReineckerEtal07}, used in
-the troposphere and lower stratosphere, and the Sounding of the
-Atmosphere using Broadband Radiometry (SABER)
-\citep{MlynczakAndRussell95}, used in the upper stratosphere through the
-mesosphere.  MLS has a 150\,m high bias relative to analyses (GEOS-5) at
-100-hPa that drops to 100\,m at 1\,hPa.  Biases with respect to SABER
-are small at 0.1\,hPa but increasingly negative at higher levels,
-reaching -600\,m at 0.001\,hPa, but with significant latitudinal and
-seasonal variability.
+constant, these results hold for \thisv as well.  The primary sources of
+correlative data were the Goddard Earth Observing System, Version 5.0.1
+data assimilation system (GEOS-5) \citep{ReineckerEtal07}, used in the
+troposphere and lower stratosphere, and the Sounding of the Atmosphere
+using Broadband Radiometry (SABER) \citep{MlynczakAndRussell95}, used in
+the upper stratosphere through the mesosphere.  MLS has a 150\,m high
+bias relative to analyses (GEOS-5) at 100-hPa that drops to 100\,m at
+1\,hPa.  Biases with respect to SABER are small at 0.1\,hPa but
+increasingly negative at higher levels, reaching -600\,m at 0.001\,hPa,
+but with significant latitudinal and seasonal variability.
 
 \subsection*{Data screening}
+\label{sec:GPHScreening}
 
 GPH should be screened in the same way as is temperature:
 
@@ -181,26 +205,25 @@ GPH should be screened in the same way as is temperature:
 
 \evenstatusrule
 
-\item[Clouds:]
-
-  \screeningrule{Thick clouds are believed have some impact on \thisv
-    GPH measurements in the upper troposphere (261\,--\,100\,hPa),
-    however the cloud-flags bits of the \thisv GPH status are not useful
-    in screening out cloud impacts.  Screening of \thisv tropospheric
-    GPH for values impacted by clouds is an area of ongoing research.}
+\item[Clouds:] Thick clouds are believed have some impact on \thisv GPH
+  measurements in the upper troposphere (261\,--\,100\,hPa).
+  Tropospheric GPH may be screened using the ice water content (IWC)
+  product, rejecting profiles between 261--100\,hPa for which the
+  215\,hPa value of IWC is greater than 0.005\,mg/m$^3$.
 
 \item[Quality:] \qualityrule{0.9} This threshold typically excludes
-  1.4\% of global profiles, but 4.8\% of tropical profiles.
+  1.4\% of global profiles and 4.8\% of tropical profiles.
 
-\item[Convergence:] \convergencerule{1.021} Use of this threshold
-  typically discards 0.1\% of profiles and eliminates a significant
-  fraction, but not all of a non-Gaussian tail of outliers that
-  comprises less than 0.01\% of the 100-hPa retrieved values.
+\item[Convergence:] \convergencerule{1.03} Use of this threshold
+  typically discards less than 0.1\% of profiles and is primarily a
+  safeguard against profiles with extremely poor convergence.
 
 \end{description}
 
 \subsection*{Review of comparisons with other data sets}
 \label{sec:GPHComparisons}
+The 100\,hPa reference GPH has a global high bias early in the mission of
+$\sim$80--100\,m which drops to 0--20
 
 The 100\,hPa reference GPH is typically 100\,--\,250\,m higher than
 GEOS-5 in the northern high latitudes and 50\,--\,200\,m higher than
@@ -223,17 +246,12 @@ the general low temperature bias of MLS with respect to SABER.
 
 \subsection*{Desired improvements for future data version(s)}
 
-Reduction of biases in the GPH product likely requires improvement of
-our ability to model atmospheric radiative transfer and/or the
-measurement system to improve the fit between the forward model and
-observed radiances near the O$_2$ spectral lines from which temperature
-and pointing information are extracted.  The simple model of ``gain
-compression'' proposed during v2.2 validation proved inadequate during
-\thisv development, but research in this area is ongoing.  Some
-seasonally and latitudinally-repeating systematic errors in GPH may be
-the result of error in the absolute pointing reference that is taken
-from the spacecraft attitude and ephemeris data stream.  Reduction of
-these systematic errors is an area of ongoing research.
+Reduction of seasonally and latitudinally-repeating systematic errors in
+GPH that may be the result of errors in the absolute pointing
+information from the spacecraft attitude and ephemeris data stream is an
+area of ongoing research.  Undertanding the decreasing trend in MLS
+global mean GPH, particularly in the first four years of the mission is
+an area of active research.
   
 \begin{table}
 \label{tab:GPHSummary}

@@ -2,7 +2,6 @@
 \item[Useful range:] UTRHI, mean layer value for P $\le$ 383\,hPa,
 Profile from 316\,--\,0.002\,hPa.
 \item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
-\label{sec:StandardRHI}
 
 \subsection*{Introduction}
 
@@ -27,26 +26,27 @@ is summary of precision, resolution, and accuracy.
 
 The main differences between v4.2 and v3.3 relate to cloud screening and
 improvements in the InitUTH initial upper tropospheric and lower
-stratospheric humidity estimation phase that produces the
-first guess and sets smoothing constraints on the H\cs2O profile retrieved
-in the final retrieval phase that produces the standard product. There
-have been no spectroscopy changes either in linewidth or continuum
-charaterization between v4 and v3. An improved cloud detection methodology
-has been developed for v4 that does a better job of rejecting cloudy
-radiances that are likely to cause poor fits and corrupted profiles. The
-number of erroneous spikes in the upper troposphere has been reduced in
-v4 relative to v3. The InitUTH phase retrieves H\cs2O on a more coarse
-6~ldp grid. The InitUTH H\cs2O is used for the initial guess for the final
-12~lpd retrieval and sets smoothing constraints for the profile shape instead
-of smoothing to the shape of a climatological apriori profile.
-The InitUTH phase has
-been expanded to use more channels and better forward model representations to
-improve its retrieval accuracy. In addition, the retrieval range has been
-expanded to have its top moved from 100~hPa (in v3) to 10~hPa (in v4). This
-change makes a more seamless transition from the troposphere to the
-stratosphere. Simulation studies show that these changes have improved the
-agreement between the ``truth'' profiles used to produce the simulated radiances
-and the retrieved profiles in the 316--215~hPa levels. 
+stratospheric humidity estimation phase that produces the first guess
+and sets smoothing constraints on the H\cs2O profile retrieved in the
+final retrieval phase that produces the standard product. There have
+been no spectroscopy changes either in linewidth or continuum
+charaterization between v4 and v3. An improved cloud detection
+methodology has been developed for v4 that does a better job of
+rejecting cloudy radiances that are likely to cause poor fits and
+corrupted profiles. The number of erroneous spikes in the upper
+troposphere has been reduced in v4 relative to v3. The InitUTH phase
+retrieves H\cs2O on a more coarse 6 levels per decade grid. The InitUTH H\cs2O is used
+for the initial guess for the final 12~levels per decade retrieval and
+sets smoothing constraints for the profile shape instead of smoothing to
+the shape of a climatological apriori profile.  The InitUTH phase has
+been expanded to use more channels and better forward model
+representations to improve its retrieval accuracy. In addition, the
+retrieval range has been expanded to have its top moved from 100~hPa (in
+v3) to 10~hPa (in v4). This change makes a more seamless transition from
+the troposphere to the stratosphere. Simulation studies show that these
+changes have improved the agreement between the ``truth'' profiles used
+to produce the simulated radiances and the retrieved profiles in the
+316--215~hPa levels.
 
 \begin{figure}
 \begin{center}
@@ -87,7 +87,7 @@ This retrieval is used as an a priori and profile
 constraint for the humidity profile at pressures greater than 316\,hPa
 which are not retrieved in the standard H\cs2O product retrieval.
 
-The third panel in Figure~\ref{fig:avgmlsprflcomp} shows the mean
+The third panel in Figure~\ref{fig:avgmlsrhiprflcomp} shows the mean
 estimated single profile precision and the measured variability (which
 includes instrument noise and atmospheric variability). The precisions
 for the two versions are nearly identical except for pressures greater than
@@ -118,12 +118,12 @@ $\sim$650\,hPa (typical for dry high latitudes).
 \subsection*{Precision}
 
 The values for precision are the root sum square (RSS) precisions for
-H\cs2O and temperature propagated through the Goff-Gratch
-  relationship, see sections~\ref{sec:StandardH2O} and
-\ref{sec:StandardTemperature} for more details. The precisions are set
-to negative values in situations when the retrieved precision is larger
-than 50\% of the a priori precision for either temperature or H\cs2O ---
-an indication that the data is biased toward the a priori value.
+H\cs2O and temperature propagated through the Goff-Gratch relationship,
+see sections~\ref{navSectionH2O} and~\ref{navSectionTemperature} for
+more details. The precisions are set to negative values in situations
+when the retrieved precision is larger than 50\% of the a priori
+precision for either temperature or H\cs2O --- an indication that the
+data is biased toward the a priori value.
 
 \subsection*{Accuracy}
 
@@ -135,6 +135,7 @@ plans to repeat the v3 exercise with the v4 software and release the
 results in a subsequent version of this document.
 
 \subsection*{Data screening}
+\label{sec:RHIScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{Profile from 316\,--\,0.002\,hPa,
     larger pressures represent mid/upper troposphere column.}
@@ -177,13 +178,14 @@ the mean, but the mean bias as compared to AIRS changes by less than
 
 \subsection*{Review of comparisons with other datasets}
 
-Figures~\ref{fig:rhiairsmlsjf2005maps} and \ref{fig:rhiairsmlsjja2005maps}
-show comparisons between AIRS v6 and MLS v2, 3, and 4. Mapped features tend
-to agree well but MLS produces higher relative humidities in the moist
-regions of the tropics relative to AIRS. Version 4 at 300~hPa at high northern
-latitudes in Jan-Feb. show marked improvement to AIRS compared to the earlier
-verisons. Except as noted previously, the three MLS versions show little
-change amongst themselves.
+Figures~\ref{fig:rhiairsmlsjf2005maps} and
+\ref{fig:rhiairsmlsjja2005maps} show comparisons between AIRS v6 and MLS
+v2, 3, and 4. Mapped features tend to agree well but MLS produces higher
+relative humidities in the moist regions of the tropics relative to
+AIRS. Version 4 at 300~hPa at high northern latitudes in January to
+February show marked improvement over the earlier versions by comparison
+to AIRS\@. Except as noted previously, the three MLS versions show
+little change amongst themselves.
 
 \begin{figure}
 \begin{center}

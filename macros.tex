@@ -4,36 +4,35 @@
 % ---------------------------------------- Defining a product
 % This command sets up a section for a species.
 %
-\newcommand{\thumbmark}{}
-\newcommand{\thumbbackground}{black}
-%
+% Arguments are:
+% #1: Optional note after the swath name
+% #2: Full English name (e.g., Nitrous Oxide)
+% #3: LaTeX formula (e.g., N\cs2O)
+% #4: Swath name
+% #5: Remaining contents of the \description environment
 \newcommand{\speciestitle}[5][]{%
-\cleardoublepage\suppressfloats[t]
-\renewcommand{\thumbmark}{#3}%
-\addtolength{\thumbpos}{-0.45in}%
-\section{#2}
-\begin{description}
+\cleardoublepage
+\suppressfloats[t]%
+\thispagestyle{plain}%
+{\noindent\colorbox{SectionBackground}{%
+\begin{minipage}{\linewidth-2\fboxsep}%
+\flushleft%
+\section{#2 (#3)}%
+% Not sure why this bit is needed, it it's a working work around
+\rhead{\large\sffamily\color{HeaderFooterColor}\nouppercase{\thesection.\
+  #2 (#3)}}
+\label{navSection#4}%
+\label{sec:Standard#4}%
+\color{SectionColor}\sffamily
+\begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
 \item[Swath name:] \texttt{#4} #1
 #5
-\end{description}}
-%
-\newlength{\thumbpos}
-\newcommand{\makethumbmark}[2]{%
-  \begin{tikzpicture}[overlay]
-    \node at (#1,\thumbpos) [rotate=#2,anchor=south]
-    {\colorbox{black}{\parbox{1.5cm}{\centering%
-        \color{white}\sffamily\bfseries\large\selectfont\rule[-0.5ex]{0pt}{2ex}\thumbmark}}};%
-  \end{tikzpicture}}
-%
-\newcommand{\startthumbmarks}{%
-  \setlength{\thumbpos}{9.2in}%
-  \lfoot[\makethumbmark{-1cm}{90}\thepage]{\myshorttitle}%
-  \rfoot[Aura Microwave Limb Sounder]{\thepage\makethumbmark{1cm}{-90}}%
-} \newcommand{\killthumbmarks}{%
+\end{description}
+\end{minipage}}}%
+\renewcommand{\currentnav}{#4}%
+}
 
-  \lfoot[\thepage\hspace{1cm}\tinyrcs]{\myshorttitle} % should be \@shortitle
-  \rfoot[EOS Microwave Limb Sounder]{\tinyrcs\hspace{1cm}\thepage}}
-\newcommand{\email}[1]{\textbf{Email:} $<$\texttt{#1}$>$}
+\newcommand{\email}[1]{\mbox{\textbf{Email:} $<$\texttt{#1}$>$}}
 %
 % Change the figures/table counters
 \makeatletter
@@ -78,8 +77,8 @@
   of 10 change in pressure.}
 
 \newcommand{\vertavkcaption}[2]{%
-  Typical vertical averaging kernels for the MLS \thisv #2#1 data at
-  70\degsym N (left) and the equator (right); variation in the averaging
+  Typical vertical averaging kernels for the MLS \thisv #2#1 data at the
+  equator (left) and at 70\degsym N (right); variation in the averaging
   kernels is sufficiently small that these are representative of typical
   profiles.  Colored lines show the averaging kernels as a function of
   MLS retrieval level, indicating the region of the atmosphere from
@@ -133,9 +132,9 @@
     Profiles identified as being affected by clouds can be used with no
     restriction.}}
 \newcommand{\qualityrule}[1]{\screeningrule{Only
-    profiles whose `Quality' field is greater than #1 should be used.}}
+    profiles whose \texttt{Quality} field is greater than #1 should be used.}}
 \newcommand{\convergencerule}[1]{\screeningrule{Only profiles whose
-    `Convergence' field is less than #1 should be used.}}
+    \texttt{Convergence} field is less than #1 should be used.}}
 
 % ----------------------------------- Table flipflopping
 \colorlet{tableoddbackground}{black!10}

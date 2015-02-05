@@ -1,4 +1,4 @@
-\speciestitle{Nitric Acid}{HNO\cs3}{HNO\cs3}{
+\speciestitle{Nitric Acid}{HNO\cs3}{HNO3}{%
 \item[Useful range:] 215\,--\,1.5\,hPa (1.0\,hPa under enhanced conditions)
 \item[Contact:] Gloria Manney, \email{manney@nwra.com}}
 
@@ -12,14 +12,11 @@ pressure greater than or equal to 100~hPa) was largely eliminated.
 However, v3.3 240-GHz HNO\cs3 was adversely impacted by clouds
 \citep{EOSMLSV33V34Quality}, leading to a noisy HNO\cs3 product in the
 UTLS\@.  The adverse cloud impacts have been substantially mitigated in
-\thisv.  Improvement in HNO\cs3 resulted from \mycomment{whatever NJL,
-  WGR, et al want to say here} (see \ref{sec:V4vsV3Overview}). Lower
-\thisv values in Figure~\ref{fig:zmv3v4diffs} in the tropics at the
-lowest levels result largely from these effects.
-Figure~\ref{fig:zmv3v4diffs} shows an example of typical differences
-between v3.3 and \thisv HNO\cs3\@.  Higher values in \thisv than in v3.3
-in the tropical UTLS result primary from the reduction of adverse cloud
-effects.
+\thisv (see \ref{sec:V4vsV3Overview}). Figure~\ref{fig:zmv3v4diffs}
+shows an example of typical differences between v3.3 and \thisv
+HNO\cs3\@.  Higher values in \thisv than in v3.3 in the tropical UTLS
+seen in Figure~\ref{fig:zmv3v4diffs} result primarily from the reduction
+of adverse cloud effects.
 
 The MLS \thisv HNO\cs3 data are scientifically useful over the range 215
 to 1.5\,hPa; values at 1\,hPa are also expected to be scientifically
@@ -48,14 +45,13 @@ systematic uncertainty was quantified for v3.3, and it is expected that
 these estimates will be similar for \thisv.  Table~\ref{tab:HNO3Summary}
 also includes estimates of the potential biases and scaling errors in
 the measurements compiled from the v3.3 uncertainty analysis (to be
-updated for \thisv at a later date) \mycomment{not sure what the status
-  of this is?}.  The overall uncertainty for an individual data point is
-determined by taking the root sum square (RSS) of the precision, bias,
-and scaling error terms (for averages, the single-profile precision
-value is divided by the square root of the number of profiles
-contributing to the average).  More details on the precision,
-resolution, and accuracy of the MLS \thisv HNO\cs3 measurements are
-given below.
+updated for \thisv at a later date).  The overall uncertainty for an
+individual data point is determined by taking the root sum square (RSS)
+of the precision, bias, and scaling error terms (for averages, the
+single-profile precision value is divided by the square root of the
+number of profiles contributing to the average).  More details on the
+precision, resolution, and accuracy of the MLS \thisv HNO\cs3
+measurements are given below.
 
 \begin{figure}
 \includegraphics[angle=90,width=\linewidth]{figures/InspectZMContour_HNO3--v4-1_HNO3--v3-3_2009m02_LatPress-All-noScreen}
@@ -164,11 +160,10 @@ discussed below.
 
 \subsection*{Accuracy}
 
-\mycomment{Didn't change this except v2.2 to v3.3, which may be the
-  wrong thing to do anyway.}  The effects of various sources of
+The effects of various sources of
 systematic uncertainty (e.g., instrumental issues, spectroscopic
 uncertainty, and approximations in the retrieval formulation and
-implementation) on the MLS v3.3 HNO\cs3 measurements were quantified
+implementation) on the MLS \prevv HNO\cs3 measurements were quantified
 through a comprehensive set of retrieval simulations; results for
 \thisv, to be completed at a later date, are expected to be similar.
 The results of the v3.3 uncertainty analysis are summarized in
@@ -185,7 +180,7 @@ estimates are generally consistent with the results of comparisons with
 correlative datasets, as discussed briefly below.
 
 \subsection*{Data screening -- all data}
-\label{sec:HNO3screening}
+\label{sec:HNO3Screening}
 
 \begin{description}
 \item[Pressure range:] \screeningrule{215\,--\,1.5\,hPa}
@@ -367,18 +362,6 @@ magnitude from v3.3 when each data version is screened according to the
 criteria above.  Therefore, the comparisons with correlative data are
 expected to be very similar to those described for v3.3 by
 \citet{EOSMLSV33V34Quality}.
-
-\subsection*{Desired improvements for future data version(s)}
-\begin{itemize}
-%%\item Reduce noise/spikes in UTLS and in upper stratosphere.
-%%\item Minimize the impact of thick clouds on the retrievals to further
-%%  improve the HNO\cs3 measurements in the upper troposphere and
-%%  lowermost stratosphere.
-\item No idea what to put here.  Perhaps something about 147/100\,hPa
-  notch, but that is actually much improved when above screening is
-  applied (as opposed to in testing when I was comparing unscreened
-  quantities).  
-\end{itemize}
 
 \begin{table}
 \caption{Summary of Aura MLS \thisv HNO\cs3 Characteristics}\vspace{0.5ex}

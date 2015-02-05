@@ -1,7 +1,6 @@
 \speciestitle{Methyl cyanide}{CH\cs3CN}{CH3CN}{%
 \item[Useful range:] 46\,--\,1.0\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
-\label{sec:StandardCH3CN}%
 
 \subsection*{Introduction}
 
@@ -18,26 +17,14 @@ estimated precision and resolution (vertical and horizontal) of the
 \thisv CH\cs3CN measurements as a function of altitude is given in
 Table~\ref{tab:CH3CNSummary}.
 
-\subsection*{Differences between \prevv and \thisv}
+\subsection*{Differences between \prevvSlash and \thisv}
 
-\begin{figure}
-\begin{tabular}{@{}l@{}l@{}}
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel1}&
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel2}\\
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel3}&
-\raisebox{2cm}{\parbox[b]{0.5\textwidth}{%
-    \caption{Zonal averages of MLS CH\cs3CN profiles for a representative
-      month (July 2009), showing the MLS \thisv mixing ratios (upper left), the
-      \prevv mixing ratios (upper right), and their differences in pptv (\prevv
-      minus \thisv, lower left) as a function of pressure.\label{fig:zmcontourCH3CN}}}}%
-\end{tabular}
-\end{figure}
-
-\mycomment{Start off with some words summarizing the differences in
-  the retrieval algorithms that might have affected R4 products.}
-Differences in the retrieved CH\cs3CN abundances between the two
-versions are typically less than 10\,pptv, but can reach 20\,pptv
-(still within $\pm$5\%) at 147\,hPa, particularly at higher latitudes
+Changes in CH\cs3CN between \thisv and \prevvSlash result from
+modifications to upstream retrievals of tangent pressure etc., and small
+updates to the spectroscopy database for some molecules.  Differences in
+the retrieved CH\cs3CN abundances between the two versions are typically
+less than 10\,pptv, but can reach 20\,pptv (still within $\pm$5\%) at
+147\,hPa, particularly at higher latitudes
 (Figure~\ref{fig:zmcontourCH3CN}).
 
 \subsection*{Resolution}
@@ -76,6 +63,19 @@ separation of MLS measurements, set by the Aura orbit, is
 10\degsym--\,20\degsym\ over low and middle latitudes, with much finer
 sampling in the polar regions.
 
+\begin{figure}
+\begin{tabular}{@{}l@{}l@{}}
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel1}&
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel2}\\
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel3}&
+\raisebox{2cm}{\parbox[b]{0.5\textwidth}{%
+    \caption{Zonal averages of MLS CH\cs3CN profiles for a representative
+      month (July 2009), showing the MLS \thisv mixing ratios (upper left), the
+      \prevv mixing ratios (upper right), and their differences in pptv (\prevv
+      minus \thisv, lower left) as a function of pressure.\label{fig:zmcontourCH3CN}}}}%
+\end{tabular}
+\end{figure}
+
 \subsection*{Precision}
 
 \begin{figure}
@@ -109,15 +109,15 @@ the precision of the individual data points. In practice, however,
 real changes in the atmosphere may occur over the 12\,h interval
 between the intersecting measurement points, in which case the
 observed scatter provides an upper limit on the estimate of precision,
-assuming that the a priori has a negligible influence on the
-retrieval. The precision estimates were found to be essentially
+assuming that the a priori has a negligible influence on the retrieval
+(a reasonable assumption throughout the retrieval range for
+CH\cs3CN). The precision estimates were found to be essentially
 invariant with time; results for a representative year of data are
 shown in Figure~\ref{fig:mlsascdscCH3CN}. The observed standard
-deviation values are \texttildelow50\,pptv or less throughout most
-of the vertical domain, increasing to 100\,pptv at 147 and
-1\,hPa. Mean differences between paired crossing profiles are
-negligible, indicating the absence of significant
-ascending$-$descending offsets.
+deviation values are \texttildelow50\,pptv or less throughout most of
+the vertical domain, increasing to 100\,pptv at 147 and 1\,hPa. Mean
+differences between paired crossing profiles are negligible,
+indicating the absence of significant ascending$-$descending offsets.
 
 The precision reported for each data point by the Level 2 data
 processing system exceeds the observationally determined precision
@@ -181,6 +181,7 @@ undertaken.  This work is planned as part of a dedicated validation
 exercise for the \thisv CH\cs3CN data.
 
 \subsection*{Data screening}
+\label{sec:CH3CNScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{46\,--\,1.0\,hPa}
 
@@ -226,7 +227,7 @@ exercise for the \thisv CH\cs3CN data.
 \item The retrievals at 100 and 68\,hPa are characterized by unphysical
   sharp latitudinal gradients at $\pm$30\degsym.
 \item Substantial biases may be present in the mixing ratios in the
-  winter polar vortex regions for retrieval levels in the range
+  winter polar regions for retrieval levels in the range
   100\,--\,15\,hPa.
 \end{itemize}
 
@@ -254,11 +255,16 @@ exercise for the \thisv CH\cs3CN data.
 %
 0.68\,--\,0.001 & ---                          & ---      & --- & Unsuitable for scientific use\\
 %
-1.0           & 6 $\times$ 800                 & $\pm$100 & TBD & \\
+1.0           & 6 $\times$ 800                 & $\pm$100 & TBD & Valid
+except in winter polar regions \\
 %
-10\,--\,1.5   & 7\,--\,8 $\times$ 400\,--\,700 & $\pm$50  & TBD & \\
+10\,--\,1.5   & 7\,--\,8 $\times$ 400\,--\,700 & $\pm$50  & TBD & Valid
+except in winter polar regions \\
 %
-100\,--\,15   & 5\,--\,6 $\times$ 400\,--\,700 & $\pm$50  & TBD & Consult with
+46\,--\,15    & 5\,--\,6 $\times$ 400\,--\,700 & $\pm$50  & TBD & Valid
+except in winter polar regions \\
+%
+100\,--\,68   & 5\,--\,6 $\times$ 400\,--\,700 & $\pm$50  & TBD & Consult with
 MLS science team \\
 %
 147           & 4 $\times$ 750                 & $\pm$100 & TBD & Consult with MLS science team \\

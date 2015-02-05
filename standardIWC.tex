@@ -2,7 +2,6 @@
 \item[Units:] g/m\cp3
 \item[Useful range:] 215\,--\,83\,hPa
 \item[Contact: ] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
-\label{sec:StandardIWC}
 
 \subsection*{Introduction}
 
@@ -45,6 +44,7 @@ CloudSat and detailed analyses on the v2.2 error budget can be found in
 \citet{WuEtal08}.
 
 \subsection*{Data screening}
+\label{sec:IWCScreening}
 \begin{description}
 \item[Pressure range (215\,--\,83\,hPa):] \standardrangestatement\ The
   maximum detectable IWC is \texttildelow100\,mg/m\cp3.
@@ -61,16 +61,15 @@ CloudSat and detailed analyses on the v2.2 error budget can be found in
   below.
 
 \begin{enumerate}
-\item MLS IWC signals derive from differences between observed radiances
-  and those predicted assuming clear sky.  Uncertainties in spectroscopy
-  and atmospheric composition are manifested as residual biases in the
-  IWC fields which should be identified and removed as follows.  IWC
-  data should be averaged in a 10\degsym\ latitude bins and outliers
-  rejected iteratively by excluding measurements greater than 2$\sigma$
-  standard deviation about the mean ($\mu$) of the bin. Repeat the
-  $\sigma$ and $\mu$ calculations after every new set of rejections.
-  Convergence is usually reached within 5\,--\,10 iterations, and the
-  final $\sigma$ is the estimated precision for the IWC measurements.
+\item Uncertainties in spectroscopy and atmospheric composition are
+  manifested as residual biases in the IWC fields which should be
+  identified and removed as follows.  IWC data should be averaged in a
+  10\degsym\ latitude bins and outliers rejected iteratively by
+  excluding measurements greater than 2$\sigma$ standard deviation about
+  the mean ($\mu$) of the bin. Repeat the $\sigma$ and $\mu$
+  calculations after every new set of rejections.  Convergence is
+  usually reached within 5\,--\,10 iterations, and the final $\sigma$ is
+  the estimated precision for the IWC measurements.
 \item Interpolate the final $\sigma$ and $\mu$ to the latitude of
   each measurement, and subtract $\mu$ from IWC for each measurement.
 \item Finally, apply the 3$\sigma$ threshold to determine if an IWC
@@ -108,14 +107,6 @@ Table~\ref{tab:IWCSummary}. Comparisons with AIRS, OMI and MODIS suggest
 that MLS cloud tops are slightly higher by \texttildelow1\,km than the
 correlative data in general.
 
-\subsection*{Desired improvements for future data version(s)}
-
-The IWC retrieval in \thisv and the earlier versions is a simple
-first-order conversion, applied independently to each \Tcir\ measurement.
-A 2-D cloudy-sky radiative transfer model is under development for version~4
-processing which will allow IWC profiles to be retrieved jointly with the \Tcir\
-measurements from adjacent scans.
- 
 \begin{table}
   \caption{Summary of MLS \thisv IWC precision, accuracy, and resolution.}
 \vspace{\tablecaptionsep}
@@ -155,7 +146,7 @@ p$>$260 & \multicolumn{5}{c}{Unsuitable for scientific use} \\ \bottomrule
 \end{table} 
  
 \begin{figure}
-  \dontincludegraphics[width=\textwidth]{figures/IWC-240-v04-20-dataqual-JUL2009}
+  \includegraphics[width=\textwidth]{figures/IWC-240-v04-20-dataqual-JUL2009}
   \caption{MLS v4, v3 and v2 IWC comparisons for July 2009 at 146\,hPa and 100\,hPa.
     (a) Left: Probability density
     functions (PDF) (v4 (red), v3 (blue) and v2 (green)) with dashed lines showing

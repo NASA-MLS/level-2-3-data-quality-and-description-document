@@ -11,7 +11,7 @@ the 240-GHz window channel at 650\,hPa tangent pressure (see
 Figure~\ref{fig:IWPSketch}). It represents a partial column above
 \texttildelow6 km, and is stored in the \thisv L2GP IWC file as a separate swath.
 For the IWP retrieval, \Tcir\ is first converted to a near horizontal
-slant path (with a \texttildelow3\degsym\ elevation angle) IWP `hIWP', using
+slant path (with a \texttildelow3\degsym\ elevation angle) IWP ``hIWP'', using
 the modeled \Tcir\,--\,hIWP relation.  The hIWP is then converted to the
 nadir IWP at the tangent point location, and interpolated to the MLS
 standard horizontal grid.
@@ -41,7 +41,7 @@ detailed analyses on the v2.2 error budget can be found
 in \citet{WuEtal09}.
 
 \subsection*{Data screening}
-
+\label{sec:IWPScreening}
 The standard IWP product has a useful sensitivity up to 200\,g/m\cp{2}
 where MLS measurements can be quantitatively interpreted as the average
 IWP for the volume sampled.  The user is recommended to screen the IWP
@@ -90,7 +90,7 @@ will allow IWP to be retrieved jointly with the \Tcir\ measurements
 from adjacent scans.
 
 \subsection*{Summary for IWP}
-
+\label{tab:IWPSummary}
 \begin{description}
 \item[IWP Column Bottom:] \screeningrule{6\,km (estimated from MLS
     radiative transfer model calculations).}  The calculation of the
@@ -113,14 +113,14 @@ from adjacent scans.
 \end{description}
  
 \begin{figure}
-\dontincludegraphics[width=\textwidth]{figures/iwp-figure-bitmap}
+\includegraphics[width=\textwidth]{figures/iwp-figure-bitmap}
 \caption{Diagram to illustrate the MLS IWC and IWP measurement. The
   dashed lines are the MLS tangential beams. At high tangent heights,
   the beams penetrate through the limb and become sensitive to a
   volume-averaged IWC, whereas at low tangent heights the MLS beams
   cannot penetrate through the limb due to strong gaseous absorption and
   become only sensitive to a partial slant column of IWP, with a shallow
-  (\texttildelow3\degsym) angle, `hIWP'.  Note that the actual volume of the
+  (\texttildelow3\degsym) angle, ``hIWP''.  Note that the actual volume of the
   air represented by hIWP is centered \texttildelow300\,km away from the
   tangent point, or \texttildelow2 profiles from the location of the nominal
   profile.}
@@ -128,7 +128,7 @@ from adjacent scans.
 \end{figure}
 
 \begin{figure}
-\dontincludegraphics[width=\textwidth]{figures/v4-report/IWP-240-v04-20-dataqual-JUL2009.ps.gz}
+\includegraphics[width=\textwidth]{figures/IWP-240-v04-20-dataqual-JUL2009}
 \caption{MLS v4, v3 and v2 IWP comparisons for July 2009. 
   Left: Probability density functions (PDF) (v4 (red), v3 (blue) and v2
   (green)) with dashed lines showing the corresponding noise levels

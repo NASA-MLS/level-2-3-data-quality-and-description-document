@@ -1,7 +1,6 @@
 \speciestitle{Hydroxyl Radical}{OH}{OH}{%
 \item[Useful range:] 32\,--\,0.0032\,hPa
 \item[Contact:] Shuhui Wang, \email{Shuhui.Wang@jpl.nasa.gov}}
-\label{sec:StandardOH}
 
 \subsection*{Introduction}
 
@@ -14,8 +13,8 @@ is generally similar between v2.2 and \prevv, there are significant
 improvements in the current version \thisv. In previous versions, OH
 data near the mesospheric density peak, \texttildelow0.032 hPa, often
 show considerable amount of bad data due to negative precision,
-particularly in the summer hemisphere (or tropics when near equinox) and
-sometimes causes gaps in zonal mean time series. The \thisv software
+particularly in the summer hemisphere (or tropics when near the equinox)
+and sometimes causes gaps in zonal mean time series. The \thisv software
 resolves this issue by fixing the too tight a priori constraints. The
 resulting mesospheric OH data are less noisy and generally have somewhat
 larger values than previous versions for the problematic
@@ -101,12 +100,12 @@ can be extended to 32\,--\,0.0046\,hPa.
 
 \begin{figure}
 \begin{tabular}{@{}l@{}l@{}}
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-a}&
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-b}\\
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-c}&
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-d}\\
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-e}&
-\dontincludegraphics[width=0.5\linewidth]{figures/plot-OH-f}%
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-a}&
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-b}\\
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-c}&
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-d}\\
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv3-e}&
+\includegraphics[width=0.5\linewidth]{figures/plot-OHv3-f}%
 \end{tabular}
 \caption{Zonal mean of retrieved OH and its estimated precision
   (horizontal error bars) for September 20, 2005 averaged over 29\degsym
@@ -116,8 +115,8 @@ can be extended to 32\,--\,0.0046\,hPa.
   OH concentration is near zero for altitudes below 1\,hPa.  Panel (c)
   shows the same data in (a) converted into density units.  Panel (d)
   shows the day-night differences for the data in panel (c).  Note that
-  the day-night difference is required for altitudes below 10\,hPa.
-  Panels (e) and (f) are equivalent to (c) and (d) but using v2.2 OH
+  the day-night difference is required for altitudes below 20\,hPa.
+  Panels (e) and (f) are equivalent to (c) and (d) but using \prevv OH
   data.}
 \label{fig:OHprofiles}
 \end{figure}
@@ -135,14 +134,15 @@ product was determined by calculating the effects of each source of
 uncertainty. These accuracy calculations are for \prevv products. While
 no significant change is expected from \prevv to \thisv, a comprehensive
 error analysis for \thisv will be conducted.  Bias uncertainty can be
-eliminated by taking day-night differences from 32\,--\,14\,hPa. For
-10\,--\,0.1\,hPa, the observed night OH concentration is small and
+eliminated by taking day-night differences from 32\,--\,21\,hPa. For
+15\,--\,0.1\,hPa, the observed night OH concentration is small and
 day-night differencing is not ordinarily needed. The accuracy of the OH
 measurement due to systematic errors is a product of scaling uncertainty
 and the observed OH concentration. The overall uncertainty is the square
 root of the sum of squares of the precision and accuracy.
 
 \subsection*{Data screening}
+\label{sec:OHScreening}
 It is recommended that OH data values be used in scientific
 investigations if all the following tests are successful:
 
@@ -159,14 +159,11 @@ investigations if all the following tests are successful:
 \subsection*{Artifacts}
 
 For some seasons, the Gas Laser Local Oscillator (GLLO) for the THz
-receiver is automatically relocked as many as 5 times during a day.
-These relock events occur when the tuning range of the laser is less
-than the thermal excursion over an orbit and over a day. This thermal
-effect depends on the albedo of the Earth as seen by the GLLO radiator.
-In these cases the \texttt{Status} flag is set to 257 and the profile is
-ignored. This can present a problem when compiling maps, because the
-missing data may appear at the same latitude and longitude on successive
-days.
+receiver is automatically ``relocked'' as many as 5 times during a day,
+leading to data gaps.  In these cases the \texttt{Status} flag is set to
+257 and the profile is ignored. This can present a problem when
+compiling maps, because the missing data may appear at the same latitude
+and longitude on successive days.
 
 \subsection*{Review of comparisons with other datasets}
 

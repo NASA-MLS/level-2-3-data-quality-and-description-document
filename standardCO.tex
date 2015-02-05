@@ -3,22 +3,21 @@
 \item[Contact:] Hugh C. Pumphrey (stratosphere/mesosphere),
    \email{H.C.Pumphrey@ed.ac.uk} \\
   Michael Schwartz (troposphere), \email{Michael.J.Schwartz@jpl.nasa.gov}}
-\label{sec:StandardCO}%
 
 \subsection*{Introduction}
  
 Carbon monoxide is retrieved from radiance measurements of two bands in
-the MLS 240\,GHz radiometer: \texttt{R3:240:B9F:CO} and
-\texttt{R3:240.B25D:CO}\@. Full details are given in
+the MLS 240\,GHz radiometer. Full details are given in
 \citet{PumphreyEtal07} and \citet{LiveseyEtal08}.
 
 \subsection*{Differences between \thisv and v03.x}
 In the upper troposphere (UT), the primary difference between \thisv CO
-and v03.x CO is the reduction in artifacts caused by deep convective
-clouds.  \mycomment{do we want to mention ``mif baseline'' here?}
-Screening of data has been simplified, fewer profiles are marked 'bad'
-and fewer profiles that appear to contain cloud artifacts pass through
-the recommended screening.
+and \prevvSlash CO is the reduction in artifacts caused by deep
+convective clouds through a modification to the manner in which cloud
+signals are modeled in the retrievals.  Screening of data has been
+simplified, fewer profiles are marked 'bad' and fewer profiles that
+appear to contain cloud artifacts pass through the recommended
+screening.
 
 A comparison of the two versions in the UTLS for February 2009, shown in
 Figure~\ref{fig:BlackSatCO}, includes non-spurious high values from the
@@ -73,16 +72,15 @@ about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 The MLS data are supplied with an estimated precision (the field
 \texttt{L2gpPrecision}) which is the a postiori precision as returned by
 the optimal estimation. The precision of the \thisv CO is very similar
-to that of v03.3 and is usually smaller (better) than that of v2.2.
-\mycomment{can we remake these figures for v4?  I believe that v4 will
-  look like v3 here.}  In all versions, the precision is greater than
-the scatter observed in the data in regions of low natural variability.
-Where the estimated precision is greater than 50\% of the a priori
-precision the data will be influenced by the a priori to an undesirably
-large extent.  In such cases, \texttt{L2gpPrecision} is set to be
-negative to indicate that the data should not be used.
-Figure~\ref{fig:COPrecision} shows both the scatter and estimated
-precision for CO, with typical profiles for comparison.
+to that of \prevvSlash and is usually smaller (better) than that of
+v2.2.  In all versions, the precision is greater than the scatter
+observed in the data in regions of low natural variability.  Where the
+estimated precision is greater than 50\% of the a priori precision the
+data will be influenced by the a priori to an undesirably large extent.
+In such cases, \texttt{L2gpPrecision} is set to be negative to indicate
+that the data should not be used.  Figure~\ref{fig:COPrecision} shows
+both the scatter and estimated precision for CO, with typical profiles
+for comparison.
 %
 \begin{figure}
   \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2005d028}\hfill%
@@ -117,6 +115,7 @@ radiance upon which the CO spectral line sits, and a small reduction in
 the number of MLS spectral channels considered in the retrieval.
 
 \subsection*{Data screening}
+\label{sec:COScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{215\,--\,0.0046\,hPa.}
   \standardrangestatement
@@ -141,7 +140,7 @@ the number of MLS spectral channels considered in the retrieval.
   about twice that of the rest of the tropical ensemble.  At 147\,hPa
   and 100\,hPa the rejected profiles are
 
-\item[Convergence:] \convergencerule{1.025} This \texttt{Convergence}
+\item[Convergence:] \convergencerule{1.03} This \texttt{Convergence}
   criterion rejects fewer than 0.1\% of profiles.  Almost all of the
   retrieval in the retrieval phase that produces \thisv CO converge to
   their target, so \texttt{Convergence} is of limited use in screening.

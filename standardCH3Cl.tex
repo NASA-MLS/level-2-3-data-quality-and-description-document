@@ -1,7 +1,6 @@
 \speciestitle{Methyl chloride}{CH\cs3Cl}{CH3Cl}%
 {\item[Useful range:] 147\,--\,4.6\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
-\label{sec:StandardCH3Cl}
 
 \subsection*{Introduction}
 
@@ -13,7 +12,7 @@ CH\cs3Cl, which has lines in two wing channels of the \mbox{640-GHz}
 band used to measure ClO, could have given rise to the bias; they
 showed results from early v3 algorithms in which CH\cs3Cl was also
 retrieved that demonstrated significant reduction in the bias in lower
-stratospheric ClO\@.  Further refinements in the \thisv algorithms
+stratospheric ClO\@.  Further refinements in the \prevv algorithms
 yielded not only an improved ClO product, but also a reliable
 retrieval of CH\cs3Cl.  The quality and reliability of the \prevv MLS
 CH\cs3Cl measurements were assessed in detail by
@@ -27,7 +26,7 @@ CH\cs3Cl measurements as a function of altitude is given in
 Table~\ref{tab:CH3ClSummary}.  More details on the quality of the MLS
 \thisv CH\cs3Cl measurements are given below.
 
-\subsection*{Differences between \prevv and \thisv}
+\subsection*{Differences between \prevvSlash and \thisv}
 
 \begin{figure}
 \begin{tabular}{@{}l@{}l@{}}
@@ -42,12 +41,13 @@ Table~\ref{tab:CH3ClSummary}.  More details on the quality of the MLS
 \end{tabular}
 \end{figure}
 
-\mycomment{Start off with some words summarizing the differences in
-  the retrieval algorithms that might have affected R4 products.}
-Differences in the retrieved CH\cs3Cl abundances between the two
-versions range from less than 10\,pptv at 68\,hPa and lower pressures
-to \texttildelow50\,pptv at 147\,hPa
-(Figure~\ref{fig:zmcontourCH3Cl}), or typically within $\pm$10\%.
+Changes in CH\cs3Cl between \thisv and \prevvSlash result from
+modifications to upstream retrievals of tangent pressure etc., and small
+updates to the spectroscopy database for some molecules.  Differences in
+the retrieved CH\cs3Cl abundances between the two versions range from
+less than 10\,pptv at 68\,hPa and lower pressures to
+\texttildelow50\,pptv at 147\,hPa (Figure~\ref{fig:zmcontourCH3Cl}), or
+typically within $\pm$10\%, with \thisv mixing ratios generally smaller.
 
 \subsection*{Resolution}
 \onestandardavk{CH3Cl}{CH\cs3Cl}%
@@ -202,6 +202,7 @@ different platforms (balloon-borne, aircraft, and satellite instruments)
 were presented by \citet{SanteeEtal13}.
 
 \subsection*{Data screening}
+\label{sec:CH3ClScreening}
 \begin{description}
 \item[Pressure range:]  \screeningrule{147\,--\,4.6\,hPa}
 

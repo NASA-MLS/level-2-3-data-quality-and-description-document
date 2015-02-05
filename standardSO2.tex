@@ -1,7 +1,6 @@
 \speciestitle{Sulfur Dioxide}{SO\cs2}{SO2}{%
 \item[Useful range:] 215\,--\,10.0\,hPa
 \item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
-\label{sec:StandardSO2}
 
 \subsection*{Introduction}
 
@@ -12,18 +11,19 @@ is published in \citet{PumphreyEtal14}.
 
 \subsection*{Changes from v3}
 
-The v4 SO\cs2 retrieval has two significant changes from v3. The first is
-the use of a frequency squared extinction treated as a MIF-like quantity.
-Each radiometric scan retrieves its own extinction
-quantity that is not coupled vertically or horizontally to the radiances
-measured at other scan elevations or along track scan tangent positions.
-The new approach was motivated by having
+\mycomment{This is more detail than given for other 240-GHz species, we
+  should try to be consistent} The v4 SO\cs2 retrieval has two
+significant changes from v3. The first is the use of a frequency squared
+extinction treated as a MIF-like quantity.  Each radiometric scan
+retrieves its own extinction quantity that is not coupled vertically or
+horizontally to the radiances measured at other scan elevations or along
+track scan tangent positions.  The new approach was motivated by having
 better performance in clouds where forcing vertical and horizontal
 coupling can cause errors due to inhomogeniety in the cloud field and
 errors in the forward model which currently doesn't include scattering
 effects. The other change is an improved cloud detection and radiance
-rejection algorithm. These changes have significantly
-improved the convergence and quality performance of the retrieval system and
+rejection algorithm. These changes have significantly improved the
+convergence and quality performance of the retrieval system and
 eliminated much of the poor in-cloud behavior present in v3. There have
 been no changes to the spectroscopic characteriztion of the major
 species in the 240~GHz bands used to retrieve SO\cs2.
@@ -79,22 +79,25 @@ product. The MLS team plans to repeat the v3 exercise with the v4 software
 and release the results in a subsequent version of this document.
 
 \subsection*{Data screening}
+\label{sec:SO2Screening}
 \begin{description}
 \item[Pressure range:] \screeningrule{215\,--\,10.0\,hPa} \standardrangestatement
 \item[Estimated Precision:] \screeningrule{Values with negative
     precision can be used, though with caution.}
 
-  Although it is generally recommended not to use values where precision
-  is flagged negative, SO\cs2 is an exception and it is OK to use values
-  with negatively flagged precision (provided that the entire profile is
-  not so flagged). High retrieved values of SO\cs2 at the higher
-  pressures (e.g. 215 and 147~hPa) will also have larger precision
-  values which are sometimes enough to trigger the ``too much \emph{a
-    priori} influence'' flag. While a priori influence is present and
-  the retrieved value is probably smaller than reality because the
-  retrieval is being pulled towards the a priori value of zero, this
-  does not detract from the fact that greatly enhanced SO\cs2 is being
-  observed, reflecting the detection of a plume.
+  Although it is generally recommended to not use values where precision
+  is flagged negative, SO\cs2 is an exception and it is appropriate to
+  use values with negatively flagged precision (provided that the entire
+  profile is not so flagged). High retrieved values of SO\cs2 at the
+  higher pressures (e.g., 215 and 147~hPa) will also have larger
+  precision values which are sometimes large enough to trigger the ``too
+  much \emph{a priori} influence'' flag. There will be an \emph{a
+    priori} influence is present and the retrieved value is probably
+  smaller than reality because the retrieval is being pulled towards the
+  a priori value of zero. Nonetheless, this does not detract from the
+  fact that greatly enhanced SO\cs2 is being observed, reflecting the
+  detection of a plume.
+
 \evenstatusrule
 \item[Quality field:] \screeningrule{Only profiles having \texttt{Quality}\,
     \emph{greater} than 0.95 should be used.} As with water vapor, this
@@ -112,7 +115,7 @@ underestimated due to a priori influence which biases the value toward
 zero. The atmospheric background SO\cs2 ($\sim$0.1~ppbv) cannot be
 measured by MLS even with extensive data averaging because there are
 systematic errors producing biases of a few ppbv. The 215~hPa SO\cs2 has
-a background bias of $\sim$20~ppbv.
+a background bias of $\sim-20\,$ppbv.
 
 \begin{figure}
 \begin{center}
@@ -122,7 +125,6 @@ a background bias of $\sim$20~ppbv.
   on the x-axis for v4.2 data processed for June--August 2005.}
 \label{fig:so2datayields}
 \end{figure}
-
 
 \subsection*{Review of comparisons with other datasets}
 
@@ -182,7 +184,9 @@ any SO\cs2 at 68~hPa.
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
 \end{center}
-\caption{Time series overlay where MLS measures more than 500~ppbv at 100~hPa. Blue is version 3, and red is version 4.}
+\caption{Time series overlay where MLS measures more than 500\,ppbv at
+  100\,hPa for the Sarychev erruption. Blue is version 3, and red is
+  version 4.}
 \label{fig:so2timeseries}
 \end{figure}
 
@@ -196,8 +200,7 @@ any SO\cs2 at 68~hPa.
 \toprule
 \parbox[m]{6em}{\bfseries\centering Pressure / hPa} &
 \parbox[m]{6em}{\bfseries\centering Resolution V~$\times$~H \ km} &
-\parbox[m]{8em}{\bfseries\centering Single profile precision
-\footnote{Absolute error in percent} / ppbv} &
+\parbox[m]{8em}{\bfseries\centering Single profile precision} &
 \parbox[m]{6em}{\bfseries\centering Accuracy / ppbv} &
 \bfseries Comments \\
 \midrule

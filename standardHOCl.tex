@@ -1,7 +1,6 @@
 \speciestitle{Hypochlorous Acid}{HOCl}{HOCl}{%
 \item[Useful range:] 10\,--\,2.2\,hPa 
 \item[Contact:] Lucien Froidevaux, \email{Lucien.Froidevaux@jpl.nasa.gov}}
-\label{sec:StandardHOCl}
 
 \subsection*{Introduction}
 
@@ -75,7 +74,7 @@ typical precision of a 10\degsym\ weekly zonal means for this product.
 
 \subsection*{Accuracy}
 
-The accuracy estimates shown in the Table come from a formal
+The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal
 quantification of the combined effects of possible systematic errors in
 MLS calibration, spectroscopy, etc.\ on the HOCl retrievals
 \citep{ReadEtal07}.  These values are intended to represent 2 sigma
@@ -87,6 +86,7 @@ between v3.3 and v4.2 are well within the quoted accuracy estimates
 (which may be somewhat conservative).
 
 \subsection*{Data screening}
+\label{sec:HOClScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{10\,--\,2.2\,hPa}
   \standardrangestatement\ Artifacts (negative averages) for pressures
@@ -131,8 +131,7 @@ midlatitudes are close to the results from balloon-borne infrared
 measurements. Generally favorable comparisons (within the error bars)
 have been made of the diurnal changes in upper stratospheric HOCl
 between Aura MLS (v3.3), other satellite datasets, and a 1-D
-photochemical model (Khosravi et al., 2013).  \mycomment {Nathaniel,
-  please add this as a reference}
+photochemical model \citep{KhosraviEtal13}.
 
 \subsection*{Artifacts}
 \begin{itemize} 

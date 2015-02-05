@@ -1,5 +1,4 @@
 \chapter{Essential reading for users of MLS version~4.x data}
-\rcsInfo $Id: chapEssential.tex,v 1.4 2014/11/19 20:56:02 livesey Exp $
 \label{chap:Essential}
 
 \section{Scope and background for this document}
@@ -73,18 +72,18 @@ vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN, CH\cs3OH
 (a new product on \thisv) ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2,
 HOCl, N\cs2O, O\cs3, and OH and SO\cs2, along with temperature,
 geopotential height, relative humidity (deduced from the H\cs2O and
-temperature data), cloud ice water content and partial cloud ice water
-path, all described as functions of pressure.  In \thisv these profiles
-are mostly output on a grid that has a vertical spacing of six surfaces
-per decade change in pressure (\texttildelow2.5\,km), thinning out to
-three surfaces per decade above 0.1\,hPa.  Exceptions to this are water
-vapor, temperature, ozone and relative humidity which are on a finer 12
-per decade grid from 1000\,hPa to 1\,hPa.  Cloud ice water content is
-also reported on this fine grid, though these profiles do not extend to
-the stratosphere and mesosphere.  The OH product maintains a 6 per
-decade grid spacing into the upper mesosphere.  Horizontally the
-profiles are spaced by 1.5\degsym\ great-circle angle along the orbit,
-which corresponds to about 160\,km.  The true vertical and along-track
+temperature data), cloud ice water content and cloud ice water path, all
+described as functions of pressure.  In \thisv these profiles are mostly
+output on a grid that has a vertical spacing of six surfaces per decade
+change in pressure (\texttildelow2.5\,km), thinning out to three
+surfaces per decade above 0.1\,hPa.  Exceptions to this are water vapor,
+temperature, ozone and relative humidity which are on a finer 12 per
+decade grid from 1000\,hPa to 1\,hPa.  Cloud ice water content is also
+reported on this fine grid, though these profiles do not extend to the
+stratosphere and mesosphere.  The OH product maintains a 6 per decade
+grid spacing into the upper mesosphere.  Horizontally the profiles are
+spaced by 1.5\degsym\ great-circle angle along the orbit, which
+corresponds to about 160\,km.  The true vertical and along-track
 horizontal resolution of the products is typically somewhat coarser than
 the reporting grid described here.  For some of the products, the signal
 to noise ratio is too low to yield scientifically useful data from a
@@ -177,12 +176,10 @@ below.
   retrieval.  The use of more channels and more accurate forward model
   calculations in this initial retrieval has led to improvements in the
   convergence etc. of the second phase, and thus to improvements in the
-  H\cs2O product. \mycomment{Is this level of detail needed?  Are these
-    issues covered to this level of detail in the H\cs2O section?  If
-    not, perhaps we don't need so much detail here.}
+  H\cs2O product.
 
-\item[New methanol product:] This product, obtained from measurements in
-  the 640- and 190-GHz spectral regions (also from a dedicated retrieval
+\item[New CH\cs3OH product:] This product, obtained from measurements in
+  the 190- and 640-GHz spectral regions (also from a dedicated retrieval
   ``phase''), has been introduced in \thisv.  This product is
   scientifically useful in the tropical upper troposphere (see
   section~\ref{sec:StandardCH3OH}).
@@ -250,7 +247,7 @@ exception of IWC, each file also contains the \emph{a priori} values for that
 product inside a second swath whose name ends with the substring
 ``\texttt{-APriori}''. HNO\cs3, IWC, O3, RHI, and Temperature files are special in
 that they carry extra standard or non-standard products, as detailed in
-Table~\ref{tab:SwathExtras}
+Table~\ref{tab:SwathExtras}.
 
 \begin{table}
   \caption{Additional swaths in specific standard product files.\label{tab:SwathExtras}}\small
@@ -269,7 +266,6 @@ Table~\ref{tab:SwathExtras}
   \bottomrule
 \end{tabular}
 \end{table}
-
 
 The files contain an HDF-EOS swath given the same name as the product.
 In addition, the standard O\cs3 product files also contain swaths
@@ -295,6 +291,12 @@ fields such as \texttt{latitude} etc.\ describe geolocation information.
 The field \texttt{time} describes time, in the EOS standard manner, as
 the number of seconds elapsed (including from five to nine subsequent
 leap seconds to date) since midnight universal time on 1~January 1993.
+
+The \texttt{L2GP-DGG} (``Diagnostic products on a Geophysical Grid'')
+file contains a large number of additional swath quantities.  The vast
+majority of these are MLS diagnostic products that will be of little
+interest to most data users.  A few which may be of interest to some
+users are detailed below.
 
 \section[``Quality'', ``Convergence'' and ``Status'']{Additional quality
   control information described in the ``Quality'', ``Convergence'' and
@@ -581,7 +583,23 @@ one.
 
 \section{A note on N\cs2O measurements in \thisv}
 
-\mycomment{Write this}
+The preferred MLS band for measuring N\cs2O (band 12 in the 640\,GHz
+region, \texttt{N2O-640}) began to show signs of aging in June 2013
+(although more slowly than the rapid decline observed in the HCl Band 13
+in 2006). Band 12 was subsequently turned off on August 6,
+2013. However, the level-2 processing stream for the N\cs2O standard
+product in v3.x was switched to output the band 3 (190\,GHz,
+\texttt{N2O-190}) retrieval on 7~June~2013 and later data for
+\texttt{N2O-640} are not recommended for scientific use.
+
+For v4.x the decision was taken to assign the band 3 (190\,GHz,
+\texttt{N2O-190}) retrieval as the standard product from launch,
+wherease the band 12 (640\,GHz, \texttt{N2O-640}) retrieval is now only
+available in the \texttt{N2O-640} swath in the \texttt{L2GP-DGG} file.
+
+As discussed in section~\ref{sec:StandardN2O}, the band 3 and band 12
+data show good agreement except at 100 hPa where there is a $>$30\% high
+bias in the N\cs2O values from band3.
 
 \section{A note on OH measurements in \thisv}
 \label{sec:OHNote}
@@ -614,9 +632,11 @@ time of year are:
   for continuing validation with the best possible collocated
   ground-based data.
 \end{enumerate}
-We have performed the \texttildelow30-day OH measurements each
-August/September during 2011 through 2014 and plan to continue them in
-the coming years.
+We have performed the 30-day OH measurement in each August -- September
+during 2011\,--\,2014 and plan to continue it during the declining phase
+of Solar Cycle 24. However, due to the aging of the instrument, OH data
+acquired since 2014 are significantly noisier than the previous years
+and have poor spatial coverage at mid-low latitudes.
 
 
 %%% Local Variables: 

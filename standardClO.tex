@@ -1,7 +1,6 @@
 \speciestitle{Chlorine Monoxide}{ClO}{ClO}{%
 \item[Useful range:] 147\,--\,1.0\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
-\label{sec:StandardClO}
 
 \subsection*{Introduction}
 
@@ -18,7 +17,7 @@ largely unchanged over much of the profile in \thisv.
 As in previous versions, in \thisv the standard ClO product is derived
 from radiances measured by the radiometer centered near 640\,GHz.
 (ClO is also retrieved using radiances from the \mbox{190-GHz}
-radiometer, but these data have poorer precision.)  The MLS \thisv ClO
+radiometer, but those data have poorer precision.)  The MLS \thisv ClO
 data are scientifically useful over the range 147 to 1\,hPa.  A
 summary of the precision and resolution (vertical and horizontal) of
 the \thisv ClO measurements as a function of altitude is given in
@@ -45,18 +44,20 @@ nature of the MLS data processing system means that the kernels
 describe both vertical and horizontal resolution.  Smoothing, imposed
 on the retrieval system in both the vertical and horizontal directions
 to enhance retrieval stability and precision, degrades the inherent
-resolution of the measurements.  Consequently, the vertical resolution
-of the \thisv ClO data, as determined from the full width at half
-maximum of the rows of the averaging kernel matrix shown in
-Figure~\ref{fig:AvkClO}, is \texttildelow3--4.5\,km (with a mean of
-\texttildelow3.5\,km).  As in \prevv, in \thisv the averaging
-kernels are sharply peaked at all levels, including 147\,hPa.  Thus,
-although some degree of overlap is present, the 147\,hPa surface
-provides independent information in \thisv.  Figure~\ref{fig:AvkClO}
-also shows horizontal averaging kernels, from which the along-track
-horizontal resolution is determined to be \texttildelow250--500\,km
-over most of the vertical range.  The cross-track resolution, set by
-the width of the field of view of the \mbox{640-GHz} radiometer, is
+resolution of the measurements.  Thus, although ClO measurements are
+reported at six pressure levels per decade change in pressure (spacing
+of \texttildelow2.7\,km), the vertical resolution of the \thisv ClO
+data as determined from the full width at half maximum of the rows of
+the averaging kernel matrix shown in Figure~\ref{fig:AvkClO} is
+\texttildelow3--4.5\,km throughout the retrieval range (with a mean of
+\texttildelow3.5\,km).  As in \prevv, in \thisv the averaging kernels
+are sharply peaked at all levels, including 147\,hPa.  Thus, although
+some degree of overlap is present, the 147\,hPa surface provides
+independent information in \thisv.  Figure~\ref{fig:AvkClO} also shows
+horizontal averaging kernels, from which the along-track horizontal
+resolution is determined to be \texttildelow250--500\,km over most of
+the vertical range.  The cross-track resolution, set by the width of
+the field of view of the \mbox{640-GHz} radiometer, is
 \texttildelow3\,km.  The along-track separation between adjacent
 retrieved profiles is 1.5{\degsym} great circle angle
 (\texttildelow165\,km), whereas the longitudinal separation of MLS
@@ -162,18 +163,18 @@ single representative day in Southern Hemisphere late spring /
 Northern Hemisphere early autumn for which ClO is not enhanced in the
 polar lower stratosphere in either hemisphere; a similar plot for a
 corresponding day in Northern Hemisphere late spring / Southern
-Hemisphere early autumn gives very similar results. This figure shows
-that a small, somewhat latitude-dependent, negative bias is still
-evident at 68 and 100\,hPa in \thisv, of approximately the same
-magnitude as in \prevv at 68\,hPa but a little larger at 100\,hPa,
-especially in the Northern Hemisphere.  At 147\,hPa, \prevv displays a
-strongly latitudinally varying bias that is positive at middle and low
-latitudes and slightly negative in the polar regions (at least on some
-days).  In \thisv, ClO mixing ratios at 147\,hPa are slightly lower
-than they were in \prevv, and consequently the low-latitude positive
-bias has been reduced, although it remains substantial (exceeding
-0.7\,ppbv in some cases), and the high-latitude negative bias has been
-exacerbated.
+Hemisphere early autumn gives very similar results (not shown). This
+figure demonstrates that a small, somewhat latitude-dependent,
+negative bias is still evident at 68 and 100\,hPa in \thisv, of
+approximately the same magnitude as in \prevv at 68\,hPa but a little
+larger at 100\,hPa, especially in the Northern Hemisphere.  At
+147\,hPa, \prevv ClO displays a strongly latitudinally varying bias
+that is positive at middle and low latitudes and slightly negative in
+the polar regions (at least on some days).  In \thisv, ClO mixing
+ratios at 147\,hPa are slightly lower than they were in \prevv, and
+consequently the low-latitude positive bias has been reduced, although
+it remains substantial (exceeding 0.7\,ppbv in some cases), and the
+high-latitude negative bias has been exacerbated.
 
 \begin{figure}
 \centering\includegraphics[width=10.0cm]{figures/clov4v3bylat-5Nov09}
@@ -263,6 +264,7 @@ those comparisons with \prevv ClO data were reported by
 data will be the subject of future work.
 
 \subsection*{Data screening}
+\label{sec:ClOScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{147\,--\,1.0\,hPa}
   \standardrangestatement
@@ -305,8 +307,9 @@ data will be the subject of future work.
   \thisv ClO mixing ratios at and below (i.e., pressures larger than)
   68\,hPa.  The bias should be corrected by subtracting from the
   individual measurements at each affected retrieval level the
-  altitude- and latitude-dependent bias estimates given in the ASCII
-  file \mycomment{to be made} available from the MLS web site.
+  altitude- and latitude-dependent bias estimates given in an ASCII
+  file to be made available from the MLS web site once more data from
+  the mission have been reprocessed to \thisv.
 \end{itemize}
 
 \subsection*{Desired improvements for future data version(s)}

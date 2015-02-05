@@ -1,7 +1,6 @@
 \speciestitle{Methanol}{CH\cs3OH}{CH3OH}%
 {\item[Useful range:] 147\,--\,100\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
-\label{sec:StandardCH3OH}%
 
 \newcommand{\meoh}{CH\cs3OH\xspace}
 
@@ -96,13 +95,13 @@ smaller \citep{TooheyAndVonClarmann13}).
 
 \subsection*{Range}
 
-CH\cs3OH is retrieved (and reported in the Level~2 files) over the
+CH\cs3OH is retrieved (and reported in the \texttt{L2GP} files) over the
 range 147 to 0.001\,hPa.  However, zonal mean mixing ratios are
 negative everywhere at retrieval pressures less than 100\,hPa, as well
 as at middle and high latitudes at 100\,hPa.  Thus, with rare
 exceptions (such as during extreme events), the v4 \meoh\ data are
 considered potentially useful for scientific studies only at 147\,hPa
-and at lower latitudes at 100\,hPa.
+and at low latitudes at 100\,hPa.
 
 \subsection*{Accuracy}
 
@@ -118,6 +117,7 @@ undertaken.  This work is planned as part of a dedicated validation
 exercise for the \thisv CH\cs3OH data.
 
 \subsection*{Data screening}
+\label{sec:CH3OHScreening}
 \begin{description}
 \item[Do not use:] Until more comprehensive validation studies have
   been done, the \thisv CH\cs3OH data should only be used in
@@ -158,9 +158,11 @@ exercise for the \thisv CH\cs3OH data.
 %
 68\,--\,0.001  & ---                             & ---      & ---  & Unsuitable for scientific use\\
 %
-100            & 5         $\times$ 350          & $\pm$1   & TBD  &  \\
+100            & 5         $\times$ 350          & $\pm$1   & TBD  &
+Consult with MLS Science Team \\
 %
-147            & 4         $\times$ 150          & $\pm$1   & TBD  & \\
+147            & 4         $\times$ 150          & $\pm$1   & TBD  &
+Consult with MLS Science Team \\
 %
 1000\,--\,215  & ---                             & ---      & ---  & Not retrieved\\
 %
