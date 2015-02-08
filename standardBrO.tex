@@ -3,15 +3,15 @@
 \item[Contact:] Luis Millan, \email{Luis.F.Millan@jpl.nasa.gov}}
 \subsection*{Introduction}
 
-The standard product for BrO is taken from the 640-GHz (Core + R4A)
-retrievals. The spectral signature of BrO in the MLS radiances is very
+The standard product for BrO is taken from the 640-GHz \texttt{CoreR4AB13}
+retrieval. The spectral signature of BrO in the MLS radiances is very
 small, leading to a very poor signal-to-noise ratio on individual MLS
 observations.  Significant averaging (e.g., monthly zonal means) is
 required to obtain scientifically useful results.  Large biases of
 between 5 to 30\,pptv (typical BrO abundances range from 5 to 15\,pptv)
 are seen in the data. These biases can be minimized by taking day/night
 differences. For pressures of 4.6 hPa and greater, nighttime BrO is
-negligible; however, for lower pressures, nighttime BrO needs to be
+negligible; however, for smaller pressures, nighttime BrO needs to be
 taken into account. Table~\ref{tab:BrOSummary} summarizes the precision,
 accuracy, and resolution of the MLS \thisv BrO product. The accuracy
 assessment is based on v2.2 data, as described in the validation paper
@@ -65,7 +65,7 @@ $\pm$4\,ppt. See Table~\ref{tab:BrOSummary} for more details.
 The accuracy of the MLS BrO product is summarized in
 Table~\ref{tab:BrOSummary}. The effect of each identified source of
 systematic error on MLS measurements of radiance has been quantified and
-modeled [see Read et al., 2007]. These quantified effects correspond to
+modeled \citep{ReadEtal07}. These quantified effects correspond to
 either 2$\sigma$ estimates of uncertainties in each MLS product, or an
 estimate of the maximum reasonable uncertainty based on instrument
 knowledge and/or design requirements. More discussion is given in
@@ -80,8 +80,8 @@ Taking day/night differences does not affect the scaling uncertainty,
 which remains at about $\pm$20\%. If the MLS BrO data is used at 3.2 hP,
 the day/night difference value will need to be adjusted to compensate
 for the non-negligible nighttime BrO. We note that this method of taking
-day/night differences is not applicable for polar summer and winter,
-where there is no diurnal variation in BrO.
+day/night differences is not applicable for polar summer and winter
+during periods of continuous sunlight or darkness.
 
 \subsection*{Data screening}
 \label{sec:BrOScreening}
@@ -119,15 +119,6 @@ We have calculated total bromine, Br$_{y}$, from MLS measurements of BrO
 using a photochemical model, and compared this with Br$_{y}$ similarly
 inferred from balloon-borne measurements of BrO, good agreement is seen
 \citep{KovalenkoEtal07}.
-
-\subsection*{Desired improvements for future data version(s)}
-\begin{itemize}
-\item Improvements will be sought in the stability of the BrO biases
-\item Future versions will also seek to improve the quality of the BrO
-  observations in the mid- and lower stratosphere
-\item Improvements will also be sought in the polar regions, especially
-  during summer / winter, when day / night differences are not possible
-\end{itemize}
 
 \begin{table}
 \caption{Summary of the Aura MLS \thisv BrO product.}

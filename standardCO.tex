@@ -12,12 +12,12 @@ the MLS 240\,GHz radiometer. Full details are given in
 
 \subsection*{Differences between \thisv and v03.x}
 In the upper troposphere (UT), the primary difference between \thisv CO
-and \prevvSlash CO is the reduction in artifacts caused by deep
-convective clouds through a modification to the manner in which cloud
-signals are modeled in the retrievals.  Screening of data has been
-simplified, fewer profiles are marked 'bad' and fewer profiles that
-appear to contain cloud artifacts pass through the recommended
-screening.
+and \prevvSlash CO is the reduction in the frequency and severity of
+artifacts caused by deep convective clouds.  This was accomplished
+through a modification to the manner in which cloud signals are modeled
+in the retrievals.  Screening of data has been simplified, fewer
+profiles are marked ``bad'' and fewer profiles that appear to contain
+cloud artifacts pass through the recommended screening.
 
 A comparison of the two versions in the UTLS for February 2009, shown in
 Figure~\ref{fig:BlackSatCO}, includes non-spurious high values from the
@@ -25,22 +25,22 @@ plume of the ``Black Saturday'' fire, that are seen in both versions (so
 near the black 1:1 line).  Scattering from large particles in convective
 cores produces mostly high outliers in v03.30 CO at 215\,hPa, 147\,hPa
 and 100\,hPa and low outliers at 68\,hPa and 46\,hPa that are greatly
-reduced in v04.10, resulting in the clouds of points away from the 1:1
+reduced in \thisv, resulting in the clouds of points away from the 1:1
 line.  The ``Black Saturday'' plume produces UTLS CO values outside of
 the typically encountered, allowing comparison of non-spurious high
 values from the two version, unobscured by the v03.30 cloud-induced
 scatter present at lower \thisv mixing ratios.  At the highest values of
 the ``Black Saturday'' tails at 100\,hPa and 68\,hPa, values from \thisv
-are lower than those from v03.30 by $\sim$10\%, but fractional
+are lower than those from \prevv by $\sim$10\%, but fractional
 differences between the versions are lower elsewhere. The screening
-recommended for v03.x results in a significant amount of missing data in
-the tropics, and when the recommended IWC-based component of v03.x
+recommended for \prevv results in a significant amount of missing data
+in the tropics, and when the recommended IWC-based component of \prevv
 screening is included, most of the ``Black Saturday'' high values are
 screened out.
 
 \begin{figure}
   \centering\includegraphics[width=0.9\textwidth]{figures/BlackSatScat_v3v4_noscreen.png}%
-  \caption{Version v03.30 CO scattered against v04.1x CO for data from
+  \caption{Version v03.30 CO scattered against v04.20 CO for data from
     February 2009, when the ``Black Saturday'' fire provided a plume of
     non-spurious high-CO outliers, unprecedented in the MLS record.
     This data is unscreened. The 316-hPa retrieval level is shown, but
@@ -53,11 +53,11 @@ screened out.
 
 Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging
 kernels for \thisv MLS CO\@. Vertical and horizontal resolution are
-essentially unchanged from v03.x. The vertical resolution is in the
+essentially unchanged from \prevv. The vertical resolution is in the
 range 3.5\,--\,5\,km from the upper troposphere to the lower mesosphere,
 degrading to 6\,--\,7\,km in the upper mesosphere. Down to the 215\,hPa
 level, the vertical averaging kernels are sharply peaked at the level
-being retrieved, but while the 316-hPa measurement contains contribution
+being retrieved, but while the \mbox{316-hPa} measurement contains contribution
 from 316\,hPa, it has a larger contribution from 215\,hPa and a negative
 contribution around 100\,hPa of similar magnitude to that at 316\,hPa.
 The retrieved value at 316\,hPa is thus more an extrapolation of the
@@ -124,21 +124,20 @@ the number of MLS spectral channels considered in the retrieval.
 
 \evenstatusrule
 
-\item[Clouds:] \screeningrule{Clouds have no impact for pressures of
-    31\,hPa or less. \thisv is much less susceptible to cloud-induced
-    artifacts than was v03.x, so screening of the CO product is
-    considerably simplified. }
-
+\item[Clouds:] Clouds have no impact for pressures of 31\,hPa or
+  less. \thisv is much less susceptible to cloud-induced artifacts than
+  was v03.x, so screening of the CO product is considerably simplified,
+  needing only application of the standard \texttt{Quality} and
+  \texttt{Convergence} rules as described below.
  
- 
-\item[Quality:] \screeningrule{Only use profiles with quality greater
-    than 1.5.}  Profiles with Quality less than or equal to 1.5 comprise
-  0.7\% of all data, and $\sim$2\% of profiles in the tropics.  At 215
-  hPa in the tropics, the rejected profiles have mixing ratios that are,
-  on average, 12\% higher than other tropical values and the occurrence
-  rates of high outliers with mixing ratios greater than 150\,ppbv is
-  about twice that of the rest of the tropical ensemble.  At 147\,hPa
-  and 100\,hPa the rejected profiles are
+\item[Quality:] \screeningrule{Only use profiles with \texttt{Quality}
+    greater than 1.5.}  Profiles with \texttt{Quality} less than or
+  equal to 1.5 comprise 0.7\% of all data, and $\sim$2\% of profiles in
+  the tropics.  At 215 hPa in the tropics, the rejected profiles have
+  mixing ratios that are, on average, 12\% higher than other tropical
+  values and the occurrence rates of high outliers with mixing ratios
+  greater than 150\,ppbv is about twice that of the rest of the tropical
+  ensemble.  At 147\,hPa and 100\,hPa the rejected profiles are
 
 \item[Convergence:] \convergencerule{1.03} This \texttt{Convergence}
   criterion rejects fewer than 0.1\% of profiles.  Almost all of the
@@ -157,11 +156,12 @@ the number of MLS spectral channels considered in the retrieval.
 \item There is a tendency for negative values to occur at the level
   below a large positive value. The most striking examples occur in the
   polar vortex, where air with high CO mixing ratios descends to the
-  mid-stratosphere.  This problem is slightly worse in \thisv -- this
+  mid-stratosphere.  This problem is slightly worse in \thisv\ -- this
   was considered an acceptable trade-off for the less jagged profiles
   obtained over most of the middle atmosphere.
 \item As discussed above, the \thisv CO retrievals are sensitive to the
   presence of thick clouds, and the screening procedure described above
+  based on \texttt{Status}, \texttt{Quality} and \texttt{Convergence}
   should be applied before any scientific application of the MLS CO data
   at pressures greater than 100\,hPa.
 \end{itemize}
@@ -170,20 +170,20 @@ the number of MLS spectral channels considered in the retrieval.
 
 In the upper troposphere, comparisons with various in situ CO
 observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the
-MLS v2.2 215\,hPa CO product is biased high by a factor of
-\texttildelow2. Initial comparisons show this bias to be largely
+\emph{earlier} MLS v2.2 215\,hPa CO product was biased high by a factor
+of \texttildelow2. Initial comparisons show this bias to be largely
 eliminated in \thisv.  Further validation of the \thisv CO UT/LS
 retrival levels are underway at the time of this writing.
 
-In the mesosphere, comparisons of v2.2 MLS CO with ODIN-SMR and ACE-FTS
-suggest a positive bias: 30\%\,--\,50\% against ACE-FTS, 50\%\,--\,100\%
-against SMR. Near 31\,hPa, the MLS values are lower than SMR and ACE-FTS
-by at least 70\%. The MLS values have not changed much between v2.2 and
-\thisv in the middle atmosphere, so these comparisons may mostly be
-considered valid for \thisv. What change there is consists of a slight
-lowering of the MLS values, bringing them slightly towards the ACE-FTS
-data; 20\% is now a better estimate than 30\% of the MLS-ACE bias in
-much of the middle atmosphere.
+In the mesosphere, comparisons of the earlier v2.2 MLS CO with ODIN-SMR
+and ACE-FTS suggest a positive bias: 30\%\,--\,50\% against ACE-FTS,
+50\%\,--\,100\% against SMR. Near 31\,hPa, the MLS values are lower than
+SMR and ACE-FTS by at least 70\%. The MLS values have not changed much
+between v2.2 and \thisv in the middle atmosphere, so these comparisons
+may mostly be considered valid for \thisv. What change there is consists
+of a slight lowering of the MLS values, bringing them slightly towards
+the ACE-FTS data; 20\% is now a better estimate than 30\% of the MLS-ACE
+bias in much of the middle atmosphere.
 
 \begin{table}
   \caption{Data quality summary for MLS version 3.3 CO.}

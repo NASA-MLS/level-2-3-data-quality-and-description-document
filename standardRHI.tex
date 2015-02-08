@@ -137,24 +137,31 @@ results in a subsequent version of this document.
 \subsection*{Data screening}
 \label{sec:RHIScreening}
 \begin{description}
+
 \item[Pressure range:] \screeningrule{Profile from 316\,--\,0.002\,hPa,
     larger pressures represent mid/upper troposphere column.}
-  \standardrangestatement
-\standardprecisionrule
-\evenstatusrule
-\item[Clouds:] Ignore status bits 16 (high clouds) or 32 (low clouds) set
-indicating the presence of clouds. See artifacts for more details.
+  \standardrangestatement \standardprecisionrule \evenstatusrule
+
+\item[Clouds:] Ignore status bits 16 (high clouds) or 32 (low clouds)
+  set indicating the presence of clouds. See artifacts for more details.
+
 \item[Quality field:] \screeningrule{Only profiles with a value of the
     RHi \texttt{Quality}\,(see section~\ref{sec:StatusQuality})
     \emph{greater} than 1.45 and Temperature \texttt{Quality}\,
-    \emph{greater} than \textcolor{red}{TBD} should be used in scientific
-    studies.}
-    This eliminates $\sim$5\% of the profiles on a typical day.
+    \emph{greater} than 0.2 for pressures of 83\,hPa and smaller and 0.9
+    for pressures of 100\,hPa and larger.}  This eliminates $\sim$5\% of
+  the profiles on a typical day.
+
 \item[Convergence field:] \screeningrule{Only profiles with a value of
-    the RHi \texttt{Convegence}\,(see
-    section~\ref{sec:StatusQuality})\, \emph{less} than 2.0 and
-    Temperature \texttt{Convergence}\, \emph{less} than
-    \textcolor{red}{TBD} should be used in scientific studies.}
+    the RHi \texttt{Convegence}\,(see section~\ref{sec:StatusQuality})\,
+    \emph{less} than 2.0 and Temperature \texttt{Convergence}\,
+    \emph{less} than \textcolor{red}{TBD} should be used in scientific
+    studies.}
+
+\item[End of Day:] The last four profiles of each day show greatly
+  increased rates of large temperature departure from \emph{a priori}.
+  Accordingly the last four profiles of the RHI product each day should
+  not be used.
 \end{description}
 
 \subsection*{Artifacts}
@@ -175,6 +182,17 @@ as part of the analysis. Measurements taken in the presence of clouds
 significantly degrade the precision, that is increases the scatter about
 the mean, but the mean bias as compared to AIRS changes by less than
 10\%.
+
+The last four profiles of each day show increased rates of outliers
+relative to GEOS-5 temperature, compared to other profile positions in
+the day.  These outliers can be as large as 50\,K at at some levels.
+Attempts to address this end of day boundary problem by creating daily
+overlap periods that can be discarded have not yet satisfactorily
+addressed this problem and the magnitude of the outliers has increased
+somewhat in \thisv.  A recommendation to discard the last 4 profiles of
+each day for temperature, GPH, and RHI has been added to recommended
+screening.
+
 
 \subsection*{Review of comparisons with other datasets}
 
@@ -222,12 +240,12 @@ in future work.
 \begin{minipage}{\linewidth}
 \centering\begin{tabular}{ccccl}
 \toprule
-\parbox[m]{6em}{\bfseries\centering Pressure / hPa} &
-\parbox[m]{6em}{\bfseries\centering Resolution V~$\times$~H \ km} &
-\parbox[m]{8em}{\bfseries\centering Single profile precision
+\parbox[m]{5em}{\bfseries\centering Pressure / hPa} &
+\parbox[m]{5em}{\bfseries\centering Resolution V~$\times$~H \ km} &
+\parbox[m]{7em}{\bfseries\centering Single profile precision
 \footnote{Absolute error in percent} / \%} &
 \parbox[m]{6em}{\bfseries\centering Accuracy%
-\footnote{Fractional error ( [error in RHi] / RHi) in percent} / \%} &
+\footnote{Fractional error ( [error in RHi] / RHi) in percent}/ \%} &
 \bfseries Comments
 \\ \midrule
 0.001  & --- & ---  & --- & Unsuitable for scientific use \\  
@@ -255,8 +273,8 @@ in future work.
    261& 4 $\times$ 200 & 45   & 30 & see Table~\ref{tab:H2OSummary} \\
    316& 6 $\times$ 200 & 70   & 20 & see Table~\ref{tab:H2OSummary} \\
 UTRHI, $>$316 & 6 $\times$ 150 & 40(est) & 10(est) & measurement height
-depends on \\
-      &                &    &     &   atmospheric humidity \\
+depends \\
+      &                &    &     &   on atmospheric humidity \\
 \bottomrule
 \end{tabular}
 \end{minipage}

@@ -1,9 +1,9 @@
-% $Id: v4-x-report.tex,v 1.5 2015/01/30 22:30:35 livesey Exp $
+% $Id: v4-x-report.tex,v 1.6 2015/02/05 04:57:14 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navtrue
+\newif\ifnav\navfalse
 %
 % ---------------------------------------- Fonts
 \usepackage{inconsolata}
@@ -30,6 +30,7 @@
 \usepackage{xspace}
 \usepackage{fancyhdr}
 \usepackage{ccaption}
+\usepackage{lineno}
 %
 % --------------------------------------- Bibliography
 \usepackage[square]{natbib}
@@ -72,7 +73,7 @@
 %
 \newlength{\tablecaptionsep}
 \setlength{\tablecaptionsep}{0.5ex}
-%
+%X
 % --------------------------------------- Title page
 \usepackage{mlstitlepage}
 %
@@ -129,12 +130,17 @@
   {\small\sffamily\itshape\flushleft\color{SectionColor}\figureversion{tabular}}}%
 \makeatother
 %
+% ------------------------------------- Other minutea
+%
+\renewcommand{\linenumberfont}{\color{black}\tiny\sffamily\mdseries\upshape\figureversion{tabular}}
+\linenumbers
+%
 % ---------------------------------------- Captions
 %
 \newfixedcaption{\myfigcaption}{figure}
 \newfixedcaption{\mytabcaption}{table}
 \captionnamefont{\small\sffamily\fontseries{sb}\selectfont\color{SectionColor}\selectfont\figureversion{tabular}}
-\captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont}
+\captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont\mathversion{sans}}
 %
 \newcommand{\tabletitle}[1]{\textbf{\textcolor{tableheadcolor}{#1}}\global\oddrowtrue}
 %
@@ -221,8 +227,8 @@ Elmain~Martinez}
 \lhead{}
 \cfoot{\RenderNavBar%
 \sffamily\color{HeaderFooterColor}\thepage}
-\lfoot{\sffamily\color{HeaderFooterColor}Aura Microwave Limb Sounder (MLS)}
-\rfoot{\sffamily\color{HeaderFooterColor}\myshorttitle}
+\lfoot{\sffamily\textcolor{HeaderFooterColor}{Aura Microwave Limb Sounder (MLS)}}
+\rfoot{\sffamily\textcolor{HeaderFooterColor}{\myshorttitle}}
 %
 \fancypagestyle{plain}{%
   \fancyhead{}

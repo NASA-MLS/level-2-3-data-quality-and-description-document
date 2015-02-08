@@ -28,28 +28,29 @@ through hydrostatic balance and the gas law.
 where $M$ is the molar mass of air and $R$ is the gas constant.
 
 MLS retrieves temperature and pressure from radiometric measurements,
-and in concert with precise differences in limb pointing provided by the
-scan model, GPH differences between pressure surfaces are
-inferred. Absolute pointing cannot be inferred from radiometric
-information and must be provided for each retrieved profile by the
-spacecraft orbit/attitude system and the instrument scan model.  By
-convention, this additional degree of freedom is taken to be the height
-of the 100-hPa reference level, but this choice is arbitrary, as the
-reference is an additive offset to the entire profile.
+and in concert with precisely measured differences in limb pointing, GPH
+differences between pressure surfaces are inferred. Absolute pointing
+cannot be inferred from radiometric information and must be provided for
+each retrieved profile by the spacecraft orbit/attitude system and the
+instrument scan model.  By convention, this additional degree of freedom
+is taken to be the height of the 100-hPa reference level, but this
+choice is arbitrary, as the reference is an additive offset to the
+entire profile.
 
 Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
 modeled accuracy and observed biases.  The following sections provide
 details.
 
 \subsection*{Differences between \thisv and previous versions}
-The \thisv GPH product is taken from the CorePlusR3 retrieval phase
-along with a number of standard products that depend upon radiances of
-the 240-GHz radiometer.  The previously released v02.2x and v03.x GPH
-products were taken from a preliminary ``core'' retrieval phase.  Since
-these GPH profiles are retrieved simultaneously with the CorePlusR3
-products and are assumed in the CorePlusR2 and CorePlusR4 retrievals,
-GPH and the retrieved constituents should be, in some sense, more
-internally consistent than they were in previous versions.
+The \thisv GPH product is taken from the \texttt{CorePlusR3} retrieval
+phase along with a number of standard products that depend upon
+radiances of the 240-GHz radiometer.  The previously released v02.2x and
+v03.x GPH products were taken from a preliminary ``Core'' retrieval
+phase.  Since these GPH profiles are retrieved simultaneously with the
+\texttt{CorePlusR3} products and are assumed in the \texttt{CorePlusR2}
+and \texttt{CorePlusR4} retrievals, GPH and the retrieved constituents
+should be, in some sense, more internally consistent than they were in
+previous versions.
 
 These previous versions of MLS GPH were referenced to the WGS84
 ellipsoid, a simple model of the Earth's surface but not a surface of
@@ -75,10 +76,10 @@ After correction of v03.3x for the EGM96-WGS84 bias, \thisv GPH values
 are found to be somewhat higher at high latitudes than are those of the
 v03.3x product, with typical 100-hPa mean differences of 50\,m in the
 high northern latitudes, 30\,m in high southern latitudes and close to
-zero bias in the tropics.  \thisv-v03.3x differences from the ascending
-and descending parts of the orbits are not appreciably different and
-differences are similar from year to year.  The annual cycle of \thisv
-minus v03.30 100-hPa GPH is shown in
+zero bias in the tropics.  Differences between the ascending and
+descending parts of the orbits are consistent between \thisv and
+\prevvSlahs, and are similar from year to year.  The annual cycle of
+\thisv minus v03.30 100-hPa GPH is shown in
 Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.  The
 details of these differences vary between the two years, but the
 morphology is similar.
@@ -93,8 +94,8 @@ morphology is similar.
 After removal of the geoid correction from v03.3x GPH, there remains a
 latitudinally and seasonally-varying bias between MLS and GEOS-5 that is
 also present in \thisv GPH.  Figure~\ref{fig:GPHv3_lat_annual} shows
-this pattern for in the difference between geoid-corrected v03.3x and
-GEOS-5 100-hPa GPH.  This pattern is essentially unchanged in \thisv.
+this pattern in the difference between geoid-corrected v03.3x and GEOS-5
+100-hPa GPH.  This pattern is essentially unchanged in \thisv.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/GPH_geoid_correction2A}
 \caption{Annually-repeating biases between MLS 100-hPa GPH and GEOS-5.2
@@ -106,13 +107,13 @@ GEOS-5 100-hPa GPH.  This pattern is essentially unchanged in \thisv.
 
 Some of this annually-repeating ``bias'' may result from
 annually-repeating geophysical information captured by MLS that is not
-in the GEOS-5 analysis, but the large ascending-descending differences
-are almost certainly not primarily diurnal effects.  The fidelity with
-which these patterns annually repeat suggests that they may result from
-thermal distortions of the spacecraft/instrument that vary annually due
-to the eccentricity of the Earth's orbit or perhaps from orbit/attitude
-errors from the star trackers that provide the spacecraft-attitude
-information.
+in the GEOS-5 analysis.  However, the large ascending-descending
+differences are almost certainly not primarily diurnal effects.  The
+fidelity with which these patterns annually repeat suggests that they
+may result from thermal distortions of the spacecraft/instrument that
+vary annually due to the eccentricity of the Earth's orbit, or perhaps
+from orbit/attitude errors from the star trackers that provide the
+spacecraft-attitude information.
 
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/v4GPH_2005_2009_byOGA}
@@ -211,12 +212,19 @@ GPH should be screened in the same way as is temperature:
   product, rejecting profiles between 261--100\,hPa for which the
   215\,hPa value of IWC is greater than 0.005\,mg/m$^3$.
 
-\item[Quality:] \qualityrule{0.9} This threshold typically excludes
-  1.4\% of global profiles and 4.8\% of tropical profiles.
+\item[Quality:] Only use profiles with \texttt{Quality} greater than 0.2
+  for the 83\,hPa level and smaller pressures, and profiles with
+  \texttt{Quality} greater than 0.9 at larger pressures of 100\,hPa and
+  larger.
 
 \item[Convergence:] \convergencerule{1.03} Use of this threshold
   typically discards less than 0.1\% of profiles and is primarily a
   safeguard against profiles with extremely poor convergence.
+
+\item[End of Day:] The last four profiles of each day show greatly
+  increased rates of large temperature departure from \emph{a priori}.
+  Accordingly the last four profiles of the GPH product each day should
+  not be used.
 
 \end{description}
 
@@ -243,6 +251,17 @@ bias with respect to SABER becomes increasingly negative at lower
 pressures: \texttildelow\,$-$100\,m at 0.01\,hPa and
 \texttildelow\,$-$500\,m at 0.001\,hPa.  These negative biases reflect
 the general low temperature bias of MLS with respect to SABER.
+
+The last four profiles of each day show increased rates of outliers
+relative to GEOS-5 temperature, compared to other profile positions in
+the day.  These outliers can be as large as 50\,K at at some levels.
+Attempts to address this end of day boundary problem by creating daily
+overlap periods that can be discarded have not yet satisfactorily
+addressed this problem and the magnitude of the outliers has increased
+somewhat in \thisv.  A recommendation to discard the last 4 profiles of
+each day for both temperature and GPH (as well as RHI) has been added to
+recommended screening.
+
 
 \subsection*{Desired improvements for future data version(s)}
 

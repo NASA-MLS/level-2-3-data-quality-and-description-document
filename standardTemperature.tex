@@ -207,9 +207,10 @@ Figure~\ref{fig:TempSummary2}.
 \standardprecisionrule
 \evenstatusrule
 
-\item[Quality:] \screeningrule{Only use profiles with quality greater
-    than 0.2 for pressures of 100\,hPa or smaller, and profiles with
-    quality greater than 1.1 at larger pressures greater than 0.9.}
+\item[Quality:] Only use profiles with \texttt{Quality}
+    greater than 0.2 for the 83\,hPa level and smaller pressures, and
+    profiles with \texttt{Quality} greater than 0.9 at larger pressures
+    of 100\,hPa and larger.
 
   Profiles with Quality less than or equal to 0.9 comprise 1.4\% of all
   data, and 4.8\% of profiles in the tropics.  At 215 hPa in the
@@ -248,6 +249,10 @@ Figure~\ref{fig:TempSummary2}.
 \item[At 261\,hPa:] \texttt{L2gpPrecision} $>$ 0.7\,K 
 \item[At 215\,hPa:] \texttt{L2gpPrecision} $>$ 0.825\,K 
 \end{description}
+
+\item[End of Day:] The last four profiles of each day show greatly
+  increased rates of large departure from \emph{a priori} and should not
+  be used.
 \end{description}
 
 \subsection*{Artifacts}
@@ -265,6 +270,15 @@ tropical profiles.  Flagging of clouds is discussed above.  Unusually
 short chunks often occur at the beginnings and ends of days and these
 may contain spurious values.  Further discussion of artifacts may be
 found in~\citet{SchwartzEtal08}.
+
+The last four profiles of each day show increased rates of outliers
+relative to GEOS-5 temperature, compared to other profile positions in
+the day.  These outliers can be as large as 50\,K at at some levels.
+Attempts to address this end of day boundary problem by creating daily
+overlap periods that can be discarded have not yet satisfactorily
+addressed this problem and the magnitude of the outliers has increased
+somewhat in \thisv.  A recommendation to discard the last 4 profiles
+of each day has been added to recommended screening.
 
 \subsection*{Review of comparisons with other datasets}
 \label{sec:TComparisons}
