@@ -26,12 +26,12 @@ There were no algorithmic changes relating to HOCl for the v4.2
 retrievals.  Small differences in HOCl abundances (see below) are likely
 related mainly to small changes in tangent pressure and/or temperature.
 
-The background observed in the 640 GHz radiances includes emissions from
+The background observed in the 640-GHz radiances includes emissions from
 N\cs2, O\cs2, and H\cs2O.  There are laboratory-based and ground-based
 models for the continuum absorptions that are the basis for the MLS
 absorption model \citep[][and references therein]{PardoEtal01}.  These
 models were tested against MLS extinction measurements from the wing
-channels in the 640 GHz radiometer.  The latitude dependence of this
+channels in the 640-GHz radiometer.  The latitude dependence of this
 extinction was found to agree better with the expected most plus dry
 continuum extinction values if the dry and moist continuum functions
 were scaled by factors close to 20$\%$; however, this is not a change
@@ -42,8 +42,8 @@ contours (from 10 to 2\, hPa) and differences between the two data
 versions for a typical month (March, 2009) is provided in Figure
 ~\ref{fig:MLSv3v4HOClContour}.  The v4.2 HOCl abundances are mostly
 slightly larger than the v3.3 retrievals, typically by only a few pptv
-(a few \%).  The estimated precision values are essentially unchanged
-from v3.3.
+(a few percent).  The estimated precision values are essentially
+unchanged from v3.3.
 
 \begin{figure}
   \centering\includegraphics[angle=90,width=1.\linewidth]{figures/Fig-HOCl-ZMContours-v3-3-v4-2_2009m03}
@@ -60,7 +60,7 @@ from v3.3.
 
 Based on the width of the averaging kernels shown in
 Figure~\ref{fig:AvkHOCl}, the vertical resolution for upper
-stratospheric HOCl is $\sim$6\,km (significantly worse than the 640\,GHz
+stratospheric HOCl is $\sim$6\,km (significantly worse than the 640-GHz
 radiometer vertical field of view width of 1.4\,km).  This reflects the
 choice of smoothing constraints for HOCl which favor precision over
 vertical resolution.
@@ -74,10 +74,10 @@ typical precision of a 10\degsym\ weekly zonal means for this product.
 
 \subsection*{Accuracy}
 
-The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal
-quantification of the combined effects of possible systematic errors in
-MLS calibration, spectroscopy, etc.\ on the HOCl retrievals
-\citep{ReadEtal07}.  These values are intended to represent 2 sigma
+The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a
+formal quantification of the combined effects of possible systematic
+errors in MLS calibration, spectroscopy, etc.\ on the HOCl retrievals
+\citep{ReadEtal07}.  These values are intended to represent $2\sigma$
 estimates of accuracy.  The largest contributors to possible errors for
 HOCl are contaminant species, gain compression, and sideband ratio
 uncertainties.  The Table gives a range of error estimates (for low and
@@ -97,24 +97,22 @@ between v3.3 and v4.2 are well within the quoted accuracy estimates
   values only up to 2.2\, hPa.  \standardprecisionrule \evenstatusrule
 
 \item[Quality field:] \screeningrule{Only profiles with a value of the
-    \texttt{Quality} field (see section~\ref{sec:StatusQuality})
-    \emph{greater} than 1.2 should be used.}
+    \texttt{Quality} field \emph{greater} than 1.2 should be used.}
 
   This criterion removes profiles with the poorest radiance fits,
   typically less than 0.1$\%$ of the daily profiles. For HOCl (and for
-  other 640\,GHz MLS products), this screening correlates well with the
+  other 640-GHz MLS products), this screening correlates well with the
   poorly converged sets of profiles (see below); we recommend the use of
   both the \texttt{Quality} and \texttt{Convergence} fields for data
   screening.
 
 \item[Convergence field:] \screeningrule{Only profiles with a value of
-    the \texttt{Convergence} field (see section~\ref{sec:StatusQuality})
-    \emph{less} than 1.05 should be used.} For the vast majority of
-  profiles (99$\%$ or more for most days), this field is less than 1.05.
-  Nevertheless, on occasion, sets of profiles (typically one or more
-  groups of ten profiles, retrieved as a `chunk') have this
-  \texttt{Convergence} field set to larger values, and should be
-  discarded.
+    the \texttt{Convergence} field \emph{less} than 1.05 should be
+    used.} For the vast majority of profiles (99$\%$ or more for most
+  days), this field is less than 1.05.  Nevertheless, on occasion, sets
+  of profiles (typically one or more groups of ten profiles, retrieved
+  as a `chunk') have this \texttt{Convergence} field set to larger
+  values, and should be discarded.
 
 \item[Clouds:] \cloudsokrule
 
@@ -135,7 +133,7 @@ photochemical model \citep{KhosraviEtal13}.
 
 \subsection*{Artifacts}
 \begin{itemize} 
-\item The 640\,GHz radiometer bands 10 (for ClO) and 29 (for HOCl) were
+\item The 640-GHz radiometer bands 10 (for ClO) and 29 (for HOCl) were
   turned off for a few time periods in 2006 to investigate degradation
   issues that might affect these channels in the future.  These bands
   were off on April 8,9, and 10, 2006, and also for April 17, 2006
@@ -159,17 +157,17 @@ photochemical model \citep{KhosraviEtal13}.
 \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Pressure}} &
-\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Precision\footnote{Precision (1 sigma) 
+\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Precision\footnote{Precision ($1\sigma$) 
 for 1 week/10 degrees zonal means or 2 weeks/5 degrees zonal means}}}} &
 \parbox[m]{24mm}{\centering\textbf{Vertical\\ Resolution\\km}} &
-\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Accuracy\footnote{2 sigma estimate from systematic 
+\multicolumn{2}{c}{\parbox[m]{15mm}{\centering\textbf{Accuracy\footnote{$2\sigma$ estimate from systematic 
 uncertainty characterization tests}\\}}} 
 &
 \textbf{Comments} \\
 \textbf{hPa} & \textbf{pptv} & \textbf{\%} & \textbf{km}& \textbf{pptv} & \textbf{\%} & \\
 \midrule
 1.5 or less & --- & ---   & ---  & --- & ---  & Unsuitable for scientific use \\ 
-2.2 to 10   &  10 & 10    &   6  & 30\,--\,80 & $\sim$30\,--\,100 \\ 
+2.2 to 10   &  10 & 10    &   6  & 30\,--\,80 & \texttildelow30\,--\,100 \\ 
 15 or more  & --- & ---   & ---  & --- &  --- & Unsuitable for scientific use \\    
 \bottomrule
 \end{tabular}

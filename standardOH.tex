@@ -4,9 +4,9 @@
 
 \subsection*{Introduction}
 
-The THz radiometer is dedicated to measuring OH in the 2.5\,THz spectral
-region. A description of OH data quality, precision and systematic
-errors for an earlier version, v2.2, is given in
+The MLS THz radiometer is dedicated to measuring OH in the 2.5\,THz
+spectral region. A description of OH data quality, precision and
+systematic errors for an earlier version, v2.2, is given in
 \citet{PickettEtal08}. The validation studies are described in
 \citet{PickettEtal08} and \citet{WangEtal08}. While the OH data quality
 is generally similar between v2.2 and \prevv, there are significant
@@ -15,14 +15,14 @@ data near the mesospheric density peak, \texttildelow0.032 hPa, often
 show considerable amount of bad data due to negative precision,
 particularly in the summer hemisphere (or tropics when near the equinox)
 and sometimes causes gaps in zonal mean time series. The \thisv software
-resolves this issue by fixing the too tight a priori constraints. The
-resulting mesospheric OH data are less noisy and generally have somewhat
-larger values than previous versions for the problematic
-seasons/latitudes. Another improvement is the smaller bias at
-10\,--\,15\,hPa. Therefore, the day-night correction for bias is only
+resolves this issue by fixing the overly tight \texttt{a priori}
+constraints. The resulting mesospheric OH data are less noisy and
+generally have somewhat larger values than previous versions for the
+problematic seasons/latitudes. Another improvement is the smaller bias
+at 10\,--\,15\,hPa. Therefore, the day-night correction for bias is only
 required for pressure levels at 21 and 32\,hPa. Note that users may
 notice more zig-zags in \thisv nighttime mesospheric OH vertical
-profiles. This is a side effect when fixing the possible positive bias
+profiles. This is a side effect of fixing the possible positive bias
 introduced by tight lower limits set in previous version retrievals.
 
 The estimated uncertainties, precisions, and resolution for \thisv OH are
@@ -64,7 +64,7 @@ collisional line-width is approximately equal to the Doppler width at
 1\,hPa. Above 1\,hPa, Doppler broadening is dominant and the peak
 intensity of OH spectral absorption is proportional to density, while
 below 1\,hPa the peak intensity is proportional to vmr. The daytime OH
-density profile shows two peaks at \texttildelow45 km and \texttildelow75 km. The
+density profile shows two peaks at \texttildelow45\,km and \texttildelow75\,km. The
 night OH profile exhibits the narrow layer at \texttildelow82 km
 \citep{PickettEtal06niteOH}. Precisions are such that an OH zonal
 average within a 10\degsym\ latitude bin can be determined with better
@@ -126,7 +126,7 @@ can be extended to 32\,--\,0.0046\,hPa.
 
 Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The
 scaling uncertainty is the part of the systematic uncertainty that
-scales with OH concentration, e.g. spectroscopic line strength. Bias
+scales with OH concentration, e.g., spectroscopic line strength. Bias
 uncertainty is the part of the uncertainty that is independent of
 concentration. For both bias and scaling uncertainty, quantification of
 the combined effect in MLS calibration, spectroscopy etc., on the data
@@ -161,7 +161,7 @@ investigations if all the following tests are successful:
 For some seasons, the Gas Laser Local Oscillator (GLLO) for the THz
 receiver is automatically ``relocked'' as many as 5 times during a day,
 leading to data gaps.  In these cases the \texttt{Status} flag is set to
-257 and the profile is ignored. This can present a problem when
+\texttt{257} and the profile is ignored. This can present a problem when
 compiling maps, because the missing data may appear at the same latitude
 and longitude on successive days.
 
@@ -191,14 +191,14 @@ hemisphere (or tropics when near equinox).
 \parbox{5em}{\bfseries\centering Scaling uncertainty /\%} &
 \textbf{Comments}\\
 \midrule
- $<$0.003\,hPa & ---                  & ---                  & ---   & --- & Unsuitable for scientific use\\
- 0.003\,hPa    & 5.0 $\times$ 220 & 0.5 / 0.5   & 0.034 & 90  &\\
- 0.01 \,hPa    & 2.5 $\times$ 180     & 1.1 /1.1             & 0.031 & 41  &\\
- 0.1\,hPa      & 2.5 $\times$ 165     & 3.3 / 0.6            & 0.12  & 3.1 &\\
- 1.0\,hPa      & 2.5 $\times$ 165     & 1.9 / 0.4            & 0.50  & 7   &\\
- 10 \,hPa      & 2.5 $\times$ 165     & 2.3 / 1.4            & 0.18  & 1.5 &\\
- 32\,--\,14\,hPa   & 2.5 $\times$ 165     & 6\,--\,10 / 4\,--\,8 & 0.50  & 1.3 & Use day--night difference \\
- $>$32\,hPa & --- & --- & --- & --- & Unsuitable for scientific use\\
+$<$0.003\,hPa & ---                  & ---                  & ---   & --- & Unsuitable for scientific use\\
+0.003\,hPa    & 5.0 $\times$ 220 & 0.5 / 0.5   & 0.034 & 90  &\\
+0.01 \,hPa    & 2.5 $\times$ 180     & 1.1 /1.1             & 0.031 & 41  &\\
+0.1\,hPa      & 2.5 $\times$ 165     & 3.3 / 0.6            & 0.12  & 3.1 &\\
+1.0\,hPa      & 2.5 $\times$ 165     & 1.9 / 0.4            & 0.50  & 7   &\\
+10 \,hPa      & 2.5 $\times$ 165     & 2.3 / 1.4            & 0.18  & 1.5 &\\
+32\,--\,14\,hPa   & 2.5 $\times$ 165     & 6\,--\,10 / 4\,--\,8 & 0.50  & 1.3 & Use day--night difference \\
+$>$32\,hPa & --- & --- & --- & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
 \end{minipage}

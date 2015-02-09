@@ -1,9 +1,9 @@
-% $Id: v4-x-report.tex,v 1.6 2015/02/05 04:57:14 livesey Exp $
+% $Id: v4-x-report.tex,v 1.7 2015/02/08 05:42:15 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navfalse
+\newif\ifnav\navtrue
 %
 % ---------------------------------------- Fonts
 \usepackage{inconsolata}
@@ -133,7 +133,7 @@
 % ------------------------------------- Other minutea
 %
 \renewcommand{\linenumberfont}{\color{black}\tiny\sffamily\mdseries\upshape\figureversion{tabular}}
-\linenumbers
+%\linenumbers
 %
 % ---------------------------------------- Captions
 %
@@ -201,7 +201,7 @@ Elmain~Martinez}
 \version{4.2x--0.1}
 \newcommand{\thisv}{v4.2\emph{x}\xspace}
 \newcommand{\prevv}{v3.3\emph{x} and v3.4\emph{x}\xspace}
-\newcommand{\prevvSlash}{v3.3\emph{x}/v3.4\emph{x}\xspace}
+\newcommand{\prevvSlash}{\mbox{v3.3\emph{x}/v3.4\emph{x}}\xspace}
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
 

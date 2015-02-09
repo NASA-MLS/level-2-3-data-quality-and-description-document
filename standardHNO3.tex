@@ -30,11 +30,12 @@ coherently evolving atmospheric signals with realistic morphology are
 seen in individual daily maps.  The standard HNO\cs3 product is derived
 from the \mbox{240-GHz} retrievals at pressures equal to or greater than
 22\,hPa and from the \mbox{190-GHz} retrievals for lesser pressures.
-Retrievals and \texttt{Quality} and \texttt{Convergence} information
-from both sets of retrievals are included in the standard HNO\cs3 files
-so that the appropriate screeening values can conveniently be used at
-each level.  The \texttt{Quality} and \texttt{Convergence} included in
-the ``HNO\cs3'' swath are from the \mbox{240-GHz} radiometer and
+HNO\cs3 profiles and precision estimates, along with \texttt{Quality}
+and \texttt{Convergence} information from both sets of retrievals are
+included in the standard HNO\cs3 files, so that the appropriate
+screeening values can conveniently be used at each level.  The
+\texttt{Quality} and \texttt{Convergence} included in the
+``\texttt{HNO3}'' swath are from the \mbox{240-GHz} radiometer and
 \emph{apply only to pressures 22\,hPa or greater} (see the data
 screening discussion below).
 
@@ -70,8 +71,8 @@ measurements are given below.
 \subsection*{Resolution}
 \onestandardavk{HNO3}{HNO\cs3}%
 
-The resolution of the retrieved data can be described using `averaging
-kernels' \citep[e.g.,][]{Rodgers00}; the two-dimensional nature of the
+The resolution of the retrieved data can be described using ``averaging
+kernels'' \citep[e.g.,][]{Rodgers00}; the two-dimensional nature of the
 MLS data processing system means that the kernels describe both vertical
 and horizontal resolution.  Smoothing, imposed on the retrieval system
 in both the vertical and horizontal directions to enhance retrieval
@@ -129,7 +130,7 @@ similar estimates.
 The single-profile precision estimates cited here are, to first order,
 independent of latitude and season, but it should be borne in mind that
 the large geographic variations in HNO\cs3 abundances gives rise to wide
-range `signal to noise' ratios.  At some latitudes and altitudes and in
+range of signal to noise ratios.  At some latitudes and altitudes and in
 some seasons, HNO\cs3 abundances are smaller than the single-profile
 precision, necessitating the use of averages for scientific studies.  In
 most cases, precision can be improved by averaging, with the precision
@@ -192,19 +193,20 @@ correlative datasets, as discussed briefly below.
   (pressures of 22\,hPa or greater)}
 
 The \texttt{Quality} and \texttt{Convergence} fields included in the
-standard HNO\cs3 files are appropriate for use in screening at levels at
-and below (that is, pressures greater than) 22\,hPa.  For those levels:
+standard \texttt{L2GP-HNO3} files are appropriate for use in screening
+at levels at and below (that is, pressures greater than) 22\,hPa.  For
+those levels:
 
 \begin{description}
 \item[Quality:] \qualityrule{0.8}
-
   This threshold for \texttt{Quality} typically excludes
   \texttildelow1\,--\,3\% of HNO\cs3 profiles on a daily basis; it is a
   conservative value that potentially discards a significant fraction of
   ``good'' data points while not necessarily identifying all ``bad''
   ones.  A significant fraction of the HNO\cs3 profiles in \thisv show a
   ``notch'', with unexpectedly low values at 100\,hPa and high values at
-  147\,hPa; many such profiles are removed by setting
+  147\,hPa; many such profiles are removed by setting \mycomment{By
+    setting what?}
 
 \item[Convergence:] \convergencerule{1.05}
 
@@ -229,16 +231,17 @@ and below (that is, pressures greater than) 22\,hPa.  For those levels:
   equatorial regions.
 
   Therefore, it is recommended that at and below 68\,hPa, in addition to
-  performing the `outlier screening' described below, all profiles with
-  nonzero values of Status be discarded because of the potential for
-  cloud contamination.  While this will reject some profiles that are
-  probably not significantly impacted by cloud effects, and the number
-  of profiles rejected that are not flagged by other criteria is small
-  (\texttildelow0.5 to 1\% of total profiles), it does eliminate some
-  unphysical profiles that are not flagged by the outlier screening.
+  performing the ``outlier screening'' described below, all profiles
+  with nonzero values of \texttt{Status} be discarded because of the
+  potential for cloud contamination.  While this will reject some
+  profiles that are probably not significantly impacted by cloud
+  effects, and the number of profiles rejected that are not flagged by
+  other criteria is small (\texttildelow0.5 to 1\% of total profiles),
+  it does eliminate some unphysical profiles that are not flagged by the
+  outlier screening.
 
 \item[Outliers:] \screeningrule{Alternative screening approaches in the
-    UTLS remove outliers while reducing `false positives'}
+    UTLS remove outliers while reducing ``false positives''}
 
   While the number, and particularly the extreme values of, outliers in
   \thisv HNO\cs3 at levels between 316 and 100 (sometimes to 68) hPa is
@@ -263,7 +266,7 @@ and below (that is, pressures greater than) 22\,hPa.  For those levels:
   Figure~\ref{fig:outlierprofs} shows an example of the results of
   screening profiles by each of the \texttt{Quality},
   \texttt{Conver\-gence} and the recommended outlier flagging on a
-  typical `bad' day (i.e., one with a relatively large number of
+  typical ``bad'' day (i.e., one with a relatively large number of
   outliers) in \thisv versus v3.3.  The \texttt{Quality} screening
   removes many of the profiles that are strongly negative at the bottom,
   as well as many with the ``notch'' structure begtween 147 and
@@ -299,9 +302,8 @@ be used to apply the following screening criteria:
   stratospheric HNO\cs3 data at these altitudes.
 
 \item[Quality:] \screeningrule{Only profiles with a value of the
-    \texttt{Quality} field for \texttt{HNO3-190} (see
-    section~\ref{sec:StatusQuality}) \emph{greater} than 0.8 should be
-    used in scientific study.}
+    \texttt{Quality} field for \texttt{HNO3-190} \emph{greater} than 0.8
+    should be used in scientific study.}
 
   This threshold for \texttt{Quality} typically excludes
   \texttildelow1\,--\,3\% \mycomment{need to double check these numbers}
@@ -311,7 +313,7 @@ be used to apply the following screening criteria:
   not show obvious unphysical behavior.
 
 \item[Convergence:] \screeningrule{Only profiles with a value of the
-    \texttt{Convergence} field (see section~\ref{sec:StatusQuality}) for
+    \texttt{Convergence} field for
     the \texttt{HNO3-190} product \emph{less} than 1.4 should be used in
     investigations.}
 
@@ -334,23 +336,24 @@ be used to apply the following screening criteria:
 \includegraphics[width=0.5\linewidth]{figures/ProfQual0-50_Conv1-40_Fly_HNO3_2009d051_-90to90_v03-__stat0}&
 \includegraphics[width=0.5\linewidth]{figures/ProfQual0-50_Conv1-40_Fly_HNO3_2009d051_-20to20_v03-__stat0}
 \end{tabular}
-\caption{HNO\cs3 profiles on 20~Feb~2009 color-coded by screening.  Cyan
-  profiles have zero Status, and \texttt{Quality} less than 0.8 (0.5),
-  olive-green \texttt{Convergence} greater than 1.03 (1.4), and red both
-  \texttt{Quality} less than 0.8 (0.5) and \texttt{Convergence} greater
-  than 1.03 (1.4) for \thisv (v3.3).  Orange profiles are those flagged
-  by the simple screening procedure described above (using large
-  negative mixing ratios at high pressures) after the profiles that
-  failed \texttt{Quality} and/or \texttt{Convergence} tests were
-  removed.  Black profiles are all those remaining (the `good' profiles)
-  after the screening.  The left panels show all individual profiles in
-  the day; the right panels show the means in each category, with the
-  standard deviation shown as bars and the range as dotted lines.  The
-  horizontal line is at 22\,hPa, above which HNO\cs3 is from the 190-GHz
-  radiometer and thus not appropriately screened by these criteria.  The
-  four pairs of panels show all \thisv profiles (top left), \thisv
-  profiles between $-$20 and 20\degsym\ latitude (top right), all v3.3
-  profiles (bottom left) and v3.3 profiles between $-$20 and 20\degsym\
+\caption{HNO\cs3 profiles on 20~February~2009 color-coded by screening.
+  Cyan profiles have zero \texttt{Status}, and \texttt{Quality} less
+  than 0.8 (0.5), olive-green \texttt{Convergence} greater than 1.03
+  (1.4), and red both \texttt{Quality} less than 0.8 (0.5) and
+  \texttt{Convergence} greater than 1.03 (1.4) for \thisv (v3.3).
+  Orange profiles are those flagged by the simple screening procedure
+  described above (using large negative mixing ratios at high pressures)
+  after the profiles that failed \texttt{Quality} and/or
+  \texttt{Convergence} tests were removed.  Black profiles are all those
+  remaining (the ``good'' profiles) after the screening.  The left
+  panels show all individual profiles in the day; the right panels show
+  the means in each category, with the standard deviation shown as bars
+  and the range as dotted lines.  The horizontal line is at 22\,hPa,
+  above which HNO\cs3 is from the 190-GHz radiometer and thus not
+  appropriately screened by these criteria.  The four pairs of panels
+  show all \thisv profiles (top left), \thisv profiles between
+  $-$20\degsym and 20\degsym\ latitude (top right), all v3.3 profiles
+  (bottom left) and v3.3 profiles between $-$20\degsym and 20\degsym\
   latitude.}
 \label{fig:outlierprofs}
 \end{figure}
@@ -376,7 +379,7 @@ expected to be very similar to those described for v3.3 by
 \footnote{Precision on individual profiles, determined from observed
  scatter in the data in a region of minimal atmospheric variability.} \\/ ppbv}} &
 \parbox[m]{18mm}{\bfseries\centering{Bias\\uncertainty%
-\footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
+\footnote{Values should be interpreted as \mbox{$2\sigma$} estimates
  of the probable magnitude.}\\ / ppbv}} &
 \parbox[m]{18mm}{\bfseries\centering{Scaling\\uncertainty%
 \footnotemark[\value{mpfootnote}]\\/ \%}} &

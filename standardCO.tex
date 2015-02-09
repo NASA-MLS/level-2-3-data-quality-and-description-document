@@ -84,14 +84,14 @@ for comparison.
 %
 \begin{figure}
   \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2005d028}\hfill%
-  \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2006d069}
+  \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2006d059}
   \caption{Scatter (standard deviation) and (estimated) precision for
-    MLS \thisv (black) and v2.2 (red) CO.  The statistics shown are
-    generated from all profiles within 20\degsym\ of the equator on 28
-    January 2005 and 10 March 2006. Profiles of the mean volume mixing
-    ratio (VMR) are shown for comparison. The vertical co-ordinate is
-    $16(3-\log_{10}(\mathrm{Pressure / hPa}))$ so that 16\,km on the
-    axis is exactly 100\,hPa. }
+    MLS \thisv (black), /prevvShalsh (blue) and v2.2 (red) CO.  The
+    statistics shown are generated from all profiles within 20\degsym\
+    of the equator on 28 January 2005 and 28 February 2006. Profiles of the
+    mean volume mixing ratio (VMR) are shown for comparison. The
+    vertical co-ordinate is $16(3-\log_{10}(\mathrm{Pressure / hPa}))$
+    so that 16\,km on the axis is exactly 100\,hPa. }
 \label{fig:COPrecision}
 \end{figure}
 %
@@ -108,11 +108,12 @@ the ACE-FTS instrument; see \citet{PumphreyEtal07} for further details.
 Close inspection of the data suggests that the accuracy in this region
 is best represented as a purely multiplicative error.  The MLS v2.2 CO
 data at 215\,hPa showed high (factor of \texttildelow2) biases compared
-to other observations.  The morphology, however, is generally realistic
-\citep{LiveseyEtal08}.  In \thisv this bias has been essentially
-eliminated through a change in the approach to modeling the background
-radiance upon which the CO spectral line sits, and a small reduction in
-the number of MLS spectral channels considered in the retrieval.
+to other observations.  The morphology, however, was generally realistic
+\citep{LiveseyEtal08}.  In \thisv (as in \prevvSlash) this bias has been
+essentially eliminated through a change in the approach to modeling the
+background radiance upon which the CO spectral line sits, and a small
+reduction in the number of MLS spectral channels considered in the
+retrieval.
 
 \subsection*{Data screening}
 \label{sec:COScreening}
@@ -141,8 +142,8 @@ the number of MLS spectral channels considered in the retrieval.
 
 \item[Convergence:] \convergencerule{1.03} This \texttt{Convergence}
   criterion rejects fewer than 0.1\% of profiles.  Almost all of the
-  retrieval in the retrieval phase that produces \thisv CO converge to
-  their target, so \texttt{Convergence} is of limited use in screening.
+  retrievals in the phase that produces \thisv CO converge to their
+  target, so \texttt{Convergence} is of limited use in screening.
 \end{description}
 
 \subsection*{Artifacts}
@@ -171,9 +172,9 @@ the number of MLS spectral channels considered in the retrieval.
 In the upper troposphere, comparisons with various in situ CO
 observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the
 \emph{earlier} MLS v2.2 215\,hPa CO product was biased high by a factor
-of \texttildelow2. Initial comparisons show this bias to be largely
-eliminated in \thisv.  Further validation of the \thisv CO UT/LS
-retrival levels are underway at the time of this writing.
+of \texttildelow2. As in \prevv, this is largely eliminated in \thisv.
+Further validation of the \thisv CO in the UT/LS is underway at the time
+of this writing.
 
 In the mesosphere, comparisons of the earlier v2.2 MLS CO with ODIN-SMR
 and ACE-FTS suggest a positive bias: 30\%\,--\,50\% against ACE-FTS,
@@ -182,8 +183,8 @@ SMR and ACE-FTS by at least 70\%. The MLS values have not changed much
 between v2.2 and \thisv in the middle atmosphere, so these comparisons
 may mostly be considered valid for \thisv. What change there is consists
 of a slight lowering of the MLS values, bringing them slightly towards
-the ACE-FTS data; 20\% is now a better estimate than 30\% of the MLS-ACE
-bias in much of the middle atmosphere.
+the ACE-FTS data; 20\% is now a better estimate of the MLS-ACE bias in
+much of the middle atmosphere (compared to 30\% previously).
 
 \begin{table}
   \caption{Data quality summary for MLS version 3.3 CO.}
