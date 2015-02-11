@@ -41,8 +41,8 @@ Figure~\ref{fig:N2O190640Comparison}).
 \end{figure}
 
 Other significant differences between the \thisv \texttt{N2O-190} and
-\texttt{N2O-64O} data such as the resolution, precision, quality and
-convergence criteria are noted below.
+\texttt{N2O-640} data such as the resolution, precision, recommended pressure levels, 
+quality and convergence criteria are noted below.
 
 The secondary \thisv N\cs2O 640-GHz product will be made available for
 the period from launch until June 6, 2013 and stored in the
@@ -89,23 +89,25 @@ level.
 
 \subsection*{Accuracy}
 
-The ``accuracy'' values given in Table~\ref{tab:N2O640Summary} are obtained 
-using the same detailed analyses presented for MLS \texttt{N2O-640} v2.2 data in
+The ``accuracy'' values given in Table~\ref{tab:N2O640Summary} were obtained 
+for both v3.x N\cs2O products using the same detailed analyses 
+presented for MLS \texttt{N2O-640} v2.2 data in
 \citet{LambertEtal07} to quantify the systematic uncertainties
 associated with the MLS instrument calibration, spectroscopic
 uncertainty and approximations in the retrieval formulation and
 implementation.  Accuracy for the \thisv N\cs2O data is 
-expected to be little different from that established for v2.2. 
-\mycomment{But what about \texttt{N2O-190}? Can we say anything?}
+expected to be little different from that established for v3.x. 
+
 
 \subsection*{Data screening}
 \label{sec:N2OScreening}
 \begin{description}
-\item[Pressure range:] \screeningrule{68\,--\,0.46\,hPa}
-  \standardrangestatement\ In the upper stratosphere and lower
+\item[Pressure range (\texttt{N2O-190}):] \screeningrule{68\,--\,0.46\,hPa}
+\item[Pressure range (\texttt{N2O-640}):] \screeningrule{100\,--\,0.46\,hPa}
+\standardrangestatement\ In the upper stratosphere and lower
   mesosphere \thisv N\cs2O requires significant averaging for useful
-  signals, but see the note under ``Artifacts'' for issues above
-  0.1\,hPa. \mycomment{Check with Alyn}
+  signals, but see the note under ``Artifacts'' for issues at pressures below
+  0.1\,hPa.
 
 \standardprecisionrule
 \evenstatusrule
@@ -130,32 +132,25 @@ expected to be little different from that established for v2.2.
   A small fraction of \texttt{N2O-640} profiles (typically less than 0.5\%) will
   be discarded via this screening.
 
-
-\item[Clouds:] \screeningrule{Clouds can impact the N\cs2O product at
-    the lowest altitudes.  See below for details.}
-
-  Very thick clouds in the tropics produce a low rate of artifacts in
-  the N\cs2O product, consisting of abnormally high (and, more rarely,
-  low) values at 100\,hPa \mycomment{But we're not recommending that}
-  (and 147\,hPa, not recommended for scientific use).  Such cases are
-  not always detected by the \texttt{Quality} and \texttt{Convergence}
-  flags, and the cloud bits of the \texttt{Status} field are too blunt a
-  tool to identify these cases, needlessly discarding reasonable data.
-  We recommend checking for the rare occurrence of N\cs2O values greater
-  than 350\,ppbv on the 68\,hPa MLS retrieval level in order to remove
-  significant outliers from the 100\,--\,46\,hPa data.
+\item[Clouds:] \screeningrule{Clouds have little impact on the N\cs2O products at the recommended pressure levels. 
+Ignore status bit 16 (high cloud) or bit 32 (low cloud) indicating the presence of clouds. See
+artifacts for more details.}
 
 \end{description}
 
 \subsection*{Artifacts}
 
 In addition to the large bias of the 190-GHz N\cs2O at 100\,hPa (not
-removed by screening), there are occasional nonphysical values of N\cs2O
-at other levels in the \thisv data, and screening using the convergence
+removed by screening), there are occasional outliers at the highest
+presure levels in \texttt{N2O-190} and \texttt{N2O-640} products. 
+Very thick clouds in the tropics produce a low rate of artifacts in the \thisv N\cs2O
+products since improvements in the handling of radiances affected by
+clouds have reduced the frequency of outliers compared to previous
+versions. The cloud bits of the \texttt{Status} field are too blunt a
+tool to identify these rare cases, needlessly discarding reasonable data.
+Screening using the convergence
 and quality fields (see above) is recommended to remove the majority of
-these data points. Improvements in the handling of radiances affected by
-clouds in \thisv have reduced the frequency of outliers compared to
-previous versions.
+these data points. 
 
 The retrieval restricts N\cs2O values to be greater than
 $-40\,\text{ppbv}$ (approximately three times the retrieval noise level
@@ -187,7 +182,8 @@ for the 100\,hPa pressure level, up to 10\% smaller at the
 46\,--\,32\,hPa levels, and within 5\% for pressures greater than
 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between
 \thisv 640 GHz N\cs2O and v3.3 are less than a few percent at all
-levels.
+levels. Unlike the \texttt{N2O-190} product, the  \texttt{N2O-190} product
+is recommended for scientific use at 100 hPa.
 
 Apart from the differences noted above, the MLS \thisv 640 GHz N\cs2O is
 similar to the MLS v2.2 product described and validated in

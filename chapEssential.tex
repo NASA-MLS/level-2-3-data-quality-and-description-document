@@ -159,13 +159,13 @@ below.
   signals is handled in the MLS gas-phase retrievals was substantially
   modified.  This has resulted not only in a significant reduction in
   the number of spurious MLS profiles reported in cloudy regions, but
-  also an appreciable simplification of the steps users need to take to
-  screen out the most cloud-contaminated measurements in their analyses,
-  and the effectiveness that screening.
+  also in an appreciable simplification of the steps users need to take
+  to screen out the most cloud-contaminated measurements, and a more
+  effective screening.
 
 \item[Improvements to O\cs3 and HCN:] The MLS O\cs3 and HCN products
   have been improved in \thisv through addition of specific retrieval
-  ``phases'' dedicated to obtaining more accurate estimates for this
+  ``phases'' dedicated to obtaining more accurate estimates for these
   products, and reducing the impact of contaminating signals from other
   species.
 
@@ -174,7 +174,7 @@ below.
   coarse-vertical-resolution initial guess and informing the choice of
   smoothing constraint for a subsequent more detailed high-resolution
   retrieval.  The use of more channels and more accurate forward model
-  calculations in this initial retrieval has led to improvements in the
+  calculations in this initial retrieval have led to improvements in the
   convergence etc. of the second phase, and thus to improvements in the
   H\cs2O product.
 
@@ -228,11 +228,14 @@ available from the \emph{Open Channel Software Foundation}
 \href{http://www.openchannelsoftware.org/}{\texttt{http://www.openchannelsoftware.org/}}.
 A reader for MATLAB (\texttt{readL2GP.m}) is also available at the same
 site, and one for python is planned to be added
-shortly. \mycomment{Update python discussion}
+shortly. \mycomment{Update python discussion.  From Paul: Tested
+  successfully with Python v2.4, but not version 3.0 Returns correct
+  data, but issues a warning message for each data variable, due to a
+  limitation in the PyTables module}
 
 The standard products are stored in files named according to the convention
 \begin{quote}
-\verb+MLS-Aura_L2GP-<product>_v04-20_<yyyy>d<ddd>.he5+
+\verb+MLS-Aura_L2GP-<product>_v04-20-c01_<yyyy>d<ddd>.he5+
 \end{quote}
 where \verb+<product>+ is \texttt{BrO}, \texttt{O3},
 \texttt{Temperature}, etc.  The files are produced on a one-day
@@ -250,7 +253,9 @@ that they carry extra standard or non-standard products, as detailed in
 Table~\ref{tab:SwathExtras}.
 
 \begin{table}
-  \caption{Additional swaths in specific standard product files.\label{tab:SwathExtras}}\small
+  \caption{Additional swaths in specific standard product
+    files.\label{tab:SwathExtras}}\small
+\begin{center}
 \begin{tabular}{>{\ttfamily}l>{\ttfamily}ll}
   \toprule
   \textbf{\rmfamily Product} & \textbf{\rmfamily Additional swaths} &
@@ -258,13 +263,14 @@ Table~\ref{tab:SwathExtras}.
   \midrule
   HNO3 & HNO3-190, HNO3-240 & Nitric acid from the 190 and
   240\,GHz radiometers\\
-  IWC & IWP & partial Ice Water Path.  (This file has \emph{a priori} swath) \\
+  IWC & IWP & partial Ice Water Path.  (This file has no \emph{a priori} swath) \\
   O3 & O3 column & Ozone column above the tropopause (see below) \\
   RHI & UTRHI, UTRHI-APriori & ``Single layer'' relative humidity (see Section~\ref{sec:StandardRHI})\\
   Temperature & WMOTPPressure & Tropopause (WMO definition, based MLS
   temperature) \\
   \bottomrule
 \end{tabular}
+\end{center}
 \end{table}
 
 The files contain an HDF-EOS swath given the same name as the product.
@@ -298,9 +304,8 @@ majority of these are MLS diagnostic products that will be of little
 interest to most data users.  A few which may be of interest to some
 users are detailed below.
 
-\section[``Quality'', ``Convergence'' and ``Status'']{Additional quality
-  control information described in the ``Quality'', ``Convergence'' and
-  ``Status'' fields}
+\section{Additional information given in the \texttt{Quality},
+  \texttt{Convergence} and \texttt{Status} fields}
 \label{sec:StatusQuality}
 
 \input{statusfigure.tex}
@@ -310,7 +315,7 @@ metrics are output for every profile of each product.  The first, called
 \texttt{Quality}, gives a measure of the quality of the product based on
 the fit achieved by the Level~2 algorithms to the relevant radiances.
 Larger values of \texttt{Quality} generally indicate good radiance fits
-and therefore trustworthy data. Values of \texttt{Quality} closer to
+and therefore more trustworthy data. Values of \texttt{Quality} closer to
 zero indicate poorer radiance fits and therefore less trustworthy data.
 The value of \texttt{Quality} to be used as a ``threshold'' for
 rejecting data in scientific studies varies from product to product, and
@@ -568,7 +573,7 @@ subsequent days when band~13 has been (or may be) reactivated, the
 \thisv algorithms also produce a second HCl product (in the
 \texttt{HCl-640-B13} swath in the \texttt{L2GP-DGG}) file which includes
 the band~13 radiances, giving a product with improved precision and
-resolution in the upper stratosphere and mesosphere.  See the
+resolution in the upper stratosphere and mesosphere.  See
 section~\ref{sec:StandardHCl} for more information.
 
 As discussed in section~\ref{sec:StandardHCl}, while the band~14 and

@@ -105,10 +105,7 @@ regions.
   measurements for four representative days (see legend).  Solid lines
   depict the observed scatter in a narrow equatorial band (see text);
   dotted lines depict the theoretical precision estimated by the
-  retrieval algorithm. \mycomment{This version of the plot has screening
-    for Q/C and outliers for v3 but not v4; need to make a version with
-    neither; the discussion below assumes the latter.}}
-\label{fig:PrecProf}
+  retrieval algorithm.\label{fig:PrecProf}}
 \end{figure}
 
 The precision of the MLS HNO\cs3 measurements is estimated empirically
@@ -211,7 +208,7 @@ and below (that is, pressures greater than) 22\,hPa.  For those levels:
 
   On a typical day this threshold for \texttt{Convergence} discards a
   very small fraction of the data, rarely eliminating more than
-  0.1\% of the HNO\cs3 profiles.  Most such profiles show unphysical
+  0.1\% of the HNO\cs3 profiles.  Some such profiles show unphysical
   behavior.
 
 \item[Clouds:] \screeningrule{Clouds impact HNO\cs3 data in the UTLS,
@@ -222,8 +219,7 @@ and below (that is, pressures greater than) 22\,hPa.  For those levels:
   may have been affected by the presence of thick clouds.  Globally
   \texttildelow1\,--\,2\% of profiles are identified in this manner,
   with the fraction of profiles possibly impacted by clouds rising to
-  \texttildelow5\% on average in the tropics.  \mycomment{Numbers here
-    per Lucien's results, haven't had a chance to check further.}  Clouds
+  \texttildelow5\% on average in the tropics.  Clouds
   generally have little influence on the stratospheric HNO\cs3 data.  In
   the lowermost stratosphere and upper troposphere, however, thick
   clouds can lead to spikes in the HNO\cs3 mixing ratios in the
@@ -306,11 +302,10 @@ be used to apply the following screening criteria:
     used in scientific study.}
 
   This threshold for \texttt{Quality} typically excludes
-  \texttildelow1\,--\,3\% \mycomment{need to double check these numbers}
+  \texttildelow1\,--\,3\% 
   of HNO\cs3 profiles on a daily basis; it is a conservative value that
   potentially discards some ``good'' data points while not necessarily
-  identifying all ``bad'' ones.  Most profiles flagged by low
-  \texttt{Quality} do not show obvious unphysical behavior.
+  identifying all ``bad'' ones.  
 
 \item[Convergence:] \screeningrule{Only profiles with a value of the
     \texttt{Convergence} field (see section~\ref{sec:StatusQuality}) for
@@ -318,15 +313,15 @@ be used to apply the following screening criteria:
     investigations.}
 
   On a typical day this threshold for \texttt{Convergence} discards
-  \texttildelow0.5\,--\,1.5\% of the HNO\cs3 profiles.  Most of the
+  \texttildelow0.5\,--\,1.5\% of the HNO\cs3 profiles.  Many of the
   profiles thus flagged show some unphysical behavior, especially at the
   highest altitudes in the recommended range.
 
 \item[Outliers:] For levels at and above (pressures less than) 4.6\,hPa,
   especially at 2.2\,hPa and above, some profiles show vertically
   oscillatory behavior in conditions where HNO\cs3 is very low.  The
-  \texttt{Convergence} criteria defined above eliminate many of these
-  profiles.
+  \texttt{Quality} and \texttt{Convergence} criteria defined above 
+  eliminate many of these profiles.
 \end{description}
 
 \begin{figure}
@@ -345,7 +340,7 @@ be used to apply the following screening criteria:
   negative mixing ratios at high pressures) after the profiles that
   failed \texttt{Quality} and/or \texttt{Convergence} tests were
   removed.  Black profiles are all those remaining (the ``good''
-  profiles) after the screening.  The left panels show all individual
+  profiles) after all screening.  The left panels show all individual
   profiles in the day; the right panels show the means in each category,
   with the standard deviation shown as bars and the range as dotted
   lines.  The horizontal line is at 22\,hPa, above which HNO\cs3 is from

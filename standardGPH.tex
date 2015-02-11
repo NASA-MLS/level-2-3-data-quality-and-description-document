@@ -61,8 +61,8 @@ difference between the geoid and ellipsoid exceeds $\pm$100\,m in
 places, as is shown in Figure~\ref{fig:geoidheight}.  This EGM96-WGS84
 difference is a bias that should be subtracted from previous versions'
 GPH before they are compared to \thisv GPH.  These differences, if not
-corrected, will result in an erroneous contribution to geostrophic winds
-calculated from v03.x and v02.x GPH that will add to all levels.
+corrected, will result in an erroneous additive contribution to
+geostrophic winds calculated from v03.x and v02.x GPH at all levels.
 \begin{figure}
 \centering\includegraphics[clip=true,trim=2cm 0cm 0cm 4cm, width=0.7\linewidth]{figures/EGM96-WGS84}
 \caption{The height of the EGM96 geoid from the WGS84 ellipsoid.  These
@@ -76,13 +76,13 @@ After correction of v03.3x for the EGM96-WGS84 bias, \thisv GPH values
 are found to be somewhat higher at high latitudes than are those of the
 v03.3x product, with typical 100-hPa mean differences of 50\,m in the
 high northern latitudes, 30\,m in high southern latitudes and close to
-zero bias in the tropics.  Differences between the ascending and
-descending parts of the orbits are consistent between \thisv and
-\prevvSlash, and are similar from year to year.  The annual cycle of
-\thisv minus v03.30 100-hPa GPH is shown in
-Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.  The
-details of these differences vary between the two years, but the
-morphology is similar.
+zero bias in the tropics.  Latitudinally and seasonally dependent
+differences between \thisv and \prevvSlash 100-hPa GPH are shown in
+Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.
+These differences are very similar for ascending and descending parts of
+the orbits, and the two are averaged in this figure.  The details of
+these differences vary between the two years, but the morphology is
+similar.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/v4-v3_100hPaGPH_2005-2009_bylat}
 \caption{Differences between \thisv and v03.30 100-hPa GPH for 2005 and
@@ -114,7 +114,8 @@ fidelity with which these patterns annually repeat suggests that they
 may result from thermal distortions of the spacecraft/instrument that
 vary annually due to the eccentricity of the Earth's orbit, or perhaps
 from orbit/attitude errors from the star trackers that provide the
-spacecraft-attitude information.
+spacecraft-attitude information.  The same star fields are viewed each
+year at the same date and orbit position.
 
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/v4GPH_2005_2009_byOGA}
@@ -137,7 +138,17 @@ As of the drafting of this document, the entire MLS data record has not
 been reprocessed with \thisv algorithms, but 11 years of Januarys have
 been completed and the monthly-averaged differences between MLS \thisv
 100-hPa GPH and GEOS-5.9 100-hPa GPH is shown in
-Figure~\ref{fig:GPHv0420_trend_January}.
+Figure~\ref{fig:GPHv0420_trend_January}.  There is a clear downward
+trend of $\sim$100\,m in the first 4 years of the mission, 2005--2008,
+with a further $\sim$15\,m decrease in 2009--2014.  This trend is in the
+MLS GPH and is not evident in the GEOS-5.9 time series.  Analysis of
+\prevv GPH, for which the entire MLS record has been processed, shows
+the same global decreasing trend. It is important to emphasize that MLS
+radiances do not provide absolute pointing information, but only GPH
+differences between pointing.  Absolute pointing comes from spacecraft
+ephemeris and attitude data and the instrument scan model.  The origins
+of the trend is a topic of current research, but it is likely not
+primarily of geophysical origin.
 
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{figures/GPHv0420_trend_January}
@@ -145,17 +156,6 @@ Figure~\ref{fig:GPHv0420_trend_January}.
   GPH.}
 \label{fig:GPHv0420_trend_January}
 \end{figure}
-
-There is a clear downward trend of $\sim$100\,m in the first 4 years of
-the mission, 2005--2008, with a further $\sim$15\,m decrease in
-2009--2014.  This trend is in the MLS GPH and is not evident in the
-GEOS-5.9 time series.  Analysis of \prevv GPH, for which the entire MLS
-record has been processed, shows the same global decreasing trend. It is
-important to emphasize that MLS radiances do not provide absolute
-pointing information, but only GPH differences between pointing.
-Absolute pointing comes from spacecraft ephemeris and attitude data and
-the instrument scan model.  The origins of the trend is a topic of
-current research, but it is likely not primarily of geophysical origin.
 
 When both the trend and the annually repeating bias are removed from
 \prevv, the standard deviation of the residual differences between the
@@ -230,7 +230,7 @@ but with significant latitudinal and seasonal variability.
 \subsection*{Data screening}
 \label{sec:GPHScreening}
 
-GPH should be screened in the same way as is temperature:
+GPH should be screened in much the same way as is temperature:
 
 \begin{description}
 \item[Pressure range:] \screeningrule{261\,--\,0.001\,hPa.}
