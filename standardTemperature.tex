@@ -21,7 +21,8 @@ provide details.
 \subsection*{Differences between \thisv and \prevvSlash}
 Mean differences between \thisv temperature and \prevvSlash temperature
 are typically less than 0.5\,K and exceed 1\,K only in the tropical
-troposphere (see Figure~\ref{fig:v4T-v3T_2005}).  In the tropics, a cold
+troposphere and, in some instances, at the highest retrieval levels, 
+0.01--0.001\,hPa (see Figure~\ref{fig:v4T-v3T_2005}).  In the tropics, a cold
 bias in unscreened \thisv relative to \prevv reaches 2\,K, and is
 reduced to 1.5\,K by the recommended screening, discussed below.
 
@@ -69,7 +70,7 @@ retrieval artifacts.  Cloud-induced perturbations generally occur in the
 tropics and mid-latitudes (where convective storms occur) in both the v3
 and v4 retrieval versions, but perturbations of retrieved temperature
 and the recommended screening for their removal have changed between
-\prevvSlash and \thisv.  In unscreened data, at retrieval levels
+\prevvSlash and \thisv.  In unscreened data at retrieval levels
 316\,--\,178\,hPa, clouds produce primarily positive outliers in \thisv and
 negative perturbations in v03.30. The top panels of
 Figure~\ref{fig:v4v3__215hPa_pcolorhist2} show this behavior at
@@ -151,9 +152,10 @@ the rms of differences of values from successive orbits (divided by the
 square-root of two as we are looking at the difference of two noisy
 signals) for latitudes and seasons where longitudinal variability is
 small and/or is a function only of local solar time.  The smallest
-values found, which are for high-latitude summer, are taken to be those
-least impacted by atmospheric variability, and are what is reported in
-column~3.  These values are slightly larger than those estimated by the
+values found, which are in the tropics in the troposphere and in 
+high-latitude summer in the stratosphere and mesosphere, are taken to be those
+least impacted by atmospheric variability and are what is reported in
+column~3.  These values are 0.5--0.8\,K larger than those estimated by the
 measurement system in the troposphere and lower stratosphere, and a
 factor of \texttildelow1.4 larger from the middle stratosphere through
 the mesosphere.
@@ -241,9 +243,9 @@ Figure~\ref{fig:TempSummary2}.
   required, levels 261\,--\,178\,hPa should be avoided if any of the
   following criteria are met:
 \begin{description}
-\item[At 316\,hPa:] \texttt{L2gpPrecision} $>$ 1.1\,K \textbf{and} latitude $>$ -60\degsym
-\item[At 261\,hPa:] \texttt{L2gpPrecision} $>$ 0.7\,K 
-\item[At 215\,hPa:] \texttt{L2gpPrecision} $>$ 0.825\,K 
+\item[At 316\,hPa:] \texttt{L2gpPrecision} $>1.1$\,K \textbf{and} latitude $>-60\degsym$
+\item[At 261\,hPa:] \texttt{L2gpPrecision} $>0.7$\,K 
+\item[At 215\,hPa:] \texttt{L2gpPrecision} $>0.825$\,K 
 \end{description}
 
 \item[End of day:] The last four profiles of each day show greatly
@@ -351,19 +353,19 @@ persists in polar winter.
 \textbf{Comments} \\
 \midrule
 $<$0.001\,hPa      & ---       & ---      &  ---             & --- & --- & Unsuitable for scientific use \\
-0.001\,hPa         & $\pm$3.8  & $\pm$3.5 & 11--14 $\times$ 280 & $+$2\,$\pm$\,3    & $-$9     & \\
-0.01\,hPa          & $\pm$3.7  & $\pm$3   & 10--11 $\times$ 260 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
-0.1\,hPa           & $\pm$2.5  & $\pm$2.3 & 6   $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
-0.316\,hPa         & $\pm$1.2  & $\pm$1.5 & 8   $\times$ 170 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
-1\,hPa             & $\pm$1.2  & $\pm$1.4 & 6.8 $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
-3.16\,hPa          & $\pm$0.8  & $\pm$1   & 5.5 $\times$ 165 & $+$2\,$\pm$\,2    & $+$1 & \\
-10\,hPa            & $\pm$0.6  & $\pm$1   & 4.1 $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
-14.7\,hPa          & $\pm$0.6  & $\pm$1   & 3.9 $\times$ 165 & $+$4\,$\pm$\,2    &  0\,to\,$+$1 & \\
-31.6\,hPa          & $\pm$0.5  & $\pm$1   & 3.6 $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-56.2\,hPa          & $\pm$0.5  & $\pm$0.8 & 3.8 $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-100\,hPa           & $\pm$0.7  & $\pm$0.8 & 4.6 $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
-215\,hPa           & $\pm$0.7  & $\pm$1   & 3.5 $\times$ 165 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
-261\,hPa           & $\pm$0.7  & $\pm$1   & 4.0 $\times$ 167 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
+0.001\,hPa         & $\pm$3.6  & $\pm$3.5 & 11--14 $\times$ 280 & $+$2\,$\pm$\,3    & $-$9     & \\
+0.01\,hPa          & $\pm$3.3  & $\pm$3   & 10--11 $\times$ 260 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
+0.1\,hPa           & $\pm$2.4  & $\pm$2.7 & 6   $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
+0.316\,hPa         & $\pm$1.3  & $\pm$1.5 & 8   $\times$ 170 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
+1\,hPa             & $\pm$1.2  & $\pm$1.3 & 6.8 $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
+3.16\,hPa          & $\pm$0.8  & $\pm$0.8   & 5.5 $\times$ 165 & $+$2\,$\pm$\,2    & $+$1 & \\
+10\,hPa            & $\pm$0.6  & $\pm$0.7   & 4.1 $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
+14.7\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.9 $\times$ 165 & $+$4\,$\pm$\,2    &  0\,to\,$+$1 & \\
+31.6\,hPa          & $\pm$0.5  & $\pm$0.6   & 3.6 $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+56.2\,hPa          & $\pm$0.6  & $\pm$0.7 & 3.8 $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+100\,hPa           & $\pm$0.7  & $\pm$1.0 & 4.6 $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
+215\,hPa           & $\pm$0.8  & $\pm$1.2   & 3.5 $\times$ 165 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
+261\,hPa           & $\pm$0.7  & $\pm$1.5   & 4.0 $\times$ 167 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
 1000\,--\,316\,hPa & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}

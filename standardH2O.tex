@@ -6,16 +6,16 @@
 
 \subsection*{Introduction}
 
-The standard water vapor product is taken from the 190 GHz (CorePlusR2A)
-retrieval. The vertical grid for H\cs2O is: 12 levels per decade change
-in pressure (LPD) for 1000\,--\,1 hPa, 6\,LPD for 1.0\,--\,0.1\,hPa, and
-3\,LPD for 0.1\,--\,10\cp{$-$5}\,hPa. The horizontal grid is every
-1.5\degsym along the orbit track.  H\cs2O is unusual among MLS products
-in that it is assumed that the logarithm of the mixing ratio, and not
-mixing ratio itself, varies linearly with log pressure; although,
-H\cs2O, like the other MLS constituents is retrieved in VMR (not $\log$
-VMR). Vertical and horizontal interpolations of H\cs2O should be
-performed in $\log(\text{VMR})$ space.
+The standard water vapor product is taken from the 190-GHz
+``\texttt{CorePlusR2}'' retrieval. The vertical grid for H\cs2O is: 12
+levels per decade change in pressure (LPD) for 1000\,--\,1 hPa, 6\,LPD
+for 1.0\,--\,0.1\,hPa, and 3\,LPD for 0.1\,--\,10\cp{$-$5}\,hPa. The
+horizontal grid is every 1.5\degsym along the orbit track.  H\cs2O is
+unusual among MLS products in that it is assumed that the logarithm of
+the mixing ratio, and not mixing ratio itself, varies linearly with log
+pressure; although, H\cs2O, like the other MLS constituents is retrieved
+in VMR (not $\log$ VMR). Vertical and horizontal interpolations of
+H\cs2O should be performed in $\log(\text{VMR})$ space.
 
 The MLS \thisv H\cs2O between 1000 and 383\,hPa is taken from a
 retrieval of relative humidity with respect to ice (RHi) product,
@@ -41,15 +41,15 @@ linewidth or continuum charaterization between \thisv and
 for \thisv that does a better job of rejecting cloudy radiances that are
 likely to cause poor fits and corrupted profiles. The number of
 erroneous spikes in the upper troposphere has been reduced in \thisv
-relative to \prevv. The InitUTH phase retrieves H\cs2O on a more coarse
-6-LPD grid. The InitUTH H\cs2O is used for the initial guess for the
-final 12-LPD retrieval and sets smoothing constraints for the profile
-shape instead of smoothing to the shape of a climatological \emph{a
-  priori} profile.  The \texttt{InitUTH} phase has been expanded to use
-more channels and better forward model representations to improve its
-retrieval accuracy. In addition, the retrieval range has been expanded
-to have its top moved from 100\,hPa (in \prevv) to 10\,hPa (in \thisv),
-for a more seamless transition from the troposphere to the
+relative to \prevv. The \texttt{InitUTH} phase retrieves H\cs2O on a
+more coarse 6-LPD grid. The InitUTH H\cs2O is used for the initial guess
+for the final 12-LPD retrieval and sets smoothing constraints for the
+profile shape instead of smoothing to the shape of a climatological
+\emph{a priori} profile.  The \texttt{InitUTH} phase has been expanded
+to use more channels and better forward model representations to improve
+its retrieval accuracy. In addition, the retrieval range has been
+expanded to have its top moved from 100\,hPa (in \prevv) to 10\,hPa (in
+\thisv), for a more seamless transition from the troposphere to the
 stratosphere. Simulation studies show that these changes have improved
 the agreement between the ``truth'' profiles used to produce the
 simulated radiances and the retrieved profiles in the 316\,--\,215-hPa
@@ -100,7 +100,7 @@ radiance bias. This retrieval is used as an \emph{a priori} and profile
 constraint for the humidity profile at pressures greater than 316\,hPa,
 which are not retrieved in the standard H\cs2O product retrieval.
 
-The third panel in Figure~\ref{fig:avgmlsprflcomp} shows the mean
+\sloppypar The third panel in Figure~\ref{fig:avgmlsprflcomp} shows the mean
 estimated single profile precision and the measured variability (which
 includes instrument noise and atmospheric variability). The precisions
 for \thisv and \prevvSlash are nearly identical except for pressures

@@ -1,9 +1,9 @@
-% $Id: v4-x-report.tex,v 1.8 2015/02/09 07:39:00 livesey Exp $
+% $Id: v4-x-report.tex,v 1.9 2015/02/11 06:03:21 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navfalse
+\newif\ifnav\navtrue
 %
 % ---------------------------------------- Fonts
 \usepackage{inconsolata}
@@ -197,7 +197,7 @@ Robert~F.~Jarnot,
 Brian~W.~Knosp,
 Elmain~Martinez}
 %\shortauthor{Aura MLS Science team}
-\newcommand{\myshorttitle}{Level~2 Version \thisv Quality}
+\newcommand{\myshorttitle}{Level~2 Version 4.2\emph{x} Quality}
 \shorttitle{\myshorttitle}
 \version{4.2x--1.0}
 \newcommand{\thisv}{v4.2\emph{x}\xspace}
@@ -205,6 +205,7 @@ Elmain~Martinez}
 \newcommand{\prevvSlash}{\mbox{v3.3\emph{x}/v3.4\emph{x}}\xspace}
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
+\pagenumbering{roman}
 
 \maketitle
 %
@@ -212,7 +213,6 @@ Elmain~Martinez}
    \markboth{\chaptername\ \thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{%
    \markright{\thesection.\ #1}{}}
-\pagenumbering{roman}
 %
 % --------------------------------------- Headers / footers
 %
@@ -224,17 +224,17 @@ Elmain~Martinez}
    \markboth{\chaptername\ \thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{%
    \markright{\thesection.\ #1}{}}
-\rhead{\large\sffamily\color{HeaderFooterColor}\nouppercase{\rightmark}}
+\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
 \lhead{}
-\cfoot{\RenderNavBar%
-\sffamily\color{HeaderFooterColor}\thepage}
+\cfoot{%\RenderNavBar%
+\sffamily\textcolor{HeaderFooterColor}{\thepage}}
 \lfoot{\sffamily\textcolor{HeaderFooterColor}{Aura Microwave Limb Sounder (MLS)}}
 \rfoot{\sffamily\textcolor{HeaderFooterColor}{\myshorttitle}}
 %
 \fancypagestyle{plain}{%
   \fancyhead{}
-  \cfoot{\RenderNavBar%
-    \sffamily\color{HeaderFooterColor}\thepage}
+  \cfoot{%\RenderNavBar%
+    \sffamily\textcolor{HeaderFooterColor}{\thepage}}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0.5pt}
 }
@@ -251,6 +251,20 @@ Elmain~Martinez}
 % --------------------------------------- Document proper
 %
 \input{navguide.tex}
+\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
+\lhead{}
+\cfoot{\RenderNavBar%
+\sffamily\textcolor{HeaderFooterColor}{\thepage}}
+\lfoot{\sffamily\textcolor{HeaderFooterColor}{Aura Microwave Limb Sounder (MLS)}}
+\rfoot{\sffamily\textcolor{HeaderFooterColor}{\myshorttitle}}
+%
+\fancypagestyle{plain}{%
+  \fancyhead{}
+  \cfoot{\RenderNavBar%
+    \sffamily\textcolor{HeaderFooterColor}{\thepage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.5pt}
+}
 %
 % Do the quick summary
 %

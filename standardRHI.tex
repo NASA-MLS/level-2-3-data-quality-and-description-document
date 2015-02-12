@@ -8,19 +8,23 @@ Profile from 316\,--\,0.002\,hPa.
 RHi is relative humidity with respect to ice. The vertical grid for RHi
 is 12 levels per decade change in pressure for 1000\,--\,1.0 hPa
 thinning to 6 levels per decade for 1.0\,--\,0.1\,hPa and finally 3
-levels per decade for 0.1\,--\,10\cp{$-$5}.  The RHi product is a fusion
-of information from two separate retrievals.  From 1000\,--\,383\,hPa,
-RHi is retrieved directly from optically thick radiances using
-measurement and retrieval principles similar to nadir sounding humidity
-receivers (e.g., TOVS).  All grid levels between 1000\,--\,383\,hPa are
-filled with the same value and this product is referred above as an UTRHI
-(upper tropospheric relative humidity with respect to ice) product.
-This humidity is used as a lower altitude constraint and a priori for the
-vertically resolved humidity product that begins at 316\,hPa. From 316\,hPa
-and lower pressures RHi is derived from the standard products of water and
-temperature using the Goff-Gratch ice humidity saturation formula. RHi
-validation is presented in \citet{ReadEtal07}. Table~\ref{tab:RHISummary}
-is summary of precision, resolution, and accuracy.
+levels per decade for 0.1\,--\,10\cp{$-$5}\,hPa.  The RHi product is a
+fusion of information from two separate retrievals.  From
+1000\,--\,383\,hPa, RHi is retrieved directly from optically thick
+radiances using measurement and retrieval principles similar to nadir
+sounding humidity receivers (e.g., TOVS).  All grid levels between
+1000\,--\,383\,hPa are filled with a uniform ``UTRHI'' (upper
+tropospheric relative humidity with respect to ice) value representing
+the mean value of a broad layer (\texttildelow4\,--\,6\,km) that peaks
+between \texttildelow350\,hPa (in the moist tropics) and
+\texttildelow650\,hPa (typical for dry high latitudes).  This humidity
+is used as a lower altitude constraint and \emph{a priori} for the
+vertically resolved humidity product that begins at 316\,hPa. From
+316\,--\,0.002\,hPa, RHi is derived from the standard products of water
+and temperature using the Goff-Gratch ice humidity saturation
+formula. RHi validation is presented in
+\citet{ReadEtal07}. Table~\ref{tab:RHISummary} is summary of precision,
+resolution, and accuracy.
 
 \subsection*{Changes from v3}
 
@@ -39,7 +43,7 @@ phase retrieves H\cs2O on a more coarse 6 levels per decade grid. The
 \texttt{InitUTH} H\cs2O is used for the initial guess for the final
 12~levels per decade retrieval and sets smoothing constraints for the
 profile shape instead of smoothing to the shape of a climatological
-apriori profile.  The \texttt{InitUTH} phase has been expanded to use
+\emph{a priori} profile.  The \texttt{InitUTH} phase has been expanded to use
 more channels and better forward model representations to improve its
 retrieval accuracy. In addition, the retrieval range has been expanded
 to have its top moved from 100\,hPa (in v3) to 10\,hPa (in v4). This
@@ -148,16 +152,34 @@ results in a subsequent version of this document.
 \item[Clouds:] Ignore status bits 16 (high clouds) or 32 (low clouds)
   set indicating the presence of clouds. See artifacts for more details.
 
-\item[Quality field:] \screeningrule{Only profiles with a value of the
+\item[Quality field:] \screeningrule{The \texttt{Quality} fields for
+    both the \texttt{L2GP-RHI} and \texttt{L2GP-Temperature} swaths need
+    to be considered, as described below:}
+  \begin{description}
+  \item[For pressures of 83\,hPa and smaller:] Use only profiles with
     RHi \texttt{Quality} \emph{greater} than 1.45 and Temperature
-    \texttt{Quality}\, \emph{greater} than 0.2 for pressures of 83\,hPa
-    and smaller and 0.9 for pressures of 100\,hPa and larger.}  This
-  eliminates \texttildelow5\% of the profiles on a typical day.
+    \texttt{Quality} \emph{greater} than 0.2
+  \item[For pressures of 100\,hPa and larger:] Use only profiles with
+    RHi \texttt{Quality} \emph{greater} than 1.45 and Temperature
+    \texttt{Quality} \emph{greater} than 0.9.
+  \end{description}
 
 \item[Convergence field:] \screeningrule{Only profiles with a value of
-    the RHi \texttt{Convegence} \emph{less} than 2.0 and Temperature
-    \texttt{Convergence} \emph{less} than \textcolor{red}{TBD} should be
+    the RHi \texttt{Convergence} \emph{less} than 2.0 and Temperature
+    \texttt{Convergence} \emph{less} than 1.03 should be
     used in scientific studies.}
+
+\item[Temperature precision:] The \texttt{L2gpPrecision} field in the
+  \texttt{L2GP-Temperature} file can be used to further eliminate
+  outliers that are believed to be the result of thick clouds, primarily
+  in the tropics.  If careful screening of the troposphere is required,
+  levels 261\,--\,178\,hPa should be avoided if any of the following
+  criteria are met:
+\begin{description}
+\item[At 316\,hPa:] \texttt{L2gpPrecision} $>1.1$\,K \textbf{and} latitude $> -60\degsym$
+\item[At 261\,hPa:] \texttt{L2gpPrecision} $>0.7$\,K 
+\item[At 215\,hPa:] \texttt{L2gpPrecision} $>0.825$\,K 
+\end{description}
 
 \item[End of day:] The last four profiles of each day show greatly
   increased rates of large temperature departure from \emph{a priori}.

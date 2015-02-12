@@ -227,11 +227,7 @@ Interactive Data Language (IDL, version 6.1 or later required), known as
 available from the \emph{Open Channel Software Foundation}
 \href{http://www.openchannelsoftware.org/}{\texttt{http://www.openchannelsoftware.org/}}.
 A reader for MATLAB (\texttt{readL2GP.m}) is also available at the same
-site, and one for python is planned to be added
-shortly. \mycomment{Update python discussion.  From Paul: Tested
-  successfully with Python v2.4, but not version 3.0 Returns correct
-  data, but issues a warning message for each data variable, due to a
-  limitation in the PyTables module}
+site, and one for python is planned to be added shortly.
 
 The standard products are stored in files named according to the convention
 \begin{quote}
@@ -314,12 +310,12 @@ In addition to the data and their estimated precisions, three quality
 metrics are output for every profile of each product.  The first, called
 \texttt{Quality}, gives a measure of the quality of the product based on
 the fit achieved by the Level~2 algorithms to the relevant radiances.
-Larger values of \texttt{Quality} generally indicate good radiance fits
-and therefore more trustworthy data. Values of \texttt{Quality} closer to
-zero indicate poorer radiance fits and therefore less trustworthy data.
-The value of \texttt{Quality} to be used as a ``threshold'' for
-rejecting data in scientific studies varies from product to product, and
-is given later in this document.
+Larger values of \texttt{Quality} generally indicate better radiance
+fits and therefore more trustworthy data. Values of \texttt{Quality}
+closer to zero indicate poorer radiance fits and therefore less
+trustworthy data.  The value of \texttt{Quality} to be used as a
+``threshold'' for rejecting data in scientific studies varies from
+product to product, and is given later in this document.
 
 The second quality metric is called \texttt{Status}.  This is a 32 bit
 integer that acts as a bit field containing several ``flags''.
@@ -590,8 +586,8 @@ one.
 
 The preferred MLS band for measuring N\cs2O (band 12 in the 640\,GHz
 region, \texttt{N2O-640}) began to show signs of aging in June 2013
-(although more slowly than the rapid decline observed in the HCl Band 13
-in 2006). Band 12 was subsequently turned off on August 6,
+(although more slowly than the rapid decline observed in the HCl band~13
+in 2006). Band~12 was subsequently turned off on August 6,
 2013. However, the level-2 processing stream for the N\cs2O standard
 product in v3.x was switched to output the band 3 (190\,GHz,
 \texttt{N2O-190}) retrieval on 7~June~2013 and later data for
@@ -602,9 +598,9 @@ For v4.x the decision was taken to assign the band 3 (190\,GHz,
 wherease the band 12 (640\,GHz, \texttt{N2O-640}) retrieval is now only
 available in the \texttt{N2O-640} swath in the \texttt{L2GP-DGG} file.
 
-As discussed in section~\ref{sec:StandardN2O}, the band 3 and band 12
+As discussed in section~\ref{sec:StandardN2O}, the band~3 and band~12
 data show good agreement except at 100 hPa where there is a $>$30\% high
-bias in the N\cs2O values from band3.
+bias in the N\cs2O values from band~3.
 
 \section{A note on OH measurements in \thisv}
 \label{sec:OHNote}

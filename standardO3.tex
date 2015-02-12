@@ -6,14 +6,15 @@
   \email{Michael.J.Schwartz@jpl.nasa.gov}}
  
 \subsection*{Introduction} 
- 
-The \thisv standard O\cs3 product is taken from the 240-GHz retrieval,
-which provides the highest sensitivity down into the upper troposphere,
-as well as in the mesosphere. The ozone retrieval for the standard
-product now comes from an ozone-only phase, as opposed to the combined
-phase with carbon monoxide and nitric acid (which still exists, but not
-for producing the standard ozone product).  Table~\ref{tab:O3Summary}
-summarizes the typical resolution, precision, and systematic uncertainty
+
+As is the case with previous versions, the \thisv standard O\cs3
+product is taken from a retrieval using 240-GHz radiances, 
+providing sensitivity from the upper troposphere into the mesosphere.
+In \thisv, an optimized retrieval phase for production of the O\cs3
+standard product has been added prior to the phase that uses
+240-GHz radiances to produce the standard  carbon monoxide and nitric 
+acid products.  Table~\ref{tab:O3Summary}
+summarizes typical O\cs3 resolution, precision, and systematic uncertainty
 estimates as a function of pressure.  Papers describing detailed
 validation of the MLS v2.2 product and comparisons with other data sets
 were published in a special Aura validation issue of the {\it Journal of
@@ -27,30 +28,25 @@ discussed here, including data screening criteria.  Recommended
 screening is less complex than it was for \prevvSlash data and is again
 primarily based on thresholds for \texttt{Quality}, and
 \texttt{Convergence}, as was the case for v2.2.  Ozone profile behavior
-has been improved, with reduction of the vertical oscillations that
-affected previous data versions in the UTLS and at low latitudes through
-use of an optimized, ozone-only phase.  Improvements in the presence of
-thick clouds or the upper tropospheric retrievals are accomplished
+has been improved, with reduction of vertical oscillations in the
+low-latitude UTLS and reduction of sensitivity to thick clouds, 
 through changes in the spectral form used to model cloud impacts on the
-MLS radiances, by tightening vertical smoothing at pressures greater
+MLS radiances, through tightening of vertical smoothing at pressures greater
 than or equal to 68\,hPa (leading to an increase in averaging kernel
-FWHM by a factor of \texttildelow1.15) and by retrieving an independent
+FWHM by a factor of \texttildelow1.15) and through retrieval of an independent,
 spectrally-flat baseline over the ozone band for each limb view to
 better account for cloud inhomogeneity.
 
  
 In addition to the swath \texttt{O3}, which is the O\cs3 profile on 55
 pressure surfaces, the \texttt{L2GP-O3} files contain a swath,
-\texttt{O3~column}, which is the integrated stratospheric column using
-the thermal tropopause (WMO definition) calculated from MLS temperature
-as the bottom boundary.  The MLS temperature profiles from which the WMO
+\texttt{O3~column}, which is the integrated stratospheric column down to
+the thermal tropopause (WMO definition) calculated from MLS temperature.
+The MLS temperature profiles from which the WMO
 tropopause is determined are not screened per the instructions of
-section~\ref{sec:StandardTemperature} and careful users may wish to
-recalculate the stratospheric ozone column after determining the
-tropopauses from screened temperature profiles.  An additional swath
-containing a second stratospheric column, one integrated down to a
-GEOS-5 WMO tropopause (determined from the GEOS-5 temperature profile),
-was included in previous versions but not in \thisv.
+section~\ref{sec:StandardTemperature} and users may wish to
+reject columns for which standard screening rejects the corresponding
+temperature profile.
 
 \subsection*{Comparison of \thisv with past data versions}  
 
@@ -135,9 +131,9 @@ small reductions in scatter in the screened case.  V3.3 has
 significantly broader distributions in the troposphere than v04.20, both
 in the widths of the central peaks and in the tails of the
 distributions.  While screened v3.3 (cyan) has reduced tails of
-cloud-impacted outliers compared to unscreened (red), cloud sensitivity
-is clearly reduced in \thisv. The reduced tropical vertical oscillation
-that was seen in Figure~\ref{fig:MLSv3v4O3ContourUTLS} is reflected in
+cloud-impacted outliers compared to unscreened (red), these tails are 
+clearly reduced in \thisv even before screening. The reduced tropical vertical oscillation
+seen in Figures~\ref{fig:MLSv3v4O3ContourUTLS} and~\ref{fig:MLSO3kinkUTLS}  is reflected in
 the shifts of the histogram peaks between versions, with higher \thisv
 values at 121\,hPa and lower values at 82, 100, 147, 178 and 316\,hPa.
 The 316-hPa level of \thisv, though not currently recommended for
@@ -155,13 +151,13 @@ general scientific use, is under evaluation.
 %and lower at 215\,hPa and 100\,hPa (see Figure \ref{fig:MLSv2v3O3ContourUTLS}). 
 
 \paragraph*{Ozone Columns}
-Changes in the MLS stratospheric ozone columns (or in columns down to
-pressures between 100 and 316\,hPa) for \thisv are quite small; typical
-daily zonal averages are within one percent, with a tendency towards
-slightly lower values (but within about 1\%) in the new data version.
-As was noted above, only one stratospheric column swath, based upon MLS
-temperature, is calculated by the \thisv O\cs3 retrieval.  The column
-based upon the GEOS-5 tropopause is no longer routinely produced.
+Changes in the MLS stratospheric ozone columns between \prevvSlash and
+\thisv are quite small; typical daily zonal averages are within one
+percent, with a tendency towards slightly lower values (but within about
+1\%) in the new data version.  Only one stratospheric column swath,
+using a tropopause derived from MLS temperature, is calculated by the
+\thisv O\cs3 retrieval.  The column based upon the GEOS-5 tropopause is
+no longer routinely produced.
 \subsection*{Resolution} 
 
 %\onestandardavk{O3_HR}{O\cs3} 
@@ -200,16 +196,16 @@ based upon the GEOS-5 tropopause is no longer routinely produced.
  
 Typical resolution values are provided in the summary
 Table~\ref{tab:O3Summary}.  The cross-track resolution is set by the
-6\,km width of the MLS 240\,GHz field of view.  The longitudinal
+6\,km width of the MLS 240\,GHz field of view.  Daily longitudinal
 separation of MLS measurements, set by the Aura orbit, is
 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer
-sampling in polar regions.
+sampling at the highest latitudes sampled in each hemisphere.
  
 \subsection*{Precision} 
  
 As found previously, the Level~2 precision values are often slightly lower than 
-the observed scatter in the data, evaluated in a narrow latitude band centered 
-around the equator where atmospheric variability is expected to be small, or
+the scatter observed in a narrow latitude band centered 
+around the equator (where atmospheric variability is expected to be small) or
 obtained from a comparison between ascending and descending coincident
 MLS profiles.
  
@@ -233,15 +229,14 @@ analysis which propagated estimated systematic errors in MLS
 calibration, spectroscopy, etc., through the v2.2 measurement system.
 Results using the v4.2 algorithms are not expected to differ
 significantly.  The values shown here are intended to represent
-2$\sigma$ estimates of accuracy.  Overall, we see no evidence, based on
-a number of (published) comparisons with well established data sets,
-that significant disagreements (outside the combined accuracy estimates)
-or MLS-related issues exist for the MLS ozone product.  For more
+2$\sigma$ estimates of accuracy.  Comparison of MLS O\cs3 with
+well-established data sets shows no evidence of significant biases.
+For more
 details, see the MLS validation papers by \citet{FroidevauxEtal08O3},
 \citet{JiangYEtal07}, and \citet{LiveseyEtal08}, as well as references
 therein; some more recent references relevant to MLS ozone are available
 on the MLS website under ``Publications''.  Future validation studies
-using v4.2 data should focus on longer-term changes (for which good
+using v4.2 data will focus on longer-term changes (for which good
 stability is being observed versus other reliable measurements) and on
 the UTLS region.
  
@@ -297,10 +292,10 @@ O\cs3 comparisons have indicated general agreement at the 5\,--\,10\,\%
 level with stratospheric profiles from a number of comparisons using
 satellite, balloon, aircraft, and ground-based data.  A high MLS v2.2
 bias at 215\,hPa had been observed in some comparisons versus certain
-ozonesonde and satellite datasets. Such high biases were reduced after
-versions \prevv, with additional smaller subsequent reductions in the
+ozonesonde and satellite datasets. Such high biases were reduced in
+versions \prevv, with additional smaller reductions in the
 ozone values in \thisv.  We have found that latitudinal and temporal
-changes observed in various correlative data sets are well reproduced by
+changes observed in various correlative datasets are well reproduced by
 the MLS ozone product.  Intercomparisons of a large variety of ozone
 measurements by satellite instruments have been documented by
 \citet{TegtmeierEtal13}, as part of the analyses produced by the SPARC
@@ -310,10 +305,10 @@ validation studies will focus more on longer-term changes and on the
 UTLS region, especially in the tropics. The temporal stability of the
 Aura MLS ozone dataset has been shown to be very good, in comparison to
 lidar datasets \citet{NairEtal12}, as well as in other more recent
-work. The use of Aura MLS data in combination with older datasets should
-lead to (and has already led to) very useful investigations regarding
-the ozone changes since the turn of the century (and into the ``recovery
-phase'').
+work. Aura MLS data, in combination with older datasets, provides a
+critical tool for study of global O\cs3 in a changing climate into
+the expected period O\cs3 recovery as anthropogenic ozone depleting
+substances decline in concentration. 
 
 \subsection*{Artifacts} 
 

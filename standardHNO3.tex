@@ -8,35 +8,18 @@ The quality and reliability of the Aura MLS v2.2 HNO\cs3 measurements
 were assessed in detail by \citet{SanteeEtal07hno3}.  V3.3 HNO\cs3 was
 greatly improved over that in version v2.2, especially in that a low
 bias through much of the stratosphere (especially evident at levels with
-pressure greater than or equal to 100~hPa) was largely eliminated.
+pressure greater than or equal to 100\,hPa) was largely eliminated.
 However, v3.3 240-GHz HNO\cs3 was adversely impacted by clouds
 \citep{EOSMLSV33V34Quality}, leading to a noisy HNO\cs3 product in the
 UTLS\@.  The adverse cloud impacts have been substantially mitigated in
 \thisv (see \ref{sec:V4vsV3Overview}). Figure~\ref{fig:zmv3v4diffs}
-shows an example of typical differences between v3.3 and \thisv
-HNO\cs3\@.  Higher values in \thisv than in v3.3 in the tropical UTLS
-seen in Figure~\ref{fig:zmv3v4diffs} result primarily from the reduction
-of adverse cloud effects.
-
-The MLS \thisv HNO\cs3 data are scientifically useful over the range 215
-to 1.5\,hPa; values at 1\,hPa are also expected to be scientifically
-useful under conditions of enhanced HNO\cs3 in the upper stratosphere,
-but should be used with caution and in consultation with the MLS team.
-HNO\cs3 values in the upper stratosphere, at 3.2 through 1.0\,hPa, are
-frequently very low and may require averaging (this will usually be the
-case at 1.5 and 1\,hPa, where the values are also noisier than at lower
-levels), but during periods of enhancement in the upper stratosphere,
-coherently evolving atmospheric signals with realistic morphology are
-seen in individual daily maps.  The standard HNO\cs3 product is derived
-from the \mbox{240-GHz} retrievals at pressures equal to or greater than
-22\,hPa and from the \mbox{190-GHz} retrievals for lesser pressures.
-Retrievals and \texttt{Quality} and \texttt{Convergence} information
-from both sets of retrievals are included in the standard HNO\cs3 files
-so that the appropriate screeening values can conveniently be used at
-each level.  The \texttt{Quality} and \texttt{Convergence} included in
-the \texttt{HNO3} swath are from the \mbox{240-GHz} radiometer and
-\emph{apply only to pressures 22\,hPa or greater} (see the data
-screening discussion below).
+shows an example of typical differences between \prevvSlash and \thisv
+HNO\cs3\@.  When each version is screened as recommended \citep[see
+below and][]{EOSMLSV33V34Quality}, \thisv is slightly lower than \prevv
+at pressures greater than or equal to 215\,hPa in middle to high
+latitudes, and shows an oscillatory pattern of differences in the
+tropical UTLS, such that \thisv values are slightly higher than those in
+\prevv at 147\,hPa and slightly lower at 100\,hPa.
 
 A summary of the precision and resolution (vertical and horizontal) of
 the \thisv HNO\cs3 measurements as a function of altitude is given in
@@ -54,15 +37,11 @@ precision, resolution, and accuracy of the MLS \thisv HNO\cs3
 measurements are given below.
 
 \begin{figure}
-\includegraphics[angle=90,width=\linewidth]{figures/InspectZMContour_HNO3--v4-1_HNO3--v3-3_2009m02_LatPress-All-noScreen}
+  \includegraphics[angle=90,width=\linewidth]{figures/InspectZMContour_HNO3--v4-2_HNO3--v3-3_2009m02_LatPress-All}
 \caption{V3.3 (top left) and v4.1 (top right) zonal mean HNO\cs3 for
-  February~2009, and differences (v3.3\,$-$\,v4.1) expressed in ppbv
-  (bottom left) and percent (bottom right). \mycomment{This version has
-    no screening, so that it is ``uniform'' between the versions.  I'd
-    rather have a version with recommended screening for each, but
-    didn't see how to easily force Ryan's program to screen v4 properly
-    (not just a matter of setting Q/C thresholds since I'm still
-    recommending outlier screening).}}
+ February~2009, and differences (v3.3\,$-$\,v4.1) expressed in ppbv
+ (bottom left) and percent (bottom right).  Each version is screened with
+  the recommended criteria.}
 \label{fig:zmv3v4diffs}
 \end{figure}
 
@@ -138,22 +117,22 @@ which are not completely independent because of horizontal smearing).
 The observational determination of the precision is compared in
 Figure~\ref{fig:PrecProf} to the theoretical precision values reported
 by the Level~2 data processing algorithms.  Although the two estimates
-compare very well between 215 and 15\,hPa, above 10\,hPa the predicted
-precision substantially exceeds the observed scatter.  This indicates
-that the a priori information and the vertical smoothing applied to
-stabilize the retrieval are influencing the results at the higher
-retrieval levels.  Because the theoretical precisions take into account
-occasional variations in instrument performance, the best estimate of
-the precision of an individual data point is the value quoted for that
-point in the L2GP files, but it should be borne in mind that this
-approach overestimates the actual measurement noise at pressures less
-than 10\,hPa.  Conversely, the observed scatter at pressures higher than
-100\,hPa is somewhat larger than the theoretical precision in \thisv and
-much larger than the theoretical precision in v3.3.  This is related to
-the spikes and increased noise in the UTLS in v3.3, and can be seen to
-be much imporved in \thisv.  Nevertheless, some outliers in this region
-persist in \thisv.  Procedures for screening outliers in the UTLS are
-discussed below.
+compare very well between 215 and 15\,hPa, at pressures smaller than
+10\,hPa the predicted precision substantially exceeds the observed
+scatter.  This indicates that the a priori information and the vertical
+smoothing applied to stabilize the retrieval are influencing the results
+at the higher retrieval levels.  Because the theoretical precisions take
+into account occasional variations in instrument performance, the best
+estimate of the precision of an individual data point is the value
+quoted for that point in the L2GP files, but it should be borne in mind
+that this approach overestimates the actual measurement noise at
+pressures less than 10\,hPa.  Conversely, the observed scatter at
+pressures higher than 100\,hPa is somewhat larger than the theoretical
+precision in \thisv and much larger than the theoretical precision in
+v3.3.  This is related to the spikes and increased noise in the UTLS in
+v3.3, and can be seen to be much improved in \thisv.  Nevertheless, some
+outliers in this region persist in \thisv.  Procedures for screening
+outliers in the UTLS are discussed below.
 
 \subsection*{Accuracy}
 
@@ -189,8 +168,9 @@ briefly below.
   (pressures of 22\,hPa or greater)}
 
 The \texttt{Quality} and \texttt{Convergence} fields included in the
-standard HNO\cs3 files are appropriate for use in screening at levels at
-and below (that is, pressures greater than) 22\,hPa.  For those levels:
+\texttt{HNO3} swath in the standard \texttt{L2GP-HNO3} files are
+appropriate for use in screening at levels at and below (that is,
+pressures greater than) 22\,hPa.  For those levels:
 
 \begin{description}
 \item[Quality:] \qualityrule{0.8}
@@ -212,7 +192,7 @@ and below (that is, pressures greater than) 22\,hPa.  For those levels:
   behavior.
 
 \item[Clouds:] \screeningrule{Clouds impact HNO\cs3 data in the UTLS,
-    see discussion below and the discussion on `outliers' that follows.}
+    see discussion below and the discussion on ``outliers'' that follows.}
 
   Nonzero but even values of \texttt{Status} indicate that the profile
   has been marked as questionable, typically because the measurements
@@ -332,8 +312,8 @@ be used to apply the following screening criteria:
 \includegraphics[width=0.5\linewidth]{figures/ProfQual0-50_Conv1-40_Fly_HNO3_2009d051_-20to20_v03-__stat0}
 \end{tabular}
 \caption{HNO\cs3 profiles on 20~Feb~2009 color-coded by screening.  Cyan
-  profiles have zero Status, and \texttt{Quality} less than 0.8 (0.5),
-  olive-green \texttt{Convergence} greater than 1.03 (1.4), and red both
+  profiles have \texttt{Quality} less than 0.8 (0.5), olive-green
+  \texttt{Convergence} greater than 1.03 (1.4), and red both
   \texttt{Quality} less than 0.8 (0.5) and \texttt{Convergence} greater
   than 1.03 (1.4) for \thisv (v3.3).  Orange profiles are those flagged
   by the simple screening procedure described above (using large

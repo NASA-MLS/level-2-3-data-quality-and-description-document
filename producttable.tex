@@ -31,86 +31,89 @@
 \toprule
 \rule[-2.5ex]{0pt}{6ex}\textbf{Product name} & 
 \parbox{2.5cm}{\raggedright\bfseries Useful vertical range~/~hPa} &
-\parbox{2.2cm}{\raggedright\bfseries Quality threshold\,\footnotemark[1]} &
-\parbox{2.2cm}{\raggedright\bfseries Convergence threshold\,\footnotemark[2]} &
+\parbox{2.2cm}{\raggedright\bfseries \texttt{Quality} threshold\,\footnotemark[1]} &
+\parbox{2.2cm}{\raggedright\bfseries \texttt{Convergence} threshold\,\footnotemark[2]} &
 \textbf{Notes} &
 \textbf{Contact name} \\
 \midrule
 %
 \flipfloprow
-\texttt{BrO} & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Luis Millan \\
+\hyperref[sec:StandardBrO]{\texttt{BrO}} & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Luis Mill\'an Valle \\
 %
 \flipfloprow 
-\texttt{CH3Cl} & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee \\
+\hyperref[sec:StandardCH3Cl]{\texttt{CH3Cl}} & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee \\
 %
 \flipfloprow 
-\texttt{CH3CN} & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee \\
+\hyperref[sec:StandardCH3CN]{\texttt{CH3CN}} & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee \\
 %
 \flipfloprow 
-\texttt{CH3OH} & \multicolumn{4}{c}{Not to be used pending further validation} & Michelle Santee \\
+\hyperref[sec:StandardCH3OH]{\texttt{CH3OH}} & \multicolumn{4}{c}{Not to be used pending further validation} & Michelle Santee \\
 %
 \flipfloprow 
-\texttt{ClO} & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee \\
+\hyperref[sec:StandardClO]{\texttt{ClO}} & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee \\
 %
 \flipfloprow 
 & 100\,--\,0.0046 & & & & Hugh Pumphrey \\
 \samecolorrow
-\tabnudge{\texttt{CO}}  & 215\,--\,146 & \tabnudge{1.5} & \tabnudge{1.4} & \tabnudge{C} & Michael Schwartz \\
+\tabnudge{\hyperref[sec:StandardCO]{\texttt{CO}}}  & 215\,--\,146 & \tabnudge{1.5} & \tabnudge{1.03} & \tabnudge{C} & Michael Schwartz \\
 %
 \flipfloprow 
-\texttt{GPH} & 261\,--\,0.001 & 0.9 & 1.03 & C & Michael Schwartz \\
+ & 83\,--\,0.001 & 0.2 & & -- &  \\
+%
+\samecolorrow
+\tabnudge{\hyperref[sec:StandardGPH]{\texttt{GPH}}} & 261\,--\,100 & 0.9 & \tabnudge{1.03} & C,O & \tabnudge{Michael Schwartz} \\
 %
 \flipfloprow & 83\,--\,0.002 & & & -- & Alyn Lambert \\
 \samecolorrow
-\tabnudge{\texttt{H2O}} & 316\,--\,100 & \tabnudge{1.45} & \tabnudge{1.6} & C &
+\hyperref[sec:StandardH2O]{\tabnudge{\texttt{H2O}}} & 316\,--\,100 & \tabnudge{1.45} & \tabnudge{2.0} & C &
 William Read \\
 %
 \flipfloprow 
-\texttt{HCl} & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux \\
+\hyperref[sec:StandardHCl]{\texttt{HCl}} & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux \\
 %
 \flipfloprow 
-\texttt{HCN} & 21\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey \\
+\hyperref[sec:StandardHCN]{\texttt{HCN}} & 21\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey \\
 %
 \flipfloprow 
-\texttt{HNO3} & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney \\
+\hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney \\
 %
 \flipfloprow 
-\texttt{HO2} & 22\,--\,0.046 & N/A & 1.1 & A,D,N & Shuhui Wang \\
+\hyperref[sec:StandardHO2]{\texttt{HO2}} & 22\,--\,0.046 & N/A & 1.1 & A,D,N & Shuhui Wang \\
 %
 \flipfloprow 
-\texttt{HOCl} & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux \\
+\hyperref[sec:StandardHOCl]{\texttt{HOCl}} & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux \\
 %
 \flipfloprow 
-\texttt{IWC} & 215\,--\,83 & N/A & N/A & B & Alyn Lambert \\
+\hyperref[sec:StandardIWC]{\texttt{IWC}} & 215\,--\,83 & N/A & N/A & B & Alyn Lambert \\
 %
 \flipfloprow 
-\texttt{IWP} & N/A & N/A & N/A & B & Alyn Lambert \\
+\hyperref[sec:StandardIWP]{\texttt{IWP}} & N/A & N/A & N/A & B & Alyn Lambert \\
 %
 \flipfloprow 
-\texttt{N2O} & 68\,--\,0.46 & 2.0 & 1.3 & C & Alyn Lambert \\
+\hyperref[sec:StandardN2O]{\texttt{N2O}} & 68\,--\,0.46 & 1.3 & 2.0 & -- & Alyn Lambert \\
 %
 \flipfloprow 
  & 100\,--\,0.02 & & & & Lucien Froidevaux \\
 %
 \samecolorrow
-\tabnudge{\texttt{O3}\,\footnotemark[3]} & 
+\tabnudge{\hyperref[sec:StandardO3]{\texttt{O3}\,\footnotemark[3]}} & 
  261\,--\,121 & \tabnudge{1.0} & \tabnudge{1.03} & \tabnudge{C} &
   Michael Schwartz \\
 %
 \flipfloprow 
-\texttt{OH} & 32\,--\,0.0032 & N/A & 1.1 & A,D & Shuhui Wang \\
+\hyperref[sec:StandardOH]{\texttt{OH}} & 32\,--\,0.0032 & N/A & 1.1 & D & Shuhui Wang \\
 %
 \flipfloprow 
-\texttt{RHI}\,\footnotemark[4] & 316\,--\,0.002 & See text & See text & C & William Read \\
+\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316\,--\,0.002 & See text & See text & C,O & William Read \\
 %
 \flipfloprow 
-\texttt{SO2} & 215\,--\,10 & 0.95 & 1.1 & E & William Read \\
+\hyperref[sec:StandardSO2]{\texttt{SO2}} & 215\,--\,10 & 0.95 & 1.03 & E & William Read \\
 %
 \flipfloprow 
- & 100\,--\,0.001 & 0.2 & & -- &  \\
+ & 83\,--\,0.001 & 0.2 & & -- &  \\
 %
 \samecolorrow
-\tabnudge{\texttt{Temperature}\,\footnotemark[5]} & 261\,--\,121 & 1.1 & \tabnudge{1.2} & C & \tabnudge{Michael Schwartz} \\
+\tabnudge{\hyperref[sec:StandardTemperature]{\texttt{Temperature}\,\footnotemark[5]}} & 261\,--\,100 & 0.9 & \tabnudge{1.03} & C,O & \tabnudge{Michael Schwartz} \\
 %
 \bottomrule
 \end{tabular}
@@ -119,16 +122,15 @@ William Read \\
 \vspace{-2mm}\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
   \textbf{Notes:}\par
   \begin{tablenotes}
-  \item[A] Users should consider using alternative versions of these
-    products, produced (or planned to be produced) using different
-    algorithms, as described in the text.
-  \item[B] This product contains significant biases in certain regions
+  \item[A] Users should consider using alternative versions of this
+    product, produced using different algorithms, as described in the text.
+  \item[B] This product has significant biases in certain regions
     that may need to be accounted or corrected for in scientific studies.
     See text for details.
   \item[C] Interference from clouds can affect this product at certain
     altitudes. See text for details.
-  \item[D] Biases in this product can be ameliorated (in selected
-    conditions) by taking day/night differences.  See text for details.
+  \item[D] Biases in his product can be ameliorated (in selected
+    conditions) by taking day/night differences.  See text.
   \item[E] At some altitudes, this product contains biases of a magnitude
     that render the product useful only for the study of ``enhancement
     events'' (e.g., volcanic plumes, extreme fire pollution).  See text
@@ -143,16 +145,16 @@ William Read \\
     tropical upper troposphere).  These should be screened out as detailed
     in the text.
   \end{tablenotes}
-  \rule{\linewidth}{0.5pt}\par
-  \begin{tablenotes}
-  \item[\mbox{[1]}] Only use profiles having ``Quality'' \emph{greater}
+  \vspace{-1ex}\rule{\linewidth}{0.5pt}\par
+  \vspace{-0.5ex}\begin{tablenotes}
+  \item[\mbox{[1]}] Only use profiles with \texttt{Quality} \emph{greater}
     than this value.
-  \item[\mbox{[2]}] Only use profiles with ``Convergence'' \emph{less} than this value.
+  \item[\mbox{[2]}] Only use profiles with \texttt{Convergence} \emph{less} than this value.
   \item[\mbox{[3]}] File also contains a swath giving the column
     abundance above the (MLS-defined) tropopause.
   \item[\mbox{[4]}] Relative humidity with respect to ice computed from the
     MLS H\cs2O and Temperature data.
-  \item[\mbox{[5]}] File also contains a swath giving estimates of tropopause.
+  \item[\mbox{[5]}] File also contains a swath giving tropopause
     pressure (WMO definition) inferred from MLS temperatures.
   \end{tablenotes}}
 

@@ -7,8 +7,8 @@
 \subsubsection*{Redefinition of the N\cs2O standard product for \thisv
   to use band 3 (190-GHz) signals}
 
-The standard product for \thisv N\cs2O is taken from the 190 GHz
-(``Core+R2'') retrieval (\texttt{N2O-190}) instead of the 640 GHz (``Core+R4B'')
+The standard product for \thisv N\cs2O is taken from the 190-GHz
+(``Core+R2'') retrieval (\texttt{N2O-190}) instead of the 640-GHz (``Core+R4B'')
 retrieval (\texttt{N2O-640}) as used in previous versions.
 
 Aging of the MLS ``band~12'' (640-GHz) signals was revealed by analysis
@@ -35,8 +35,8 @@ Figure~\ref{fig:N2O190640Comparison}).
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/InspectZM_2009m03_N2O-190-v04-2x_N2O-640-v04-2x_userHeightRange}
-\caption{MLS \thisv N\cs2O 190 GHz and 640 GHz comparison for March
-  2009}
+\caption{MLS \thisv \texttt{N2O-190} and \texttt{N2O-640} comparison for
+  March 2009}
 \label{fig:N2O190640Comparison}
 \end{figure}
 
@@ -112,25 +112,21 @@ expected to be little different from that established for v3.x.
 \standardprecisionrule
 \evenstatusrule
 
-\item[Convergence (\texttt{N2O-190}):] \convergencerule{2.0}
-
-  A fraction of the \texttt{N2O-190} data (typically less than 0.5\%) at this level
-  will be discarded via this screening.
-
 \item[Quality (\texttt{N2O-190}):] \qualityrule{1.3}
-  
   A small fraction of \texttt{N2O-190} profiles (typically less than 4\%) will
   be discarded via this screening.
 
-\item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01}
-
-  A fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level
+\item[Convergence (\texttt{N2O-190}):] \convergencerule{2.0}
+  A fraction of the \texttt{N2O-190} data (typically less than 0.5\%) at this level
   will be discarded via this screening.
 
 \item[Quality (\texttt{N2O-640}):] \qualityrule{1.4}
-  
   A small fraction of \texttt{N2O-640} profiles (typically less than 0.5\%) will
   be discarded via this screening.
+
+\item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01}
+  A fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level
+  will be discarded via this screening.
 
 \item[Clouds:] \screeningrule{Clouds have little impact on the N\cs2O products at the recommended pressure levels. 
 Ignore status bit 16 (high cloud) or bit 32 (low cloud) indicating the presence of clouds. See
@@ -173,17 +169,17 @@ v3.3 are less than a few percent at all levels.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/InspectZM_2009m03_N2O-190-v04-2x_N2O-190-v03-3x_N2O-190-v02-2x_userHeightRange}
- \caption{MLS v4.2 190 GHz N\cs2O compared to v2.2 and v3.3 for March 2009}
+ \caption{MLS v4.2 190-GHz N\cs2O compared to v2.2 and v3.3 for March 2009}
 \label{fig:N2O190Comparison}
 \end{figure}
 
-Average values for \thisv 640 GHz N\cs2O are 20\% larger than in v2.2
+Average values for \thisv 640-GHz N\cs2O are 20\% larger than in v2.2
 for the 100\,hPa pressure level, up to 10\% smaller at the
 46\,--\,32\,hPa levels, and within 5\% for pressures greater than
 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between
-\thisv 640 GHz N\cs2O and v3.3 are less than a few percent at all
-levels. Unlike the \texttt{N2O-190} product, the  \texttt{N2O-190} product
-is recommended for scientific use at 100 hPa.
+\thisv 640-GHz N\cs2O and v3.3 are less than a few percent at all
+levels. Unlike the \texttt{N2O-190} product, the \texttt{N2O-640}
+product is recommended for scientific use at 100\,hPa.
 
 Apart from the differences noted above, the MLS \thisv 640 GHz N\cs2O is
 similar to the MLS v2.2 product described and validated in

@@ -99,14 +99,14 @@ Most of the MLS data products are deduced from observations of spectral
 contrast, that is, variations in radiance as a function of frequency for
 a given limb pointing.  Many of the systematic errors in the MLS
 measurement system manifest themselves as a spectrally flat or slowly
-spectrally varying error in radiance.  This is true of both instrumental
-effects such as variations in instrument gain and offset during the limb
-scan, and ``forward model'' effects such as knowledge of continuum
-emission and the impact of some approximations made in the forward model
-in order to increase its speed.  In order to account for such effects,
-the \thisv algorithms also retrieve spectrally flat (or slowly
-spectrally varying) corrections to the MLS radiances, either in terms of
-an additive radiance offset or an additive atmospheric extinction.
+spectrally varying error in radiance.  This is true of effects arising
+both from the instrument (such as gain and offset during the limb scan)
+and from the ``forward model'' (such as knowledge of continuum emission
+and the impact of some approximations made in the forward model in order
+to increase its speed).  In order to account for such effects, the
+\thisv algorithms also retrieve spectrally flat (or slowly spectrally
+varying) corrections to the MLS radiances, either in terms of an
+additive radiance offset or an additive atmospheric extinction.
 
 \section{The \texttt{Core}, \texttt{CorePlusR\emph{n}} approach}
 
@@ -163,15 +163,16 @@ Table~\ref{tab:Phases} describes the phases in more detail.  Many
 products (e.g.,\ ozone) are produced in more than one phase.  All the
 separate measurements of these species are produced as diagnostic
 quantities, and labeled according to the spectral region from which they
-originated.  For example, the ozone obtained from the \texttt{CorePlusR2}
-retrieval is known in the \thisv dataset as \texttt{O3-190}.  In \thisv in
-order to reduce confusion for users of MLS data, the algorithms also
-output ``standard products'', which is typically a copy of one of the
-products from the \texttt{CorePlusR\emph{n}} phases.  For example, the ``standard'' ozone
-product is a copy of the \texttt{O3-240} product.  In the case of \thisv
-nitric acid, the standard product represents a hybrid of the results
-from two phases.  Details of which standard product is obtained from
-which phase are given in table~\ref{tab:StandardProducts}.
+originated.  For example, the ozone obtained from the
+\texttt{CorePlusR2} retrieval is known in the \thisv dataset as
+\texttt{O3-190}.  In \thisv in order to reduce confusion for users of
+MLS data, the algorithms also output ``standard products'', which is
+typically a copy of one of the products from the
+\texttt{CorePlusR\emph{n}} phases.  For example, the ``standard''
+chlorine monoxide product is a copy of the \texttt{ClO-640} product.  In
+the case of \thisv nitric acid, the standard product represents a hybrid
+of the results from two phases.  Details of which standard product is
+obtained from which phase are given in table~\ref{tab:StandardProducts}.
 
 \newcommand{\mybox}[2]{\parbox[m]{#1}{\raggedright #2}}
 \newcommand{\phase}[1]{\mybox{1.0in}{\texttt{#1}}}
@@ -238,7 +239,7 @@ which phase are given in table~\ref{tab:StandardProducts}.
 \tablecomments{Determines cloud flags for all phases} \\
 
 \flipfloprow
-\phase{Init-RHi} &
+\phase{InitRHi} &
 \species{UT RHi} &
 \measurements{R2~(190\,GHz)} &
 \tablecomments{Retrieve RHi in a \texttildelow6\,km-layer centered
@@ -283,16 +284,16 @@ which phase are given in table~\ref{tab:StandardProducts}.
 \tablecomments{Retrievals down to 147\,hPa}\\ 
 
 \flipfloprow
-\phase{CorePlusR4AB13} & \species{HCl, O\cs3, SO\cs2} &
-\measurements{R4~(640\,GHz)} &
-\tablecomments{Retrievals down to 147\,hPa. This phase only performed when
-  MLS band~13 is operating}\\ 
-
-\flipfloprow
 \phase{Methanol} &
 \species{CH\cs3OH, ClO, BrO, HO\cs2, HOCl, HNO\cs3, SO\cs2, CH\cs3Cl} &
 \measurements{R2~(190\,GHz) and R4~(640\,GHz)} & 
 \tablecomments{Retrievals down to 147\,hPa} \\ 
+
+\flipfloprow
+\phase{CorePlusR4AB13} & \species{HCl, O\cs3, SO\cs2} &
+\measurements{R4~(640\,GHz)} &
+\tablecomments{Retrievals down to 147\,hPa. This phase only performed when
+  MLS band~13 is operating}\\ 
 
 \flipfloprow
 \phase{CorePlusR4B} & \species{N\cs2O, SO\cs2} &
@@ -337,6 +338,8 @@ which phase are given in table~\ref{tab:StandardProducts}.
   \flipfloprow 
   CO        & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
+  GPH       & CorePlusR3 & 118 \& 240\,GHz \\
+  \flipfloprow 
   H\cs2O    & CorePlusR2 & 190\,GHz \\
   \flipfloprow 
   HCl       & CorePlusR4AB14 & 640\,GHz \\
@@ -351,9 +354,9 @@ which phase are given in table~\ref{tab:StandardProducts}.
   \flipfloprow 
   HOCl      & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
-  IWC       & High-Cloud & 240\,GHz \\
+  IWC       & HighCloud & 240\,GHz \\
   \flipfloprow 
-  IWP       & High-Cloud & 240\,GHz \\
+  IWP       & HighCloud & 240\,GHz \\
   \flipfloprow 
   N\cs2O    & CorePlusR2& 190\,GHz \\ 
   \flipfloprow 
@@ -362,6 +365,8 @@ which phase are given in table~\ref{tab:StandardProducts}.
   OH        & CorePlusR5 & 2.5\,THz \\
   \flipfloprow 
   RHi       & \mybox{6cm}{\sffamily\raggedright Computed from Temperature and H\cs2O} & 190\,GHz \\
+  \flipfloprow 
+  SO\cs2    & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
   Temperature & CorePlusR3 & 118 \& 240\,GHz \\
   \bottomrule
@@ -418,8 +423,8 @@ dependent extinction (including background atmospheric absorption from
 N\cs2, H\cs2O and unknown emitters).  In the other retrieval phases, by
 contrast, a spectrally-flat baseline is used.  Thick clouds can affect
 the MLS radiances beyond the modeling capability of this approach,
-mainly through scattering processes.  Such situations are and the
-affected radiances excluded from the retrievals, or their influence
+mainly through scattering processes.  Such situations and the affected
+radiances are excluded from the retrievals, or their influence
 down-weighted.
 
 The first aspect of handling clouds in \thisv is therefore the flagging
@@ -558,8 +563,8 @@ species will have typical $\chi^2$ statistics that are less than one and
 thus typical values of \texttt{Quality} higher than one.  Accordingly,
 differences in \texttt{Quality} from one species to another do not
 reflect the species' relative validity, nor do version-to-version
-increases in \texttt{Quality} for a given product necessarily
-improvements (or visa versa)
+increases in \texttt{Quality} for a given product necessarily indicate
+improvements (or vice versa)
 
 %%% Local Variables: 
 %%% mode: latex
