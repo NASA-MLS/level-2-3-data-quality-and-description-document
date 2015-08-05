@@ -230,7 +230,7 @@ Figure~\ref{fig:TempSummary2}.
   so it cannot be used to screen temperature as it was in previous
   versions.  However, cloud impacts can largely be removed using the ice
   water content (IWC) product, rejecting profiles between 261\,--\,100\,hPa
-  for which the 215\,hPa value of IWC is greater than 0.005\,mg/m$^3$.
+  for which the 215\,hPa value of IWC is greater than 0.005\,g/m$^3$.
   Implementation of this criteria requires the loading of the \thisv IWC
   swath, but is responsible for most of the rejection of cloud-induced
   outliers seen in Figure~\ref{fig:v4v3_68-316hPa_linehists}.  This
@@ -243,14 +243,14 @@ Figure~\ref{fig:TempSummary2}.
   required, levels 261\,--\,178\,hPa should be avoided if any of the
   following criteria are met:
 \begin{description}
-\item[At 316\,hPa:] \texttt{L2gpPrecision} $>1.1$\,K \textbf{and} latitude $>-60\degsym$
-\item[At 261\,hPa:] \texttt{L2gpPrecision} $>0.7$\,K 
-\item[At 215\,hPa:] \texttt{L2gpPrecision} $>0.825$\,K 
+\item[At 316\,hPa:] \texttt{L2gpPrecision} $> 1.1$\,K \textbf{and} latitude $> -60\degsym$
+\item[At 261\,hPa:] \texttt{L2gpPrecision} $>  0.7\,$K 
+\item[At 215\,hPa:] \texttt{L2gpPrecision} $>  0.825\,$K 
 \end{description}
 
-\item[End of day:] The last four profiles of each day show greatly
-  increased rates of large departure from \emph{a priori} and should not
-  be used.
+\item[End of day (v4.20 only):] The last four profiles of each day show
+  greatly increased rates of large departure from \emph{a priori} and
+  should not be used.  This issue was fixed in v4.22.
 \end{description}
 
 \subsection*{Artifacts}
@@ -269,12 +269,10 @@ discussion of artifacts may be found in~\citet{SchwartzEtal08}.
 
 The last four profiles of each day show increased rates of outliers
 relative to GEOS-5 temperature, compared to other profile positions in
-the day.  These outliers can be as large as 50\,K at at some levels.
-Attempts to address this end of day boundary problem by creating daily
-overlap periods that can be discarded have not yet satisfactorily
-addressed this problem and the magnitude of the outliers has increased
-somewhat in \thisv.  A recommendation to discard the last 4 profiles
-of each day has been added to recommended screening.
+the day in version~4.20 (fixed in version~4.22).  These outliers can be
+as large as 50\,K at at some levels.  A recommendation to discard the
+last 4 profiles of each day has been added to recommended screening for
+v4.20 (not needed for v4.22).
 
 \subsection*{Review of comparisons with other datasets}
 \label{sec:TComparisons}

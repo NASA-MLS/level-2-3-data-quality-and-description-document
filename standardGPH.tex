@@ -164,13 +164,11 @@ a similar result is expected for \thisv.
 
 The last four profiles of each day show increased rates of outliers
 relative to GEOS-5 temperature, compared to other profile positions in
-the day.  These outliers can be as large as 50\,K at at some levels.
-Attempts to address this end of day boundary problem by creating daily
-overlap periods that can be discarded have not yet satisfactorily
-addressed this problem and the magnitude of the outliers has increased
-somewhat in \thisv.  A recommendation to discard the last 4 profiles of
-each day for both temperature and GPH (as well as RHI) has been added to
-recommended screening.
+the day in version~4.20 (fixed in version~4.22).  These outliers can be
+as large as 50\,K at at some levels.  A recommendation to discard the
+last 4 profiles of each day for both temperature and GPH (as well as
+RHI) has been added to recommended screening for v4.20 (not needed for
+v4.22).
 
 \subsection*{Vertical resolution}
 
@@ -227,6 +225,26 @@ bias relative to analyses (GEOS-5) at 100-hPa that drops to 100\,m at
 increasingly negative at higher levels, reaching -600\,m at 0.001\,hPa,
 but with significant latitudinal and seasonal variability.
 
+\subsection*{Known Artifacts}
+To maintain its position in the ``A-Train'' constellation of satellites,
+the Aura spacecraft periodically executes ``inclination adjustment
+maneuvers'' (IAMs) involving large changes in spacecraft yaw and firing
+of thrusters.  There were 39 such maneuvers in the first 10 years of
+operation.  Large systematic errors in spacecraft reported attitude have
+been found in the first orbit that follows the return to nominally good
+attitude data after these maneuvers, apparently due to the ringing of a
+Kalman filter in the attitude measurement system. Since MLS GPH relies
+on spacecraft attitude for its absolute reference, these attitude errors
+result in large systematic errors in GPH, typically reaching +3500\,m in
+the first eighth of the orbit and -30\,m in the second quarter orbit
+after the nominal ``end of maneuver''.  The large positive errors almost
+always occur on ascending orbits from near Australia, crossing the
+Indian Ocean and, at $\sim$3500\,m amplitude, are large enough to
+significantly bias even long-term averages.  A file of start and stop
+times for data to be avoided is maintained on the MLS website:
+\href{http://mls.jpl.nasa.gov/cal/issues.txt}{\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
+
+
 \subsection*{Data screening}
 \label{sec:GPHScreening}
 
@@ -257,11 +275,17 @@ GPH should be screened in much the same way as is temperature:
   typically discards less than 0.1\% of profiles and is primarily a
   safeguard against profiles with extremely poor convergence.
 
-\item[End of day:] The last four profiles of each day show greatly
-  increased rates of large temperature departure from \emph{a priori}.
-  Accordingly the last four profiles of the GPH product each day should
-  not be used.
+\item[End of day (v4.20 only):] The last four profiles of each day show
+  greatly increased rates of large temperature departure from \emph{a
+    priori}.  Accordingly the last four profiles of the GPH product each
+  day should not be used.  Note that this issue was fixed in v4.22.
 
+\item[IAMs:] Large errors in reported spacecraft attitude have been
+  found following the spacecraft inclination adjustment maneuvers that
+  occur $\sim$4 times per year.  A file of times at which GPH should not
+  be used is maintained on the MLS website:
+  \href{http://mls.jpl.nasa.gov/cal/issues.txt}%
+  {\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
 \end{description}
 
 \subsection*{Desired improvements for future data version(s)}
