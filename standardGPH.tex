@@ -19,23 +19,23 @@ geopotential difference from the Earth's surface geopotential to a given
 location, scaled by the mean-sealevel gravitational acceleration, $g_0$,
 to give units of height.
 
-MLS products, including GPH, are reported on pressure surfaces and these
-pressures depend upon temperature and height through hydrostatic balance
-and the gas law.
+MLS products, including GPH and temperature, are reported on pressure
+surfaces, but pressure, temperature and height depend upon one another
+through assumed hydrostatic balance and the gas law.
 \begin{equation}
 \frac{1}{g_o} \int g\,dh = \frac{R}{M g_o}\int T\,dP/P,
 \end{equation}
 where $M$ is the molar mass of air and $R$ is the gas constant.
 
-Thus when MLS retrieves temperature and pressure using radiometric
-measurements and precisely measured differences in limb pointing, GPH
-differences between pressure surfaces are simultaneously
-retrieved. Absolute pointing cannot be inferred from radiometric
-information and must be provided for each retrieved profile by the
-spacecraft orbit/attitude system and the instrument scan model.  By
-convention, this additional degree of freedom is taken to be the height
-of the 100-hPa reference level, but this choice is arbitrary, as the
-reference is an additive offset to the entire profile.
+Thus a retrieval of a temperature profile on fixed pressure surfaces
+also determines GPH differences between those surfaces, and so
+determines the GPH profile to within an additive constant.  Absolute
+pointing cannot be inferred from radiometric information and must be
+obtained, for each profile, from the spacecraft orbit/attitude system
+and the instrument scan model.  By convention, this additional degree of
+freedom is taken to be the height of the 100-hPa reference level, but
+this choice is arbitrary, as the reference is an additive offset to the
+entire profile.
 
 Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
 modeled accuracy and observed biases.  The following sections provide
@@ -68,7 +68,7 @@ geostrophic winds calculated from v03.x and v02.x GPH at all levels.
 \caption{The height of the EGM96 geoid from the WGS84 ellipsoid.  These
   values should be subtracted from MLS v03.x and earlier GPH values to give
   geopotential heights referenced to the Earth's mean sea level
-  geopotential.  \thisv GPH does not include this bias term.)}
+  geopotential.  \thisv GPH does not include this bias term.}
 \label{fig:geoidheight}
 \end{figure}
 
@@ -77,15 +77,15 @@ are found to be somewhat higher at high latitudes than are those of the
 v03.3x product, with typical 100-hPa mean differences of 50\,m in the
 high northern latitudes, 30\,m in high southern latitudes and close to
 zero bias in the tropics.  Latitudinally and seasonally dependent
-differences between \thisv and \prevvSlash 100-hPa GPH are shown in
-Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.
-These differences are very similar for ascending and descending parts of
-the orbits, and the two are averaged in this figure.  The details of
-these differences vary between the two years, but the morphology is
-similar.
+differences between \thisv and ellipsoid-referenced \prevvSlash 100-hPa
+GPH are shown in Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years
+2005 and 2009.  These differences are very similar for ascending and
+descending parts of the orbits, and the two are averaged in this figure.
+The details of these differences vary between years, but the morphology
+is similar.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/v4-v3_100hPaGPH_2005-2009_bylat}
-\caption{Differences between \thisv and v03.30 100-hPa GPH for 2005 and
+\caption{Differences between \thisv and ellipsoid-referenced v03.30 100-hPa GPH for 2005 and
   2009 are shown as functions of latitude and day of year.}
 \label{fig:v4-v3_100hPaGPH_2005}
 \end{figure}
@@ -95,7 +95,7 @@ After removal of the geoid correction from v03.3x GPH, there remains a
 latitudinally and seasonally-varying bias between MLS and GEOS-5 that is
 also present in \thisv GPH.  Figure~\ref{fig:GPHv3_lat_annual} shows
 this pattern in the difference between geoid-corrected v03.3x and GEOS-5
-100-hPa GPH.  This pattern is essentially unchanged in \thisv.
+100-hPa GPH.  This pattern is very similar in \thisv.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth,clip=true,trim=1cm 1cm
 1cm 2cm]{figures/GPH_geoid_correction2A}

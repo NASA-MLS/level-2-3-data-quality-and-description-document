@@ -70,17 +70,17 @@ about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 \subsection*{Precision}
 
 The MLS data are supplied with an estimated precision (the field
-\texttt{L2gpPrecision}) which is the \emph{a posteriori} precision as returned by
-the optimal estimation. The precision of the \thisv CO is very similar
-to that of \prevvSlash and is usually smaller (better) than that of
-v2.2.  In all versions, the precision is greater than the scatter
-observed in the data in regions of low natural variability.  Where the
-estimated precision is greater than 50\% of the a priori precision the
-data will be influenced by the a priori to an undesirably large extent.
-In such cases, \texttt{L2gpPrecision} is set to be negative to indicate
-that the data should not be used.  Figure~\ref{fig:COPrecision} shows
-both the scatter and estimated precision for CO, with typical profiles
-for comparison.
+\texttt{L2gpPrecision}) which is the \emph{a posteriori} precision as
+returned by the optimal estimation. The precision of the \thisv CO is
+very similar to that of \prevvSlash and is usually smaller (better) than
+that of v2.2.  In all versions, the precision is greater than the
+scatter observed in the data in regions of low natural variability.
+Where the estimated precision is greater than 50\% of the a priori
+precision the data will be influenced by the a priori to an undesirably
+large extent.  In such cases, \texttt{L2gpPrecision} is set to be
+negative (or zero in some cases) to indicate that the data should not be
+used.  Figure~\ref{fig:COPrecision} shows both the scatter and estimated
+precision for CO, with typical profiles for comparison.
 %
 \begin{figure}
   \includegraphics[width=0.495\textwidth]{figures/co-prec-fig-2005d028}\hfill%

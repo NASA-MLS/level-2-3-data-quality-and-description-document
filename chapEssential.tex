@@ -285,8 +285,8 @@ for all products.  For example, for temperature, the standard
 Each swath contains data fields \texttt{L2gpValue} and
 \texttt{L2gpPrecision}, which describe the value and precision of the
 data, respectively.  Data points for which \texttt{L2gpPrecision} is set
-negative \emph{should not be used}, as this flags that the resulting
-precision is worse than 50\% of the \emph{a priori} precision,
+negative or zero \emph{should not be used}, as this flags that the
+resulting precision is worse than 50\% of the \emph{a priori} precision,
 indicating that instrument and/or the algorithms have failed to provide
 enough useful information for that point.  In addition to these fields,
 fields such as \texttt{latitude} etc.\ describe geolocation information.

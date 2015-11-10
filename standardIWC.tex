@@ -48,11 +48,14 @@ CloudSat and detailed analyses on the v2.2 error budget can be found in
 \begin{description}
 \item[Pressure range (215\,--\,83\,hPa):] \standardrangestatement\ The
   maximum detectable IWC is \texttildelow100\,mg/m\cp3.
-\item[Status flag:] The user is recommended to screen the IWC data using
-  the \texttt{Status} field in the collocated temperature profile to
-  exclude bad retrievals \citep{SchwartzEtal08}. In other words, only
-  IWC profiles for which temperature \texttt{Status} is an even number
-  should be used.
+\item[Use Temperature Status, Quality and Convergence:] The user is
+  recommended to screen the IWC data using the \texttt{Status} field in
+  the collocated temperature profile to exclude bad retrievals
+  \citep{SchwartzEtal08}. In other words, only IWC profiles for which
+  temperature \texttt{Status} is an even number should be used.
+  Similarly, the users should only use IWC profiles where the
+  corresponding Temperature profiles have \emph{Quality} of 0.9 or
+  larger and \texttt{Convergence} less than 1.03.
 \item[Other screening:] The IWC product derives from differences between
   measured radiances and those predicted assuming cloud free conditions.
   Spectroscopic and calibration uncertainties give rise to temporally

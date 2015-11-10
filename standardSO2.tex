@@ -57,11 +57,11 @@ full width at half maximum of the MLS antenna, for all pressures.
 
 \subsection*{Precision}
 
-The estimated precision for SO\cs2 is \texttildelow4\,ppbv for all heights
-between 215\,--\,10\,hPa. The precisions are set to negative values in
-situations when the retrieved precision is larger than 50\% of the a
-priori precision -- an indication that the data is biased toward the a
-priori value.
+The estimated precision for SO\cs2 is \texttildelow4\,ppbv for all
+heights between 215\,--\,10\,hPa. The precisions are set to negative
+values (or zero in some cases) in situations when the retrieved
+precision is larger than 50\% of the a priori precision -- an indication
+that the data is biased toward the a priori value.
 
 \subsection*{Accuracy}
 
@@ -84,7 +84,7 @@ this document.
   is flagged negative, SO\cs2 is an exception and it is appropriate to
   use values with negatively flagged precision (provided that the entire
   profile is not so flagged). High retrieved values of SO\cs2 at the
-  larger pressures (e.g., 215 and 147~hPa) will also have larger (i.e.,
+  larger pressures (e.g., 215 and 147\,hPa) will also have larger (i.e.,
   poorer) precision values which are sometimes large enough to trigger
   the ``too much \emph{a priori} influence'' negative-precision flag. In
   these cases, there will be an \emph{a priori} influence, and the
@@ -92,7 +92,8 @@ this document.
   retrieval is being pulled towards the \emph{a priori} value of zero
   ppbv. Nonetheless, this does not detract from the fact that greatly
   enhanced SO\cs2 is being observed, reflecting the detection of a
-  plume.
+  plume.  Profiles where the precision is set to zero, however, should
+  be omitted from analyses.
 
 \evenstatusrule
 \item[Quality field:] \screeningrule{Only profiles having

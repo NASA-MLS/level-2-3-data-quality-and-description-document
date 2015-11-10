@@ -44,8 +44,8 @@ in chapter~\ref{chap:Results}.  The key rules are:
   by product in chapter~\ref{chap:Results}) are to be used.
 \item Always consider the precision of the data, as reported in the
   \texttt{L2gpPrecision} field.
-\item Do not use any data points where the precision is set negative.
-  This indicates poor information yield from MLS.
+\item Do not use any data points where the precision is zero or a
+  negative number.  This indicates poor information yield from MLS.
 \item Do not use data for any profile where the field \texttt{Status} is
   an odd number.
 \item Data for profiles where the \texttt{Status} field is non zero
