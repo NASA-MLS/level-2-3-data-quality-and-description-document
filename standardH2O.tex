@@ -275,6 +275,23 @@ aware that, although the overall biases for measurements inside clouds
 are similar to that for clear sky, individual profiles will exhibit
 greater variability about the true atmospheric humidity.
 
+\subsection{A note about the water vapor averaging kernels}
+
+The averaging kernels are most applicable to linear and moderately
+non-linear retrieval problems. The MLS H\cs2O retrievals are mostly
+linear, except when the atmosphere approaches opaqueness. This occurs
+when the limb tangent of the instrument field of view is less than
+10\,km above the Earth's surface and the atmosphere is moist.  In such
+cases the measurements are very nonlinear and often times the averaging
+kernel calculations for the lowest retrieved levels are numerically
+unstable, and unrepresentative of the actual MLS measurement system.
+This is the case, for example, for the 316-hPa and 262-hPa equatorial
+kernels shown in Figure~\ref{fig:AvkH2O_HR}.  Analysis of simulated MLS
+observations indicates that application of the averaging kernel provides
+little benefit to analyses involving the 316-hPa and 262-hPa levels, and
+accordingly we recommend not applying the (unrepresentative) kernels at
+those levels.
+
 \subsection*{Review of comparisons with other datasets}
 
 \begin{figure}

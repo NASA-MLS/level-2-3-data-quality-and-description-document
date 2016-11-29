@@ -1,4 +1,4 @@
-% $Id: v4-x-report.tex,v 1.11 2015/02/13 17:04:20 livesey Exp $
+% $Id: v4-x-report.tex,v 1.12 2015/08/05 20:45:03 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
@@ -6,6 +6,7 @@
 \newif\ifnav\navtrue
 %
 % ---------------------------------------- Fonts
+\usepackage{microtype}
 \usepackage{inconsolata}
 \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
 \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
@@ -163,7 +164,7 @@
 \newcommand{\cp}[1]{\ensuremath{^{\text{#1}}}}
 \newcommand{\degsym}{\ensuremath{^\circ}}
 % 
-\newcommand{\mycomment}[1]{{\small\sffamily\color{red}\slshape[#1]}}
+\newcommand{\mycomment}[1]{{\small\sffamily\color{red}\slshape[COMMENT: #1]}}
 %
 \newcommand{\dontincludegraphics}[2][]{\framebox{Graphics missing}}
 %
