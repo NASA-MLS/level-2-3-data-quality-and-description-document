@@ -1,4 +1,4 @@
-% $Id: v4-x-report.tex,v 1.12 2015/08/05 20:45:03 livesey Exp $
+% $Id: v4-x-report.tex,v 1.13 2016/11/29 01:05:01 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
@@ -136,6 +136,8 @@
 \renewcommand{\linenumberfont}{\color{black}\tiny\sffamily\mdseries\upshape\figureversion{tabular}}
 %\linenumbers
 %
+% For avoiding problems with latexdiff
+\newenvironment{DIFnomarkup}{}{}%
 % ---------------------------------------- Captions
 %
 \newfixedcaption{\myfigcaption}{figure}
@@ -155,6 +157,7 @@
 %
 %
 \begin{document}
+\sloppy
 %
 % Define various low level macros
 \renewcommand{\b}{\mathbf}
@@ -178,7 +181,7 @@
 %
 % Now do the title page
 %
-\jpld{33509 Rev.\ B}
+\jpld{33509 Rev.\ C}
 \title{Version~4.2x Level~2 data quality and description document.}
 \author{%
 Nathaniel~J.~Livesey,
@@ -200,7 +203,7 @@ Elmain~Martinez}
 %\shortauthor{Aura MLS Science team}
 \newcommand{\myshorttitle}{Level~2 Version 4.2\emph{x} Quality}
 \shorttitle{\myshorttitle}
-\version{4.2x--2.0}
+\version{4.2x--3.0}
 \newcommand{\thisv}{v4.2\emph{x}\xspace}
 \newcommand{\prevv}{v3.3\emph{x} and v3.4\emph{x}\xspace}
 \newcommand{\prevvSlash}{\mbox{v3.3\emph{x}/v3.4\emph{x}}\xspace}
@@ -296,6 +299,7 @@ Elmain~Martinez}
 \clearpage
 \renewcommand{\currentnav}{BLANK}
 %
+\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
 \renewcommand{\leftmark}{Bibliography}
 \renewcommand{\rightmark}{Bibliography}
 \bibliography{shortnames,mybib}

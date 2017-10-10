@@ -157,10 +157,10 @@ latitudes, with much finer sampling in polar regions.
 \subsection*{Precision}
 
 Table~\ref{tab:H2OSummary} summarizes the estimated precision of the MLS
-\thisv H\cs2O data. For pressures $\geq100\,\text{hPa}$, the precisions
+\thisv H\cs2O data. For pressures $\geq100$\,hPa, the precisions
 given are the $1\sigma$ scatter about the mean of coincident comparison
 differences, which are larger than the formal retrieval precisions
-\citep{ReadEtal07}.  For pressures $\leq$83\,hPa the precisions are the
+\citep{ReadEtal07}.  For pressures $\leq83$\,hPa the precisions are the
 $1\sigma$ scatter of coincident ascending/descending MLS profile
 differences \citep{LambertEtal07}.  The individual Level~2 precisions
 are set to negative values or zero in situations when the retrieved
@@ -170,17 +170,14 @@ that the data are biased toward the a priori value.
 \subsection*{Accuracy}
 
 The values for accuracy are based primarily on two sources: comparisons
-with validated instruments and a systematic error analysis performed on
-the MLS measurement system \citep{ReadEtal07} and \citep{LambertEtal07}
-(performed for v2, but expected to be insignificantly different for
-H\cs2O in \thisv because the relevant aspects of the instrument's
-calibration and spectroscopic uncertainties and the retrieval set up
-have not changed. A systematic errors study will be performed on v4
-soon).  For pressures between 316\,--\,178\,hPa, Comparisons between
-AIRS v6 and MLS \thisv show $<$20\% agreement in the zonal mean (MLS
-usually drier for low concentrations and wetter for high concentrations)
-equatorward of 40\degsym\ with MLS having large dry biases at higher
-latitudes.
+with validated instruments and a full systematic error analysis
+performed on the MLS measurement system as described (for v2, but the
+same approach has been used for \thisv) in \citet{ReadEtal07} and
+\citet{LambertEtal07}. For pressures between 316\,--\,178\,hPa,
+comparisons between AIRS v6 and MLS \thisv show $<20$\% agreement in the
+zonal mean (MLS usually drier for low concentrations and wetter for high
+concentrations) equatorward of 40\degsym\ with MLS having large dry
+biases at higher latitudes.
 
 The values in Table~\ref{tab:H2OSummary} for pressures between 316 and
 178\,hPa are AIRS validated accuracies which are better than those
@@ -203,79 +200,10 @@ a 30\% spread is inconsistent with the MLS measurements
 \citep{ReadEtal07}.  For pressures less than 83\,hPa, the accuracy is
 based on the systematic error analysis.
 
-\subsection*{Data screening}
-\label{sec:H2OScreening}
-\begin{description}
-\item[Pressure range:] \screeningrule{316\,--\,0.002\,hPa.}
-  \standardrangestatement
-\standardprecisionrule
-\evenstatusrule
-\item[Clouds:] Ignore status bit 16 (high cloud) or bit 32 (low cloud) set
-indicating the presence of clouds. See artifacts for more details.
-\item[Quality field:] \screeningrule{Only profiles with a value of the
-    \texttt{Quality} \emph{greater} than 1.45 should be used in
-    scientific studies.}  This recommendation is for scientific studies
-  taking advantage of the global and long-temporal characteristics of
-  the data and aims to keep the best radiometrically fit data over the
-  full retrieval range. Most of the ``badness'' in quality tends to
-  affect the lowermost retrieval range of the product (particularly the
-  316-hPa level and also where clouds can degrade the fit). Low quality
-  values often do not affect the stratospheric and mesospheric part of
-  the product and much lower \texttt{Quality} values can be
-  tolerated. Figure~\ref{fig:datayields} shows the percentage decline in
-  good data yields as a function of quality selected for all 2005
-  data. There is a slight seasonal dependence in the function with
-  January--February having a 2\% higher yield at \texttt{Quality}$ =
-  1.45$.  The recommended \texttt{Quality} threshold value is where the
-  function starts to rapidly decline, indicating that well fit data is
-  getting rejected. The chosen value will eliminate \texttildelow5\% of
-  the profiles on a typical day. One may wish to ignore the
-  \texttt{Quality} field for ``process'' studies or situations where a
-  small number of profiles are being used, particularly if the
-  stratospheric region is being studied. The MLS team should be
-  consulted if one wishes to use a few select profiles having a
-  \texttt{Quality} less than that recommended to ensure that the product
-  is trustworthy.
+Please note the discussion of a potential drift in the MLS lower
+stratospheric water vapor measurements discussed below.
 
-\item[Convergence field:] \screeningrule{Only profiles with a value of
-    the \texttt{Convergence} \emph{less} than 2.0 should be used in
-    scientific studies.}
-\end{description}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/h2o_data_yields}
-\end{center}
-\caption{Percentage of data having a quality greater than that indicated
- on the x-axis for \thisv data processed for all of 2005.}
-\label{fig:datayields}
-\end{figure}
-
-\subsection*{Artifacts}
-
-There is a minimum concentration where MLS H\cs2O measurements become
-unreliable. This is given in Table~\ref{tab:H2OSummary} under the ``Min.
-H\cs2O'' column. The lowest allowable H\cs2O value is 0.1\,ppmv.
-Differences between the retrieved middle tropospheric H\cs2O constraint
-and the true atmospheric state can cause errors at 316 and 261\,hPa.
-The error manifests either as dry ($<$1\,ppmv) or moist spikes in an
-orbital time series. Such data are often accompanied with good quality
-and status.
-
-Clouds in the field of view degrade the data in unpredictable ways. Many
-instances of quality $<$1.45 occur in the presence of clouds where the
-cloud screening has not rejected the radiances. Cloud radiative
-scattering distorts the spectral lineshape causing poor fits and low
-quality values.  However, not all MLS signals are obviously
-affected. Coincident comparisons of MLS cloud flagged H\cs2O
-(\texttt{status} bit 16 or 32 set between 316\,--\,215\,hPa) with good
-quality AIRS show a small mean bias of 10\% but exhibit a 50\% increase
-in variability for the individual differences. Therefore users should be
-aware that, although the overall biases for measurements inside clouds
-are similar to that for clear sky, individual profiles will exhibit
-greater variability about the true atmospheric humidity.
-
-\subsection{A note about the water vapor averaging kernels}
+\subsection*{A note about the water vapor averaging kernels}
 
 The averaging kernels are most applicable to linear and moderately
 non-linear retrieval problems. The MLS H\cs2O retrievals are mostly
@@ -356,7 +284,6 @@ agreement with AIRS.
 \label{fig:airsmlsjja2005maps}
 \end{figure}
 
-
 Apart from the differences noted above, the MLS \thisv H\cs2O is similar
 to the MLS \prevvSlash and MLS v2.2 products, the latter described and
 validated in \citet{ReadEtal07} and \citet{LambertEtal07}. The H\cs2O
@@ -364,8 +291,100 @@ validation paper used AIRS v4 and MLS v2 humidities and both of them
 have become more dry in their subsequent versions. A revised validation
 paper for H\cs2O is not planned in the near future and users are
 encouraged to read \citet{ReadEtal07} and \citet{LambertEtal07} for more
-information. MLS \prevvSlash is a part of a satellite H\cs2O assessment
+information. MLS \thisv is a part of a satellite H\cs2O assessment
 report to be published later this year.
+
+\subsection*{Potential drift in lower stratospheric water vapor}
+\label{sec:H2ODrift}
+
+\citet{HurstEtal16} discuss how comparisons between MLS lower
+stratospheric water vapor observations and those from balloon-borne CFH
+and FPH\footnote{Cryogenic Frostpoint Hygrometer (CFH) and Frost Point
+  Hygrometer (FPH)} instruments from 2004 to 2015 reveal signs of a
+potential drift between the two sets of measurements, with MLS water
+vapor increasing at a rate of around
+\mbox{0.03\,--\,0.07\,ppmv\,yr\cp{-1}} relative to the sondes (roughly
+0.6 to 1.5\% per year), starting around 2009.  The possibility of such a
+drift in the MLS record is under investigation by the MLS team.
+Comparisons with recently-released ACE-FTS \citep{BernathEtal04} data
+show no signs of any such drift in MLS water vapor, nor do comparisons
+of MLS upper stratospheric water vapor with ground-based microwave
+measurements [\emph{Nedoluha}, private communication].
+
+\subsection*{Data screening}
+\label{sec:H2OScreening}
+\begin{description}
+\item[Pressure range:] \screeningrule{316\,--\,0.002\,hPa.}
+  \standardrangestatement
+\standardprecisionrule
+\evenstatusrule
+\item[Clouds:] Ignore status bit 16 (high cloud) or bit 32 (low cloud) set
+indicating the presence of clouds. See artifacts for more details.
+\item[Quality field:] \screeningrule{Only profiles with a value of the
+    \texttt{Quality} \emph{greater} than 1.45 should be used in
+    scientific studies.}  This recommendation is for scientific studies
+  taking advantage of the global and long-temporal characteristics of
+  the data and aims to keep the best radiometrically fit data over the
+  full retrieval range. Most of the ``badness'' in quality tends to
+  affect the lowermost retrieval range of the product (particularly the
+  316-hPa level and also where clouds can degrade the fit). Low quality
+  values often do not affect the stratospheric and mesospheric part of
+  the product and much lower \texttt{Quality} values can be
+  tolerated. Figure~\ref{fig:datayields} shows the percentage decline in
+  good data yields as a function of quality selected for all 2005
+  data. There is a slight seasonal dependence in the function with
+  January--February having a 2\% higher yield at \texttt{Quality}$ =
+  1.45$.  The recommended \texttt{Quality} threshold value is where the
+  function starts to rapidly decline, indicating that well fit data is
+  getting rejected. The chosen value will eliminate \texttildelow5\% of
+  the profiles on a typical day. One may wish to ignore the
+  \texttt{Quality} field for ``process'' studies or situations where a
+  small number of profiles are being used, particularly if the
+  stratospheric region is being studied. The MLS team should be
+  consulted if one wishes to use a few select profiles having a
+  \texttt{Quality} less than that recommended to ensure that the product
+  is trustworthy.
+
+\item[Convergence field:] \screeningrule{Only profiles with a value of
+    the \texttt{Convergence} \emph{less} than 2.0 should be used in
+    scientific studies.}
+\end{description}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figures/h2o_data_yields}
+\end{center}
+\caption{Percentage of data having a quality greater than that indicated
+ on the x-axis for \thisv data processed for all of 2005.}
+\label{fig:datayields}
+\end{figure}
+
+\subsection*{Artifacts}
+
+There is a minimum concentration where MLS H\cs2O measurements become
+unreliable. This is given in Table~\ref{tab:H2OSummary} under the ``Min.
+H\cs2O'' column. The lowest allowable H\cs2O value is 0.1\,ppmv.
+Differences between the retrieved middle tropospheric H\cs2O constraint
+and the true atmospheric state can cause errors at 316 and 261\,hPa.
+The error manifests either as dry ($<$1\,ppmv) or moist spikes in an
+orbital time series. Such data are often accompanied with good quality
+and status.
+
+Clouds in the field of view degrade the data in unpredictable ways. Many
+instances of quality $<$1.45 occur in the presence of clouds where the
+cloud screening has not rejected the radiances. Cloud radiative
+scattering distorts the spectral lineshape causing poor fits and low
+quality values.  However, not all MLS signals are obviously
+affected. Coincident comparisons of MLS cloud flagged H\cs2O
+(\texttt{status} bit 16 or 32 set between 316\,--\,215\,hPa) with good
+quality AIRS show a small mean bias of 10\% but exhibit a 50\% increase
+in variability for the individual differences. Therefore users should be
+aware that, although the overall biases for measurements inside clouds
+are similar to that for clear sky, individual profiles will exhibit
+greater variability about the true atmospheric humidity.
+
+Note the discussion of the potential drift in MLS lower stratospheric
+water vapor above.
 
 \subsection*{Desired improvements for future data version(s)}
 
@@ -390,22 +409,22 @@ concentration measurable by \thisv MLS.}} &
 \parbox{11ex}{\centering\bfseries Comments} \\
 \midrule
 $\le$0.001  & --- & --- & --- & --- & Unsuitable for scientific use \\
-0.002 & 10.3 $\times$ 350 &152 & 34 & 0.1 & \\
-0.004 & 10.8 $\times$ 585 & 81 & 16 & 0.1 & \\
-0.010 &  8.8 $\times$ 725 & 55 & 11 & 0.1 & \\
-0.021 &  8.0 $\times$ 745 & 41 &  9 & 0.1 & \\
-0.046 &  7.4 $\times$ 540 & 35 &  8 & 0.1 & \\
-0.10 &  5.8 $\times$ 745 & 24 &  8 & 0.1 & \\
-0.21 &  3.6 $\times$ 670 & 19 &  7 & 0.1 & \\
-0.46 &  3.3 $\times$ 505 & 12 &  6 & 0.1 & \\
-1.0 &  2.5 $\times$ 400 &  6 &  4 & 0.1 & \\
-2.2 &  3.5 $\times$ 385 &  4 &  5 & 0.1 & \\
-4.6 &  3.4 $\times$ 350 &  4 &  7 & 0.1 & \\
-10 &  2.8 $\times$ 290 &  6 &  9 & 0.1 & \\
-22 &  3.2 $\times$ 265 &  5 &  7 & 0.1 & \\
-46 &  3.2 $\times$ 230 &  5 &  4 & 0.1 & \\
-68 &  3.1 $\times$ 190 &  5 &  6 & 0.1 & \\
-83 &  3.1 $\times$ 190 &  7 &  7 & 0.1 & \\
+0.002 & 10.3 $\times$ 350 &152 & 40 & 0.1 & \\
+0.004 & 10.8 $\times$ 585 & 81 & 23 & 0.1 & \\
+0.010 &  8.8 $\times$ 725 & 55 & 17 & 0.1 & \\
+0.021 &  8.0 $\times$ 745 & 41 & 19 & 0.1 & \\
+0.046 &  7.4 $\times$ 540 & 35 & 17 & 0.1 & \\
+0.10 &  5.8 $\times$ 745 & 24  & 14 & 0.1 & \\
+0.21 &  3.6 $\times$ 670 & 19  & 11 & 0.1 & \\
+0.46 &  3.3 $\times$ 505 & 12  &  8 & 0.1 & \\
+1.0 &  2.5 $\times$ 400 &  6   &  7 & 0.1 & \\
+2.2 &  3.5 $\times$ 385 &  4   &  7 & 0.1 & \\
+4.6 &  3.4 $\times$ 350 &  4   &  5 & 0.1 & \\
+10 &  2.8 $\times$ 290 &  6    & 19 & 0.1 & \\
+22 &  3.2 $\times$ 265 &  5    &  5 & 0.1 & \\
+46 &  3.2 $\times$ 230 &  5    &  4 & 0.1 & \\
+68 &  3.1 $\times$ 190 &  5    &  9 & 0.1 & \\
+83 &  3.1 $\times$ 190 &  7    &  9 & 0.1 & \\
 100 & 3.0 $\times$ 198 & 15 &  8 & 0.1 & \\
 121 & 2.6 $\times$ 193 & 20 & 12 & 0.1 & \\
 147 & 2.3 $\times$ 188 & 20 & 15 & 0.1 & \\

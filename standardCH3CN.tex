@@ -6,18 +6,30 @@
 
 In \thisv, as in \prevv, the standard CH\cs3CN product is taken from
 radiances measured by the radiometer centered near 640\,GHz.  The
-CH\cs3CN retrieval is largely unchanged in \thisv. Neither the \prevv
-nor the \thisv CH\cs3CN data have been validated extensively at the time
-of writing; such validation is planned for the future.  However, the
-\thisv CH\cs3CN data are deemed to be scientifically useful over the
-range 46 to 1\,hPa, except in the winter polar regions, where they may
-exhibit large biases below 10\,hPa.  Data retrieved at higher pressures
-may be used with caution in certain circumstances.  A summary of the
-estimated precision and resolution (vertical and horizontal) of the
-\thisv CH\cs3CN measurements as a function of altitude is given in
+CH\cs3CN retrieval is largely unchanged in \thisv. Although the data
+have not been validated extensively, the \thisv CH\cs3CN retrievals are
+deemed to be scientifically useful over the range 46 to 1\,hPa, except
+in the winter polar regions, where they may exhibit large biases below
+10\,hPa.  Data retrieved at higher pressures may be used with caution in
+certain circumstances.  A summary of the estimated precision, resolution
+(vertical and horizontal), and systematic uncertainty of the \thisv
+CH\cs3CN measurements as a function of altitude is given in
 Table~\ref{tab:CH3CNSummary}.
 
 \subsection*{Differences between \prevvSlash and \thisv}
+
+\begin{figure}
+\begin{tabular}{@{}l@{}l@{}}
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel1}&
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel2}\\
+\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel3}&
+\raisebox{2cm}{\parbox[b]{0.5\textwidth}{%
+    \caption{Zonal averages of MLS CH\cs3CN profiles for a representative
+      month (July 2009), showing the MLS \thisv mixing ratios (upper left), the
+      \prevv mixing ratios (upper right), and their differences in pptv (\prevv
+      minus \thisv, lower left) as a function of pressure.\label{fig:zmcontourCH3CN}}}}%
+\end{tabular}
+\end{figure}
 
 Changes in CH\cs3CN between \thisv and \prevvSlash result from
 modifications to upstream retrievals of tangent pressure etc., and small
@@ -44,8 +56,7 @@ resolution of the measurements.  Thus, although CH\cs3CN measurements
 are reported at six pressure levels per decade change in pressure
 (spacing of \texttildelow2.7\,km), the vertical resolution of the
 \thisv CH\cs3CN data as determined from the full width at half maximum
-of the rows of the averaging kernel matrix shown in THIS IS NEW TEXT
-FROM NATHANIEL
+of the rows of the averaging kernel matrix shown in
 Figure~\ref{fig:AvkCH3CN} degrades from 4\,km at 147\,hPa to
 \texttildelow5\,--\,6\,km in the lower stratosphere, and then
 further worsens to \texttildelow7\,--\,8\,km in the upper
@@ -64,41 +75,29 @@ separation of MLS measurements, set by the Aura orbit, is
 10\degsym--\,20\degsym\ over low and middle latitudes, with much finer
 sampling in the polar regions.
 
-\begin{figure}
-\begin{tabular}{@{}l@{}l@{}}
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel1}&
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel2}\\
-\includegraphics[angle=90,width=0.5\linewidth]{figures/InspectZMContour_CH3CN--v4-1_CH3CN--v3-3_2009m07_LatPress-All-noScreen-panel3}&
-\raisebox{2cm}{\parbox[b]{0.5\textwidth}{%
-    \caption{Zonal averages of MLS CH\cs3CN profiles for a representative
-      month (July 2009), showing the MLS \thisv mixing ratios (upper left), the
-      \prevv mixing ratios (upper right), and their differences in pptv (\prevv
-      minus \thisv, lower left) as a function of pressure.\label{fig:zmcontourCH3CN}}}}%
-\end{tabular}
-\end{figure}
-
 \subsection*{Precision}
 
 \begin{figure}
 \centering\includegraphics[width=10.0cm]{figures/MLSascdsc_CH3CN}
 \caption{(left) Ensemble mean profiles for ascending (light red) and
   descending (dark red) orbit matching pairs of MLS \thisv CH\cs3CN
-  profiles averaged over a representative year of data (2009).
-  Symbols indicate MLS retrieval pressure levels.  (right) Mean
-  differences (ascending$-$descending) in pptv (green solid line).
-  Also shown are the standard deviations about the mean differences
-  (light blue solid line) and the root sum square (RSS) of the
-  precisions calculated by the retrieval algorithm for the two sets of
-  profiles (light blue dashed line). The observed scatter about the
-  mean differences and the reported precision values have been scaled
-  by 1/$\sqrt{2}$ (to convert from standard deviations of differences
-  into standard deviations of individual data points); hence the light
-  blue solid line represents the statistical repeatability of the MLS
-  measurements, and the light blue dashed line represents the expected
-  \mbox{$1\sigma$} precision for a single profile.  The thin black
-  lines mark zero in each panel.  The number of crossing pairs of
-  measurements being compared at each pressure level is noted in the
-  space between the panels.\label{fig:mlsascdscCH3CN}}
+  profiles averaged over several months of a representative year of
+  data (2005).  Symbols indicate MLS retrieval pressure levels.
+  (right) Mean differences (ascending$-$descending) in pptv (green
+  solid line).  Also shown are the standard deviations about the mean
+  differences (light blue solid line) and the root sum square (RSS) of
+  the precisions calculated by the retrieval algorithm for the two
+  sets of profiles (light blue dashed line). The observed scatter
+  about the mean differences and the reported precision values have
+  been scaled by 1/$\sqrt{2}$ (to convert from standard deviations of
+  differences into standard deviations of individual data points);
+  hence the light blue solid line represents the statistical
+  repeatability of the MLS measurements, and the light blue dashed
+  line represents the expected \mbox{$1\sigma$} precision for a single
+  profile.  The thin black lines mark zero in each panel.  The number
+  of crossing pairs of measurements being compared at each pressure
+  level is noted in the space between the
+  panels.\label{fig:mlsascdscCH3CN}}
 \end{figure}
 
 The precision of the MLS CH\cs3CN data is estimated empirically by
@@ -163,23 +162,32 @@ should only be used in consultation with the MLS science team.
 
 \subsection*{Accuracy}
 
-The impact of various sources of systematic uncertainty has not yet
-been quantified for CH\cs3CN as it has for most other MLS products.
-This work is planned as part of a dedicated validation exercise for
-the \thisv CH\cs3CN data.  However, preliminary comparisons with
-results from a two-dimensional chemistry transport model and CH\cs3CN
-retrievals from the MLS instrument on the Upper Atmosphere Research
-Satellite (UARS) \citep{LiveseyEtal01} indicate that the \thisv Aura
-MLS CH\cs3CN mixing ratios are biased substantially high in the lower
-stratosphere (not shown).  Furthermore, the zonal-mean morphology of
-the Aura MLS CH\cs3CN at the lowest levels does not agree well with
-that either observed by UARS MLS or predicted by the model.
+The effects of various sources of systematic uncertainty (e.g.,
+instrumental issues, spectroscopic uncertainty, and approximations in
+the retrieval formulation and implementation) on the MLS \thisv
+CH\cs3CN measurements have been quantified through a comprehensive set
+of retrievals of synthetic radiances.  The overall systematic
+uncertainty, or accuracy, is calculated by combining (RSS) the
+contributions from both the expected biases and the additional scatter
+each source of uncertainty may introduce into the data. In aggregate,
+the factors considered in these simulations are estimated to give rise
+to total systematic uncertainty of approximately 100--200\% in the MLS
+\thisv CH\cs3CN data (see Table~\ref{tab:CH3CNSummary}).
 
 \subsection*{Review of comparisons with other datasets}
 
-Detailed comparisons with correlative data sets have not yet been
-undertaken.  This work is planned as part of a dedicated validation
-exercise for the \thisv CH\cs3CN data.
+Detailed quantification of differences from correlative data sets has
+not been performed, but preliminary comparisons suggest that the MLS
+CH\cs3CN measurements are biased substantially high in the UTLS
+relative to airborne \citep{SinghEtal03}, balloon-borne
+\citep{KleinbohlEtal05}, and \mbox{ACE-FTS} satellite
+\citep{HarrisonAndBernath13} CH\cs3CN measurements, as do results from
+a two-dimensional chemistry transport model and (noncoincident)
+CH\cs3CN retrievals from the predecessor MLS instrument on the Upper
+Atmosphere Research Satellite (UARS) \citep{LiveseyEtal01} (not
+shown).  Furthermore, the zonal-mean morphology of the Aura MLS
+CH\cs3CN at the lowest levels does not agree well with that either
+observed by UARS MLS or predicted by the model.
 
 \subsection*{Data screening}
 \label{sec:CH3CNScreening}
@@ -249,26 +257,24 @@ exercise for the \thisv CH\cs3CN data.
 \footnote{Vertical and Horizontal resolution in along-track direction.} \\ / km}} &
 \parbox[m]{18mm}{\bfseries\centering{Precision%
     \footnote{Precision on individual profiles.} \\/ pptv}} &
-\parbox[m]{20mm}{\bfseries\centering{Accuracy\\ / pptv}} &
+\parbox[m]{20mm}{\bfseries\centering{Systematic\\ Uncertainty%
+\footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
+ of the probable magnitude.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
 0.68\,--\,0.001 & ---                          & ---      & --- & Unsuitable for scientific use\\
 %
-1.0           & 6 $\times$ 800                 & $\pm$100 & TBD & Valid
-except in winter polar regions \\
+1.0           & 6 $\times$ 800                 & $\pm$100 & $\pm$200 & Consult with MLS science team\\
 %
-10\,--\,1.5   & 7\,--\,8 $\times$ 400\,--\,700 & $\pm$50  & TBD & Valid
-except in winter polar regions \\
+10\,--\,1.5   & 7\,--\,8 $\times$ 400\,--\,700 & $\pm$50  & $\pm$100\,--\,200 & Consult with MLS science team\\
 %
-46\,--\,15    & 5\,--\,6 $\times$ 400\,--\,700 & $\pm$50  & TBD & Valid
-except in winter polar regions \\
+46\,--\,15    & 5\,--\,6.5 $\times$ 400\,--\,500 & $\pm$50  & $\pm$100\,--\,200 & Consult with MLS science team\\
 %
-100\,--\,68   & 5\,--\,6 $\times$ 400\,--\,700 & $\pm$50  & TBD & Consult with
-MLS science team \\
+100\,--\,68   & 5.5 $\times$ 550\,--\,700 & $\pm$50  & $\pm$100 & Consult with MLS science team\\
 %
-147           & 4 $\times$ 750                 & $\pm$100 & TBD & Consult with MLS science team \\
+147           & 4 $\times$ 750                 & $\pm$100 & $\pm$200 & Consult with MLS science team\\
 %
 1000\,--\,215 & ---                            & ---      & --- & Not retrieved\\
 %

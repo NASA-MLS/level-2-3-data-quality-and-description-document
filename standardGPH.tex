@@ -30,12 +30,12 @@ where $M$ is the molar mass of air and $R$ is the gas constant.
 Thus a retrieval of a temperature profile on fixed pressure surfaces
 also determines GPH differences between those surfaces, and so
 determines the GPH profile to within an additive constant.  Absolute
-pointing cannot be inferred from radiometric information and must be
-obtained, for each profile, from the spacecraft orbit/attitude system
-and the instrument scan model.  By convention, this additional degree of
-freedom is taken to be the height of the 100-hPa reference level, but
-this choice is arbitrary, as the reference is an additive offset to the
-entire profile.
+pointing cannot be inferred from radiometric
+information and must be obtained, for each profile, from the
+spacecraft orbit/attitude system and the instrument scan model.  By
+convention, this additional degree of freedom is taken to be the height
+of the 100-hPa reference level, but this choice is arbitrary, as the
+reference is an additive offset to the entire profile.
 
 Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
 modeled accuracy and observed biases.  The following sections provide
@@ -64,7 +64,8 @@ GPH before they are compared to \thisv GPH.  These differences, if not
 corrected, will result in an erroneous additive contribution to
 geostrophic winds calculated from v03.x and v02.x GPH at all levels.
 \begin{figure}
-\centering\includegraphics[clip=true,trim=2cm 0cm 0cm 4cm, width=0.7\linewidth]{figures/EGM96-WGS84}
+  \centering\includegraphics[clip=true,trim=2cm 0cm 0cm 4cm,
+  width=0.7\linewidth]{figures/EGM96-WGS84}
 \caption{The height of the EGM96 geoid from the WGS84 ellipsoid.  These
   values should be subtracted from MLS v03.x and earlier GPH values to give
   geopotential heights referenced to the Earth's mean sea level
@@ -77,12 +78,12 @@ are found to be somewhat higher at high latitudes than are those of the
 v03.3x product, with typical 100-hPa mean differences of 50\,m in the
 high northern latitudes, 30\,m in high southern latitudes and close to
 zero bias in the tropics.  Latitudinally and seasonally dependent
-differences between \thisv and ellipsoid-referenced \prevvSlash 100-hPa
-GPH are shown in Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years
-2005 and 2009.  These differences are very similar for ascending and
-descending parts of the orbits, and the two are averaged in this figure.
-The details of these differences vary between years, but the morphology
-is similar.
+differences between \thisv and ellipsoid-referenced \prevvSlash 100-hPa GPH are shown in
+Figure~\ref{fig:v4-v3_100hPaGPH_2005} for the years 2005 and 2009.
+These differences are very similar for ascending and descending parts of
+the orbits, and the two are averaged in this figure.  The details of
+these differences vary between years, but the morphology is
+similar.
 \begin{figure}
 \centering\includegraphics[width=0.7\linewidth]{figures/v4-v3_100hPaGPH_2005-2009_bylat}
 \caption{Differences between \thisv and ellipsoid-referenced v03.30 100-hPa GPH for 2005 and
@@ -134,10 +135,8 @@ annually repeating \prevv residual shown in
 Figure~\ref{fig:GPHv3_lat_annual}, but 2009 is $\sim$80\,m lower than
 2005 due to a decreasing trend in MLS \thisv GPH.
 
-As of the drafting of this document, the entire MLS data record has not
-been reprocessed with \thisv algorithms, but 11 years of Januarys have
-been completed and the monthly-averaged differences between MLS \thisv
-100-hPa GPH and GEOS-5.9 100-hPa GPH is shown in
+The monthly-averaged differences between MLS \thisv 100-hPa GPH and
+GEOS-5.9 100-hPa GPH for 11 years of Januarys are shown in
 Figure~\ref{fig:GPHv0420_trend_January}.  There is a clear downward
 trend of $\sim$100\,m in the first 4 years of the mission, 2005--2008,
 with a further $\sim$15\,m decrease in 2009--2014.  This trend is in the
@@ -181,14 +180,19 @@ repeated in Table~\ref{tab:GPHSummary}.
 
 MLS \thisv GPH precision is summarized in Table~\ref{tab:GPHSummary}.
 Precision is the random component of measurements that will average-down
-if a measurement is repeated.  The retrieval software returns an
+if a measurement is repeated.  The retrieval algorithms produce an
 estimate of GPH precision only for the 100\,hPa reference level, as this
-is the only element included in the MLS ``state vector.''  GPH precision
-at other standard-product profile levels (summarized in column~2 of
-Table~\ref{tab:GPHSummary}) is calculated from the GPH precision at the
-reference level and the profile of temperature precisions.  Calculated
-precision values are \texttildelow35\,m from 261\,hPa to 100\,hPa,
-\texttildelow45\,m at 1\,hPa, \texttildelow110\,m at 0.001\,hPa.
+is the only element included in the MLS ``state vector.''  Precisions
+reported for this level in the L2GP files are typically less than 8\,m,
+are believed to be optimistically small, and may underestimate the
+impact of scatter in the absolute pointing information.  A precision of
+20\,m is reported for 100\,hPa in Table~\ref{tab:GPHSummary}, column~2.
+GPH precisions at other standard-product profile levels (summarized in
+column~2 of Table~\ref{tab:GPHSummary}) are calculated from the GPH
+precision at the reference level and the profile of temperature
+precisions, but values in the table are inflated somewhat from those in
+the L2GP files in the troposphere and stratosphere. Estimated precisions
+remain at 20\,--\,25\,m up to 1\,hPa and degrade to 110\,m at 0.01\,hPa.
 Off-diagonal elements of the temperature/GPH error covariance matrix are
 neglected in this GPH-precision-profile calculation, but resulting
 errors are believed to be small (\texttildelow5\,m near 100\,hPa.)
@@ -298,6 +302,7 @@ global mean GPH, particularly in the first four years of the mission is
 an area of active research.
   
 \begin{table}
+\caption{Summary of MLS GPH product.}
 \label{tab:GPHSummary}
 \begin{minipage}{\linewidth}
 \centering\begin{tabular}{ccccl}
@@ -305,17 +310,17 @@ an area of active research.
 \textbf{Region} & 
 \parbox[m]{22mm}{\centering\textbf{Resolution\\ \mbox{Vert. $\times$ Horiz.} / km}} &
 \parbox[m]{18mm}{\centering\textbf{Precision\footnote{Precision on individual profiles} \\/ meters}} &
-\parbox[m]{20mm}{\centering\textbf{Observed bias\\uncertainty\\ / m}} &
+\parbox[m]{20mm}{\centering\textbf{Observed\\accuracy\\ / m}} &
 \textbf{Comments} \\
 \midrule
 $<$0.001\,hPa & --- & --- & --- & Unsuitable for scientific use \\
-0.001\,hPa          & 10--13 $\times$ 220  & $\pm$110 & $-$450 & \\
-0.01\,hPa           & 8--12 $\times$ 185  & $\pm$85   & $-$100 & \\
-0.1\,hPa            & 6 $\times$ 165   & $\pm$60   &  0  & \\
-1\,hPa              & 7 $\times$ 165   & $\pm$45   & 100 & \\
-10\,hPa             & 4.3 $\times$ 165 & $\pm$35   & 100 & \\
-100\,hPa            & 5.2 $\times$ 165 & $\pm$30   & 150 & \\
-261\,hPa            & 5.3 $\times$ 170 & $\pm$35   & 150 & \\
+0.001\,hPa          & 10--13 $\times$ 220  & $\pm$160 & $-$450 & \\
+0.01\,hPa           & 8--12 $\times$ 185  & $\pm$110   & $-$100 & \\
+0.1\,hPa            & 6 $\times$ 165   & $\pm$45   &  0  & \\
+1\,hPa              & 7 $\times$ 165   & $\pm$25   & 100 & \\
+10\,hPa             & 4.3 $\times$ 165 & $\pm$20   & 100 & \\
+100\,hPa            & 5.2 $\times$ 165 & $\pm$20   & 150 & \\
+261\,hPa            & 5.3 $\times$ 170 & $\pm$20   & 150 & \\
 1000\,--\,316\,hPa & ---      & ---             & ---     & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}

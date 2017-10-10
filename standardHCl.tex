@@ -1,4 +1,4 @@
-<\speciestitle{Hydrogen Chloride}{HCl}{HCl}{%
+\speciestitle{Hydrogen Chloride}{HCl}{HCl}{%
 \item[Useful range:] 100\,--\,0.32\,hPa 
 \item[Contact:] Lucien Froidevaux,
   \email{Lucien.Froidevaux@jpl.nasa.gov}}
@@ -34,7 +34,9 @@ stratospheric trends from the (uninterrupted from 2004 to present) band
 14 retrievals are not reliable enough and are too small, compared to
 band 13 data and expectations, as well as versus ACE-FTS HCl data.
 Scientific usage of the MLS standard HCl (band 14) dataset should
-therefore be restricted to the lower stratosphere.
+therefore be restricted to the lower stratosphere; in this region,
+studies of tendencies and longer-term trends are justified (e.g., see
+the HCl comparisons discussed by \citet{MahieuEtal14}).
 
 \begin{figure}
   \centering\includegraphics[angle=90,width=0.6\linewidth]{figures/HCl_2bands_0-46hpa_trends_2004_2010}
@@ -66,10 +68,7 @@ Analyses describing detailed validation of the MLS (v2.2) product and
 comparisons with other data sets are described in
 \citet{FroidevauxEtal08HCl}.  Based on the fairly small overall changes
 in v3.3/v3.4 and v4.2 HCl data versus v2.2, the conclusions of the
-latter reference should remain essentially unchanged. We also do not
-expect the systematic uncertainty estimates in
-Table~\ref{tab:HClSummary} to change significantly; however, an MLS team
-review of those estimates is pending.
+latter reference should remain essentially unchanged.
 
 \subsection*{Changes from  v3.3/v3.4}
 
@@ -156,15 +155,18 @@ poorer measurement sensitivity and reliability).
 
 The accuracy estimates in the Table came from a quantification of the
 combined effects of possible systematic errors in MLS calibration,
-spectroscopy, etc.\ on the HCl retrievals.  These values are intended to
+spectroscopy, etc.\ on the HCl retrievals; there are several error
+sources (mostly from radiometric calibration components) that contribute
+significantly to the total error.  These values are intended to
 represent $2\sigma$ estimates of accuracy.  For more details, see the
 MLS validation paper by \citet{FroidevauxEtal08HCl}.  For \thisv (as for
 \prevv), given the trend issues affecting the (band 14) standard HCl
 product in the upper stratosphere and lower mesosphere, we have
-recommended an accuracy estimate of 10\% in this region (or about
-0.3\,ppbv).  Given the agreement between the two bands' retrievals in
-the lower stratosphere, we maintain the formal accuracy estimates in
-this region (see Table~\ref{tab:HClSummary}).
+recommended an accuracy estimate of no better than 10\% in this region
+(or about 0.3\,ppbv).  For the lower stratosphere, given the agreement
+between the two bands' retrievals as well as some trend studies (for the
+standard product), we use the more formal accuracy estimates (see
+Table~\ref{tab:HClSummary}).
 
 \subsection*{Data screening}
 \label{sec:HClScreening}
@@ -197,6 +199,20 @@ this region (see Table~\ref{tab:HClSummary}).
   of profiles (typically one or more groups of ten profiles, retrieved
   as a ``chunk'') have this \texttt{Convergence} field set to larger
   values, and should be discarded.
+
+\item[Clouds:] Thick clouds can add significant artifacts (mainly in the
+  tropics, statistically), with total systematic errors potentially as
+  large as 0.5 ppbv at 100 hPa and even larger at 147 hPa. Studies in
+  this region could benefit from additional screening that correlates
+  any outliers in the data with the occurrence of thick clouds (using
+  some subset of the profiles with set cloud status flags, namely status
+  bits 16 and 32, or using the MLS retrievals of ice water
+  content). However, the large positive HCl bias at 147 hPa for low
+  latitudes likely arises in part from unknown or improperly modeled
+  systematic error sources, and not just from clouds. At other
+  pressures, the potential impact on HCl from clouds is small or
+  negligible.
+
 \end{description}
 
 \subsection*{Review of comparisons with other datasets}
@@ -208,17 +224,17 @@ about 10\,--\,15\%) than the HCl values from HALOE, especially at upper
 stratospheric altitudes; this feature has not changed, overall, with the
 new data version(s) from both MLS and ACE-FTS.  MLS HCl at 147\,hPa is
 biased high versus WB-57 aircraft in-situ (CIMS) measurements (low to
-mid-latitudes); while this is still true for v4.2 data, MLS data at this
+mid-latitudes); while this is still true for v4 data, MLS data at this
 pressure level are potentially useful and accurate enough at high
 latitudes.
 
 \subsection*{Artifacts}
 \begin{itemize} 
-\item We do not recommend the use of the MLS HCl standard product (from
-  band 14) in the upper stratosphere and lower mesosphere, in terms of
-  detailed trend studies, for reasons mentioned above.
+\item We do not recommend the use of the MLS HCl standard product in 
+  the upper stratosphere and lower mesosphere, especially in 
+  terms of trend studies, for reasons mentioned above.
 \item The HCl values at 147\,hPa are biased high and generally not
-  usable (except possibly at high latitudes).  Please consult the MLS
+  usable (except possibly at high latitudes).  Please consult with the MLS
   team for further information.
 \item Users should screen out the non-converged and poorest quality HCl
   profiles, as such profiles (typically less than 0.1\% of the data)
@@ -256,10 +272,10 @@ latitudes.
 2               & 0.4 &   15            &   3 $\times$ 250 & 0.3   &  10     & Unsuitable for trend studies \\
 5               & 0.3 &   10            &   3 $\times$ 200 & 0.3   &  10     & Unsuitable for trend studies \\
 10              & 0.2 &   10            &   3 $\times$ 200 & 0.2   &  10     & \\
-20              & 0.2 &   15            &   3 $\times$ 200 & 0.1   &  10     & \\
-46              & 0.2 & 10 to $>$ 40    &   3 $\times$ 250 & 0.2   &  10 to $>$ 40  & \\
-68              & 0.2 & 15 to $>$ 80    &   3 $\times$ 300 & 0.2   &  10 to $>$ 80   &  \\
-100             & 0.3 & 30 to $>$ 100   &   3 $\times$ 350 & 0.15  &  10 to $>$ 100  &  \\
+20              & 0.2 &   15            &   3 $\times$ 200 & 0.15  &  10     & \\
+46              & 0.2 & 10 to $>$ 40    &   3 $\times$ 250 & 0.2   &  20     & \\
+68              & 0.2 & 15 to $>$ 80    &   3 $\times$ 300 & 0.2   &  25     & \\
+100             & 0.3 & 30 to $>$ 100   &   3 $\times$ 350 & 0.2  &   40     & \\
 147             & 0.4 & 50 to $>$ 100   &   3 $\times$ 400 & 0.3  &   50 to $>$ 100  & High bias at low lats. (use with caution elsewhere) \\  
 1000\,--\,215   & --- & ---             & ---              & ---   & ---     & Unsuitable for scientific use \\  
 \bottomrule

@@ -77,22 +77,24 @@ typical precision of a 10\degsym\ weekly zonal means for this product.
 The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a
 formal quantification of the combined effects of possible systematic
 errors in MLS calibration, spectroscopy, etc.\ on the HOCl retrievals
-\citep{ReadEtal07}.  These values are intended to represent $2\sigma$
-estimates of accuracy.  The largest contributors to possible errors for
-HOCl are contaminant species, gain compression, and sideband ratio
-uncertainties.  The Table gives a range of error estimates (for low and
-high pressures).  The average changes for upper stratospheric HOCl
-between v3.3 and v4.2 are well within the quoted accuracy estimates
-(which may be somewhat conservative).
+\citep{ReadEtal07}.  These (updated) values are intended to represent
+$2\sigma$ estimates of accuracy.  The largest contributors to possible
+errors for HOCl are contaminant species, gain compression, and sideband
+ratio uncertainties.  The Table gives a range of error estimates (for
+the range of pressures).  The average changes for upper stratospheric
+HOCl between v3.3 and v4.2 are well within the quoted accuracy estimates
+(which may be somewhat conservative).  The HOCl signal becomes too small
+compared to the systematic uncertainties to allow for reliable
+retrievals at pressures larger than 10 hPa.
 
 \subsection*{Data screening}
 \label{sec:HOClScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{10\,--\,2.2\,hPa}
   \standardrangestatement\ Artifacts (negative averages) for pressures
-  larger than about 10\,hPa currently make this product unsuitable for
-  use in the lower stratosphere. Regarding the topmost altitude range,
-  the sensitivity to \emph{a priori} increases rapidly at pressures of
+  larger than about 10\,hPa make this product unsuitable for use in the
+  lower stratosphere. Regarding the topmost altitude range, the
+  sensitivity to \emph{a priori} increases rapidly at pressures of
   1\,hPa or less; we continue to recommend the use of (average) HOCl
   values only up to 2.2\, hPa.  \standardprecisionrule \evenstatusrule
 
@@ -141,9 +143,9 @@ photochemical model \citep{KhosraviEtal13}.
   useful HOCl (or ClO) data for these time periods.  The v4.2 (as for
   the v3.3/v3.4) software correctly flags these incidents with poor
   (odd) \texttt{Status} values (which should be screened out).
-\item There are still significant artifacts in the mean values (large
-  negative values) for HOCl in the lower stratosphere, where the use of
-  this product is not recommended.
+\item There are significant artifacts in the mean values (large negative
+  values) for HOCl in the lower stratosphere, where the use of this
+  product is not recommended.
 \item Users should screen out the non-converged and poorest quality HOCl
   profiles, as such profiles (typically a very small number per day)
   tend to behave unlike the majority of the other MLS retrievals.  See
@@ -167,7 +169,7 @@ uncertainty characterization tests}\\}}}
 \textbf{hPa} & \textbf{pptv} & \textbf{\%} & \textbf{km}& \textbf{pptv} & \textbf{\%} & \\
 \midrule
 1.5 or less & --- & ---   & ---  & --- & ---  & Unsuitable for scientific use \\ 
-2.2 to 10   &  10 & 10    &   6  & 30\,--\,80 & \texttildelow30\,--\,100 \\ 
+2.2 to 10   &  10 & 10    &   6  & 40\,--\,80 & \texttildelow150 & Some averaging required \\ 
 15 or more  & --- & ---   & ---  & --- &  --- & Unsuitable for scientific use \\    
 \bottomrule
 \end{tabular}

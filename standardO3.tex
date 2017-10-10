@@ -42,11 +42,10 @@ In addition to the swath \texttt{O3}, which is the O\cs3 profile on 55
 pressure surfaces, the \texttt{L2GP-O3} files contain a swath,
 \texttt{O3~column}, which is the integrated stratospheric column down to
 the thermal tropopause (WMO definition) calculated from MLS temperature.
-The MLS temperature profiles from which the WMO
-tropopause is determined are not screened per the instructions of
-section~\ref{sec:StandardTemperature} and users may wish to
-reject columns for which standard screening rejects the corresponding
-temperature profile.
+The MLS temperature profiles from which the WMO tropopause is determined 
+are not screened per the instructions of section~\ref{sec:StandardTemperature} 
+and users may wish to reject columns for which standard screening rejects 
+the corresponding temperature profile.
 
 \subsection*{Comparison of \thisv with past data versions}  
 
@@ -217,7 +216,7 @@ mesosphere and lower thermosphere.  Generally, however, we recommend
 that scientific studies be restricted to pressures of 0.02\,hPa or
 larger.
  
-\paragraph*{Column values} The estimated precisions for the v4.2 MLS 
+\paragraph*{Column values} The estimated precisions for the \thisv MLS 
 column ozone abundances down to pressures of 100 to 215\,hPa are 2\% or less.  
 The typical empirical precision in the columns based on (1-$\sigma$)
 variability in the tropics is 2 to 3\%.  
@@ -226,19 +225,14 @@ variability in the tropics is 2 to 3\%.
  
 The accuracy estimates shown in Table~\ref{tab:O3Summary} are from an
 analysis which propagated estimated systematic errors in MLS
-calibration, spectroscopy, etc., through the v2.2 measurement system.
-Results using the v4.2 algorithms are not expected to differ
-significantly.  The values shown here are intended to represent
-2$\sigma$ estimates of accuracy.  Comparison of MLS O\cs3 with
-well-established data sets shows no evidence of significant biases.
-For more
-details, see the MLS validation papers by \citet{FroidevauxEtal08O3},
+calibration, spectroscopy, etc., through the (\thisv) measurement system.  The 
+values shown here are intended to represent 2$\sigma$ estimates of accuracy.  Comparison of MLS O\cs3 with
+well-established data sets shows no evidence of significant biases overall, although 
+the oscillations in the UTLS at low latitudes lead to some systematic effects which can reach 20-40\%, depending on the pressure level. 
+For more details, see the MLS validation papers by \citet{FroidevauxEtal08O3},
 \citet{JiangYEtal07}, and \citet{LiveseyEtal08}, as well as references
 therein; some more recent references relevant to MLS ozone are available
-on the MLS website under ``Publications''.  Future validation studies
-using v4.2 data will focus on longer-term changes (for which good
-stability is being observed versus other reliable measurements) and on
-the UTLS region.
+on the MLS website under ``Publications''.  In particular, see the comprehensive work by \citet{HubertEtal16} (more related information further below). In recent years, validation studies have focused more on longer-term changes or drifts (with good stability being observed versus other reliable measurements) and on the UTLS region.
  
 \paragraph*{Column values}
 Sensitivity tests using systematic changes in various parameters that
@@ -300,23 +294,16 @@ the MLS ozone product.  Intercomparisons of a large variety of ozone
 measurements by satellite instruments have been documented by
 \citet{TegtmeierEtal13}, as part of the analyses produced by the SPARC
 Data Initiative; the Aura MLS ozone values compare quite favorably to
-the multi-instrument mean values as well as to SAGE II ozone. Future
-validation studies will focus more on longer-term changes and on the
-UTLS region, especially in the tropics. The temporal stability of the
-Aura MLS ozone dataset has been shown to be very good, in comparison to
-lidar datasets \citet{NairEtal12}, as well as in other more recent
-work. Aura MLS data, in combination with older datasets, provides a
-critical tool for study of global O\cs3 in a changing climate into
-the expected period O\cs3 recovery as anthropogenic ozone depleting
-substances decline in concentration. 
+the multi-instrument mean values as well as to SAGE II ozone.  The temporal stability of the Aura MLS ozone dataset has been shown to be very good, in comparison to lidar datasets (\citet{NairEtal12}). The more recent
+work by \citet{HubertEtal16} includes both the lidar network and the ozonesonde network as references for a comprehensive satellite data intercomparison study. The latter authors show that average biases between MLS and latitudinally-binned data from lidar and ozonesonde sites across the globe is typically within 5\% or better, with poorer behavior (known vertical oscillations) at low latitudes in the UTLS.  In terms of drifts, the Aura MLS ozone dataset is shown (in the above work) to be very stable, a term also applied only to the SAGE II dataset; MLS exhibits drifts with respect to the ground-based networks that fall within 1.5 to 2\% per decade, with zero drift encompassed by the error bars (i.e. non-significant drifts), at least in the middle stratosphere. The Aura MLS data, in combination with older datasets, provides a critical tool for the study of global O\cs3 in a changing climate and into the expected O\cs3 recovery period, as anthropogenic ozone depleting substances decline in concentration. 
 
 \subsection*{Artifacts} 
 
 \begin{description}  
 \item[Oscillations in tropical UTLS ozone:] There has been some improvement 
   in the \thisv profiles (especially at low latitudes), in terms of reducing 
-  (but not eliminating) vertical oscillations. Further characterization 
-  of MLS tropical UT data, in particular, is warranted
+  (but not eliminating) systematic vertical oscillations. Further characterization 
+  of MLS tropical UTLS data, in particular, is warranted
   in order to more fully understand any data limitations in this region.
 
 % \item[Columns:] Users of column ozone data above the tropopause from the
@@ -340,40 +327,45 @@ substances decline in concentration.
 \centering\begin{tabular}{ccccccl}
 \toprule 
 \parbox[m]{15mm}{\centering\textbf{Pressure / hPa}} & 
-\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} & 
-\multicolumn{2}{c}{\parbox[m]{20mm}{\centering\textbf{Precision\footnote{Precision  
-        on individual profiles}\\ppmv\hfill\%}}} & 
+\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}}
+&
+\multicolumn{2}{c}{\parbox[m]{20mm}{\centering\textbf{Precision\footnote{Precision
+        on individual profiles}\\ppmv\hfill\%}}} &
 \multicolumn{2}{c}{\parbox[m]{20mm}{\centering\textbf{Accuracy\footnote{%
-        As estimated from systematic uncertainty characterization tests.
-        Stratospheric values are expressed in ppmv with a typical
-        \emph{equivalent} percentage value quoted.  215\,--\,100\,hPa errors are
-        the sum of the ppmv \emph{and percentage} scaling uncertainties quoted.
-        Accuracy values, especially for pressures from 100 to 316\,hPa will be
-        re-evaluated, but the estimates for v2.2 data are currently used in this
-        Table.}% 
-      \\ppmv\hfill\%}}}  
-& \textbf{Comments} \\ 
-\midrule 
-$\leq$ 0.01 & ---            & ---  & ---    & ---  & ---  & Unsuitable for scientific use \\   
-0.02 & 5.5 $\times$ 200 & 1.2  & 300    & 0.1  &  35  & \\ 
-0.05 & 5.5 $\times$ 200 & 0.8  & 150    & 0.2  &  30  & \\ 
-0.1  & 4 $\times$ 400 & 0.5  &  60    & 0.2  &  20  & \\ 
-0.2  & 3 $\times$ 450 & 0.4  &  30    & 0.1  &   7  & \\ 
-0.5  & 3.5 $\times$ 550 & 0.3  &  20    & 0.1  &   5  & \\ 
-1    & 3 $\times$ 500 & 0.2  &  7       & 0.2  &   7  & \\ 
-2    & 3.5 $\times$ 450 & 0.15  &   3   & 0.2  &   5  & \\ 
-5    & 3 $\times$ 450 & 0.15  &   2     & 0.3  &   5  & \\ 
-10   & 3 $\times$ 500 & 0.1  &   2      & 0.3  &   5  & \\ 
-22   & 2.5 $\times$ 400 & 0.1  &   2    & 0.2  &   5  & \\ 
-46   & 2.5 $\times$ 350 & 0.06  &   3   & 0.2  &   8  & \\ 
-68   & 2.5 $\times$ 350 & 0.04 & 3--10  & 0.05 & 3--10 & \\ 
-100  & 3 $\times$ 300 & 0.03 & 15--25 & \multicolumn{2}{c}{$\left[0.05 +5\%\right]$} \\ 
-150  & 3 $\times$ 400 & 0.02 & 5--70 & \multicolumn{2}{c}{$\left[0.02 +5\%\right]$} \\ 
-215  & 3.5 $\times$ 350   & 0.02 & 5--100 & \multicolumn{2}{c}{$\left[0.02 +20\%\right]$}  \\ 
-261  & 3.5 $\times$ 400   & 0.03 & 5--100 & ---  & ---   &  Requires further evaluation  \\ 
-316  & 2.5 $\times$ 550 & 0.03 & ---    & ---  & ---   & Not recommended (until further evaluation) \\ 
-1000\,--\,464 & ---     & ---  & ---    & ---  & ---   & Not retrieved \\ 
-\bottomrule 
+        Primarily as estimated from systematic uncertainty
+        characterization tests.  Stratospheric values are expressed in
+        ppmv with a typical \emph{equivalent} percentage value quoted.
+        261\,--\,100\,hPa accuracies are the sum of the ppmv \emph{and
+          percentage} uncertainties; the ppmv terms arise from observed
+        average positive biases in the MLS values relative to tropical
+        sonde data (from 2005 through 2015).  }%
+      \\ppmv\hfill\%}}}
+& \textbf{Comments} \\
+\midrule
+$\leq$ 0.01 & ---            & ---  & ---    & ---  & ---  & Unsuitable for scientific use \\
+0.02 & 5.5 $\times$ 200 & 1.2  & 300    & 0.2  &  50   & \\
+0.05 & 5.5 $\times$ 200 & 0.8  & 150    & 0.2  &  30   & \\
+0.1  & 4 $\times$ 400   & 0.5  &  60    & 0.2  &  20   & \\
+0.2  & 3 $\times$ 450   & 0.4  &  30    & 0.15 &  10   & \\
+0.5  & 3.5 $\times$ 550 & 0.3  &  20    & 0.2  &  10   & \\
+1    & 3 $\times$ 500   & 0.2  &  7     & 0.3  &  10   & \\
+2    & 3.5 $\times$ 450 & 0.15 &   3    & 0.3  &   7   & \\
+5    & 3 $\times$ 450   & 0.15 &   2    & 0.4  &   7   & \\
+10   & 3 $\times$ 500   & 0.1  &   2    & 0.4  &   6   & \\
+22   & 2.5 $\times$ 400 & 0.1  &   2    & 0.25 &   5   & \\
+46   & 2.5 $\times$ 350 & 0.06 &   3    & 0.2  &   8   & \\
+68   & 2.5 $\times$ 350 & 0.04 &   4    & 0.1  &   7   & \\
+100  & 3 $\times$ 300   & 0.03 & 15--25 & \multicolumn{2}{c}{$\left[+0.005 +7\%\right]$}  \\
+150  & 3 $\times$ 400   & 0.02 & 5--70  &  \multicolumn{2}{c}{$\left[+0.005 +7\%\right]$} \\
+215  & 3.5 $\times$ 350 & 0.02 & 5--100 & \multicolumn{2}{c}{$\left[+0.01 +10\%\right]$} \\
+261 & 3.5 $\times$ 400 & 0.03 & 5--100 &
+\multicolumn{2}{c}{$\left[+0.02 +10\%\right]$} & See note
+\footnote{Positive bias in the UT,
+  but the mean annual variation is nevertheless well behaved
+  versus tropical sonde data.}\\
+316  & 2.5 $\times$ 550 & 0.03 & ---    & ---  & ---   & Not recommended \\
+1000\,--\,464 & ---     & ---  & ---    & ---  & ---   & Not retrieved \\
+\bottomrule
 \end{tabular} 
 \end{minipage} 
 \end{table} 

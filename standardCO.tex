@@ -111,7 +111,10 @@ generally realistic \citep{LiveseyEtal08}.  In \thisv (as in
 \prevvSlash) this bias has been essentially eliminated through a change
 in the approach to modeling the background radiance upon which the CO
 spectral line sits, and a small reduction in the number of MLS spectral
-channels considered in the retrieval.
+channels considered in the retrieval. Tropospheric (215\,--\,100\,hPa) 
+accuracies in Table~\ref{tab:COSummary} are  2-$\sigma$ estimates 
+obtained by propagating parameter uncertainties through 
+a model of the measurement system.
 
 \subsection*{Data screening}
 \label{sec:COScreening}
@@ -160,11 +163,10 @@ channels considered in the retrieval.
   \prevvSlash than in v2.2 -- this was considered an acceptable
   trade-off for the less jagged profiles obtained over most of the
   middle atmosphere.
-\item Upper-tropospheric \thisv CO retrieved values still show some
-  anomalous sensitivity to thick clouds associated with deep convection.
-  The screening procedure based upon \texttt{Quality} and
-  \texttt{Convergence} that is described above is generally effective in
-  removing these artifacts
+\item Upper-tropospheric \thisv CO retrieved values still show some anomalous 
+sensitivity to thick clouds associated with deep convection.  
+The screening procedure based upon \texttt{Quality} and \texttt{Convergence} 
+that is described above is generally effective in removing these artifacts.
 \end{itemize}
 
 \subsection*{Review of comparisons with other datasets}
@@ -173,8 +175,6 @@ In the upper troposphere, comparisons with various in situ CO
 observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the
 \emph{earlier} MLS v2.2 215\,hPa CO product was biased high by a factor
 of \texttildelow2. As in \prevv, this is largely eliminated in \thisv.
-Further validation of the \thisv CO in the UT/LS is underway at the time
-of this writing.
 
 In the mesosphere, comparisons of the earlier v2.2 MLS CO with ODIN-SMR
 and ACE-FTS suggest a positive bias: 30\%\,--\,50\% against ACE-FTS,
@@ -198,26 +198,26 @@ better estimate of the MLS-ACE bias in much of the middle atmosphere
 \textbf{Pressure} &
 \textbf{Resolution / km} & 
 \textbf{Precision} / &
-\textbf{Systematic} &  
+\textbf{Accuracy} &  
 \textbf{Comment} \\
 \textbf{/ hPa} &
 \textbf{Vert $\times$ Horiz.} &
-\textbf{ppbv} &
-\textbf{Uncertainty} \\
+\textbf{ppbv} \\
 \midrule
 $<0.001$  &    ---        &   ---   &    ---      & Not retrieved\\
 0.0022-0.001  & ---       &   ---   &    ---    & Unsuitable
 for scientific use \\
-0.0046 &   6.2   $\times$ 200 &  11000  &   $+$20\% to $+$50\%     &  \\
-0.01   &   5.9   $\times$ 200 &  4000   &   $+$20\% to $+$50\%  &  \\
-0.046  &   5.9   $\times$ 200 &  1200   &    $+$20\% to $+$50\%    &  \\
-0.14   &   3.8   $\times$ 200 &  700    &    $+$20\% to $+$50\%    &  \\
-1      &   4.1   $\times$ 250 &  130    &    $+$20\% to $+$50\%  &  \\
+0.0046 &   6.2   $\times$ 200 &  6000  &   $+$20\% to $+$50\%     &  \\
+0.01   &   5.9   $\times$ 200 &  3400   &   $+$20\% to $+$50\%  &  \\
+0.046  &   5.9   $\times$ 200 &  1000   &    $+$20\% to $+$50\%    &  \\
+0.14   &   3.8   $\times$ 200 &  640    &    $+$20\% to $+$50\%    &  \\
+1      &   4.1   $\times$ 250 &  120    &    $+$20\% to $+$50\%  &  \\
 10     &   5.0   $\times$ 440 &  16     &    $\pm 10$\%    &  \\
 31     &   4.9   $\times$ 400 &   9     &    $-$70\% to $-$50\%    &  \\
-100    &   4.9   $\times$ 450 &  14     & $\pm$20\,ppbv and $\pm$30\% & \\
-147    &   5.1   $\times$ 570 &  15     & $\pm$30\,ppbv and $\pm$30\% & \\
-215    &   5.4   $\times$ 690 &  19     & $\pm$30\,ppbv and $\pm$30\% \\
+100    &   4.9   $\times$ 450 &  14     & $\pm$19\,ppbv and $\pm$30\%
+\footnote{Estimated 215--100 hPa systematic uncertainty is the RSS of the additive and multiplicative terms.} & \\
+147    &   5.1   $\times$ 570 &  16     & $\pm$26\,ppbv and $\pm$30\% & \\
+215    &   5.4   $\times$ 690 &  19     & $\pm$38\,ppbv and $\pm$30\% \\
 316 & --- & --- & --- & Unsuitable for scientific use\\
 $>$316 & --- & --- & --- & Not retrieved \\
 \bottomrule

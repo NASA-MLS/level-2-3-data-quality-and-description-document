@@ -1,0 +1,115 @@
+%
+\newif\ifhighlight
+% Set up some lengths
+\newlength{\navbaryunit}
+\setlength{\navbaryunit}{0.40in}
+%
+\newlength{\navbartextheight}
+\setlength{\navbartextheight}{4mm}
+\newlength{\navbartextdepth}
+\setlength{\navbartextdepth}{1mm}
+%
+\newcommand{\currentnav}{BLANK}
+%
+\tikzset{nblinks/.style={inner sep=3pt,
+    font={\scriptsize\sffamily\color{NBColor}}}}
+\tikzset{nbentry/.style={anchor=base,rotate=-90, minimum width=\navbaryunit,
+      text height=\navbartextheight, text depth=\navbartextdepth,     
+      font={\sffamily\footnotesize\color{NBColor}},fill=NBBackground}}
+
+% This macro constructs a single entry in the navbar
+\newif\ifoddrow\oddrowtrue
+\newcommand{\DrawNavBarProduct}[2]{%
+  % #1 is the tag for the product (e.g., H2O)
+  % #2 is the name for it (e.g., H\cs2O)
+  \ifthenelse{\equal{#1}{\currentnav}}%
+  {%
+    \def\nbnudge{\rule{3mm}{0pt}}%
+    \colorlet{NBColor}{white}%
+    \colorlet{NBBackground}{SectionColor}}%
+  {%
+    \def\nbnudge{\rule{0pt}{0pt}}%
+    \colorlet{NBColor}{SectionColor}%
+    \ifoddrow
+      \colorlet{NBBackground}{SectionBackgroundA}%
+    \else
+      \colorlet{NBBackground}{SectionBackgroundB}%
+    \fi}%
+  \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
+  \def\nbsecref{sec:Standard#1}%
+  \def\nbscrref{sec:#1Screening}%
+  \def\nbtabref{tab:#1Summary}%
+  \nbnudge\hyperref[\nbsecref]{\begin{tikzpicture}[outer sep=0pt, inner sep=6pt]
+    \node (NBProduct#1) [nbentry] {#2};
+    \node (NBProductRulesLink#1) [nblinks, anchor=north east]
+      at (NBProduct#1.north west) {\hyperref[\nbscrref]{S}};
+    \node (NBProductTableLink#1) [nblinks, anchor=south east]
+      at (NBProduct#1.north east) {\hyperref[\nbtabref]{T}};
+  \end{tikzpicture}}}
+%
+\newcommand{\DrawNavBarExtra}[3]{%
+  % #1 is the label to link to
+  % #2 is the text
+  % #3 is the tikz label
+  \ifthenelse{%
+   {\equal{\thepage}{\pageref{tab:ProductSummary}}
+     \and
+   \equal{#2}{Table}}%
+   \or
+   \equal{#2}{\currentnav}}%
+  {\def\nbnudge{\rule{3mm}{0pt}}%
+    \colorlet{NBColor}{white}%
+    \colorlet{NBBackground}{ChapterColor}}%
+  {\def\nbnudge{\rule{0pt}{0pt}}%
+    \colorlet{NBColor}{ChapterColor}%
+    \ifoddrow
+      \colorlet{NBBackground}{ChapterBackgroundA}%
+    \else
+      \colorlet{NBBackground}{ChapterBackgroundB}%
+    \fi}%
+  \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
+  \nbnudge\hyperref[#1]{\begin{tikzpicture}[outer sep=0pt, inner sep=6pt]
+      \node (#3) [nbentry] {#2};
+    \end{tikzpicture}}}
+%
+\newcommand{\RenderNavBar}{{%
+  \normalsize\rmfamily\mdseries\upshape
+  \colorlet{NBActiveColor}{White}%
+  \oddrowtrue
+  \begin{tikzpicture}[remember picture, overlay]
+    \matrix[row sep=0pt, anchor=north, inner sep=0pt, outer sep=0pt] 
+    at ($ (current page.south west) + (8in, 10.7in) $) {
+      % First the things in the early chapters
+      \node {\DrawNavBarExtra{sec:NavGuide}{Help}{Help}}; \\
+      \node {\DrawNavBarExtra{chap:Overview}{Overview}{Overview}}; \\
+      \node {\DrawNavBarExtra{tab:ProductSummary}{Table}{MainTable}}; \\
+      % Then the products
+      \node {\DrawNavBarProduct{BrO}{BrO}};\\
+      \node {\DrawNavBarProduct{CH3Cl}{CH\cs3Cl}};\\
+      \node {\DrawNavBarProduct{CH3CN}{CH\cs3CN}};\\
+      \node {\DrawNavBarProduct{CH3OH}{CH\cs3OH}};\\
+      \node {\DrawNavBarProduct{ClO}{ClO}};\\
+      \node {\DrawNavBarProduct{CO}{CO}};\\
+      \node {\DrawNavBarProduct{GPH}{GPH}};\\
+      \node {\DrawNavBarProduct{H2O}{H\cs2O}};\\
+      \node {\DrawNavBarProduct{HCl}{HCl}};\\
+      \node {\DrawNavBarProduct{HCN}{HCN}};\\
+      \node {\DrawNavBarProduct{HNO3}{HNO\cs3}};\\
+      \node {\DrawNavBarProduct{HO2}{HO\cs2}};\\
+      \node {\DrawNavBarProduct{HOCl}{HOCl}};\\
+      \node {\DrawNavBarProduct{IWC}{IWC}};\\
+      \node {\DrawNavBarProduct{IWP}{IWP}};\\
+      \node {\DrawNavBarProduct{N2O}{N\cs2O}};\\
+      \node {\DrawNavBarProduct{O3}{O\cs3}};\\
+      \node {\DrawNavBarProduct{OH}{OH}};\\
+      \node {\DrawNavBarProduct{RHI}{RHI}};\\
+      \node {\DrawNavBarProduct{SO2}{SO\cs2}};\\
+      \node {\DrawNavBarProduct{Temperature}{T}};\\};
+\end{tikzpicture}}}
+\ifnav\else\renewcommand{\RenderNavBar}{}\fi
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End: 

@@ -11,9 +11,12 @@ radiometer centered near 640\,GHz.  However, as the methanol spectral
 signature in this region is very similar to that of ClO, additional
 measurements from the 190-GHz radiometer (which has channels sensitive
 to ClO but not CH\cs3OH) are used to decouple the CH\cs3OH and ClO
-information.  CH\cs3OH is a new product in \thisv, and it has not yet
-been fully validated.  Thus the scientific utility of the \thisv MLS
-CH\cs3OH measurements remains to be determined.
+information.  CH\cs3OH is a new product in \thisv, and it has not been
+fully validated.  Thus the scientific utility of the \thisv MLS
+CH\cs3OH measurements remains to be determined.  A summary of the
+estimated precision, resolution (vertical and horizontal), and
+systematic uncertainty of the \thisv CH\cs3OH measurements as a
+function of altitude is given in Table~\ref{tab:CH3OHSummary}.
 
 \subsection*{Resolution}
 \onestandardavk{CH3OH}{CH\cs3OH}%
@@ -108,31 +111,38 @@ and at low latitudes at 100\,hPa.
 
 \subsection*{Accuracy}
 
-The impact of various sources of systematic uncertainty has not yet
-been quantified for CH\cs3OH as it has for most other MLS products.
-This work is planned as part of a dedicated validation exercise for
-the \thisv CH\cs3OH data.
+The effects of various sources of systematic uncertainty (e.g.,
+instrumental issues, spectroscopic uncertainty, and approximations in
+the retrieval formulation and implementation) on the MLS \thisv
+CH\cs3OH measurements have been quantified through a comprehensive set
+of retrievals of synthetic radiances.  The overall systematic
+uncertainty, or accuracy, is calculated by combining (RSS) the
+contributions from both the expected biases and the additional scatter
+each source of uncertainty may introduce into the data. In aggregate,
+the factors considered in these simulations are estimated to give rise
+to total systematic uncertainty of approximately 100--250\% in the MLS
+\thisv CH\cs3OH data (see Table~\ref{tab:CH3OHSummary}).
 
 \subsection*{Review of comparisons with other datasets}
 
-Detailed comparisons with correlative data sets have not yet been
-undertaken.  This work is planned as part of a dedicated validation
-exercise for the \thisv CH\cs3OH data.
+Detailed comparisons with correlative data sets have not been
+undertaken, but preliminary comparisons with version~3 \mbox{ACE-FTS}
+data suggest that the MLS values may be biased substantially high at
+147\,hPa (not shown).
 
 \subsection*{Data screening}
 \label{sec:CH3OHScreening}
 \begin{description}
-\item[Do not use:] Until more comprehensive validation studies have
-  been done, the \thisv CH\cs3OH data should only be used in
+\item[Do not use:] The \thisv CH\cs3OH data should only be used in
   consultation with the MLS science team.
 \end{description}
 
 \subsection*{Artifacts}
 \begin{itemize}
 \item A complete assessment of artifacts in the \thisv CH\cs3OH
-  measurements has not yet been performed, but it is known that zonal
-  mean mixing ratios are negative everywhere at retrieval pressures
-  less than 100\,hPa, as well as at middle and high latitudes at
+  measurements has not been performed, but it is known that zonal mean
+  mixing ratios are negative everywhere at retrieval pressures less
+  than or equal to 68\,hPa, as well as at middle and high latitudes at
   100\,hPa.
 \end{itemize}
 
@@ -154,17 +164,19 @@ exercise for the \thisv CH\cs3OH data.
 \footnote{Vertical and Horizontal resolution in along-track direction.} \\ / km}} &
 \parbox[m]{18mm}{\bfseries\centering{Precision%
     \footnote{Precision on individual profiles.} \\/ ppbv}} &
-\parbox[m]{20mm}{\bfseries\centering{Accuracy\\ / ppbv}} &
+\parbox[m]{20mm}{\bfseries\centering{Systematic\\ Uncertainty%
+\footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
+ of the probable magnitude.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
 68\,--\,0.001  & ---                             & ---      & ---  & Unsuitable for scientific use\\
 %
-100            & 5         $\times$ 350          & $\pm$1   & TBD  &
+100            & 5         $\times$ 350          & $\pm$1   & $\pm$100  &
 Consult with MLS Science Team \\
 %
-147            & 4         $\times$ 150          & $\pm$1   & TBD  &
+147            & 3         $\times$ 150          & $\pm$1   & $\pm$250  &
 Consult with MLS Science Team \\
 %
 1000\,--\,215  & ---                             & ---      & ---  & Not retrieved\\

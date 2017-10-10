@@ -132,9 +132,9 @@ as:
   evaluated over globally representative locations and periods.  Results
   are published in the peer-reviewed literature.
 \end{quote}
-Work, including that described in this document, is underway to
-re-validate the \thisv data, and to further establish them as ``Stage~4''
-validated, defined as:
+Work, including that described in this document, has re-validated the
+\thisv data, with the level of scrutiny for some (notably ozone and
+water vapor) establishing them as ``Stage~4'' validated, defined as:
 \begin{quote}\itshape
   Validation results for stage~3 are systematically updated when new
   product versions are released and as the time-series expands.
@@ -283,16 +283,17 @@ for all products.  For example, for temperature, the standard
 ``\texttt{WMOTPPressure}'' swath that gives tropopause pressures.
 
 Each swath contains data fields \texttt{L2gpValue} and
-\texttt{L2gpPrecision}, which describe the value and precision of the
-data, respectively.  Data points for which \texttt{L2gpPrecision} is set
-negative or zero \emph{should not be used}, as this flags that the
-resulting precision is worse than 50\% of the \emph{a priori} precision,
-indicating that instrument and/or the algorithms have failed to provide
-enough useful information for that point.  In addition to these fields,
-fields such as \texttt{latitude} etc.\ describe geolocation information.
-The field \texttt{time} describes time, in the EOS standard manner, as
-the number of seconds elapsed (including from five to nine subsequent
-leap seconds to date) since midnight universal time on 1~January 1993.
+\texttt{L2gpPrecision}, which describe the value and precision (reported
+at 1$\sigma$) of the data, respectively.  Data points for which
+\texttt{L2gpPrecision} is set negative or zero \emph{should not be
+  used}, as this flags that the resulting precision is worse than 50\%
+of the \emph{a priori} precision, indicating that instrument and/or the
+algorithms have failed to provide enough useful information for that
+point.  In addition to these fields, fields such as \texttt{latitude}
+etc.\ describe geolocation information.  The field \texttt{time}
+describes time, in the EOS standard manner, as the number of seconds
+elapsed (including from five to nine subsequent leap seconds to date)
+since midnight universal time on 1~January 1993.
 
 The \texttt{L2GP-DGG} (``Diagnostic products on a Geophysical Grid'')
 file contains a large number of additional swath quantities.  The vast
@@ -395,7 +396,7 @@ by $\b{x}$, according to
   \hat{\b{x}} = \b{x}_a + \b{A}\left[\b{x}-\b{x}_a\right]
 \label{eqn:AVKApplication}
 \end{equation}
-As of MLS version \thisv, the the \emph{a priori} profile for each MLS
+As of MLS version \thisv, the \emph{a priori} profile for each MLS
 observation is available within each of the standard product files, in
 swaths named according to the product, with the suffix
 ``\texttt{-APriori}'' (note the hyphen).  Examples are
@@ -638,7 +639,6 @@ during 2011\,--\,2014 and plan to continue it during the declining phase
 of Solar Cycle 24. However, due to the aging of the instrument, OH data
 acquired since 2014 are significantly noisier than the previous years
 and have poor spatial coverage at mid-low latitudes.
-
 
 %%% Local Variables: 
 %%% mode: latex

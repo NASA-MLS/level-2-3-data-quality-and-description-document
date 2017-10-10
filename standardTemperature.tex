@@ -162,13 +162,12 @@ the mesosphere.
 
 \subsection*{Accuracy}
 
-A substantial study of sources of systematic error in MLS measurements
-was done as a part of the validation of v2.2, and as the measurement
-system is substantially unchanged, those results are repeated here.  The
-accuracy of the v2.2 temperature measurements was estimated both by
-modeling the impact of uncertainties in measurement and retrieval
-parameters that could lead to systematic errors, and through comparisons
-with correlative data sets.  Column~5 of
+A substantial study has been made of sources of systematic error in MLS
+\thisv measurements, similar to that which was done as a part of the
+validation of v2.2. The accuracy of the \thisv temperature measurements
+is estimated both by modeling the impact of uncertainties in measurement
+and retrieval parameters that could lead to systematic errors, and
+through comparisons with correlative data sets.  Column~5 of
 Table~\ref{tab:TemperatureSummary} gives estimates from the propagation
 of parameter uncertainties, as discussed in~\citet{SchwartzEtal08}.
 This estimate is broken into two pieces.  The first term was modeled as
@@ -176,7 +175,7 @@ amplifier non-linearity, referred to as ``gain compression,'' and was
 believed to have a known sign, as gain is known to drop at high
 background signal levels. Correction of these nonlinearities was a goal
 of \thisv, but closer examination of the simple non-linearity model
-found that it did not close forword model and measured radiances as
+found that it did not close forward model and measured radiances as
 expected.  It had been hoped that better radiance closure would permit
 the use of more radiances in the middle of the 118-GHz O\cs2 band,
 giving better resolution, precision and accuracy in the upper
@@ -188,7 +187,7 @@ The second term of column~5 combines $2\sigma$ estimates of other
 sources of systematic uncertainty, such as spectroscopic parameters,
 retrieval numerics and pointing, for which the sign of resulting bias is
 unknown.  Gain compression terms range from $-1.5\,$K~to~$+4.5$\,K, and
-predicted vertical structure is very similar to observed biases relative
+predicted vertical structure is similar to observed biases relative
 to correlative data in the troposphere and lower stratosphere.  The
 terms of unknown sign are of \texttildelow2\,K magnitude over most of
 the retrieval range, increasing to 5\,K at 261\,hPa and to 3\,K at
@@ -269,10 +268,10 @@ discussion of artifacts may be found in~\citet{SchwartzEtal08}.
 
 The last four profiles of each day show increased rates of outliers
 relative to GEOS-5 temperature, compared to other profile positions in
-the day in version~4.20 (fixed in version~4.22).  These outliers can be
+the day in version~4.20 (the problem is fixed in version~4.22).  These outliers can be
 as large as 50\,K at at some levels.  A recommendation to discard the
 last 4 profiles of each day has been added to recommended screening for
-v4.20 (not needed for v4.22).
+v4.20 (not needed for v4.22 and later versions).
 
 \subsection*{Review of comparisons with other datasets}
 \label{sec:TComparisons}
@@ -346,29 +345,66 @@ persists in polar winter.
       inferred from differences of
       individual profiles from successive orbits (v2.2 results shown)} \\/ K}} &
 \parbox[m]{4.5em}{\centering\textbf{Resolution\\ V $\times$ H\\ / km}} &
-\parbox[m]{6em}{\centering\textbf{Modeled Bias\\uncertainty\\ / K}} &
-\parbox[m]{6em}{\centering\textbf{Observed Bias\\uncertainty\\ / K}} &
+\parbox[m]{6em}{\centering\textbf{Modeled\\accuracy\\ / K}} &
+\parbox[m]{6em}{\centering\textbf{Observed\\accuracy\\ / K}} &
 \textbf{Comments} \\
 \midrule
-$<$0.001\,hPa      & ---       & ---      &  ---             & --- & --- & Unsuitable for scientific use \\
-0.001\,hPa         & $\pm$3.6  & $\pm$3.5 & 11--14 $\times$ 280 & $+$2\,$\pm$\,3    & $-$9     & \\
-0.01\,hPa          & $\pm$3.3  & $\pm$3   & 10--11 $\times$ 260 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
-0.1\,hPa           & $\pm$2.4  & $\pm$2.7 & 6   $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
-0.316\,hPa         & $\pm$1.3  & $\pm$1.5 & 8   $\times$ 170 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
-1\,hPa             & $\pm$1.2  & $\pm$1.3 & 6.8 $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
-3.16\,hPa          & $\pm$0.8  & $\pm$0.8   & 5.5 $\times$ 165 & $+$2\,$\pm$\,2    & $+$1 & \\
-10\,hPa            & $\pm$0.6  & $\pm$0.7   & 4.1 $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
-14.7\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.9 $\times$ 165 & $+$4\,$\pm$\,2    &  0\,to\,$+$1 & \\
-31.6\,hPa          & $\pm$0.5  & $\pm$0.6   & 3.6 $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-56.2\,hPa          & $\pm$0.6  & $\pm$0.7 & 3.8 $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
-100\,hPa           & $\pm$0.7  & $\pm$1.0 & 4.6 $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
-215\,hPa           & $\pm$0.8  & $\pm$1.2   & 3.5 $\times$ 165 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
-261\,hPa           & $\pm$0.7  & $\pm$1.5   & 4.0 $\times$ 167 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
+$<$0.001\,hPa      & ---       & ---       &  ---             & --- & --- & Unsuitable for scientific use \\
+0.001\,hPa         & $\pm$3.6  & $\pm$3.5   & 13--14 $\times$ 290 & $+$2\,$\pm$\,1      & $-$9     & \\
+0.01\,hPa          & $\pm$3.3  & $\pm$3     & 10--11 $\times$ 260 & $+$2\,$\pm$\,1      & $-$2\,to\,0 & \\
+0.1\,hPa           & $\pm$2.4  & $\pm$2.7   & 6      $\times$ 170 & $+$3\,$\pm$\,1.2    & $-$8\,to\,0 & \\
+0.316\,hPa         & $\pm$1.3  & $\pm$1.5   & 8      $\times$ 170 & $+$2\,$\pm$\,0.8    & $-$7\,to\,$-$4& \\
+1\,hPa             & $\pm$1.2  & $\pm$1.3   & 6.8    $\times$ 165 & $+$1\,$\pm$\,0.5    &  0\,to\,$+$5 & \\
+3.16\,hPa          & $\pm$0.8  & $\pm$0.8   & 5.5    $\times$ 165 & $+$2\,$\pm$\,1.2    & $+$1 & \\
+10\,hPa            & $\pm$0.6  & $\pm$0.7   & 4.1    $\times$ 165 & $-$1\,$\pm$\,0.5      & $-$1\,to\,0& \\
+14.7\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.9    $\times$ 165 & $+$2.7\,$\pm$\,0.9    &  0\,to\,$+$1 & \\
+31.6\,hPa          & $\pm$0.6  & $\pm$0.6   & 3.6    $\times$ 165 & $+$0.7\,$\pm$\,0.7    & $-$2\,to\,0 & \\
+56.2\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.7    $\times$ 165 & $-$1.5\,$\pm$\,0.8    & $-$2\,to\,0 & \\
+100\,hPa           & $\pm$0.7  & $\pm$1.0   & 4.7    $\times$ 165 & $+$1.8\,$\pm$\,1.2    &  0\,to\,$+$1  & \\
+215\,hPa           & $\pm$0.8  & $\pm$1.2   & 4.2    $\times$ 165 & $-$0.8\,$\pm$\,1.4 & $-$2.5\,to\,$-$1.5   & \\
+261\,hPa           & $\pm$0.7  & $\pm$1.5   & 4.2    $\times$ 167 & 0.4\,$\pm$\,2.4      & $-$2\,to\,0   & \\
 1000\,--\,316\,hPa & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
 \end{minipage}
 \end{sidewaystable}
+
+
+% \begin{sidewaystable}
+% \caption{Summary of MLS Temperature product}\vspace{0.5ex}
+% \label{tab:TemperatureSummary}
+% \begin{minipage}{\textheight}
+% \centering\begin{tabular}{ccccccl}
+% \toprule
+% \textbf{Pressure} & 
+% \parbox[m]{4.5em}{\centering\textbf{Precision\footnote{Precision on individual profiles} \\/ K}} &
+% \parbox[m]{4em}{\centering\textbf{Observed Scatter\footnote{Precision
+%       inferred from differences of
+%       individual profiles from successive orbits (v2.2 results shown)} \\/ K}} &
+% \parbox[m]{4.5em}{\centering\textbf{Resolution\\ V $\times$ H\\ / km}} &
+% \parbox[m]{6em}{\centering\textbf{Modeled Bias\\uncertainty\\ / K}} &
+% \parbox[m]{6em}{\centering\textbf{Observed Bias\\uncertainty\\ / K}} &
+% \textbf{Comments} \\
+% \midrule
+% $<$0.001\,hPa      & ---       & ---       &  ---             & --- & --- & Unsuitable for scientific use \\
+% 0.001\,hPa         & $\pm$3.6  & $\pm$3.5   & 13--14 $\times$ 290 & $+$2\,$\pm$\,3    & $-$9     & \\
+% 0.01\,hPa          & $\pm$3.3  & $\pm$3     & 10--11 $\times$ 260 & $+$2\,$\pm$\,3    & $-$2\,to\,0 & \\
+% 0.1\,hPa           & $\pm$2.4  & $\pm$2.7   & 6      $\times$ 170 & $+$2\,$\pm$\,2    & $-$8\,to\,0 & \\
+% 0.316\,hPa         & $\pm$1.3  & $\pm$1.5   & 8      $\times$ 170 & $+$3\,$\pm$\,2    & $-$7\,to\,$-$4& \\
+% 1\,hPa             & $\pm$1.2  & $\pm$1.3   & 6.8    $\times$ 165 & $+$1\,$\pm$\,2    &  0\,to\,$+$5 & \\
+% 3.16\,hPa          & $\pm$0.8  & $\pm$0.8   & 5.5    $\times$ 165 & $+$2\,$\pm$\,2    & $+$1 & \\
+% 10\,hPa            & $\pm$0.6  & $\pm$0.7   & 4.1    $\times$ 165 &  0\,$\pm$\,2      & $-$1\,to\,0& \\
+% 14.7\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.9    $\times$ 165 & $+$4\,$\pm$\,2    &  0\,to\,$+$1 & \\
+% 31.6\,hPa          & $\pm$0.6  & $\pm$0.6   & 3.6    $\times$ 165 & $+$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+% 56.2\,hPa          & $\pm$0.6  & $\pm$0.7   & 3.7    $\times$ 165 & $-$1\,$\pm$\,2    & $-$2\,to\,0 & \\
+% 100\,hPa           & $\pm$0.7  & $\pm$1.0   & 4.7    $\times$ 165 & $+$2\,$\pm$\,2    &  0\,to\,$+$1  & \\
+% 215\,hPa           & $\pm$0.8  & $\pm$1.2   & 4.2    $\times$ 165 &  $-$1.5\,$\pm$\,4 & $-$2.5\,to\,$-$1.5   & \\
+% 261\,hPa           & $\pm$0.7  & $\pm$1.5   & 4.2    $\times$ 167 &  0\,$\pm$\,5      & $-$2\,to\,0   & \\
+% 1000\,--\,316\,hPa & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\\
+% \bottomrule
+% \end{tabular}
+% \end{minipage}
+% \end{sidewaystable}
 
 %%% Local Variables: 
 %%% mode: latex

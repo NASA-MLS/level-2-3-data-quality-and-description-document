@@ -1,6 +1,7 @@
 \speciestitle{Hydroxyl Radical}{OH}{OH}{%
 \item[Useful range:] 32\,--\,0.0032\,hPa
-\item[Contact:] Shuhui Wang, \email{Shuhui.Wang@jpl.nasa.gov}}
+\item[Contact:] Luis Millan, \email{Luis.F.Millan@jpl.nasa.gov}
+  and Shuhui Wang, \email{shw@gps.caltech.edu}}
 
 \subsection*{Introduction}
 
@@ -27,10 +28,7 @@ profiles. This is a side effect of fixing the possible positive bias
 introduced by tight lower limits set in previous version retrievals.
 
 The estimated uncertainties, precisions, and resolution for \thisv OH are
-summarized in Table~\ref{tab:OHSummary}. Note that the systematic
-uncertainties are from \prevv, but are not expected to change significantly
-in \thisv.
-
+summarized in Table~\ref{tab:OHSummary}.
 
 \subsection*{Resolution}
 
@@ -125,22 +123,19 @@ can be extended to 32\,--\,0.0046\,hPa.
 
 \subsection*{Accuracy}
 
-Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The
-scaling uncertainty is the part of the systematic uncertainty that
-scales with OH concentration, e.g., spectroscopic line strength. Bias
-uncertainty is the part of the uncertainty that is independent of
-concentration. For both bias and scaling uncertainty, quantification of
-the combined effect in MLS calibration, spectroscopy etc., on the data
-product was determined by calculating the effects of each source of
-uncertainty. These accuracy calculations are for \prevv products. While
-no significant change is expected from \prevv to \thisv, a comprehensive
-error analysis for \thisv will be conducted.  Bias uncertainty can be
-eliminated by taking day-night differences from 32\,--\,21\,hPa. For
-15\,--\,0.1\,hPa, the observed night OH concentration is small and
-day-night differencing is not ordinarily needed. The accuracy of the OH
-measurement due to systematic errors is a product of scaling uncertainty
-and the observed OH concentration. The overall uncertainty is the square
-root of the sum of squares of the precision and accuracy.
+Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@.
+The effect of each identified source of systematic error on MLS
+measurements of radiance has been quantified and modeled
+\citep{ReadEtal07}. These quantified effects correspond to either
+$2\sigma$ estimates of uncertainties in each MLS product, or an estimate
+of the maximum reasonable uncertainty based on instrument knowledge
+and/or design requirements.These accuracy calculations were performed
+with more realistic OH atmospheric profiles than for \prevv
+estimates. Biases can be eliminated by taking day-night differences from
+32\,--\,21\,hPa. For 15\,--\,0.1\,hPa, the observed night OH
+concentration is small and day-night differencing is not ordinarily
+needed. The overall uncertainty is the square root of the sum of squares
+of the precision and accuracy.
 
 \subsection*{Data screening}
 \label{sec:OHScreening}
@@ -152,7 +147,7 @@ investigations if all the following tests are successful:
   \standardrangestatement
 \standardprecisionrule
 \evenstatusrule
-\item[Quality:] \screeningrule{MLS \thisv HO\cs2 data can be used
+\item[Quality:] \screeningrule{MLS \thisv OH data can be used
     irrespective of the value of the \texttt{Quality} field.}
 \item[Convergence:] \convergencerule{1.1}
 \end{description}
@@ -182,24 +177,23 @@ hemisphere (or tropics when near equinox).
 \vspace{\tablecaptionsep}
 \label{tab:OHSummary}
 \begin{minipage}{\textwidth}\small
-\centering\begin{tabular}{rccccl}
+\centering\begin{tabular}{rcccl}
 \toprule
 \textbf{Pressure} &
 \parbox{6em}{\bfseries\centering Resolution\\ V $\times$ H /km} &
 \parbox{5em}{\bfseries\centering Precision\footnote{Precision on an
     individual profile} (day/night) / 10\cp6 cm\cp{$-$3}} &
-\parbox{5em}{\bfseries\centering Bias uncertainty / 10\cp6 cm\cp{$-$3}} &
-\parbox{5em}{\bfseries\centering Scaling uncertainty /\%} &
+\parbox{5em}{\bfseries\centering Accuracy / 10\cp6 cm\cp{$-$3}} &
 \textbf{Comments}\\
 \midrule
-$<$0.003\,hPa & ---                  & ---                  & ---   & --- & Unsuitable for scientific use\\
-0.003\,hPa    & 5.0 $\times$ 220 & 0.5 / 0.5   & 0.034 & 90  &\\
-0.01 \,hPa    & 2.5 $\times$ 180     & 1.1 /1.1             & 0.031 & 41  &\\
-0.1\,hPa      & 2.5 $\times$ 165     & 3.3 / 0.6            & 0.12  & 3.1 &\\
-1.0\,hPa      & 2.5 $\times$ 165     & 1.9 / 0.4            & 0.50  & 7   &\\
-10 \,hPa      & 2.5 $\times$ 165     & 2.3 / 1.4            & 0.18  & 1.5 &\\
-32\,--\,14\,hPa   & 2.5 $\times$ 165     & 6\,--\,10 / 4\,--\,8 & 0.50  & 1.3 & Use day--night difference \\
-$>$32\,hPa & --- & --- & --- & --- & Unsuitable for scientific use\\
+$<$0.003\,hPa     & ---                  & ---                  & ---   &  Unsuitable for scientific use\\
+0.003\,hPa        & 5.0 $\times$ 220     & 0.5 / 0.5            & 0.5 & \\
+0.01 \,hPa        & 2.5 $\times$ 180     & 1.1 /1.1             & 2   & \\
+0.1\,hPa          & 2.5 $\times$ 165     & 3.3 / 0.6            & 1.0  & \\
+1.0\,hPa          & 2.5 $\times$ 165     & 1.9 / 0.4            & 1.0  & \\
+10 \,hPa          & 2.5 $\times$ 165     & 2.3 / 1.4            & 0.9  & \\
+32\,--\,14\,hPa   & 2.5 $\times$ 165     & 6\,--\,10 / 4\,--\,8 & 1.3  & Use day--night difference \\
+$>$32\,hPa        & ---                  & ---                  & ---   & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
 \end{minipage}

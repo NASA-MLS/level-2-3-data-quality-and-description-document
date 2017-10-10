@@ -4,7 +4,7 @@
 
 \subsection*{Introduction}
 
-The standard HNO3 product is derived from the 240-GHz retrievals at
+The standard HNO\cs3 product is derived from the 240-GHz retrievals at
 pressures equal to or greater than 22 hPa and from the 190-GHz
 retrievals for lesser pressures.  The quality and reliability of the
 Aura MLS v2.2 HNO\cs3 measurements were assessed in detail by
@@ -22,22 +22,10 @@ and][]{EOSMLSV33V34Quality}, \thisv is slightly lower than \prevv at
 pressures greater than or equal to 215\,hPa in middle to high latitudes,
 and shows an oscillatory pattern of differences in the tropical UTLS,
 such that \thisv values are slightly higher than those in \prevv at
-147\,hPa and slightly lower at 100\,hPa.
-
-A summary of the precision and resolution (vertical and horizontal) of
-the \thisv HNO\cs3 measurements as a function of altitude is given in
-Table~\ref{tab:HNO3Summary}.  The impact of various sources of
-systematic uncertainty was quantified for v3.3, and it is expected that
-these estimates will be similar for \thisv.  Table~\ref{tab:HNO3Summary}
-also includes estimates of the potential biases and scaling errors in
-the measurements compiled from the v3.3 uncertainty analysis (to be
-updated for \thisv at a later date).  The overall uncertainty for an
-individual data point is determined by taking the root sum square (RSS)
-of the precision, bias, and scaling error terms (for averages, the
-single-profile precision value is divided by the square root of the
-number of profiles contributing to the average).  More details on the
-precision, resolution, and accuracy of the MLS \thisv HNO\cs3
-measurements are given below.
+147\,hPa and slightly lower at 100\,hPa.  A summary of the estimated
+precision, resolution (vertical and horizontal), and systematic
+uncertainty of the \thisv HNO\cs3 measurements as a function of altitude
+is given in Table~\ref{tab:HNO3Summary}.
 
 \begin{figure}
   \includegraphics[angle=90,width=\linewidth]{figures/InspectZMContour_HNO3--v4-2_HNO3--v3-3_2009m02_LatPress-All}
@@ -95,7 +83,7 @@ by computing the standard deviation of the profiles in the
 20\degsym-wide latitude band centered around the equator, where natural
 atmospheric variability should be small relative to the measurement
 noise.  Because meteorological variation is never completely negligible,
-however, this procedure produces a upper limit on the precision-related
+however, this procedure produces an upper limit on the precision-related
 variability.  As shown in Figure~\ref{fig:PrecProf}, the observed
 scatter in the \thisv data is \texttildelow0.5\,--\,0.6\,ppbv throughout
 the range from 215 to 3.2\,hPa, and increases sharply at lower
@@ -141,22 +129,25 @@ outliers in the UTLS are discussed below.
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS v3.3 HNO\cs3
-measurements were quantified through a comprehensive set of retrieval
-simulations; results for \thisv, to be completed at a later date, are
-expected to be similar.  The results of the v3.3 uncertainty analysis
-are summarized in Table~\ref{tab:HNO3Summary}; see
-\citet{SanteeEtal07hno3} for further details of how the analysis was
-conducted and the magnitude of the expected biases, additional scatter,
-and possible scaling errors each source of uncertainty may introduce
-into the data.  In aggregate, systematic uncertainties are estimated to
-induce in the HNO\cs3 measurements biases that vary with altitude
-between $\pm$0.5 and $\pm$2\,ppbv and multiplicative errors of
-$\pm$5\,--\,15\% through most of the stratosphere, rising to
-\mbox{\texttildelow$\pm$30\%} at 215\,hPa and \texttildelow50\% at and
-above 2.2\,hPa.  These uncertainty estimates are generally consistent
-with the results of comparisons with correlative datasets, as discussed
-briefly below.
+the retrieval formulation and implementation) on the MLS \thisv HNO\cs3
+measurements have been quantified through a comprehensive set of
+retrievals of synthetic radiances; see \citet{SanteeEtal07hno3} for
+details of a similar analysis conducted on MLS v2.2 HNO\cs3 data.  The
+overall systematic uncertainty, or accuracy, is calculated by combining
+(RSS) the contributions from both the expected biases and the additional
+scatter each source of uncertainty may introduce into the data.  In
+aggregate, the factors considered in these simulations are estimated to
+give rise to a total systematic uncertainty ranging from approximately
+0.1 to 2.4\,ppbv, depending on the level, in the MLS \thisv HNO\cs3 data
+(see Table~\ref{tab:HNO3Summary}).
+
+\subsection*{Comparisons with other datasets}
+
+\thisv HNO\cs3 profiles generally show only small differences in
+magnitude from v3.3 when each data version is screened according to the
+criteria above.  Therefore, the comparisons with correlative data are
+expected to be very similar to those described for v3.3 by
+\citet{EOSMLSV33V34Quality}.
 
 \subsection*{Data screening -- all data}
 \label{sec:HNO3Screening}
@@ -176,33 +167,29 @@ appropriate for use in screening at levels at and below (that is,
 pressures greater than) 22\,hPa.  For those levels:
 
 \begin{description}
-\item[Quality:] \qualityrule{0.8}
-
-  This threshold for \texttt{Quality} typically excludes
-  \texttildelow1\,--\,3\% of HNO\cs3 profiles on a daily basis; it is a
-  conservative value that potentially discards a significant fraction of
-  ``good'' data points while not necessarily identifying all ``bad''
-  ones.  A significant fraction of the HNO\cs3 profiles in \thisv show a
-  ``notch'', with unexpectedly low values at 100\,hPa and high values at
+\item[Quality:] \qualityrule{0.8} This threshold for \texttt{Quality}
+  typically excludes \texttildelow1\,--\,3\% of HNO\cs3 profiles on a
+  daily basis; it is a conservative value that potentially discards a
+  significant fraction of ``good'' data points while not necessarily
+  identifying all ``bad'' ones.  A significant fraction of the HNO\cs3
+  profiles in \thisv show a ``notch'', with unexpectedly low (often
+  negative in the tropics) values at 100\,hPa and high values at
   147\,hPa; many such profiles are removed by using this
   \texttt{Quality} threshold.
 
-\item[Convergence:] \convergencerule{1.03}
-
-  On a typical day this threshold for \texttt{Convergence} discards a
-  very small fraction of the data, rarely eliminating more than
-  0.1\% of the HNO\cs3 profiles.  Some such profiles show unphysical
-  behavior.
+\item[Convergence:] \convergencerule{1.03} On a typical day this
+  threshold for \texttt{Convergence} discards a very small fraction of
+  the data, rarely eliminating more than 0.1\% of the HNO\cs3 profiles.
+  Some such profiles show unphysical behavior.
 
 \item[Clouds:] \screeningrule{Clouds impact HNO\cs3 data in the UTLS,
-    see discussion below and the discussion on ``outliers'' that follows.}
-
-  Nonzero but even values of \texttt{Status} indicate that the profile
-  has been marked as questionable, typically because the measurements
-  may have been affected by the presence of thick clouds.  Globally
-  \texttildelow1\,--\,2\% of profiles are identified in this manner,
-  with the fraction of profiles possibly impacted by clouds rising to
-  \texttildelow5\% on average in the tropics.  Clouds
+    see discussion below and the discussion on ``outliers'' that
+    follows.}  Nonzero but even values of \texttt{Status} indicate that
+  the profile has been marked as questionable, typically because the
+  measurements may have been affected by the presence of thick clouds.
+  Globally \texttildelow1\,--\,2\% of profiles are identified in this
+  manner, with the fraction of profiles possibly impacted by clouds
+  rising to \texttildelow5\% on average in the tropics.  Clouds
   generally have little influence on the stratospheric HNO\cs3 data.  In
   the lowermost stratosphere and upper troposphere, however, thick
   clouds can lead to spikes in the HNO\cs3 mixing ratios in the
@@ -219,12 +206,11 @@ pressures greater than) 22\,hPa.  For those levels:
   screening.
 
 \item[Outliers:] \screeningrule{Alternative screening approaches in the
-    UTLS remove outliers while reducing ``false positives''}
-
-  While the number, and particularly the extreme values of, outliers in
-  \thisv HNO\cs3 at levels between 316 and 100 (sometimes to 68) hPa is
-  greatly reduced over that in v3.3, such outliers are still present.
-  These typically appear as highly negative mixing ratios at the lowest
+    UTLS remove outliers while reducing ``false positives''} While the
+  number, and particularly the extreme values of, outliers in \thisv
+  HNO\cs3 at levels between 316 and 100 (sometimes to 68) hPa is greatly
+  reduced over that in v3.3, such outliers are still present.  These
+  typically appear as highly negative mixing ratios at the lowest
   several retrieval levels, often as part of oscillatory profiles with
   unrealistically high values at higher altitudes.  A simple procedure
   is recommended to screen such profiles based on eliminating all
@@ -247,8 +233,8 @@ pressures greater than) 22\,hPa.  For those levels:
   typical `bad' day (i.e., one with a relatively large number of
   outliers) in \thisv versus v3.3.  The \texttt{Quality} screening
   removes many of the profiles that are strongly negative at the bottom,
-  as well as many with the ``notch'' structure begtween 147 and
-  100\,hPa.  Most or all of the remainder of the profiles that are
+  as well as many (but not all) with the ``notch'' structure between 147
+  and 100\,hPa.  Most or all of the remainder of the profiles that are
   strongly negative at the bottom are flagged by the outlier screening;
   many of these profiles are oscillatory, so this screening also removes
   most or all of the strong positive outliers (typically at 147\,hPa).
@@ -285,10 +271,9 @@ be used to apply the following screening criteria:
     used in scientific study.}
 
   This threshold for \texttt{Quality} typically excludes
-  \texttildelow1\,--\,3\% 
-  of HNO\cs3 profiles on a daily basis; it is a conservative value that
-  potentially discards some ``good'' data points while not necessarily
-  identifying all ``bad'' ones.  
+  \texttildelow1\,--\,3\% of HNO\cs3 profiles on a daily basis; it is a
+  conservative value that potentially discards some ``good'' data points
+  while not necessarily identifying all ``bad'' ones.
 
 \item[Convergence:] \screeningrule{Only profiles with a value of the
     \texttt{Convergence} field (see section~\ref{sec:StatusQuality}) for
@@ -303,7 +288,7 @@ be used to apply the following screening criteria:
 \item[Outliers:] For levels at and above (pressures less than) 4.6\,hPa,
   especially at 2.2\,hPa and above, some profiles show vertically
   oscillatory behavior in conditions where HNO\cs3 is very low.  The
-  \texttt{Quality} and \texttt{Convergence} criteria defined above 
+  \texttt{Quality} and \texttt{Convergence} criteria defined above
   eliminate many of these profiles.
 \end{description}
 
@@ -335,70 +320,82 @@ be used to apply the following screening criteria:
 \label{fig:outlierprofs}
 \end{figure}
 
-\subsection*{Comparisons with other datasets}
+\subsection*{Artifacts}
 
-\thisv HNO\cs3 profiles generally show only small differences in
-magnitude from v3.3 when each data version is screened according to the
-criteria above.  Therefore, the comparisons with correlative data are
-expected to be very similar to those described for v3.3 by
-\citet{EOSMLSV33V34Quality}.
+\begin{itemize}
+\item There is a persistent ``notch'' at 100\,hPa, noted in
+  Figures~\ref{fig:zmv3v4diffs} and \ref{fig:outlierprofs}, that is most
+  pronounced in the tropics but also apparent in midlatitudes.  \thisv
+  HNO\cs3 at 147\,hPa is consistently slightly higher than that at
+  100\,hPa.  As can be seen in Figure~\ref{fig:outlierprofs}, this
+  feature is very strong in many profiles that are eliminated by one or
+  more of the screening criteria.  However,
+  Figure~\ref{fig:outlierprofs} (right panels) and
+  Figure~\ref{fig:zmv3v4diffs} (lower right panel) show that this
+  feature is more pronounced than it was in \prevv, and it is reduced,
+  but by no means eliminated, by following the recommended screening
+  procedures.  This feature was persistent throughout \thisv testing,
+  and its origin is still unclear.
+\end{itemize}
 
+\subsection*{Desired improvements for future data version(s)}
+
+\begin{itemize}
+\item Diagnose and eliminate the unphysical notch (minimum) at
+  100\,hPa.
+\end{itemize}
+
+\begin{DIFnomarkup}
 \begin{table}
 \caption{Summary of Aura MLS \thisv HNO\cs3 Characteristics}\vspace{0.5ex}
 \label{tab:HNO3Summary}
 \begin{minipage}{\linewidth}\small
   \renewcommand{\thefootnote}{\thempfootnote}
-  \centering\begin{tabular}{cccccl} \toprule
+  \centering\begin{tabular}{ccccl} \toprule
 \parbox[m]{16mm}{\bfseries\centering{Pressure\\ / hPa}} &
 \parbox[m]{22mm}{\bfseries\centering{Resolution\\ \mbox{V $\times$ H}%
 \footnote{Horizontal resolution in along-track direction.} \\ / km}} &
 \parbox[m]{16mm}{\bfseries\centering{Precision%
-\footnote{Precision on individual profiles, determined from observed
- scatter in the data in a region of minimal atmospheric variability.} \\/ ppbv}} &
-\parbox[m]{18mm}{\bfseries\centering{Bias\\uncertainty%
+    \footnote{Precision on individual profiles, determined from observed
+      scatter in the data in a region of minimal atmospheric
+      variability.} \\/ ppbv}} &
+\parbox[m]{20mm}{\bfseries\centering{Systematic\\Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
  of the probable magnitude.}\\ / ppbv}} &
-\parbox[m]{18mm}{\bfseries\centering{Scaling\\uncertainty%
-\footnotemark[\value{mpfootnote}]\\/ \%}} &
 \textbf{Comments} \\
 %
 \midrule
 %
-0.68\,--\,0.001 & ---  & ---    & ---    & --- & Unsuitable for scientific
+0.68\,--\,0.001 & ---  & ---    & ---    &  Unsuitable for scientific
   use\\
 %
-1.0 & 4 $\times$ 650\,--\,750  & $\pm$1.2 & $\pm$0.5 & $\pm$50\% & Caution, averaging
+1.5\,--\,1.0 & 4.5 $\times$ 550\,--\,750  & $\pm$1.2 & $\pm$0.3 & Caution, averaging
 recommended \\
 %
-1.5 & 4.5 $\times$ 550\,--\,600 & $\pm$1.2  & $\pm$0.5 & $\pm$50\% & Averaging recommended \\
+2.1 & 5 $\times$ 450\,--\,500 & $\pm$0.8  & $\pm$0.5 & \\
 %
-2.1 & 5 $\times$ 450\,--\,500 & $\pm$0.8  & $\pm$1.0 & $\pm$50\% & \\
+3.2 & 4.5 $\times$ 400 & $\pm$0.6  & $\pm$0.1  & \\
 %
-3.2 & 4.5 $\times$ 400 & $\pm$0.6  & $\pm$0.6  & $\pm$10\,--\,15\% & \\
+15\,--\,4.6  & 3\,--\,4 $\times$ 250\,--\,350 & $\pm$0.6 & $\pm$0.5  & \\
 %
-4.6 & 4 $\times$ 300\,--\,350 & $\pm$0.6  & $\pm$0.6  & $\pm$10\,--\,15\% & \\
-% 
-15\,--\,6.8  & 3\,--\,4 $\times$ 250\,--\,300 & $\pm$0.6 & $\pm$1\,--\,2  &
-  $\pm$10\% & \\
+22 & 4.5 $\times$ 500 & $\pm$0.6 & $\pm$2.4 & \\
 %
-22 & 4.5 $\times$ 500 & $\pm$0.6 & $\pm$1\,--\,2 &
-$\pm$10\% & \\
+32 & 4 $\times$ 400 & $\pm$0.6 & $\pm$1.5 & \\
 %
-147\,--\,32  & 3\,--\,4 $\times$ 350\,--\,400 & $\pm$0.6 & $\pm$0.5\,--\,1 &
-$\pm$5\,--\,10\% & \\
+147\,--\,46  & 3\,--\,4 $\times$ 350\,--\,400 & $\pm$0.6 & $\pm$1.0 & \\
 %
-215        & 4\,--\,4.5 $\times$ 450  & $\pm$0.6 & $\pm$1    &
-\texttildelow$\pm$30\% & \\
+215        & 4\,--\,4.5 $\times$ 450  & $\pm$0.6 & $\pm$1.1    & \\
 %
-316        & ---      & ---    & ---    & --- & Unsuitable for
+316        & ---      & ---    & ---    & Unsuitable for
 scientific use\\
 %
-1000\,--\,464  & ---      & ---    & ---    & --- & Not retrieved\\
+1000\,--\,464  & ---      & ---    & ---    & Not retrieved\\
 %
 \bottomrule
 \end{tabular}\par
 \end{minipage}
 \end{table}
+\end{DIFnomarkup}
 
 %%% Local Variables: 
 %%% mode: latex

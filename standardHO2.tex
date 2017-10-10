@@ -1,19 +1,20 @@
 \speciestitle{Peroxy Radical}{HO\cs2}{HO2}{%
 \item[Useful range:] 22\,--\,0.046\,hPa
-\item[Contact:] Shuhui Wang, \email{Shuhui.Wang@jpl.nasa.gov}}
+\item[Contact:] Luis Millan, \email{Luis.F.Millan@jpl.nasa.gov}
+  and Shuhui Wang, \email{shw@gps.caltech.edu}}
 
 \subsection*{Introduction}
 
 A description of HO\cs2 data quality, precision, systematic errors, and
 validation for an earlier version, v2.2, is given in
 \citet{PickettEtal08}. An early validation using v1.5 software is also
-described in \citet{PickettEtal06}. While there are significant
-improvements from v1.5 to \prevv, the HO\cs2 data quality in \thisv is
-generally similar to \prevv.  The estimated uncertainties, precisions,
+described in \citet{PickettEtal06}. The estimated uncertainties, precisions,
 and resolution for \thisv HO\cs2 are summarized below in
-Table~\ref{tab:HO2Summary}. Note that the systematic uncertainties are
-from \prevv and, while they are not expected to change significantly in
-\thisv, they will be updated for this new version at a later date.
+Table~\ref{tab:HO2Summary}. 
+
+% Note that the systematic uncertainties are
+% from \prevv and, while they are not expected to change significantly in
+% \thisv, they will be updated for this new version at a later date.
 
 An algorithm to retrieve daily zonal means of HO\cs2 over an extended
 vertical range by first averaging the radiances has been developed by
@@ -67,9 +68,9 @@ data (\texttildelow2000 samples) for most pressure levels over
   a day-night difference is required for HO\cs2 for all pressure
   levels). Panel (c) shows the same data in (a) converted into density
   units. Panel (d) shows the day-night differences for the data in panel
-  (c). Panels (e) and (f) are equivalent to (c) and (d) but using v2.2
+  (c). Panels (e) and (f) are equivalent to (c) and (d) but using \prevv
   data. The average in panels (a)\,--\,(d) using \thisv data includes 3052
-  profiles, while the average in panels (e)\,--\,(f) using v2.2 data
+  profiles, while the average in panels (e)\,--\,(f) using \prevv data
   includes 2695 profiles.}
 \label{fig:HO2profiles}
 \end{figure}
@@ -77,20 +78,17 @@ data (\texttildelow2000 samples) for most pressure levels over
 \subsection*{Accuracy}
 
 Table~\ref{tab:HO2Summary} summarizes the accuracy expected for HO\cs2.
-The scaling uncertainty is the part of the systematic uncertainty that
-scales with HO\cs2 concentration, e.g. spectroscopic line strength. Bias
-uncertainty is the part of the uncertainty that is independent of
-concentration. For both bias and scaling uncertainty, quantification of
-the combined effect in MLS calibration, spectroscopy etc., on the data
-product was determined by calculating the effects of each source of
-uncertainty. These accuracy calculations are for \prevv products. While
-no significant change is expected from \prevv to \thisv, a comprehensive
-error analysis for \thisv will be conducted. Bias uncertainty can be
-eliminated by taking day-night differences over the entire recommended
-pressure range. The accuracy of the HO\cs2 measurement due to systematic
-errors is a product of scaling uncertainty and the observed HO\cs2
-concentration. The overall uncertainty is the square root of the sum of
-squares of the precision and accuracy.
+The effect of each identified source of systematic error on MLS
+measurements of radiance has been quantified and modeled
+\citep{ReadEtal07}. These quantified effects correspond to either
+$2\sigma$ estimates of uncertainties in each MLS product, or an estimate
+of the maximum reasonable uncertainty based on instrument knowledge
+and/or design requirements. These accuracy calculations were performed
+with more realistic HO\cs2 atmospheric profiles than for \prevv
+estimates.  The HO\cs2 bias can be eliminated by taking day-night
+differences over the entire recommended pressure range. The overall
+uncertainty is the square root of the sum of squares of the precision
+and accuracy.
 
 \subsection*{Data screening}
 \label{sec:HO2Screening}
@@ -104,7 +102,7 @@ investigations if all the following tests are successful:
     irrespective of the value of the \texttt{Quality} field.}
 \item[Convergence:] \convergencerule{1.1} In version v2.2 this
   test often fails for 100 out of 3500 profiles in a day. In the current
-  version, \thisv, there are often zero or very few non-convergence
+  version, \thisv, there are often zero or very few non-converged
   profiles.
 \end{description}
 
@@ -125,22 +123,22 @@ studies.
 \vspace{\tablecaptionsep}
 \label{tab:HO2Summary}
 \begin{minipage}{\linewidth}
-\small\centering\begin{tabular}{rccccl}
+\small\centering\begin{tabular}{rcccl}
 \toprule
 \parbox{10ex}{\bfseries\centering Pressure\\ /\,hPa} &
 \parbox{10ex}{\bfseries\centering Vertical\\ resolution\\ \,km} &
 \parbox{10ex}{\bfseries\centering Precision\footnote{Precision for a
     single profile} / \mbox{10\cp6 cm\cp{$-$3}}} &
-\parbox{15ex}{\bfseries\centering Bias uncertainty / \mbox{10\cp6 cm\cp{$-$3}}} &
-\parbox{12ex}{\bfseries\centering Scaling uncertainty / \%} &
+\parbox{15ex}{\bfseries\centering Day--night accuracy / \mbox{10\cp6 cm\cp{$-$3}}} &
+
 \textbf{Comments} \\
 \midrule
- $<$ 0.03\,hPa  & ---   & ---               & --- & --- & Unsuitable for scientific use\\
- 0.046\,hPa     & 10    & 6                 & 0.39& 22  & Use day--night difference \\
- 0.10\,hPa      & 7     & 10                & 0.46& 16  & Use day--night difference \\
- 1.0 \,hPa      & 5     & 11                & 1.1 & 6   & Use day--night difference \\
- 10  \,hPa      & 4     & 50                & 37  & 20  & Use day--night difference \\
- $>$ 22\,hPa    & ---   & ---               & --- & --- & Unsuitable for scientific use\\
+ $<$ 0.03\,hPa  & ---   & ---               & ---  &  Unsuitable for scientific use\\
+ 0.046\,hPa     & 10    & 6                 & 0.01 &  Use day--night difference \\
+ 0.10\,hPa      & 7     & 10                & 0.2  &  Use day--night difference \\
+ 1.0 \,hPa      & 5     & 11                & 0.2  &  Use day--night difference \\
+ 10  \,hPa      & 4     & 50                & 14   &  Use day--night difference \\
+ $>$ 22\,hPa    & ---   & ---               & ---  &  Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
 \end{minipage}
