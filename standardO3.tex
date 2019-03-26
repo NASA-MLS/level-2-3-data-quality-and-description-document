@@ -5,7 +5,7 @@
   Michael Schwartz (upper troposphere), 
   \email{Michael.J.Schwartz@jpl.nasa.gov}}
  
-\subsection*{Introduction} 
+\subsection{Introduction} 
 
 As is the case with previous versions, the \thisv standard O\cs3
 product is taken from a retrieval using 240-GHz radiances, 
@@ -47,7 +47,7 @@ are not screened per the instructions of section~\ref{sec:StandardTemperature}
 and users may wish to reject columns for which standard screening rejects 
 the corresponding temperature profile.
 
-\subsection*{Comparison of \thisv with past data versions}  
+\subsection{Comparison of \thisv with past data versions}  
 
 The vertical retrieval grid has not changed from \prevvSlash; between
 316\,hPa and 1\,hPa, \thisv ozone profiles are retrieved on 12 surfaces
@@ -157,7 +157,7 @@ percent, with a tendency towards slightly lower values (but within about
 using a tropopause derived from MLS temperature, is calculated by the
 \thisv O\cs3 retrieval.  The column based upon the GEOS-5 tropopause is
 no longer routinely produced.
-\subsection*{Resolution} 
+\subsection{Resolution} 
 
 %\onestandardavk{O3_HR}{O\cs3} 
  
@@ -200,7 +200,7 @@ separation of MLS measurements, set by the Aura orbit, is
 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer
 sampling at the highest latitudes sampled in each hemisphere.
  
-\subsection*{Precision} 
+\subsection{Precision} 
  
 As found previously, the Level~2 precision values are often slightly lower than 
 the scatter observed in a narrow latitude band centered 
@@ -221,18 +221,25 @@ column ozone abundances down to pressures of 100 to 215\,hPa are 2\% or less.
 The typical empirical precision in the columns based on (1-$\sigma$)
 variability in the tropics is 2 to 3\%.  
  
-\subsection*{Accuracy}
+\subsection{Accuracy}
  
 The accuracy estimates shown in Table~\ref{tab:O3Summary} are from an
 analysis which propagated estimated systematic errors in MLS
-calibration, spectroscopy, etc., through the (\thisv) measurement system.  The 
-values shown here are intended to represent 2$\sigma$ estimates of accuracy.  Comparison of MLS O\cs3 with
-well-established data sets shows no evidence of significant biases overall, although 
-the oscillations in the UTLS at low latitudes lead to some systematic effects which can reach 20-40\%, depending on the pressure level. 
-For more details, see the MLS validation papers by \citet{FroidevauxEtal08O3},
-\citet{JiangYEtal07}, and \citet{LiveseyEtal08}, as well as references
-therein; some more recent references relevant to MLS ozone are available
-on the MLS website under ``Publications''.  In particular, see the comprehensive work by \citet{HubertEtal16} (more related information further below). In recent years, validation studies have focused more on longer-term changes or drifts (with good stability being observed versus other reliable measurements) and on the UTLS region.
+calibration, spectroscopy, etc., through the (\thisv) measurement
+system.  The values shown here are intended to represent 2$\sigma$
+estimates of accuracy.  Comparison of MLS O\cs3 with well-established
+data sets shows no evidence of significant biases overall, although the
+oscillations in the UTLS at low latitudes lead to some systematic
+effects which can reach 20-40\%, depending on the pressure level.  For
+more details, see the MLS validation papers by
+\citet{FroidevauxEtal08O3}, \citet{JiangYEtal07}, and
+\citet{LiveseyEtal08}, as well as references therein; some more recent
+references relevant to MLS ozone are available on the MLS website under
+``Publications''.  In particular, see the comprehensive work by
+\citet{HubertEtal16} (more related information further below). In recent
+years, validation studies have focused more on longer-term changes or
+drifts (with good stability being observed versus other reliable
+measurements) and on the UTLS region.
  
 \paragraph*{Column values}
 Sensitivity tests using systematic changes in various parameters that
@@ -244,7 +251,7 @@ ozone-related publications, e.g., available from the MLS website) for
 results on column ozone comparisons versus satellite, sonde, and lidar
 data.
  
-\subsection*{Data screening} 
+\subsection{Data screening} 
 \label{sec:O3Screening}
 \begin{description} 
  
@@ -280,24 +287,40 @@ These criteria typically remove 1 to 2 \% of global daily
  
 \end{description} 
  
-\subsection*{Review of comparisons with other datasets} 
+\subsection{Review of comparisons with other datasets} 
  
 O\cs3 comparisons have indicated general agreement at the 5\,--\,10\,\%
 level with stratospheric profiles from a number of comparisons using
 satellite, balloon, aircraft, and ground-based data.  A high MLS v2.2
 bias at 215\,hPa had been observed in some comparisons versus certain
 ozonesonde and satellite datasets. Such high biases were reduced in
-versions \prevv, with additional smaller reductions in the
-ozone values in \thisv.  We have found that latitudinal and temporal
-changes observed in various correlative datasets are well reproduced by
-the MLS ozone product.  Intercomparisons of a large variety of ozone
-measurements by satellite instruments have been documented by
-\citet{TegtmeierEtal13}, as part of the analyses produced by the SPARC
-Data Initiative; the Aura MLS ozone values compare quite favorably to
-the multi-instrument mean values as well as to SAGE II ozone.  The temporal stability of the Aura MLS ozone dataset has been shown to be very good, in comparison to lidar datasets (\citet{NairEtal12}). The more recent
-work by \citet{HubertEtal16} includes both the lidar network and the ozonesonde network as references for a comprehensive satellite data intercomparison study. The latter authors show that average biases between MLS and latitudinally-binned data from lidar and ozonesonde sites across the globe is typically within 5\% or better, with poorer behavior (known vertical oscillations) at low latitudes in the UTLS.  In terms of drifts, the Aura MLS ozone dataset is shown (in the above work) to be very stable, a term also applied only to the SAGE II dataset; MLS exhibits drifts with respect to the ground-based networks that fall within 1.5 to 2\% per decade, with zero drift encompassed by the error bars (i.e. non-significant drifts), at least in the middle stratosphere. The Aura MLS data, in combination with older datasets, provides a critical tool for the study of global O\cs3 in a changing climate and into the expected O\cs3 recovery period, as anthropogenic ozone depleting substances decline in concentration. 
+versions \prevv, with additional smaller reductions in the ozone values
+in \thisv.  We have found that latitudinal and temporal changes observed
+in various correlative datasets are well reproduced by the MLS ozone
+product.  Intercomparisons of a large variety of ozone measurements by
+satellite instruments have been documented by \citet{TegtmeierEtal13},
+as part of the analyses produced by the SPARC Data Initiative; the Aura
+MLS ozone values compare quite favorably to the multi-instrument mean
+values as well as to SAGE II ozone.  The temporal stability of the Aura
+MLS ozone dataset has been shown to be very good, in comparison to lidar
+datasets (\citet{NairEtal12}). The more recent work by
+\citet{HubertEtal16} includes both the lidar network and the ozonesonde
+network as references for a comprehensive satellite data intercomparison
+study. The latter authors show that average biases between MLS and
+latitudinally-binned data from lidar and ozonesonde sites across the
+globe is typically within 5\% or better, with poorer behavior (known
+vertical oscillations) at low latitudes in the UTLS.  In terms of
+drifts, the Aura MLS ozone dataset is shown (in the above work) to be
+very stable, a term also applied only to the SAGE II dataset; MLS
+exhibits drifts with respect to the ground-based networks that fall
+within 1.5 to 2\% per decade, with zero drift encompassed by the error
+bars (i.e. non-significant drifts), at least in the middle
+stratosphere. The Aura MLS data, in combination with older datasets,
+provides a critical tool for the study of global O\cs3 in a changing
+climate and into the expected O\cs3 recovery period, as anthropogenic
+ozone depleting substances decline in concentration.
 
-\subsection*{Artifacts} 
+\subsection{Artifacts} 
 
 \begin{description}  
 \item[Oscillations in tropical UTLS ozone:] There has been some improvement 
@@ -315,7 +338,7 @@ work by \citet{HubertEtal16} includes both the lidar network and the ozonesonde 
 %   product (swath) from the MLS ozone files.
 \end{description}   
  
-% \subsection*{Priorities for future data version} 
+% \subsection{Priorities for future data version} 
 % \begin{itemize}  
 % \item 
 % \end{itemize}

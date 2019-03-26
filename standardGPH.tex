@@ -3,7 +3,7 @@
 \item[Contact:] Michael J. Schwartz,
   \email{Michael.J.Schwartz@jpl.nasa.gov}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
 
 Geopotential height (GPH) is retrieved, along with temperature and the
 related assignment of tangent pressures to limb views, primarily from
@@ -41,7 +41,7 @@ Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
 modeled accuracy and observed biases.  The following sections provide
 details.
 
-\subsection*{Differences between \thisv and previous versions}
+\subsection{Differences between \thisv and previous versions}
 The \thisv GPH product is taken from the \texttt{CorePlusR3} retrieval
 phase along with a number of standard products that depend upon
 radiances of the 240-GHz radiometer.  The previously released v02.2x and
@@ -91,7 +91,7 @@ similar.
 \label{fig:v4-v3_100hPaGPH_2005}
 \end{figure}
 
-\subsection*{Comparison to GEOS-5 Analysis}
+\subsection{Comparison to GEOS-5 Analysis}
 After removal of the geoid correction from v03.3x GPH, there remains a
 latitudinally and seasonally-varying bias between MLS and GEOS-5 that is
 also present in \thisv GPH.  Figure~\ref{fig:GPHv3_lat_annual} shows
@@ -169,14 +169,14 @@ last 4 profiles of each day for both temperature and GPH (as well as
 RHI) has been added to recommended screening for v4.20 (not needed for
 v4.22).
 
-\subsection*{Vertical resolution}
+\subsection{Vertical resolution}
 
 The GPH profile is vertically-integrated temperature, so its vertical
 resolution is not well-defined.  The vertical resolution of the
 underlying temperature given in Section~\ref{sec:StandardTemperature} is
 repeated in Table~\ref{tab:GPHSummary}.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 MLS \thisv GPH precision is summarized in Table~\ref{tab:GPHSummary}.
 Precision is the random component of measurements that will average-down
@@ -197,7 +197,7 @@ Off-diagonal elements of the temperature/GPH error covariance matrix are
 neglected in this GPH-precision-profile calculation, but resulting
 errors are believed to be small (\texttildelow5\,m near 100\,hPa.)
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The accuracy of the v2.2 GPH was modeled based upon consideration of a
 variety of sources of systematic error, as discussed in
@@ -229,7 +229,7 @@ bias relative to analyses (GEOS-5) at 100-hPa that drops to 100\,m at
 increasingly negative at higher levels, reaching -600\,m at 0.001\,hPa,
 but with significant latitudinal and seasonal variability.
 
-\subsection*{Known Artifacts}
+\subsection{Known Artifacts}
 To maintain its position in the ``A-Train'' constellation of satellites,
 the Aura spacecraft periodically executes ``inclination adjustment
 maneuvers'' (IAMs) involving large changes in spacecraft yaw and firing
@@ -249,7 +249,7 @@ times for data to be avoided is maintained on the MLS website:
 \href{http://mls.jpl.nasa.gov/cal/issues.txt}{\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
 
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:GPHScreening}
 
 GPH should be screened in much the same way as is temperature:
@@ -292,7 +292,7 @@ GPH should be screened in much the same way as is temperature:
   {\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
 \end{description}
 
-\subsection*{Desired improvements for future data version(s)}
+\subsection{Desired improvements for future data version(s)}
 
 Reduction of seasonally and latitudinally-repeating systematic errors in
 GPH that may be the result of errors in the absolute pointing

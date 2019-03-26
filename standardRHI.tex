@@ -3,7 +3,7 @@
 Profile from 316\,--\,0.002\,hPa.
 \item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
 
 RHi is relative humidity with respect to ice. The vertical grid for RHi
 is 12 levels per decade change in pressure for 1000\,--\,1.0 hPa
@@ -26,7 +26,7 @@ formula. RHi validation is presented in
 \citet{ReadEtal07}. Table~\ref{tab:RHISummary} is summary of precision,
 resolution, and accuracy.
 
-\subsection*{Changes from v3}
+\subsection{Changes from v3}
 
 The main differences between v4.2 and v3.3 relate to cloud screening and
 improvements in the \texttt{InitUTH} initial upper tropospheric and
@@ -99,7 +99,7 @@ includes instrument noise and atmospheric variability). The precisions
 for the two versions are nearly identical except for pressures greater
 than 68\,hPa, where v4 produces lower values.
 
-\subsection*{Resolution}
+\subsection{Resolution}
 
 RHi for pressures of 316\,hPa and smaller is a derived product and
 therefore a retrieval averaging kernel is not directly available.  An
@@ -122,7 +122,7 @@ a broad layer (4\,--\,6\,km) whose sensitivity peaks between
 \texttildelow350\,hPa (in the moist tropics) and \texttildelow650\,hPa
 (typical for dry high latitudes).
 
-\subsection*{Precision}
+\subsection{Precision}
 
 The values for precision are the root sum square (RSS) precisions for
 H\cs2O and temperature propagated through the Goff-Gratch relationship,
@@ -132,14 +132,14 @@ cases) in situations when the retrieved precision is larger than 50\% of
 the a priori precision for either temperature or H\cs2O --- an
 indication that the data is biased toward the a priori value.
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The values for accuracy are the RSS accuracies for H\cs2O and
 temperature scaled into \%\,RHi units. see
 sections~\ref{sec:StandardH2O} and~\ref{sec:StandardTemperature} for
 more details.
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:RHIScreening}
 \begin{description}
 
@@ -185,7 +185,7 @@ more details.
   day should not be used in v4.20.  The issue is fixed in v4.22.
 \end{description}
 
-\subsection*{Artifacts}
+\subsection{Artifacts}
 
 See sections~\ref{sec:StandardH2O} for H\cs2O
 and~\ref{sec:StandardTemperature} for temperature for specific issues
@@ -219,7 +219,7 @@ lower stratospheric water vapor product, discussed in
 section~\ref{sec:H2ODrift}.  Such a drift will also impact the RHi
 product.
 
-\subsection*{Review of comparisons with other datasets}
+\subsection{Review of comparisons with other datasets}
 
 Figures~\ref{fig:rhiairsmlsjf2005maps} and
 \ref{fig:rhiairsmlsjja2005maps} show comparisons between AIRS v6 and MLS
@@ -253,7 +253,7 @@ June--August 2005.}
 \end{figure}
 
 
-\subsection*{Desired improvements}
+\subsection{Desired improvements}
 
 We are aiming to improve high latitude performance of 261 and 215\,hPa
 H\cs2O in future work.

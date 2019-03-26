@@ -13,7 +13,11 @@
       \setlength{\labelsep}{0pt}%
     }}%
   {\end{list}}
-\newcommand{\tabnudge}[1]{\smash{\raisebox{1.4ex}{#1}}}
+\newcommand{\tabnudge}[1]{\raisebox{-0.5\baselineskip}{#1}}
+%
+\newcommand{\tableheadentry}[1]{\textbf{\textcolor{white}{#1}}}
+\newcommand{\ditto}{--\textquotedbl--}
+\newcommand{\longditto}{---\textquotedbl---}
 %
 \begin{table}
 \renewcommand{\thefootnote}{\sffamily[\arabic{footnote}]}
@@ -25,99 +29,121 @@
 \label{tab:ProductSummary}
 \vspace{-2mm}
 %
+\setlength{\tabcoli}{2.3cm}
+\setlength{\tabcolii}{2.3cm}
+\setlength{\tabcoliii}{2.0cm}
+\setlength{\tabcoliv}{2.5cm}
+\setlength{\tabcolv}{1cm}
+\setlength{\tabcolvi}{\linewidth-12\tabcolsep-\tabcoli-\tabcolii-\tabcoliii-\tabcoliv-\tabcolv}
+%
 \begin{center}
 \small\sffamily
-\begin{tabular}{lllllll}
-\toprule
-\rule[-2.5ex]{0pt}{6ex}\textbf{Product name} & 
-\parbox{2.5cm}{\raggedright\bfseries Useful vertical range~/~hPa} &
-\parbox{2.2cm}{\raggedright\bfseries \texttt{Quality} threshold\,\footnotemark[1]} &
-\parbox{2.2cm}{\raggedright\bfseries \texttt{Convergence} threshold\,\footnotemark[2]} &
-\textbf{Notes} &
-\textbf{Contact name} \\
-\midrule
+\begin{tabular}{%
+    >{\raggedright}p{\tabcoli}%
+    >{\raggedright}p{\tabcolii}%
+    >{\raggedright}p{\tabcoliii}%
+    >{\raggedright}p{\tabcoliv}%
+    >{\raggedright}p{\tabcolv}%
+    >{\raggedright}p{\tabcolvi}}
+  \rowcolor{tableheadbackground}
+\tableheadentry{Product} & 
+\tableheadentry{Useful vertical range~/~hPa} &
+\tableheadentry{\texttt{Quality} threshold\,\footnotemark[1]} &
+\tableheadentry{\texttt{Convergence} threshold\,\footnotemark[2]} &
+\tableheadentry{Notes} &
+\tableheadentry{Contact name}%
+\tabularnewline\flipfloprow
 %
-\flipfloprow
-\hyperref[sec:StandardBrO]{\texttt{BrO}} & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Luis Mill\'an Valle \\
+\hyperref[sec:StandardBrO]{\texttt{BrO}} & 10\,--\,3.2 & 1.3 & 1.05 & A,D,N & Luis Mill\'an Valle
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardCH3Cl]{\texttt{CH3Cl}} & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee \\
+\hyperref[sec:StandardCH3Cl]{\texttt{CH3Cl}} & 147\,--\,4.6 &  1.3 & 1.05 & N & Michelle Santee
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardCH3CN]{\texttt{CH3CN}} & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee \\
+\hyperref[sec:StandardCH3CN]{\texttt{CH3CN}} & 46\,--\,1.0 &  1.4 & 1.05 & E,N & Michelle Santee
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardCH3OH]{\texttt{CH3OH}} & \multicolumn{4}{c}{Not to be used pending further validation} & Michelle Santee \\
+\hyperref[sec:StandardCH3OH]{\texttt{CH3OH}} &
+\multicolumn{4}{c}{Not to be used pending further validation} & Michelle Santee
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardClO]{\texttt{ClO}} & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee \\
+\hyperref[sec:StandardClO]{\texttt{ClO}} & 147\,--\,1.0 & 1.3 & 1.05 & B & Michelle Santee
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-& 100\,--\,0.0046 & & & & Hugh Pumphrey \\
-\samecolorrow
-\tabnudge{\hyperref[sec:StandardCO]{\texttt{CO}}}  & 215\,--\,146 & \tabnudge{1.5} & \tabnudge{1.03} & \tabnudge{C} & Michael Schwartz \\
+\hyperref[sec:StandardCO]{\texttt{CO}} &
+100\,--\,0.0046\newline 215\,--\,146 &
+\tabnudge{1.5} &
+\tabnudge{1.03} &
+\tabnudge{C} &
+Hugh Pumphrey\newline Michael Schwartz%
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
- & 83\,--\,0.001 & 0.2 & & -- &  \\
+\hyperref[sec:StandardGPH]{\texttt{GPH}} &
+83\,--\,0.001 \newline 261\,--\,100 &
+0.2 \newline 0.9 &
+% 1.03 \newline\ditto &
+\tabnudge{1.03} &
+--\newline C &
+\tabnudge{Michael Schwartz}
+\tabularnewline\flipfloprow
 %
-\samecolorrow
-\tabnudge{\hyperref[sec:StandardGPH]{\texttt{GPH}}} & 261\,--\,100 & 0.9 & \tabnudge{1.03} & C,O & \tabnudge{Michael Schwartz} \\
+\hyperref[sec:StandardH2O]{\texttt{H2O}} &
+83\,--\,0.002 \newline 316\,--\,100 &
+\tabnudge{0.7} &
+\tabnudge{2.0} &
+O \newline C,O &
+Alyn Lambert \newline William Read
+\tabularnewline\flipfloprow
 %
-\flipfloprow & 83\,--\,0.002 & & & -- & Alyn Lambert \\
-\samecolorrow
-\tabnudge{\hyperref[sec:StandardH2O]{\texttt{H2O}}} & 316\,--\,100 & \tabnudge{1.45} & \tabnudge{2.0} & C &
-William Read \\
+\hyperref[sec:StandardHCl]{\texttt{HCl}} & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardHCl]{\texttt{HCl}} & 100\,--\,0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux \\
+\hyperref[sec:StandardHCN]{\texttt{HCN}} & 21\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardHCN]{\texttt{HCN}} & 21\,--\,0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey \\
+\hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215\,--\,1.5 & See text & See text & C,O & Gloria Manney \\
+\hyperref[sec:StandardHO2]{\texttt{HO2}} & 22\,--\,0.046 & N/A & 1.1 & A,D,N &
+Luis Millan \& Shuhui Wang
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardHO2]{\texttt{HO2}} & 22\,--\,0.046 & N/A & 1.1 &
-A,D,N & Luis Millan \& Shuhui Wang \\
+\hyperref[sec:StandardHOCl]{\texttt{HOCl}} & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardHOCl]{\texttt{HOCl}} & 10\,--\,2.2 & 1.2 & 1.05 & N &  Lucien Froidevaux \\
+\hyperref[sec:StandardIWC]{\texttt{IWC}} & 215\,--\,83 & N/A & N/A & B & Alyn Lambert
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardIWC]{\texttt{IWC}} & 215\,--\,83 & N/A & N/A & B & Alyn Lambert \\
+\hyperref[sec:StandardIWP]{\texttt{IWP}} & N/A & N/A & N/A & B & Alyn Lambert
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardIWP]{\texttt{IWP}} & N/A & N/A & N/A & B & Alyn Lambert \\
+\hyperref[sec:StandardN2O]{\texttt{N2O}} & 68\,--\,0.46 & 1.0 & 2.0 & -- & Alyn Lambert
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardN2O]{\texttt{N2O}} & 68\,--\,0.46 & 1.3 & 2.0 & -- & Alyn Lambert \\
+\hyperref[sec:StandardO3]{\texttt{O3}\,\footnotemark[3]} &
+100\,--\,0.02 \newline 261\,--\,121 &
+\tabnudge{1.0} &
+\tabnudge{1.03} &
+\tabnudge{C} &
+Lucien Froidevaux \newline Michael Schwartz
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
- & 100\,--\,0.02 & & & & Lucien Froidevaux \\
-%
-\samecolorrow
-\tabnudge{\hyperref[sec:StandardO3]{\texttt{O3}\,\footnotemark[3]}} & 
- 261\,--\,121 & \tabnudge{1.0} & \tabnudge{1.03} & \tabnudge{C} &
-  Michael Schwartz \\
-%
-\flipfloprow 
 \hyperref[sec:StandardOH]{\texttt{OH}} & 32\,--\,0.0032 & N/A & 1.1 & D
-& Luis Millan \& Shuhui Wang \\
+& Luis Millan \& Shuhui Wang
+\tabularnewline\flipfloprow
 %
-\flipfloprow 
-\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316\,--\,0.002 & See text & See text & C,O & William Read \\
+\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316\,--\,0.002 & See text & See text & C,O & William Read
+\tabularnewline\flipfloprow 
+\hyperref[sec:StandardSO2]{\texttt{SO2}} & 215\,--\,10 & 0.95 & 1.03 & E & William Read
+\tabularnewline\flipfloprow 
 %
-\flipfloprow 
-\hyperref[sec:StandardSO2]{\texttt{SO2}} & 215\,--\,10 & 0.95 & 1.03 & E & William Read \\
+\hyperref[sec:StandardTemperature]{\texttt{Temperature}\,\footnotemark[5]} &
+83\,--\,0.001 \newline 261\,--\,100 &
+0.2 \newline 0.9 &
+\tabnudge{1.03} &
+-- \newline C &
+\tabnudge{Michael Schwartz}
 %
-\flipfloprow 
- & 83\,--\,0.001 & 0.2 & & -- &  \\
-%
-\samecolorrow
-\tabnudge{\hyperref[sec:StandardTemperature]{\texttt{Temperature}\,\footnotemark[5]}} & 261\,--\,100 & 0.9 & \tabnudge{1.03} & C,O & \tabnudge{Michael Schwartz} \\
-%
-\bottomrule
 \end{tabular}
 \end{center}
 %

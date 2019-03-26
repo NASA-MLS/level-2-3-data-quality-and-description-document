@@ -2,14 +2,14 @@
 \item[Useful range:] 215\,--\,10.0\,hPa
 \item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
 
 The standard SO\cs2 product is taken from the 240-GHz retrieval
 (\texttt{CorePlusR3}). MLS can only measure significantly enhanced
 concentrations above nominal background such as that from volcanic
 injections. Validation of SO\cs2 is published in \citet{PumphreyEtal15}.
 
-\subsection*{Changes from v3}
+\subsection{Changes from v3}
 
 The v4 SO\cs2 retrieval has two significant changes from v3. The first is a
 different method of modeling the background radiance signal from unknown
@@ -47,7 +47,7 @@ smaller than the MLS SO\cs2 accuracy estimate.  Both versions
 systematic errors in the MLS measurement system. The $-20\,\text{ppbv}$
 reported at 215\,hPa is also a systematic artifact.
 
-\subsection*{Resolution}
+\subsection{Resolution}
 \onestandardavk{SO2}{SO\cs2}%
 
 Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2 is
@@ -55,7 +55,7 @@ Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2 is
 horizontal resolution perpendicular to the orbit track is 6\,km, the
 full width at half maximum of the MLS antenna, for all pressures.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 The estimated precision for SO\cs2 is \texttildelow4\,ppbv for all
 heights between 215\,--\,10\,hPa. The precisions are set to negative
@@ -63,13 +63,13 @@ values (or zero in some cases) in situations when the retrieved
 precision is larger than 50\% of the a priori precision -- an indication
 that the data is biased toward the a priori value.
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 Accuracy is estimated to be 10\,--\,15\,ppbv for pressures less than
 147\,hPa increasing to \texttildelow20\,ppbv at 215\,hPa. These may be
 different for the v4 SO\cs2 product.
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:SO2Screening}
 \begin{description}
 \item[Pressure range:] \screeningrule{215\,--\,10.0\,hPa} \standardrangestatement
@@ -101,7 +101,7 @@ with water vapor, this value represents where the quality versus yield
     \texttt{Convergence}\, \emph{less} than 1.03 should be used.}
 \end{description}
 
-\subsection*{Artifacts}
+\subsection{Artifacts}
 
 High values of SO\cs2 accompanied with negative errors are likely to be
 underestimated due to a priori influence which biases the value toward
@@ -119,7 +119,7 @@ a background bias of $\sim-20\,$ppbv.
 \label{fig:so2datayields}
 \end{figure}
 
-\subsection*{Review of comparisons with other datasets}
+\subsection{Review of comparisons with other datasets}
 
 MLS has successfully detected SO\cs2 from 23 eruptions since launch.
 These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana

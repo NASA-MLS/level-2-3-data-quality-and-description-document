@@ -136,8 +136,10 @@
     \texttt{Convergence} field is less than #1 should be used.}}
 
 % ----------------------------------- Table flipflopping
-\colorlet{tableoddbackground}{black!10}
-\colorlet{tableevenbackground}{white}
+\colorlet{tableheadbackground}{SectionColor}
+\colorlet{tableheadcolor}{white}
+\colorlet{tableoddbackground}{SectionColor!20}
+\colorlet{tableevenbackground}{SectionColor!40}
 \newif\ifoddrow\oddrowtrue
 \newcommand{\flipfloprow}{%
   \ifoddrow

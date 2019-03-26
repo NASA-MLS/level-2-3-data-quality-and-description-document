@@ -2,9 +2,9 @@
 \item[Useful range:] 68\,--\,0.46\,hPa
 \item[Contact:] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
 
-\subsubsection*{Redefinition of the N\cs2O standard product for \thisv
+\subsubsection{Redefinition of the N\cs2O standard product for \thisv
   to use band 3 (190-GHz) signals}
 
 The standard product for \thisv N\cs2O is taken from the 190-GHz
@@ -49,7 +49,7 @@ from launch until June 6, 2013 and stored in the \texttt{L2GP-DGG} files
 in the \texttt{N2O-640} swath.  Details of the retrieval method and
 validation results are presented in \citep{LambertEtal07}.
 
-\subsection*{Resolution}
+\subsection{Resolution}
 
 \onestandardavk{N2O-190}{190\,GHz N\cs2O}
 
@@ -72,7 +72,7 @@ The longitudinal separation of the MLS measurements is
 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer
 sampling in polar regions.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 Precision as defined here is the $1\sigma$ uncertainty in the retrieved
 value calculated by the Level~2 algorithms and has been validated
@@ -86,7 +86,7 @@ The N\cs2O values at the 147\,hPa pressure level have a large a priori
 influence and practically all precisions are flagged negative at this
 level.
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained
 for both v4 N\cs2O products using the same detailed analyses presented
@@ -95,7 +95,7 @@ the systematic uncertainties associated with the MLS instrument
 calibration, spectroscopic uncertainty and approximations in the
 retrieval formulation and implementation.
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:N2OScreening}
 \begin{description}
 \item[Pressure range (\texttt{N2O-190}):] \screeningrule{68\,--\,0.46\,hPa}
@@ -108,9 +108,9 @@ retrieval formulation and implementation.
 \standardprecisionrule
 \evenstatusrule
 
-\item[Quality (\texttt{N2O-190}):] \qualityrule{1.3}
-  A small fraction of \texttt{N2O-190} profiles (typically less than 4\%) will
-  be discarded via this screening.
+\item[Quality (\texttt{N2O-190}):] \qualityrule{1.0} Note that this is a
+  change from the threshold originally suggested for \thisv.  See the
+  discussion of this topic below.
 
 \item[Convergence (\texttt{N2O-190}):] \convergencerule{2.0}
   A fraction of the \texttt{N2O-190} data (typically less than 0.5\%) at this level
@@ -130,7 +130,22 @@ artifacts for more details.}
 
 \end{description}
 
-\subsection*{Artifacts}
+\subsubsection{Updated \texttt{Quality} screening recommendation}
+A byproduct of the aging in MLS that gives rise to the drift in the
+water vapor product (see section~\ref{sec:H2ODrift}) and 190-GHz N\cs2O
+(see below) is that the \texttt{Quality} metric for the 190-GHz N\cs2O
+product exhibits a decreasing trend (most notable in the years following
+\texttildelow2009).  This decrease is not correlated with any actual
+decline in the accuracy of the MLS N\cs2O product, which appears largely
+unchanged (drift issues aside).  However, application of the previously
+recommended 1.3 \texttt{Quality} threshold leads to rejection of an
+unreasonably large fraction of the N\cs2O profiles in the more recent
+years of the Aura mission, particularly during southern winter.  The
+revised 1.0 \texttt{Quality} threshold restores these profiles without
+erroneously identifying any obviously poor profiles as acceptable.
+
+\subsection{Artifacts}
+\label{sec:N2ODrift}
 
 In addition to the large bias of the 190-GHz N\cs2O at 100\,hPa (not
 removed by screening), there are occasional outliers at the highest
@@ -156,7 +171,16 @@ cannot be applied successfully for pressures at and less than 0.1\,hPa
 as the $-40\,\text{ppbv}$ hard limit introduces a positive bias in any
 average.
 
-\subsection*{Review of comparisons between MLS N\cs2O  versions and other datasets}
+A long-term trend of about $-0.5\%$ per year has been observed in the
+MLS \texttt{N2O-190} data product, through analysis of the mean values
+in the equatorial lower stratosphere in the years following 2009.  Since
+the long term secular increase in tropospheric N\cs2O observed by
+ground-based instruments is about $+0.25\%/\text{year}$, the anomalous
+MLS \texttt{N2O-190} drift giving rise to the observed \texttt{N2O-190}
+trend is probably around $-0.75\%/\text{year}$. The cause of this small
+but statistically significant drift is under investigation.
+
+\subsection{Review of comparisons between MLS N\cs2O  versions and other datasets}
 
 Average values for \thisv 190-GHz N\cs2O are up to 10\% smaller than in v2.2 for the
 100 and 68\,hPa pressure levels, and within a few percent for pressures greater than 46\,hPa 
@@ -192,7 +216,7 @@ information.
 \label{fig:N2O640Comparison}
 \end{figure}
 
-\subsection*{Desired improvements for future data version(s)}
+\subsection{Desired improvements for future data version(s)}
 
 Retrievals of N\cs2O to pressures greater than 100\,hPa \emph{may} be
 possible in later versions from the 190-GHz observations.

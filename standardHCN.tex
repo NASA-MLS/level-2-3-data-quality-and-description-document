@@ -3,7 +3,7 @@
 \item[Contact:] Hugh C. Pumphrey,
   \email{Hugh.Pumphrey@ed.ac.uk}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
 
 HCN is retrieved from bands encompassing, in the lower sideband, the
 177.26 GHz spectral line of HCN\@. Although the target line is in an
@@ -18,7 +18,7 @@ vertical range by first averaging the radiances. Results of this
 process and further information on the HCN measurement may be found in
 \cite{PumphreyEtal06}.
 
-\subsection*{Differences between v3.x and \thisv}
+\subsection{Differences between v3.x and \thisv}
 
 No changes specific to the HCN retrieval were made between v2.x and v3.x. For
 \thisv a new phase was introduced in which HCN is retrieved using only 
@@ -35,7 +35,7 @@ three versions in the lower stratosphere where the data are not
 recommended for general use. However, the values in \thisv appear less
 unrealistic than in either v2.x or v3.x.
 
-\subsection*{Vertical resolution}
+\subsection{Vertical resolution}
 \onestandardavk{HCN}{HCN}%
 
 The HCN signal is rather small, so a rather strong smoothing constraint
@@ -45,7 +45,7 @@ Figure~\ref{fig:AvkHCN} shows, the vertical resolution is about
 resolution along the measurement track is between 2 and 4 profile
 spacings.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of
 the field {\tt L2gpPrecision}), together with the observed standard
@@ -67,7 +67,7 @@ estimated precision due to the effects of retrieval smoothing.
 \label{fig:HCNPrecision}
 \end{figure}
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The accuracy of the HCN product has not been assessed in detail
 because a cursory inspection revealed that previous versions of the
@@ -95,16 +95,16 @@ summarized in table~\ref{tab:HCNSummary}.
   \parbox{10ex}{\bfseries\centering Accuracy / \%} &
   \parbox{12ex}{\bfseries\centering Comments}\\
   \midrule
-  $< 0.1$\,hPa & ---    &  ---      &  ---     & Unsuitable for scientific use\\
-  1\,--\,0.1\,hPa & 500 $\times$ 12   & 50 & 50 & \\
-  21\,--\,1\,hPa & 300 $\times$ 10   & 30 & 50 & \\
-  100\,--\,21\,hPa  & 300 $\times$ 10 & 50 & Very poor & Unsuitable for scientific use\\
-  $> 100$\,hPa &                 &   &    &  Not Retrieved\\
+  $< 0.1$\,hPa     & ---             &  --- &  ---      & Unsuitable for scientific use\\
+  1\,--\,0.1\,hPa  & 12 $\times$ 500 & 50   & 50        & \\
+  21\,--\,1\,hPa   & 10 $\times$ 300 & 30   & 50        & \\
+  100\,--\,21\,hPa & 10 $\times$ 300 & 50   & Very poor & Unsuitable for scientific use\\
+  $> 100$\,hPa     &                 &      &           &  Not Retrieved\\
   \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:HCNScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{21\,--\,0.1\,hPa}
@@ -125,11 +125,11 @@ summarized in table~\ref{tab:HCNSummary}.
   typically this is only 1-2\% of the total.
 \end{description}
 
-\subsection*{Artifacts}
+\subsection{Artifacts}
 
 There are no obvious artifacts within the recommended altitude range
 
-\subsection*{Desired improvements for future data version(s)}
+\subsection{Desired improvements for future data version(s)}
 
 Hopefully it will prove possible to retrieve HCN in the lower
 stratosphere.

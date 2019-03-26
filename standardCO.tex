@@ -4,13 +4,13 @@
    \email{H.C.Pumphrey@ed.ac.uk} \\
   Michael Schwartz (troposphere), \email{Michael.J.Schwartz@jpl.nasa.gov}}
 
-\subsection*{Introduction}
+\subsection{Introduction}
  
 Carbon monoxide is retrieved from radiance measurements of two bands in
 the MLS 240\,GHz radiometer. Full details are given in
 \citet{PumphreyEtal07} and \citet{LiveseyEtal08}.
 
-\subsection*{Differences between \thisv and v03.x}
+\subsection{Differences between \thisv and v03.x}
 In the upper troposphere (UT), the primary difference between \thisv CO
 and \prevvSlash CO is the reduction in the frequency and severity of
 artifacts caused by deep convective clouds.  This was accomplished
@@ -48,7 +48,7 @@ component of \prevv screening is included, a significant fraction of the
 \label{fig:BlackSatCO}
 \end{figure}
 %
-\subsection*{Resolution}
+\subsection{Resolution}
 \onestandardavk{CO}{CO}%
 
 Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging
@@ -67,7 +67,7 @@ resolution is about 200\,km in the mesosphere, degrading slowly to
 300\,km with decreasing height in the stratosphere and more rapidly to
 about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 The MLS data are supplied with an estimated precision (the field
 \texttt{L2gpPrecision}) which is the \emph{a posteriori} precision as
@@ -100,7 +100,7 @@ for much of the vertical range, meaning that significant averaging
 (e.g., daily zonal mean or weekly map) is needed to make use of the
 data.
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In
 the middle atmosphere the accuracies are estimated by comparisons with
@@ -116,7 +116,7 @@ accuracies in Table~\ref{tab:COSummary} are  2-$\sigma$ estimates
 obtained by propagating parameter uncertainties through 
 a model of the measurement system.
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:COScreening}
 \begin{description}
 \item[Pressure range:] \screeningrule{215\,--\,0.0046\,hPa.}
@@ -148,7 +148,7 @@ a model of the measurement system.
   target, so \texttt{Convergence} is of limited use in screening.
 \end{description}
 
-\subsection*{Artifacts}
+\subsection{Artifacts}
 \begin{itemize}
 \item Positive systematic error of 20\,--\,50\% throughout the mesosphere.
 \item Negative systematic error of 50\,--\,70\% near 30\,hPa.
@@ -169,7 +169,7 @@ The screening procedure based upon \texttt{Quality} and \texttt{Convergence}
 that is described above is generally effective in removing these artifacts.
 \end{itemize}
 
-\subsection*{Review of comparisons with other datasets}
+\subsection{Review of comparisons with other datasets}
 
 In the upper troposphere, comparisons with various in situ CO
 observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the

@@ -1,4 +1,4 @@
-% $Id: v4-x-report.tex,v 1.13 2016/11/29 01:05:01 livesey Exp $
+% $Id: v4-x-report.tex,v 1.14 2017/10/10 16:40:21 livesey Exp $
 %
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
@@ -6,6 +6,7 @@
 \newif\ifnav\navtrue
 %
 % ---------------------------------------- Fonts
+\usepackage[T1]{fontenc}
 \usepackage{microtype}
 \usepackage{inconsolata}
 \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
@@ -74,6 +75,13 @@
 %
 \newlength{\tablecaptionsep}
 \setlength{\tablecaptionsep}{0.5ex}
+%
+\newlength{\tabcoli}
+\newlength{\tabcolii}
+\newlength{\tabcoliii}
+\newlength{\tabcoliv}
+\newlength{\tabcolv}
+\newlength{\tabcolvi}
 %X
 % --------------------------------------- Title page
 \usepackage{mlstitlepage}
@@ -167,7 +175,7 @@
 \newcommand{\cp}[1]{\ensuremath{^{\text{#1}}}}
 \newcommand{\degsym}{\ensuremath{^\circ}}
 % 
-\newcommand{\mycomment}[1]{{\small\sffamily\color{red}\slshape[COMMENT: #1]}}
+\newcommand{\mycomment}[1]{{\small\sffamily\color{red}[\textsl{COMMENT: #1}]}}
 %
 \newcommand{\dontincludegraphics}[2][]{\framebox{Graphics missing}}
 %
@@ -181,7 +189,7 @@
 %
 % Now do the title page
 %
-\jpld{33509 Rev.\ C}
+\jpld{33509 Rev.\ D}
 \title{Version~4.2x Level~2 data quality and description document.}
 \author{%
 Nathaniel~J.~Livesey,
@@ -199,11 +207,11 @@ Shuhui~Wang,
 Ryan~A.~Fuller,
 Robert~F.~Jarnot,
 Brian~W.~Knosp,
-Elmain~Martinez}
+Elmain~Martinez, Richard~R.~Lay}
 %\shortauthor{Aura MLS Science team}
 \newcommand{\myshorttitle}{Level~2 Version 4.2\emph{x} Quality}
 \shorttitle{\myshorttitle}
-\version{4.2x--3.0}
+\version{4.2x--3.1}
 \newcommand{\thisv}{v4.2\emph{x}\xspace}
 \newcommand{\prevv}{v3.3\emph{x} and v3.4\emph{x}\xspace}
 \newcommand{\prevvSlash}{\mbox{v3.3\emph{x}/v3.4\emph{x}}\xspace}
@@ -294,6 +302,7 @@ Elmain~Martinez}
 %
 \pagenumbering{arabic}
 \input{chapEssential}
+
 \input{chapBackground}
 \input{chapResults}
 \clearpage

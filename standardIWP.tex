@@ -4,7 +4,7 @@ file).]{Cloud Ice Water Path}{IWP}{IWP}{%
 \item[Useful range:] MLS IWP is the ice water column above \texttildelow6\,km
 \item[Contact: ] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
  
-\subsection*{Introduction}
+\subsection{Introduction}
 
 MLS standard IWP is retrieved from cloud-induced radiances (\Tcir) of
 the 240-GHz window channel at 650\,hPa tangent pressure (see
@@ -16,7 +16,7 @@ the modeled \Tcir\,--\,hIWP relation.  The hIWP is then converted to the
 nadir IWP at the tangent point location, and interpolated to the MLS
 standard horizontal grid.
 
-\subsection*{Resolution}
+\subsection{Resolution}
 
 In the IWP ranges specified in the summary at the end of this section,
 each MLS measurement can be quantitatively interpreted as the average
@@ -24,7 +24,7 @@ IWP for the volume sampled.  The MLS IWP volume is a vertical column
 above \texttildelow6\,km, with 60\,km and 7\,km along and cross track extent
 respectively.
 
-\subsection*{Precision}
+\subsection{Precision}
 
 The precision values quoted in the IWP swaths do not represent the true
 precision of the data.  The precision for a particular measurement must
@@ -33,14 +33,14 @@ screening section below.  The 3\,g/m\cp2 precision given the summary at
 the end of this section reflects \emph{typical values} for MLS IWP
 measurements.
 
-\subsection*{Accuracy}
+\subsection{Accuracy}
 
 The IWP accuracy is \texttildelow50\%, as estimated from comparisons 
 of the earlier v2.2 MLS data product with CloudSat and 
 detailed analyses on the v2.2 error budget can be found 
 in \citet{WuEtal09}.
 
-\subsection*{Data screening}
+\subsection{Data screening}
 \label{sec:IWPScreening}
 \begin{description}
 \item[Sensitivity:] The standard IWP product has a useful sensitivity up
@@ -62,7 +62,7 @@ in \citet{WuEtal09}.
   result in a large percentage of false alarm in cloud detection.
 \end{description}
 
-\subsection*{Artifacts}
+\subsection{Artifacts}
 
 High-latitude high-land surface can be mistakenly detected as a cloud
 when the atmosphere is very dry, allowing MLS 240-GHz radiances to
@@ -75,7 +75,7 @@ away from the actual location of the IWP column as shown in
 Figure~\ref{fig:IWPSketch}. The user needs to correct this offset by
 replacing the IWP location with the one at 2 profiles earlier.
 
-\subsection*{Comparisons with other datasets}
+\subsection{Comparisons with other datasets}
 Compared to v2.2 IWP the \thisv IWP values are systematically larger by
 \texttildelow2~\% and the random noise is slightly smaller than in v2.2 (see
 Figure~\ref{fig:IWP}).  Apart from the differences noted above, the MLS
@@ -88,7 +88,7 @@ Comparisons between v2.2 MLS and CloudSat IWP showed good agreement with PDF
 differences $<$50\% for the IWP range specified in the summary at the end
 of this section.  
 
-\subsection*{Desired improvements for future data version(s)}
+\subsection{Desired improvements for future data version(s)}
 
 The IWP retrieval in \thisv is a simple first-order conversion, applied
 independently to each \Tcir\ measurement. Plans for future versions
@@ -96,7 +96,7 @@ include development of 2-D cloudy-sky radiative transfer model.  This
 will allow IWP to be retrieved jointly with the \Tcir\ measurements
 from adjacent scans.
 
-\subsection*{Summary for IWP}
+\subsection{Summary for IWP}
 \label{tab:IWPSummary}
 \begin{description}
 \item[IWP Column Bottom:] \screeningrule{6\,km (estimated from MLS
