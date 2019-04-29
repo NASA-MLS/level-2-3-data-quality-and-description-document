@@ -4,12 +4,18 @@
 \section{Scope and background for this document}
 
 This document describes the quality of the geophysical data products
-produced by version~4.x of the data processing algorithms for the Earth
-Observing System (EOS) Microwave Limb Sounder (MLS) instrument on the
-Aura spacecraft.  The intended audience is those wishing to make use of
-Aura MLS data for scientific study.  The geophysical products described
-in this document are all produced by the ``Level~2'' algorithms, and
-briefly summarized in Table~\ref{tab:ProductSummary}.
+produced by version~4.x of the data processing algorithms for the
+Earth Observing System (EOS) Microwave Limb Sounder (MLS) instrument
+on the Aura spacecraft.  The intended audience is those wishing to
+make use of Aura MLS data for scientific study.  The bulk of the
+geophysical products described in this document (this chapter through
+Chapter~\ref{chap:Results}) are produced by the ``Level~2''
+algorithms, and briefly summarized in Table~\ref{tab:ProductSummary}.
+In addition Chapter~\ref{chap:Level3} (added in version 4.x-4.0 of
+this document) describes ``Level~3'' data products derived from the
+Level~2 data that provide easier access to collections of MLS
+observations (e.g., daily zonal means, monthly polar vortex averages)
+to facilitate simpler studies using MLS observations.
 
 The \thisv MLS data are the fourth ``public release'' of MLS data, the
 first being version~1.5 \citep{EOSMLSV15Quality}, the second
@@ -23,10 +29,13 @@ their intended use.
 
 \input{producttable}
 
-In addition to describing the data quality, this document gives a brief
-outline of the algorithms used to generate these ``Level~2'' data
-(geophysical products reported along the instrument track) from the
-input ``Level~1'' data (calibrated microwave radiance observations).
+In addition to describing the Level~2 data and their quality (this
+chapter and Chapter~\ref{chap:Results}), Chapter~\ref{chap:Background} of
+this document also gives a brief outline of the algorithms used to
+generate the ``Level~2'' data (geophysical products reported along the
+instrument track) from the input ``Level~1'' data (calibrated
+microwave radiance observations).  Finally, Chapter~\ref{chap:Level3}
+provides information on MLS Level~3 products.
 
 More information on the MLS instrument can be found in the document
 \emph{An Overview of the EOS MLS Experiment} \citep{EOSMLSOverview}.  A
@@ -44,18 +53,18 @@ measurements and the use of MLS data to infer cloud properties is
 described in \cite{EOSMLSCloudATBD}.  All the above documents and papers
 are available from the MLS web site (\texttt{http://mls.jpl.nasa.gov/}).
 
-A subset of the information in these documents is also reported in the
-\emph{IEEE Transactions on Geoscience and Remote Sensing}.  An overview
-of MLS is given in \cite{WatersEtal06}, the algorithms that produce the
-data described here are reviewed in \citet{LiveseyEtal06},
-\citet{ReadEtal06}, \citet{SchwartzEtal06}, and \citet{WuEtal06}\@.
+A subset of the information in those documents is also reported in the
+\emph{IEEE Transactions on Geoscience and Remote Sensing}.  An
+overview of MLS is given in \cite{WatersEtal:2006}, the algorithms that
+produce the data described here are reviewed in \citet{LiveseyEtal:2006},
+\citet{ReadEtal:2006}, \citet{SchwartzEtal:2006}, and \citet{WuEtal:2006}\@.
 Other papers describe the calibration and performance of the various
 aspects of the MLS instrument
-\citep{JarnotEtal06,Pickett06,CofieldAndStek06} and the MLS ground data
-system \citep{CuddyEtal06}.  The detailed validation of the MLS v2.2
-dataset is described in a collection of papers in the ``Aura
-Validation'' special issue of JGR-Atmospheres (papers published in 2007
-and 2008).  These are cited in Chapter~\ref{chap:Results} on a
+\citep{JarnotEtal:2006,Pickett:2006,CofieldEtal:2006} and the MLS ground
+data system \citep{CuddyEtal:2006}.  The detailed validation of the MLS
+v2.2 dataset is described in a collection of papers in the ``Aura
+Validation'' special issue of JGR-Atmospheres (papers published in
+2007 and 2008).  These are cited in Chapter~\ref{chap:Results} on a
 product-by-product basis.
 
 \section{Overview of \thisv and this document}
@@ -63,8 +72,9 @@ product-by-product basis.
 The remainder of this chapter reviews issues that are considered
 \emph{essential reading} for users of the \thisv dataset.
 Chapter~\ref{chap:Background} details relevant aspects of the MLS
-instrument design and operations and the theoretical basis for the \thisv
-algorithms that are considered \emph{background reading}.
+instrument design and operations and the theoretical basis for the
+\thisv Level~2 algorithms that are considered \emph{background
+  reading}.
 
 Chapter~\ref{chap:Results} describes the data quality for ``Standard''
 products from the MLS instrument for \thisv.  These are observations of
@@ -101,17 +111,18 @@ not discussed in this document.  Further information on these is
 available from the MLS science team.
 
 At the time of writing, the current version of the data processing
-software is version~4.20, producing files labeled \texttt{v04-20}.  Any
-minor updates for bug fixes, or to reflect changes in input data such as
-the analysis fields used as \emph{a priori} information for temperature
-will be referred to as v4.21, v4.22, etc.  This version of the document
-is intended to be applicable to any v4.2\emph{x} data files.  More
-substantial changes at a later date (e.g., due to a change in the MLS
-instrument performance) may necessitate a larger change in the data
-processing software and/or its configuration.  These will be numbered
-v4.3\emph{x} etc., and will be accompanied by an updated version of this
-document (though not necessarily immediately, depending on the
-circumstances dictating the update).
+software is version~4.23, producing files labeled \texttt{v04-23}.
+Any minor updates for bug fixes, or to reflect changes in input data
+such as the analysis fields used as \emph{a priori} information for
+temperature will be referred to as v4.24, v4.25, etc. (similar to the
+differences between v04.20, v04.21, etc.).  This version of the
+document is intended to be applicable to any v4.2\emph{x} data files.
+More substantial changes at a later date (e.g., due to a change in the
+MLS instrument performance) may necessitate a larger change in the
+data processing software and/or its configuration.  These will be
+numbered v4.3\emph{x} etc., and will be accompanied by an updated
+version of this document (though not necessarily immediately,
+depending on the circumstances dictating the update).
 
 \section{MLS data validation status}
 
@@ -348,7 +359,7 @@ The third diagnostic field \texttt{Convergence} describes how the fit to
 the radiances achieved by the retrieval algorithms compared to the
 degree of fit to be expected.  This is quantified as a ratio of an
 aggregate $\chi^2$ value to that predicted based on the assumption of a
-linear system \citep{LiveseyEtal06}.  Values around unity indicate good
+linear system \citep{LiveseyEtal:2006}.  Values around unity indicate good
 convergence, the threshold values above which profiles should not be used
 are given on a product by product basis later in this document.
 
@@ -367,7 +378,7 @@ Accordingly, no negative water vapor abundances are produced by \thisv.
 \section{Averaging kernels for MLS \thisv profiles}
 \label{sec:AveragingKernels}
 As is common for remote sounding instruments, consideration of the
-``Averaging Kernel'' \citep[e.g.,][]{Rodgers00} can be important in some
+``Averaging Kernel'' \citep[e.g.,][]{Rodgers:2000} can be important in some
 scientific studies.  However, the relatively high vertical resolution of
 the MLS observations (compared, for example, to nadir sounding
 composition instruments) allows for many scientifically useful studies
@@ -454,7 +465,7 @@ many cases, particularly where the resolution of the other dataset is
 comparable to that of the MLS profiles, a simple linear interpolation is
 the most practical manner in which to transform the other dataset into
 the $\b{x}$ profile space.  However, we note that more formal approaches
-have been described \citep{RodgersAndConnor03} for the case where the
+have been described \citep{RodgersAndConnor:2003} for the case where the
 comparison dataset is also remotely sounded and has an averaging kernel.
 In cases where the comparison dataset has high vertical resolution
 (e.g., sonde or Lidar observations), an additional consideration is
@@ -615,7 +626,7 @@ this laser began to show signs of aging and was temporarily deactivated
 only eighteen months).
 
 Upper stratospheric and mesospheric OH is strongly affected by solar
-activity \citep{WangEtal13}, which was low during the solar 11-year
+activity \citep{WangEtal:2013}, which was low during the solar 11-year
 minimum in 2009. In order to conserve the remaining lifetime of the THz
 instrument for valuable measurements when the Sun becomes more active,
 we suspended OH measurements from December 2009 to August 2011.  As the
@@ -628,7 +639,7 @@ time of year are:
   order to achieve the longest possible annual OH data record for trend
   studies, we have to choose a time no earlier than August.
 \item The ground-based instrument used for MLS OH validation
-  \citep{WangEtal08}, located at 34.4\degsym N, has the best OH
+  \citep{WangEtal:2008}, located at 34.4\degsym N, has the best OH
   measurement signal in summer (June -- August) and the lowest signal in
   winter. Having the annual MLS OH measurement starting in August allows
   for continuing validation with the best possible collocated

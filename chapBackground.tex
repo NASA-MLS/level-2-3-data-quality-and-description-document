@@ -61,7 +61,7 @@ scan, radiances are reported at 1/6\,s intervals known as \emph{Minor
 \end{figure}
 
 The Level~2 algorithms implement a standard \emph{Optimal Estimation}
-retrieval approach \citep{Rodgers76,Rodgers00} that seeks the ``best''
+retrieval approach \citep{Rodgers:1976,Rodgers:2000} that seeks the ``best''
 value for the state vector (the profiles of temperature and abundances)
 based on an optimal combination of the fit to the MLS radiance
 observations, \emph{a priori} estimates of the state vector (from
@@ -188,8 +188,9 @@ obtained from which phase are given in table~\ref{tab:StandardProducts}.
 \label{tab:Phases}
 \begin{minipage}{\linewidth}
 \begin{center}\begin{small}\sffamily
-\centering\begin{tabular}{llll}\toprule
-\textbf{Phase} & \textbf{Target species}\footnote{\sffamily Tangent pressure and
+    \centering\begin{tabular}{llll}
+        \rowcolor{tableheadbackground}
+\tableheadentry{Phase} & \tableheadentry{Target species\footnote{\sffamily Tangent pressure and
     Geopotential height have been abbreviated to pTan (GHz/THz) and GPH
     respectively.  Minor state vector components such as ``baseline''
     and/or `extinction' have been omitted unless they are the specific
@@ -197,9 +198,8 @@ obtained from which phase are given in table~\ref{tab:StandardProducts}.
     resolution''
     (12 surfaces per decade change in pressure from 1000\,hPa to 1\,hPa)
     unless otherwise stated. O\cs3 is low resolution except for the
-    Core+R3 phase.} & \textbf{Measurements} &
-\textbf{Comment} \\
-\midrule
+    Core+R3 phase.}} & \tableheadentry{Measurements} &
+\tableheadentry{Comment} \\
 \flipfloprow
 \phase{InitPTan} &
 \species{T, pTan (GHz), GPH} & 
@@ -310,7 +310,6 @@ obtained from which phase are given in table~\ref{tab:StandardProducts}.
 \phase{CorePlusR5} & \species{T, pTan~(GHz,~THz), GPH, OH, O\cs3} &
 \measurements{R1A \& R1B~(118\,GHz), R5H and R5V~(2.5\,THz)} &
 \tablecomments{Retrievals down to 68\,hPa (147\,hPa for Temperature)} \\
-\bottomrule
 \end{tabular}
 \end{small}\end{center}
 \end{minipage}
@@ -323,9 +322,10 @@ obtained from which phase are given in table~\ref{tab:StandardProducts}.
   \thisv.}
 \vspace{1ex}
 \label{tab:StandardProducts}
-\centering\begin{tabular}{l>{\ttfamily}ll}\toprule
-  \textbf{Product} & \sffamily\textbf{Origin} & \textbf{Spectral region}\\
-  \midrule\flipfloprow
+\centering\begin{tabular}{l>{\ttfamily}ll}
+  \rowcolor{tableheadbackground}
+  \tableheadentry{Product} & \sffamily\tableheadentry{Origin} & \tableheadentry{Spectral region}\\
+  \flipfloprow
   BrO       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
   CH\cs3Cl  & CorePlusR4AB14 & 640\,GHz \\
@@ -369,7 +369,6 @@ obtained from which phase are given in table~\ref{tab:StandardProducts}.
   SO\cs2    & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
   Temperature & CorePlusR3 & 118 \& 240\,GHz \\
-  \bottomrule
 \end{tabular}
 \end{table}
 
@@ -466,11 +465,11 @@ section~\ref{sec:StandardIWC}.
 \vspace{1ex}
 \label{tab:CloudThresholds}
 \centering\small\begin{tabular}{>{\ttfamily}l>{\ttfamily}llll}
-\toprule
-\sffamily\textbf{Radiometer} & \sffamily\textbf{Cloud channel} & \textbf{USB/LSB frequency
-  / GHz} & 
-\textbf{Low threshold} & \textbf{High threshold} \\
-\midrule
+  \rowcolor{tableheadbackground}
+  \sffamily\tableheadentry{Radiometer} &
+  \sffamily\tableheadentry{Cloud channel} &
+  \tableheadentry{USB/LSB frequency / GHz} & 
+  \tableheadentry{Low threshold} & \tableheadentry{High threshold} \\
 %
 \flipfloprow
 R1[A/B]:118 & B[32/34]W:PT.C4 & 115.3 (LSB only) & $\mathsf{\Tcir <
@@ -486,7 +485,6 @@ $\mathsf{\chi^2>30}$ \\
 %
 \flipfloprow
 R4:640 & B11F:BrO.C23 & 635.9 / 649.8 & $\mathsf{\Tcir < -10}$\,K & none \\
-\bottomrule
 \end{tabular}
 \end{table}
 
@@ -534,7 +532,7 @@ The results of these studies are summarized as ``accuracy'' (and in some
 cases additional contributions to ``precision'') on a product by product
 basis in the next chapter.  More details on the quantification for each
 product are given in the MLS validation papers.  In addition Appendix~A
-of \citet{ReadEtal07} gives more specific details of the perturbations
+of \citet{ReadEtal:2007} gives more specific details of the perturbations
 used in the study.
 
 \section{A brief note on the \texttt{Quality} field}
