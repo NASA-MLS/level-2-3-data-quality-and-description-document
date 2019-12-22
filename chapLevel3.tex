@@ -1,0 +1,223 @@
+\chapter{MLS Level~3 datasets}
+\label{chap:Level3}
+
+\section{Introduction}
+
+The other chapters of this guide describe MLS ``Level~2'' data --
+geophysical products along the instrument observing track.  This
+chapter describes the MLS ``Level~3'' -- geophysical products mapped
+onto regular grids.  There is a wide array of techniques for
+transforming along-track observations into such regular grids,
+including ``kriging'' approaches \citep[e.g.,][]{Cressie:2015},
+Fourier-series-based approaches \citep{Salby:1982}, approaches using
+various windowing functions such as Hamming windows, and simple
+binning approaches.  All methods have strengths and weaknesses, and
+the choice of which one to use is best made by the individual data
+user, given the nature of the specific scientific question to be
+tackled.  For this reason, until 2019, the MLS team had not produced
+any ``official'' Level~3 data products.
+
+However, in order to facilitate more rapid ``quick-look'' studies by
+MLS data users, the MLS team is now producing and distributing a
+select set of Level~3 products derived using a simple ``binning''
+approach (i.e., simply reporting the mean measured value within a
+given spatial/temporal ``box'').  As part of the generation of these
+data products, all the data screening rules described in
+chapters~\ref{chap:Essential} and~\ref{chap:Results} are applied,
+presenting a significant additional simplification to data users.
+
+The Level~3 products can be divided into separate families
+\begin{description}
+\item[Daily and monthly 3D grids:] Latitude/Longitude/Pressure and
+  Latitude/Longitude/Potential-Temperature grids of most products.
+  Daily grids are stored in individual files for each product.
+  Monthly grids are stored in yearly files containing separate
+  entries for each of the 12 months.
+\item[Daily and monthly latitude/pressure and
+  latitude/potential-temperature zonal means:] Stored in annual files
+  for each product, with 365 or 366 entries per year for the daily
+  files, and 12 entries per year for the monthly files.
+\item[Daily and monthly equivalent latitude/potential temperature
+  means:] Stored as for the zonal mean products above.
+\item[Daily and monthly vortex average timeseries:] Annual files
+  containing daily and monthly profiles of vortex averages of selected
+  species on a potential temperature vertical coordinate.
+\end{description}
+For species having a non-negligible diurnal variation in all or part
+of their vertical range, the files contain separate averages of
+\begin{itemize}[itemsep=0.5\baselineskip]
+\item all the profiles,
+\item all profiles measured on the ascending side of the orbit (mainly
+  daytime observations),
+\item all profiles measured on the descending side of the orbit (mainly
+  nighttime observations),
+\item all observations made with solar zenith angle less than
+  90\textdegree{} (i.e., daytime observations).
+\item all observations made with solar zenith angle greater than
+  110\textdegree{} (i.e., nighttime observations).
+\end{itemize}
+
+The MERRA-2 reanalysis temperature fields (interpolated to each MLS
+observation point) are used to convert from pressure to potential
+temperature surfaces.  Additionally MERRA-2 fields are used to
+construct equivalent latitude and vortex average information.  The
+interpolated MERRA-2 fields used are taken from the MLS ``Derived
+Meteorological Products'' \citep{ManneyEtal:2007}.  Note that, for
+quantities on potential temperature surfaces, the MLS Level~2 profiles
+on pressure levels are first interpolated (from $\log(p)$ to
+$\log(\theta)$) to the fixed potential temperature surfaces before
+being binned (as opposed to directly binning Level~2 data points in
+potential temperature windows).  This choice has implications for the
+\texttt{minimum} and \texttt{maximum} fields described
+below. \mycomment{Think/discuss how it affects the standard deviation
+  also?}
+
+\section{Level~3 data files}
+
+All of the MLS Level 3 data files described here are available from
+the NASA Goddard Space Flight Center Data and Information Services
+Center (GSFC-DISC, \url{http://disc.gsfc.nasa.gov/}).  These data
+products are stored in standard CF-compliant NetCDF-4 files.  With the
+ease of reading NetCDF-4 files, a dedicated reader has not been made
+available at this time.
+
+Two different temporal resolutions of Level~3 data are
+provided---daily, and monthly.  All the daily and monthly zonal mean,
+equivalent latitude/potential temperature mean, and vortex average
+fields are stored in files having yearly granularity (i.e., one file
+per year per Level~2 data product, with either 365, 366, or 12 time
+entries).  These files also contains the monthly 3D-gridded (vertical,
+latitude, longitude) fields.  The fields with daily temporal
+resolution are in \texttt{L3SY} files, while those with monthly
+resolution are in \texttt{L3SM} files. Given their size, the daily
+3D-gridded (vertical, latitude, longitude) fields are stored in
+individual daily \texttt{L3SD} files.  For completeness, these daily
+files also contain the same zonal mean, etc.\ fields included in the
+\texttt{L3SY} products.
+
+\mycomment{Ryan's original: For the Level 3 data products, there are 3
+  time granularities: daily (\texttt{L3SD}), monthly (\texttt{L3SM}),
+  and yearly (\texttt{L3SY}).  Individual \texttt{L3SD} files are
+  available for each day for each data product, while the
+  \texttt{L3SM} and \texttt{L3SY} data are separated into yearly files
+  for each product \mycomment{Include discussion of how we'll
+    generate, handle and distribute results for the incoming year}.
+  The \texttt{L3SD} and \texttt{L3SM} files contain data for their
+  corresponding days and months.  The \texttt{L3SY} files are a
+  conglomeration of all the daily zonal mean and vortex average
+  quantities that are reported in the \texttt{L3SD} files.  These
+  provided to facilitate analyses of daily timeseries.}
+
+The filenames for these products using the following conventions which
+are similar varying in the date format:
+\begin{quote}
+\verb+MLS-Aura_L3SD-<product>_v04-20-c01_<yyyy>d<ddd>.nc+\\
+\verb+MLS-Aura_L3<type>-<product>_v04-20-c01_<yyyy>.nc+
+\end{quote}
+Here, \verb+<type>+ is \texttt{SM} or \texttt{SY}, \verb+<product>+
+is \texttt{BrO}, \texttt{O3}, \texttt{Temperature}, etc.  The observed
+date is the four digit year \verb+<yyyy>+ with the optional three
+digit day of year \verb+<ddd>+ (\texttt{001} = 1 January).
+
+Within each file, the data are stored in NetCDF-4 groups.  The daily
+and monthly files contain daily grids, \mycomment{Does that mean the
+  monthly files contain 30 daily grids too (in which case I need to
+  change my take on Ryan's paragraph, and does that imply one file per
+  month?)? or should this be ``daily/monthly'' grids?} while all files
+contain zonal mean and vortex average groups.  These are named as the
+following where product is the same as listed in the filename:
+
+\vspace{\baselineskip}\noindent\begin{tabular}{>{\ttfamily}r>{\raggedright}p{4.4in}}
+  <product> PressureGrid: & 4$\times$5\textdegree{} geodetic
+  longitude/latitude grid on pressure surfaces (\texttt{L3SD} and
+  \texttt{L3SM} only)\tabularnewline
+  
+<product> ThetaGrid: & 4$\times$5\textdegree{} geodetic
+  longitude/latitude grid on potential temperature surfaces
+  (\texttt{L3SD} and \texttt{L3SM} only)\tabularnewline
+  
+  <product> PressureZM: & 4\textdegree{} geodetic latitude zonal mean
+on pressure surfaces\tabularnewline
+
+<product> ThetaZM: & 4\textdegree{} geodetic latitude zonal mean on
+potential temperature surfaces\tabularnewline
+
+<product> EqLZM: & 4\textdegree{} equivalent latitude zonal mean on
+potential temperature surfaces\tabularnewline
+
+<product> VortexAvg: & Polar vortex average values for each
+hemisphere on potential temperature surfaces.\tabularnewline
+\end{tabular}
+
+\vspace{\baselineskip}Diurnal product files have all of these groups
+repeated for day, night, ascending profiles only, and descending
+profiles only (add \texttt{Day}, \texttt{Night}, \texttt{Asc},
+\texttt{Desc}, respectively to the group name). Each group contains
+the following data fields:
+
+\vspace{\baselineskip}\noindent\begin{tabular}{>{\ttfamily}r>{\raggedright}p{4.9in}}
+  lon: & The longitude at center of the grid cell
+  (\texttt{PressureGrid} and \texttt{ThetaGrid} groups
+  only)\tabularnewline
+
+  lon\_bnds: & The longitude at the boundaries of the grid cell
+  (\texttt{PressureGrid} and \texttt{ThetaGrid} groups
+  only)\tabularnewline
+
+  lat: & The latitude at center of the grid cell\tabularnewline
+
+  lat\_bnds: & The latitude at the boundaries of the grid
+  cell\tabularnewline
+
+  time: & The date of the grid cell (days since
+  1950-01-01)\tabularnewline
+
+  time\_bnds: & The boundaries of the time period (days since
+  1950-01-01)\tabularnewline
+
+  lev: & The vertical coordinate (i.e. pressure/potential temperature
+  values)\tabularnewline
+
+  value: & The average value for each bin\tabularnewline
+
+  rms\_uncertainty: & The RMS precision of each bin\mycomment{Has this
+    been divided by $\sqrt{n}$?}\tabularnewline
+
+  minimum: & The minimum value in each bin\tabularnewline
+
+  maximum: & The maximum value in each bin\tabularnewline
+
+  std\_dev: & The standard deviation of the data in each
+  bin\tabularnewline
+
+  nvalues: & The number of valid data points found in each
+  bin\tabularnewline
+\end{tabular}
+
+\section{Guidance for users of Level~3 data}
+
+As discussed above, these Level~3 products are generated using only
+the Level~2 data points that meet all the screening criteria described
+in the earlier chapters of this document, presenting a significant
+simplification for users. In cases where there are no good Level~2
+data available to populate a Level~3 data point the \texttt{nvalues}
+field is set to zero and the other data fields are set to the
+\texttt{\_fillValue} in the NetCDF file.
+
+When considering Level~3 data, as with every geophysical measurement,
+attention should be paid to the associated uncertainties.  The
+averaging inherent in generating Level~3 data will act to reduce
+``precision''-related errors, those due to random noise in the MLS
+radiance measurements, by $1/\sqrt{n}$, where $n$ is the number of
+Level~2 data points in the average (which can be deduced by
+considering the \texttt{nvalues} field \mycomment{unify with list of
+  fields, above}).  In contrast, the ``accuraccy''-related errors,
+those due to biases in the MLS measurement system, will in most cases
+be propagated through the averaging process unchanged, and should be
+assumed to apply to the Level~3 values in the same manner as they do
+in Level~2 datasets.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "v4-x-report"
+%%% End:
