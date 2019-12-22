@@ -1,0 +1,30 @@
+Notes from read throgh.
+
+---- BrO
+
+
+Line 655: retrieval, singular
+Line 660: smaller pressures
+Line 692: No day/night!
+Line 722: Skip desired improvements discussion
+
+
+---- CH3Cl
+
+Figure 3.3.3 caption use sans math for sqrt(2) and sigma
+
+---- CH3CN
+
+Figure 3.4.3 caption as for 3.3.3 above
+
+---- CH3OH
+
+Figure 3.5.2 caption a for others above
+
+---- ClO
+
+Fix gap between figure and caption in 3.6.5
+
+---- CO
+
+Line 1156: Reduction in the number and severity of
