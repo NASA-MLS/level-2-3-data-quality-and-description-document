@@ -67,10 +67,11 @@ quantities on potential temperature surfaces, the MLS Level~2 profiles
 on pressure levels are first interpolated (from $\log(p)$ to
 $\log(\theta)$) to the fixed potential temperature surfaces before
 being binned (as opposed to directly binning Level~2 data points in
-potential temperature windows).  This choice has implications for the
-\texttt{minimum} and \texttt{maximum} fields described
-below. \mycomment{Think/discuss how it affects the standard deviation
-  also?}
+potential temperature windows).  These interpolated values (and the
+interpolated \texttt{L2GPPrecision} field are then used to construct
+the \texttt{minimum}, \texttt{maximum}, \texttt{std\_dev}, and
+\texttt{n\_values} fields. \mycomment{Ryan, is that correct,
+  particularly the n\_values part?}
 
 \section{Level~3 data files}
 
@@ -81,32 +82,20 @@ products are stored in standard CF-compliant NetCDF-4 files.  With the
 ease of reading NetCDF-4 files, a dedicated reader has not been made
 available at this time.
 
-Two different temporal resolutions of Level~3 data are
-provided---daily, and monthly.  All the daily and monthly zonal mean,
-equivalent latitude/potential temperature mean, and vortex average
-fields are stored in files having yearly granularity (i.e., one file
-per year per Level~2 data product, with either 365, 366, or 12 time
-entries).  These files also contains the monthly 3D-gridded (vertical,
-latitude, longitude) fields.  The fields with daily temporal
-resolution are in \texttt{L3SY} files, while those with monthly
-resolution are in \texttt{L3SM} files. Given their size, the daily
-3D-gridded (vertical, latitude, longitude) fields are stored in
-individual daily \texttt{L3SD} files.  For completeness, these daily
-files also contain the same zonal mean, etc.\ fields included in the
-\texttt{L3SY} products.
-
-\mycomment{Ryan's original: For the Level 3 data products, there are 3
-  time granularities: daily (\texttt{L3SD}), monthly (\texttt{L3SM}),
-  and yearly (\texttt{L3SY}).  Individual \texttt{L3SD} files are
-  available for each day for each data product, while the
-  \texttt{L3SM} and \texttt{L3SY} data are separated into yearly files
-  for each product \mycomment{Include discussion of how we'll
-    generate, handle and distribute results for the incoming year}.
-  The \texttt{L3SD} and \texttt{L3SM} files contain data for their
-  corresponding days and months.  The \texttt{L3SY} files are a
-  conglomeration of all the daily zonal mean and vortex average
-  quantities that are reported in the \texttt{L3SD} files.  These
-  provided to facilitate analyses of daily timeseries.}
+Two different temporal resolutions of Level~3 data are provided—daily
+(\texttt{L3SD}), and monthly (\texttt{L3SM}). These files contain all
+six types of fields: latitude/longitude grids on pressure and
+potential temperature, zonal means on both pressure and potential
+temperature vertical coordinates, means around equivalent latitude
+``circles'' on potential temperature, and polar vortex averages as
+function of potential temperature.  The \texttt{L3SD} files are one
+file per day per Level~2 data product and the \texttt{L3SM} files are
+one file per year per Level~2 data product (12 time entries in the
+file).  To aid in the creation of long-term datasets, there are also
+the \texttt{L3SY} files which rollup all of the \texttt{L3SD} data
+fields except for the daily gridded (latitude/longitude files), which
+are not included for file size considerations.  The \texttt{L2SY}
+files contain(365 or 366 time entries as appropriate.
 
 The filenames for these products using the following conventions which
 are similar varying in the date format:
@@ -120,12 +109,9 @@ date is the four digit year \verb+<yyyy>+ with the optional three
 digit day of year \verb+<ddd>+ (\texttt{001} = 1 January).
 
 Within each file, the data are stored in NetCDF-4 groups.  The daily
-and monthly files contain daily grids, \mycomment{Does that mean the
-  monthly files contain 30 daily grids too (in which case I need to
-  change my take on Ryan's paragraph, and does that imply one file per
-  month?)? or should this be ``daily/monthly'' grids?} while all files
-contain zonal mean and vortex average groups.  These are named as the
-following where product is the same as listed in the filename:
+and monthly files contain grids, while all files contain zonal mean
+and vortex average groups.  These are named as the following where
+product is the same as listed in the filename:
 
 \vspace{\baselineskip}\noindent\begin{tabular}{>{\ttfamily}r>{\raggedright}p{4.4in}}
   <product> PressureGrid: & 4$\times$5\textdegree{} geodetic
@@ -180,8 +166,10 @@ the following data fields:
 
   value: & The average value for each bin\tabularnewline
 
-  rms\_uncertainty: & The RMS precision of each bin\mycomment{Has this
-    been divided by $\sqrt{n}$?}\tabularnewline
+  rms\_uncertainty: & The root mean square of all the Level~2
+  \texttt{L2GPPrecision} values that contributed to each bin (note
+  that this has \emph{not} been divided by
+  $\sqrt{\texttt{nvalues}}$\tabularnewline
 
   minimum: & The minimum value in each bin\tabularnewline
 
@@ -210,12 +198,11 @@ averaging inherent in generating Level~3 data will act to reduce
 ``precision''-related errors, those due to random noise in the MLS
 radiance measurements, by $1/\sqrt{n}$, where $n$ is the number of
 Level~2 data points in the average (which can be deduced by
-considering the \texttt{nvalues} field \mycomment{unify with list of
-  fields, above}).  In contrast, the ``accuraccy''-related errors,
-those due to biases in the MLS measurement system, will in most cases
-be propagated through the averaging process unchanged, and should be
-assumed to apply to the Level~3 values in the same manner as they do
-in Level~2 datasets.
+considering the \texttt{nvalues} field).  In contrast, the
+``accuracy''-related errors, those due to biases in the MLS
+measurement system, will in most cases be propagated through the
+averaging process unchanged, and should be assumed to apply to the
+Level~3 values in the same manner as they do in Level~2 datasets.
 
 %%% Local Variables:
 %%% mode: latex
