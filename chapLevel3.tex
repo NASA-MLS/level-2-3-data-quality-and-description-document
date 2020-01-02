@@ -26,17 +26,21 @@ data products, all the data screening rules described in
 chapters~\ref{chap:Essential} and~\ref{chap:Results} are applied,
 presenting a significant additional simplification to data users.
 
-The Level~3 products can be divided into separate families
-\begin{description}
+The Level~3 products can be divided into separate families with two
+time resolutions, daily and monthly.  The daily files are stored one
+day per file, with select families of data also stored in a year file
+with 365 or 366 entries per file.  The monthly files are stored in
+yearly files with 12 entries per file.
+\begin{description}[style=unboxed]
 \item[Daily and monthly 3D grids:] Latitude/Longitude/Pressure and
   Latitude/Longitude/Potential-Temperature grids of most products.
-  Daily grids are stored in individual files for each product.
-  Monthly grids are stored in yearly files containing separate
-  entries for each of the 12 months.
+  These are only stored in the daily files (one entry/day per file) and
+  monthly files (12 entries/months per file).
 \item[Daily and monthly latitude/pressure and
-  latitude/potential-temperature zonal means:] Stored in annual files
-  for each product, with 365 or 366 entries per year for the daily
-  files, and 12 entries per year for the monthly files.
+  latitude/potential-temperature zonal means:] Stored in both daily
+  and annual files for each product, with one entry per day for the
+  daily files, 365 or 366 entries per year for the yearly files, and
+  12 entries per year for the monthly files.
 \item[Daily and monthly equivalent latitude/potential temperature
   means:] Stored as for the zonal mean products above.
 \item[Daily and monthly vortex average timeseries:] Annual files
@@ -70,8 +74,7 @@ being binned (as opposed to directly binning Level~2 data points in
 potential temperature windows).  These interpolated values (and the
 interpolated \texttt{L2GPPrecision} field are then used to construct
 the \texttt{minimum}, \texttt{maximum}, \texttt{std\_dev}, and
-\texttt{n\_values} fields. \mycomment{Ryan, is that correct,
-  particularly the n\_values part?}
+\texttt{n\_values} fields.
 
 \section{Level~3 data files}
 
@@ -93,9 +96,9 @@ file per day per Level~2 data product and the \texttt{L3SM} files are
 one file per year per Level~2 data product (12 time entries in the
 file).  To aid in the creation of long-term datasets, there are also
 the \texttt{L3SY} files which rollup all of the \texttt{L3SD} data
-fields except for the daily gridded (latitude/longitude files), which
-are not included for file size considerations.  The \texttt{L2SY}
-files contain(365 or 366 time entries as appropriate.
+fields except for the daily gridded (latitude/longitude families),
+which are not included for file size considerations.  The
+\texttt{L3SY} files contain 365 or 366 time entries as appropriate.
 
 The filenames for these products using the following conventions which
 are similar varying in the date format:
@@ -169,7 +172,7 @@ the following data fields:
   rms\_uncertainty: & The root mean square of all the Level~2
   \texttt{L2GPPrecision} values that contributed to each bin (note
   that this has \emph{not} been divided by
-  $\sqrt{\texttt{nvalues}}$\tabularnewline
+  $\sqrt{\texttt{nvalues}}$)\tabularnewline
 
   minimum: & The minimum value in each bin\tabularnewline
 
