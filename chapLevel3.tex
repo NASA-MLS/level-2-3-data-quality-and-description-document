@@ -103,21 +103,19 @@ appropriate. The filenames for these products using the following
 conventions which are similar, varying mainlyin the date format:
 \newcommand{\fileexample}[2][]{{\texttt{#2}} #1}
 \begin{quote}\small
-\fileexample{MLS-Aura\_L3DB-\textless product\textgreater\_v04-20-c01\_\textless yyyy\textgreater d\textless ddd\textgreater.nc}\\
-\fileexample{MLS-Aura\_L3MB-\textless product\textgreater\_v04-20-c01\_\textless yyyy\textgreater.nc}\\
-\fileexample{MLS-Aura\_L3DZ-\textless product\textgreater\_v04-20-c01\_\textless yyyy\textgreater.nc}\\
+\fileexample{MLS-Aura\_L3DB-<product>\_v04-20-c01\_<yyyy>d<ddd>.nc}\\
+\fileexample{MLS-Aura\_L3MB-<product>\_v04-20-c01\_<yyyy>.nc}\\
+\fileexample{MLS-Aura\_L3DZ-<product>\_v04-20-c01\_<yyyy>.nc}\\
 \fileexample[(Mid-year forward processing
-only)]{MLS-Aura\_L3MB-\textless
-  product\textgreater\_v04-20-c01\_\textless yyyy\textgreater
-  m\textless mm\textgreater.nc}\\
-\fileexample[(Mid-year forward processing only)]{MLS-Aura\_L3DZ-\textless product\textgreater\_v04-20-c01\_\textless yyyy\textgreater m\textless mm\textgreater.nc}
+only)]{MLS-Aura\_L3MB-<product>\_v04-20-c01\_<yyyy>m<mm>.nc}\\
+\fileexample[(Mid-year forward processing only)]{MLS-Aura\_L3DZ-<product>\_v04-20-c01\_<yyyy>m<mm>.nc}
 \end{quote}
-Where \texttt{\textless{}product\textgreater} is the MLS standard
+Where \texttt{<product>} is the MLS standard
 product: \texttt{CO}, \texttt{O3}, \texttt{Temperature}, etc. The
 date(s) for the observations are given as a four digit year
-\texttt{\textless{}yyyy\textgreater} with an optional three digit day
-of year \texttt{\textless{}ddd\textgreater} (\texttt{001} = 1 January)
-or optional two digit month \texttt{\textless{}mm\textgreater}. Files
+\texttt{<yyyy>} with an optional three digit day
+of year \texttt{<ddd>} (\texttt{001} = 1 January)
+or optional two digit month \texttt{<mm>}. Files
 using the two digit month will only be available in mid-year forward
 processing and will contain all data in the year up to and including
 the quoted month, with the remaining date entries present but
