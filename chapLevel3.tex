@@ -24,10 +24,12 @@ reporting the mean measured value within a given spatial/temporal
 ``box''). As part of the generation of these data products, all the
 data screening rules described in chapters 1 and 3 are applied,
 presenting a significant additional simplification to data
-users. These Level~3 data are supplied for all MLS standard products
-except for BrO and HO\cs2 which have a different Level 3 product
-available (see sections~\ref{sec:StandardBrO}
-and~\ref{sec:StandardHO2}).
+users. These Level~3 data are supplied for most MLS standard products.
+BrO and HO\cs2 are excluded, as they have have a different Level 3
+product available (see sections~\ref{sec:StandardBrO}
+and~\ref{sec:StandardHO2}).  We also exclude CH\cs3CN and CH\cs3OH in
+light of the narrow range over which these products are recommended
+for scientific use.
 
 There are three Level~3 products provided:
 \begin{description}
@@ -156,7 +158,10 @@ same as listed in the filename):
   potential temperature surfaces\tabularnewline
 
   <product> VortexAvg: & Polar vortex average values for each
-  hemisphere on potential temperature surfaces.\tabularnewline
+  hemisphere on potential temperature surfaces.  The values are given
+  corresponding to use of the ``outer'', ``center'', and ``inner''
+  vortex edge criteria documented in
+  \citet{ManneyEtal:2007}.\tabularnewline
 \end{tabular}
 
 \vspace{\baselineskip}\noindent Diurnal product files have all of these groups
