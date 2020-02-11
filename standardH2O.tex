@@ -30,14 +30,14 @@ gives a summary of MLS \thisv H\cs2O precision, resolution, and accuracy.
 
 \subsection{Changes from \prevv}
 
-The main H\cs2O differences between \thisv and \prevvSlash relate to
+The main H\cs2O differences between \thisv and \prevv relate to
 cloud screening and improvements in the ``\texttt{InitUTH}'' initial
 upper tropospheric and lower stratospheric humidity estimation phase
 that produces the first guess and sets smoothing constraints on the
 H\cs2O profile retrieved in the final retrieval phase that produces the
 standard product. There have been no spectroscopy changes either in
 linewidth or continuum charaterization between \thisv and
-\prevvSlash. An improved cloud detection methodology has been developed
+\prevv. An improved cloud detection methodology has been developed
 for \thisv that does a better job of rejecting cloudy radiances that are
 likely to cause poor fits and corrupted profiles. The number of
 erroneous spikes in the upper troposphere has been reduced in \thisv
@@ -63,7 +63,7 @@ levels.
 \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v3-v4_prfl_comp_60s-30s}
 \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v3-v4_prfl_comp_90s-60s}
 \end{center}
-\caption{A comparison of \prevvSlash (blue) to v2.2 (green) and \thisv
+\caption{A comparison of \prevv (blue) to v2.2 (green) and \thisv
   (red) water vapor for Jan-Feb-Mar 2005 in 5 latitude bands. Other time
   periods are similar. The left panel compares mean profiles, the center
   shows the mean difference (red and green diamonds) surrounded by each
@@ -74,7 +74,7 @@ levels.
 \label{fig:avgmlsprflcomp}
 \end{figure}
 
-Figure~\ref{fig:avgmlsprflcomp} compares MLS \thisv to \prevvSlash and
+Figure~\ref{fig:avgmlsprflcomp} compares MLS \thisv to \prevv and
 v2.2. At most levels, the average difference is small -- less than
 10\%. The 316\,--\,215-hPa levels are 10\,--\,20\% drier in \thisv than
 \prevv. This difference in behavior is replicated in simulation studies
@@ -103,7 +103,7 @@ which are not retrieved in the standard H\cs2O product retrieval.
 \sloppypar The third panel in Figure~\ref{fig:avgmlsprflcomp} shows the mean
 estimated single profile precision and the measured variability (which
 includes instrument noise and atmospheric variability). The precisions
-for \thisv and \prevvSlash are nearly identical except for pressures
+for \thisv and \prevv are nearly identical except for pressures
 greater than 68\,hPa where \thisv is producing lower values. Version 2
 used a more coarse retrieval grid above 22\,hPa and a different value of
 the H\cs2O linewidth.  Together these account for H\cs2O precision
@@ -121,7 +121,7 @@ very similar in all cases except at 0.002\,hPa for v2.2.
 \begin{center}
 \includegraphics[width=0.8\linewidth]{figures/InspectZM_2009m03_H2O-v04-2x_H2O-v03-3x_H2O-v02-2x_userHeightRange1}
 \end{center}
-\caption{A comparison of \thisv (red) to \prevvSlash (blue) and v2.2 (green) water
+\caption{A comparison of \thisv (red) to \prevv (blue) and v2.2 (green) water
   vapor zonal means for March 2009. Each panel represents a pressure as
   noted above. The pressures shown range from 100~hPa to 2.6~hPa.}
 \label{fig:avgmlsh2ozmcomp1}
@@ -131,7 +131,7 @@ very similar in all cases except at 0.002\,hPa for v2.2.
 \begin{center}
 \includegraphics[width=0.8\linewidth]{figures/InspectZM_2009m03_H2O-v04-2x_H2O-v03-3x_H2O-v02-2x_userHeightRange2}
 \end{center}
-\caption{A comparison of \thisv (red) to \prevvSlash (blue) and v2.2 (green) water
+\caption{A comparison of \thisv (red) to \prevv (blue) and v2.2 (green) water
   vapor zonal means for March 2009. Each panel represents a pressure as
   noted above. The pressures shown range from 2.2\,hPa to 0.002\,hPa.}
 \label{fig:avgmlsh2ozmcomp2}
@@ -266,7 +266,7 @@ agreement with AIRS.
 {figures/grid_maps_jf2005_airsv6-mlsv3andv4}
 \end{center}
 \caption{Mapped fields from AIRS v6 (left), MLS v2.2 (center-left), MLS
-  \prevvSlash (center-right), and MLS \thisv (right) pressures between
+  \prevv (center-right), and MLS \thisv (right) pressures between
   300--150\,hPa for January and February 2005. Note that the AIRS
   measurement is mostly suitable for H\cs2O greater than 10\,ppmv.}
 \label{fig:airsmlsjf2005maps}
@@ -278,14 +278,14 @@ agreement with AIRS.
 {figures/grid_maps_jja2005_airsv6-mlsv3andv4}
 \end{center}
 \caption{Mapped fields from AIRS v6 (left), MLS v2.2 (center-left), MLS
-  \prevvSlash (center-right), and MLS \thisv (right) pressures between
+  \prevv (center-right), and MLS \thisv (right) pressures between
   300\,--\,150 hPa for June through August 2005. Note that the AIRS
   measurement is mostly suitable for H\cs2O greater than 10\,ppmv.}
-\label{fig:airsmlsjja2005maps}
+\label{fig:airsmlsjja2005maps}a
 \end{figure}
 
 Apart from the differences noted above, the MLS \thisv H\cs2O is similar
-to the MLS \prevvSlash and MLS v2.2 products, the latter described and
+to the MLS \prevv and MLS v2.2 products, the latter described and
 validated in \citet{ReadEtal:2007} and \citet{LambertEtal:2007}. The H\cs2O
 validation paper used AIRS v4 and MLS v2 humidities and both of them
 have become more dry in their subsequent versions. A revised validation
@@ -465,5 +465,5 @@ $>316$ & --- & --- & --- & --- & Unsuitable for scientific use \\
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "v4-x-report"
+%%% TeX-master: "v5-x-report"
 %%% End: 
