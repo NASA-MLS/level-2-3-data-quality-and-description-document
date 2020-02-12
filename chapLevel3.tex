@@ -22,7 +22,8 @@ MLS team is now producing and distributing a select set of Level 3
 products derived using a simple ``binning'' approach (i.e., simply
 reporting the mean measured value within a given spatial/temporal
 ``box''). As part of the generation of these data products, all the
-data screening rules described in chapters 1 and 3 are applied,
+data screening rules described in chapters 1 and 3 are applied (along
+with the ClO bias correction, see section~\ref{sec:StandardClO}),
 presenting a significant additional simplification to data
 users. These Level~3 data are supplied for most MLS standard products.
 BrO and HO\cs2 are excluded, as they have have a different Level 3
@@ -46,26 +47,26 @@ There are three Level~3 products provided:
     vertical coordinate.
   \item Equivalent latitude\footnote{Equivalent latitude is the
       geographical latitude that encloses the same area as an isoline
-      of potential vorticity, giving a polar vortex-centered
-      latitude.} ``zonal means'' on a potential-temperature vertical
-    coordinate.
+      of potential vorticity, giving a polar vortex-centered latitude
+      \citep{ButchartandRemsberg:1986}.}. ``zonal means'' on a
+    potential-temperature vertical coordinate.
   \item Vortex averages on a potential-temperature vertical
     coordinate.
   \end{itemize}
 \item[Monthly Binned Files:] These are stored as one product per year
   of MLS data per file. These have the same datasets as the daily
   binned files, except with twelve monthly entries per data field in
-  each dataset instead of one.
+  each dataset instead of one daily one.
 \item[Zonal Mean Binned Files:] These are a ``roll-up file'' of all
-  the datasets in the daily binned files, less the 3D maps. These are
-  provided with fields having 365 or 366 entries per dataset in each
-  file.
+  the datasets in the daily binned files, excluding the 3D maps. These
+  are provided with fields having 365 or 366 entries per dataset in
+  each file.
 \end{description}
 For species having a non-negligible diurnal variation in all or part
-of their vertical range (currently ClO, OH, HOCl, and O\cs3), the
-files contain separate averages of:
+of their vertical range (ClO, OH, HOCl, and O\cs3), the files contain
+separate averages of:
 \begin{itemize}
-\item All valid profiles.
+\item All valid profiles (as for all the non-diurnal products).
 \item All profiles measured on the ascending side of the orbit (mainly
   daytime observations, except in polar regions).
 \item All profiles measured on the descending side of the orbit (mainly
@@ -78,29 +79,51 @@ files contain separate averages of:
 The MERRA-2 \citep{GelaroEtal:2017} reanalysis temperature fields
 (interpolated to each MLS observation point) are used to convert from
 pressure to potential temperature surfaces. Additionally MERRA-2
-fields are used to construct equivalent latitude and vortex average
-information. The interpolated MERRA-2 fields used are taken from the
-MLS ``Derived Meteorological Products'' \citep{ManneyEtal:2007}. Note
-that, for quantities on potential temperature surfaces, the MLS Level
-3 profiles on pressure levels are first interpolated to the fixed
-potential temperature surfaces (from $\log[p]$ to $\log[\theta]$)
-before being binned (as opposed to directly binning Level~3 data
-points in potential temperature windows, which has the potential to
-introduce undesirable empty bins in the vertical). These interpolated
-values (and the interpolated \verb+L2GPPrecision+ field) are then used
-to construct all fields.
+potential vorticity fields are used to construct equivalent latitude
+and vortex average information. The interpolated MERRA-2 fields used
+are taken from the MLS ``Derived Meteorological Products''
+\citep{ManneyEtal:2007, ManneyEtal:2011:Jets}. Note that, for
+quantities on potential temperature surfaces, the MLS Level 3 profiles
+on pressure levels are first interpolated to the fixed potential
+temperature surfaces (from $\log[p]$ to $\log[\theta]$) before being
+binned (as opposed to directly binning Level~3 data points in
+potential temperature windows, which has the potential to introduce
+undesirable empty bins in the vertical). These interpolated values
+(and the interpolated \verb+L2GPPrecision+ field) are then used to
+construct all fields.
+
+The vortex averages are defined using an altitude dependent value of
+scaled potential vorticity (sPV) to demark the vortex edge.  The
+values at each level are determined separately for each hemisphere,
+using the prodedure described by \citet{LawrenceEtal:2018} wherein a
+constant sPV for each hemisphere and season is derived based on the
+climatological sPV at the location of the maximum high latitude sPV
+gradient.  While there are numerous methods of estimating the location
+of the vortex edge, this simple method with a value that is constant
+in time has been shown to avoid some common pitfalls such as large
+spurious day-to-day changes in vortex area and inappropriate values at
+the beginning and end of the cold season \citep[see][for a discussion
+of pros and cons of various vortex edge identification
+methods]{LawrenceandManney:2018}.  To estimate uncertainties in vortex
+edge definition, and to provide results for studies where more or less
+conservative estimates of the vortex edge are desirable, averages are
+also provided for ``outer'' and ``inner'' vortex edge values that are
+0.2$\times 10^{-4} \mathrm{s}^{-1}$ less and more, respectively, than the
+determined value for the vortex edge ``center'' \citep[this also
+follows][]{LawrenceEtal:2018}.
 
 \section{Level~3 data files}
 
 Two different temporal resolutions of Level 3 data are
 provided---daily (\texttt{L3DB}), and monthly (\texttt{L3MB}). The
-\texttt{L3DB} files are one file per day per Level 3 data product and
-the \texttt{L3MB} files are one file per year per Level~3 data product
-(twelve time entries in each dataset within the file). Both of these
-files contain latitude/longitude grids, zonal means, and polar vortex
-averages on various vertical coordinates. To aid in the analysis of
-long-term datasets, the additional \texttt{L3DZ} files are a yearly
-rollup of all of the \texttt{L3DB} datasets except for the
+\texttt{L3DB} files are one file per day per Level 3 data product
+(with one time entry in each dataset in the file) and the
+\texttt{L3MB} files are one file per year per Level~3 data product
+(with twelve time entries in each dataset within the file). Both of
+these files contain latitude/longitude grids, zonal means, and polar
+vortex averages on various vertical coordinates. To aid in the
+analysis of long-term datasets, the additional \texttt{L3DZ} files are
+a yearly rollup of all of the \texttt{L3DB} datasets except for the
 latitude/longitude grids, which are not included for file size
 considerations. The datasets in \texttt{L3DZ} files contain 365 or 366
 time entries as appropriate. The filenames for these products using
@@ -124,7 +147,7 @@ year, as ``forward processing'' data are gathered, and will contain
 all data in the year up to and including the quoted month, with the
 remaining date entries present but consisting of all fill values.
 Once all months are available, the complete dataset will be stored in
-the ``\texttt{<yyyy>}`` files.
+the ``\texttt{<yyyy>}'' files.
 
 Within each file, the datasets are stored in NetCDF-4 groups. The
 \texttt{L3DB} and \texttt{L3MB} contain six types of datasets:
@@ -135,7 +158,6 @@ surfaces, and polar vortex averages as a function of potential
 temperature. As noted above, the \texttt{L3DZ} files omit the
 latitude/longitude maps.
 
-\clearpage
 These datasets are named as follows (where \texttt{<product>} is the
 same as listed in the filename):
 
@@ -161,7 +183,7 @@ same as listed in the filename):
   hemisphere on potential temperature surfaces.  The values are given
   corresponding to use of the ``outer'', ``center'', and ``inner''
   vortex edge criteria documented in
-  \citet{ManneyEtal:2007}.\tabularnewline
+  \citet{LawrenceEtal:2018}.\tabularnewline
 \end{tabular}
 
 \vspace{\baselineskip}\noindent Diurnal product files have all of these groups

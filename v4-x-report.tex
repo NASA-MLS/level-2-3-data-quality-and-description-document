@@ -3,7 +3,7 @@
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navfalse
+\newif\ifnav\navtrue
 %
 % ---------------------------------------- Fonts
 \usepackage[T1]{fontenc}
@@ -37,6 +37,7 @@
 % --------------------------------------- Bibliography
 \usepackage[square]{natbib}
 \bibliographystyle{agu}
+\newcommand{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{#1}}
 %
 % --------------------------------------- Tikz
 \usepackage{tikz}
