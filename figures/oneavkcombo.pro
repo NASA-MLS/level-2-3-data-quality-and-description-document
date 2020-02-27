@@ -5,6 +5,7 @@ if keyword_set ( all ) then begin
   mainProducts = [  'CH3Cl', 'CH3CN', 'CH3OH', 'ClO', 'CO', 'GPH', 'H2O_HR', 'HCl', $
     'HCN', 'HNO3', 'IWC', 'N2O', 'O3_HR', 'OH', 'SO2', 'Temperature_HR' ]
   noHorizProducts = [ 'BrO', 'HO2', 'HOCl' ]
+  ;; mainProducts = [ 'OH', 'SO2', 'Temperature_HR' ]
   for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts(p)
   for p = 0, n_elements ( noHorizProducts ) - 1 do $
     OneAvkCombo, product=noHorizProducts(p), /noHorizontal
@@ -49,7 +50,7 @@ case product of
   'HO2'   : phases = 'CorePlusR4AB14'
   'HOCl'  : phases = 'CorePlusR4AB14'
   'IWC'   : phases = '' 
-  'N2O'   : phases = 'CorePlusR2'
+  'N2O'   : phases = 'NitrousOxide'
   'O3_HR' : phases = 'OzoneOnly'
   'OH'    : phases = 'CorePlusR5'
   'SO2'   : phases = 'CorePlusR3'
@@ -77,20 +78,24 @@ if phases(0) eq '' then return
 noPhases = n_elements(phases)
 
 if product ne 'OH' then begin
-  rootPrefix = 'MLS-Aura_L2MTX-Full_'
-  rootSuffix =  replicate ( '-292a_1996d051.h5', 2 )
-  paths = replicate ( $
-    '/testing/workspace/pwagner/l2tests/avgkrnls/v4QualDoc/292a/', 2 )
+  rootPrefix = 'MLS-Aura_L2MTX-Full_v05-00-'
+  rootSuffix = [ $
+    'S103a_1996d051.h5', $
+    'S103b_1996d051.h5' ]
+  paths = [ $
+    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103a/103a/', $
+    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103b/103b/' ]
   bins = [ 'LAT0N', 'LAT70N' ]
   binNames = bins
   binTitles = [ 'Equator', '70!E0!NN' ]
   noBins = n_elements ( bins )
 endif else begin
-  paths = '/testing/workspace/pwagner/l2tests/avgkrnls/v4QualDoc/292' + $
-    ['a','n'] + '/'
-  rootPrefix = 'MLS-Aura_L2MTX-Full_'
-  rootSuffix =  '-292' + [ 'a', 'n' ] + '_1996d051.h5'
-  bins = [ 'LAT35N', 'LAT35N' ]
+  paths = [ $
+    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103a/103a/', $
+    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103n/103n/' ]
+  rootPrefix = 'MLS-Aura_L2MTX-Full_v05-00-'
+  rootSuffix =  'S103' + [ 'a', 'n' ] + '_1996d051.h5'
+  bins = [ 'LAT0N', 'LAT0N' ]
   binTitles = [ 'Day', 'Night' ]
   binNames = binTitles
   noBins = n_elements ( bins )
@@ -129,14 +134,15 @@ for bin = 0, noBins - 1 do begin
     words = strsplit ( product, '-', /extract )
     name = words(0)
     filename = paths [ bin ] + $
-      rootPrefix + phases [ phase ] + bins [ bin ] + rootSuffix [ bin ]
-    print, format=fmt, '  Reading A'
+      rootPrefix + rootSuffix [ bin ]
+    print, '---- ' + filename
+    print, format=fmt, '  Reading phase ' + strupcase ( phases[phase] ) + ', A'
     A = ReadHDF5L2PCFile ( filename=filename, $
-      matrixName='AVK' + strupcase ( phases(phase) ), $
+      matrixName='AVK' + strupcase ( phases[phase] ), $
       singleRowQuantity=name, singleColQuantity=name )
     print, format=fmt, ',S'
     S = ReadHDF5L2PCFile ( filename=filename, $
-      matrixName='SOUT' + strupcase ( phases(phase) ), $
+      matrixName='SOUT' + strupcase ( phases[phase] ), $
       singleRowQuantity=name, singleColQuantity=name )
     print, format=fmt, '; compressing A'
     A = CompressMatrix ( A )
@@ -165,8 +171,8 @@ for bin = 0, noBins - 1 do begin
       'HCN' : heightRange = [ 100, 0.1 ]
       'HNO3' : begin
         yRange = [ 1000, 0.1 ]
-        if phases(phase) eq 'CorePlusR3' then heightRange = [ 1000, 22.0 ]
-        if phases(phase) eq 'CorePlusR2' then heightRange = [ 14.7, 0.1 ]
+        if phases[phase] eq 'CorePlusR3' then heightRange = [ 1000, 22.0 ]
+        if phases[phase] eq 'CorePlusR2' then heightRange = [ 14.7, 0.1 ]
         strictRange = 1
       end
       'HO2' : heightRange = [ 100, 0.1 ]
