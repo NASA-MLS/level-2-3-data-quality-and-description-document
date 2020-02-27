@@ -1,10 +1,10 @@
-\chapter{Essential reading for users of MLS version~5.0x data}
+\chapter{Essential reading for users of MLS version~5.0 data}
 \label{chap:Essential}
 
 \section{Scope and background for this document}
 
 This document describes the quality of the geophysical data products
-produced by version~5.0\textit{x} of the data processing algorithms
+produced by version~5.0 of the data processing algorithms
 for the Earth Observing System (EOS) Microwave Limb Sounder (MLS)
 instrument on the Aura spacecraft.  The intended audience is those
 wishing to make use of Aura MLS data for scientific study.  The bulk
@@ -19,13 +19,13 @@ to facilitate simpler studies using MLS observations.
 
 The \thisv MLS data are the fifth ``public release'' of MLS data, the
 first being version~1.5, the second version~2.2, the third versions
-3.3 and 3.4, and the fourth v4.2\textit{x}.  The v2.2 data are
-described in a series of validation papers published in a special
-issue of the \emph{Journal of Geophysical Research} in 2007/2008.
-This document updates findings from these papers for \thisv, and gives
-more general information on the use of MLS data.  As always, those
-wishing to use MLS data are advised to consult the MLS science team
-concerning their intended use.
+3.3 and 3.4, and the fourth v4.2\@.  The v2.2 data are described in a
+series of validation papers published in a special issue of the
+\emph{Journal of Geophysical Research} in 2007/2008.  This document
+updates findings from these papers for \thisv, and gives more general
+information on the use of MLS data.  As always, those wishing to use
+MLS data are advised to consult the MLS science team concerning their
+intended use.
 
 \input{producttable}
 
@@ -55,17 +55,17 @@ are available from the MLS web site (\texttt{http://mls.jpl.nasa.gov/}).
 
 A subset of the information in those documents is also reported in the
 \emph{IEEE Transactions on Geoscience and Remote Sensing}.  An
-overview of MLS is given in \cite{WatersEtal:2006}, the algorithms that
-produce the data described here are reviewed in \citet{LiveseyEtal:2006},
-\citet{ReadEtal:2006}, \citet{SchwartzEtal:2006}, and \citet{WuEtal:2006}\@.
-Other papers describe the calibration and performance of the various
-aspects of the MLS instrument
-\citep{JarnotEtal:2006,Pickett:2006,CofieldEtal:2006} and the MLS ground
-data system \citep{CuddyEtal:2006}.  The detailed validation of the MLS
-v2.2 dataset is described in a collection of papers in the ``Aura
-Validation'' special issue of JGR-Atmospheres (papers published in
-2007 and 2008).  These are cited in Chapter~\ref{chap:Results} on a
-product-by-product basis.
+overview of MLS is given in \cite{WatersEtal:2006}, the algorithms
+that produce the data described here are reviewed in
+\citet{LiveseyEtal:2006}, \citet{ReadEtal:2006},
+\citet{SchwartzEtal:2006}, and \citet{WuEtal:2006}\@.  Other papers
+describe the calibration and performance of the various aspects of the
+MLS instrument \citep{JarnotEtal:2006, Pickett:2006, CofieldEtal:2006}
+and the MLS ground data system \citep{CuddyEtal:2006}.  The detailed
+validation of the MLS v2.2 dataset is described in a collection of
+papers in the ``Aura Validation'' special issue of JGR-Atmospheres
+(papers published in 2007 and 2008).  These are cited in
+Chapter~\ref{chap:Results} on a product-by-product basis.
 
 \section{Overview of \thisv and this document}
 
@@ -77,29 +77,30 @@ instrument design and operations and the theoretical basis for the
   reading}.
 
 Chapter~\ref{chap:Results} describes the data quality for ``Standard''
-products from the MLS instrument for \thisv.  These are observations of
-vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN, CH\cs3OH
-(a new product on \thisv) ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2,
-HOCl, N\cs2O, O\cs3, and OH and SO\cs2, along with temperature,
-geopotential height, relative humidity (deduced from the H\cs2O and
-temperature data), cloud ice water content and cloud ice water path, all
-described as functions of pressure.  In \thisv these profiles are mostly
-output on a grid that has a vertical spacing of six surfaces per decade
-change in pressure (\texttildelow2.5\,km), thinning out to three
-surfaces per decade above 0.1\,hPa.  Exceptions to this are water vapor,
-temperature, ozone and relative humidity which are on a finer 12 per
-decade grid from 1000\,hPa to 1\,hPa.  Cloud ice water content is also
-reported on this fine grid, though these profiles do not extend to the
-stratosphere and mesosphere.  The OH product maintains a 6 per decade
-grid spacing into the upper mesosphere.  Horizontally the profiles are
-spaced by 1.5\degsym\ great-circle angle along the orbit, which
-corresponds to about 160\,km.  The true vertical and along-track
-horizontal resolution of the products is typically somewhat coarser than
-the reporting grid described here.  For some of the products, the signal
-to noise ratio is too low to yield scientifically useful data from a
-single MLS profile observation.  In these cases, some form of averaging
-(e.g.,\ weekly maps, monthly zonal means etc.) will be required to
-obtain more useful results.
+products from the MLS instrument for \thisv.  These are observations
+of vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN,
+CH\cs3OH (a new product on \thisv) ClO, CO, H\cs2O, HCl, HCN, HNO\cs3,
+HO\cs2, HOCl, N\cs2O, O\cs3, and OH and SO\cs2, along with
+temperature, geopotential height, relative humidity (deduced from the
+H\cs2O and temperature data), cloud ice water content and cloud ice
+water path, all described as functions of pressure.  In \thisv these
+profiles are mostly output on a grid that has a vertical spacing of
+six surfaces per decade change in pressure (\texttildelow2.5\,km),
+thinning out to three surfaces per decade above 0.1\,hPa.  Exceptions
+to this are water vapor, temperature, ozone and relative humidity
+which are on a finer 12 per decade grid from 1000\,hPa to 1\,hPa.
+Cloud ice water content is also reported on this fine grid, though
+these profiles do not extend to the stratosphere and mesosphere.  The
+OH product maintains a 6 per decade grid spacing into the upper
+mesosphere.  Horizontally the profiles are spaced by 1.5\degsym\
+great-circle angle along the orbit, which corresponds to about
+160\,km.  The true vertical and along-track horizontal resolution of
+the products is typically somewhat coarser than the reporting grid
+described here.  For some of the products, the signal to noise ratio
+is too low to yield scientifically useful data from a single MLS
+profile observation.  In these cases, some form of averaging (e.g.,\
+weekly maps, monthly zonal means etc.) will be required to obtain more
+useful results.
 
 In addition to these standard products, the algorithms also produce data
 for many ``diagnostic'' products.  The bulk of these are similar to the
@@ -126,12 +127,11 @@ depending on the circumstances dictating the update).
 
 \section{MLS data validation status}
 
-As discussed above, a complete set of MLS validation papers describe the
-validation state of the earlier v2.2 data.  The majority of the v2.2 MLS
-data products have, accordingly, completed ``Stage~3 Validation''
-defined\footnote{See
-  \href{http://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}%
-  {\texttt{http://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}}}
+As discussed above, a complete set of MLS validation papers describe
+the validation state of the earlier v2.2 data.  The majority of the
+v2.2 MLS data products have, accordingly, completed ``Stage~3
+Validation'' defined\footnote{See
+  \url{http://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}}
 as:
 \begin{quote}\itshape
   Product accuracy has been assessed.  Uncertainties in the product and
@@ -197,27 +197,28 @@ below.
 
 \item[More suitable reference surface for geopotential height:] As of
   \thisv, the MLS geopotential height (GPH) product has been redefined
-  to be GPH from a reference geoid (a surface of constant geopotential)
-  rather than from an ellipsoid, as was used in previous versions.
+  to be GPH from a reference geoid (a surface of constant
+  geopotential) rather than from an ellipsoid, as was used in previous
+  versions.
 
 \item[More useful OH retrievals for recent years:] As discussed in
   section~\ref{sec:OHNote}, MLS observations of OH have been made only
   sparingly in recent years in light of increased aging in the MLS
   ``THz'' subsystem making that measurement.  Updates in the \thisv
   algorithms have enabled a greater yield of useful OH profiles in the
-  more recent years of observations affected by this aging than was the
-  case in \prevv.
+  more recent years of observations affected by this aging than was
+  the case in \prevv.
 \end{description}
 
 In addition to these specific changes, changes in all products,
 including those not listed above, have resulted from updates to
 spectroscopy and instrument calibration knowledge, and in indirect
-response to the larger changes detailed above.  Note that the threshold
-values of ``\texttt{Quality}'' and ``\texttt{Convergence}'' (see below)
-to be used in data screening have been updated for all products.  All
-the standard product files (apart from IWC, see below) now also include
-the \emph{a priori} information used in the retrieval (as an additional
-``swath'', see below).
+response to the larger changes detailed above.  Note that the
+threshold values of ``\texttt{Quality}'' and ``\texttt{Convergence}''
+(see below) to be used in data screening have been updated for all
+products.  All the standard product files (apart from IWC, see below)
+now also include the \emph{a priori} information used in the retrieval
+(as an additional ``swath'', see below).
 
 \section{Aura MLS file formats, contents, and first order
   quality information}
@@ -233,31 +234,32 @@ The standard and diagnostic products are stored in the EOS MLS
 HDF-EOS (version~5) files containing swaths in the Aura-wide standard
 format.  For more information on this format see
 \citet{AuraFileConventions}.  A sample reading function for the
-Interactive Data Language (IDL, version 6.1 or later required), known as
-\texttt{readl2gp.pro} may have been supplied with the data and is
+Interactive Data Language (IDL, version 6.1 or later required), known
+as \texttt{readl2gp.pro} may have been supplied with the data and is
 available from the \emph{Open Channel Software Foundation}
-\href{http://www.openchannelsoftware.org/}{\texttt{http://www.openchannelsoftware.org/}}.
-A reader for MATLAB (\texttt{readL2GP.m}) is also available at the same
-site, and one for python is planned to be added shortly.
+\url{http://www.openchannelsoftware.org/}.  A reader for MATLAB
+(\texttt{readL2GP.m}) is also available at the same site, and one for
+python is in development.
 
-The standard products are stored in files named according to the convention
+The standard products are stored in files named according to the
+convention
 \begin{quote}
 \verb+MLS-Aura_L2GP-<product>_v04-20-c01_<yyyy>d<ddd>.he5+
 \end{quote}
 where \verb+<product>+ is \texttt{BrO}, \texttt{O3},
 \texttt{Temperature}, etc.  The files are produced on a one-day
-granularity (midnight to midnight, universal time), and named according
-to the observation date where \verb+<yyyy>+ is the four digit calendar
-year and \verb+<ddd>+ is the day number in that year (\texttt{001} = 1
-January).
+granularity (midnight to midnight, universal time), and named
+according to the observation date where \verb+<yyyy>+ is the four
+digit calendar year and \verb+<ddd>+ is the day number in that year
+(\texttt{001} = 1 January).
 
 These files contain the corresponding standard product in an HDF-EOS
-swath given the same name as the product, e.g., ``\texttt{H2O}''.  With the
-exception of IWC, each file also contains the \emph{a priori} values for that
-product inside a second swath whose name ends with the substring
-``\texttt{-APriori}''. HNO\cs3, IWC, O3, RHI, and Temperature files are special in
-that they carry extra standard or non-standard products, as detailed in
-Table~\ref{tab:SwathExtras}.
+swath given the same name as the product, e.g., ``\texttt{H2O}''.
+With the exception of IWC, each file also contains the \emph{a priori}
+values for that product inside a second swath whose name ends with the
+substring ``\texttt{-APriori}''. HNO\cs3, IWC, O3, RHI, and
+Temperature files are special in that they carry extra standard or
+non-standard products, as detailed in Table~\ref{tab:SwathExtras}.
 
 \begin{table}
   \caption{Additional swaths in specific standard product
