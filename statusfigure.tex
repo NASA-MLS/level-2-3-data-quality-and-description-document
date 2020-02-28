@@ -42,35 +42,38 @@
 % Nudge a bit
 %
 \addtolength{\ypos}{-2mm}
-\node (m4) at (\xpos,\ypos+3\meaningheight) {\meaningbox{Information:}%
+\node (m3) at (\xpos,\ypos+3\meaningheight) {\meaningbox{Information:}
+  {(Bad profile) This profile has been manually marked bad by the MLS science team.}};
+\node (m4) at (\xpos,\ypos+4\meaningheight) {\meaningbox{Information:}%
   {(Warning) This profile may have been affected by high altitude clouds.}};
-\node (m5) at (\xpos,\ypos+4\meaningheight) {\meaningbox{Information:}%
+\node (m5) at (\xpos,\ypos+5\meaningheight) {\meaningbox{Information:}%
   {(Warning) This profile may have been affected by low altitude clouds.}};
-\node (m6) at (\xpos,\ypos+5\meaningheight) {\meaningbox{Information:}%
+\node (m6) at (\xpos,\ypos+6\meaningheight) {\meaningbox{Information:}%
   {(Comment) GEOS-5 \emph{a priori} temperature data were unavailable for this profile.}};
-\node (m7) at (\xpos,\ypos+6\meaningheight) {\meaningbox{Information:}%
+\node (m7) at (\xpos,\ypos+7\meaningheight) {\meaningbox{Information:}%
   {(Bad profile) The retrieval for this phase encountered a numerical error.}};
-\node (m8) at (\xpos,\ypos+7\meaningheight) {\meaningbox{Information:}%
+\node (m8) at (\xpos,\ypos+8\meaningheight) {\meaningbox{Information:}%
   {(Bad profile) Too few radiances were available for good retrieval of this profile.}};
-\node (m9) at (\xpos,\ypos+8\meaningheight) {\meaningbox{Information:}%
+\node (m9) at (\xpos,\ypos+9\meaningheight) {\meaningbox{Information:}%
   {(Bad profile) The task retrieving this profile crashed (typically a computer failure).}};
 \end{scope}
 %
 % Now a separator
-\draw[ultra thick] ($ (m2.west)!0.5!(m4.west) $) -- ($ (m2.east)!0.5!(m4.east) $);
+\draw[ultra thick] ($ (m2.west)!0.5!(m3.west) $) -- ($ (m2.east)!0.5!(m3.east) $);
 % \draw[ultra thick] (0,0) -- (10,0);
 %
 % Now the connections
 \begin{scope}[>=stealth,thick]
-\draw[->] (b0) |- (m0);
+\draw[->       ] (b0) |- (m0);
 \draw[->,dashed] (b1) |- (m1);
-\draw[->] (b2) |- (m2);
-\draw[->,dashed] (b4) |- (m4);
-\draw[->] (b5) |- (m5);
-\draw[->,dashed] (b6) |- (m6);
-\draw[->] (b7) |- (m7);
-\draw[->,dashed] (b8) |- (m8);
-\draw[->] (b9) |- (m9);
+\draw[->       ] (b2) |- (m2);
+\draw[->,dashed] (b3) |- (m3);
+\draw[->       ] (b4) |- (m4);
+\draw[->,dashed] (b5) |- (m5);
+\draw[->       ] (b6) |- (m6);
+\draw[->,dashed] (b7) |- (m7);
+\draw[->       ] (b8) |- (m8);
+\draw[->,dashed] (b9) |- (m9);
 \end{scope}
 \end{tikzpicture}
 \caption{The meaning of the various bits in the \texttt{Status} field.

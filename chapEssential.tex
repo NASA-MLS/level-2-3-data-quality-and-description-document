@@ -112,18 +112,17 @@ not discussed in this document.  Further information on these is
 available from the MLS science team.
 
 At the time of writing, the current version of the data processing
-software is version~4.23, producing files labeled \texttt{v04-23}.
+software is version~5.00, producing files labeled \texttt{v05-00}.
 Any minor updates for bug fixes, or to reflect changes in input data
 such as the analysis fields used as \emph{a priori} information for
-temperature will be referred to as v4.24, v4.25, etc. (similar to the
-differences between v04.20, v04.21, etc.).  This version of the
-document is intended to be applicable to any v4.2\emph{x} data files.
-More substantial changes at a later date (e.g., due to a change in the
-MLS instrument performance) may necessitate a larger change in the
-data processing software and/or its configuration.  These will be
-numbered v4.3\emph{x} etc., and will be accompanied by an updated
-version of this document (though not necessarily immediately,
-depending on the circumstances dictating the update).
+temperature will be referred to as v5.01, v5.02, etc.  This version of
+the document is intended to be applicable to any v5.0\emph{x} data
+files.  More substantial changes at a later date (e.g., due to a
+change in the MLS instrument performance) may necessitate a larger
+change in the data processing software and/or its configuration.
+These will be numbered v5.1\emph{x} etc., and will be accompanied by
+an updated version of this document (though not necessarily
+immediately, depending on the circumstances dictating the update).
 
 \section{MLS data validation status}
 
@@ -151,8 +150,8 @@ water vapor) establishing them as ``Stage~4'' validated, defined as:
   product versions are released and as the time-series expands.
 \end{quote}
 
-\section{Differences between MLS \thisv data and earlier v3.x data}
-\label{sec:V4vsV3Overview}
+\section{Differences between MLS \thisv data and earlier v4.x data}
+\label{sec:V5vsV4Overview}
 
 The MLS \thisv data processing software includes a wide range of updates
 and changes, leading to differences ranging from significant to minor in
@@ -160,62 +159,20 @@ all the MLS data products.  Some of the most important are detailed
 below.
 
 \begin{description}
-\item[Improved composition profiles in cloudy regions:] For the earlier
-  \prevv datasets, several products (notably O\cs3, CO and HNO\cs3)
-  showed poor behavior in regions of thick clouds in the upper
-  troposphere (mainly in the tropics).  Complex screening approaches
-  enabled users to remove many, but not all of these spurious profiles
-  from consideration.  Improved performance in this regard was a key
-  goal for \thisv, and the manner in which contamination from cloud
-  signals is handled in the MLS gas-phase retrievals was substantially
-  modified.  This has resulted not only in a significant reduction in
-  the number of spurious MLS profiles reported in cloudy regions, but
-  also in an appreciable simplification of the steps users need to take
-  to screen out the most cloud-contaminated measurements, and a more
-  effective screening.
-
-\item[Improvements to O\cs3 and HCN:] The MLS O\cs3 and HCN products
-  have been improved in \thisv through addition of specific retrieval
-  ``phases'' dedicated to obtaining more accurate estimates for these
-  products, and reducing the impact of contaminating signals from other
-  species.
-
-\item[Improvements to H\cs2O:] The MLS H\cs2O product is retrieved in
-  two ``phases'' with a preliminary phase obtaining a
-  coarse-vertical-resolution initial guess and informing the choice of
-  smoothing constraint for a subsequent more detailed high-resolution
-  retrieval.  The use of more channels and more accurate forward model
-  calculations in this initial retrieval have led to improvements in the
-  convergence etc. of the second phase, and thus to improvements in the
-  H\cs2O product.
-
-\item[New CH\cs3OH product:] This product, obtained from measurements in
-  the 190- and 640-GHz spectral regions (also from a dedicated retrieval
-  ``phase''), has been introduced in \thisv.  This product is
-  scientifically useful in the tropical upper troposphere (see
-  section~\ref{sec:StandardCH3OH}).
-
-\item[More suitable reference surface for geopotential height:] As of
-  \thisv, the MLS geopotential height (GPH) product has been redefined
-  to be GPH from a reference geoid (a surface of constant
-  geopotential) rather than from an ellipsoid, as was used in previous
-  versions.
-
-\item[More useful OH retrievals for recent years:] As discussed in
-  section~\ref{sec:OHNote}, MLS observations of OH have been made only
-  sparingly in recent years in light of increased aging in the MLS
-  ``THz'' subsystem making that measurement.  Updates in the \thisv
-  algorithms have enabled a greater yield of useful OH profiles in the
-  more recent years of observations affected by this aging than was
-  the case in \prevv.
-\end{description}
+  \item[Partial amelioration of drifts in 190-GHz products (H\cs2O,
+    N\cs2O, HCN):] STUFF
+  \item[Correction of dry bias in upper tropospheric H\cs2O:] STUFF
+  \item[Extension of N\cs2O product to 100\,hPa:] STUFF
+  \item[Increased vertical range for some species:] STUFF
+    \mycomment{More needed}
+  \end{description}
 
 In addition to these specific changes, changes in all products,
 including those not listed above, have resulted from updates to
 spectroscopy and instrument calibration knowledge, and in indirect
 response to the larger changes detailed above.  Note that the
 threshold values of ``\texttt{Quality}'' and ``\texttt{Convergence}''
-(see below) to be used in data screening have been updated for all
+(see below) to be used in data screening have been updated for some
 products.  All the standard product files (apart from IWC, see below)
 now also include the \emph{a priori} information used in the retrieval
 (as an additional ``swath'', see below).
