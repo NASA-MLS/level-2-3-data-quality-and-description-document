@@ -4,14 +4,14 @@
 \section{Scope and background for this document}
 
 This document describes the quality of the geophysical data products
-produced by version~5.0 of the data processing algorithms
-for the Earth Observing System (EOS) Microwave Limb Sounder (MLS)
-instrument on the Aura spacecraft.  The intended audience is those
-wishing to make use of Aura MLS data for scientific study.  The bulk
-of the geophysical products described in this document (this chapter
-through Chapter~\ref{chap:Results}) are produced by the ``Level~2''
+produced by version~5.0 of the data processing algorithms for the
+Earth Observing System (EOS) Microwave Limb Sounder (MLS) instrument
+on the Aura spacecraft.  The intended audience is those wishing to
+make use of Aura MLS data for scientific study.  The bulk of the
+geophysical products described in this document (this chapter through
+Chapter~\ref{chap:Results}) are produced by the ``Level~2''
 algorithms, and briefly summarized in Table~\ref{tab:ProductSummary}.
-In addition Chapter~\ref{chap:Level3} (added in version 4.x-4.0 of
+In addition, Chapter~\ref{chap:Level3} (added in version 4.x-4.0 of
 this document) describes ``Level~3'' data products derived from the
 Level~2 data that provide easier access to collections of MLS
 observations (e.g., daily zonal means, monthly polar vortex averages)
@@ -51,7 +51,7 @@ expected precision of the EOS MLS data, and should be regarded as a
 companion volume to this document.  The impact of clouds on MLS
 measurements and the use of MLS data to infer cloud properties is
 described in \cite{EOSMLSCloudATBD}.  All the above documents and papers
-are available from the MLS web site (\texttt{http://mls.jpl.nasa.gov/}).
+are available from the MLS web site (\url{https://mls.jpl.nasa.gov/}).
 
 A subset of the information in those documents is also reported in the
 \emph{IEEE Transactions on Geoscience and Remote Sensing}.  An
@@ -79,28 +79,27 @@ instrument design and operations and the theoretical basis for the
 Chapter~\ref{chap:Results} describes the data quality for ``Standard''
 products from the MLS instrument for \thisv.  These are observations
 of vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN,
-CH\cs3OH (a new product on \thisv) ClO, CO, H\cs2O, HCl, HCN, HNO\cs3,
-HO\cs2, HOCl, N\cs2O, O\cs3, and OH and SO\cs2, along with
-temperature, geopotential height, relative humidity (deduced from the
-H\cs2O and temperature data), cloud ice water content and cloud ice
-water path, all described as functions of pressure.  In \thisv these
-profiles are mostly output on a grid that has a vertical spacing of
-six surfaces per decade change in pressure (\texttildelow2.5\,km),
-thinning out to three surfaces per decade above 0.1\,hPa.  Exceptions
-to this are water vapor, temperature, ozone and relative humidity
-which are on a finer 12 per decade grid from 1000\,hPa to 1\,hPa.
-Cloud ice water content is also reported on this fine grid, though
-these profiles do not extend to the stratosphere and mesosphere.  The
-OH product maintains a 6 per decade grid spacing into the upper
-mesosphere.  Horizontally the profiles are spaced by 1.5\degsym\
-great-circle angle along the orbit, which corresponds to about
-160\,km.  The true vertical and along-track horizontal resolution of
-the products is typically somewhat coarser than the reporting grid
-described here.  For some of the products, the signal to noise ratio
-is too low to yield scientifically useful data from a single MLS
-profile observation.  In these cases, some form of averaging (e.g.,\
-weekly maps, monthly zonal means etc.) will be required to obtain more
-useful results.
+CH\cs3OH, ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2, HOCl, N\cs2O,
+O\cs3, and OH and SO\cs2, along with temperature, geopotential height,
+relative humidity (deduced from the H\cs2O and temperature data),
+cloud ice water content and cloud ice water path, all described as
+functions of pressure.  These profiles are mostly output on a grid
+that has a vertical spacing of six surfaces per decade change in
+pressure (\texttildelow2.5\,km), thinning out to three surfaces per
+decade above 0.1\,hPa.  Exceptions to this are water vapor,
+temperature, ozone and relative humidity which are on a finer 12 per
+decade grid from 1000\,hPa to 1\,hPa.  Cloud ice water content is also
+reported on this fine grid, though these profiles do not extend to the
+stratosphere and mesosphere.  The OH product maintains a 6 per decade
+grid spacing into the upper mesosphere.  Horizontally the profiles are
+spaced by 1.5\degsym\ great-circle angle along the orbit, which
+corresponds to about 160\,km along track.  The true vertical and
+along-track horizontal resolution of the products is typically
+somewhat coarser than the reporting grid described here.  For some of
+the products, the signal to noise ratio is too low to yield
+scientifically useful data from a single MLS profile observation.  In
+these cases, some form of averaging (e.g.,\ weekly maps, monthly zonal
+means etc.) will be required to obtain more useful results.
 
 In addition to these standard products, the algorithms also produce data
 for many ``diagnostic'' products.  The bulk of these are similar to the
@@ -159,13 +158,13 @@ all the MLS data products.  Some of the most important are detailed
 below.
 
 \begin{description}
-  \item[Partial amelioration of drifts in 190-GHz products (H\cs2O,
-    N\cs2O, HCN):] STUFF
-  \item[Correction of dry bias in upper tropospheric H\cs2O:] STUFF
-  \item[Extension of N\cs2O product to 100\,hPa:] STUFF
-  \item[Increased vertical range for some species:] STUFF
-    \mycomment{More needed}
-  \end{description}
+\item[Partial amelioration of drifts in 190-GHz products (H\cs2O,
+  N\cs2O, HCN):] STUFF
+\item[Correction of dry bias in upper tropospheric H\cs2O:] STUFF
+\item[Extension of N\cs2O product to 100\,hPa:] STUFF
+\item[Increased vertical range for some species:] STUFF
+  \mycomment{More needed}
+\end{description}
 
 In addition to these specific changes, changes in all products,
 including those not listed above, have resulted from updates to
@@ -174,8 +173,8 @@ response to the larger changes detailed above.  Note that the
 threshold values of ``\texttt{Quality}'' and ``\texttt{Convergence}''
 (see below) to be used in data screening have been updated for some
 products.  All the standard product files (apart from IWC, see below)
-now also include the \emph{a priori} information used in the retrieval
-(as an additional ``swath'', see below).
+also include the \emph{a priori} information used in the retrieval (as
+an additional ``swath'', see below).
 
 \section{Aura MLS file formats, contents, and first order
   quality information}
@@ -201,7 +200,7 @@ python is in development.
 The standard products are stored in files named according to the
 convention
 \begin{quote}
-\verb+MLS-Aura_L2GP-<product>_v04-20-c01_<yyyy>d<ddd>.he5+
+\verb+MLS-Aura_L2GP-<product>_v05-00-c01_<yyyy>d<ddd>.he5+
 \end{quote}
 where \verb+<product>+ is \texttt{BrO}, \texttt{O3},
 \texttt{Temperature}, etc.  The files are produced on a one-day
@@ -268,7 +267,7 @@ since midnight universal time on 1~January 1993.
 The \texttt{L2GP-DGG} (``Diagnostic products on a Geophysical Grid'')
 file contains a large number of additional swath quantities.  The vast
 majority of these are MLS diagnostic products that will be of little
-interest to most data users.  A few which may be of interest to some
+interest to most data users.  A few that may be of interest to some
 users are detailed below.
 
 \section{Additional information given in the \texttt{Quality},
@@ -331,7 +330,7 @@ ratios.  It is important that such values \emph{not be ignored or
   masked}.  Ignoring such values will automatically introduce a positive
 bias into any averages made of the data as part of scientific analysis.
 Water vapor is retrieved using a logarithmic basis (both vertically and
-horizontally, as discussed in section~\ref{sec:BasisIssues}).
+horizontally, as discussed in Section~\ref{sec:BasisIssues}).
 Accordingly, no negative water vapor abundances are produced by \thisv.
 
 \section{Averaging kernels for MLS \thisv profiles}
@@ -371,42 +370,42 @@ observation is available within each of the standard product files, in
 swaths named according to the product, with the suffix
 ``\texttt{-APriori}'' (note the hyphen).  Examples are
 ``\texttt{Temperature-APriori}'' and ``\texttt{O3-APriori}''.  This
-information can also be obtained from the MLS \texttt{L2GP-DGG} files
-(the only source for this information in \prevv and earlier versions).
+information can also be obtained from the MLS \texttt{L2GP-DGG} files.
 
-Note that in the case of water vapor where (as described below) a
+Note that in the case of water vapor where a
 logarithmic interpolation is used for the profile, the calculations in
-equation~\ref{eqn:AVKApplication} should be performed in log space,
+Equation~\ref{eqn:AVKApplication} should be performed in log space,
 i.e., with $\b{x}$ and $\b{x}_a$ containing logarithm of the given
 H\cs2O mixing ratio (leaving the $\b{A}$ matrix as supplied).
 
-The full MLS averaging kernels are complicated entities, reflecting the
-two dimensional ``tomographic'' nature of the MLS retrievals (see
-section~\ref{sec:TheoreticalBasis}).  We anticipate that few, if any,
+The full MLS averaging kernels are complicated entities, reflecting
+the two dimensional ``tomographic'' nature of the MLS retrievals (see
+Section~\ref{sec:TheoreticalBasis}).  We anticipate that few, if any,
 users will need to apply these full two dimensional kernels, whose
 interpretation is complex (please contact the MLS team for further
 information on these).  The full kernels can be ``collapsed'' in the
 horizontal, to provide a single vertical averaging kernel for each
-product (as is done for many nadir sounding instruments).  Such kernels
-are shown for each product (along with ``horizontal'' averaging kernels)
-in chapter~\ref{chap:Results}.  The MLS averaging kernels typically
-change little with latitude / season / atmospheric state.  Accordingly,
-two representative kernels are shown for each product, one for the
-tropics and one for polar winter conditions.  These representative
-kernels are available to users as described below.  If variability in
-the averaging kernels is a concern, comparison of $\hat{\b{x}}$ profiles
-obtained using the two kernels (likely to represent two extreme cases)
-can provide a quantitative estimate of the magnitude of differences
-introduced by kernel variations.
+product (as is done for many nadir sounding instruments).  Such
+kernels are shown for each product (along with ``horizontal''
+averaging kernels) in Chapter~\ref{chap:Results}.  The MLS averaging
+kernels typically change little with latitude / season / atmospheric
+state.  Accordingly, two representative kernels are shown for each
+product, one for the tropics and one for polar winter conditions.
+These representative kernels are available to users as described
+below.  If variability in the averaging kernels is a concern,
+comparison of $\hat{\b{x}}$ profiles obtained using the two kernels
+(likely to represent two extreme cases) can provide a quantitative
+estimate of the magnitude of differences introduced by kernel
+variations.
 
 The two averaging kernels for each product are distributed as text
 files, named according to
 \begin{quote}
-\verb+MLS-Aura_L2AK-<product>-<case>_v04-2x_0000d000.txt+
+\verb+MLS-Aura_L2AK-<product>-<case>_v05-00_0000d000.txt+
 \end{quote}
 where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and
 70\degsym N, respectively (or \verb+Day+ and \verb+Night+ for OH, see
-section~\ref{sec:StandardOH}).  These files are available from the MLS
+Section~\ref{sec:StandardOH}).  These files are available from the MLS
 web site at
 \href{http://mls.jpl.nasa.gov/data/ak/}{\texttt{http://mls.jpl.nasa.gov/data/ak/}}.
 
@@ -435,14 +434,15 @@ described in the following section.
 \label{sec:BasisIssues}
 
 The MLS Level~2 data describe a piecewise linear representation of
-vertical profiles of mixing ratio (or temperature, GPH, etc.) as a function of
-pressure, with the tie points given in the \texttt{L2GP} files (in the
-case of water vapor, the representation is piecewise linear in log
-mixing ratio).  This contrasts with some other instruments, which report
-profiles in the form of discrete layer means.  This interpretation has
-important implications that may need to be considered when comparing
-profiles from MLS to those from other instruments or models,
-particularly those with higher vertical resolution.
+vertical profiles of mixing ratio (or temperature, GPH, etc.) as a
+function of pressure, with the tie points given in the \texttt{L2GP}
+files (in the case of water vapor, the representation is piecewise
+linear in log mixing ratio).  This contrasts with some other
+instruments, and model output datasets, which report profiles in the
+form of discrete layer means.  This interpretation has important
+implications that may need to be considered when comparing profiles
+from MLS to those from other instruments or models, particularly those
+with higher vertical resolution.
 
 It is clearly not ideal to compare MLS retrieved profiles with finer
 resolution data by simply ``sampling'' the finer profile at the MLS
@@ -541,9 +541,9 @@ subsequent days when band~13 has been (or may be) reactivated, the
 \texttt{HCl-640-B13} swath in the \texttt{L2GP-DGG}) file which includes
 the band~13 radiances, giving a product with improved precision and
 resolution in the upper stratosphere and mesosphere.  See
-section~\ref{sec:StandardHCl} for more information.
+Section~\ref{sec:StandardHCl} for more information.
 
-As discussed in section~\ref{sec:StandardHCl}, while the band~14 and
+As discussed in Section~\ref{sec:StandardHCl}, while the band~14 and
 band~13 data show very good agreement in the lower stratosphere, they
 disagree on the magnitude of the declining trend in upper stratospheric
 HCl (reflecting cuts in emissions of ozone depleting substances).  At
@@ -564,14 +564,11 @@ product in v3.x was switched to output the band 3 (190\,GHz,
 \texttt{N2O-190}) retrieval on 7~June~2013 and later data for
 \texttt{N2O-640} are not recommended for scientific use.
 
-For v4.x the decision was taken to assign the band 3 (190\,GHz,
+For \thisv, the decision was taken to assign the band 3 (190\,GHz,
 \texttt{N2O-190}) retrieval as the standard product from launch,
-wherease the band 12 (640\,GHz, \texttt{N2O-640}) retrieval is now only
-available in the \texttt{N2O-640} swath in the \texttt{L2GP-DGG} file.
-
-As discussed in section~\ref{sec:StandardN2O}, the band~3 and band~12
-data show good agreement except at 100 hPa where there is a $>$30\% high
-bias in the N\cs2O values from band~3.
+wherease the band 12 (640\,GHz, \texttt{N2O-640}) retrieval is now
+only available in the \texttt{N2O-640} swath in the \texttt{L2GP-DGG}
+file.
 
 \section{A note on OH measurements in \thisv}
 \label{sec:OHNote}
@@ -586,29 +583,16 @@ only eighteen months).
 
 Upper stratospheric and mesospheric OH is strongly affected by solar
 activity \citep{WangEtal:2013}, which was low during the solar 11-year
-minimum in 2009. In order to conserve the remaining lifetime of the THz
-instrument for valuable measurements when the Sun becomes more active,
-we suspended OH measurements from December 2009 to August 2011.  As the
-Solar Cycle 24 rises with increasing solar activity, we reactivate THz
-instrument for a 30-day continuous measurement during August --
-September in each year. The reasons of having this measurement at this
-time of year are:
-\begin{enumerate}
-\item Since MLS OH measurements started in early August in 2004, in
-  order to achieve the longest possible annual OH data record for trend
-  studies, we have to choose a time no earlier than August.
-\item The ground-based instrument used for MLS OH validation
-  \citep{WangEtal:2008}, located at 34.4\degsym N, has the best OH
-  measurement signal in summer (June -- August) and the lowest signal in
-  winter. Having the annual MLS OH measurement starting in August allows
-  for continuing validation with the best possible collocated
-  ground-based data.
-\end{enumerate}
-We have performed the 30-day OH measurement in each August -- September
-during 2011\,--\,2014 and plan to continue it during the declining phase
-of Solar Cycle 24. However, due to the aging of the instrument, OH data
-acquired since 2014 are significantly noisier than the previous years
-and have poor spatial coverage at mid-low latitudes.
+minimum in 2009. In order to conserve the remaining lifetime of the
+THz instrument for valuable measurements when the Sun becomes more
+active, we suspended OH measurements from December 2009.  The THz
+subsystem was reactivated for 30 day periods around August each year
+between 2011 and 2014, providing coverage of a full 11-year solar
+cycle.  However, due to the aging of the instrument, OH data acquired
+in the 2014 period are significantly noisier than the previous years
+and have poor spatial coverage at mid-low latitudes.  Any remaining
+life in the MLS THz subsystem is being conserved pending unusual solar
+activity.
 
 %%% Local Variables: 
 %%% mode: latex
