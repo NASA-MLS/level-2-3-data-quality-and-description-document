@@ -9,9 +9,17 @@
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 \usepackage{inconsolata}
-\usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
-\usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
-\usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
+% \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
+% \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
+% \usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
+\usepackage[lf,sb]{libertine}
+% Also use libertine in any equations we have
+\usepackage[libertine]{newtxmath}
+%
+% For sans serif we'll use the Deja Vu Sans condensed family (it's a bit
+% heavier than I would have liked but other fonts had less manageable quirks).
+\usepackage[scaled=0.8]{DejaVuSansCondensed}
+\usepackage[scaled=0.8]{DejaVuSansMono}
 %
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\mddefault}{m}
