@@ -159,11 +159,33 @@ below.
 
 \begin{description}
 \item[Partial amelioration of drifts in 190-GHz products (H\cs2O,
-  N\cs2O, HCN):] STUFF
-\item[Correction of dry bias in upper tropospheric H\cs2O:] STUFF
-\item[Extension of N\cs2O product to 100\,hPa:] STUFF
-\item[Increased vertical range for some species:] STUFF
-  \mycomment{More needed}
+  N\cs2O, HCN):] As discussed in \citet{HurstEtal:2016} and
+  \citet{LiveseyEtal:2020:Drifts}, there are indications that the MLS
+  H\cs2O product has been slowly drifting since \texttildelow2010, at a rate
+  of between 0.2--1\%/year, depending on what record is compared to
+  (mainly frostpoint sonde vs.\ ACE-FTS) and the altitude range of
+  interest.  The MLS team has identified a slow change in instrument
+  calibration that accounts for some of this drift, and is corrected
+  for in \thisv.  The extent to which this correction fully accounts
+  for the observed drift remains to be studied as the \thisv
+  processing continues.  The calibration trend also affects other
+  species measured by the MLS 190-GHz subsystem, notably N\cs2O.
+\item[Correction of dry bias in upper tropospheric H\cs2O:] As part of
+  the work to identify and characterize the drift discussed above, the
+  MLS team has also identified and corrected the source of a
+  \texttildelow20\% dry bias below the tropopause.
+\item[Extension of N\cs2O product to 100\,hPa:] The \thisv\ algorithms
+  include a new retrieval for N\cs2O that reduces issue seen at
+  100\,hPa in earlier versions, rendering this pressure level suitable
+  for scientific use.  Note that the drift discussed above also
+  affects N\cs2O, and unphysical negative trends in this product in
+  the lower stratosphere seem to have been reduced in the limited
+  amount of data available for inspection to date.
+\item[Increased vertical range for some species:] A new forward model
+  has improved the performance of the O\cs3, H\cs2O, and CO retrievals
+  in the upper mesosphere.  The MLS team is investigating whether
+  these improvements are sufficient to increase the vertical range
+  over which these products are recommended for scientific use.
 \end{description}
 
 In addition to these specific changes, changes in all products,
