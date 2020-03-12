@@ -1,18 +1,19 @@
 pro OneAVKCombo, product=product, all=all, $
-  noHorizontal=noHorizontal
+  noHorizontal=noHorizontal, bonus=bonus
 
 if keyword_set ( all ) then begin
   mainProducts = [  'CH3Cl', 'CH3CN', 'CH3OH', 'ClO', 'CO', 'GPH', 'H2O_HR', 'HCl', $
     'HCN', 'HNO3', 'IWC', 'N2O', 'O3_HR', 'OH', 'SO2', 'Temperature_HR' ]
+  bonusProducts = [ 'O3_HR' ]
   noHorizProducts = [ 'BrO', 'HO2', 'HOCl' ]
-  ;; mainProducts = [ 'OH', 'SO2', 'Temperature_HR' ]
-  for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts(p)
-  for p = 0, n_elements ( noHorizProducts ) - 1 do $
-    OneAvkCombo, product=noHorizProducts(p), /noHorizontal
+  ;; for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts(p)
+  for p = 0, n_elements ( bonusProducts ) - 1 do OneAvkCombo, product=bonusProducts(p), /bonus
+  ;; for p = 0, n_elements ( noHorizProducts ) - 1 do OneAvkCombo, product=noHorizProducts(p), /noHorizontal
   return
 endif
 
 fmt = '($,a)'
+outSuffix = ''
 
 ;; Read the range table
 oneRangeEntry = { product:'', range:fltarr(2)}
@@ -104,8 +105,12 @@ endelse
 bottom = 1000.0
 top = 0.001
 
+if keyword_set ( bonus ) then begin
+  if product eq 'O3_HR' then outSuffix = '-UTLS'
+endif
+
 ;; Setup the plot
-outName = 'avk-' + product
+outName = 'avk-' + product + outSuffix
 SetPS, filename=outName + '.eps', /encapsulated, /color
 device, xsize=16, ySize=18 - 8 * keyword_set ( noHorizontal )
 !p.charsize=0.8
@@ -185,7 +190,14 @@ for bin = 0, noBins - 1 do begin
         heightRange = [ 100, 0.15 ]
         yRange = [ 100, 0.1]
       end
-      'O3_HR' : heightRange = [ 1000, 0.001 ]
+      'O3_HR' : begin
+        if keyword_set ( bonus ) then begin
+          heightRange = [ 1000.0, 10.0 ]
+          
+        endif else begin
+          heightRange = [ 1000, 0.001 ]
+        endelse
+      end
       'OH' : heightRange = [ 100, 0.001 ]
       'SO2' : heightRange = [ 1000, 1.0 ]
       'Temperature_HR' : heightRange = [ 1000.0, 0.001 ]
