@@ -171,7 +171,7 @@ for bin = 0, noBins - 1 do begin
       'CH3OH' : heightRange = [ 1000.0, 0.1 ]
       'ClO' : heightRange = [ 1000.0, 0.01 ]
       'CO' : heightRange = [ 1000, 0.001 ]
-      'H2O_HR' : heightRange = [ 1000, 0.1 ]
+      'H2O_HR' : heightRange = [ 1000, 0.001 ]
       'HCl' : heightRange = [ 200, 0.1 ]
       'HCN' : heightRange = [ 100, 0.1 ]
       'HNO3' : begin
