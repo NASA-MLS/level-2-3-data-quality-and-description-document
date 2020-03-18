@@ -152,7 +152,7 @@ January) or optional two-digit month \texttt{<mm>}. Files using the
 two-digit month will only be available during their current calendar
 year, as ``forward processing'' data are gathered, and will contain
 all data in the year up to and including the quoted month, with the
-remaining date entries present but consisting values marked ``bad''
+remaining date entries present but consisting of values marked ``bad''
 (i.e., with the NetCDF \verb+_FillValue+).  Once all months are
 available, the complete dataset will be stored in the
 ``\texttt{<yyyy>}'' files.
@@ -260,12 +260,12 @@ averaging inherent in generating Level~3 data will act to reduce
 ``precision''-related errors, those due to random noise in the MLS
 radiance measurements, by $1/\sqrt{n}$, where $n$ is the number of
 Level~2 data points in the average (which is given by the
-\texttt{nvalues} field).  We have chosen to report the non-reduced
-precision to make it easier for users who wish to perform further
-averaging.  For example, when creating weekly averages from the daily
-L3 data, the final precision can be computed as the root-mean-square
-of the daily precisions divided by the square root of the total of the
-daily \verb+nvalues+ entries.
+\texttt{nvalues} field).  We have chosen not to divide by $\sqrt{n}$
+in the files in order to make it easier for users who wish to perform
+further averaging.  For example, when creating weekly averages from
+the daily L3 data, the final precision can be computed as the
+root-mean-square of the daily precisions divided by the square root of
+the total of the daily \verb+nvalues+ entries.
 
 In contrast, the ``accuracy''-related errors, those due to biases in
 the MLS measurement system, will in most cases be propagated through
