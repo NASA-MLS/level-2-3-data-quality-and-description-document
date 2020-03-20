@@ -1,6 +1,6 @@
 \speciestitle{Peroxy Radical}{HO\cs2}{HO2}{%
 \item[Useful range:] 22\,--\,0.046\,hPa
-\item[Contact:] Luis Millan, \email{Luis.F.Millan@jpl.nasa.gov}
+\item[Contact:] Luis Mill\'an, \email{Luis.F.Millan@jpl.nasa.gov}
   and Shuhui Wang, \email{shw@gps.caltech.edu}}
 
 \subsection{Introduction}
@@ -20,9 +20,12 @@ An algorithm to retrieve daily zonal means of HO\cs2 over an extended
 vertical range by first averaging the radiances has been developed by
 the MLS team \citep{MillanEtal:2015}. This alternative dataset is the first
 long-term daytime and nighttime HO\cs2 satellite record covering the
-stratosphere and the mesosphere. In the near future, this dataset will
-be available at the GFSC DISC, in the meantime, those interested in
-using it are advised to contact the MLS team.
+stratosphere and the mesosphere. This dataset is available from the GSFC DISC\@. 
+The product short name is ``\texttt{ML3DZMHO2}''. 
+
+% In the near future, this dataset will
+% be available at the GFSC DISC, in the meantime, those interested in
+% using it are advised to contact the MLS team.
 
 \subsection{Resolution}
 
@@ -53,25 +56,25 @@ data (\texttildelow2000 samples) for most pressure levels over
 
 \begin{figure}
 \begin{tabular}{@{}l@{}l@{}}
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-a}&
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-b}\\
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-c}&
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-d}\\
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v3-e}&
-\includegraphics[width=0.5\linewidth]{figures/plot-HO2v3-f}%
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-a}&
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-b}\\
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-c}&
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v4-d}\\
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v3-e}&
+% \includegraphics[width=0.5\linewidth]{figures/plot-HO2v3-f}%
+
+\includegraphics[width=0.8\linewidth]{figures/plot_ho2zmv5.eps}%
 \end{tabular}
 \caption{Monthly zonal mean of retrieved HO\cs2 and its estimated
-  precision (horizontal error bars) for September, 2005 averaged over
+  precision (horizontal error bars) for January, 2009 averaged over
   29\degsym N to 39\degsym N. Panel (a) shows \thisv HO\cs2 vmr vs.\
   pressure for day (black) and night (blue). Panel (b) shows the same
-  data plotted for the stratosphere as a day-night difference (note that
+  data plotted as a day-night difference (note that
   a day-night difference is required for HO\cs2 for all pressure
   levels). Panel (c) shows the same data in (a) converted into density
   units. Panel (d) shows the day-night differences for the data in panel
   (c). Panels (e) and (f) are equivalent to (c) and (d) but using \prevv
-  data. The average in panels (a)\,--\,(d) using \thisv data includes 3052
-  profiles, while the average in panels (e)\,--\,(f) using \prevv data
-  includes 2695 profiles.}
+  data.}
 \label{fig:HO2profiles}
 \end{figure}
 
@@ -83,9 +86,7 @@ measurements of radiance has been quantified and modeled
 \citep{ReadEtal:2007}. These quantified effects correspond to either
 $2\sigma$ estimates of uncertainties in each MLS product, or an estimate
 of the maximum reasonable uncertainty based on instrument knowledge
-and/or design requirements. These accuracy calculations were performed
-with more realistic HO\cs2 atmospheric profiles than for \prevv
-estimates.  The HO\cs2 bias can be eliminated by taking day-night
+and/or design requirements. The HO\cs2 bias can be eliminated by taking day-night
 differences over the entire recommended pressure range. The overall
 uncertainty is the square root of the sum of squares of the precision
 and accuracy.
@@ -134,10 +135,10 @@ studies.
 \textbf{Comments} \\
 \midrule
  $<$ 0.03\,hPa  & ---   & ---               & ---  &  Unsuitable for scientific use\\
- 0.046\,hPa     & 10    & 6                 & 0.01 &  Use day--night difference \\
- 0.10\,hPa      & 7     & 10                & 0.2  &  Use day--night difference \\
+ 0.046\,hPa     & 10    & 4                 & 0.01 &  Use day--night difference \\
+ 0.10\,hPa      & 7     & 8                 & 0.2  &  Use day--night difference \\
  1.0 \,hPa      & 5     & 11                & 0.2  &  Use day--night difference \\
- 10  \,hPa      & 4     & 50                & 14   &  Use day--night difference \\
+ 10  \,hPa      & 4     & 56                & 14   &  Use day--night difference \\
  $>$ 22\,hPa    & ---   & ---               & ---  &  Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}

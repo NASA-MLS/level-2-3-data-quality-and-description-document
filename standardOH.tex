@@ -1,6 +1,6 @@
 \speciestitle{Hydroxyl Radical}{OH}{OH}{%
-ite\item[Useful range:] 32\,--\,0.0032\,hPa
-\item[Contact:] Luis Millan, \email{Luis.F.Millan@jpl.nasa.gov}
+\item[Useful range:] 32\,--\,0.0032\,hPa
+\item[Contact:] Luis Mill\'an, \email{Luis.F.Millan@jpl.nasa.gov}
   and Shuhui Wang, \email{shw@gps.caltech.edu}}
 
 \subsection{Introduction}
@@ -10,20 +10,19 @@ spectral region. A description of OH data quality, precision and
 systematic errors for an earlier version, v2.2, is given in
 \citet{PickettEtal:2006:Validation}. The validation studies are described in
 \citet{PickettEtal:2008} and \citet{WangEtal:2008}. While the OH data quality
-is generally similar between v2.2 and \prevv, there are significant
-improvements in the current version \thisv. In previous versions, OH
-data near the mesospheric density peak, \texttildelow0.032 hPa, often
-show considerable amount of data flagged with negative precision,
+is generally similar between v2.2 and v3.x, there were significant
+improvements in v4.x inherited to \thisv. Previous to v3.x, OH data near the mesospheric density peak,
+\texttildelow0.032 hPa, often show considerable amount of data flagged with negative precision,
 indicating strong influence of \emph{a priori} information, particularly
 in the summer hemisphere (or tropics when near the equinox) and
-sometimes causes gaps in zonal mean time series. The \thisv software
+sometimes causes gaps in zonal mean time series. Starting with v4.x, the software
 resolves this issue by fixing the overly tight \texttt{a priori}
 constraints. The resulting mesospheric OH data are less noisy and
 generally have somewhat larger values than previous versions for the
 problematic seasons/latitudes. Another improvement is the smaller bias
 at 10\,--\,15\,hPa. Therefore, the day-night correction for bias is only
 required for pressure levels at 21 and 32\,hPa. Note that users may
-notice more zig-zags in \thisv nighttime mesospheric OH vertical
+notice more zig-zags in nighttime mesospheric OH vertical
 profiles. This is a side effect of fixing the possible positive bias
 introduced by tight lower limits set in previous version retrievals.
 
@@ -98,25 +97,15 @@ can be extended to 32\,--\,0.0046\,hPa.
 \end{figure}
 
 \begin{figure}
-\begin{tabular}{@{}l@{}l@{}}
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-a}&
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-b}\\
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-c}&
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv4-d}\\
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv3-e}&
-\includegraphics[width=0.5\linewidth]{figures/plot-OHv3-f}%
-\end{tabular}
+\centering\includegraphics[width=0.7\linewidth]{figures/plot_ohzmv5.eps}%
 \caption{Zonal mean of retrieved OH and its estimated precision
-  (horizontal error bars) for September 20, 2005 averaged over 29\degsym
-  N to 39\degsym N\@. The average includes 98 profiles. Panel (a) shows
-  \thisv OH vmr vs. pressure for day (black) and night (blue).  Panel (b)
-  shows the same data plotted for the stratosphere. The retrieved night
-  OH concentration is near zero for altitudes below 1\,hPa.  Panel (c)
-  shows the same data in (a) converted into density units.  Panel (d)
-  shows the day-night differences for the data in panel (c).  Note that
-  the day-night difference is required for altitudes below 20\,hPa.
-  Panels (e) and (f) are equivalent to (c) and (d) but using \prevv OH
-  data.}
+  (horizontal error bars) for October 1, 2009 averaged over 29\degsym
+  N to 39\degsym N\@. The average includes  $\sim$100 profiles. Panel (a) shows
+  \thisv OH vmr vs. pressure for day (black) and night (blue). The 
+  retrieved night OH concentration is near zero for altitudes below 1\,hPa.  Note that
+  the day-night difference is required for altitudes below 10\,hPa. Panel (c)
+  shows the same data in (a) converted into density units. Panels (b) and (d)
+  are equivalent to (a) and (c) but using \prevv OH  data.}
 \label{fig:OHprofiles}
 \end{figure}
 
@@ -129,10 +118,8 @@ measurements of radiance has been quantified and modeled
 \citep{ReadEtal:2007}. These quantified effects correspond to either
 $2\sigma$ estimates of uncertainties in each MLS product, or an estimate
 of the maximum reasonable uncertainty based on instrument knowledge
-and/or design requirements.These accuracy calculations were performed
-with more realistic OH atmospheric profiles than for \prevv
-estimates. Biases can be eliminated by taking day-night differences from
-32\,--\,21\,hPa. For 15\,--\,0.1\,hPa, the observed night OH
+and/or design requirements. Biases can be eliminated by taking day-night differences from
+32\,--\,15\,hPa. For 10\,--\,0.1\,hPa, the observed night OH
 concentration is small and day-night differencing is not ordinarily
 needed. The overall uncertainty is the square root of the sum of squares
 of the precision and accuracy.
@@ -166,7 +153,7 @@ and longitude on successive days.
 Data from MLS v2.2 software have been validated with two balloon-borne
 remote-sensing instruments and with ground-based column measurements.
 Details of the comparison are given in \citet{PickettEtal:2008} and
-\citet{WangEtal:2008}.  The comparison among v2.2, \prevv, and \thisv show
+\citet{WangEtal:2008}.  The comparison among v2.2 and \thisv show
 no significant differences except for the mesosphere where \thisv OH
 daytime values are somewhat larger and less noisy in the summer
 hemisphere (or tropics when near equinox).
@@ -187,12 +174,12 @@ hemisphere (or tropics when near equinox).
 \textbf{Comments}\\
 \midrule
 $<$0.003\,hPa     & ---                  & ---                  & ---   &  Unsuitable for scientific use\\
-0.003\,hPa        & 5.0 $\times$ 220     & 0.5 / 0.5            & 0.5 & \\
-0.01 \,hPa        & 2.5 $\times$ 180     & 1.1 /1.1             & 2   & \\
-0.1\,hPa          & 2.5 $\times$ 165     & 3.3 / 0.6            & 1.0  & \\
-1.0\,hPa          & 2.5 $\times$ 165     & 1.9 / 0.4            & 1.0  & \\
-10 \,hPa          & 2.5 $\times$ 165     & 2.3 / 1.4            & 0.9  & \\
-32\,--\,14\,hPa   & 2.5 $\times$ 165     & 6\,--\,10 / 4\,--\,8 & 1.3  & Use day--night difference \\
+0.003\,hPa        & 5.0 $\times$ 220     & 0.4 / 0.4            & 0.5 & \\
+0.01 \,hPa        & 2.5 $\times$ 180     & 1.0 / 0.7            & 2   & \\
+0.1\,hPa          & 2.5 $\times$ 165     & 3.6 / 0.5            & 1.0  & \\
+1.0\,hPa          & 2.5 $\times$ 165     & 2.8 / 0.6            & 1.0  & \\
+10 \,hPa          & 2.5 $\times$ 165     & 4.7 / 2.8            & 0.9  & \\
+32\,--\,14\,hPa   & 2.5 $\times$ 165     & 13.7 / 12.2          & Use day--night difference \\
 $>$32\,hPa        & ---                  & ---                  & ---   & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
