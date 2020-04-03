@@ -51,7 +51,7 @@ expected precision of the EOS MLS data, and should be regarded as a
 companion volume to this document.  The impact of clouds on MLS
 measurements and the use of MLS data to infer cloud properties is
 described in \cite{EOSMLSCloudATBD}.  All the above documents and papers
-are available from the MLS web site (\texttt{http://mls.jpl.nasa.gov/}).
+are available from the MLS web site (\texttt{https://mls.jpl.nasa.gov/}).
 
 A subset of the information in those documents is also reported in the
 \emph{IEEE Transactions on Geoscience and Remote Sensing}.  An
@@ -124,14 +124,17 @@ numbered v4.3\emph{x} etc., and will be accompanied by an updated
 version of this document (though not necessarily immediately,
 depending on the circumstances dictating the update).
 
+Finally, Chapter~\ref{chap:Level3} provides information on MLS Level~3
+data, which consist of binned averages of MLS observations in various
+coordinate systems.
+
 \section{MLS data validation status}
 
-As discussed above, a complete set of MLS validation papers describe the
-validation state of the earlier v2.2 data.  The majority of the v2.2 MLS
-data products have, accordingly, completed ``Stage~3 Validation''
-defined\footnote{See
-  \href{http://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}%
-  {\texttt{http://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}}}
+As discussed above, a complete set of MLS validation papers describe
+the validation state of the earlier v2.2 data.  The majority of the
+v2.2 MLS data products have, accordingly, completed ``Stage~3
+Validation'' defined\footnote{See
+  \url{https://science.nasa.gov/earth-science/earth-science-data/data-maturity-levels/}}
 as:
 \begin{quote}\itshape
   Product accuracy has been assessed.  Uncertainties in the product and
@@ -225,20 +228,17 @@ the \emph{a priori} information used in the retrieval (as an additional
 \label{sec:NegativePrecision}
 
 All the MLS Level~2 data files described here are available from the
-NASA Goddard Space Flight Center Data and Information Services Center
-(GSFC-DISC, see
-\href{http://disc.gsfc.nasa.gov/}{\texttt{http://disc.gsfc.nasa.gov/}}).
-The standard and diagnostic products are stored in the EOS MLS
-\emph{Level 2 Geophysical Product} (L2GP) files.  These are standard
-HDF-EOS (version~5) files containing swaths in the Aura-wide standard
-format.  For more information on this format see
-\citet{AuraFileConventions}.  A sample reading function for the
-Interactive Data Language (IDL, version 6.1 or later required), known as
-\texttt{readl2gp.pro} may have been supplied with the data and is
-available from the \emph{Open Channel Software Foundation}
-\href{http://www.openchannelsoftware.org/}{\texttt{http://www.openchannelsoftware.org/}}.
-A reader for MATLAB (\texttt{readL2GP.m}) is also available at the same
-site, and one for python is planned to be added shortly.
+NASA Goddard Space Flight Center Earth Science Data and Information
+Services Center (GES-DISC, see \url{https://disc.gsfc.nasa.gov/}). The
+standard and diagnostic products are stored in the EOS MLS \emph{Level
+  2 Geophysical Product} (L2GP) files.  These are standard HDF-EOS
+(version~5) files containing swaths in the Aura-wide standard format.
+For more information on this format see \citet{AuraFileConventions}.
+A sample reading function for the Interactive Data Language (IDL,
+version 6.1 or later required), known as \texttt{readl2gp.pro} may
+have been supplied with the data and is available from
+\url{https://mls.jpl.nasa.gov/data/readers.php} A reader for MATLAB
+(\texttt{readL2GP.m}) is also available at the same site.
 
 The standard products are stored in files named according to the convention
 \begin{quote}
@@ -448,58 +448,59 @@ files, named according to
 where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and
 70\degsym N, respectively (or \verb+Day+ and \verb+Night+ for OH, see
 section~\ref{sec:StandardOH}).  These files are available from the MLS
-web site at
-\href{http://mls.jpl.nasa.gov/data/ak/}{\texttt{http://mls.jpl.nasa.gov/data/ak/}}.
+web site at \url{https://mls.jpl.nasa.gov/data/ak/}.
 
-These files contain comment lines (prefixed with a semicolon) describing
-their format.  The first non-comment line gives the name of the product
-and the number of levels in the vertical profile.  A list of the
-pressure levels in the profile (matching those in the L2GP files) is
-then given, followed by all the values of the averaging kernel matrix,
-with the row index (the level in the retrieved profile) varying most
-rapidly.
+These files contain comment lines (prefixed with a semicolon)
+describing their format.  The first non-comment line gives the name of
+the product and the number of levels in the vertical profile.  A list
+of the pressure levels in the profile (matching those in the L2GP
+files) is then given, followed by all the values of the averaging
+kernel matrix, with the row index (the level in the retrieved profile)
+varying most rapidly.
 
 Typically, of course, the MLS profile pressures are not those of the
-observation or model dataset to which the comparison is being made.  In
-many cases, particularly where the resolution of the other dataset is
-comparable to that of the MLS profiles, a simple linear interpolation is
-the most practical manner in which to transform the other dataset into
-the $\b{x}$ profile space.  However, we note that more formal approaches
-have been described \citep{RodgersAndConnor:2003} for the case where the
-comparison dataset is also remotely sounded and has an averaging kernel.
-In cases where the comparison dataset has high vertical resolution
-(e.g., sonde or Lidar observations), an additional consideration is
-described in the following section.
+observation or model dataset to which the comparison is being made.
+In many cases, particularly where the resolution of the other dataset
+is comparable to that of the MLS profiles, a simple linear
+interpolation is the most practical manner in which to transform the
+other dataset into the $\b{x}$ profile space.  However, we note that
+more formal approaches have been described
+\citep{RodgersAndConnor:2003} for the case where the comparison
+dataset is also remotely sounded and has an averaging kernel.  In
+cases where the comparison dataset has high vertical resolution (e.g.,
+sonde or Lidar observations), an additional consideration is described
+in the following section.
 
 \section{Considerations for comparisons with high vertical resolution
   datasets}
 \label{sec:BasisIssues}
 
 The MLS Level~2 data describe a piecewise linear representation of
-vertical profiles of mixing ratio (or temperature, GPH, etc.) as a function of
-pressure, with the tie points given in the \texttt{L2GP} files (in the
-case of water vapor, the representation is piecewise linear in log
-mixing ratio).  This contrasts with some other instruments, which report
-profiles in the form of discrete layer means.  This interpretation has
-important implications that may need to be considered when comparing
-profiles from MLS to those from other instruments or models,
-particularly those with higher vertical resolution.
+vertical profiles of mixing ratio (or temperature, GPH, etc.) as a
+function of pressure, with the tie points given in the \texttt{L2GP}
+files (in the case of water vapor, the representation is piecewise
+linear in log mixing ratio).  This contrasts with some other
+instruments, which report profiles in the form of discrete layer
+means.  This interpretation has important implications that may need
+to be considered when comparing profiles from MLS to those from other
+instruments or models, particularly those with higher vertical
+resolution.
 
 It is clearly not ideal to compare MLS retrieved profiles with finer
 resolution data by simply ``sampling'' the finer profile at the MLS
 retrieval surfaces.  One might expect that instead one should do some
-linear interpolation or layer averaging to convert the other dataset to
-the MLS grid.  However, in the MLS case where the state vector describes
-a profile at infinite resolution obtained by linearly interpolating from
-the fixed surfaces, it can be shown that the appropriate thing to do is
-to compare to a least squares fit of the non-MLS profile to the lower
-resolution MLS retrieval grid.
+linear interpolation or layer averaging to convert the other dataset
+to the MLS grid.  However, in the MLS case where the state vector
+describes a profile at infinite resolution obtained by linearly
+interpolating from the fixed surfaces, it can be shown that the
+appropriate thing to do is to compare to a least squares fit of the
+non-MLS profile to the lower resolution MLS retrieval grid.
 
 Consider a high resolution profile described by the vector $\b{z}_h$,
 and a lower resolution MLS retrieved profile described by the vector
-$\b{x}_l$.  We can construct a linear interpolation in log pressure that
-interpolates the low resolution information in $\b{x}_l$ to the high
-resolution grid of $\b{z}_h$.  We describe that operation by the
+$\b{x}_l$.  We can construct a linear interpolation in log pressure
+that interpolates the low resolution information in $\b{x}_l$ to the
+high resolution grid of $\b{z}_h$.  We describe that operation by the
 (typically highly sparse) $n_h \times n_l$ matrix $\b{H}$ such that
 \begin{equation}
 \b{x}_h = \b{H}\b{x}_l

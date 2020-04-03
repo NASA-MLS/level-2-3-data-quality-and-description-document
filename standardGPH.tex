@@ -230,23 +230,24 @@ increasingly negative at higher levels, reaching -600\,m at 0.001\,hPa,
 but with significant latitudinal and seasonal variability.
 
 \subsection{Known Artifacts}
-To maintain its position in the ``A-Train'' constellation of satellites,
-the Aura spacecraft periodically executes ``inclination adjustment
-maneuvers'' (IAMs) involving large changes in spacecraft yaw and firing
-of thrusters.  There were 39 such maneuvers in the first 10 years of
-operation.  Large systematic errors in spacecraft reported attitude have
-been found in the first orbit that follows the return to nominally good
-attitude data after these maneuvers, apparently due to the ringing of a
-Kalman filter in the attitude measurement system. Since MLS GPH relies
-on spacecraft attitude for its absolute reference, these attitude errors
-result in large systematic errors in GPH, typically reaching +3500\,m in
-the first eighth of the orbit and -30\,m in the second quarter orbit
-after the nominal ``end of maneuver''.  The large positive errors almost
-always occur on ascending orbits from near Australia, crossing the
-Indian Ocean and, at $\sim$3500\,m amplitude, are large enough to
+To maintain its position in the ``A-Train'' constellation of
+satellites, the Aura spacecraft periodically executes ``inclination
+adjustment maneuvers'' (IAMs) involving large changes in spacecraft
+yaw and firing of thrusters.  There were 39 such maneuvers in the
+first 10 years of operation.  Large systematic errors in spacecraft
+reported attitude have been found in the first orbit that follows the
+return to nominally good attitude data after these maneuvers,
+apparently due to the ringing of a Kalman filter in the attitude
+measurement system. Since MLS GPH relies on spacecraft attitude for
+its absolute reference, these attitude errors result in large
+systematic errors in GPH, typically reaching +3500\,m in the first
+eighth of the orbit and -30\,m in the second quarter orbit after the
+nominal ``end of maneuver''.  The large positive errors almost always
+occur on ascending orbits from near Australia, crossing the Indian
+Ocean and, at $\sim$3500\,m amplitude, are large enough to
 significantly bias even long-term averages.  A file of start and stop
 times for data to be avoided is maintained on the MLS website:
-\href{http://mls.jpl.nasa.gov/cal/issues.txt}{\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
+\url{https://mls.jpl.nasa.gov/cal/issues.txt}.
 
 
 \subsection{Data screening}
@@ -286,10 +287,9 @@ GPH should be screened in much the same way as is temperature:
 
 \item[IAMs:] Large errors in reported spacecraft attitude have been
   found following the spacecraft inclination adjustment maneuvers that
-  occur $\sim$4 times per year.  A file of times at which GPH should not
-  be used is maintained on the MLS website:
-  \href{http://mls.jpl.nasa.gov/cal/issues.txt}%
-  {\texttt{http://mls.jpl.nasa.gov/cal/issues.txt}}.
+  occur $\sim$4 times per year.  A file of times at which GPH should
+  not be used is maintained on the MLS website:
+  \url{https://mls.jpl.nasa.gov/cal/issues.txt}.
 \end{description}
 
 \subsection{Desired improvements for future data version(s)}
