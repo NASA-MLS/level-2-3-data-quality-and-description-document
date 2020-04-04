@@ -119,6 +119,7 @@ determined value for the vortex edge ``center'' \citep[this also
 follows][]{LawrenceEtal:2018}.
 
 \section{Level~3 data files}
+\label{sec:L3files}
 
 Two different temporal resolutions of Level 3 data are
 provided---daily (\texttt{L3DB}) and monthly (\texttt{L3MB}). The
@@ -153,11 +154,11 @@ two-digit month will only be available during their current calendar
 year, as ``forward processing'' data are gathered, and will contain
 all data in the year up to and including the quoted month, with the
 remaining date entries present but consisting of values marked ``bad''
-(i.e., with the NetCDF \verb+_FillValue+).  Once all months are
+(i.e., with the netCDF \verb+_FillValue+).  Once all months are
 available, the complete dataset will be stored in the
 ``\texttt{<yyyy>}'' files.
 
-Within each file, the datasets are stored in NetCDF-4 groups. The
+Within each file, the datasets are stored in netCDF-4 groups. The
 \texttt{L3DB} and \texttt{L3MB} files contain six types of datasets:
 latitude/longitude grids on both pressure and potential temperature
 vertical coordinates,
@@ -252,7 +253,7 @@ in the earlier chapters of this document, providing a significant
 simplification for users. In cases where there are no good Level~2
 data available to populate a Level~3 data point, the \texttt{nvalues}
 field is set to zero and the other data fields are set to the
-\texttt{\_FillValue} (bad data flag) for the given NetCDF variables.
+\texttt{\_FillValue} (bad data flag) for the given netCDF variables.
 
 When considering Level~3 data, as with every geophysical measurement,
 attention should be paid to the associated uncertainties.  The
