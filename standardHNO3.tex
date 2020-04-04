@@ -1,353 +1,384 @@
 \speciestitle{Nitric Acid}{HNO\cs3}{HNO3}{
 \item[Useful range:] 215\,--\,1.5\,hPa (1.0\,hPa under enhanced conditions)
-\item[Contact:] Gloria Manney, \email{manney@nwra.com}}
+\item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
+
+\newcommand{\nitac}{HNO\cs3\xspace}
 
 \subsection{Introduction}
 
-The standard HNO\cs3 product is derived from the 240-GHz retrievals at
-pressures equal to or greater than 22 hPa and from the 190-GHz
-retrievals for lesser pressures.  The quality and reliability of the
-Aura MLS v2.2 HNO\cs3 measurements were assessed in detail by
-\citet{SanteeEtal:2007:HNO3}.  V3.3 HNO\cs3 was greatly improved over that
-in version v2.2, especially in that a low bias through much of the
-stratosphere (especially evident at levels with pressure greater than or
-equal to 100\,hPa) was largely eliminated.  However, v3.3 240-GHz
-HNO\cs3 was adversely impacted by clouds \citep{EOSMLSV33V34Quality},
-leading to a noisy HNO\cs3 product in the UTLS\@.  The adverse cloud
-impacts have been substantially mitigated in \thisv (see
-\ref{sec:V4vsV3Overview}). Figure~\ref{fig:zmv3v4diffs} shows an example
-of typical differences between \prevv and \thisv HNO\cs3\@.  When
-each version is screened as recommended \citep[see below
-and][]{EOSMLSV33V34Quality}, \thisv is slightly lower than \prevv at
-pressures greater than or equal to 215\,hPa in middle to high latitudes,
-and shows an oscillatory pattern of differences in the tropical UTLS,
-such that \thisv values are slightly higher than those in \prevv at
-147\,hPa and slightly lower at 100\,hPa.  A summary of the estimated
+The standard \nitac product is derived from the \mbox{240-GHz}
+retrievals at pressures equal to or greater than 22\,hPa and from the
+\mbox{190-GHz} retrievals for lesser pressures.  The quality and
+reliability of the Aura MLS v2.2 \nitac measurements were assessed in
+detail by \citet{SanteeEtal:2007:HNO3}.  V3.3\emph{x}/v3.4\emph{x}
+\nitac was greatly improved over that in v2.2; in particular, a low
+bias through much of the stratosphere (especially evident at pressures
+greater than or equal to 100\,hPa) was largely eliminated.  However,
+the v3.3\emph{x}/v3.4\emph{x} \mbox{240-GHz} \nitac was adversely
+impacted by clouds \citep{EOSMLSV33V34Quality}, leading to a noisy
+\nitac product in the upper troposphere / lower stratosphere (UTLS).
+The adverse cloud impacts were substantially mitigated in \prevv
+(\citep{EOSMLSV4Quality}).  For the most part, \nitac mixing ratios
+have not changed dramatically in \thisv.  A summary of the estimated
 precision, resolution (vertical and horizontal), and systematic
-uncertainty of the \thisv HNO\cs3 measurements as a function of altitude
-is given in Table~\ref{tab:HNO3Summary}.
+uncertainty of the \thisv \nitac measurements as a function of
+altitude is given in Table~\ref{tab:HNO3Summary}.
+
+\subsection{Differences between \prevv and \thisv}
+
+The shapes of mean profiles in the two data versions are very similar
+throughout the vertical range of the retrievals, and zonal-mean
+differences are generally small, with a few notable exceptions.
+First, \thisv abundances are larger at 6.8\,hPa, with differences
+often exceeding 10\% in the equatorial and summertime midlatitude
+regions, as seen in Figure~\ref{fig:zmcontourHNO3} and the upper
+right-hand panels in each set of plots in
+Figure~\ref{fig:hno3MeanProfs} (compare red and orange curves above
+22\,hPa).  Second, at the ``join'' level, at and below which the
+standard \nitac product is taken from the \texttt{HNO3-240} retrieval,
+tropical mean mixing ratios are typically slightly smaller in \thisv,
+as seen in the upper left-hand panels in the middle set of plots in
+Figure~\ref{fig:hno3MeanProfs} (compare dark and light blue curves at
+22\,hPa; not apparent in Figure~\ref{fig:zmcontourHNO3} as differences
+are less than 10\%).  Third, under highly denitrified conditions at
+the highest southern latitudes during Antarctic winter, mixing ratios
+in the lower stratosphere fluctuate around zero in both versions,
+leading to alternating large ($>$30\%) positive and negative percent
+differences (see the July panels in Figure~\ref{fig:zmcontourHNO3};
+the disparities between the two versions are less visible in the July
+Southern Hemisphere overall polar-cap average in the bottom-right set
+of plots in Figure~\ref{fig:hno3MeanProfs}).  Finally, mixing ratios
+in the equatorial region are frequently slightly smaller in \thisv at
+100 and/or 147\,hPa (Figure~\ref{fig:hno3MeanProfs}); this change
+leads to zonal mean values that can be more negative, or negative over
+a larger area, than those in \prevv, with the small magnitude of the
+values in this region again resulting in large percent differences
+(Figure~\ref{fig:zmcontourHNO3}).
+
+Mean profiles computed from measurements taken during the ascending
+(mainly daytime) and descending (mainly nighttime) portions of the
+orbit are distinguished in Figure~\ref{fig:hno3MeanProfs}; as
+expected, no substantial differences are seen between them in the
+lower stratosphere or upper troposphere in either version.
+Figure~\ref{fig:hno3MeanProfs} also compares the behavior of the two
+\nitac products; in general the \thisv \texttt{HNO3-240} retrieval is
+slightly smoother at levels above 22\,hPa than it was in \prevv, often
+bringing it somewhat more in line with the \texttt{HNO3-190}
+retrieval, which continues to be used to construct the standard
+product at those levels.
 
 \begin{figure}
-  \includegraphics[angle=90,width=\linewidth]{figures/InspectZMContour_HNO3--v4-2_HNO3--v3-3_2009m02_LatPress-All}
-\caption{V3.3 (top left) and v4.1 (top right) zonal mean HNO\cs3 for
- February~2009, and differences (v3.3\,$-$\,v4.1) expressed in ppbv
- (bottom left) and percent (bottom right).  Each version is screened with
-  the recommended criteria.}
-\label{fig:zmv3v4diffs}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2015d015}
+    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2020d015}
+    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2009d135}
+    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2009d196}
+  \end{center}
+\caption{Zonal mean pressure-latitude cross sections of MLS \nitac for
+  four selected days during Arctic (top row) and Antarctic (bottom
+  row) winter under high-\nitac (left side) and denitrified (right
+  side) conditions. Each set of plots contains (left) \thisv, (middle)
+  \prevv, and (right) their differences (\thisv minus \prevv, in
+  percent).  The black curves overlaid on the abundance panels (left
+  and middle of each set) mark the zero contour.}
+\label{fig:zmcontourHNO3}
 \end{figure}
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2020d015_NHPolar}
+    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2009d196_NHPolar}
+    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2020d015_Tropical}
+    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2009d196_Tropical}
+
+\includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2020d015_SHPolar}
+        \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_HNO3_2009d196_SHPolar}
+  \end{center}
+\caption{MLS \thisv (dark colors) and \prevv (light colors) profiles
+  of \texttt{HNO3-240} (blues) and \texttt{HNO3-190} (reds) averaged
+  over the Northern Hemisphere polar (top set), tropical (middle set),
+  and Southern Hemisphere polar (bottom set) regions for a
+  representative day during winter in the Northern (left side) and
+  Southern (right side) Hemispheres.  Each set of plots contains four
+  panels, comparing \thisv and \prevv \texttt{HNO3-240} retrievals,
+  \thisv and \prevv \texttt{HNO3-190} retrievals, \prevv
+  \texttt{HNO3-240} and \texttt{HNO3-190} retrievals, and \thisv
+  \texttt{HNO3-240} and \texttt{HNO3-190} retrievals.  Solid lines
+  show ascending (mainly daytime) and dashed lines show descending
+  (mainly nighttime) averages.  For completeness, full profiles are
+  shown in all panels, but the standard \nitac product is derived from
+  the \texttt{HNO3-240} retrievals at and at pressures greater than
+  22\,hPa (marked by the horizontal black line) and from the
+  \texttt{HNO3-190} retrievals at lower pressures.}
+\label{fig:hno3MeanProfs}
+\end{figure}
 
 \subsection{Resolution}
-\onestandardavk{HNO3}{HNO\cs3}%
+\onestandardavk{HNO3}{\nitac}%
 
-The resolution of the retrieved data can be described using ``averaging
-kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the
-MLS data processing system means that the kernels describe both vertical
-and horizontal resolution.  Smoothing, imposed on the retrieval system
-in both the vertical and horizontal directions to enhance retrieval
-stability and precision, reduces the inherent resolution of the
-measurements.  Consequently, the vertical resolution of the \thisv
-HNO\cs3 data, as determined from the full width at half maximum of the
-rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkHNO3},
-is 3\,--\,4\,km through most of the useful range, degrading to
-\texttildelow4.5\,km at 22\,hPa and some levels in the upper
-stratosphere (see Table~\ref{tab:HNO3Summary}).  Note that the averaging
-kernels for the 215 and 316-hPa retrieval surfaces overlap over most of
-their depth, indicating that the 316-hPa retrieval provides little
-independent information.  Figure~\ref{fig:AvkHNO3} also shows horizontal
-averaging kernels, from which the along-track horizontal resolution is
-determined to be 400\,--\,500\,km over most of the vertical range,
-improving to 250\,--\,300\,km between 15 and 4.6\,hPa, and degrading to
-600\,--\,700\,km at 1.5 and 1\,hPa.  The cross-track resolution, set by
-the widths of the fields of view of the \mbox{190-GHz} and
-\mbox{240-GHz} radiometers, is \texttildelow10\,km.  The along-track
-separation between adjacent retrieved profiles is 1.5\degsym\ great
-circle angle (\texttildelow165\,km), whereas the longitudinal separation
-of MLS measurements, set by the Aura orbit, is 10\degsym\,--\,20\degsym\
-over low and middle latitudes, with much finer sampling in the polar
-regions.
+The resolution of the retrieved data can be described using
+``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the
+two-dimensional nature of the MLS data processing system means that
+the kernels describe both vertical and horizontal resolution.
+Smoothing, imposed on the retrieval system in both the vertical and
+horizontal directions to enhance retrieval stability and precision,
+reduces the inherent resolution of the measurements. Thus, although
+\nitac measurements are reported at six pressure levels per decade
+change in pressure (spacing of \texttildelow2.7\,km), the vertical
+resolution of the \thisv \nitac data as determined from the full width
+at half maximum of the rows of the averaging kernel matrix shown in
+Figure~\ref{fig:AvkHNO3} varies from \texttildelow3.5 to 5\,km over
+the useful vertical range (see Table~\ref{tab:HNO3Summary} for
+estimates at individual levels).  Substantial overlap in the averaging
+kernels for the 215 and 316\,hPa retrieval surfaces (which both peak
+at 215\,hPa) indicates that the 316\,hPa retrieval provides little
+independent information.  Figure~\ref{fig:AvkHNO3} also shows
+horizontal averaging kernels, from which the along-track horizontal
+resolution is determined to be \texttildelow350--500\,km over most of
+the vertical range, degrading to 550--800\,km at 1.5 and 1\,hPa.  The
+cross-track resolution, set by the widths of the fields of view of the
+\mbox{190-GHz} and \mbox{240-GHz} radiometers, is \texttildelow10\,km.
+The along-track separation between adjacent retrieved profiles is
+1.5\degsym\ great circle angle (\texttildelow165\,km), whereas the
+longitudinal separation of MLS measurements, set by the Aura orbit, is
+10\degsym--20\degsym\ over low and middle latitudes, with much finer
+sampling in the polar regions.
 
 \subsection{Precision}
 
 \begin{figure}
-\centering\includegraphics[width=8.4cm]{figures/ComparePrecision2Panel_HNO3_NQC}
-\caption{Precision of the (left) v3.3 and (right) v2.2 MLS HNO\cs3
-  measurements for four representative days (see legend).  Solid lines
-  depict the observed scatter in a narrow equatorial band (see text);
-  dotted lines depict the theoretical precision estimated by the
-  retrieval algorithm.\label{fig:PrecProf}}
+\centering\includegraphics[width=10.0cm]{figures/MLSascdsc_HNO3_clim}
+\caption{(left) Ensemble mean profiles for ascending (light red) and
+  descending (dark red) orbit matching pairs of MLS \thisv \nitac
+  profiles averaged over several months of a representative year of
+  data (2009).  Symbols indicate MLS retrieval pressure levels.
+  (right) Mean differences (ascending$-$descending) in pptv (green
+  solid line).  Also shown are the standard deviations about the mean
+  differences (light blue solid line) and the root sum square (RSS) of
+  the precisions calculated by the retrieval algorithm for the two
+  sets of profiles (light blue dotted line). The observed scatter
+  about the mean differences and the reported precision values have
+  been scaled by $\mathsf{1/\sqrt{2}}$ (to convert from standard
+  deviations of differences into standard deviations of individual
+  data points); hence the light blue solid line represents the
+  statistical repeatability of the MLS measurements, and the light
+  blue dotted line represents the expected $1\sigma$ precision for a
+  single profile.  The thin black lines mark zero in each panel.  The
+  number of crossing pairs of measurements being compared at each
+  pressure level is noted in the space between the panels.}
+\label{fig:mlsascdscHNO3}
 \end{figure}
 
-The precision of the MLS HNO\cs3 measurements is estimated empirically
-by computing the standard deviation of the profiles in the
-20\degsym-wide latitude band centered around the equator, where natural
-atmospheric variability should be small relative to the measurement
-noise.  Because meteorological variation is never completely negligible,
-however, this procedure produces an upper limit on the precision-related
-variability.  As shown in Figure~\ref{fig:PrecProf}, the observed
-scatter in the \thisv data is \texttildelow0.5\,--\,0.6\,ppbv throughout
-the range from 215 to 3.2\,hPa, and increases sharply at lower
-pressures.  The scatter is essentially invariant with time, as seen by
-comparing the results for the different days shown in
-Figure~\ref{fig:PrecProf}.  An alternative method using the difference
-between ascending and descending values at orbit crossings yields very
-similar estimates.
-
-The single-profile precision estimates cited here are, to first order,
-independent of latitude and season, but it should be borne in mind that
-the large geographic variations in HNO\cs3 abundances gives rise to a
-wide range of signal to noise ratios.  At some latitudes and altitudes
-and in some seasons, HNO\cs3 abundances are smaller than the
-single-profile precision, necessitating the use of averages for
-scientific studies.  In most cases, precision can be improved by
-averaging, with the precision of an average of $N$ profiles being
-1/$\sqrt{N}$ times the precision of an individual profile (note that
-this is not the case for averages of successive along-track profiles,
-which are not completely independent because of horizontal smearing).
+The precision of the MLS \nitac measurements is estimated empirically
+by comparing profiles measured at the intersections of ascending
+(mainly day) and descending (mainly night) portions of the
+orbit. Under ideal conditions (i.e., a quiescent atmosphere), the
+standard deviation about the mean differences between such matched
+profile pairs provides a measure of the precision of the individual
+data points. In practice, however, real changes in the atmosphere may
+occur over the 12\,h interval between the intersecting measurement
+points, in which case the observed scatter provides an upper limit on
+the estimate of precision, assuming that the a priori has a negligible
+influence on the retrieval (a reasonable assumption throughout the
+retrieval range for \nitac). The precision estimates were found to be
+essentially invariant with time; results for several months of a
+representative year of data are shown in
+Figure~\ref{fig:mlsascdscHNO3}. Mean differences between paired
+crossing profiles are negligible over most of the profile, indicating
+the absence of significant systematic ascending / descending biases;
+small differences in the middle and upper stratosphere may be largely
+related to photochemical effects.  The observed standard deviation
+values are \texttildelow0.6\,ppbv or less throughout most of the
+vertical domain, increasing to \texttildelow0.8\,ppbv at 2.1\,hPa and
+\texttildelow1.2\,ppbv above that level.  An alternative method of
+computing the standard deviation of the profiles in the 20\degsym-wide
+latitude band centered around the equator yields very similar
+precision estimates.
 
 The observational determination of the precision is compared in
-Figure~\ref{fig:PrecProf} to the theoretical precision values reported
-by the Level~2 data processing algorithms.  Although the two estimates
-compare very well between 215 and 15\,hPa, at pressures smaller than
-10\,hPa the predicted precision substantially exceeds the observed
-scatter.  This indicates that the a priori information and the vertical
-smoothing applied to stabilize the retrieval are influencing the results
-at the higher retrieval levels.  Because the theoretical precisions take
-into account occasional variations in instrument performance, the best
-estimate of the precision of an individual data point is the value
-quoted for that point in the L2GP files, but it should be borne in mind
-that this approach overestimates the actual measurement noise at
-pressures less than 10\,hPa.  Conversely, the observed scatter at
-pressures higher than 100\,hPa is somewhat larger than the theoretical
-precision in \thisv and much larger than the theoretical precision in
-v3.3.  This is related to the spikes and increased noise in the UTLS in
-v3.3, and can be seen to be much improved in \thisv.  Nevertheless, some
-outliers in this region persist in \thisv.  Procedures for screening
-outliers in the UTLS are discussed below.
+Figure~\ref{fig:mlsascdscHNO3} to the theoretical precision values
+reported by the Level~2 data processing algorithms.  Although the two
+estimates compare very well at the bottom of the recommended vertical
+range, at pressures smaller than 30\,hPa the predicted precision
+substantially exceeds the observed scatter, indicating that the a
+priori information and the vertical smoothing (regularization) applied
+to stabilize the retrieval system and improve the precision are
+influencing the results at the higher retrieval levels.  Because the
+theoretical precisions take into account occasional variations in
+instrument performance, the best estimate of the precision of an
+individual data point is the value quoted for that point in the L2GP
+files, but it should be borne in mind that this approach overestimates
+the actual measurement noise at pressures less than 30\,hPa.
+
+The single-profile precision estimates cited here are, to first order,
+independent of latitude and season. However, large geographic
+variations in \nitac abundances give rise to a wide range of signal to
+noise ratios; thus at some latitudes and altitudes and in some
+seasons, \nitac abundances are smaller than the single-profile
+precision, necessitating the use of averages for scientific studies.
+In most cases, precision can be improved by averaging, with the
+precision of an average of $N$ profiles being 1/$\sqrt{N}$ times the
+precision of an individual profile (note that this is not the case for
+averages of successive along-track profiles, which are not completely
+independent because of horizontal smearing).
 
 \subsection{Accuracy}
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \thisv HNO\cs3
-measurements have been quantified through a comprehensive set of
-retrievals of synthetic radiances; see \citet{SanteeEtal:2007:HNO3} for
-details of a similar analysis conducted on MLS v2.2 HNO\cs3 data.  The
-overall systematic uncertainty, or accuracy, is calculated by combining
-(RSS) the contributions from both the expected biases and the additional
-scatter each source of uncertainty may introduce into the data.  In
-aggregate, the factors considered in these simulations are estimated to
-give rise to a total systematic uncertainty ranging from approximately
-0.1 to 2.4\,ppbv, depending on the level, in the MLS \thisv HNO\cs3 data
-(see Table~\ref{tab:HNO3Summary}).
+the retrieval formulation and implementation) on the MLS \prevv \nitac
+measurements were quantified through a comprehensive set of retrievals
+of synthetic radiances \citep{EOSMLSV4Quality}; see
+\citet{SanteeEtal:2007:HNO3} for details of a similar analysis
+conducted on MLS v2.2 \nitac data.  A corresponding investigation is
+planned for \thisv; at this writing, the systematic uncertainty of the
+\thisv data is assumed to be comparable to that of \prevv.  The
+overall systematic uncertainty, or accuracy, is calculated by
+combining (RSS) the contributions from both the expected biases and
+the additional scatter each source of uncertainty may introduce into
+the data.  In aggregate, the factors considered in these simulations
+are estimated to give rise to a total systematic uncertainty ranging
+from approximately 0.1 to 2.4\,ppbv, depending on the level, in the
+MLS \prevv \nitac data (see Table~\ref{tab:HNO3Summary}).
 
 \subsection{Comparisons with other datasets}
 
-\thisv HNO\cs3 profiles generally show only small differences in
-magnitude from v3.3 when each data version is screened according to the
-criteria above.  Therefore, the comparisons with correlative data are
-expected to be very similar to those described for v3.3 by
-\citet{EOSMLSV33V34Quality}.
+Extensive comparisons of MLS v2.2 \nitac data with a variety of
+different platforms (ground-based, balloon-borne, aircraft, and
+satellite instruments) were presented by
+\citet{SanteeEtal:2007:HNO3}. Comparisons of \thisv \nitac with
+correlative data have not been conducted but are expected to yield
+results similar to those for previous versions.
 
 \subsection{Data screening -- all data}
 \label{sec:HNO3Screening}
 
 \begin{description}
-\item[Pressure range:] \screeningrule{215\,--\,1.5\,hPa}
-  \standardrangestatement
+\item[Pressure range:] \screeningrule{215--1.5\,hPa}
+
+\standardrangestatement\ The \nitac data at 1.0\,hPa may be useful
+under certain enhanced conditions but should not be analyzed in
+scientific studies without significant discussion with the MLS science
+team.
+  
 \standardprecisionrule
-\evenstatusrule
+
 \end{description}
 \subsection{Data screening -- upper troposphere, lower stratosphere
   (pressures of 22\,hPa or greater)}
 
 The \texttt{Quality} and \texttt{Convergence} fields included in the
 \texttt{HNO3} swath in the standard \texttt{L2GP-HNO3} files are
-appropriate for use in screening at levels at and below (that is,
-pressures greater than) 22\,hPa.  For those levels:
+appropriate for use in screening the data at levels at and below (that
+is, pressures greater than) 22\,hPa.  For those levels:
 
 \begin{description}
 \item[Quality:] \qualityrule{0.8} This threshold for \texttt{Quality}
-  typically excludes \texttildelow1\,--\,3\% of HNO\cs3 profiles on a
-  daily basis; it is a conservative value that potentially discards a
-  significant fraction of ``good'' data points while not necessarily
-  identifying all ``bad'' ones.  A significant fraction of the HNO\cs3
-  profiles in \thisv show a ``notch'', with unexpectedly low (often
-  negative in the tropics) values at 100\,hPa and high values at
-  147\,hPa; many such profiles are removed by using this
-  \texttt{Quality} threshold.
+  (unchanged from \prevv) is a fairly conservative value that
+  typically excludes a substantial fraction (\texttildelow1--3\%) of
+  \nitac profiles on a daily basis, potentially discarding ``good''
+  data points while not necessarily identifying all ``bad'' ones.  As
+  in previous versions, many \nitac profiles in \thisv are
+  characterized by a ``notch'', with unexpectedly low (often negative
+  in the tropics) values at 100 or 147\,hPa and higher values at the
+  level below; although a number of such oscillatory profiles are
+  removed through filtering using the \texttt{Quality} field, in many
+  cases mean profiles continue to display a prominent notch.
 
 \item[Convergence:] \convergencerule{1.03} On a typical day this
-  threshold for \texttt{Convergence} discards a very small fraction of
-  the data, rarely eliminating more than 0.1\% of the HNO\cs3 profiles.
-  Some such profiles show unphysical behavior.
+  threshold for \texttt{Convergence} (unchanged from \prevv) discards
+  few (0.5\% or less) of the \nitac profiles, some of which show
+  unphysical behavior.
 
-\item[Clouds:] \screeningrule{Clouds impact HNO\cs3 data in the UTLS,
-    see discussion below and the discussion on ``outliers'' that
-    follows.}  Nonzero but even values of \texttt{Status} indicate that
-  the profile has been marked as questionable, typically because the
-  measurements may have been affected by the presence of thick clouds.
-  Globally \texttildelow1\,--\,2\% of profiles are identified in this
-  manner, with the fraction of profiles possibly impacted by clouds
-  rising to \texttildelow5\% on average in the tropics.  Clouds
-  generally have little influence on the stratospheric HNO\cs3 data.  In
-  the lowermost stratosphere and upper troposphere, however, thick
-  clouds can lead to spikes in the HNO\cs3 mixing ratios in the
-  equatorial regions.
-
-  Therefore, it is recommended that at and below 68\,hPa, in addition to
-  performing the ``outlier screening'' described below, all profiles
-  with nonzero values of Status be discarded because of the potential
-  for cloud contamination.  While this will reject some profiles that
-  are probably not significantly impacted by cloud effects, and the
-  number of profiles rejected that are not flagged by other criteria is
-  small (\texttildelow0.5 to 1\% of total profiles), it does eliminate
-  some unphysical profiles that are not flagged by the outlier
-  screening.
-
-\item[Outliers:] \screeningrule{Alternative screening approaches in the
-    UTLS remove outliers while reducing ``false positives''} While the
-  number, and particularly the extreme values of, outliers in \thisv
-  HNO\cs3 at levels between 316 and 100 (sometimes to 68) hPa is greatly
-  reduced over that in v3.3, such outliers are still present.  These
-  typically appear as highly negative mixing ratios at the lowest
-  several retrieval levels, often as part of oscillatory profiles with
-  unrealistically high values at higher altitudes.  A simple procedure
-  is recommended to screen such profiles based on eliminating all
-  profiles with large negative mixing ratios at pressure levels between
-  316 and 68\,hPa.  Through extensive examination of data screened in
-  this way, flagging profiles that have either HNO\cs3 vmr less than
-  $-2.0$\,ppbv at 316\,hPa or less than $-1.6$\,ppbv at any level
-  between 215 and 68\,hPa eliminates most of the troublesome outliers,
-  including those with positive vmr spikes overlying the negative ones
-  that are directly flagged by these criteria.  This screening procedure
-  is recommended for any studies focusing on the UTLS\@. A detailed
-  description of the testing procedure for this screening is given by
-  \citet{EOSMLSV33V34Quality}, and this testing has demonstrated that it
-  effectively removes most of the suspect profiles that are not
-  eliminated by requiring Status to be zero.
-
-  Figure~\ref{fig:outlierprofs} shows an example of the results of
-  screening profiles by each of the \texttt{Quality},
-  \texttt{Conver\-gence} and the recommended outlier flagging on a
-  typical `bad' day (i.e., one with a relatively large number of
-  outliers) in \thisv versus v3.3.  The \texttt{Quality} screening
-  removes many of the profiles that are strongly negative at the bottom,
-  as well as many (but not all) with the ``notch'' structure between 147
-  and 100\,hPa.  Most or all of the remainder of the profiles that are
-  strongly negative at the bottom are flagged by the outlier screening;
-  many of these profiles are oscillatory, so this screening also removes
-  most or all of the strong positive outliers (typically at 147\,hPa).
-  Most of the profiles flagged by any of the criteria are in the
-  tropics, as expected; low HNO\cs3 values in Antarctic winter resulting
-  from denitrification are rarely, if ever, affected by this outlier
-  screening. It is clear from this example that the outliers in \thisv
-  are less frequent and much less extreme than those in v3.3
+\item[Status flag:] \screeningrule{Only use profiles for which the
+  \texttt{Status} field is zero.}  Nonzero but even values of
+  \texttt{Status} indicate that the profile has been marked as
+  questionable, typically because the measurements may have been
+  affected by the presence of thick clouds.  In the lowermost
+  stratosphere and upper troposphere, thick clouds can lead to spikes
+  in the \nitac mixing ratios in the equatorial regions.  Therefore,
+  it is recommended that at and below 68\,hPa all profiles with
+  nonzero values of Status be discarded because of the potential for
+  cloud contamination.  Globally \texttildelow1--2\% of profiles are
+  identified in this manner, with the fraction of profiles possibly
+  impacted by clouds rising to \texttildelow5\% on average in the
+  tropics.  While this procedure will reject some profiles that are
+  probably not significantly impacted by cloud effects, and the number
+  of profiles rejected that are not flagged by other criteria is small
+  (\texttildelow0.5 to 1\% of total profiles), it does eliminate some
+  unphysical profiles that are not filtered by other means. See
+  Section~\ref{sec:StatusQuality} for more information on the
+  interpretation of the \texttt{Status} field.
  
 \end{description}
 
 \subsection{Data screening -- upper stratosphere (pressures of 15\,hPa
   or less)}
 
-The above screening criteria \emph{should not be used} for 15\,hPa and
-higher altitudes, as they result in filtering profiles for which all
-quality indicators are good when the \texttt{Quality} and
-\texttt{Convergence} values are properly taken from the 190-GHz HNO\cs3
-information, and not filtering ones with indications of poor quality.
-The \texttt{HNO3-190} swath has been included in the standard HNO\cs3
-files for \thisv, and the appropriate \texttt{Quality} and
-\texttt{Convergence} values for the 190-GHz HNO\cs3 from that swath must
-be used to apply the following screening criteria:
+The above screening criteria \emph{should not be used} for data at
+15\,hPa and higher altitudes (lower pressures), as they filter
+profiles for which all quality indicators are good when the
+\texttt{Quality} and \texttt{Convergence} values are properly taken
+from the \mbox{190-GHz} \nitac information and do not filter ones with
+indications of poor quality.  The \texttt{HNO3-190} swath has been
+included in the standard \nitac files for \thisv, and the appropriate
+\texttt{Quality} and \texttt{Convergence} values for the
+\mbox{190-GHz} \nitac from that swath must be used to apply the
+following screening criteria:
  
 \begin{description}
-\item[Clouds:] \screeningrule{Profiles where the \texttt{Status} field
-    for \texttt{HNO3-190} has a non-zero even number can be used without
-    restriction.} Clouds generally have little influence on the
-  stratospheric HNO\cs3 data at these altitudes.
 
 \item[Quality:] \screeningrule{Only profiles with a value of the
-    \texttt{Quality} field for \texttt{HNO3-190} (see
-    section~\ref{sec:StatusQuality}) \emph{greater} than 0.8 should be
-    used in scientific study.}
-
-  This threshold for \texttt{Quality} typically excludes
-  \texttildelow1\,--\,3\% of HNO\cs3 profiles on a daily basis; it is a
-  conservative value that potentially discards some ``good'' data points
-  while not necessarily identifying all ``bad'' ones.
+  \texttt{Quality} field for \texttt{HNO3-190} greater than 0.8 should
+  be used.}  This threshold for \texttt{Quality} (unchanged from
+  \prevv) typically excludes \texttildelow1--3\% of \nitac profiles on
+  a daily basis; it is a conservative value that potentially discards
+  some ``good'' data points while not necessarily identifying all
+  ``bad'' ones.
 
 \item[Convergence:] \screeningrule{Only profiles with a value of the
-    \texttt{Convergence} field (see section~\ref{sec:StatusQuality}) for
-    the \texttt{HNO3-190} product \emph{less} than 1.4 should be used in
-    investigations.}
+  \texttt{Convergence} field for the \texttt{HNO3-190} product less
+  than 1.4 should be used.}  On a typical day this threshold for
+  \texttt{Convergence} discards \texttildelow0.5--2\% of the \nitac
+  profiles.  Many of the profiles thus flagged show some unphysical
+  behavior, especially at the highest altitudes in the recommended
+  range.
 
-  On a typical day this threshold for \texttt{Convergence} discards
-  \texttildelow0.5\,--\,1.5\% of the HNO\cs3 profiles.  Many of the
-  profiles thus flagged show some unphysical behavior, especially at the
-  highest altitudes in the recommended range.
+\item[Status flag:] \screeningrule{Only use profiles for which the
+  \texttt{Status} field is an even number.} Clouds generally have
+  little influence on the stratospheric \nitac data at these
+  altitudes, thus profiles for which the \texttt{HNO3-190}
+  \texttt{Status} field is a nonzero even number can be used without
+  restriction.
 
-\item[Outliers:] For levels at and above (pressures less than) 4.6\,hPa,
-  especially at 2.2\,hPa and above, some profiles show vertically
-  oscillatory behavior in conditions where HNO\cs3 is very low.  The
-  \texttt{Quality} and \texttt{Convergence} criteria defined above
-  eliminate many of these profiles.
 \end{description}
-
-\begin{figure}
-\begin{tabular}{@{}l@{}l@{}}
-\includegraphics[width=0.5\linewidth]{figures/ProfQual0-80_Conv1-03_Fly_HNO3_2009d051_-90to90_v04-__stat0}&
-\includegraphics[width=0.5\linewidth]{figures/ProfQual0-80_Conv1-03_Fly_HNO3_2009d051_-20to20_v04-__stat0}\\
-\includegraphics[width=0.5\linewidth]{figures/ProfQual0-50_Conv1-40_Fly_HNO3_2009d051_-90to90_v03-__stat0}&
-\includegraphics[width=0.5\linewidth]{figures/ProfQual0-50_Conv1-40_Fly_HNO3_2009d051_-20to20_v03-__stat0}
-\end{tabular}
-\caption{HNO\cs3 profiles on 20~Feb~2009 color-coded by screening.  Cyan
-  profiles have \texttt{Quality} less than 0.8 (0.5), olive-green
-  \texttt{Convergence} greater than 1.03 (1.4), and red both
-  \texttt{Quality} less than 0.8 (0.5) and \texttt{Convergence} greater
-  than 1.03 (1.4) for \thisv (v3.3).  Orange profiles are those flagged
-  by the simple screening procedure described above (using large
-  negative mixing ratios at high pressures) after the profiles that
-  failed \texttt{Quality} and/or \texttt{Convergence} tests were
-  removed.  Black profiles are all those remaining (the ``good''
-  profiles) after all screening.  The left panels show all individual
-  profiles in the day; the right panels show the means in each category,
-  with the standard deviation shown as bars and the range as dotted
-  lines.  The horizontal line is at 22\,hPa, above which HNO\cs3 is from
-  the 190-GHz radiometer and thus not appropriately screened by these
-  criteria.  The four pairs of panels show all \thisv profiles (top
-  left), \thisv profiles between $-20\degsym$ and 20\degsym\ latitude
-  (top right), all v3.3 profiles (bottom left) and v3.3 profiles between
-  $-20\degsym$ and 20\degsym\ latitude.}
-\label{fig:outlierprofs}
-\end{figure}
 
 \subsection{Artifacts}
 
 \begin{itemize}
-\item There is a persistent ``notch'' at 100\,hPa, noted in
-  Figures~\ref{fig:zmv3v4diffs} and \ref{fig:outlierprofs}, that is most
-  pronounced in the tropics but also apparent in midlatitudes.  \thisv
-  HNO\cs3 at 147\,hPa is consistently slightly higher than that at
-  100\,hPa.  As can be seen in Figure~\ref{fig:outlierprofs}, this
-  feature is very strong in many profiles that are eliminated by one or
-  more of the screening criteria.  However,
-  Figure~\ref{fig:outlierprofs} (right panels) and
-  Figure~\ref{fig:zmv3v4diffs} (lower right panel) show that this
-  feature is more pronounced than it was in \prevv, and it is reduced,
-  but by no means eliminated, by following the recommended screening
-  procedures.  This feature was persistent throughout \thisv testing,
-  and its origin is still unclear.
+\item A persistent ``notch'' in the profile, with low values at 100 or
+  147\,hPa and higher values at the level below, is most pronounced in
+  the tropics (Figure~\ref{fig:hno3MeanProfs}) and midlatitudes but is
+  also apparent at high latitudes in some seasons. The origin of this
+  oscillatory signature in the retrievals is unclear; it is reduced
+  but by no means eliminated through application of the recommended
+  screening procedures.  Users of the MLS \nitac data are cautioned
+  that retrieved abundances can be strongly negative in the tropical
+  UTLS, even for mean profiles, and are advised to consult with the
+  MLS science team before undertaking scientific studies of that
+  region relying on the \thisv \nitac data.
 \end{itemize}
 
 \subsection{Desired improvements for future data version(s)}
 
 \begin{itemize}
-\item Diagnose and eliminate the unphysical notch (minimum) at
-  100\,hPa.
+\item Diagnose and eliminate the persistent unphysical oscillations at
+  the lowest retrieval levels.
 \end{itemize}
 
 \begin{DIFnomarkup}
 \begin{table}
-\caption{Summary of Aura MLS \thisv HNO\cs3 Characteristics}\vspace{0.5ex}
+\caption{Summary of Aura MLS \thisv \nitac Characteristics}\vspace{0.5ex}
 \label{tab:HNO3Summary}
 \begin{minipage}{\linewidth}\small
   \renewcommand{\thefootnote}{\thempfootnote}
@@ -361,35 +392,36 @@ be used to apply the following screening criteria:
       variability.} \\/ ppbv}} &
 \parbox[m]{20mm}{\bfseries\centering{Systematic\\Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
- of the probable magnitude.}\\ / ppbv}} &
+  of the probable magnitude.  At the time of writing, these estimates
+  are based on analysis of \prevv data.}\\ / ppbv}} &
 \textbf{Comments} \\
 %
 \midrule
 %
-0.68\,--\,0.001 & ---  & ---    & ---    &  Unsuitable for scientific
+0.68--0.001 & ---  & ---    & ---    &  Unsuitable for scientific
   use\\
 %
-1.5\,--\,1.0 & 4.5 $\times$ 550\,--\,750  & $\pm$1.2 & $\pm$0.3 & Caution, averaging
+1.5--1.0 & 4--4.5 $\times$ 550--800  & $\pm$1.2 & $\pm$0.3 & Caution, averaging
 recommended \\
 %
-2.1 & 5 $\times$ 450\,--\,500 & $\pm$0.8  & $\pm$0.5 & \\
+2.1 & 5 $\times$ 450--500 & $\pm$0.8  & $\pm$0.5 & \\
 %
-3.2 & 4.5 $\times$ 400 & $\pm$0.6  & $\pm$0.1  & \\
+3.2 & 4.5 $\times$ 350--400 & $\pm$0.6  & $\pm$0.1  & \\
 %
-15\,--\,4.6  & 3\,--\,4 $\times$ 250\,--\,350 & $\pm$0.6 & $\pm$0.5  & \\
+15--4.6  & 3.5--4 $\times$ 250--350 & $\pm$0.6 & $\pm$0.5  & \\
 %
 22 & 4.5 $\times$ 500 & $\pm$0.6 & $\pm$2.4 & \\
 %
-32 & 4 $\times$ 400 & $\pm$0.6 & $\pm$1.5 & \\
+32 & 4 $\times$ 450 & $\pm$0.6 & $\pm$1.5 & \\
 %
-147\,--\,46  & 3\,--\,4 $\times$ 350\,--\,400 & $\pm$0.6 & $\pm$1.0 & \\
+147--46  & 3.5 $\times$ 350--450 & $\pm$0.6 & $\pm$1.0 & Consult MLS science team for use in tropical UTLS\\
 %
-215        & 4\,--\,4.5 $\times$ 450  & $\pm$0.6 & $\pm$1.1    & \\
+215        & 4--4.5 $\times$ 500  & $\pm$0.6 & $\pm$1.1    &  Consult MLS science team for use in tropical UTLS\\
 %
 316        & ---      & ---    & ---    & Unsuitable for
 scientific use\\
 %
-1000\,--\,464  & ---      & ---    & ---    & Not retrieved\\
+1000--464  & ---      & ---    & ---    & Not retrieved\\
 %
 \bottomrule
 \end{tabular}\par

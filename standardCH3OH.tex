@@ -6,85 +6,111 @@
 
 \subsection{Introduction}
 
-The standard CH\cs3OH product is taken from radiances measured by the
+The standard \meoh product is taken from radiances measured by the
 radiometer centered near 640\,GHz.  However, as the methanol spectral
 signature in this region is very similar to that of ClO, additional
-measurements from the 190-GHz radiometer (which has channels sensitive
-to ClO but not CH\cs3OH) are used to decouple the CH\cs3OH and ClO
-information.  CH\cs3OH is a new product in \thisv, and it has not been
-fully validated.  Thus the scientific utility of the \thisv MLS
-CH\cs3OH measurements remains to be determined.  A summary of the
-estimated precision, resolution (vertical and horizontal), and
-systematic uncertainty of the \thisv CH\cs3OH measurements as a
-function of altitude is given in Table~\ref{tab:CH3OHSummary}.
+measurements from the \mbox{190-GHz} radiometer (which has channels
+sensitive to ClO but not \meoh) are used to decouple the \meoh and ClO
+information.  \meoh was a new product in \prevv, and its quality has
+never been fully validated.  Although the performance of the retrieval
+has been improved, the scientific utility of the \thisv MLS \meoh
+measurements remains to be determined.  A summary of the estimated
+precision, resolution (vertical and horizontal), and systematic
+uncertainty of the \thisv \meoh measurements as a function of altitude
+is given in Table~\ref{tab:CH3OHSummary}.
+
+\subsection{Differences between \prevv and \thisv}
+
+\meoh abundances at 147\,hPa have been reduced considerably in \thisv,
+especially at low latitudes (Figure~\ref{fig:zmcontourCH3OH}).  This
+change likely represents a mild improvement in data quality, as
+preliminary comparisons with correlative measurements and model
+results had suggested that \prevv \meoh mixing ratios were generally
+too high.  Although the substantial high bias at 147\,hPa has been
+mitigated, many values are now more strongly negative at that level,
+leading to a near-zero global-mean value there (as at other levels,
+not shown).
+
+\begin{figure}
+  \begin{center}
+      \includegraphics[width=10.0cm]{figures/Zm_CH3OH_2020d015}
+      \includegraphics[width=10.0cm]{figures/Zm_CH3OH_2009d258}
+  \end{center}
+\caption{Zonal mean pressure-latitude cross sections of MLS \meoh, for
+  (left) \thisv, (middle) \prevv, and (right) their differences
+  (\thisv minus \prevv, in percent).  Results are shown for two
+  representative days in different seasons.  The black curves overlaid
+  on the abundance panels (left and middle) mark the zero contour.}
+\label{fig:zmcontourCH3OH}
+\end{figure}
 
 \subsection{Resolution}
-\onestandardavk{CH3OH}{CH\cs3OH}%
+\onestandardavk{CH3OH}{\meoh}%
 
 The resolution of the retrieved data can be described using
-``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional
-nature of the MLS data processing system means that the kernels
-describe both vertical and horizontal resolution.  Values of the
-integrated kernel near unity indicate that the majority of information
-for that level has come from the measurements themselves and not the a
-priori; Figure~\ref{fig:AvkCH3OH} shows that the measurements dominate
-throughout most of the vertical range. Smoothing, imposed on the
-retrieval system in both the vertical and horizontal directions to
-enhance retrieval stability and precision, degrades the inherent
-resolution of the measurements.  Thus, although CH\cs3OH measurements
-are reported at six pressure levels per decade change in pressure
-(spacing of \texttildelow2.7\,km), the vertical resolution of the
-\thisv CH\cs3OH data as determined from the full width at half maximum
-of the rows of the averaging kernel matrix shown in
-Figure~\ref{fig:AvkCH3OH} is \texttildelow4--5\,km at 147 and
-100\,hPa.  Figure~\ref{fig:AvkCH3OH} also shows horizontal averaging
-kernels, from which the along-track horizontal resolution is
-determined to be \texttildelow350\,km.  The cross-track resolution,
-set by the width of the field of view of the \mbox{640-GHz}
-radiometer, is \texttildelow3\,km.  The along-track separation
-between adjacent retrieved profiles is 1.5\degsym\ great circle angle
-(\texttildelow165\,km), whereas the longitudinal separation of MLS
-measurements, set by the Aura orbit, is 10\degsym--\,20\degsym\ over
-low and middle latitudes, with much finer sampling in the polar
-regions.
+``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the
+two-dimensional nature of the MLS data processing system means that
+the kernels describe both vertical and horizontal resolution.  Values
+of the integrated kernel near unity indicate that the majority of
+information for that level has come from the measurements themselves
+and not the a priori; Figure~\ref{fig:AvkCH3OH} shows that the
+measurements dominate throughout most of the vertical
+range. Smoothing, imposed on the retrieval system in both the vertical
+and horizontal directions to enhance retrieval stability and
+precision, degrades the inherent resolution of the measurements.
+Thus, although \meoh measurements are reported at six pressure levels
+per decade change in pressure (spacing of \texttildelow2.7\,km), the
+vertical resolution of the \thisv \meoh data as determined from the
+full width at half maximum of the rows of the averaging kernel matrix
+shown in Figure~\ref{fig:AvkCH3OH} is \texttildelow3.5\,km at 147\,hPa
+and \texttildelow5\,km at 100\,hPa.  Figure~\ref{fig:AvkCH3OH} also
+shows horizontal averaging kernels, from which the along-track
+horizontal resolution is determined to be \texttildelow150--350\,km.
+The cross-track resolution, set by the width of the field of view of
+the \mbox{640-GHz} radiometer, is \texttildelow3\,km.  The along-track
+separation between adjacent retrieved profiles is 1.5\degsym\ great
+circle angle (\texttildelow165\,km), whereas the longitudinal
+separation of MLS measurements, set by the Aura orbit, is
+10\degsym--20\degsym\ over low and middle latitudes, with much finer
+sampling in the polar regions.
 
 \subsection{Precision}
 
 \begin{figure}
 \centering\includegraphics[width=10.0cm]{figures/MLSascdsc_CH3OH_clim}
 \caption{(left) Ensemble mean profiles for ascending (light red) and
-  descending (dark red) orbit matching pairs of MLS \thisv CH\cs3OH
+  descending (dark red) orbit matching pairs of MLS \thisv \meoh
   profiles averaged over several months of a representative year of
-  data (2005).  Symbols indicate MLS retrieval pressure levels.
+  data (2009).  Symbols indicate MLS retrieval pressure levels.
   (right) Mean differences (ascending$-$descending) in pptv (green
   solid line).  Also shown are the standard deviations about the mean
   differences (light blue solid line) and the root sum square (RSS) of
   the precisions calculated by the retrieval algorithm for the two
-  sets of profiles (light blue dashed line). The observed scatter
+  sets of profiles (light blue dotted line). The observed scatter
   about the mean differences and the reported precision values have
   been scaled by 1/$\sqrt{2}$ (to convert from standard deviations of
   differences into standard deviations of individual data points);
   hence the light blue solid line represents the statistical
-  repeatability of the MLS measurements, and the light blue dashed
-  line represents the expected \mbox{$1\sigma$} precision for a
-  single profile.  The thin black lines mark zero in each panel.  The
-  number of crossing pairs of measurements being compared at each
-  pressure level is noted in the space between the panels.}
+  repeatability of the MLS measurements, and the light blue dotted
+  line represents the expected \mbox{$1\sigma$} precision for a single
+  profile.  The thin black lines mark zero in each panel.  The number
+  of crossing pairs of measurements being compared at each pressure
+  level is noted in the space between the panels.}
 \label{fig:mlsascdscCH3OH}
 \end{figure}
 
-The precision of the MLS CH\cs3OH data is estimated empirically by
-comparing profiles measured at the intersections of ascending (day)
-and descending (night) portions of the orbit. Under ideal conditions
-(i.e., a quiescent atmosphere), the standard deviation about the mean
-differences between such matched profile pairs provides a measure of
-the precision of the individual data points. In practice, however,
-real changes in the atmosphere may occur over the 12\,h interval
-between the intersecting measurement points, in which case the
-observed scatter provides an upper limit on the estimate of precision,
-assuming that the a priori has a negligible influence on the retrieval
-(a reasonable assumption throughout the retrieval range for
-CH\cs3OH). The precision estimates were found to be essentially
+The precision of the MLS \meoh data is estimated empirically by
+comparing profiles measured at the intersections of ascending (mainly
+day) and descending (mainly night) portions of the orbit. Under ideal
+conditions (i.e., a quiescent atmosphere), the standard deviation
+about the mean differences between such matched profile pairs provides
+a measure of the precision of the individual data points. In practice,
+however, real changes in the atmosphere may occur over the 12\,h
+interval between the intersecting measurement points, in which case
+the observed scatter provides an upper limit on the estimate of
+precision, assuming that the a priori has a negligible influence on
+the retrieval (a reasonable assumption throughout the retrieval range
+for \meoh). The precision estimates were found to be essentially
 invariant with time; results for several months of a representative
 year of data are shown in Figure~\ref{fig:mlsascdscCH3OH}.  For the
 most part, differences between paired profiles are small, implying the
@@ -101,11 +127,11 @@ smaller \citep{TooheyAndVonClarmann:2013}).
 
 \subsection{Range}
 
-CH\cs3OH is retrieved (and reported in the \texttt{L2GP} files) over the
+\meoh is retrieved (and reported in the \texttt{L2GP} files) over the
 range 147 to 0.001\,hPa.  However, zonal mean mixing ratios are
 negative everywhere at retrieval pressures less than 100\,hPa, as well
 as at middle and high latitudes at 100\,hPa.  Thus, with rare
-exceptions (such as during extreme events), the v4 \meoh\ data are
+exceptions (such as during extreme events), the \thisv \meoh data are
 considered potentially useful for scientific studies only at 147\,hPa
 and at low latitudes at 100\,hPa.
 
@@ -113,33 +139,38 @@ and at low latitudes at 100\,hPa.
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \thisv
-CH\cs3OH measurements have been quantified through a comprehensive set
-of retrievals of synthetic radiances.  The overall systematic
-uncertainty, or accuracy, is calculated by combining (RSS) the
-contributions from both the expected biases and the additional scatter
-each source of uncertainty may introduce into the data. In aggregate,
-the factors considered in these simulations are estimated to give rise
-to total systematic uncertainty of approximately 100--250\% in the MLS
-\thisv CH\cs3OH data (see Table~\ref{tab:CH3OHSummary}).
+the retrieval formulation and implementation) on the MLS \prevv \meoh
+measurements were quantified through a comprehensive set of retrievals
+of synthetic radiances \citep{EOSMLSV4Quality}.  A corresponding
+investigation is planned for \thisv; at this writing, the systematic
+uncertainty of the \thisv data is assumed to be comparable to that of
+\prevv.  The overall systematic uncertainty, or accuracy, is
+calculated by combining (RSS) the contributions from both the expected
+biases and the additional scatter each source of uncertainty may
+introduce into the data. In aggregate, the factors considered in these
+simulations are estimated to give rise to total systematic uncertainty
+of approximately 100--250\% in the MLS \prevv \meoh data (see
+Table~\ref{tab:CH3OHSummary}).
 
 \subsection{Review of comparisons with other datasets}
 
 Detailed comparisons with correlative data sets have not been
 undertaken, but preliminary comparisons with version~3 \mbox{ACE-FTS}
-data suggest that the MLS values may be biased substantially high at
-147\,hPa (not shown).
+data suggested that the \prevv MLS values may have been biased
+substantially high at 147\,hPa (not shown).  As noted above, \meoh
+abundances at 147\,hPa have been reduced considerably in \thisv and
+thus may be in better agreement with \mbox{ACE-FTS} data.
 
 \subsection{Data screening}
 \label{sec:CH3OHScreening}
 \begin{description}
-\item[Do not use:] The \thisv CH\cs3OH data should only be used in
+\item[Do not use:] The \thisv \meoh data should only be used in
   consultation with the MLS science team.
 \end{description}
 
 \subsection{Artifacts}
 \begin{itemize}
-\item A complete assessment of artifacts in the \thisv CH\cs3OH
+\item A complete assessment of artifacts in the \thisv \meoh
   measurements has not been performed, but it is known that zonal mean
   mixing ratios are negative everywhere at retrieval pressures less
   than or equal to 68\,hPa, as well as at middle and high latitudes at
@@ -148,12 +179,12 @@ data suggest that the MLS values may be biased substantially high at
 
 \subsection{Desired improvements for future data version(s)}
 \begin{itemize}
-\item Specific improvements in the CH\cs3OH retrieval remain to be
-  determined.
+\item Specific achievable improvements in the \meoh retrieval remain
+  to be determined.
 \end{itemize}
 
 \begin{table*}[bp]
-\caption{Summary of Aura MLS \thisv CH\cs3OH Characteristics}\vspace{0.5ex}
+\caption{Summary of Aura MLS \thisv \meoh Characteristics}\vspace{0.5ex}
 \label{tab:CH3OHSummary}
 \begin{minipage}{\linewidth}
 \renewcommand{\thefootnote}{\thempfootnote}
@@ -166,20 +197,20 @@ data suggest that the MLS values may be biased substantially high at
     \footnote{Precision on individual profiles.} \\/ ppbv}} &
 \parbox[m]{20mm}{\bfseries\centering{Systematic\\ Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
- of the probable magnitude.}\\ / \%}} &
+ of the probable magnitude. At the time of writing, these estimates are based on analysis of \prevv data.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
-68\,--\,0.001  & ---                             & ---      & ---  & Unsuitable for scientific use\\
+68--0.001  & ---                             & ---      & ---  & Unsuitable for scientific use\\
 %
 100            & 5         $\times$ 350          & $\pm$1   & $\pm$100  &
-Consult with MLS Science Team \\
+Consult with MLS science team \\
 %
-147            & 3         $\times$ 150          & $\pm$1   & $\pm$250  &
-Consult with MLS Science Team \\
+147            & 3.5       $\times$ 150          & $\pm$1   & $\pm$250  &
+Consult with MLS science team \\
 %
-1000\,--\,215  & ---                             & ---      & ---  & Not retrieved\\
+1000--215  & ---                             & ---      & ---  & Not retrieved\\
 %
 \bottomrule
 \end{tabular}
