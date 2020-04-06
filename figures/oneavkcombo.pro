@@ -170,8 +170,8 @@ for bin = 0, noBins - 1 do begin
       'CH3CN' : heightRange = [ 1000.0, 0.1 ]
       'CH3OH' : heightRange = [ 1000.0, 0.1 ]
       'ClO' : heightRange = [ 1000.0, 0.01 ]
-      'CO' : heightRange = [ 1000, 0.001 ]
-      'H2O_HR' : heightRange = [ 1000, 0.001 ]
+      'CO' : heightRange = [ 1000, 0.00046 ]
+      'H2O_HR' : heightRange = [ 1000, 0.00001 ]
       'HCl' : heightRange = [ 200, 0.1 ]
       'HCN' : heightRange = [ 100, 0.1 ]
       'HNO3' : begin
@@ -195,12 +195,12 @@ for bin = 0, noBins - 1 do begin
           heightRange = [ 1000.0, 10.0 ]
           
         endif else begin
-          heightRange = [ 1000, 0.001 ]
+          heightRange = [ 1000, 0.00046 ]
         endelse
       end
       'OH' : heightRange = [ 100, 0.001 ]
       'SO2' : heightRange = [ 1000, 1.0 ]
-      'Temperature_HR' : heightRange = [ 1000.0, 0.001 ]
+      'Temperature_HR' : heightRange = [ 1000.0, 0.0001 ]
       ;; Diagnostic products
       'CH3CN-640' : heightRange = [ 1000.0, 1.0 ]
       'ClO-190' : heightRange = [ 100, 1.0 ]
