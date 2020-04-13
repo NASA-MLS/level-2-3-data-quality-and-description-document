@@ -8,7 +8,7 @@ There has been little change in the \thisv HOCl retrievals, and small
 changes are well within the somewhat large estimated accuracies
 (systematic uncertainties). We provide below sample mean HOCl
 distributions for the \thisv and \prevv data versions, and their
-differences. Otherwise, previous information regarding this species
+differences.  Otherwise, previous information regarding this species
 remains largely unchanged; the main points are mentioned here mainly
 for new data users.
 
@@ -23,11 +23,11 @@ given in the following sections, along with data screening
 recommendations.
 
 \subsection{Changes from \prevv}
-There were no large algorithmic changes relating to HOCl for the
-\thisv retrievals.  Small differences in HOCl abundances (see below)
-are likely related mainly to small changes in tangent pressure and/or
-temperature and (possibly) water vapor, as well as minor changes in
-the forward model accuracy (ray tracing calculations).
+There were no large algorithmic changes relating directly to HOCl for
+the \thisv retrievals.  However, the small level of MLS HOCl radiance
+signals implies that the retrieved HOCl abundances can be sensitive,
+indirectly, to even minor changes in the retrieval system (from
+temperature, tangent pressure, or ozone changes, for example).
 
 The background observed in the 640-GHz radiances includes emissions
 from N\cs2, O\cs2, and H\cs2O.  There are laboratory-based and
@@ -118,10 +118,10 @@ for reliable retrievals at pressures larger than 10 hPa.
 \item[Convergence field:] \screeningrule{Only profiles with a value of
     the \texttt{Convergence} field \emph{less} than 1.05 should be
     used.} For the vast majority of profiles (99$\%$ or more for most
-  days), this field is less than 1.05.  Nevertheless, on occasion, sets
-  of profiles (typically one or more groups of ten profiles, retrieved
-  as a `chunk') have this \texttt{Convergence} field set to larger
-  values, and should be discarded.
+  days), this field is less than 1.05.  Nevertheless, on occasion,
+  sets of profiles (typically one or more groups of ten profiles,
+  retrieved as a `chunk') have this \texttt{Convergence} field set to
+  larger values, and should be discarded.
 
 \item[Clouds:] \cloudsokrule
 
