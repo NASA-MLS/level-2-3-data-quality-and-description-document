@@ -291,24 +291,24 @@ is, pressures greater than) 22\,hPa.  For those levels:
   unphysical behavior.
 
 \item[Status flag:] \screeningrule{Only use profiles for which the
-  \texttt{Status} field is zero.}  Nonzero but even values of
+    \texttt{Status} field is zero.}  Nonzero but even values of
   \texttt{Status} indicate that the profile has been marked as
   questionable, typically because the measurements may have been
   affected by the presence of thick clouds.  In the lowermost
   stratosphere and upper troposphere, thick clouds can lead to spikes
   in the \nitac mixing ratios in the equatorial regions.  Therefore,
   it is recommended that at and below 68\,hPa all profiles with
-  nonzero values of Status be discarded because of the potential for
-  cloud contamination.  Globally \texttildelow1--2\% of profiles are
-  identified in this manner, with the fraction of profiles possibly
-  impacted by clouds rising to \texttildelow5\% on average in the
-  tropics.  While this procedure will reject some profiles that are
-  probably not significantly impacted by cloud effects, and the number
-  of profiles rejected that are not flagged by other criteria is small
-  (\texttildelow0.5 to 1\% of total profiles), it does eliminate some
-  unphysical profiles that are not filtered by other means. See
-  Section~\ref{sec:StatusQuality} for more information on the
-  interpretation of the \texttt{Status} field.
+  nonzero values of \texttt{Status} be discarded because of the
+  potential for cloud contamination.  Globally \texttildelow1--2\% of
+  profiles are identified in this manner, with the fraction of
+  profiles possibly impacted by clouds rising to \texttildelow5\% on
+  average in the tropics.  While this procedure will reject some
+  profiles that are probably not significantly impacted by cloud
+  effects, and the number of profiles rejected that are not flagged by
+  other criteria is small (\texttildelow0.5 to 1\% of total profiles),
+  it does eliminate some unphysical profiles that are not filtered by
+  other means. See Section~\ref{sec:StatusQuality} for more
+  information on the interpretation of the \texttt{Status} field.
  
 \end{description}
 
@@ -316,14 +316,13 @@ is, pressures greater than) 22\,hPa.  For those levels:
   or less)}
 
 The above screening criteria \emph{should not be used} for data at
-15\,hPa and higher altitudes (lower pressures), as they filter
-profiles for which all quality indicators are good when the
-\texttt{Quality} and \texttt{Convergence} values are properly taken
-from the \mbox{190-GHz} \nitac information and do not filter ones with
-indications of poor quality.  The \texttt{HNO3-190} swath has been
-included in the standard \nitac files for \thisv, and the appropriate
-\texttt{Quality} and \texttt{Convergence} values for the
-\mbox{190-GHz} \nitac from that swath must be used to apply the
+15\,hPa and higher altitudes (lower pressures), as the appropriate
+\texttt{Quality} and \texttt{Convergence} values to be used in masking
+\nitac data at these altitudes are those from the \mbox{190-GHz}
+\nitac information.  To aid that screening, the \texttt{HNO3-190}
+swath has been included in the standard \nitac files for \thisv, and
+the appropriate \texttt{Quality} and \texttt{Convergence} values for
+the \mbox{190-GHz} \nitac from that swath must be used to apply the
 following screening criteria:
  
 \begin{description}
@@ -355,26 +354,23 @@ following screening criteria:
 
 \subsection{Artifacts}
 
-\begin{itemize}
-\item A persistent ``notch'' in the profile, with low values at 100 or
-  147\,hPa and higher values at the level below, is most pronounced in
-  the tropics (Figure~\ref{fig:hno3MeanProfs}) and midlatitudes but is
-  also apparent at high latitudes in some seasons. The origin of this
-  oscillatory signature in the retrievals is unclear; it is reduced
-  but by no means eliminated through application of the recommended
-  screening procedures.  Users of the MLS \nitac data are cautioned
-  that retrieved abundances can be strongly negative in the tropical
-  UTLS, even for mean profiles, and are advised to consult with the
-  MLS science team before undertaking scientific studies of that
-  region relying on the \thisv \nitac data.
-\end{itemize}
+A persistent ``notch'' in the profile, with low values at 100 or
+147\,hPa and higher values at the level below, is most pronounced in
+the tropics (Figure~\ref{fig:hno3MeanProfs}) and midlatitudes but is
+also apparent at high latitudes in some seasons. The origin of this
+oscillatory signature in the retrievals is unclear; it is reduced but
+by no means eliminated through application of the recommended
+screening procedures.  Users of the MLS \nitac data are cautioned that
+retrieved abundances can be strongly negative in the tropical UTLS,
+even for mean profiles, and are advised to consult with the MLS
+science team before undertaking scientific studies of that region
+relying on the \thisv \nitac data.
 
 \subsection{Desired improvements for future data version(s)}
 
-\begin{itemize}
-\item Diagnose and eliminate the persistent unphysical oscillations at
-  the lowest retrieval levels.
-\end{itemize}
+Further work to diagnose and eliminate the persistent unphysical
+oscillations at the lowest retrieval levels will be explored in
+future.
 
 \begin{DIFnomarkup}
 \begin{table}
@@ -414,9 +410,9 @@ recommended \\
 %
 32 & 4 $\times$ 450 & $\pm$0.6 & $\pm$1.5 & \\
 %
-147--46  & 3.5 $\times$ 350--450 & $\pm$0.6 & $\pm$1.0 & Consult MLS science team for use in tropical UTLS\\
+147--46  & 3.5 $\times$ 350--450 & $\pm$0.6 & $\pm$1.0 & Consult MLS team for use in tropical UTLS\\
 %
-215        & 4--4.5 $\times$ 500  & $\pm$0.6 & $\pm$1.1    &  Consult MLS science team for use in tropical UTLS\\
+215        & 4--4.5 $\times$ 500  & $\pm$0.6 & $\pm$1.1    &  Consult MLS team for use in tropical UTLS\\
 %
 316        & ---      & ---    & ---    & Unsuitable for
 scientific use\\
