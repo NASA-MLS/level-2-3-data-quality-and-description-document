@@ -38,7 +38,7 @@ vertical smoothing at pressures greater than or equal to 68\,hPa and
 through retrieval of an independent, spectrally-flat baseline over the
 ozone band for each limb view to better account for cloud
 inhomogeneity.  Further changes in the ozone retrieval between \prevv
-and \thisv are generally quite small (see further below), as little
+and \thisv are generally quite small (more details below), as little
 was changed in the retrieval system.  Some higher accuracy forward
 model calculations are now carried out, and this has a small impact in
 the UTLS, with some of it slightly better, and some of it slightly
@@ -48,9 +48,9 @@ estimates. The most significant difference between the ozone
 retrievals in these versions is that \thisv uses a more accurate
 non-linear radiative transfer model (in place of an approximate linear
 model) for the digital autocorrelator (DAC) channels covering the
-center of the 236~GHz ozone line. This changes (and should improve)
+center of the 236-GHz ozone line. This changes (and should improve)
 the ozone retrieval results for pressures less than about 0.02\,hPa.
-The changes are illustrated in Figure \ref{fig:MLSO3-for-upperheights}
+The changes are illustrated in Figure~\ref{fig:MLSO3-for-upperheights}
 for April, 2019, for the 30\degsym\,N to 60\degsym\,N latitude range.
 While there is currently no proper validation of MLS ozone at this
 higher altitude range, there is clearly sensitivity to the nighttime
@@ -60,36 +60,37 @@ height range, so as to provide less dependence on the \emph{a priori}
 values, also shown in the Figure (at much reduced abundances compared
 to retrieved values near 0.002 to 0.001\,hPa). Thus, further analyses
 of this MLS ozone in this extended vertical range are now enabled. In
-fact, a recent analysis (see Lae and Wu, AMTD, 2020 - Nathaniel to add
-reference) has shown that the \prevv ozone retrieval already had
-enough radiance sensitivity in this altitude range to show strong
-dependence on the 11-year solar cycle variations (as for carbon
-monoxide).
+fact, a recent analysis \citep{LeeAndWu:2020} has shown that the
+\prevv ozone retrieval already had enough radiance sensitivity in this
+altitude range to show strong dependence on the 11-year solar cycle
+variations (as for carbon monoxide).
 
 \begin{figure} 
-  \centering\includegraphics[angle=90,width=\linewidth]{%
+  \centering\includegraphics[angle=90,width=0.7\linewidth]{%
     figures/Fig-O3_v5_daynight_v5_v4_2009_March_30N-60N}
-\caption{Left panel: Zonal mean ozone abundances from \thisv (red) and
-  v4 (cyan) for April, 2019, and 30N to 60N, for both daytime (dashed)
-  and nighttime (solid) cases, corresponding to solar zenith angles
-  below 90\degsym or above 100\degsym, respectively. The average
-  (\thisv) \emph{a priori} values for this case are also shown (as a
-  dash-dot curve), and day and night values here are essentially
-  identical. The \thisv \emph{a priori} values differ somewhat from
-  the \emph{a priori} values used in previous versions, as a result of
-  changes in the climatological model currently used for this purpose,
-  but this is not the point we wish to illustrate here. We also show
-  the standard deviations associated with the monthly means as error
-  bars, to illustrate that there is a significant amount of noise at
-  high altitude (see also the single-profile precisions in the right
-  panel). Right panel: The RMS precisions (random uncertainty
-  estimates from Level 2) are displayed as a function of pressure for
-  the same region and month as the left panel. The \emph{a priori}
-  errors are illustrated by the dash-dot curves, with changes between
-  the two versions only showing at the highest altitudes. There is now
-  slightly better sensitivity (smaller values of the random
-  uncertainties) in the upper mesosphere (and above the topmost \prevv
-  recommended pressure level of 0.02\,hPa).}
+  \caption{Left panel: Zonal mean ozone abundances from \thisv (red)
+    and v4 (cyan) for April, 2019, and 30\degsym{}N to 60\degsym{}N,
+    for both daytime (dashed) and nighttime (solid) cases,
+    corresponding to solar zenith angles below 90\degsym\ or above
+    100\degsym, respectively. The average (\thisv) \emph{a priori}
+    values for this case are also shown (as a dash-dot curve), and day
+    and night values here are essentially identical. The \thisv
+    \emph{a priori} values differ somewhat from the \emph{a priori}
+    values used in previous versions, as a result of changes in the
+    climatological model currently used for this purpose, but this is
+    not the point we wish to illustrate here. We also show the
+    standard deviations associated with the monthly means as error
+    bars, to illustrate that there is a significant amount of noise at
+    high altitude (see also the single-profile precisions in the right
+    panel). Right panel: The RMS precisions (random uncertainty
+    estimates from Level~2) are displayed as a function of pressure
+    for the same region and month as the left panel. The \emph{a
+      priori} errors are illustrated by the dash-dot curves, with
+    changes between the two versions only showing at the highest
+    altitudes. There is now slightly better sensitivity (smaller
+    values of the random uncertainties) in the upper mesosphere (and
+    above the topmost \prevv recommended pressure level of
+    0.02\,hPa).}
 \label{fig:MLSv4v5O3ContourUTLS} 
 \end{figure} 
  
@@ -128,9 +129,10 @@ accuracy estimates.
 \begin{figure} 
   \centering\includegraphics[angle=90,width=\linewidth]{%
     figures/Fig-O3_v5_ZMContour_vs_v4_2009m03_UTLS}
-  \caption{Same as the previous Figure, but for the UTLS region,
-    plotted here from 261 to 46\,hPa. For other months or years, we
-    have generally found similar or slightly smaller differences.}
+  \caption{As Figure~\protect{\ref{fig:MLSv4v5O3ContourStrat}}, but
+    for the UTLS region, plotted here from 261 to 46\,hPa. For other
+    months or years, we have generally found similar or slightly
+    smaller differences.}
 \label{fig:MLSv4v5O3ContourUTLS} 
 \end{figure} 
 
@@ -157,7 +159,7 @@ profiles. This slight improvement is mainly the result of a more
 accurately calculated forward model (in the ray tracing calculations)
 in MLS version 5. None of these changes are outside the accuracy
 (systematic error) estimates for the MLS profiles. These estimates are
-provided in the summary Table, but based on v4 sensitivity
+provided in Table~\ref{tab:O3Summary}, but based on v4 sensitivity
 tests. Updated (v5) accuracy estimates will be provided at a later
 date, but changes relative to \prevv are expected to be small except
 at the top of the retrieval, where better use of line-center radiances
@@ -179,40 +181,13 @@ the MLS stratospheric ozone columns between \prevv and \thisv are
 quite small; daily zonal averages are typically within one percent.
 \subsection{Resolution} 
 
-%\onestandardavk{O3_HR}{O\cs3} 
+\onestandardavk{O3_HR}{O\cs3} 
  
 \begin{figure} 
-  \centering\includegraphics[width=0.5\linewidth]{figures/avk-O3_HR}
-  \caption{Typical two-dimensional (vertical and horizontal
-    along-track) averaging kernels for the MLS \thisv O\cs3 at the
-    Equator (top two panels) and at 70\degsym\,N (bottom two panels);
-    variation in the averaging kernels is sufficiently small that
-    these are representative of typical profiles.  Colored lines show
-    the averaging kernels as a function of MLS retrieval level,
-    indicating the region of the atmosphere from which information is
-    contributing to the measurements on the individual retrieval
-    surfaces, which are denoted by plus signs in corresponding colors.
-    The dashed black line indicates the resolution, determined from
-    the full width at half maximum (FWHM) of the averaging kernels,
-    approximately scaled into kilometers (top axes).  (Left panels)
-    Vertical averaging kernels (integrated in the horizontal dimension
-    for five along-track profiles) and resolution.  The solid black
-    line shows the integrated area under each kernel (horizontally and
-    vertically); values near unity imply that the majority of
-    information for that MLS data point has come from the
-    measurements, whereas lower values imply substantial contributions
-    from \emph{a priori} information.  (Right panels) Horizontal
-    averaging kernels (integrated in the vertical dimension) and
-    resolution.  The averaging kernels are scaled such that a unit
-    change is equivalent to one decade in pressure.}
-\label{fig:avkO3Strat} 
-\end{figure} 
- 
-\begin{figure} 
-  \centering\includegraphics[width=0.5\linewidth]{figures/avk-O3_HR-UTLS}
-  \caption{As for \protect{\ref{fig:avkO3Strat}} but zooming in on the
+  \centering\includegraphics[width=0.8\linewidth]{figures/avk-O3_HR-UTLS}
+  \caption{As for Figure~\protect{\ref{fig:AvkO3_HR}} but zooming in on the
     upper troposphere and lower stratosphere region.}
-\label{fig:avkO3UTLS} 
+\label{fig:AvkO3UTLS} 
 \end{figure}
  
 Typical resolution values are provided in the summary
@@ -243,7 +218,7 @@ values.
 \paragraph*{Column values} As for v4 data, the estimated precisions
 for the \thisv MLS column ozone abundances down to pressures of 100 to
 215\,hPa are 2\% or less.  The typical empirical precision in the
-columns based on (1-$\sigma$) variability in the tropics is 2 to 3\%.
+columns based on ($1\sigma$) variability in the tropics is 2 to 3\%.
  
 \subsection{Accuracy}
  
@@ -254,10 +229,10 @@ system.  We do not expect significant changes to these estimates in
 \thisv, except in the upper mesosphere and thermosphere. Further
 analysis of the upper levels of the \thisv retrieval will be included
 in an update to this document.  The values shown here are intended to
-represent 2$\sigma$ estimates of accuracy.  Comparison of MLS O\cs3
+represent $2\sigma$ estimates of accuracy.  Comparison of MLS O\cs3
 with well-established data sets shows no evidence of significant
 biases overall, although the oscillations in the UTLS at low latitudes
-lead to some systematic effects which can reach 20-40\%, depending on
+lead to some systematic effects which can reach 20--40\%, depending on
 the pressure level.  For more details, see the MLS validation papers
 by \citet{FroidevauxEtal:2008:O3}, \citet{JiangEtal:2007:MLSO3Valid},
 and \citet{LiveseyEtal:2008}, as well as references therein. More
@@ -316,32 +291,33 @@ column ozone comparisons versus satellite, sonde, and lidar data.
  
 \subsection{Review of comparisons with other datasets} 
  
-O\cs3 comparisons have indicated general agreement at the
-5\,--\,10\,\% level with stratospheric profiles from a number of
-comparisons using satellite, balloon, aircraft, and ground-based data.
-A high MLS v2.2 bias at 215\,hPa had been observed in some comparisons
-versus certain ozonesonde and satellite datasets. Such high biases
-were reduced in version \prevv, with additional smaller reductions in
-the \thisv ozone values.  We have found that latitudinal and temporal
-changes observed in various correlative datasets are well reproduced
-by the MLS ozone product.  Intercomparisons of a large variety of
-ozone measurements by satellite instruments were provided by
-\citet{TegtmeierEtal:2013}, as part of the analyses produced by the
-SPARC Data Initiative; the Aura MLS ozone values compare quite
-favorably to the multi-instrument mean values as well as to SAGE II
-ozone.  The temporal stability of the Aura MLS ozone dataset has been
-shown to be very good, in comparison to lidar datasets
-(\citet{NairEtal:2012}). The work by \citet{HubertEtal:2016} includes
-both the lidar network and the ozonesonde network as references for a
-comprehensive satellite data intercomparison study. The latter authors
-show that average biases between MLS and latitudinally-binned data
-from lidar and ozonesonde sites across the globe is typically within
-5\% or better, with poorer behavior (known vertical oscillations) at
-low latitudes in the UTLS.  In terms of drifts, the Aura MLS ozone
-dataset is shown (in the above work) to be very stable, a term also
-applied only to the SAGE II dataset; MLS exhibits drifts with respect
-to the ground-based networks that fall within 1.5 to 2\% per decade,
-with zero drift encompassed by the error bars (i.e. non-significant
+Comparisons of MLS ozone with other ozone observations have indicated
+general agreement at the 5\,--\,10\,\% level with stratospheric
+profiles from a number of comparisons using satellite, balloon,
+aircraft, and ground-based data.  A high MLS v2.2 bias at 215\,hPa had
+been observed in some comparisons versus certain ozonesonde and
+satellite datasets. Such high biases were reduced in version \prevv,
+with additional smaller reductions in the \thisv ozone values.  We
+have found that latitudinal and temporal changes observed in various
+correlative datasets are well reproduced by the MLS ozone product.
+Intercomparisons of a large variety of ozone measurements by satellite
+instruments were provided by \citet{TegtmeierEtal:2013}, as part of
+the analyses produced by the SPARC Data Initiative; the Aura MLS ozone
+values compare quite favorably to the multi-instrument mean values as
+well as to SAGE II ozone.  The temporal stability of the Aura MLS
+ozone dataset has been shown to be very good, in comparison to lidar
+datasets (\citet{NairEtal:2012}). The work by \citet{HubertEtal:2016}
+includes both the lidar network and the ozonesonde network as
+references for a comprehensive satellite data intercomparison
+study. The latter authors show that average biases between MLS and
+latitudinally-binned data from lidar and ozonesonde sites across the
+globe is typically within 5\% or better, with poorer behavior (known
+vertical oscillations) at low latitudes in the UTLS.  In terms of
+drifts, the Aura MLS ozone dataset is shown (in the above work) to be
+``very stable'', with SAGE-II being the only other dataset to gain
+that characterization.  MLS exhibits drifts with respect to the
+ground-based networks that fall within 1.5 to 2\% per decade, with
+zero drift encompassed by the error bars (i.e. non-significant
 drifts), at least in the middle stratosphere. The Aura MLS data, in
 combination with older datasets, provides a critical tool for the
 study of global O\cs3 in a changing climate and into the O\cs3
