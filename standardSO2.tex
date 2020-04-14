@@ -9,43 +9,48 @@ The standard SO\cs2 product is taken from the 240-GHz retrieval
 concentrations above nominal background such as that from volcanic
 injections. Validation of SO\cs2 is published in \citet{PumphreyEtal:2015}.
 
-\subsection{Changes from v3}
+\subsection{Changes from v4}
 
-The v4 SO\cs2 retrieval has two significant changes from v3. The first is a
-different method of modeling the background radiance signal from unknown
-or unaccountable sources. The method is specifically designed to be more
-immune to clouds. The other change is an improved cloud detection and radiance
-rejection algorithm. These changes have significantly improved the
-convergence and quality performance of the retrieval system and
-eliminated much of the poor in-cloud behavior present in v3. There have
-been no changes to the spectroscopic characteriztion of the major
-species in the 240~GHz bands used to retrieve SO\cs2.
+Changes from \prevv to \thisv are minor and mostly affect O\cs3 and CO. A new
+O\cs3 \emph{a priori} with new smoothing changes are incorporated and a
+non-linear radiance model is used to calculate the signals in the high
+spectral resolution digital autocorrellator spectrometer (DACS) channels for
+the O\cs3 and CO lines. In addition to these changes, the accuracy threshold
+for the non-linear radiance model calculations was reduced from 0.02K to 
+best possible (i.e., 0K). These changes will have secondary impacts on SO\cs2.
 
 \begin{figure}
 \begin{center}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_60n-90n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_30n-60n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_30s-30n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_60s-30s}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v3-v4_prfl_comp_90s-60s}
+\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60n-90n}
+\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30n-60n}
+\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30s-30n}
+\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60s-30s}
+\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_90s-60s}
 \end{center}
 \caption{A comparison of
-  v3.3 (blue) and v4.2 (red) SO\cs2 for Jan-Feb-Mar 2005
+  v2.2 (dark blue), v3.3 (light blue), v4.2 (orange) and v5.0 (red) SO\cs2 for
+  Jan-Feb-Mar 2009
   in 5 latitude bands. Other time periods are similar. The left panel
   compares mean profiles, the center shows the mean difference (red
   diamonds) surrounded by each versions' estimated precision, and the
   right panel shows the estimated retrieval precision (solid and
-  bullets) and measured variability (dotted) which includes atmospheric
-  variability about the mean profile.}
+  bullets), measured variability (dotted) which includes atmospheric
+  variability about the mean profile, and \emph{a priori} precision
+  (dashed and diamonds).}
 \label{fig:avgmlsso2prflcomp}
 \end{figure}
 
 Figure~\ref{fig:avgmlsso2prflcomp} compares MLS v4.2 and v3.3. The
 atmosphere typically has \texttildelow0.1\,ppbv SO\cs2, which is far
-smaller than the MLS SO\cs2 accuracy estimate.  Both versions
+smaller than the MLS SO\cs2 accuracy estimate.  All versions
 (erroneously) report typical abundance of order of a few ppbv, due to
 systematic errors in the MLS measurement system. The $-20\,\text{ppbv}$
-reported at 215\,hPa is also a systematic artifact.
+reported at 215\,hPa is also a systematic artifact. Changes from v2 through
+to v4 involved handling of the background radiance signals which evolved
+from an absorption continuum (v2) to an RHi continnuum (v3) to a MLS
+minor frame absorption continuum with a frequency squared spectral dependence
+(v4 and v5). Version 4 and 5 also uses improved cloud detection and radiance
+screening for them.
 
 \subsection{Resolution}
 \onestandardavk{SO2}{SO\cs2}%
@@ -61,13 +66,30 @@ The estimated precision for SO\cs2 is \texttildelow4\,ppbv for all
 heights between 215\,--\,10\,hPa. The precisions are set to negative
 values (or zero in some cases) in situations when the retrieved
 precision is larger than 50\% of the a priori precision -- an indication
-that the data is biased toward the a priori value.
+that the data is biased toward the a priori value. Even though the changes
+between v4 and v5 are minor, there is a change in the estimated precision.
+An example of this is shown in Figure~\ref{fig:so2prec}. SO\cs2 precision
+from v5 shows much less variability and less latitude dependence than
+v4. Although only 100~hPa is shown here, it is similar for other stratospheric
+levels and it also affects other species retrieved from the 240~GHz like
+HNO\cs3. The change in behavior occurred as a result of reducing the forward
+model accuracy threshold from 0.02K to ``best possible.''
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{figures/so2_2009d045_100hPa_precision}
+\end{center}
+\caption{A comparison of estimated precision for SO\cs2 from v4 (blue) and
+v5(red) and 100~hPa.}
+\label{fig:so2prec}
+\end{figure}
+
 
 \subsection{Accuracy}
 
-Accuracy is estimated to be 10\,--\,15\,ppbv for pressures less than
-147\,hPa increasing to \texttildelow20\,ppbv at 215\,hPa. These may be
-different for the v4 SO\cs2 product.
+Accuracy is estimated to be 10\,--\,20\,ppbv over the useful pressure range.
+These are not expeted to change significantly for the v5 SO\cs2 product yet
+to be determined.
 
 \subsection{Data screening}
 \label{sec:SO2Screening}
@@ -104,7 +126,7 @@ with water vapor, this value represents where the quality versus yield
 \subsection{Artifacts}
 
 High values of SO\cs2 accompanied with negative errors are likely to be
-underestimated due to a priori influence which biases the value toward
+underestimated due to \emph{a priori} influence which biases the value toward
 zero. The atmospheric background SO\cs2 (\texttildelow0.1\,ppbv) cannot
 be measured by MLS even with extensive data averaging because there are
 systematic errors producing biases of a few ppbv. The 215-hPa SO\cs2 has
@@ -115,21 +137,23 @@ a background bias of $\sim-20\,$ppbv.
 \includegraphics[width=0.8\linewidth]{figures/so2_data_yields}
 \end{center}
 \caption{Percentage of data having a quality greater than that indicated
-  on the x-axis for v4.2 data processed for June--August 2005.}
+  on the x-axis for v5.0 data processed for June-July-August 2005.}
 \label{fig:so2datayields}
 \end{figure}
 
 \subsection{Review of comparisons with other datasets}
 
-MLS has successfully detected SO\cs2 from 23 eruptions since launch.
-These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana
-Islands), Sierra Negra (Galapogos Island), Soufriere Hills (Montserrat,
-West Indies -- 2 events), Tunguraua (Ecuador), Rabaul (Papua New
-Guinea), Piton de la Fournaise (Reunion Island), Jebel al-Tair (Yemen),
-Okmok (Alaska), Kasatochi (Alaska), Dalaffilla (Ethiopia), Redoubt
-(Alaska), Sarychev (Kuril Islands, Russia), Pacaya (Guatamala), and
-Merapi (Indonesia), Grimsvotn (iceland), Puyehue-Cordon Caulle, (Chile),
-Nabro (Eritrea), Paluweh (Indonesia), Sangeang Api (Indonesia).
+MLS has successfully detected SO\cs2 from many eruptions since launch.
+% my list is at work that I dont have access to.
+%MLS has successfully detected SO\cs2 from 23 eruptions since launch.
+%These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana
+%Islands), Sierra Negra (Galapogos Island), Soufriere Hills (Montserrat,
+%West Indies -- 2 events), Tunguraua (Ecuador), Rabaul (Papua New
+%Guinea), Piton de la Fournaise (Reunion Island), Jebel al-Tair (Yemen),
+%Okmok (Alaska), Kasatochi (Alaska), Dalaffilla (Ethiopia), Redoubt
+%(Alaska), Sarychev (Kuril Islands, Russia), Pacaya (Guatamala), and
+%Merapi (Indonesia), Grimsvotn (iceland), Puyehue-Cordon Caulle, (Chile),
+%Nabro (Eritrea), Paluweh (Indonesia), Sangeang Api (Indonesia).
 
 \begin{figure}
 \begin{center}
@@ -139,7 +163,11 @@ Nabro (Eritrea), Paluweh (Indonesia), Sangeang Api (Indonesia).
 \caption{An overlay of MLS measurement tracks on an OMI SO\cs2
   measurement on 14 and 16 June 2009 (separate maps) showing the
   dispersial of SO\cs2 from the Sarychev eruption (13~June 2009, black
-  triangle). The color scale indicates the SO\cs2 column measured by
+  triangle). The OMI instrument has some non operational pixels also known
+  as the row anomaly where measurements are not possible. It turns out that
+  one of these row anomalies is perfectly aligned with the MLS track and
+  therefore there are no coaligned OMI-MLS measurements. 
+  The color scale indicates the SO\cs2 column measured by
   OMI\@. The daytime MLS tracks are small open circles and the nighttime
   tracks are filled black. When the calculated column from MLS exceeds
   1\,DU, that measurement is indicated by a larger open circle filled
@@ -165,20 +193,18 @@ Since the plume is moving relatively quickly over the 12-hour
 measurement separation time, MLS nighttime measurements often miss
 and/or detect plume features differently than OMI\@.
 
-Figure~\ref{fig:so2timeseries} shows a comparison between v4 and v3 for
-a track showing the maximum SO\cs2 measured on 16~June 2009. Although both
-version detect large amounts of SO\cs2 at 100\,hPa, v4 shows this being more
-concentrated in the 100-hPa layer than v3, as the newer version shows less
-SO\cs2 at 147\,hPa and none at 215\,hPa compared to v3. Neither version shows
-any SO\cs2 at 68\,hPa.
+Figure~\ref{fig:so2timeseries} shows a comparison between v5 and v4 for
+a track showing the maximum SO\cs2 measured on 16~June 2009. As expected v5
+and v4 show similar amounts of SO\cs2 at levels 215--68~hPa. Nominally the
+SO\cs2 is concentrated between 147 and 100~hPa.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
 \end{center}
 \caption{Time series overlay where MLS measures more than 500\,ppbv at
-  100\,hPa for the Sarychev erruption. Blue is version 3, and red is
-  version 4.}
+  100\,hPa for the Sarychev erruption. Blue is version 4, and red is
+  version 5.}
 \label{fig:so2timeseries}
 \end{figure}
 
