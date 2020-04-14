@@ -1,5 +1,5 @@
 \speciestitle{Carbon monoxide}{CO}{CO}{
-\item[Useful range:] 215\,--\,0.0046\,hPa
+\item[Useful range:] 215--0.0046\,hPa
 \item[Contact:] Hugh C. Pumphrey (stratosphere/mesosphere),
    \email{H.C.Pumphrey@ed.ac.uk} \\
   Michael Schwartz (troposphere), \email{Michael.J.Schwartz@jpl.nasa.gov}}
@@ -17,32 +17,32 @@ improved in some cases in the mesosphere and mesopause region through
 the use of a more computationally expensive, nonlinear forward model
 for radiances near the 230-GHz line center. In the upper mesosphere,
 \thisv CO is less tightly constrained to its \emph{a priori} (\emph{a
-  priori} precision is 1.5x larger at 0.046~hPa and 2x larger at and
-above 0.01~hPa).  Horizontal smoothing of \thisv has been tightened at
-and above 0.01~hPa to maintain retrieval stability, but his change has
-no appreciable impact on the sharpness of horizontal features seen in
-preliminary validation.  The vertical range of the retrieval has been
-extended to 0.00046~hPa and profiles are recommended for scientific
-use up to 0.001~hPa.
+  priori} precision is 1.5$\times$ larger at 0.046\,hPa and 2$\times$
+larger at and above 0.01\,hPa).  Horizontal smoothing of \thisv has
+been tightened at and above 0.01\,hPa to maintain retrieval stability,
+but his change has no appreciable impact on the sharpness of
+horizontal features seen in preliminary validation.  The vertical
+range of the retrieval has been extended to 0.00046\,hPa and profiles
+are recommended for scientific use up to 0.001\,hPa.
 
 Improvement is most evident in cases where there are sharp vertical
 features, as are sometimes found in descending high values of CO in
 polar winter vortices.  Figure~\ref{fig:CO_scatv5v4} shows scatter
-plots between \thisv and \prevv CO for levels between 215~hPa and
-0.01~hPa for 2009 data. Note that these histograms' colors are on a
+plots between \thisv and \prevv CO for levels between 215\,hPa and
+0.01\,hPa for 2009 data. Note that these histograms' colors are on a
 log scale, with the red colors along the 1:1 line several orders of
 magnitude more frequent than the blue colors. The highest values at
-levels between 0.464~hPa and 0.0215~hPa are in the reforming
+levels between 0.464\,hPa and 0.0215\,hPa are in the reforming
 upper-level, northern-winter polar vortex after a sudden stratospheric
 warming; \thisv better represents these descending high values while
 the highest values of \prevv CO are pulled down toward \emph{a
   priori}. Descending CO in the southern winter polar vortex reaching
 the middle stratosphere is also better represented in \thisv between
-31.6~hPa and 4.64~hPa; \prevv profiles tended to be more oscillatory
+31.6\,hPa and 4.64\,hPa; \prevv profiles tended to be more oscillatory
 and more often included negative mixing ratios.
 
 High outlier values of CO along the 1:1 lines of panels for
-216--46.4~hPa in Figure~\ref{fig:CO_scatv5v4} are from the plume of
+216--46.4\,hPa in Figure~\ref{fig:CO_scatv5v4} are from the plume of
 the ``Black Saturday'' Australian wildfires and confirm the
 consistency of the \thisv and \prevv retrievals in the upper
 troposphere and lower stratosphere.
@@ -56,8 +56,8 @@ resolutions are essentially very similar to those of \prevv, with only
 slight improvement in the mesosphere, but the improved forward model
 allows the retrieval to provide a better representation of the
 atmosphere in the mesosphere. The vertical resolution is in the range
-3.5\,--\,5\,km from the upper troposphere to the lower mesosphere,
-degrading to 6\,--\,7\,km in the upper mesosphere. Down to the
+3.5--5\,km from the upper troposphere to the lower mesosphere,
+degrading to 6--7\,km in the upper mesosphere. Down to the
 215\,hPa level, the vertical averaging kernels are sharply peaked at
 the level being retrieved, but while the \mbox{316-hPa} measurement
 contains contribution from 316\,hPa, it has a larger contribution from
@@ -79,9 +79,9 @@ at 215\,hPa.
     between the versions, generally several orders of magnitude more
     common than \thisv-\prevv pairs that significantly disagree. }
   % Good agreement between the versions is seen in high outliers in
-  % the 215~hPa--46.4~hPa panels from plume from the ``Black
+  % the 215\,hPa--46.4\,hPa panels from plume from the ``Black
   % Saturday'' Australian bush fires. Pairs off of the 1:1 line from
-  % 31.6--4.64~hPa are primarily associated with sharp features in
+  % 31.6--4.64\,hPa are primarily associated with sharp features in
   % descending high CO in the southern winter polar vortex, where the
   % tendency to retrieve negative values has been reduced.  }
 \label{fig:CO_scatv5v4}
@@ -103,10 +103,10 @@ Where the estimated precision is greater than 50\% of the \emph{a
 to an undesirably large extent.  In such cases, \texttt{L2gpPrecision}
 is set to be negative (or zero in some cases) to indicate that the
 data should not be used. The \thisv \emph{a priori} precision has been
-relaxed above 0.1~hPa (blue dashed line departing from red dashed line
+relaxed above 0.1\,hPa (blue dashed line departing from red dashed line
 in center panels of Figure~\ref{fig:COplot1bylat_log}), and the level
 at which the retrieved precision is more than half of this \emph{a
-  priori} precision typically moves up from 0.0046~hPa to 0.00046~hPa.
+  priori} precision typically moves up from 0.0046\,hPa to 0.00046\,hPa.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figures/COplot1bylat_log}
@@ -140,7 +140,7 @@ In \thisv (as in \prevv) this bias has been essentially eliminated
 through a change in the approach to modeling the background radiance
 upon which the CO spectral line sits, and a small reduction in the
 number of MLS spectral channels considered in the
-retrieval. Tropospheric (215\,--\,100\,hPa) accuracies in
+retrieval. Tropospheric (215--100\,hPa) accuracies in
 Table~\ref{tab:COSummary} are 2-$\sigma$ estimates obtained by
 propagating parameter uncertainties through a model of the measurement
 system.
@@ -148,7 +148,7 @@ system.
 \subsection{Data screening}
 \label{sec:COScreening}
 \begin{description}
-\item[Pressure range:] \screeningrule{215\,--\,0.001\,hPa.}
+\item[Pressure range:] \screeningrule{215--0.001\,hPa.}
   \standardrangestatement
   \standardprecisionrule
   \evenstatusrule
@@ -182,9 +182,9 @@ system.
 
 \subsection{Artifacts}
 \begin{itemize}
-\item Positive systematic error of 20\,--\,50\% throughout the
+\item Positive systematic error of 20--50\% throughout the
   mesosphere, as was the case for \prevv.
-\item Negative systematic error of 50\,--\,70\% near 30\,hPa, as was
+\item Negative systematic error of 50--70\% near 30\,hPa, as was
   the case for \prevv.
 \item Retrieved profiles are rather jagged, especially between 1\,hPa
   (48\,km) and 0.1\,hPa (64\,km). The greater smoothing applied in
@@ -214,8 +214,8 @@ factor of \texttildelow2. As in \prevv, this bias is largely
 eliminated in \thisv.
 
 In the mesosphere, comparisons of the earlier v2.2 MLS CO with
-ODIN-SMR and ACE-FTS suggest a positive bias: 30\%\,--\,50\% against
-ACE-FTS, 50\%\,--\,100\% against SMR. Near 31\,hPa, the MLS values are
+ODIN-SMR and ACE-FTS suggest a positive bias: 30\%--50\% against
+ACE-FTS, 50\%--100\% against SMR. Near 31\,hPa, the MLS values are
 lower than SMR and ACE-FTS by at least 70\%. The MLS values have not
 changed much between v2.2 and \thisv in the middle atmosphere, so
 these comparisons may mostly be considered valid for \thisv.  What
@@ -225,7 +225,7 @@ data; 20\% is now a better estimate of the MLS-ACE bias in much of the
 middle atmosphere (compared to 30\% with v2.2).
 % Mean difference between \prevv and \thisv in the lower mesosphere
 % are still generally small.
-Further validation of the \thisv retrieval above 0.01~hPa is needed.
+Further validation of the \thisv retrieval above 0.01\,hPa is needed.
 
 \begin{table}
   \caption{Data quality summary for MLS \thisv\ CO.}
