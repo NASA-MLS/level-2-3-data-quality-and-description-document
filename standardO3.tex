@@ -7,63 +7,65 @@
  
 \subsection{Introduction}
 
+The most significant difference for the MLS ozone retrievals is that
+\thisv uses a more accurate non-linear radiative transfer model (in
+place of an approximate linear model) for the digital autocorrelator
+(DAC) channels covering the center of the 236-GHz ozone line.  This
+changes (and should improve) the ozone retrieval results for pressures
+less than about 0.02\,hPa. The changes are illustrated in
+Figure~\ref{fig:MLSO3-for-upperheights} for April, 2019, for the
+30\degsym\,N to 60\degsym\,N latitude range.  While there is currently
+no proper validation of MLS ozone at this higher altitude range, there
+is clearly sensitivity to the nighttime ozone maximum mixing ratio
+near 0.001\,hPa. The ozone retrieval now uses a larger value for the
+\emph{a priori} errors in this topmost height range, so as to provide
+less dependence on the \emph{a priori} values, also shown in the
+Figure (at much reduced abundances compared to retrieved values near
+0.002 to 0.001\,hPa). Thus, further analyses of \thisv MLS ozone in
+this extended range are now enabled. In fact, a recent analysis
+\citep{LeeAndWu:2020} has shown that the \prevv ozone retrieval
+already had enough radiance sensitivity in this altitude range to show
+strong dependence on the 11-year solar cycle variations (as for carbon
+monoxide).
+
 As is the case with previous data versions, the \thisv standard O\cs3
 product is taken from a retrieval using 240-GHz radiances, providing
-sensitivity from the upper troposphere into the mesosphere.  In
-\thisv, as in v4, there is an optimized retrieval phase for the
-production of the O\cs3 standard product prior to the phase that uses
-240-GHz radiances to produce the standard carbon monoxide and nitric
-acid products.  Table~\ref{tab:O3Summary} summarizes typical O\cs3
-resolution, precision (random uncertainty), and accuracy (systematic
-uncertainty) estimates as a function of pressure.  Papers describing
-detailed validation of the MLS v2.2 product and comparisons with other
-data sets were published in a special Aura validation issue of the
-{\it Journal of Geophysical Research}, see
+sensitivity from the upper troposphere to high altitudes (into the
+thermosphere, with \thisv retrievals).  In \thisv, as in v4, there is
+an optimized retrieval phase for the production of the O\cs3 standard
+product prior to the phase that uses 240-GHz radiances to produce the
+standard carbon monoxide and nitric acid products.
+Table~\ref{tab:O3Summary} summarizes typical O\cs3 resolution,
+precision (random uncertainty), and accuracy (systematic uncertainty)
+estimates versus pressure.  Papers describing detailed validation of
+the MLS v2.2 product and comparisons with other data sets were
+published in a special Aura validation issue of the {\it Journal of
+  Geophysical Research}, see
 \citep{FroidevauxEtal:2008:O3,JiangEtal:2007:MLSO3Valid,LiveseyEtal:2008}.
 In the stratosphere, \thisv ozone profiles are very similar to those
-of previous data versions including \prevv.  While the stratospheric
-results from the above references will generally hold for this
-product, we plan to provide validation updates in the future regarding
-\thisv ozone for different height regions and specific parts of the
-globe.  Initial documentation of changes, improvements, and issues
-with \thisv data are discussed here, including data screening
-criteria.  Recommended \thisv data screening is again based on
-thresholds for \texttt{Status}, \texttt{Quality}, and
-\texttt{Convergence}.
+of previous data versions including \prevv.  While stratospheric ozone
+results from the above references will generally hold, we plan to
+provide validation updates in the future regarding \thisv ozone for
+different height regions and specific parts of the globe.  Initial
+documentation of changes, improvements, and issues with \thisv data
+are discussed here, including data screening criteria.  Recommended
+\thisv data screening is again based on thresholds for
+\texttt{Status}, \texttt{Quality}, and \texttt{Convergence}.
 
 Vertical oscillations in the UTLS and sensitivity to thick clouds were
 reduced in \prevv ozone through changes in the spectral form used to
-model cloud impacts on the MLS radiances and through tightening of
-vertical smoothing at pressures greater than or equal to 68\,hPa and
-through retrieval of an independent, spectrally-flat baseline over the
-ozone band for each limb view to better account for cloud
-inhomogeneity.  Further changes in the ozone retrieval between \prevv
-and \thisv are generally quite small (more details below), as little
-was changed in the retrieval system.  Some higher accuracy forward
-model calculations are now carried out, and this has a small impact in
-the UTLS, with some of it slightly better, and some of it slightly
-worse than before (see further below), depending on the time period
-and latitude region. The changes are within the accuracy
-estimates. The most significant difference between the ozone
-retrievals in these versions is that \thisv uses a more accurate
-non-linear radiative transfer model (in place of an approximate linear
-model) for the digital autocorrelator (DAC) channels covering the
-center of the 236-GHz ozone line. This changes (and should improve)
-the ozone retrieval results for pressures less than about 0.02\,hPa.
-The changes are illustrated in Figure~\ref{fig:MLSO3-for-upperheights}
-for April, 2019, for the 30\degsym\,N to 60\degsym\,N latitude range.
-While there is currently no proper validation of MLS ozone at this
-higher altitude range, there is clearly sensitivity to the nighttime
-ozone maximum mixing ratio near 0.001\,hPa. The ozone retrieval now
-uses a larger value for the \emph{a priori} errors in this topmost
-height range, so as to provide less dependence on the \emph{a priori}
-values, also shown in the Figure (at much reduced abundances compared
-to retrieved values near 0.002 to 0.001\,hPa). Thus, further analyses
-of this MLS ozone in this extended vertical range are now enabled. In
-fact, a recent analysis \citep{LeeAndWu:2020} has shown that the
-\prevv ozone retrieval already had enough radiance sensitivity in this
-altitude range to show strong dependence on the 11-year solar cycle
-variations (as for carbon monoxide).
+model cloud impacts on MLS radiances, through tightening of vertical
+smoothing at pressures greater than 67\,hPa, and by retrieving a
+spectrally-flat baseline over the ozone band for each limb view to
+better account for cloud inhomogeneity.  Further changes in
+stratospheric ozone between \prevv and \thisv are generally quite
+small, as little was changed in the retrieval system.
+
+Some higher accuracy forward model calculations were carried out for
+\thisv, and this had a small impact in the UTLS, with some results
+slightly better, and some slightly worse than before (see further
+below), depending on the time period and latitude region. These
+changes are within the accuracy estimates.
 
 \begin{figure} 
   \centering\includegraphics[angle=90,width=0.7\linewidth]{%
@@ -100,9 +102,9 @@ In addition to the swath \texttt{O3}, which gives the O\cs3 profile on
 to the thermal tropopause (WMO definition) calculated from MLS
 temperatures.  The MLS temperature profiles from which the WMO
 tropopause is determined are not screened per the instructions of
-section~\ref{sec:StandardTemperature} and users may wish to reject
-ozone columns for which standard screening rejects (a small fraction
-of) the corresponding temperature profiles.
+section~\ref{sec:StandardTemperature}; users may wish to reject ozone
+columns for which standard screening rejects (a small fraction of) the
+corresponding temperature profiles.
 
 \subsection{Comparison of \thisv with past data versions}  
 
@@ -191,11 +193,16 @@ quite small; daily zonal averages are typically within one percent.
 \end{figure}
  
 Typical resolution values are provided in the summary
-Table~\ref{tab:O3Summary}.  The cross-track resolution is set by the
-6\,km width of the MLS 240\,GHz field of view.  Daily longitudinal
-separation of MLS measurements, set by the Aura orbit, is
-10\degsym--\,20\degsym\ over middle and lower latitudes, with much
-finer sampling at the highest latitudes sampled in each hemisphere.
+Table~\ref{tab:O3Summary}, as derived from the full width at
+half-maximum of typical averaging kernels in the vertical and
+horizontal (along-track) coordinates, shown in Figures
+{\ref{fig:avkO3Strat}} and {\ref{fig:avkO3UTLS}}, for the whole
+vertical range, and the UTLS, respectively.  The cross-track
+resolution is set by the 6\,km width of the MLS 240\,GHz field of
+view.  Daily longitudinal separation of MLS measurements, set by the
+Aura orbit, is 10\degsym--\,20\degsym\ over middle and lower
+latitudes, with much finer sampling at the highest latitudes sampled
+in each hemisphere.
  
 \subsection{Precision} 
  
@@ -285,6 +292,7 @@ column ozone comparisons versus satellite, sonde, and lidar data.
   Compared to data screening recommendations for \prevv, the screening
   of \thisv data typically removes slightly fewer ozone profiles on a
   typical day, but this difference is only a fraction of a percent.
+
  
 \end{description} 
  
