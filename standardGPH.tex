@@ -12,9 +12,12 @@ GPH product is generally similar to the GPH products of earlier
 versions including the v02.2 product that is described in
 \citet{SchwartzEtal:2008:Validation} except that each profile is
 offset vertically in \thisv so that its value at 100\,hPa matches that
-of the GEOS-5.12.4 FP-IT near-real-time GPH.  In \prevv and earlier
+of the GEOS-5.12.4 FP-IT GPH.  In \prevv and earlier
 versions, the absolute reference for GPH was inferred from the
 spacecraft orbit/attitude system and the instrument scan model.
+Throughout the rest
+of this section, ``GEOS-5'' without additional qualification refers
+to GEOS-5.12.4 FP-IT.
 
 The heights of surfaces of constant geopotential are a property of the
 Earth's gravitational field and do not depend upon atmospheric
@@ -29,6 +32,7 @@ surfaces, but pressure, temperature and height depend upon one another
 through assumed hydrostatic balance and the gas law.
 \begin{equation}
 \frac{1}{g_o} \int g\,dh = \frac{R}{M g_o}\int T\,dP/P,
+\label{eq:GPHhydrostatic}
 \end{equation}
 where $M$ is the molar mass of air and $R$ is the gas constant.  If we
 assume that we know the molar-mass profile of the atmosphere (which
@@ -40,7 +44,7 @@ so determines the GPH profile to within an additive constant.
 Absolute pointing cannot be inferred from radiometric information and
 must be obtained from \emph{a priori} information, which was the
 spacecraft orbit/attitude system and instrument scan model in \prevv
-and earlier versions and is GEOS-5.12.4 FP-IT 100\,hPa GPH in \thisv.
+and earlier versions and is GEOS 100\,hPa GPH in \thisv.
  
 Table~\ref{tab:GPHSummary} summarizes \thisv measurement precision,
 modeled accuracy and observed biases.  The following sections provide
@@ -59,7 +63,7 @@ phase.
   \caption{The top panel shows the daily mean difference between
     \thisv and \prevv GPH for January 15 of each year of MLS
     measurements to date.  The red line highlights the differences at
-    100\,hPa surface, for which the \thisv values are GEOS-5 FP-IT, by
+    100\,hPa surface, for which the \thisv values are GEOS-5, by
     construction, so is the trend of \prevv minus GEOS-5.  The gray
     lines are the daily-mean differences for all of the other
     retrieval levels, and show that these differences are dominated by
@@ -86,14 +90,14 @@ valid GPH values that might be found at the bottom of a retrieval.
 The fill value for missing geolocation data remains $-999.99$,
 consistent with that used for other products.
  
-\subsection{Comparison to GEOS-5 FP-IT Analysis}
-The \thisv GPH product is identical to GEOS-5 FP-IT at 100\,hPa and
+\subsection{Comparison to GEOS-5 Analysis}
+The \thisv GPH product is identical to GEOS-5 at 100\,hPa and
 differs at other levels to the extent that integrated temperature
 profiles of the two products differ.  Mean differences shown in
 Figure\,\ref{fig:GPHv5-GPHgeos_contourf}, are less than 50\,m
 magnitude in the upper troposphere and lower stratosphere.  MLS GPH is
 100\,m lower than GEOS-5 FP-IT near the stratopause, and biases in the
-mesosphere are likely due to the lack of constraint of GEOS-5 FP-IT
+mesosphere are likely due to the lack of constraint of GEOS-5
 temperature by assimilation at these levels.
 
 \begin{figure}
@@ -103,8 +107,8 @@ temperature by assimilation at these levels.
     \thisv GPH for the first 969 days processed with the \thisv
     algorithms. This difference in GPH is zero, by construction, at
     100\,hPa, and away from the 100\,hPa surface is the integral of
-    the temperature biases between \thisv and GEOS-5 FP-IT.  Large
-    differences in the mesosphere result from the GEOS-5 FP-IT
+    the temperature biases between \thisv and GEOS-5.  Large
+    differences in the mesosphere result from the GEOS-5
     systems's lack of satellite temperature data for assimilation at
     these levels.}
   \label{fig:GPHv5-GPHgeos_contourf}
@@ -124,25 +128,25 @@ orbit/attitude errors from the star trackers that provide the
 spacecraft-attitude information.  The same star fields are viewed each
 year at the same date and orbit position.
 
-Elimination of this bias was a primary motivation for adopting GEOS-5.12.4
-FP-IT 100\,hPa GPH as an absolute reference height. The GMAO
-GEOS-5.12.4 FP-IT near-real-time operational products are available in
-time for routine MLS processing and also provide the temperature
-\emph{a priori} for the retrieval. At 100\,hPa, the model of the
-near-real-time system is good enough that differences that would
-accrue by waiting for a reanalysis with additional assimilated data
-(e.g., MERRA-2) are generally negligible compared to the GPH biases
-that were present in \prevv.
+Elimination of this bias was a primary motivation for adopting GEOS-5
+100\,hPa GPH as an absolute reference height. Operational products
+from the GEOS-5 version that we are using for \thisv processing,
+GEOS-5.12.4 FP-IT, are available in time to be used in routine MLS
+processing and also provide the temperature \emph{a priori} for the
+retrieval. At 100\,hPa, the model of the near-real-time system is good
+enough that differences that would accrue by waiting for a reanalysis
+with additional assimilated data (e.g., MERRA-2) are generally
+negligible compared to the GPH biases that were present in \prevv.
  
 In \thisv, each profile is offset in height so that the 100\,hPa GPH
-reference level matches that of the GEOS-5 and differences between
+reference level matches that of the GEOS-5. Differences between
 GEOS-5 GPH and \thisv GPH at other retrieval levels are the
-accumulated differences between GEOS-5 and MLS temperatures
-(multiplied by a nominal gravitational acceleration) as these
-differences are integrated away from 100\,hPa.  The 100\,hPa GPH
-produced by the MLS \thisv retrieval, analogous to the 100\,hPa GPH
-level from \prevv, is stored as a diagnostic swath in the ``DGG'' file
-before is is overwritten with GEOS-5 values.
+accumulated differences between GEOS-5 and MLS temperatures as these
+differences are integrated (as in Equation~\ref{eq:GPHhydrostatic})
+away from 100\,hPa.  The 100\,hPa GPH produced by the MLS \thisv
+retrieval, analogous to the 100\,hPa GPH level from \prevv, is stored
+as a diagnostic swath in the ``DGG'' file before is is overwritten
+with GEOS-5 values.
 
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{%

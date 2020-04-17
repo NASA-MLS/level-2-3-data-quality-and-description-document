@@ -27,13 +27,15 @@ Temperature \prevv temperature
  
 Both \thisv and \prevv use GEOS-5 ``forward processing for instrument
 teams'' \href{https://gmao.gsfc.nasa.gov/products/
-  documents/GEOS_5_FPIT_File_Specification_ON02_v1_2.pdf}{(FPIT)}
+  documents/GEOS_5_FPIT_File_Specification_ON02_v1_2.pdf}{(FP-IT)}
 temperatures as their retrieval \emph{a priori}, each using the
 version available at the time of processing.  \prevv uses GEOS-5.9.1
 from the beginning of the mission through 2016 and GEOS-5.12.4 from
 2017 into 2020, whereas \thisv uses GEOS-5.12.4 from the beginning of
 the mission into 2020, and differences in these \emph{a priori} can
-result in small differences in retrieved values.
+result in small differences in retrieved values. Throughout the rest
+of this section, ``GEOS-5'' without additional qualification refers
+to GEOS-5.12.4 FP-IT.
 
 Versions v3.x and v2.x took the standard temperature product from
 \texttt{FinalPtan}, a preliminary ``phase'' of the MLS retrieval that
@@ -89,7 +91,7 @@ Figure\,\ref{fig:v5v4__215hPa_pcolorhist2} show this behavior at
   \centering\includegraphics[width=0.7\linewidth]{%
     figures/v5v4_215hPa_pcolorhist2}
   \caption{The top row shows histograms of unscreened 215\,hPa v04.20
-    (left) and v05.00 (right) temperature differences from GEOS-5.9
+    (left) and v05.00 (right) temperature differences from GEOS-5.9.1
     temperature for 2009.  The horizontal bin spacing is that of the
     \texttildelow1.5\degsym\ latitudinal spacing of the MLS scans.
     The bottom panels show histograms of differences of the screened
@@ -109,15 +111,13 @@ but are greatly reduced by recommended screening (magenta).
     figures/v5v4_68-316hPa_linehists}
   \caption{Panels show histograms of tropical
     (20\degsym{}S--20\degsym{}N) differences between MLS retrieved
-    temperatures and GEOS-5.9 \mycomment{Really?  Not GEOS-5.12.4, at
-      least for v5?} temperature for all of 2005.  Blue and green
-    lines are unscreened and screened v04.2x, respectively. Red and
-    magenta are unscreened and screened v05.00, respectively.
-    Distribution means and standard deviations are given in the upper
-    left of each panel along with the percentage of points included
-    after screening.  The 316-hPa level is shown for reference
-    although this level is not recommended to be used for scientific
-    work.}
+temperatures and GEOS-5.12.4, temperature for all of 2005.  Blue and
+green lines are unscreened and screened v04.2x, respectively. Red and
+magenta are unscreened and screened v05.00, respectively.
+Distribution means and standard deviations are given in the upper left
+of each panel along with the percentage of points included after
+screening.  The 316-hPa level is shown for reference although this
+level is not recommended to be used for scientific work.}
 \label{fig:v5v4_68-316hPa_linehists}
 \end{figure}
 
@@ -198,16 +198,14 @@ in~\citet{SchwartzEtal:2008:Validation}.  This estimate is broken into
 two pieces.  The first term was modeled as amplifier non-linearity,
 referred to as ``gain compression,'' and was believed to have a known
 sign, as gain is known to drop at high background signal
-levels. Correction of these nonlinearities was a goal of \thisv,
-\mycomment{Should this be an earlier version, i.e., a case where not
-  to use the ``thisv'' macro?}  but closer examination of the simple
-non-linearity model found that it did not close forward model and
-measured radiances as expected.  It had been hoped that better
-radiance closure would permit the use of more radiances in the middle
-of the 118-GHz O\cs2 band, giving better resolution, precision and
-accuracy in the upper stratosphere and better accuracy everywhere.
-This work is still ongoing, and it is hoped that advances will
-manifest in improvements in a future version.
+levels. Correction of these nonlinearities was a goal of \prevv, but
+closer examination of the simple non-linearity model found that it did
+not close forward model and measured radiances as expected.  It had
+been hoped that better radiance closure would permit the use of more
+radiances in the middle of the 118-GHz O\cs2 band, giving better
+resolution, precision and accuracy in the upper stratosphere and
+better accuracy everywhere.  This work is still ongoing, and it is
+hoped that advances will manifest in improvements in a future version.
 
 The second term of column~5 combines $2\sigma$ estimates of other
 sources of systematic uncertainty, such as spectroscopic parameters,
@@ -308,7 +306,7 @@ in~\citet{SchwartzEtal:2008:Validation}.
   \centering\includegraphics[width=0.7\linewidth]{%
     figures/binbylat_v5-ap_2009}
   \caption{Zonal mean of the difference between MLS \thisv temperature
-    and GEOS-5.124 temperature (upper), and variability about that
+    and GEOS-5 temperature (upper), and variability about that
     mean (lower), averaged for 2009.}
   \label{fig:MLSminusGEOS5_zonalmean}
 \end{figure}
@@ -345,7 +343,7 @@ residuals, so further study is needed to understand the forward-model
 inadequacies.
 
 The upper panel of Figure~\ref{fig:MLSminusGEOS5_zonalmean} shows
-zonal-mean differences between \thisv temperature and GEOS-5.124
+zonal-mean differences between \thisv temperature and GEOS-5
 temperature, averaged over 2009; the lower panel is the $1\sigma$
 variability about that mean.  Persistent vertical structure in the
 troposphere and lower stratosphere is evident, with the oscillations
