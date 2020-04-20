@@ -91,12 +91,8 @@ temperature surfaces (from $\log[p]$ to $\log[\theta]$) before being
 binned (as opposed to directly binning Level~3 data points in
 potential temperature windows, which has the potential to introduce
 undesirable empty bins in the vertical). These interpolated values
-(and the interpolated \verb+L2GPPrecision+ field)\mycomment{Question
-  to Ryan, is this really relevant?  Does it somehow come into the
-  screening.  Presumably, if 0.1\,hPa data has a positive error bar,
-  but 0.46\,hPa's is negative, then data at any potential temperature
-  surfaces that correspond to a pressure less than 0.1\,hPa will be
-  marked bad, yes?)} are then used to construct all fields.
+(and the interpolated \verb+L2GPPrecision+ field) are then used to
+construct all fields.
 
 The vortex averages are defined using an altitude-dependent value of
 scaled potential vorticity (sPV) to demark the vortex edge.  The
