@@ -1,0 +1,26 @@
+The Aura Microwave Limb Sounder (MLS) team is pleased to announce the
+release of a new "version 5" MLS dataset.  The largest changes between
+version 5 (v5) and earlier versions are in the water vapor (H2O) and
+Nitrous Oxide (N2O) products.  Version 5 has ameliorated a
+well-documented "dry bias" in the water vapor product in the altitudes
+2-3 km below the tropopause.  Additionally, a slow drift in H2O
+starting in 2010 has been at least partly ameliorated, as has a
+related decreasing drift in the N2O product.  Other products affected
+by this drift include Hydrogen Cyanide (HCN) and upper stratospheric
+nitric acid (HNO3).  ****NO OTHER PRODUCT**** More minor changes to
+other products include extension of the H2O, ozone (O3), temperature,
+and Carbon Monoxide (CO) products to higher altitudes in the
+mesosphere/thermosphere.
+
+Reprocessing of the entire 15+ year MLS record with the v5 algorithms
+is expected to complete in mid-to-late 2021.  Until that reprocessing
+is complete, incoming MLS data will continue to be processed using
+older v4 algorithms as well as v5, in order to facilitate continued
+scientific analyses using a continuous dataset.
+
+A preliminary assessment of the v5 data quality, along with guidelines
+for appropriate use of the MLS v5 data, is given in the data quality
+document <URL>.  Updates to this document are planned in the coming
+months, when more v5 data will be available for characterization and
+re-validation, and when updated estimates of systematic uncertainty
+are completed.
