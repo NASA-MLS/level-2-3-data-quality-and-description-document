@@ -440,11 +440,12 @@ wait until more of the MLS data are processed to \thisv.
 \subsection{Data screening}
 \label{sec:H2OScreening}
 \begin{description}
-\item[Pressure range:] \screeningrule{316\,--\,0.00046\,hPa.}
-  \standardrangestatement\,Using data at 0.00046\,hPa requires consultation
-  with the MLS team.
-\standardprecisionrule
-\evenstatusrule
+\item[Pressure range:] \screeningrule{316\,--\,0.001\,hPa.}
+  \standardrangestatement.
+  Data at 0.00046\,hPa represents a total column at and above that
+  pressure level.  Scientific use of these 0.00046\,hPa data may be
+  possible, but requires consultation with the MLS team.
+  \standardprecisionrule \evenstatusrule
 \item[Clouds:] Profiles flagged as being affected by high or low
   clouds (i.e., with \texttt{Status} bits corresponding to values of
   \texttt{16} and \texttt{32} set) can continue to be used. See
