@@ -12,7 +12,7 @@ Figure~\ref{fig:IWPSketch}). It represents a partial column above
 \texttildelow6 km, and is stored in the \thisv L2GP IWC file as a separate swath.
 For the IWP retrieval, \Tcir\ is first converted to a near horizontal
 slant path (with a \texttildelow3\degsym\ elevation angle) IWP ``hIWP'', using
-the modeled \Tcir\,--\,hIWP relation.  The hIWP is then converted to the
+the modeled \Tcir--hIWP relation.  The hIWP is then converted to the
 nadir IWP at the tangent point location, and interpolated to the MLS
 standard horizontal grid.
 
@@ -21,8 +21,8 @@ standard horizontal grid.
 In the IWP ranges specified in the summary at the end of this section,
 each MLS measurement can be quantitatively interpreted as the average
 IWP for the volume sampled.  The MLS IWP volume is a vertical column
-above \texttildelow6\,km, with 60\,km and 7\,km along and cross track extent
-respectively.
+above \texttildelow6\,km, with 60\,km and 7\,km along and cross track
+extent, respectively.
 
 \subsection{Precision}
 
@@ -56,7 +56,7 @@ in \citet{WuEtal:2009}.
   larger and \texttt{Convergence} less than 1.03.
 \item[Other screening:] the user is also recommended to screen the IWP
   data for significant cloud hits on a daily basis using the
-  ``$2\sigma$\,--\,$3\sigma$'' method described in the IWC section
+  ``$2\sigma$, $3\sigma$'' method described in the IWC section
   (\ref{sec:StandardIWC}). The $3\sigma$ threshold is needed for cloud
   detection since a small percentage of clear-sky residual noise can
   result in a large percentage of false alarm in cloud detection.
@@ -99,7 +99,7 @@ from adjacent scans.
 \subsection{Summary for IWP}
 \label{tab:IWPSummary}
 \begin{description}
-\item[IWP Column Bottom:] \screeningrule{6\,km (estimated from MLS
+\item[IWP column bottom:] \screeningrule{6\,km (estimated from MLS
     radiative transfer model calculations).}  The calculation of the
   bottom height of the IWP column depends on the tropospheric water
   vapor loading and on the IWP itself and is discussed in
@@ -136,12 +136,12 @@ from adjacent scans.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/IWP-240-v05-00-dataqual-JUL2009-v2}
-\caption{MLS v5, v4 and v2 IWP comparisons for July 2009. 
-  (a) Left: Probability density functions (PDF) (v5 (red), v4 (blue) and v2
+\caption{MLS v5, v4 and v2 IWP comparisons for July 2009.  (a) Left:
+  Probability density functions (PDF) (v5 (red), v4 (blue) and v2
   (green)) with dashed lines showing the corresponding noise levels
-  (obtained by folding the negative IWP values about the origin) and the
-  thin black lines representing the gaussian error function. (b) Right:
-  Scatter plot of IWP v5 vs\. v2 (black points) with a red line
+  (obtained by folding the negative IWP values about the origin) and
+  the thin black lines representing the gaussian error function. (b)
+  Right: Scatter plot of IWP v5 vs v2 (black points) with a red line
   indicating the 1:1 line and a linear fit to the data shown as a blue
   line.}
 \label{fig:IWP}
