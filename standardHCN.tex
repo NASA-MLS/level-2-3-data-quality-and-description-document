@@ -11,7 +11,8 @@ uncluttered part of the spectrum, the upper sideband contains many
 interfering lines of O\cs3 and HNO\cs3. As a result, the \thisv HCN
 product is not recommended for general use at altitudes below
 21\,hPa. In the recommended range it is usable, but has rather poor
-precision and resolution.
+precision (necessitating averaging such as weekly zonal means) and
+resolution.
 
 It is possible to retrieve weekly zonal means of HCN over a greater
 vertical range by first averaging the radiances. Results of this
@@ -29,8 +30,10 @@ both of which had large regions with negative mixing ratios. In \thisv
 the biases appear to be reduced again. Between 10\,hPa and 3\,hPa,
 \thisv HCN is somewhat lower than all three previous versions.  The
 lowest recommended level for \thisv is currently 21\,hPa, as it was
-for v4.x. However, it may be possible after further validation work
-for the data between 31\,hPa and 68\,hPa to be used.
+for v4.x. However, it is possible that, after further validation work,
+the \thisv HCN data between 31\,hPa and 68\,hPa may ultimately be
+judged to be suitable for scientific use.  Any such updates will be
+reported in a new version of this document.
 
 Figure~\ref{fig:HCNPrecision} shows that the precisions in \thisv are
 essentially unchanged from earlier versions. The retrieved mixing
@@ -64,7 +67,7 @@ estimated precision due to the effects of retrieval smoothing.
 \caption{Estimated precision {\tt L2gpPrecision} and observed standard
   deviation for MLS \thisv (green), v4.x (black), v3.x (blue) and v2.x
   (red) HCN\@. The data shown are all profiles within 20\degsym\ of
-  the equator (left) and 70\degsym N-83\degsym N (right) for 28
+  the equator (left) and 70\degsym N--83\degsym N (right) for 28
   January, 2005.  Mean mixing ratio (VMR) profiles are shown for
   comparison. Between 3 and 10\,hPa, \thisv departs from the three
   earlier versions. At altitudes below 10\,hPa, all four versions are
@@ -115,7 +118,8 @@ data are summarized in table~\ref{tab:HCNSummary}.
 \begin{description}
 \item[Pressure range:] \screeningrule{21\,--\,0.1\,hPa}
   \standardrangestatement\  Data in the 31\,hPa to 68\,hPa range may
-  prove to be usable after further validation.
+  prove to be usable after further validation (updates to this
+  document will report any new judgment along those lines).
   \standardprecisionrule
   \evenstatusrule
 \item[Clouds:] \screeningrule{Clouds have no impact, profiles with
@@ -126,11 +130,11 @@ data are summarized in table~\ref{tab:HCNSummary}.
   usually near 1.5; occasional lower values do not seem correlated
   with unusual profiles, but we suggest as a precaution that only
   profiles with \texttt{Quality} $> 0.2$ be used.  Typically this will
-  eliminate only 1-2\% of profiles.
+  eliminate only 1--2\% of profiles.
   %% Number of rejected profiles remains small in V5
 \item[Convergence:] \convergencerule{2.0} This should eliminate any
   chunks which have obviously failed to converge -- typically this is
-  only 1-2\% of the total.
+  only 1--2\% of the total.
   %% Number of rejected profiles remains small in V5
 \end{description}
 
