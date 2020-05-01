@@ -91,14 +91,14 @@ Hugh Pumphrey\newline Michael Schwartz%
 83--0.001 \newline 316--100 &
 \tabnudge{0.7} &
 \tabnudge{2.0} &
-O \newline C,O &
+O,T \newline C,O,T &
 Alyn Lambert \newline William Read
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardHCl]{\texttt{HCl}} & 100--0.32 & 1.2 & 1.05 & -- & Lucien Froidevaux
+\hyperref[sec:StandardHCl]{\texttt{HCl}} & 100--0.32 & 1.2 & 1.05 & R,T & Lucien Froidevaux
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardHCN]{\texttt{HCN}} & 21--0.1 & 0.2 & 2.0 & A,E,N & Hugh Pumphrey
+\hyperref[sec:StandardHCN]{\texttt{HCN}} & 21--0.1 & 0.2 & 2.0 & A,E,N,T & Hugh Pumphrey
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215--1.5 & See text &
@@ -118,7 +118,7 @@ Luis Mill\'an
 \hyperref[sec:StandardIWP]{\texttt{IWP}} & N/A & See text & See text & B & Alyn Lambert
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardN2O]{\texttt{N2O}} & 100--0.46 & 0.8 & 2.0 & -- & Alyn Lambert
+\hyperref[sec:StandardN2O]{\texttt{N2O}} & 100--0.46 & 0.8 & 2.0 & R,T & Alyn Lambert
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardO3]{\texttt{O3}\,\footnotemark[3]} &
@@ -133,7 +133,7 @@ Lucien Froidevaux \newline Michael Schwartz
 & Luis Mill\'an
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316--0.001 & See text & See text & C,O & William Read
+\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316--0.001 & See text & See text & C,O,T & William Read
 \tabularnewline\flipfloprow 
 \hyperref[sec:StandardSO2]{\texttt{SO2}} & 215--10 & 0.95 & 1.03 & E & William Read
 \tabularnewline\flipfloprow 
@@ -148,7 +148,7 @@ Lucien Froidevaux \newline Michael Schwartz
 \end{tabular}
 \end{center}
 %
-\vspace{-2mm}\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
+\vspace{-2mm}\parbox[t]{0.5\textwidth-0.5\columnsep}{\scriptsize\sffamily
   \textbf{Notes:}\par
   \begin{tablenotes}
   \item[A] Users should consider using alternative versions of this
@@ -164,15 +164,21 @@ Lucien Froidevaux \newline Michael Schwartz
     that render the product useful only for the study of ``enhancement
     events'' (e.g., volcanic plumes, extreme fire pollution).  See text
     for details.
-  \end{tablenotes}}%
-\hfill\parbox[t]{0.5\textwidth-0.5\columnsep}{\footnotesize\sffamily
-  \begin{tablenotes}
   \item[N] This is a ``noisy'' product requiring significant averaging
     (e.g., monthly zonal mean).  See text for details.
   \item[O] This product contains significant outliers (e.g., spikes or
     oscillations) in some regions (typically related to clouds in the
     tropical upper troposphere).  These should be screened out as detailed
     in the text.
+  \end{tablenotes}}%
+\hfill\parbox[t]{0.5\textwidth-0.5\columnsep}{\scriptsize\sffamily
+  \begin{tablenotes}
+  \item[R] The spectral region(s) used to retrieve this product has
+    been revised at some point in response to a change in instrument
+    behavior.  Earlier versions of the MLS record used the original
+    region.
+  \item[T] Care should be taken when considering long-term trends
+    in measurements of  this quantity.  See text.
   \end{tablenotes}
   \vspace{-1ex}\rule{\linewidth}{0.5pt}\par
   \vspace{-0.5ex}\begin{tablenotes}
