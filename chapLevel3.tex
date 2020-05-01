@@ -91,12 +91,8 @@ temperature surfaces (from $\log[p]$ to $\log[\theta]$) before being
 binned (as opposed to directly binning Level~3 data points in
 potential temperature windows, which has the potential to introduce
 undesirable empty bins in the vertical). These interpolated values
-(and the interpolated \verb+L2GPPrecision+ field)\mycomment{Question
-  to Ryan, is this really relevant?  Does it somehow come into the
-  screening.  Presumably, if 0.1\,hPa data has a positive error bar,
-  but 0.46\,hPa's is negative, then data at any potential temperature
-  surfaces that correspond to a pressure less than 0.1\,hPa will be
-  marked bad, yes?)} are then used to construct all fields.
+(and the interpolated \verb+L2GPPrecision+ field) are then used to
+construct all fields.
 
 The vortex averages are defined using an altitude-dependent value of
 scaled potential vorticity (sPV) to demark the vortex edge.  The
@@ -145,17 +141,22 @@ conventions, which differ mainly in the date format:
 only)]{MLS-Aura\_L3MB-<product>\_v04-20-c01\_<yyyy>m<mm>.nc}\\
 \fileexample[(Mid-year forward processing only)]{MLS-Aura\_L3DZ-<product>\_v04-20-c01\_<yyyy>m<mm>.nc}
 \end{quote}
-Where \texttt{<product>} is the MLS standard product: \texttt{CO},
-\texttt{O3}, \texttt{Temperature}, etc. The date(s) for the
-observations are given as a four-digit year \texttt{<yyyy>} with an
-optional three-digit day of year \texttt{<ddd>} (\texttt{001} = 1
-January) or optional two-digit month \texttt{<mm>}. Files using the
-two-digit month will only be available during their current calendar
-year, as ``forward processing'' data are gathered, and will contain
-all data in the year up to and including the quoted month, with the
-remaining date entries present but consisting of values marked ``bad''
-(i.e., with the netCDF \verb+_FillValue+).  Once all months are
-available, the complete dataset will be stored in the
+Where\\
+\begin{tabular}{r@{\ }l}
+  \texttt{<product>} & is the MLS standard product: \texttt{CO},
+  \texttt{O3}, \texttt{Temperature}, etc.\\
+  \texttt{<yyyy>} & is the four-digit year\\
+  \texttt{<ddd>} & is a three-digit day of year \texttt{<ddd>} (\texttt{001} = 1
+  January) \\
+  \texttt{<mm>} & is an optional two-digit month for monthly files.
+\end{tabular}
+
+Files using the two-digit month will only be available during their
+current calendar year, as ``forward processing'' data are gathered,
+and will contain all data in the year up to and including the quoted
+month, with the remaining date entries present but consisting of
+values marked ``bad'' (i.e., with the netCDF \verb+_FillValue+).  Once
+all months are available, the complete dataset will be stored in the
 ``\texttt{<yyyy>}'' files.
 
 Within each file, the datasets are stored in netCDF-4 groups. The
