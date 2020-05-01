@@ -83,16 +83,16 @@ ellipsoid that is used in the MLS forward model ray tracing. The
 impact of this difference is discussed in the \prevv version of this
 document.
 
-\clearpage
 The fill value for missing GPH data has been changed in \thisv to
 $-1\times10^{15}$\,m.  The value of $-999.99$\,m used for missing GPH
 data in \prevv and earlier versions of MLS GPH is within the range of
-valid GPH values that might be found at the bottom of a retrieval.
-The fill value for missing geolocation data remains $-999.99$,
-consistent with that used for other products\footnote{Note that, while
-  all \thisv GPH files use the new $-1\times10^{15}$\,m fill value,
-  the v5.00 files incorrectly quote $-999.99$\,m as being the fill
-  value in the metadata.}.
+valid GPH values that might be found at the bottom of a retrieval
+(note that, while all \thisv GPH files use the new
+$-1\times10^{15}$\,m fill value, metadata for the v5.00 files
+incorrectly still quote $-999.99$\,m as being the fill value).  In
+v5.01, the fill value for missing geolocation data remains $-999.99$,
+consistent with that used for other products (v5.00 inappropriately
+set these to $-1\times10^{15}$\,m also).
  
 \subsection{Comparison to GEOS-5 Analysis}
 The \thisv GPH product is identical to GEOS-5 at 100\,hPa and
