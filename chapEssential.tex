@@ -58,8 +58,9 @@ use of MLS data to infer cloud properties is described in
 \cite{EOSMLSCloudATBD}.  All the above documents and papers are
 available from the MLS web site (\url{https://mls.jpl.nasa.gov/}).
 
-A subset of the information in those documents is also reported in the
-\emph{IEEE Transactions on Geoscience and Remote Sensing}.  An
+A subset of the information in those documents is also reported in a
+series of articles in the 2006 Aura special issue of the \emph{IEEE
+  Transactions on Geoscience and Remote Sensing}.  Specifically, an
 overview of MLS is given in \cite{WatersEtal:2006}, the algorithms
 that produce the data described here are reviewed in
 \citet{LiveseyEtal:2006}, \citet{ReadEtal:2006},
@@ -173,14 +174,15 @@ to minor.  Some of the most important are detailed below.
   N\cs2O, HCN):] As discussed in \citet{HurstEtal:2016} and
   \citet{LiveseyEtal:2020:Drifts}, there are indications that the MLS
   H\cs2O product has been slowly drifting since \texttildelow2010, at
-  a rate of between 0.2--1\%/year, depending on what record is it
+  a rate of between 0.2--1\%/year, depending on what record it is
   compared to (mainly frostpoint sonde or ACE-FTS) and the altitude
-  range of interest.  The MLS team has identified a slow change in
-  instrument calibration that accounts for some of this drift, and is
-  corrected for in \thisv.  The extent to which this correction fully
-  accounts for the observed drift remains to be studied as the \thisv
-  processing continues.  The calibration trend also affects other
-  species measured by the MLS 190-GHz subsystem, notably N\cs2O.
+  range of interest.  The MLS team has identified a slow change in one
+  aspect of instrument calibration that accounts for some of this
+  drift.  Version~5.0 corrects for this calibration drift; the extent
+  to which that correction fully accounts for the observed drift in
+  Level~2 products remains to be studied as the \thisv processing
+  continues.  The calibration trend also affects other species
+  measured by the MLS 190-GHz subsystem, notably N\cs2O.
 \item[Correction of dry bias in upper tropospheric H\cs2O:] As part of
   the work to identify and characterize the drift discussed above, the
   MLS team has also identified and largely corrected the source of a

@@ -39,7 +39,7 @@
   \def\nbsecref{sec:Standard#1}%
   \def\nbscrref{sec:#1Screening}%
   \def\nbtabref{tab:#1Summary}%
-  \nbnudge\hyperref[\nbsecref]{\begin{tikzpicture}[outer sep=0pt, inner sep=6pt]
+  \nbnudge\hyperref[\nbsecref]{\begin{tikzpicture}[outer sep=0pt, inner sep=5pt]
     \node (NBProduct#1) [nbentry] {#2};
     \node (NBProductRulesLink#1) [nblinks, anchor=north east]
       at (NBProduct#1.north west) {\hyperref[\nbscrref]{S}};
@@ -56,7 +56,8 @@
      \and
    \equal{#2}{Table}}%
    \or
-   \equal{#2}{\currentnav}}%
+   \equal{#2}{\currentnav}
+ }%
   {\def\nbnudge{\rule{3mm}{0pt}}%
     \colorlet{NBColor}{white}%
     \colorlet{NBBackground}{ChapterColor}}%
@@ -68,7 +69,7 @@
       \colorlet{NBBackground}{ChapterBackgroundB}%
     \fi}%
   \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
-  \nbnudge\hyperref[#1]{\begin{tikzpicture}[outer sep=0pt, inner sep=6pt]
+  \nbnudge\hyperref[#1]{\begin{tikzpicture}[outer sep=0pt, inner sep=5pt]
       \node (#3) [nbentry] {#2};
     \end{tikzpicture}}}
 %
@@ -105,7 +106,9 @@
         \node {\DrawNavBarProduct{OH}{OH}};\\
         \node {\DrawNavBarProduct{RHI}{RHI}};\\
         \node {\DrawNavBarProduct{SO2}{SO\cs2}};\\
-        \node {\DrawNavBarProduct{Temperature}{T}};\\};
+        \node {\DrawNavBarProduct{Temperature}{T}};\\
+        \node {\DrawNavBarExtra{chap:Level3}{Lvl~3}{L3}};\\
+      };
     \end{tikzpicture}}}
 \newcommand{\savednav}{EMPTY}
   
