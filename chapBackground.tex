@@ -318,6 +318,11 @@ obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 \phase{CorePlusR5} & \species{T, pTan~(GHz,~THz), GPH, OH, O\cs3} &
 \measurements{R1A \& R1B~(118\,GHz), R5H and R5V~(2.5\,THz)} &
 \tablecomments{Retrievals down to 68\,hPa (147\,hPa for Temperature)} \\
+
+\flipfloprow
+\phase{GPHOnly} & \species{GPH} & --- &
+\tablecomments{Offsets CorePlusR3 GPH to match GEOS-5 at 100\,hPa}\\
+
 \end{tabular}
 \end{small}\end{center}
 \end{minipage}
@@ -346,7 +351,7 @@ obtained from which phase are given in Table~\ref{tab:StandardProducts}.
   \flipfloprow 
   CO        & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
-  GPH       & CorePlusR3 & 118 \& 240\,GHz \\
+  GPH       & GPHOnly & 118 \& 240\,GHz \\
   \flipfloprow 
   H\cs2O    & CorePlusR2 & 190\,GHz \\
   \flipfloprow 
