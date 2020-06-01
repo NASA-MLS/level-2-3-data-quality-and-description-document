@@ -5,11 +5,12 @@ Nitrous Oxide (N2O) products.  Version 5 has ameliorated a
 well-documented "dry bias" in the water vapor product in the altitudes
 2-3 km below the tropopause.  Additionally, a slow drift in H2O
 starting in 2010 has been at least partly ameliorated, as has a
-related decreasing drift in the N2O product.  Other products affected
-by this drift include Hydrogen Cyanide (HCN) and upper stratospheric
-nitric acid (HNO3).  ****NO OTHER PRODUCT**** More minor changes to
-other products include extension of the H2O, ozone (O3), temperature,
-and Carbon Monoxide (CO) products to higher altitudes in the
+related decreasing drift in the N2O product.  The only other products
+affected by this drift include Hydrogen Cyanide (HCN) and upper
+stratospheric nitric acid (HNO3).  Remaining MLS products including
+ozone (O3), HCl, etc. are not impacted.  More minor changes to other
+products include extension of the H2O, ozone, temperature, and Carbon
+Monoxide (CO) products to higher altitudes in the
 mesosphere/thermosphere.
 
 Reprocessing of the entire 15+ year MLS record with the v5 algorithms
@@ -20,7 +21,8 @@ scientific analyses using a continuous dataset.
 
 A preliminary assessment of the v5 data quality, along with guidelines
 for appropriate use of the MLS v5 data, is given in the data quality
-document <URL>.  Updates to this document are planned in the coming
-months, when more v5 data will be available for characterization and
-re-validation, and when updated estimates of systematic uncertainty
-are completed.
+document
+(https://mls.jpl.nasa.gov/data/v4-2_data_quality_document.pdf).
+Updates to this document are planned in the coming months, when more
+v5 data will be available for characterization and re-validation, and
+when updated estimates of systematic uncertainty are completed.
