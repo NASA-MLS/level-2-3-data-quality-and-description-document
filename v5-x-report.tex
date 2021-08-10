@@ -3,7 +3,7 @@
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navtrue
+\newif\ifnav\navfalse
 %
 \usepackage{accsupp}
 %
@@ -21,6 +21,8 @@
 %
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\mddefault}{m}
+%
+\newcommand{\texttilde}{\textasciitilde}
 %
 % ---------------------------------------- Various other packages
 \usepackage[final]{graphicx}
@@ -103,6 +105,12 @@ pdfusetitle]{hyperref}
 % --------------------------------------- Section headings etc.
 %
 \setcounter{tocdepth}{1}
+\usepackage[titles]{tocloft}
+\tocloftpagestyle{preamble}
+% Make the page number in the toc wide enough (we need more space when
+% we include the section number in the page numbers for the appendices)
+\cftsetpnumwidth{8mm}
+%
 \makeatletter
 %
 \def\@makechapterhead#1{%
