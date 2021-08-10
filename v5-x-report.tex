@@ -9,11 +9,15 @@
 %
 % ---------------------------------------- Fonts
 \usepackage[T1]{fontenc}
-\usepackage{microtype}
-\usepackage{inconsolata}
-\usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
-\usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
-\usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
+% \usepackage{microtype}
+% \usepackage{inconsolata}
+\usepackage{beramono}
+% \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
+\usepackage[bitstream-charter]{mathdesign}
+\newcommand{\figureversion}[1]{}
+% \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
+\usepackage{berasans}
+% \usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
 %
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\mddefault}{m}
@@ -156,7 +160,8 @@
 \newfixedcaption{\myfigcaption}{figure}
 \newfixedcaption{\mytabcaption}{table}
 \captionnamefont{\small\sffamily\fontseries{sb}\selectfont\color{SectionColor}\selectfont\figureversion{tabular}}
-\captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont\mathversion{sans}}
+% \captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont\mathversion{sans}}
+\captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont}
 %
 \newcommand{\tabletitle}[1]{\textbf{\textcolor{tableheadcolor}{#1}}\global\oddrowtrue}
 %
