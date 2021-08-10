@@ -3,7 +3,9 @@
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navtrue
+\newif\ifnav\navfalse
+%
+\usepackage{accsupp}
 %
 % ---------------------------------------- Fonts
 \usepackage[T1]{fontenc}
@@ -44,7 +46,8 @@
 \usetikzlibrary{calc,matrix}
 %
 % --------------------------------------- Finally, hyperref
-\usepackage[final,hidelinks,breaklinks=true,bookmarksopen=true]{hyperref}
+%
+\usepackage[final,hidelinks,breaklinks=true,bookmarksopen=true,pdflang={en-US}]{hyperref}
 %
 % --------------------------------------- Colors
 %\colorlet{ChapterColor}{Purple!50!Maroon!90!Black}
@@ -161,6 +164,8 @@
 %
 \input{navbar.tex}
 %
+\usepackage[final, appearance=true]{attachfile2}
+%
 % -------------------------------------------------------------------------------
 %
 % Now begin the document and set a few various counters and values etc.
@@ -191,7 +196,6 @@
 %
 % Now do the title page
 %
-\jpld{105336 Rev.\ A}
 \title{Version~5.0x Level~2 and~3 data quality and description document.}
 \author{%
 Nathaniel~J.~Livesey,
@@ -209,6 +213,8 @@ Ryan~A.~Fuller,
 Robert~F.~Jarnot,
 Brian~W.~Knosp,
 Richard~R.~Lay}
+%
+\jpld{105336 Rev.\ A}
 %\shortauthor{Aura MLS Science team}
 \newcommand{\myshorttitle}{Level~2/3 Version 5.0\emph{x} Quality}
 \shorttitle{\myshorttitle}
@@ -220,6 +226,7 @@ Richard~R.~Lay}
 \pagenumbering{roman}
 
 \maketitle
+\hypersetup{pdfusetitle}
 %
 \renewcommand{\chaptermark}[1]{%
    \markboth{\chaptername\ \thechapter.\ #1}{}}
@@ -310,6 +317,9 @@ Richard~R.~Lay}
 \rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
 \input{chapLevel3}
 \clearpage
+%
+\appendix
+\input{appEmbedded}
 \renewcommand{\currentnav}{BLANK}
 %
 \renewcommand{\leftmark}{Bibliography}

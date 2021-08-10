@@ -1,0 +1,64 @@
+\chapter{Embedded data files}
+\label{app:Embedded}
+
+In part to comply with journal requirements for data availability, and
+also to ensure long-term availability of key datasets beyond the
+lifetime of the MLS project, various data files are embedded in the
+PDF version of this document, and can be extracted as described below.
+
+Not all PDF readers support such a file-extraction capability. At the
+time of writing, the ``Adobe Reader'' software is known to provide the
+needed functionality.  File extraction can be accomplished through a
+``right click'' (or some similar action, such as ``option-click'') on
+the icons below, and selecting ``Save Embedded File to Disk\ldots'' or
+some similar option.
+
+Also, for understandable user-security reasons, Adobe Reader defaults
+to not allowing \texttt{.tar.gz} files to be extracted from PDF
+documents without changing user preferences. Safer \texttt{.txt} and
+\texttt{.nc4} files can be extracted without issue.  This means that
+while the individual files can be extracted, there is no way we can
+provide users the ability easily extract all the information in one
+go.
+
+\section{Averaging kernels}
+The MLS averaging kernels are also available for download from the MLS
+website at
+\url{https://mls.jpl.nasa.gov/eos-aura-mls/data-products/averaging-kernels}
+as a single tar-archive.
+
+\mycomment{Text from Michael to go here}
+
+\begin{center}
+\newlength{\attwidth}
+\setlength{\attwidth}{1.3cm}
+\begin{tabular}{lp{\attwidth}p{\attwidth}p{\attwidth}p{\attwidth}p{\attwidth}}
+  \toprule
+  \null & 
+  \textbf{70\degsym S} & 
+  \textbf{35\degsym S} & 
+  \textbf{Equator} & 
+  \textbf{35\degsym N} & 
+  \textbf{70\degsym N} \tabularnewline
+  \midrule
+  1D kernels &  
+  \attachfile{data/MLS_v5_1D_AVK_70S.nc4} &
+  \attachfile{data/MLS_v5_1D_AVK_35S.nc4} &
+  \attachfile{data/MLS_v5_1D_AVK_0N.nc4} &
+  \attachfile{data/MLS_v5_1D_AVK_35N.nc4} &
+  \attachfile{data/MLS_v5_1D_AVK_70N.nc4} \tabularnewline
+  2D kernels &
+  \attachfile{data/MLS_v5_2D_AVK_70S.nc4} &
+  \attachfile{data/MLS_v5_2D_AVK_35S.nc4} &
+  \attachfile{data/MLS_v5_2D_AVK_0N.nc4} &
+  \attachfile{data/MLS_v5_2D_AVK_35N.nc4} &
+  \attachfile{data/MLS_v5_2D_AVK_70N.nc4} \tabularnewline
+  \bottomrule
+\end{tabular}
+\end{center}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "v5-x-report"
+%%% End:
