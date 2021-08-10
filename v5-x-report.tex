@@ -51,7 +51,8 @@
 %
 % --------------------------------------- Finally, hyperref
 %
-\usepackage[final,hidelinks,breaklinks=true,bookmarksopen=true,pdflang={en-US}]{hyperref}
+\usepackage[final,hidelinks,breaklinks=true,bookmarksopen=true,pdflang={en-US},
+pdfusetitle]{hyperref}
 %
 % --------------------------------------- Colors
 %\colorlet{ChapterColor}{Purple!50!Maroon!90!Black}
@@ -95,6 +96,10 @@
 % --------------------------------------- Title page
 \usepackage{mlstitlepage}
 %
+% --------------------------------------- Attachments
+\usepackage[final, appearance=true, color=black]{attachfile2}
+\usepackage{fontawesome}
+%
 % --------------------------------------- Section headings etc.
 %
 \setcounter{tocdepth}{1}
@@ -117,21 +122,21 @@
   {0pt}%
   {-4pt plus -2pt minus -3pt}%
   {4pt plus 2pt minus 3pt}%
-  {\Large\sffamily\fontseries{sb}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+  {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
 \renewcommand{\subsection}{\@startsection%
   {subsection}%
   {2}%
   {0pt}%
   {-2pt plus -1pt minus -2pt}%
   {2pt plus 1pt minus 2pt}%
-  {\large\sffamily\fontseries{sb}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+  {\large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
 \renewcommand{\subsubsection}{\@startsection%
   {subsubsection}%
   {3}%
   {0pt}%
   {-0.1ex plus -0.1ex minus -0.1ex}%
   {0.1ex plus 0.1ex minus 0.1ex}%
-  {\normalsize\sffamily\fontseries{sb}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+  {\normalsize\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
 \renewcommand{\paragraph}{\@startsection%
   {paragraph}%
   {4}%
@@ -159,7 +164,7 @@
 %
 \newfixedcaption{\myfigcaption}{figure}
 \newfixedcaption{\mytabcaption}{table}
-\captionnamefont{\small\sffamily\fontseries{sb}\selectfont\color{SectionColor}\selectfont\figureversion{tabular}}
+\captionnamefont{\small\sffamily\fontseries{b}\selectfont\color{SectionColor}\selectfont\figureversion{tabular}}
 % \captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont\mathversion{sans}}
 \captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont}
 %
@@ -168,8 +173,6 @@
 \input{macros.tex}
 %
 \input{navbar.tex}
-%
-\usepackage[final, appearance=true]{attachfile2}
 %
 % -------------------------------------------------------------------------------
 %
@@ -219,11 +222,11 @@ Robert~F.~Jarnot,
 Brian~W.~Knosp,
 Richard~R.~Lay}
 %
-\jpld{105336 Rev.\ A}
+\jpld{105336 Rev.\ B}
 %\shortauthor{Aura MLS Science team}
 \newcommand{\myshorttitle}{Level~2/3 Version 5.0\emph{x} Quality}
 \shorttitle{\myshorttitle}
-\version{5.0--1.0a}
+\version{5.0--1.1a}
 \newcommand{\thisv}{v5.0\emph{x}\xspace}
 \newcommand{\prevv}{v4.2\emph{x}\xspace}
 \otherrefs{}

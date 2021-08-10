@@ -4,7 +4,7 @@
 \newlength{\navguidewidth}%
 \setlength{\navguidewidth}{0.8\linewidth}%
 \newlength{\navguidegap}%
-\setlength{\navguidegap}{1.3cm}%
+\setlength{\navguidegap}{1.5cm}%
 \thispagestyle{plain}%
 
 \noindent\parbox{\navguidewidth}{%
@@ -19,9 +19,10 @@
   ($ (current page.south west) + (8in, 10.7in) - (4mm, 0mm) $);
   \coordinate (HelpTarget) at ($ (NBGOrigin) - (-1.5mm, 5.5mm) $);
   \coordinate (OverviewTarget) at ($ (NBGOrigin) - (0mm, 19mm) $);
-  \coordinate (MainTableTarget) at ($ (NBGOrigin) - (0mm, 33mm) $);
-  \coordinate (STarget) at ($ (NBGOrigin) + (5.8mm, -11.50cm) $);
-  \coordinate (TTarget) at ($ (NBGOrigin) + (5.8mm, -14.35cm) $);
+  \coordinate (MainTableTarget) at ($ (NBGOrigin) - (0mm, 32mm) $);
+  \coordinate (GenericProductTarget) at ($ (NBGOrigin) - (0mm, 11cm) $); 
+  \coordinate (STarget) at ($ (NBGOrigin) + (5.8mm, -12.56cm) $);
+  \coordinate (TTarget) at ($ (NBGOrigin) + (5.8mm, -15.43cm) $);
 \end{tikzpicture}%
 
 Clicking on ``Help'' takes you back to this page.
@@ -55,18 +56,19 @@ the MLS data products individually.  You can use the navigation bar to
 skip immediately to any of the product-specific sections.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (ProductHook) {};
-  \draw [guidearrow] (ProductHook) -- (ProductHook-|MainTableTarget);
+  \draw [guidearrow] (ProductHook) -| ($ (GenericProductTarget) -
+  (2.5cm,0) $) -- (GenericProductTarget);
 \end{tikzpicture}
 
 \vspace{2ex}Each section includes
 \begin{itemize}
-\item A set of rules for screening out data points not recommended for
+\item A set of rules for screening out data not recommended for
   scientific use.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (SHook) {};
-  \draw [guidearrow] (SHook) -| ($ (STarget-|OverviewTarget) - (2cm,0) $) coordinate (Bend) -- (STarget);
+  \draw [guidearrow] (SHook) -| ($ (STarget-|OverviewTarget) - (1.5cm,0) $) coordinate (Bend) -- (STarget);
 \end{tikzpicture}
-\item A table summarizing the precision, accuracy, resolution for each MLS product.
+\item A table summarizing the precision, accuracy, resolution for each product.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (THook) {};
   \draw [guidearrow] (THook) -- (THook-|Bend) |- (TTarget);
