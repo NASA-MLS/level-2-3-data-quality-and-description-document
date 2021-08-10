@@ -2,8 +2,8 @@
 \label{app:Embedded}
 
 In part to comply with journal requirements for data availability, and
-also to ensure long-term availability of key datasets beyond the
-lifetime of the MLS project, various data files are embedded in the
+also to help assure long-term preservation of key datasets beyond the
+lifetime of the MLS project, selected data files are embedded in the
 PDF version of this document, and can be extracted as described below.
 
 Not all PDF readers support such a file-extraction capability. At the
@@ -29,6 +29,7 @@ as a single tar-archive.
 
 \mycomment{Text from Michael to go here}
 
+\newcommand{\myattach}[1]{\raisebox{-3pt}{\attachfile{#1}}}
 \begin{center}
 \newlength{\attwidth}
 \setlength{\attwidth}{1.3cm}
@@ -42,20 +43,31 @@ as a single tar-archive.
   \textbf{70\degsym N} \tabularnewline
   \midrule
   1D kernels &  
-  \attachfile{data/MLS_v5_1D_AVK_70S.nc4} &
-  \attachfile{data/MLS_v5_1D_AVK_35S.nc4} &
-  \attachfile{data/MLS_v5_1D_AVK_0N.nc4} &
-  \attachfile{data/MLS_v5_1D_AVK_35N.nc4} &
-  \attachfile{data/MLS_v5_1D_AVK_70N.nc4} \tabularnewline
+  \myattach{data/MLS_v5_1D_AVK_70S.nc4} &
+  \myattach{data/MLS_v5_1D_AVK_35S.nc4} &
+  \myattach{data/MLS_v5_1D_AVK_0N.nc4} &
+  \myattach{data/MLS_v5_1D_AVK_35N.nc4} &
+  \myattach{data/MLS_v5_1D_AVK_70N.nc4} \tabularnewline
   2D kernels &
-  \attachfile{data/MLS_v5_2D_AVK_70S.nc4} &
-  \attachfile{data/MLS_v5_2D_AVK_35S.nc4} &
-  \attachfile{data/MLS_v5_2D_AVK_0N.nc4} &
-  \attachfile{data/MLS_v5_2D_AVK_35N.nc4} &
-  \attachfile{data/MLS_v5_2D_AVK_70N.nc4} \tabularnewline
+  \myattach{data/MLS_v5_2D_AVK_70S.nc4} &
+  \myattach{data/MLS_v5_2D_AVK_35S.nc4} &
+  \myattach{data/MLS_v5_2D_AVK_0N.nc4} &
+  \myattach{data/MLS_v5_2D_AVK_35N.nc4} &
+  \myattach{data/MLS_v5_2D_AVK_70N.nc4} \tabularnewline
   \bottomrule
 \end{tabular}
 \end{center}
+
+\section{ClO bias correction}
+
+Per the discussion in section~\ref{sec:StandardClO}, biases in
+lower-stratospheric ClO can be corrected to first order by subtracting
+the values given in the following file:
+
+\begin{description}
+\item[MLS v5 ClO bias correction:]
+  \myattach{data/MLS-Aura_ClO-BiasCorrection_v05.txt}
+\end{description}
 
 
 %%% Local Variables:
