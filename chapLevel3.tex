@@ -4,9 +4,9 @@
 \section{Introduction}
 \label{sec:L3Intro}
 
-The other chapters of this guide describe MLS ``Level 2'' data --
+The other chapters of this guide describe MLS ``Level~2'' data --
 geophysical products along the instrument observing track. This
-chapter describes MLS ``Level 3'' data -- geophysical products binned
+chapter describes MLS ``Level~3'' data -- geophysical products binned
 onto regular grids. There is a wide array of techniques for
 transforming along-track observations into regular grids, including
 ``kriging'' approaches {[}e.g., \emph{Cressie}, 2015{]},
@@ -16,10 +16,10 @@ binning approaches. All methods have strengths and weaknesses, and the
 choice of which one to use is best made by the individual data user,
 based on the nature of the specific scientific question to be
 tackled. For this reason, until 2020, the MLS team had not produced
-any ``official'' Level 3 data products.
+any ``official'' Level~3 data products.
 
 However, in order to facilitate certain studies by MLS data users, the
-MLS team is now producing and distributing a select set of Level 3
+MLS team is now producing and distributing a select set of Level~3
 products derived using a simple ``binning'' approach (i.e., simply
 reporting the mean measured value within a given spatial/temporal
 ``box''). As part of the generation of these data products, all the
@@ -27,7 +27,7 @@ data screening rules described in chapters 1 and 3 are applied (along
 with the ClO bias correction, see section~\ref{sec:StandardClO}),
 providing a significant additional simplification to data users.
 Level~3 data are supplied for most MLS standard products.  BrO and
-HO\cs2 are excluded, as they have have a different Level 3 product
+HO\cs2 are excluded, as they have have a different Level~3 product
 available (see sections~\ref{sec:StandardBrO}
 and~\ref{sec:StandardHO2}).  We also exclude CH\cs3CN and CH\cs3OH in
 light of the narrow range over which these products are recommended
@@ -85,7 +85,7 @@ potential vorticity fields are used to construct equivalent latitude
 and vortex average information. The interpolated MERRA-2 fields used
 are taken from the MLS ``Derived Meteorological Products''
 \citep{ManneyEtal:2007, ManneyEtal:2011:Jets}. Note that, for
-quantities on potential temperature surfaces, the MLS Level 3 profiles
+quantities on potential temperature surfaces, the MLS Level~3 profiles
 on pressure levels are first interpolated to the fixed potential
 temperature surfaces (from $\log[p]$ to $\log[\theta]$) before being
 binned (as opposed to directly binning Level~3 data points in
@@ -117,9 +117,9 @@ follows][]{LawrenceEtal:2018}.
 \section{Level~3 data files}
 \label{sec:L3files}
 
-Two different temporal resolutions of Level 3 data are
+Two different temporal resolutions of Level~3 data are
 provided---daily (\texttt{L3DB}) and monthly (\texttt{L3MB}). The
-\texttt{L3DB} files are one file per day per Level 3 data product
+\texttt{L3DB} files are one file per day per Level~3 data product
 (with one time entry in each dataset in the file), and the
 \texttt{L3MB} files are one file per year per Level~3 data product
 (with twelve time entries in each dataset in the file). Both of these
@@ -177,7 +177,7 @@ same as listed in the filename):
   longitude/latitude grid on pressure surfaces (\texttt{L3DB} and
   \texttt{L3MB} only)\tabularnewline
   
-  <product> ThetaGrid: & 4$\textdegree\times$5\textdegree{} geodetic
+  <product> ThetaGrid: & 4\textdegree$\times$5\textdegree{} geodetic
   longitude/latitude grid on potential temperature surfaces
   (\texttt{L3DB} and \texttt{L3MB} only)\tabularnewline
   
