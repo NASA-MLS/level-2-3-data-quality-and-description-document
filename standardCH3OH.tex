@@ -4,8 +4,6 @@
   caution).
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
 
-\newcommand{\meoh}{CH\cs3OH\xspace}
-
 \subsection{Introduction}
 
 The standard \meoh product is taken from radiances measured by the
@@ -13,26 +11,26 @@ radiometer centered near 640\,GHz.  However, as the methanol spectral
 signature in this region is very similar to that of ClO, additional
 measurements from the \mbox{190-GHz} radiometer (which has channels
 sensitive to ClO but not \meoh) are used to decouple the \meoh and ClO
-information.  \meoh was a new product in \prevv, and its quality has
-never been fully validated.  Although the performance of the retrieval
-has been improved, the scientific utility of the \thisv MLS \meoh
-measurements remains to be determined.  A summary of the estimated
-precision, resolution (vertical and horizontal), and systematic
-uncertainty of the \thisv \meoh measurements as a function of altitude
-is given in Table~\ref{tab:CH3OHSummary}.
+information.  \meoh was a new product in \prevv; its quality has never
+been fully validated, and the scientific utility of the \thisv MLS
+\meoh measurements remains to be determined.  A summary of the
+estimated precision, resolution (vertical and horizontal), and
+systematic uncertainty of the \thisv \meoh measurements as a function
+of altitude is given in Table~\ref{tab:CH3OHSummary}.
 
 \subsection{Differences between \prevv and \thisv}
 
 \meoh abundances at 147\,hPa have been reduced considerably in \thisv,
 especially at low latitudes (Figure~\ref{fig:zmcontourCH3OH}).  This
-change likely represents a mild improvement in data quality, as
-preliminary comparisons with correlative measurements and model
-results had suggested that \prevv \meoh mixing ratios were generally
-too high.  Although the substantial high bias at low latitudes at
+change likely represents a mild improvement, as preliminary
+comparisons with correlative measurements and model results had
+suggested that \prevv \meoh mixing ratios were generally too high.
+However, although the substantial high bias at low latitudes at
 147\,hPa has been mitigated, many \meoh values at higher latitudes at
-that level that were negative in \prevv are now more strongly
+that level that had been negative in \prevv are now even more strongly
 negative, leading to a near-zero global-mean value there (as at other
-levels, not shown).
+levels, not shown).  Moreover, the overall systematic uncertainty in
+the data has increased in \thisv (see Section~\ref{sec:ch3ohacc}).
 
 \begin{figure}
   \begin{center}
@@ -141,21 +139,22 @@ considered potentially useful for scientific studies only at 147\,hPa
 and at low latitudes at 100\,hPa.
 
 \subsection{Accuracy}
+\label{sec:ch3ohacc}
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \prevv \meoh
-measurements were quantified through a comprehensive set of retrievals
-of synthetic radiances \citep{EOSMLSV4Quality}.  A corresponding
-investigation is planned for \thisv; at this writing, the systematic
-uncertainty of the \thisv data is assumed to be comparable to that of
-\prevv.  The overall systematic uncertainty, or accuracy, is
-calculated by combining (RSS) the contributions from both the expected
-biases and the additional scatter each source of uncertainty may
-introduce into the data. In aggregate, the factors considered in these
-simulations are estimated to give rise to total systematic uncertainty
-of approximately 100--250\% in the MLS \prevv \meoh data (see
-Table~\ref{tab:CH3OHSummary}).
+the retrieval formulation and implementation) on the MLS \thisv \meoh
+measurements have been quantified through a comprehensive set of
+retrievals of synthetic radiances.  The overall systematic
+uncertainty, or accuracy, is calculated by combining (RSS) the
+contributions from both the expected biases and the additional scatter
+each source of uncertainty may introduce into the data. In aggregate,
+the factors considered in these simulations are estimated to give rise
+to total systematic uncertainty of approximately 150--400\% in the MLS
+\thisv \meoh data (see Table~\ref{tab:CH3OHSummary}).  These values
+for the overall uncertainty in \thisv \meoh are slightly larger
+(poorer accuracy) than those estimated for the \prevv data
+\citep[see][]{EOSMLSV4Quality}.
 
 \subsection{Review of comparisons with other datasets}
 
@@ -202,17 +201,17 @@ thus may be in better agreement with \mbox{ACE-FTS} data.
     \footnote{Precision on individual profiles.} \\/ ppbv}} &
 \parbox[m]{22mm}{\bfseries\centering{Systematic\\ Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
- of the probable magnitude. At the time of writing, these estimates are based on analysis of \prevv data.}\\ / \%}} &
+ of the probable magnitude.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
 68--0.001  & ---                             & ---      & ---  & Unsuitable for scientific use\\
 %
-100            & 5         $\times$ 350          & $\pm$1   & $\pm$100  &
+100            & 5         $\times$ 350          & $\pm$1   & $\pm$150  &
 Consult with MLS science team \\
 %
-147            & 3.5       $\times$ 150          & $\pm$1   & $\pm$250  &
+147            & 3.5       $\times$ 150          & $\pm$1   & $\pm$400  &
 Consult with MLS science team \\
 %
 1000--215  & ---                             & ---      & ---  & Not retrieved\\

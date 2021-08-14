@@ -2,7 +2,6 @@
 \item[Useful range:] 46--1.0\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
 
-\newcommand{\mecn}{CH\cs3CN\xspace}
 
 \subsection{Introduction}
 
@@ -147,39 +146,37 @@ range 147 to 0.001\,hPa, on the basis of the drop off in precision and
 resolution, the lack of independent information contributed by the
 measurements, and the results of simulations using synthetic data as
 input radiances to test the closure of the retrieval system, the data
-are not deemed reliable at the extremes of the retrieval range.  Thus we
-recommend that \thisv \mecn be used for scientific studies only at
+are not deemed reliable at the extremes of the retrieval range.  Thus
+we recommend that \thisv \mecn be used for scientific studies only at
 the levels between 46 and 1\,hPa, except in the winter polar regions,
 where they may exhibit large biases below 10\,hPa.  However, although
-the 147, 100, and 68\,hPa retrievals are not generally recommended, they
-may be scientifically useful in some circumstances.  For example, the
-data display unphysical sharp latitudinal gradients at $\pm$30\degsym\
-at 100 and 68\,hPa, yet the large-scale longitudinal variations within
-the tropics are probably robust.  Similarly, confined regions of
-significant enhancement at 147\,hPa unaccompanied by comparably enhanced
-values at 100\,hPa may reflect real atmospheric features.  Indeed, many
-of the ``hotspots'' apparent in MLS \mecn measurements in the upper
-troposphere / lower stratosphere closely track similar enhancements in
-other pollution markers measured by MLS, such as CO and \mecl.  The
-\thisv \mecn data at the lowest retrieval levels (147--68\,hPa)
-should only be used in consultation with the MLS science team.
+the 147, 100, and 68\,hPa retrievals are not generally recommended,
+they may be scientifically useful in some circumstances.  For example,
+the data display unphysical sharp latitudinal gradients at
+$\pm$30\degsym\ at 100 and 68\,hPa, yet the large-scale longitudinal
+variations within the tropics are probably robust.  Similarly,
+confined regions of significant enhancement at 147\,hPa unaccompanied
+by comparably enhanced values at 100\,hPa may reflect real atmospheric
+features.  Indeed, many of the ``hotspots'' apparent in MLS \mecn
+measurements in the upper troposphere / lower stratosphere (UTLS)
+closely track similar enhancements in other pollution markers measured
+by MLS, such as CO and \mecl.  The \thisv \mecn data at the lowest
+retrieval levels (147--68\,hPa) should only be used in consultation
+with the MLS science team.
 
 \subsection{Accuracy}
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \prevv \mecn
-measurements were quantified through a comprehensive set of retrievals
-of synthetic radiances \citep{EOSMLSV4Quality}. A corresponding
-investigation is planned for \thisv; at this writing, the systematic
-uncertainty of the \thisv data is assumed to be comparable to that of
-\prevv.  The overall systematic uncertainty, or accuracy, is
-calculated by combining (RSS) the contributions from both the expected
-biases and the additional scatter each source of uncertainty may
-introduce into the data. In aggregate, the factors considered in these
-simulations are estimated to give rise to total systematic uncertainty
-of approximately 100--200\% in the MLS \prevv \mecn data (see
-Table~\ref{tab:CH3CNSummary}).
+the retrieval formulation and implementation) on the MLS \thisv \mecn
+measurements have been quantified through a comprehensive set of
+retrievals of synthetic radiances.  The overall systematic
+uncertainty, or accuracy, is calculated by combining (RSS) the
+contributions from both the expected biases and the additional scatter
+each source of uncertainty may introduce into the data. In aggregate,
+the factors considered in these simulations are estimated to give rise
+to total systematic uncertainty of approximately 60--200\% in the MLS
+\thisv \mecn data (see Table~\ref{tab:CH3CNSummary}).
 
 \subsection{Review of comparisons with other datasets}
 
@@ -267,20 +264,20 @@ observed by UARS MLS or predicted by the model.
     \footnote{Precision on individual profiles.} \\/ pptv}} &
 \parbox[m]{22mm}{\bfseries\centering{Systematic\\ Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
- of the probable magnitude. At the time of writing, these estimates are based on analysis of \prevv data.}\\ / \%}} &
+ of the probable magnitude.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
 0.68--0.001 & ---                          & ---      & --- & Unsuitable for scientific use\\
 %
-1.0           & 6 $\times$ 850                 & $\pm$100 & $\pm$200 & Consult with MLS science team\\
+1.0           & 6 $\times$ 850                 & $\pm$100 & $\pm$160 & Consult with MLS science team\\
 %
-10--1.5   & 7--8 $\times$ 400--700 & $\pm$50  & $\pm$100--200 & Consult with MLS science team\\
+10--1.5   & 7--8 $\times$ 400--700 & $\pm$50  & $\pm$100--160 & Consult with MLS science team\\
 %
-46--15    & 5--6.5 $\times$ 400--500 & $\pm$50  & $\pm$100--200 & Consult with MLS science team\\
+46--15    & 5--6.5 $\times$ 400--500 & $\pm$50  & $\pm$100--160 & Consult with MLS science team\\
 %
-100--68   & 5.5 $\times$ 550--700 & $\pm$50  & $\pm$100 & Consult with MLS science team\\
+100--68   & 5.5 $\times$ 550--700 & $\pm$50  & $\pm$60--100 & Consult with MLS science team\\
 %
 147           & 4.5 $\times$ 750                 & $\pm$100 & $\pm$200 & Consult with MLS science team\\
 %

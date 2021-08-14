@@ -2,8 +2,6 @@
 {\item[Useful range:] 147--4.6\,hPa
 \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
 
-\newcommand{\mecl}{CH\cs3Cl\xspace}
-
 \subsection{Introduction}
 
 The v2.2 MLS ClO measurements were characterized by a substantial
@@ -31,17 +29,32 @@ Table~\ref{tab:CH3ClSummary}.
 
 \subsection{Differences between \prevv and \thisv}
 
-\mecl abundances are consistently larger in \thisv than in \prevv at
-the lowest retrieval levels (68--147\,hPa).  Low-latitude differences
-are generally in the range of 10--20\% or smaller, whereas differences
-in the Southern Hemisphere polar region typically exceed 30\% during
-austral summer and those in the Northern Hemisphere polar region
-typically exceed 20\% during boreal summer
-(Figure~\ref{fig:zmcontourCH3Cl}).  In addition, mixing ratios
-frequently depart from those in \prevv by more than 30\% at the
-highest northern latitudes at 32--68\,hPa during boreal winter.  In
-general, the zonal-mean \mecl distribution (at all latitudes) is
-smoother and more realistic in \thisv.
+As with other species retrieved from the MLS \mbox{640-GHz} receiver,
+lower stratospheric signals for \mecl are affected by water
+vapor. Therefore, for the retrieval phase CorePlusR4AB14, which
+includes \mecl (see Table~\ref{tab:Phases}), water vapor is
+constrained to the values from the MLS H\cs2O standard product.  As
+discussed in Section~\ref{sec:H2OChanges}, the dry bias below the
+tropopause present in earlier MLS data versions has been mitigated in
+\thisv.  Some of the differences between \thisv and \prevv \mecl can
+thus be attributed to the improvement in H\cs2O between the two
+versions.  \mecl abundances are uniformly larger in \thisv than in
+\prevv at the lowest retrieval levels (68--147\,hPa).  Low-latitude
+differences are generally in the range of 10--20\% or less, whereas
+differences in the Southern Hemisphere polar region typically exceed
+30\% during austral summer and those in the Northern Hemisphere polar
+region typically exceed 20\% during boreal summer
+(Figure~\ref{fig:zmcontourCH3Cl}).  In addition, \thisv mixing ratios
+are typically larger than those in \prevv in the polar lower
+stratosphere in both hemispheres during their respective winter
+seasons, with differences of more than 30\% in the Arctic (less in the
+Antarctic).  In contrast, \thisv abundances are smaller than those in
+\prevv almost everywhere at higher altitudes ($\mytexttilde$10\,hPa
+and lower pressures).  In general, the zonal-mean \mecl distribution
+(at all latitudes) is smoother and more realistic in \thisv
+(Figure~\ref{fig:zmcontourCH3Cl}), although the overall systematic
+uncertainty at 147\,hPa has increased (see
+Section~\ref{sec:ch3clacc}).
 
 \begin{figure}
   \begin{center}
@@ -184,23 +197,26 @@ range, as well as the relatively coarse vertical resolution of the
 retrieved profiles, should be borne in mind.
 
 \subsection{Accuracy}
+\label{sec:ch3clacc}
 
 The effects of various sources of systematic uncertainty (e.g.,
 instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \prevv \mecl
-measurements were quantified through a comprehensive set of retrievals
-of synthetic radiances \citep{EOSMLSV4Quality}; see
-\citet{SanteeEtal:2013} for details of a similar analysis conducted on
-MLS v3.3\emph{x}/v3.4\emph{x} \mecl data.  A corresponding
-investigation is planned for \thisv; at this writing, the systematic
-uncertainty of the \thisv data is assumed to be comparable to that of
-\prevv. The overall systematic uncertainty, or accuracy, is calculated
-by combining (RSS) the contributions from both the expected biases and
-the additional scatter each source of uncertainty may introduce into
-the data.  In aggregate, the factors considered in these simulations
-are estimated to give rise to total systematic uncertainty of
-approximately 30--45\% in the MLS \prevv \mecl data in the upper
-troposphere / lower stratosphere (see Table~\ref{tab:CH3ClSummary}).
+the retrieval formulation and implementation) on the MLS \thisv \mecl
+measurements have been quantified through a comprehensive set of
+retrievals of synthetic radiances; see \citet{SanteeEtal:2013} for
+details of a similar analysis conducted on MLS
+v3.3\emph{x}/v3.4\emph{x} \mecl data.  The overall systematic
+uncertainty, or accuracy, is calculated by combining (RSS) the
+contributions from both the expected biases and the additional scatter
+each source of uncertainty may introduce into the data.  In aggregate,
+the factors considered in these simulations are estimated to give rise
+to total systematic uncertainty of approximately 25--65\% in the MLS
+\thisv \mecl data in the upper troposphere / lower stratosphere (see
+Table~\ref{tab:CH3ClSummary}).  These values for the overall
+uncertainty in \thisv \mecl are slightly smaller (better accuracy)
+than those estimated for the \prevv data
+\citep[see][]{EOSMLSV4Quality} at the top of the recommended range but
+slightly larger (poorer accuracy) at 147\,hPa.
 
 \subsection{Review of comparisons with other datasets}
 
@@ -278,18 +294,18 @@ previous versions.
     \footnote{Precision on individual profiles.} \\/ pptv}} &
 \parbox[m]{22mm}{\bfseries\centering{Systematic\\ Uncertainty%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
- of the probable magnitude.  At the time of writing, these estimates are based on analysis of \prevv data.}\\ / \%}} &
+ of the probable magnitude.}\\ / \%}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
 3.2--0.001 & ---                              & ---      & ---    & Unsuitable for scientific use\\
 %
-15--4.6    & 8--10 $\times$ 600--850     & $\pm$100     & $\pm$30--75 & \\
+15--4.6    & 8--10 $\times$ 600--850     & $\pm$100     & $\pm$25--65 & \\
 %
-100--22    & 4--6.5  $\times$ 450--500 & $\pm$100     & $\pm$30--50 &  \\
+100--22    & 4--6.5  $\times$ 450--500 & $\pm$100     & $\pm$35--50 &  \\
 %
-147            & 4         $\times$ 600              & $\pm$100     & $\pm$45     & \\
+147            & 4         $\times$ 600              & $\pm$100     & $\pm$65     & \\
 %
 1000--215  & ---                                 & ---          & ---         & Not retrieved\\
 %
