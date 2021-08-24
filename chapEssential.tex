@@ -171,7 +171,7 @@ to minor.  Some of the most important are detailed below.
 \begin{description}
 \item[Partial amelioration of drifts in 190-GHz products (H\cs2O,
   N\cs2O, HCN):] As discussed in \citet{HurstEtal:2016} and
-  \citet{LiveseyEtal:2020:Drifts}, there are indications that the MLS
+  \citet{LiveseyEtal:2021:Drifts}, there are indications that the MLS
   H\cs2O product has been slowly drifting since \mytexttilde2010, at
   a rate of between 0.2--1\%/year, depending on what record it is
   compared to (mainly frostpoint sonde or ACE-FTS) and the altitude
@@ -208,13 +208,12 @@ including those not listed above, have resulted from updates to
 instrument calibration knowledge, and in indirect response to the
 larger changes detailed above.  Note that the threshold values of
 ``\texttt{Quality}'' and ``\texttt{Convergence}'' (see below) to be
-used in data screening have been updated for some products.  All the
-standard product files (apart from IWC, see below) also include the
-\emph{a priori} information used in the retrieval (as an additional
-``swath'', see below).
+used in data screening have been updated for some products.  Also, the
+climatological fields used as \emph{a priori} information in the
+retrievals of O\cs3, H\cs2O, HCl, HNO\cs3, and N\cs2O have been
+updated.
 
-\section{Aura MLS file formats, contents, and first order
-  quality information}
+\section{Aura MLS file formats, contents, and quality information}
 \label{sec:FilesAndFormats}
 \label{sec:NegativePrecision}
 
@@ -323,17 +322,20 @@ product to product, and is given later in this document.
 
 The second quality metric is called \texttt{Status}.  This is a 32 bit
 integer that acts as a bit field containing several ``flags''.
-Figure~\ref{fig:StatusBits} describes the interpretation of these flags
-in more detail.  The first two bits (bits 0 and 1) are ``flagging''
-bits.  If the first bit is set it indicates that the profile
-\emph{should not be used in any scientific study}.  Accordingly, any
-profile for which \texttt{Status} is an odd number should not be used.
-The second bit indicates that data are considered questionable for some
-reason.  Higher bits give more information on the reasons behind the
-setting of the first two bits.  So, for example, a value of
-\texttt{Status} of \texttt{18} (2+16) indicates that the data are
-questionable (\texttt{2}\,$\equiv$\,bit 2) because of the possible
-presence of high altitude clouds (\texttt{16}\,$\equiv$\,bit 4).
+Figure~\ref{fig:StatusBits} describes the interpretation of these
+flags in more detail.  The first three bits (bits 0, 1, and 2) are
+``flagging'' bits.  If the first bit (``bad profile'') is set it
+indicates that the profile \emph{should not be used in any scientific
+  study}.  Accordingly, any profile for which \texttt{Status} is an
+odd number should not be used.  The second bit (``warning'') indicates
+that data are considered questionable for some reason, while the third
+(``comment'') indicates the data are noteworthy in some manner that
+does not rise to the level of a ``warning''.  Higher bits give more
+information on the reasons behind the setting of the first three bits.
+So, for example, a value of \texttt{Status} of \texttt{18} (2+16)
+indicates that the data are questionable (\texttt{2}\,$\equiv$\,bit 2)
+because of the possible presence of high altitude clouds
+(\texttt{16}\,$\equiv$\,bit 4).
 
 The most commonly set information bits are the ``high altitude cloud''
 and ``low altitude cloud'' bits.  These indicate that the data have
@@ -400,9 +402,9 @@ by $\b{x}$, according to
   \hat{\b{x}} = \b{x}_a + \b{A}\left[\b{x}-\b{x}_a\right]
 \label{eqn:AVKApplication}
 \end{equation}
-As of MLS version \thisv, the \emph{a priori} profile for each MLS
-observation is available within each of the standard product files, in
-swaths named according to the product, with the suffix
+As of MLS version v04.2\emph{x}, the \emph{a priori} profile for each
+MLS observation is available within each of the standard product
+files, in swaths named according to the product, with the suffix
 ``\texttt{-APriori}'' (note the hyphen).  Examples are
 ``\texttt{Temperature-APriori}'' and ``\texttt{O3-APriori}''.  This
 information can also be obtained from the MLS \texttt{L2GP-DGG} files.
@@ -433,8 +435,9 @@ comparison of $\hat{\b{x}}$ profiles obtained using the two kernels
 estimate of the magnitude of differences introduced by kernel
 variations.
 
-The two averaging kernels for each product are distributed as text
-files, named according to
+\mycomment{New version of the following to come from Michael:} The two
+averaging kernels for each product are distributed as text files,
+named according to
 \begin{quote}
 \verb+MLS-Aura_L2AK-<product>-<case>_v05-00_0000d000.txt+
 \end{quote}
@@ -443,25 +446,26 @@ where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and
 Section~\ref{sec:StandardOH}).  These files are available from the MLS
 web site at \url{https://mls.jpl.nasa.gov/data/ak/}.
 
-These files contain comment lines (prefixed with a semicolon) describing
-their format.  The first non-comment line gives the name of the product
-and the number of levels in the vertical profile.  A list of the
-pressure levels in the profile (matching those in the L2GP files) is
-then given, followed by all the values of the averaging kernel matrix,
-with the row index (the level in the retrieved profile) varying most
-rapidly.
+These files contain comment lines (prefixed with a semicolon)
+describing their format.  The first non-comment line gives the name of
+the product and the number of levels in the vertical profile.  A list
+of the pressure levels in the profile (matching those in the L2GP
+files) is then given, followed by all the values of the averaging
+kernel matrix, with the row index (the level in the retrieved profile)
+varying most rapidly. \mycomment{End of place where new bit expected
+  from Michael}
 
 Typically, of course, the MLS profile pressures are not those of the
-observation or model dataset to which the comparison is being made.  In
-many cases, particularly where the resolution of the other dataset is
-comparable to that of the MLS profiles, a simple linear interpolation is
+observation or model dataset to which the comparison is being made.
+In many cases, particularly where the resolution of the other dataset
+is comparable to that of the MLS profiles, a simple interpolation is
 the most practical manner in which to transform the other dataset into
-the $\b{x}$ profile space.  However, we note that more formal approaches
-have been described \citep{RodgersAndConnor:2003} for the case where the
-comparison dataset is also remotely sounded and has an averaging kernel.
-In cases where the comparison dataset has high vertical resolution
-(e.g., sonde or Lidar observations), an additional consideration is
-described in the following section.
+the $\b{x}$ profile space.  However, we note that more formal
+approaches have been described \citep{RodgersAndConnor:2003} for the
+case where the comparison dataset is also remotely sounded and has an
+averaging kernel.  In cases where the comparison dataset has high
+vertical resolution (e.g., sonde or Lidar observations), an additional
+consideration is described in the following section.
 
 \section{Considerations for comparisons with high vertical resolution
   datasets}

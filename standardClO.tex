@@ -41,10 +41,11 @@ in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution
 of the \thisv ClO data as determined from the full width at half
 maximum of the rows of the averaging kernel matrix shown in
 Figure~\ref{fig:AvkClO} is \mytexttilde3--4.5\,km throughout the
-retrieval range (with a mean of \mytexttilde3.5\,km).  As in \prevv,
-in \thisv the averaging kernels are sharply peaked at all levels,
-including 147\,hPa.  Thus, although some degree of overlap is present,
-the 147\,hPa surface provides independent information in \thisv.
+retrieval range (with a mean of \mytexttilde3.5\,km).  The averaging
+kernels are sharply peaked at all levels, even at 147\,hPa, where the
+kernel indicates that the retrieval has sensitivity to ClO abundances
+higher in the atmosphere (particularly 100\,hPa).  Nevertheless, the
+147\,hPa surface provides independent information.
 Figure~\ref{fig:AvkClO} also shows horizontal averaging kernels, from
 which the along-track horizontal resolution is determined to be
 \mytexttilde300--500\,km over most of the vertical range.  The
@@ -260,7 +261,7 @@ in these plots, Figure~\ref{fig:cloBiasByMonth} reveals only slight
 month-to-month variability in most places.
 
 \begin{figure}
-\centering\includegraphics[width=\linewidth,clip=true,trim=0cm 1.5cm 0cm 3.0cm]{figures/plotBiasV5ByMonth-Clim_2020_ClO640}
+\centering\includegraphics[width=0.96\linewidth,clip=false,trim=0cm 2mm 0cm 2mm]{figures/plotBiasV5ByMonth-Clim_2020_ClO640}
 %\centering\includegraphics[width=\linewidth]{figures/plotBiasV5ByMonth-Clim_2020_ClO640}
 \caption{Estimates of the bias in MLS \thisv ClO data in
   5{\degsym}-wide geographic latitude bands on the 147, 100, 68, and
@@ -295,7 +296,7 @@ the individual measurements at each affected retrieval level.
 Attempts to estimate the bias through approaches other than
 examination of nighttime ClO measurements (e.g., via correlations with
 potentially interfering species, which themselves may vary strongly
-with season) have so far met with limited success.  Thus the bias is
+with season) have so far met with little success.  Thus the bias is
 estimated from the analysis depicted in
 Figure~\ref{fig:cloBiasByPress}.  Although monthly varying bias
 estimates might be desirable, as noted above seasonal variations are
@@ -309,13 +310,13 @@ application of the ClO bias correction for MLS data users, we report
 \mbox{16-yr} climatological bias estimates that vary latitudinally and
 altitudinally but not temporally; these bias corrections should be
 adequate for most studies.  The bias values, reported on a 5{\degsym}
-grid, must be interpolated to the MLS Level~2 measurement locations on
-each day being considered and subtracted from the ClO mixing ratios
-(daytime or nighttime) at those locations.  The bias correction must
-be performed \emph{before} interpolation to a different vertical
-coordinate (e.g., potential temperature). An ASCII file containing the
-estimated ClO bias values has been embedded in the PDF version of this
-document; instructions for extracting this file are given in
+grid, must be interpolated to the MLS Level~2 measurement locations
+being considered and subtracted from the ClO mixing ratios (daytime or
+nighttime) at those locations.  The bias correction must be performed
+\emph{before} interpolation to a different vertical coordinate (e.g.,
+potential temperature). An ASCII file containing the estimated ClO
+bias values has been embedded in the PDF version of this document;
+instructions for extracting this file are given in
 Appendix~\ref{appsec:ClO}.  The file is also available at
 \url{https://mls.jpl.nasa.gov/data/MLS-Aura_ClO-BiasCorrection_v05.txt}.
 
@@ -387,14 +388,15 @@ expected to yield results similar to those for previous versions.
 
 \subsection{Artifacts}
 \begin{itemize}
-\item Non-negligible biases are present in both daytime and nighttime
-  \thisv ClO mixing ratios at and below (i.e., pressures larger than)
-  68\,hPa.  The bias should be corrected by subtracting from the
-  individual measurements at each affected retrieval level the
-  altitude- and latitude-dependent bias estimates reported in an ASCII
-  file that has been embedded in the PDF version of this document;
-  instructions for extracting this file are given in
-  Appendix~\ref{appsec:ClO}.  This file is also available at
+\item As discussed in Section~\ref{sec:cloacc}, non-negligible biases
+  are present in both daytime and nighttime \thisv ClO mixing ratios
+  at and below (i.e., pressures larger than) 68\,hPa.  The bias should
+  be corrected by subtracting from the individual measurements at each
+  affected retrieval level the altitude- and latitude-dependent bias
+  estimates reported in an ASCII file that has been embedded in the
+  PDF version of this document; instructions for extracting this file
+  are given in Appendix~\ref{appsec:ClO}.  This file is also available
+  at
   \url{https://mls.jpl.nasa.gov/data/MLS-Aura_ClO-BiasCorrection_v05.txt}.
 \item Care must be taken in interpreting the ClO measurements
   immediately following severe pyrocumulonimbus (pyroCbs) events,

@@ -39,7 +39,7 @@ on the ``Overview'' tab in the navigation bar.
   \draw [guidearrow] (OverviewHook) -| ($ (OverviewTarget) - (2cm,0) $) -- (OverviewTarget);
 \end{tikzpicture}
 
-\vspace{\navguidegap} First time users of MLS data are advised to read
+\vspace{\navguidegap} First-time users of MLS data are advised to read
 \hyperref[chap:Essential]{Chapter~\ref*{chap:Essential}} first.  The
 discussion includes \hyperref[tab:ProductSummary]{a table summarizing
   key aspects of each MLS product.}  This table can be accessed from
@@ -68,7 +68,7 @@ skip immediately to any of the product-specific sections.
   \node [hookoffset] (SHook) {};
   \draw [guidearrow] (SHook) -| ($ (STarget-|OverviewTarget) - (1.5cm,0) $) coordinate (Bend) -- (STarget);
 \end{tikzpicture}
-\item A table summarizing the precision, accuracy, resolution for each product.
+\item A table summarizing the precision, accuracy, resolution, etc., for each product.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (THook) {};
   \draw [guidearrow] (THook) -- (THook-|Bend) |- (TTarget);
