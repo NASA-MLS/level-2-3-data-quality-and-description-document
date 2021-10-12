@@ -373,14 +373,15 @@ Accordingly, no negative water vapor abundances are produced by \thisv.
 \section{Averaging kernels for MLS \thisv profiles}
 \label{sec:AveragingKernels}
 As is common for remote sounding instruments, consideration of the
-``Averaging Kernel'' \citep[e.g.,][]{Rodgers:2000} can be important in some
-scientific studies.  However, the relatively high vertical resolution of
-the MLS observations (compared, for example, to nadir sounding
-composition instruments) allows for many scientifically useful studies
-to be undertaken without reference to the averaging kernels.  This
-section reviews the role averaging kernels play in comparing MLS
-profiles to other observations and/or model profiles and describes how
-to obtain representative kernels for the \thisv data.
+``Averaging Kernel'' \citep[e.g.,][]{Rodgers:2000} can be useful in
+some scientific studies.  However, the relatively high vertical
+resolution of the MLS observations (compared, for example, to those
+from nadir sounding composition instruments) allows for many
+scientifically useful studies to be undertaken without reference to
+the averaging kernels.  This section reviews the role averaging
+kernels play in comparing MLS measurements to other observations
+and/or model fields and describes how to obtain representative kernels
+for the \thisv data.
 
 The averaging kernel matrix $\b{A}$ relates the retrieved MLS profiles
 (given by the vector $\hat{\b{x}}$) to the ``true'' atmospheric state (the
@@ -395,56 +396,127 @@ lines.
 
 Given an independent observation or model estimate of an atmospheric
 profile $\b{x}$, the averaging kernels, in combination with the MLS
-\emph{a priori} profile $\b{x}_a$, can be used to compute the profiles
-that MLS would observe, were the true profile to be in the state given
-by $\b{x}$, according to
+\emph{a priori} profile $\b{x}_a$, can be used to linearly approximate
+the profiles that MLS would observe, were the true profile to be in
+the state given by $\b{x}$, according to
 \begin{equation}
   \hat{\b{x}} = \b{x}_a + \b{A}\left[\b{x}-\b{x}_a\right]
 \label{eqn:AVKApplication}
 \end{equation}
-As of MLS version v04.2\emph{x}, the \emph{a priori} profile for each
-MLS observation is available within each of the standard product
-files, in swaths named according to the product, with the suffix
+It is assumed here that the true profile uses the same vertical grid
+as the MLS data product in question (Section~\ref{sec:BasisIssues}
+discusses this issue further).  Note that this linearization is about
+the \emph{a priori} state, so the blurring by the averaging kernels is
+only of the difference between truth and \emph{a priori}.  As of MLS
+version v04.2\emph{x}, the \emph{a priori} profile for each MLS
+observation is available within each of the standard product files, in
+swaths named according to the product, with the suffix
 ``\texttt{-APriori}'' (note the hyphen).  Examples are
 ``\texttt{Temperature-APriori}'' and ``\texttt{O3-APriori}''.  This
 information can also be obtained from the MLS \texttt{L2GP-DGG} files.
+In the case of water vapor, where a logarithmic interpolation is used
+for the profile, the calculations in Equation~\ref{eqn:AVKApplication}
+should be performed in log space, i.e., with $\b{x}$ and $\b{x}_a$
+containing logarithm of the given H\cs2O mixing ratio (leaving the
+$\b{A}$ matrix as supplied).
 
-Note that in the case of water vapor where a
-logarithmic interpolation is used for the profile, the calculations in
-Equation~\ref{eqn:AVKApplication} should be performed in log space,
-i.e., with $\b{x}$ and $\b{x}_a$ containing logarithm of the given
-H\cs2O mixing ratio (leaving the $\b{A}$ matrix as supplied).
+The MLS retrieval algorithms are ``tomographic'' in nature in that
+they use information from multiple consecutive limb scans to
+simultaneously estimate the 2-dimensional (along-track and vertical)
+state of the atmosphere over multiple Level~2 profiles (see
+Section~\ref{sec:TheoreticalBasis}).  Formally therefore, the MLS
+averaging kernels describe the smoothing in both the horizontal and
+vertical directions.  Archived two dimensional (\mbox{2-D}) averaging
+kernels capture this dependence, containing the partial derivatives of
+each level of a given profile to the truth at all levels of a block of
+eleven profiles centered on the location of the retrieved profile.
+These full kernels can be ``collapsed'' in the horizontal, to provide
+a single vertical averaging kernel for each product (similar to those
+provided for many nadir sounding instruments), corresponding to the
+single-profile view of the retrieval described in the preceding
+paragraph.  Similarly, contributions from adjacent profiles to the
+retrieved values at each level may be collapsed in the vertical, to
+provide horizontal averaging kernels that capture the horizontal
+resolution of the product.  Vertical and horizontal kernels are shown
+for each product in Chapter~\ref{chap:Results}.
 
-The full MLS averaging kernels are complicated entities, reflecting
-the two dimensional ``tomographic'' nature of the MLS retrievals (see
-Section~\ref{sec:TheoreticalBasis}).  We anticipate that few, if any,
-users will need to apply these full two dimensional kernels, whose
-interpretation is complex (please contact the MLS team for further
-information on these).  The full kernels can be ``collapsed'' in the
-horizontal, to provide a single vertical averaging kernel for each
-product (as is done for many nadir sounding instruments).  Such
-kernels are shown for each product (along with ``horizontal''
-averaging kernels) in Chapter~\ref{chap:Results}.  The MLS averaging
-kernels typically change little with latitude / season / atmospheric
-state.  Accordingly, two representative kernels are shown for each
-product, one for the tropics and one for polar winter conditions.
-These representative kernels are available to users as described
-below.  If variability in the averaging kernels is a concern,
-comparison of $\hat{\b{x}}$ profiles obtained using the two kernels
-(likely to represent two extreme cases) can provide a quantitative
-estimate of the magnitude of differences introduced by kernel
-variations.
+The MLS averaging kernels typically change little with latitude,
+season, or atmospheric state.  Accordingly, two representative kernels
+are shown for each product, one for the tropics and one for polar
+winter conditions.  These representative kernels are available to
+users as described below.  If variability in the averaging kernels is
+a concern, comparison of $\hat{\b{x}}$ profiles obtained using each of
+the two kernels (likely to represent two extreme cases) can provide a
+quantitative estimate of the magnitude of differences introduced by
+kernel variations.
 
-\mycomment{New version of the following to come from Michael:} The two
-averaging kernels for each product are distributed as text files,
-named according to
+Representative vertical, horizontal and \mbox{2-D} averaging kernels
+have been archived for each MLS standard product on the MLS website,
+and are also attached to this document (see
+Appendix~\ref{app:Embedded}).  Two sets of kernels are provided, each
+comprising five files corresponding to five broad latitude bands.  One
+set contains \mbox{1-D} (horizontal and vertical) kernels, the other
+the full \mbox{2-D} kernels, making ten files in all.  Each file
+contains kernels (either \mbox{1-D} or \mbox{2-D}) for each of the MLS
+standard products for the given latitude band.  Again, as the
+averaging kernels vary little with latitude, a file for a single
+latitude will generally be globally representative.  These kernels
+were calculated from simulated MLS data for a single day (based on
+output from the SLIMCAT model for February 20, 1996).  The resolution
+of most MLS products varies little seasonally, as can be inferred from
+the minimal hemispheric variability within the single day used to
+compute the kernels.  These files can be read as either NetCDF or
+HDF-5 files, for which interfaces exist in many high-level analysis
+environments such as IDL, Python and Matlab.  These files contain
+multi-dimensional arrays, with dimensions named
+\texttt{RetrievalLevel}, \texttt{TruthLevel} and \texttt{TruthPhi}.
+The latter is the along-track horizontal coordinate used in the MLS
+retrievals, within which profiles are spaced 1.5\degsym{} great circle
+distance apart.
+
+In most cases, consideration of the \mbox{1-D} vertical averaging
+kernels is likely sufficient to quantify the impact of the finite MLS
+resolution on a scientific study.  In a column-major language (e.g.,
+Matlab, IDL, Fortran), the \mbox{1-D} vertical $\b{A}$ matrix will be
+dimensioned [\texttt{RetrievalLevel}, \texttt{TruthLevel}], and the
+truth profiles should be multiplied by averaging kernels from the left
+(as in Equation~\ref{eqn:AVKApplication}, above).  In a row-major
+language (e.g., C, Numpy), the order of dimensions in $\b{A}$ is
+reversed, and the averaging kernels should be multiplied by truth from
+the right.  Horizontal averaging kernels (\texttt{avkh}), have size
+$N\cs{lev} \times 11$ in a column major and $11 \times N\cs{lev}$ in a
+row major environment, where $N\cs{lev}$ is 55 for a high-resolution
+MLS product (Temperature, GPH, water vapor, and ozone), and 37 for
+most other products.  The side on which \texttt{avkh} has the
+11-element dimension is the side against which truth profiles should
+be multiplied for all horizontal averaging kernels.
+
+The \mbox{2-D} averaging kernels give weights for every level of every
+nearby (within $\pm5$) profile of truth, so in a row-major language
+are $11 \times N\cs{lev} \times N\cs{lev}$ and in column-major
+language will be $N\cs{lev} \times N\cs{lev} \times 11$.  To perform
+the convolution, blocks of eleven adjacent truth and \emph{a priori}
+profiles centered on the retrieved profile location are unwrapped into
+length $N\cs{lev} \times 11$ vectors, $\b{X}$ and $\b{X}_a$. The
+\mbox{2-D} averaging kernel, $\b{A}\cs{2D}$, is reshaped into a two
+dimensional matrix $N\cs{lev} \times \left(N\cs{lev} \times 11\right)$
+and the retrieved state is estimated as
+\begin{equation}
+  \hat{\b{x}} = \b{x}_a + \b{A}\cs{2D}\left[\b{X}-\b{X}_a\right].
+\label{eqn:AVKApplication}
+\end{equation}
+ 
+Vertical averaging kernels for each product for 70\degsym{}N and the
+equator are also available as text files, in the format used for
+previous MLS releases.  These files are named according to
 \begin{quote}
 \verb+MLS-Aura_L2AK-<product>-<case>_v05-00_0000d000.txt+
 \end{quote}
 where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and
-70\degsym N, respectively (or \verb+Day+ and \verb+Night+ for OH, see
-Section~\ref{sec:StandardOH}).  These files are available from the MLS
-web site at \url{https://mls.jpl.nasa.gov/data/ak/}.
+70\degsym{}N, respectively (or \verb+Day+ and \verb+Night+ for OH, see
+Section~\ref{sec:StandardOH}).  These files, for all products, are
+available as a single tar archive from the MLS web site at
+\url{https://mls.jpl.nasa.gov/eos-aura-mls/data-products/averaging-kernels/}.
 
 These files contain comment lines (prefixed with a semicolon)
 describing their format.  The first non-comment line gives the name of
@@ -452,20 +524,20 @@ the product and the number of levels in the vertical profile.  A list
 of the pressure levels in the profile (matching those in the L2GP
 files) is then given, followed by all the values of the averaging
 kernel matrix, with the row index (the level in the retrieved profile)
-varying most rapidly. \mycomment{End of place where new bit expected
-  from Michael}
+varying most rapidly.
 
-Typically, of course, the MLS profile pressures are not those of the
-observation or model dataset to which the comparison is being made.
-In many cases, particularly where the resolution of the other dataset
-is comparable to that of the MLS profiles, a simple interpolation is
-the most practical manner in which to transform the other dataset into
-the $\b{x}$ profile space.  However, we note that more formal
-approaches have been described \citep{RodgersAndConnor:2003} for the
-case where the comparison dataset is also remotely sounded and has an
-averaging kernel.  In cases where the comparison dataset has high
-vertical resolution (e.g., sonde or Lidar observations), an additional
-consideration is described in the following section.
+Typically, of course, as discussed above, the MLS profile pressures
+are not those of the observation or model dataset to which the
+comparison is being made.  In many cases, particularly where the
+resolution of the other dataset is comparable to that of the MLS
+profiles, a simple interpolation is the most practical manner in which
+to transform the other dataset into the $\b{x}$ profile space.
+However, we note that more formal approaches have been described
+\citep{RodgersAndConnor:2003} for the case where the comparison
+dataset is also remotely sounded and has an averaging kernel.  In
+cases where the comparison dataset has high vertical resolution (e.g.,
+sonde or Lidar observations), an additional consideration is described
+in the following section.
 
 \section{Considerations for comparisons with high vertical resolution
   datasets}
