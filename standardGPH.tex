@@ -36,7 +36,7 @@ through assumed hydrostatic balance and the gas law.
 \end{equation}
 where $M$ is the molar mass of air and $R$ is the gas constant.  If we
 assume that we know the molar-mass profile of the atmosphere (which
-begins to vary significantly from its surface value in the mesosphere
+begins to vary significantly from its dry-air surface value in the mesosphere
 due to height-dependent changes in the mixing ratios of O\cs2 and
 N\cs2), then the retrieval of a temperature profile on fixed pressure
 surfaces also determines GPH differences between those surfaces, and
@@ -190,22 +190,19 @@ calculation, but resulting errors are believed to be small.
 
 \subsection{Accuracy}
 
-The accuracy of the v2.2 GPH was modeled based upon consideration of a
-variety of sources of systematic error, as discussed in
-\citet{SchwartzEtal:2008:Validation}. \thisv accuracy is believed to
-be substantially similar and the results of the v2.2 calculations are
-given in column four of Table\,\ref{tab:GPHSummary}. However, the
-elimination of substantial biases through the use of GEOS-5 as an
-absolute reference height makes this less true than it was in \prevv,
-and updated validation is warranted.  Of the error sources considered,
-modeled amplifier non-linearity had the largest impact, just as is the
-case with the calculation for temperature.
+The \thisv GPH accuracy has been modeled through consideration of a
+variety of sources of systematic error, much as v2.2 GPH accuracy was
+modeled, as discussed in \citet{SchwartzEtal:2008:Validation}.
+Results of these calculations are given in column four of
+Table\,\ref{tab:GPHSummary}. Substantial biases believed to originate
+in satellite pointing data and/or time-varying biases in the
+instrument pointing system have been removed through the use of GEOS-5
+100\,hPa GPH as an absolute GPH reference rather than information from
+the satellite attitude and instrument scan model.  Of the remaining
+error sources considered, modeled amplifier non-linearity has the
+largest impact, just as is the case with the calculation for
+temperature.
 
-The second terms in column four are model-based estimates of the bias
-magnitude from other sources including uncertainty in
-pointing/field-of-view, uncertainty in spectroscopic parameters, and
-retrieval numerics.  The combined bias magnitudes due to these sources
-is 100--150\,m.
 
 ``Observed bias uncertainty'' in Table~\ref{tab:GPHSummary} is an
 estimate of bias based upon comparisons with analyses and with other
@@ -254,7 +251,7 @@ GPH should be screened in much the same way as is temperature:
   GPH measurements in the upper troposphere (261--100\,hPa).
   Tropospheric GPH may be screened using the ice water content (IWC)
   product, rejecting profiles between 261--100\,hPa for which the
-  215\,hPa value of IWC is greater than 0.005\,mg/m$^3$.
+  215\,hPa value of IWC is greater than 0.005\,g/m$^3$.
 
 \item[Quality:] Only use profiles with \texttt{Quality} greater than
   0.2 for the 83\,hPa level and smaller pressures, and profiles with
@@ -272,24 +269,25 @@ GPH should be screened in much the same way as is temperature:
 \label{tab:GPHSummary}
 \vspace{\captionnudge}
 \begin{minipage}{\linewidth}
-\centering\begin{tabular}{ccccl}
+\centering\begin{tabular}{cccccl}
 \toprule
 \textbf{Region} & 
-\parbox[m]{24mm}{\centering\textbf{Resolution\\ \mbox{Vert. $\times$ Horiz.} / km}} &
+\parbox[m]{20mm}{\centering\textbf{Resolution\\ \mbox{Vert. $\times$ Horiz.} / km}} &
 \parbox[m]{18mm}{\centering\textbf{Precision\footnote{Precision on individual profiles} \\/ meters}} &
-\parbox[m]{20mm}{\centering\textbf{Observed\\accuracy\footnote{Analysis based upon MLS v2.2 should be updated.}\\ / m}} &
+\parbox[m]{16mm}{\centering\textbf{Modeled\\accuracy\footnote{Not including pointing contribution.}\\ / m}} &
+\parbox[m]{16mm}{\centering\textbf{Observed\\accuracy\footnote{Validation is based upon SABER and GEOS-5 comparisons with MLS v2.2 and should be updated.}\\ / m}} &
 \textbf{Comments} \\
 \midrule
-$<$0.00046\,hPa & --- & --- & --- & Unsuitable for scientific use \\
-0.00046\,hPa        & 13 $\times$ 316  & $\pm$190  & --- & more validation needed \\
-0.001\,hPa          & 12 $\times$ 280  & $\pm$170  & 450 & \\
-0.01\,hPa           & 11 $\times$ 250  & $\pm$110  & 100 & \\
-0.1\,hPa            & 6  $\times$ 170  & $\pm$45   &  100  & \\
-1\,hPa              & 7  $\times$ 165   & $\pm$20  & 100 & \\
-10\,hPa             & 4.1 $\times$ 165 & $\pm$11   & 100 & \\
-100\,hPa            & 4.6 $\times$ 165 & $\pm$0    &  20 & \\
-261\,hPa            & 3.8 $\times$ 167 & $\pm$8    &  50 & \\
-1000--316\,hPa & ---      & ---             & ---     & Unsuitable for scientific use\\
+$<$0.00046\,hPa & --- & --- & --- & --- & Unsuitable for scientific use \\
+0.00046\,hPa        & 13 $\times$ 316  & $\pm$190  & 4200 & --- & more validation needed \\
+0.001\,hPa          & 12 $\times$ 280  & $\pm$170  & 700 & 450 & \\
+0.01\,hPa           & 11 $\times$ 250  & $\pm$110  & 250 & 100 & \\
+0.1\,hPa            & 6  $\times$ 170  & $\pm$45   & 250 &  100  & \\
+1\,hPa              & 7  $\times$ 165   & $\pm$20  & 120 & 100 & \\
+10\,hPa             & 4.1 $\times$ 165 & $\pm$11   & 30 & 100 & \\
+100\,hPa            & 4.6 $\times$ 165 & $\pm$0    & 20 &  20 & \\
+261\,hPa            & 3.8 $\times$ 167 & $\pm$8    & 30 &  50 & \\
+1000--316\,hPa & ---      & ---             & ---     & ---& Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
 \end{minipage}
