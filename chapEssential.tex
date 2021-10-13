@@ -1,3 +1,4 @@
+
 \chapter{Essential reading for users of MLS version~5.0 data}
 \label{chap:Essential}
 
@@ -420,7 +421,7 @@ should be performed in log space, i.e., with $\b{x}$ and $\b{x}_a$
 containing logarithm of the given H\cs2O mixing ratio (leaving the
 $\b{A}$ matrix as supplied).
 
-The MLS retrieval algorithms are ``tomographic'' in nature in that
+The MLS retrieval algorithms are ``tomographic'' in nature, in that
 they use information from multiple consecutive limb scans to
 simultaneously estimate the 2-dimensional (along-track and vertical)
 state of the atmosphere over multiple Level~2 profiles (see
@@ -444,9 +445,9 @@ The MLS averaging kernels typically change little with latitude,
 season, or atmospheric state.  Accordingly, two representative kernels
 are shown for each product, one for the tropics and one for polar
 winter conditions.  These representative kernels are available to
-users as described below.  If variability in the averaging kernels is
+users, as described below.  If variability in the averaging kernels is
 a concern, comparison of $\hat{\b{x}}$ profiles obtained using each of
-the two kernels (likely to represent two extreme cases) can provide a
+the two kernels (typically representing extreme cases) can provide a
 quantitative estimate of the magnitude of differences introduced by
 kernel variations.
 
@@ -526,8 +527,8 @@ files) is then given, followed by all the values of the averaging
 kernel matrix, with the row index (the level in the retrieved profile)
 varying most rapidly.
 
-Typically, of course, as discussed above, the MLS profile pressures
-are not those of the observation or model dataset to which the
+As discussed above, the MLS profile pressures
+are typically not those of the observation or model dataset to which the
 comparison is being made.  In many cases, particularly where the
 resolution of the other dataset is comparable to that of the MLS
 profiles, a simple interpolation is the most practical manner in which
