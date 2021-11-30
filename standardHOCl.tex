@@ -22,6 +22,13 @@ stratosphere.  More discussion and a brief validation summary are
 given in the following sections, along with data screening
 recommendations.
 
+An algorithm to retrieve daily zonal means of HOCl by first averaging
+the radiances has been developed by the MLS team
+\citep{FroidevauxEtal:2021:HOCl}, building on the work described in
+\citet{MillanEtal:2012} and \citet{MillanEtal:2015} for BrO and
+HO\cs2, respectively. This dataset reduces slightly the variability and will be
+available from the GSFC DISC soon.
+
 \subsection{Changes from \prevv}
 There were no large algorithmic changes relating directly to HOCl for
 the \thisv retrievals.  However, given the small level of HOCl
@@ -48,12 +55,12 @@ done in the previous data version.
 
 A comparison plot showing zonal average upper stratospheric HOCl
 contours (from 10 to 2\, hPa) and differences between the two data
-versions for a typical month (March, 2009) is provided in Figure
-~\ref{fig:MLSv4v5HOClContour}.  The average \thisv HOCl abundances are
-slightly smaller than the \prevv retrievals, typically by about 10\,
-pptv (or 10$\%$), with slightly larger values than in \prevv from 2 to
-1\, hPa.  The estimated precision values are essentially unchanged
-from \prevv.
+versions for a typical month (March, 2009) is provided in
+Figure~\ref{fig:MLSv4v5HOClContour}.  The average \thisv HOCl
+abundances are slightly smaller than the \prevv retrievals, typically
+by about 10\, pptv (or 10$\%$), with slightly larger values than in
+\prevv from 2 to 1\, hPa.  The estimated precision values are
+essentially unchanged from \prevv.
 
 \begin{figure}
   \centering\includegraphics[angle=90,width=1.\linewidth]{%
@@ -183,7 +190,7 @@ uncertainty characterization tests}\\}}}
 \textbf{hPa} & \textbf{pptv} & \textbf{\%} & \textbf{km}& \textbf{pptv} & \textbf{\%} & \\
 \midrule
 1.5 or less & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\ 
-2.2 to 10   & 5--10 & 5--20 & 5.5--6 & 40--80 & 30--100 & Some averaging required \\ 
+2.2 to 10   & 5--10 & 5--20 & 5.5--6 & 40--80 & 25--100 & Some averaging required \\ 
 15 or more  & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\    
 \bottomrule
 \end{tabular}
