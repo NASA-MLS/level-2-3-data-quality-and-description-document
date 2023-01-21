@@ -1,6 +1,6 @@
 \speciestitle{Water Vapor}{H\cs2O}{H2O}{
-\item[Useful range:] 316--0.001\,hPa
-\item[Contact:] Alyn Lambert (stratosphere/mesosphere),
+  \item[Useful range:] 316--0.001\,hPa
+  \item[Contact:] Alyn Lambert (stratosphere/mesosphere),
   \email{alyn.lambert@jpl.nasa.gov} \\
   William Read (troposphere), \email{william.g.read@jpl.nasa.gov}}
 
@@ -47,7 +47,7 @@ precision, resolution, and accuracy.
 
 A defect in \prevv and prior versions is that MLS exhibits a rather
 low bias (20--50\%) at 2--3\,km below the tropopause [\textit{Read et
-  al} in prep, 2020].  Another deficiency is that MLS likely
+      al} in prep, 2020].  Another deficiency is that MLS likely
 underestimates the seasonal cycle at 147\,hPa in the tropics. The two
 issues are related. The tropopause height has a strong seasonal cycle
 in the tropics and the dry bias at a given height will be modulated
@@ -68,7 +68,7 @@ relative to expectations from observed stratospheric temperatures, and
 also shows a drift in this offset. This analysis led to a
 time-dependent correction for the sideband fraction for the 190\,GHz
 receiver (the relative sensitivity to the upper and lower sideband
-signals, see Section~ref{sec:MLSRadiances}). Specifically, the
+signals, see Section~\ref{sec:MLSRadiances}). Specifically, the
 analysis suggests that 190\,GHz radiometer lower sideband fraction is
 6.85\% lower than the value measured pre-launch and has drifted
 \mytexttilde1\% during the mission lifetime. Implementing a
@@ -113,24 +113,24 @@ precision. Inclusion of the tangent pressure retrieval in \thisv has
 reduced the decline to 0.8\%.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_60n-90n}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_30n-60n}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_30s-30n}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_60s-30s}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_90s-60s}
-\end{center}
-\caption{A comparison of v2.23 (blue), v3.30 (cyan), v4.20 (orange),
-  and v5.00 (red) water vapor for Jan-Feb-Mar 2009 in five latitude
-  bands. X-axes are water vapor mixing ratio in ppmv, y-axes are
-  pressure in hPa.  Comparisons for other time periods (not shown) are
-  similar. Left panels compare mean profiles, center panels show the
-  mean differences (red and green diamonds) surrounded by each
-  versions' estimated precision, and right panels show the estimated
-  retrieval precision (solid with bullets), measured variability
-  (dotted, which includes atmospheric variability about the mean), and
-  the \emph{a priori} precision profile (dashed with small diamonds).}
-\label{fig:avgmlsprflcomptropstrat}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_60n-90n}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_30n-60n}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_30s-30n}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_60s-30s}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_90s-60s}
+  \end{center}
+  \caption{A comparison of v2.23 (blue), v3.30 (cyan), v4.20 (orange),
+    and v5.00 (red) water vapor for Jan-Feb-Mar 2009 in five latitude
+    bands. X-axes are water vapor mixing ratio in ppmv, y-axes are
+    pressure in hPa.  Comparisons for other time periods (not shown) are
+    similar. Left panels compare mean profiles, center panels show the
+    mean differences (red and green diamonds) surrounded by each
+    versions' estimated precision, and right panels show the estimated
+    retrieval precision (solid with bullets), measured variability
+    (dotted, which includes atmospheric variability about the mean), and
+    the \emph{a priori} precision profile (dashed with small diamonds).}
+  \label{fig:avgmlsprflcomptropstrat}
 \end{figure}
 
 Figure~\ref{fig:avgmlsprflcomptropstrat} compares MLS \thisv H\cs2O to
@@ -158,7 +158,7 @@ unchanged from \prevv.  Humidity data at pressures greater than
 316\,hPa are derived from a broad layer relative humidity retrieval
 (using low limb viewing MLS wing channel radiances) similar to that
 obtained from NOAA operational humidity sounders such as TOVS\@. As
-noted in \citep{ReadEtal:2007}, the v2.2 H\cs2O retrievals at
+noted in \citet{ReadEtal:2007}, the v2.2 H\cs2O retrievals at
 pressures larger than 316\,hPa were likely to be \mytexttilde30\% too
 high, based on comparisons with AIRS\@. The accuracy of this retrieval
 is highly sensitive to the transmission efficiency of the MLS optics
@@ -190,20 +190,20 @@ result from the use of a coarser retrieval grid above 22\,hPa and a
 different value of the H\cs2O linewidth.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_90s-90n_stratmeso}
-\end{center}
-\caption{An all-latitudes comparison of v2.23 (blue), v3.30 (cyan),
-  v4.20 (orange), and v5.00 (red) water vapor for Jan-Feb-Mar 2009
-  showing levels in the middle stratosphere up to the
-  mesosphere. Other time periods are similar. The left panel compares
-  mean profiles, the center shows the mean difference (red and green
-  diamonds), and the right panel shows the estimated retrieval
-  precision (solid and bullets), measured variability (dotted), which
-  includes atmospheric variability about the mean, and the \emph{a
-    priori} precision (dashed and small diamonds) profile. Y-axes are
-  pressure in hPa.}
-\label{fig:avgmlsprflcompstratmeso}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_prfl_comp_90s-90n_stratmeso}
+  \end{center}
+  \caption{An all-latitudes comparison of v2.23 (blue), v3.30 (cyan),
+    v4.20 (orange), and v5.00 (red) water vapor for Jan-Feb-Mar 2009
+    showing levels in the middle stratosphere up to the
+    mesosphere. Other time periods are similar. The left panel compares
+    mean profiles, the center shows the mean difference (red and green
+    diamonds), and the right panel shows the estimated retrieval
+    precision (solid and bullets), measured variability (dotted), which
+    includes atmospheric variability about the mean, and the \emph{a
+      priori} precision (dashed and small diamonds) profile. Y-axes are
+    pressure in hPa.}
+  \label{fig:avgmlsprflcompstratmeso}
 \end{figure}
 
 Figure~\ref{fig:avgmlsprflcompstratmeso} compares all versions v2.2 to
@@ -231,21 +231,21 @@ the top level, 0.00046\,hPa, where all other versions return the
 \emph{a priori} (this top level is retrieved in \thisv).
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_zonal_means_ut-st}
-\end{center}
-\caption{A comparison of v2.23 (blue), v3.30 (cyan), v4.20 (orange), and v5.00
-  (red), water vapor zonal means for Jan-Feb-Mar 2009. Each panel represents a
-  pressure as noted above. The pressures shown range from 316\,hPa to 8.3\,hPa.}
-\label{fig:avgmlsh2ozmcomp1}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_zonal_means_ut-st}
+  \end{center}
+  \caption{A comparison of v2.23 (blue), v3.30 (cyan), v4.20 (orange), and v5.00
+    (red), water vapor zonal means for Jan-Feb-Mar 2009. Each panel represents a
+    pressure as noted above. The pressures shown range from 316\,hPa to 8.3\,hPa.}
+  \label{fig:avgmlsh2ozmcomp1}
 \end{figure}
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_zonal_means_usm}
-\end{center}
-\caption{As Figure~\protect{\ref{fig:avgmlsh2ozmcomp1}} but for 6.8\,hPa to 0.00046\,hPa.}
-\label{fig:avgmlsh2ozmcomp2}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/mls_h2o_v2-v3-v4-v5_zonal_means_usm}
+  \end{center}
+  \caption{As Figure~\protect{\ref{fig:avgmlsh2ozmcomp1}} but for 6.8\,hPa to 0.00046\,hPa.}
+  \label{fig:avgmlsh2ozmcomp2}
 \end{figure}
 
 \subsection{Resolution}
@@ -300,30 +300,25 @@ drier for low concentrations and wetter for high concentrations)
 equatorward of 40\degsym, with MLS having a dry biases at higher
 latitudes.
 
-The values in Table~\ref{tab:H2OSummary} for pressures between 316 and
-178\,hPa are drawn from AIRS validated accuracies, which are better
-than those theoretically possible for the MLS measurement system. For
-the pressure range 178--83\,hPa, the quoted values come directly from
-the systematic error analysis performed on the MLS measurement
-system. Comparisons between MLS and frost point hygrometers show that,
-for \prevv, when the tropopause is between 215 and 147\,hPa, MLS
-H\cs2O 2--3\,km below the tropopause tends to have a large (20--40\%)
-dry bias.  It is anticipated that this dry bias will be reduced in
-\thisv, but this has yet to be fully confirmed in the \thisv data
-available to date. \mycomment{Michelle: This line about whether the
-  dry bias has been reduced in v5 should be updated, and a reference
-  to your ACP paper added.}  The reported accuracy in the 121--83\,hPa
-range is also taken from the systematic error analysis performed on
-the MLS measurement system.  Comparisons among \emph{in situ} sensors
-on the WB-57 high altitude aircraft and frostpoint hygrometers flown
-on balloons show 30\% disagreements near the tropopause and in the
-lower stratosphere -- well in excess of the estimated accuracy of each
-instrument, including MLS\@.  The balloon based frost point hygrometer
-shows agreement better than indicated in
-Table~\ref{tab:H2OSummary}. The validation paper describes in detail
-why a 30\% spread is inconsistent with the MLS measurements
-\citep{ReadEtal:2007}.  For pressures less than 83\,hPa, the accuracy
-is based on the systematic error analysis.
+The values in Table~\ref{tab:H2OSummary} for pressures between 316 and 178\,hPa
+are drawn from AIRS validated accuracies, which are better than those
+theoretically possible for the MLS measurement system. For the pressure range
+178--83\,hPa, the quoted values come directly from the systematic error analysis
+performed on the MLS measurement system. Comparisons between MLS and frost point
+hygrometers show that, for \prevv, when the tropopause is between 215 and
+147\,hPa, MLS H\cs2O 2--3\,km below the tropopause tends to have a large
+(20--40\%) dry bias.  Work to reduce this dry bias in \thisv is discussed in
+\citet{LiveseyEtal:2022}.  The reported accuracy in the 121--83\,hPa range is
+also taken from the systematic error analysis performed on the MLS measurement
+system.  Comparisons among \emph{in situ} sensors on the WB-57 high altitude
+aircraft and frostpoint hygrometers flown on balloons show 30\% disagreements
+near the tropopause and in the lower stratosphere -- well in excess of the
+estimated accuracy of each instrument, including MLS\@.  The balloon based frost
+point hygrometer shows agreement better than indicated in
+Table~\ref{tab:H2OSummary}. The validation paper describes in detail why a 30\%
+spread is inconsistent with the MLS measurements \citep{ReadEtal:2007}.  For
+pressures less than 83\,hPa, the accuracy is based on the systematic error
+analysis.
 
 A reported long term drift in H\cs2O is being addressed in \thisv. It
 is believed that a drift in the instrument sideband fraction is at
@@ -353,17 +348,17 @@ at those levels.
 \subsection{Review of comparisons with other datasets}
 
 \begin{figure}
-\begin{center}
-  \includegraphics[bb = 58 120 1776 2340, clip, width=0.9\linewidth]{figures/sat_h2o_comps}
-\end{center}
-\caption{A comparison of MLS \thisv (red) water vapor for Jan-Feb-Mar
-  2009 with other satellite observations shown as latitude-value zonal
-  means. Each panel represents a pressure surface. The satellites are:
-  AIRS v6 (dark blue), ACE-FTS v3.5 (light blue), MIPAS IMK v4
-  (yellow-green), HALOE v19 (cyan), Odin SMR 544 GHz continuum product
-  (orange open diamonds), and Odin SMR line resolved product (orange
-  solid bullets).}
-\label{fig:satcomps}
+  \begin{center}
+    \includegraphics[bb = 58 120 1776 2340, clip, width=0.9\linewidth]{figures/sat_h2o_comps}
+  \end{center}
+  \caption{A comparison of MLS \thisv (red) water vapor for Jan-Feb-Mar
+    2009 with other satellite observations shown as latitude-value zonal
+    means. Each panel represents a pressure surface. The satellites are:
+    AIRS v6 (dark blue), ACE-FTS v3.5 (light blue), MIPAS IMK v4
+    (yellow-green), HALOE v19 (cyan), Odin SMR 544 GHz continuum product
+    (orange open diamonds), and Odin SMR line resolved product (orange
+    solid bullets).}
+  \label{fig:satcomps}
 \end{figure}
 
 Figure~\ref{fig:satcomps} shows a zonal mean comparison among several
@@ -388,27 +383,27 @@ and v3.3 for the higher pressure levels and in better agreement with
 AIRS.
 
 \begin{figure}
-\begin{center}
-  \includegraphics[width=0.9\linewidth]
-{figures/grid_maps_jfm2009_airsv6-mlsv2-3-4-5.png}
-\end{center}
-\caption{Mapped fields from AIRS v6 (left), MLS v2.2 (center-left),
-  MLS v3.3 (center), MLS \prevv (center-right), and MLS \thisv (right)
-  pressures between 300 and 150\,hPa for Jan-Feb-Mar 2009. The
-  black-white lines indicate the tropopause where the region poleward
-  is in the stratosphere.  Note that the AIRS measurement is mostly
-  suitable for H\cs2O greater than 10\,ppmv.}
-\label{fig:airsmlsjfm2009maps}
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]
+    {figures/grid_maps_jfm2009_airsv6-mlsv2-3-4-5.png}
+  \end{center}
+  \caption{Mapped fields from AIRS v6 (left), MLS v2.2 (center-left),
+    MLS v3.3 (center), MLS \prevv (center-right), and MLS \thisv (right)
+    pressures between 300 and 150\,hPa for Jan-Feb-Mar 2009. The
+    black-white lines indicate the tropopause where the region poleward
+    is in the stratosphere.  Note that the AIRS measurement is mostly
+    suitable for H\cs2O greater than 10\,ppmv.}
+  \label{fig:airsmlsjfm2009maps}
 \end{figure}
 
 \begin{figure}
-\begin{center}
-  \includegraphics[width=0.9\linewidth]
-{figures/grid_maps_jja2009_airsv6-mlsv2-3-4-5.png}
-\end{center}
-\caption{As Figure~\protect{\ref{fig:airsmlsjfm2009maps}} but for
-  Jun-Jul-Aug 2009.}
-\label{fig:airsmlsjja2009maps}
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]
+    {figures/grid_maps_jja2009_airsv6-mlsv2-3-4-5.png}
+  \end{center}
+  \caption{As Figure~\protect{\ref{fig:airsmlsjfm2009maps}} but for
+    Jun-Jul-Aug 2009.}
+  \label{fig:airsmlsjja2009maps}
 \end{figure}
 
 Apart from the differences noted above, the MLS \thisv H\cs2O is
@@ -431,7 +426,7 @@ balloon-borne CFH and FPH\footnote{Cryogenic Frostpoint Hygrometer
 time show a drift in the agreement with MLS water vapor increasing at
 a rate of \mbox{0.03--0.07\,ppmv\,yr\cp{-1}} relative to the
 frostpoint sondes (roughly 0.6 to 1.5\% per year), starting around
-2009 \citet{HurstEtal:2016}.  Comparisons with the ACE-FTS instrument,
+2009 \citep{HurstEtal:2016}.  Comparisons with the ACE-FTS instrument,
 and with measurements of upper stratospheric water vapor from
 ground-based microwave sensors, provide evidence for a smaller
 (\mytexttilde+0.2\% per year) drift. The new calibration values for
@@ -445,48 +440,48 @@ wait until more of the MLS data are processed to \thisv.
 \subsection{Data screening}
 \label{sec:H2OScreening}
 \begin{description}
-\item[Pressure range:] \screeningrule{316--0.001\,hPa.}
-  \standardrangestatement\
-  Data at 0.00046\,hPa represents a total column at and above that
-  pressure level.  Scientific use of these 0.00046\,hPa data may be
-  possible, but requires consultation with the MLS team.
-  \standardprecisionrule \evenstatusrule
-\item[Clouds:] Profiles flagged as being affected by high or low
-  clouds (i.e., with \texttt{Status} bits corresponding to values of
-  \texttt{16} and \texttt{32} set) can continue to be used. See
-  artifacts for more details.
-\item[Quality field:] \screeningrule{Only profiles with a value of the
-    \texttt{Quality} \emph{greater} than 0.7 should be used in
-    scientific studies.}  The quality threshold is deliberately set
-  low because it is not a very good discriminator of poor profiles
-  except when quality is well below the mean value; therefore, we
-  recommend the ``additional screening to avoid outliers,'' as
-  described below.
-\item[Convergence field:] \screeningrule{Only profiles with a value of
-    the \texttt{Convergence} \emph{less} than 2.0 should be used in
-    scientific studies.}
-\item[Additional screening to avoid outliers:] After application of
-  the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence}
-  screening described above, some unphysical profiles remain in the
-  MLS \thisv\ H\cs2O dataset. These are characterized by
-  unrealistically low water vapor mixing ratios in the upper
-  troposphere and stratosphere. The cause behind this behavior is from
-  using the logarithmic basis which excludes negative
-  values. Sometimes the retrieval minimizer seeks a negative value at
-  a given level (which is almost always accompanied by severe vertical
-  profile oscillations).  Such values are not allowed and therefore an
-  optimal fit to the measurement signal is not achieved. H\cs2O
-  profiles having values less than 0.101\,ppmv
-  (0.101$\times 10^{-6}$\,VMR) at any pressure at or larger than
-  1\,hPa (vertical levels 1--37) should not be used. Profiles with
-  acceptable \texttt{Status}, \texttt{Quality}, and
-  \texttt{Convergence} having values less than 0.101\,ppmv at
-  pressures $< 1$\,hPa (vertical levels 38--55) are acceptable and
-  occur frequently, because the water vapor concentration in the
-  mesosphere is often less than the measurement precision and negative
-  values are preferable but not realizable due to the logarithmic
-  basis definition being used.
- 
+  \item[Pressure range:] \screeningrule{316--0.001\,hPa.}
+    \standardrangestatement\
+    Data at 0.00046\,hPa represents a total column at and above that
+    pressure level.  Scientific use of these 0.00046\,hPa data may be
+    possible, but requires consultation with the MLS team.
+    \standardprecisionrule \evenstatusrule
+  \item[Clouds:] Profiles flagged as being affected by high or low
+    clouds (i.e., with \texttt{Status} bits corresponding to values of
+    \texttt{16} and \texttt{32} set) can continue to be used. See
+    artifacts for more details.
+  \item[Quality field:] \screeningrule{Only profiles with a value of the
+      \texttt{Quality} \emph{greater} than 0.7 should be used in
+      scientific studies.}  The quality threshold is deliberately set
+    low because it is not a very good discriminator of poor profiles
+    except when quality is well below the mean value; therefore, we
+    recommend the ``additional screening to avoid outliers,'' as
+    described below.
+  \item[Convergence field:] \screeningrule{Only profiles with a value of
+      the \texttt{Convergence} \emph{less} than 2.0 should be used in
+      scientific studies.}
+  \item[Additional screening to avoid outliers:] After application of
+    the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence}
+    screening described above, some unphysical profiles remain in the
+    MLS \thisv\ H\cs2O dataset. These are characterized by
+    unrealistically low water vapor mixing ratios in the upper
+    troposphere and stratosphere. The cause behind this behavior is from
+    using the logarithmic basis which excludes negative
+    values. Sometimes the retrieval minimizer seeks a negative value at
+    a given level (which is almost always accompanied by severe vertical
+    profile oscillations).  Such values are not allowed and therefore an
+    optimal fit to the measurement signal is not achieved. H\cs2O
+    profiles having values less than 0.101\,ppmv
+    (0.101$\times 10^{-6}$\,VMR) at any pressure at or larger than
+    1\,hPa (vertical levels 1--37) should not be used. Profiles with
+    acceptable \texttt{Status}, \texttt{Quality}, and
+    \texttt{Convergence} having values less than 0.101\,ppmv at
+    pressures $< 1$\,hPa (vertical levels 38--55) are acceptable and
+    occur frequently, because the water vapor concentration in the
+    mesosphere is often less than the measurement precision and negative
+    values are preferable but not realizable due to the logarithmic
+    basis definition being used.
+
 \end{description}
 
 \subsection{Artifacts}
@@ -549,62 +544,61 @@ product for pressure $>316\,\text{hPa}$ at high latitudes during dry
 conditions.
 
 \begin{table}
-\caption{Summary of MLS \thisv H\cs2O product.}
-\vspace{\tablecaptionsep}
-\label{tab:H2OSummary}
-\begin{minipage}{\linewidth}
-\centering\begin{tabular}{ccccc>{\raggedright}m{28ex}}
-\toprule
-\parbox{10ex}{\centering\bfseries Pressure / hPa} &
-\parbox{11ex}{\centering\bfseries Resolution V$\times$H / km} &
-\parbox{10ex}{\centering\bfseries Precision\footnote{Precision for a
-    single MLS profile} / \%} &
-\parbox{10ex}{\centering\bfseries Accuracy / \%} &
-\parbox{9ex}{\centering\bfseries Min. / ppmv\footnote{Minimum H\cs2O is an estimate of the minimum H\cs2O 
-concentration measurable by \thisv MLS.}} &
-\bfseries Comments \tabularnewline
-\midrule
-$\le$0.00022  & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline
-0.0005 & NVR\footnote{Not Vertically resolved (NVR)}  $\times$ TBD & 1210 &
-  TBD\footnote{Not yet determined} & 0.1 & Nominally a slant column measurement for p $\le$ 0.001 hPa.
-  \tabularnewline
-0.001 & 7.1 $\times$ 650 & 973 & 38 & 0.1 & \tabularnewline
-0.002 & 7.8 $\times$ 430 & 417 & 41 & 0.1 & \tabularnewline
-0.005 & 9.4 $\times$ 340 & 127 & 22 & 0.1 & \tabularnewline
-0.010 & 8.3 $\times$ 310 &  60 & 15 & 0.1 & \tabularnewline
-0.022 & 7.3 $\times$ 300 &  39 & 16 & 0.1 & \tabularnewline
-0.046 & 7.0 $\times$ 250 &  28 & 16 & 0.1 & \tabularnewline
-0.10  & 4.8 $\times$ 210 &  20 & 13 & 0.1 & \tabularnewline
-0.22  & 3.3 $\times$ 200 &  17 & 10 & 0.1 & \tabularnewline
-0.46  & 3.2 $\times$ 200 &  12 &  8 & 0.1 & \tabularnewline
-1.0   & 2.5 $\times$ 270 &   6 &  6 & 0.1 & \tabularnewline
-2.2   & 3.6 $\times$ 260 &   6 &  6 & 0.1 & \tabularnewline
-4.6   & 3.5 $\times$ 245 &   5 &  6 & 0.1 & \tabularnewline
-10    & 3.6 $\times$ 240 &   5 & 19 & 0.1 & \tabularnewline
-22    & 3.8 $\times$ 220 &   6 &  7 & 0.1 & \tabularnewline
-46    & 3.8 $\times$ 210 &   6 &  5 & 0.1 & \tabularnewline
-68    & 3.7 $\times$ 185 &   6 &  8 & 0.1 & \tabularnewline
-83    & 3.6 $\times$ 185 &   7 &  7 & 0.1 & \tabularnewline
-100   & 3.5 $\times$ 190 &   7 &  7 & 0.1 & \tabularnewline
-121   & 3.5 $\times$ 200 &   7 & 17 & 0.1 & \tabularnewline
-147   & 3.1 $\times$ 200 &   7 & 13 & 0.1 & \tabularnewline
-178   & 3.3 $\times$ 205 &   6 & 13 & 3   & \tabularnewline\addlinespace
-215   & 2.8 $\times$ 205 &   6 & 17 & 3   & Extent of a low bias for latitudes
-                                            $>60$\degsym\ to be investigated.
-                                            \tabularnewline\addlinespace
-261   & 2.8 $\times$ 190 &   7 & 24 & 4   & Extent of low bias for latitudes
-                                            $>60$\degsym\ to be investigated.
-                                            \tabularnewline\addlinespace
-316   & 2.3 $\times$ 190 &  16 & 35 & 7   & Occasionally erroneous low value
-                                            $<1\,\text{ppmv}$ and high value
-                                            fliers are retrieved in the tropics, usually in
-                                            clouds. \tabularnewline\addlinespace
-$>316$ & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline
-\bottomrule
-\end{tabular}
-\end{minipage}
+  \caption{Summary of MLS \thisv H\cs2O product.}
+  \vspace{\tablecaptionsep}
+  \label{tab:H2OSummary}
+  \begin{minipage}{\linewidth}
+    \centering\begin{tabular}{ccccc>{\raggedright}m{28ex}}
+      \toprule
+      \parbox{10ex}{\centering\bfseries Pressure / hPa}             &
+      \parbox{11ex}{\centering\bfseries Resolution V$\times$H / km} &
+      \parbox{10ex}{\centering\bfseries Precision\footnote{Precision for a
+      single MLS profile} / \%}                                     &
+      \parbox{10ex}{\centering\bfseries Accuracy / \%}              &
+      \parbox{9ex}{\centering\bfseries Min. / ppmv\footnote{Minimum H\cs2O is an estimate of the minimum H\cs2O
+      concentration measurable by \thisv MLS.}}                     &
+      \bfseries Comments \tabularnewline
+      \midrule
+      $\le$0.00022                                                  & ---                                                       & ---                                                         & --- & --- & Unsuitable for scientific use \tabularnewline
+      0.0005                                                        & NVR\footnote{Not Vertically resolved (NVR)}  $\times$ TBD & 1210                                                        &
+      TBD\footnote{Not yet determined}                              & 0.1                                                       & Nominally a slant column measurement for p $\le$ 0.001 hPa.
+      \tabularnewline
+      0.001                                                         & 7.1 $\times$ 650                                          & 973                                                         & 38  & 0.1 & \tabularnewline
+      0.002                                                         & 7.8 $\times$ 430                                          & 417                                                         & 41  & 0.1 & \tabularnewline
+      0.005                                                         & 9.4 $\times$ 340                                          & 127                                                         & 22  & 0.1 & \tabularnewline
+      0.010                                                         & 8.3 $\times$ 310                                          & 60                                                          & 15  & 0.1 & \tabularnewline
+      0.022                                                         & 7.3 $\times$ 300                                          & 39                                                          & 16  & 0.1 & \tabularnewline
+      0.046                                                         & 7.0 $\times$ 250                                          & 28                                                          & 16  & 0.1 & \tabularnewline
+      0.10                                                          & 4.8 $\times$ 210                                          & 20                                                          & 13  & 0.1 & \tabularnewline
+      0.22                                                          & 3.3 $\times$ 200                                          & 17                                                          & 10  & 0.1 & \tabularnewline
+      0.46                                                          & 3.2 $\times$ 200                                          & 12                                                          & 8   & 0.1 & \tabularnewline
+      1.0                                                           & 2.5 $\times$ 270                                          & 6                                                           & 6   & 0.1 & \tabularnewline
+      2.2                                                           & 3.6 $\times$ 260                                          & 6                                                           & 6   & 0.1 & \tabularnewline
+      4.6                                                           & 3.5 $\times$ 245                                          & 5                                                           & 6   & 0.1 & \tabularnewline
+      10                                                            & 3.6 $\times$ 240                                          & 5                                                           & 19  & 0.1 & \tabularnewline
+      22                                                            & 3.8 $\times$ 220                                          & 6                                                           & 7   & 0.1 & \tabularnewline
+      46                                                            & 3.8 $\times$ 210                                          & 6                                                           & 5   & 0.1 & \tabularnewline
+      68                                                            & 3.7 $\times$ 185                                          & 6                                                           & 8   & 0.1 & \tabularnewline
+      83                                                            & 3.6 $\times$ 185                                          & 7                                                           & 7   & 0.1 & \tabularnewline
+      100                                                           & 3.5 $\times$ 190                                          & 7                                                           & 7   & 0.1 & \tabularnewline
+      121                                                           & 3.5 $\times$ 200                                          & 7                                                           & 17  & 0.1 & \tabularnewline
+      147                                                           & 3.1 $\times$ 200                                          & 7                                                           & 13  & 0.1 & \tabularnewline
+      178                                                           & 3.3 $\times$ 205                                          & 6                                                           & 13  & 3   & \tabularnewline\addlinespace
+      215                                                           & 2.8 $\times$ 205                                          & 6                                                           & 17  & 3   & Extent of a low bias for latitudes
+      $>60$\degsym\ to be investigated.
+      \tabularnewline\addlinespace
+      261                                                           & 2.8 $\times$ 190                                          & 7                                                           & 24  & 4   & Extent of low bias for latitudes
+      $>60$\degsym\ to be investigated.
+      \tabularnewline\addlinespace
+      316                                                           & 2.3 $\times$ 190                                          & 16                                                          & 35  & 7   & Occasionally erroneous low value
+      $<1\,\text{ppmv}$ and high value
+      fliers are retrieved in the tropics, usually in
+      clouds. \tabularnewline\addlinespace
+      $>316$                                                        & ---                                                       & ---                                                         & --- & --- & Unsuitable for scientific use \tabularnewline
+      \bottomrule
+    \end{tabular}
+  \end{minipage}
 \end{table}
-
 
 %%% Local Variables: 
 %%% mode: latex
