@@ -29,7 +29,7 @@ and should be regarded as more like a column measurement, but it may
 be usable for some studies.  The MLS science team should be consulted
 prior to using data from 0.00046\,hPa level.
 
-The MLS \thisv H\cs2O between 1000 and 383\,hPa is taken from a
+The MLS \thisv\CheckThis H\cs2O between 1000 and 383\,hPa is taken from a
 retrieval of relative humidity with respect to ice (RHi) product,
 converted to specific humidity using the Goff-Gratch vapor pressure
 over ice equation.  This RHi retrieval is not vertically resolved, and
@@ -38,14 +38,14 @@ See Section~\ref{sec:StandardRHI} for more information. H\cs2O for
 $p\le0.000215\,$hPa are filled with \emph{a priori} values. Validation
 of MLS v2.2 water vapor is presented in \citet{ReadEtal:2007} and
 \citet{LambertEtal:2007}.  This section reiterates the key information
-from those studies, and updates them for \thisv.
-Table~\ref{tab:H2OSummary} gives a summary of MLS \thisv H\cs2O
+from those studies, and updates them for \thisv\CheckThis.
+Table~\ref{tab:H2OSummary} gives a summary of MLS \thisv\CheckThis H\cs2O
 precision, resolution, and accuracy.
 
-\subsection{Changes from \prevv}
+\subsection{Changes from \prevv\CheckThis}
 \label{sec:H2OChanges}
 
-A defect in \prevv and prior versions is that MLS exhibits a rather
+A defect in \prevv\CheckThis and prior versions is that MLS exhibits a rather
 low bias (20--50\%) at 2--3\,km below the tropopause [\textit{Read et
       al} in prep, 2020].  Another deficiency is that MLS likely
 underestimates the seasonal cycle at 147\,hPa in the tropics. The two
@@ -82,7 +82,7 @@ reduced this inconsistency to 70\,m, which is within the uncertainty
 in the radiometer pointing alignment measured prior to launch (and
 refined based on MLS observations of the moon). Therefore, to further
 improve this agreement, a 70\,m adjustment to the radiometer alignment
-has also been applied in the \thisv retrievals. With these adjustments
+has also been applied in the \thisv\CheckThis retrievals. With these adjustments
 the retrieved ptan from the 190\,GHz (CorePlusR2) is now consistent
 within \mytexttilde20\,m of that retrieved from the 118 and 240\,GHz
 receivers, and is retrieved operationally now. These changes have
@@ -92,7 +92,7 @@ in the tropics. These changes have also helped to reduce biases and
 drifts between the 190\,GHz ozone and the ozone from the 240\,GHz
 receiver, which forms the ozone standard product.
 
-Another improvement to the H\cs2O retrieval in \thisv has been
+Another improvement to the H\cs2O retrieval in \thisv\CheckThis has been
 obtained using a fully line-by-line radiative transfer model to
 calculate radiances for the digital autocorrelator channels (128
 channels, each 100\,kHz wide, centered on the H\cs2O line) instead of
@@ -101,15 +101,15 @@ accounts for non linearities in the signals' dependence on H\cs2O
 concentration. Some adjustments were made to the \emph{a priori}
 precision and smoothing to improve the precision and potentially make
 the product useful up to 0.001\,hPa. The retrieval range for H\cs2O
-has been raised to 0.00046\,hPa in \thisv.
+has been raised to 0.00046\,hPa in \thisv\CheckThis.
 
-The median daily \texttt{Quality} metric for \prevv declined by 4.8\%
+The median daily \texttt{Quality} metric for \prevv\CheckThis declined by 4.8\%
 over the period from 2010 to 2020. The decline follows a declining
 trend in the radiometer system temperature that determines the
 measurement signal noise.  The \texttt{Quality} metric (a reciprocal
 of a $\chi^2$-like radiance fit measure) accordingly declines as the
 fits become worse compared to the expected radiance
-precision. Inclusion of the tangent pressure retrieval in \thisv has
+precision. Inclusion of the tangent pressure retrieval in \thisv\CheckThis has
 reduced the decline to 0.8\%.
 
 \begin{figure}
@@ -133,7 +133,7 @@ reduced the decline to 0.8\%.
   \label{fig:avgmlsprflcomptropstrat}
 \end{figure}
 
-Figure~\ref{fig:avgmlsprflcomptropstrat} compares MLS \thisv H\cs2O to
+Figure~\ref{fig:avgmlsprflcomptropstrat} compares MLS \thisv\CheckThis H\cs2O to
 that from all previous versions, starting with v2.2. The differences
 are shown with respect to v2.2 --- the version described in the
 validation papers. Notable differences include the removal of a kink
@@ -154,7 +154,7 @@ extremely low values retrieved at 215\,hPa at high latitudes seen in
 previous versions appear to be less dry in v5.
 
 The handling of humidity data at pressures greater than 316\,hPa is
-unchanged from \prevv.  Humidity data at pressures greater than
+unchanged from \prevv\CheckThis.  Humidity data at pressures greater than
 316\,hPa are derived from a broad layer relative humidity retrieval
 (using low limb viewing MLS wing channel radiances) similar to that
 obtained from NOAA operational humidity sounders such as TOVS\@. As
@@ -162,10 +162,10 @@ noted in \citet{ReadEtal:2007}, the v2.2 H\cs2O retrievals at
 pressures larger than 316\,hPa were likely to be \mytexttilde30\% too
 high, based on comparisons with AIRS\@. The accuracy of this retrieval
 is highly sensitive to the transmission efficiency of the MLS optics
-system. In \prevv the assumed value of the MLS antenna transmission
+system. In \prevv\CheckThis the assumed value of the MLS antenna transmission
 efficiency was adjusted empirically (within the uncertainty range
 established from MLS calibration) to give better agreement with AIRS
-in the tropics. In \thisv the N\cs2 continuum was adjusted (only for
+in the tropics. In \thisv\CheckThis the N\cs2 continuum was adjusted (only for
 this preliminary RHi retrieval phase), to minimize the clear sky cloud
 induced radiance bias. This retrieval is used as an \emph{a priori}
 and profile constraint for the humidity profile at pressures greater
@@ -207,28 +207,28 @@ different value of the H\cs2O linewidth.
 \end{figure}
 
 Figure~\ref{fig:avgmlsprflcompstratmeso} compares all versions v2.2 to
-\thisv over the range from 10\,hPa to 0.0001\,hPa. As expected, H\cs2O
-from \thisv is lower than all other versions except v2.2, which had an
+\thisv\CheckThis over the range from 10\,hPa to 0.0001\,hPa. As expected, H\cs2O
+from \thisv\CheckThis is lower than all other versions except v2.2, which had an
 erroneous linewidth. Also shown is the increased \emph{a priori}
-precision being used for \thisv at pressures smaller than 0.0046\,hPa,
+precision being used for \thisv\CheckThis at pressures smaller than 0.0046\,hPa,
 modified in order to make H\cs2O at the 0.001 and 0.00046\,hPa levels
-usable. Using a non-linear radiative transfer model in \thisv, in
+usable. Using a non-linear radiative transfer model in \thisv\CheckThis, in
 place of an approximate linear model for the highly spectrally
 resolved digital autocorrelator spectrometer (DACS), leads to some
 differences in the uppermost levels. It is believed that the better
-model being used for \thisv will produce more accurate results.
+model being used for \thisv\CheckThis will produce more accurate results.
 
 Figures~\ref{fig:avgmlsh2ozmcomp1} and \ref{fig:avgmlsh2ozmcomp2} show
 a comparison of H\cs2O zonal means from v2, v3, v4, and v5 retrievals
 for 316--8.3\,hPa and 6.8--0.00046-hPa, respectively. In the
-stratosphere, \thisv is usually lower than the previous versions,
+stratosphere, \thisv\CheckThis is usually lower than the previous versions,
 thanks to the sideband adjustment.  Version 5 also shows increased
 147\,hPa humidity in the tropics, with further increases at 215\,hPa
 in mid latitudes, and yet a more increases at 261\,hPa in high
-latitudes. In the mesosphere $p<1\,$hPa, \thisv H\cs2O abundances are
+latitudes. In the mesosphere $p<1\,$hPa, \thisv\CheckThis H\cs2O abundances are
 usually lower than in previous versions but show similar structure up
 the top level, 0.00046\,hPa, where all other versions return the
-\emph{a priori} (this top level is retrieved in \thisv).
+\emph{a priori} (this top level is retrieved in \thisv\CheckThis).
 
 \begin{figure}
   \begin{center}
@@ -273,7 +273,7 @@ $p \le 0.000215\,$hPa fixed at \emph{a priori} values.
 \subsection{Precision}
 
 Table~\ref{tab:H2OSummary} summarizes the estimated precision of the
-MLS \thisv H\cs2O data. For pressures $\geq100\,$hPa, the precisions
+MLS \thisv\CheckThis H\cs2O data. For pressures $\geq100\,$hPa, the precisions
 quoted are the $1\sigma$ scatter about the mean of coincident
 comparison differences, which are larger than the formal retrieval
 precisions \citep{ReadEtal:2007} estimated by the Level~2 software.
@@ -290,12 +290,12 @@ The values for accuracy are based primarily on two sources:
 comparisons with other validated instruments and a full systematic
 error analysis performed on the MLS measurement system as described
 (for v2) in \citet{ReadEtal:2007} and \citet{LambertEtal:2007} (the
-same approach is planned for \thisv). The results shown in
-Table~\ref{tab:H2OSummary} are for \prevv\ --- analysis for \thisv is
+same approach is planned for \thisv\CheckThis). The results shown in
+Table~\ref{tab:H2OSummary} are for \prevv\CheckThis\ --- analysis for \thisv\CheckThis is
 yet to be performed.  However, it is expected that accuracy estimates
-for \thisv will be similar to those in \prevv repeated here.  For
+for \thisv\CheckThis will be similar to those in \prevv\CheckThis repeated here.  For
 pressures between 316 and 178\,hPa, comparisons between AIRS v6 and
-MLS \thisv show $<20\%$ agreement in the zonal mean (with MLS usually
+MLS \thisv\CheckThis show $<20\%$ agreement in the zonal mean (with MLS usually
 drier for low concentrations and wetter for high concentrations)
 equatorward of 40\degsym, with MLS having a dry biases at higher
 latitudes.
@@ -305,9 +305,9 @@ are drawn from AIRS validated accuracies, which are better than those
 theoretically possible for the MLS measurement system. For the pressure range
 178--83\,hPa, the quoted values come directly from the systematic error analysis
 performed on the MLS measurement system. Comparisons between MLS and frost point
-hygrometers show that, for \prevv, when the tropopause is between 215 and
+hygrometers show that, for \prevv\CheckThis, when the tropopause is between 215 and
 147\,hPa, MLS H\cs2O 2--3\,km below the tropopause tends to have a large
-(20--40\%) dry bias.  Work to reduce this dry bias in \thisv is discussed in
+(20--40\%) dry bias.  Work to reduce this dry bias in \thisv\CheckThis is discussed in
 \citet{LiveseyEtal:2022}.  The reported accuracy in the 121--83\,hPa range is
 also taken from the systematic error analysis performed on the MLS measurement
 system.  Comparisons among \emph{in situ} sensors on the WB-57 high altitude
@@ -320,7 +320,7 @@ spread is inconsistent with the MLS measurements \citep{ReadEtal:2007}.  For
 pressures less than 83\,hPa, the accuracy is based on the systematic error
 analysis.
 
-A reported long term drift in H\cs2O is being addressed in \thisv. It
+A reported long term drift in H\cs2O is being addressed in \thisv\CheckThis. It
 is believed that a drift in the instrument sideband fraction is at
 least part of the cause. Using opaque signals in the 190\,GHz
 radiometer this sideband fraction drift can be evaluated and
@@ -351,7 +351,7 @@ at those levels.
   \begin{center}
     \includegraphics[bb = 58 120 1776 2340, clip, width=0.9\linewidth]{figures/sat_h2o_comps}
   \end{center}
-  \caption{A comparison of MLS \thisv (red) water vapor for Jan-Feb-Mar
+  \caption{A comparison of MLS \thisv\CheckThis (red) water vapor for Jan-Feb-Mar
     2009 with other satellite observations shown as latitude-value zonal
     means. Each panel represents a pressure surface. The satellites are:
     AIRS v6 (dark blue), ACE-FTS v3.5 (light blue), MIPAS IMK v4
@@ -362,7 +362,7 @@ at those levels.
 \end{figure}
 
 Figure~\ref{fig:satcomps} shows a zonal mean comparison among several
-satellite data sets including MLS \thisv, AIRS v6, ACE-FTS v3.5, MIPAS
+satellite data sets including MLS \thisv\CheckThis, AIRS v6, ACE-FTS v3.5, MIPAS
 IMK v4, HALOE v19, Odin SMR continuum H\cs2O, and Odin SMR line
 resolved H\cs2O. The data sets show agreement for the stratospheric
 levels shown here beginning with 32\,hPa and lower. More significant
@@ -375,10 +375,10 @@ differences, particularly where around the tropopause with its sharp
 vertical gradient.  The patterns are more similar for the upper
 tropospheric levels (316--147\,hPa).
 
-One potential improvement in \thisv is shown in
+One potential improvement in \thisv\CheckThis is shown in
 Figures~\ref{fig:airsmlsjfm2009maps} and \ref{fig:airsmlsjja2009maps}
 that compare multi-month maps of MLS with AIRS v6. The very moist
-regions over the tropics in \prevv and \thisv are drier than in v2.2
+regions over the tropics in \prevv\CheckThis and \thisv\CheckThis are drier than in v2.2
 and v3.3 for the higher pressure levels and in better agreement with
 AIRS.
 
@@ -388,7 +388,7 @@ AIRS.
     {figures/grid_maps_jfm2009_airsv6-mlsv2-3-4-5.png}
   \end{center}
   \caption{Mapped fields from AIRS v6 (left), MLS v2.2 (center-left),
-    MLS v3.3 (center), MLS \prevv (center-right), and MLS \thisv (right)
+    MLS v3.3 (center), MLS \prevv\CheckThis (center-right), and MLS \thisv\CheckThis (right)
     pressures between 300 and 150\,hPa for Jan-Feb-Mar 2009. The
     black-white lines indicate the tropopause where the region poleward
     is in the stratosphere.  Note that the AIRS measurement is mostly
@@ -406,8 +406,8 @@ AIRS.
   \label{fig:airsmlsjja2009maps}
 \end{figure}
 
-Apart from the differences noted above, the MLS \thisv H\cs2O is
-similar to the \prevv, v3.3, and v2.2 products, the latter described
+Apart from the differences noted above, the MLS \thisv\CheckThis H\cs2O is
+similar to the \prevv\CheckThis, v3.3, and v2.2 products, the latter described
 and validated in \citet{ReadEtal:2007} and
 \citet{LambertEtal:2007}. The H\cs2O validation paper used AIRS v4 and
 MLS v2 humidities, and both of these data records show reduced
@@ -432,10 +432,10 @@ ground-based microwave sensors, provide evidence for a smaller
 (\mytexttilde+0.2\% per year) drift. The new calibration values for
 the sideband fraction that are updated monthly are yet smaller, but
 approach the drift seen with ACE-FTS\@.  Accordingly, we anticipate
-that \thisv H\cs2O will show only a small drift compared to the
+that \thisv\CheckThis H\cs2O will show only a small drift compared to the
 ACE-FTS record, but continue show a drift compared to the frostpoint
 record. A complete assessment of the drift correction will have to
-wait until more of the MLS data are processed to \thisv.
+wait until more of the MLS data are processed to \thisv\CheckThis.
 
 \subsection{Data screening}
 \label{sec:H2OScreening}
@@ -463,7 +463,7 @@ wait until more of the MLS data are processed to \thisv.
   \item[Additional screening to avoid outliers:] After application of
     the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence}
     screening described above, some unphysical profiles remain in the
-    MLS \thisv\ H\cs2O dataset. These are characterized by
+    MLS \thisv\CheckThis\ H\cs2O dataset. These are characterized by
     unrealistically low water vapor mixing ratios in the upper
     troposphere and stratosphere. The cause behind this behavior is from
     using the logarithmic basis which excludes negative
@@ -512,7 +512,7 @@ affected by cloud will exhibit greater variability about the true
 atmospheric humidity than those not marked as being cloud-influenced.
 
 The 190\,GHz radiometer signals due to aging are drifting. This drift
-manifests as a change in the sideband fraction. \thisv makes an
+manifests as a change in the sideband fraction. \thisv\CheckThis makes an
 attempt to correct this.
 
 In the mesosphere, the precision is often larger than the retrieved
@@ -525,7 +525,7 @@ representation of the average of many profiles is achieved by
 calculating its median.
 
 The instrument scan nominally tops out at 0.001\,hPa. Therefore, the
-0.00046\,hPa, which is now retrieved in \thisv, is not a vertically
+0.00046\,hPa, which is now retrieved in \thisv\CheckThis, is not a vertically
 resolved measurement but rather a column amount from 0.001\,hPa to the
 spacecraft, under the constraint that all levels above 0.00046\,hPa
 are fixed at \emph{a priori} values. Accordingly, should there be a
@@ -544,7 +544,7 @@ product for pressure $>316\,\text{hPa}$ at high latitudes during dry
 conditions.
 
 \begin{table}
-  \caption{Summary of MLS \thisv H\cs2O product.}
+  \caption{Summary of MLS \thisv\CheckThis H\cs2O product.}
   \vspace{\tablecaptionsep}
   \label{tab:H2OSummary}
   \begin{minipage}{\linewidth}
@@ -556,7 +556,7 @@ conditions.
       single MLS profile} / \%}                                     &
       \parbox{10ex}{\centering\bfseries Accuracy / \%}              &
       \parbox{9ex}{\centering\bfseries Min. / ppmv\footnote{Minimum H\cs2O is an estimate of the minimum H\cs2O
-      concentration measurable by \thisv MLS.}}                     &
+      concentration measurable by \thisv\CheckThis MLS.}}                     &
       \bfseries Comments \tabularnewline
       \midrule
       $\le$0.00022                                                  & ---                                                       & ---                                                         & --- & --- & Unsuitable for scientific use \tabularnewline

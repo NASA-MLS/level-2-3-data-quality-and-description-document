@@ -1,5 +1,5 @@
 
-\chapter{Essential reading for users of MLS version~5.0 data}
+\chapter{Essential reading for users of MLS version~\thisv data}
 \label{chap:Essential}
 
 \section{Scope and background for this document}
@@ -31,12 +31,12 @@ additional studies using MLS observations.  Users of these Level~3
 data should still read the Chapter~\ref{chap:Essential} material and
 the product-specific information in Chapter~\ref{chap:Results}.
 
-The \thisv MLS data are the fifth ``public release'' of MLS data,
+The \thisv\CheckThis MLS data are the fifth ``public release'' of MLS data,
 having been preceded by versions~1.5, 2.2, 3.3/3.4, and 4.2\@.  The
 v2.2 data are described in a series of validation papers published in
 a special issue of the \emph{Journal of Geophysical Research} in
 2007/2008.  This document updates some findings from these papers for
-\thisv, compares a limited subset of available \thisv results to some
+\thisv\CheckThis, compares a limited subset of available \thisv\CheckThis results to some
 of the previous data versions, and gives more general information on
 the use of MLS data.  As always, those wishing to use MLS data are
 advised to consult the MLS science team concerning their intended use.
@@ -74,17 +74,17 @@ papers in the ``Aura Validation'' special issue of JGR-Atmospheres
 Chapter~\ref{chap:Results} on a product-by-product basis, along with
 some more recent references, in some cases.
 
-\section{Overview of \thisv and this document}
+\section{Overview of \thisv\CheckThis and this document}
 
 The remainder of this chapter reviews issues that are considered
-\emph{essential reading} for users of the \thisv dataset.
+\emph{essential reading} for users of the \thisv\CheckThis dataset.
 Chapter~\ref{chap:Background} details relevant aspects of the MLS
 instrument design and operations and the theoretical basis for the
-\thisv Level~2 algorithms that are considered \emph{background
+\thisv\CheckThis Level~2 algorithms that are considered \emph{background
   reading}.
 
 Chapter~\ref{chap:Results} describes the data quality for ``Standard''
-products from the MLS instrument for \thisv.  These are observations
+products from the MLS instrument for \thisv\CheckThis.  These are observations
 of vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN,
 CH\cs3OH, ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2, HOCl, N\cs2O,
 O\cs3, and OH and SO\cs2, along with temperature, geopotential height,
@@ -155,17 +155,17 @@ as:
   are published in the peer-reviewed literature.
 \end{quote}
 Work, including that described in this document, has re-validated the
-\thisv data, with the level of scrutiny for some (notably ozone and
+\thisv\CheckThis data, with the level of scrutiny for some (notably ozone and
 water vapor) establishing them as ``Stage~4'' validated, defined as:
 \begin{quote}\itshape
   Validation results for stage~3 are systematically updated when new
   product versions are released and as the time-series expands.
 \end{quote}
 
-\section{Differences between MLS \thisv data and earlier v4.x data}
+\section{Differences between MLS \thisv\CheckThis data and earlier v4.x data}
 \label{sec:V5vsV4Overview}
 
-The MLS \thisv data processing software includes a wide range of
+The MLS \thisv\CheckThis data processing software includes a wide range of
 updates and changes, leading to differences ranging from significant
 to minor.  Some of the most important are detailed below.
 
@@ -180,14 +180,14 @@ to minor.  Some of the most important are detailed below.
   aspect of instrument calibration that accounts for some of this
   drift.  Version~5.0 corrects for this calibration drift; the extent
   to which that correction fully accounts for the observed drift in
-  Level~2 products remains to be studied as the \thisv processing
+  Level~2 products remains to be studied as the \thisv\CheckThis processing
   continues.  The calibration trend also affects other species
   measured by the MLS 190-GHz subsystem, notably N\cs2O.
 \item[Correction of dry bias in upper tropospheric H\cs2O:] As part of
   the work to identify and characterize the drift discussed above, the
   MLS team has also identified and largely corrected the source of a
   \mytexttilde20\% dry bias below the tropopause.
-\item[Extension of N\cs2O product to 100\,hPa:] The \thisv\ algorithms
+\item[Extension of N\cs2O product to 100\,hPa:] The \thisv\CheckThis\ algorithms
   include a new retrieval for N\cs2O that reduces an issue seen at
   100\,hPa in earlier versions, rendering this pressure level suitable
   for scientific use.  Note that the drift discussed above also
@@ -369,9 +369,9 @@ ratios.  It is important that such values \emph{not be ignored or
 bias into any averages made of the data as part of scientific analysis.
 Water vapor is retrieved using a logarithmic basis (both vertically and
 horizontally, as discussed in Section~\ref{sec:BasisIssues}).
-Accordingly, no negative water vapor abundances are produced by \thisv.
+Accordingly, no negative water vapor abundances are produced by \thisv\CheckThis.
 
-\section{Averaging kernels for MLS \thisv profiles}
+\section{Averaging kernels for MLS \thisv\CheckThis profiles}
 \label{sec:AveragingKernels}
 As is common for remote sounding instruments, consideration of the
 ``Averaging Kernel'' \citep[e.g.,][]{Rodgers:2000} can be useful in
@@ -382,7 +382,7 @@ scientifically useful studies to be undertaken without reference to
 the averaging kernels.  This section reviews the role averaging
 kernels play in comparing MLS measurements to other observations
 and/or model fields and describes how to obtain representative kernels
-for the \thisv data.
+for the \thisv\CheckThis data.
 
 The averaging kernel matrix $\b{A}$ relates the retrieved MLS profiles
 (given by the vector $\hat{\b{x}}$) to the ``true'' atmospheric state (the
@@ -630,7 +630,7 @@ mixing ratio.
 \label{fig:BasisExample}
 \end{figure}
 
-\section{A note on the HCl measurements in \thisv}
+\section{A note on the HCl measurements in \thisv\CheckThis}
 
 Starting in February~2006, the primary MLS band for measuring HCl
 (specifically the HCl\cp{35} isotopologue) (\texttt{R4:640.B13F:HCl}
@@ -642,14 +642,14 @@ adjacent band (\texttt{R4:640.B14F:O3} or ``band~14'') which, as can
 be seen from Figures~\ref{fig:UnfoldedSpectra}
 and~\ref{fig:FoldedSpectra} also observe the HCl\cp{35} line (and a
 smaller line for the HCl\cp{37} isotopologue); these retrievals
-produce the \thisv standard HCl product (as they did for \prevv HCl).
+produce the \thisv\CheckThis standard HCl product (as they did for \prevv\CheckThis HCl).
 
-In order to avoid undesirable discontinuities in the \thisv HCl dataset,
+In order to avoid undesirable discontinuities in the \thisv\CheckThis HCl dataset,
 the band~13 radiances are not considered in the retrieval of the
 standard HCl product, even on days for which it was active.  For days
 prior to the 16~February 2006 deactivation of band~13, and the few
 subsequent days when band~13 has been (or may be) reactivated, the
-\thisv algorithms also produce a second HCl product (in the
+\thisv\CheckThis algorithms also produce a second HCl product (in the
 \texttt{HCl-640-B13} swath in the \texttt{L2GP-DGG}) file which includes
 the band~13 radiances, giving a product with improved precision and
 resolution in the upper stratosphere and mesosphere.  See
@@ -665,7 +665,7 @@ channels (by design, as this band was targeted to HCl) resolve the line
 shape.  Accordingly, the band~13 trend is judged to be the more accurate
 one.
 
-\section{A note on \texorpdfstring{N\cs2O}{N2O} measurements in \thisv}
+\section{A note on \texorpdfstring{N\cs2O}{N2O} measurements in \thisv\CheckThis}
 
 The preferred MLS band for measuring N\cs2O (band 12 in the 640\,GHz
 region, \texttt{N2O-640}) began to show signs of aging in June 2013
@@ -676,13 +676,13 @@ product in v3.x was switched to output the band 3 (190\,GHz,
 \texttt{N2O-190}) retrieval on 7~June~2013 and later data for
 \texttt{N2O-640} are not recommended for scientific use.
 
-For \thisv, as similarly for \prevv, the band 3 (190\,GHz,
+For \thisv\CheckThis, as similarly for \prevv\CheckThis, the band 3 (190\,GHz,
 \texttt{N2O-NitrousOxide}) retrievals are used as the standard product
 from launch, whereas the band 12 (640\,GHz, \texttt{N2O-640})
 retrieval is now only available in the \texttt{N2O-640} swath in the
 \texttt{L2GP-DGG} file.
 
-\section{A note on OH measurements in \thisv}
+\section{A note on OH measurements in \thisv\CheckThis}
 \label{sec:OHNote}
 
 The MLS OH measurements derive from observations in the 2.5-THz region

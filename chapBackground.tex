@@ -76,7 +76,7 @@ taking advantage of the fact that the MLS instrument looks in the
 forward direction from the spacecraft.  Figure~\ref{fig:Geometry}
 reviews the Aura MLS measurement geometry and shows that each radiance
 observation is influenced by the state of the atmosphere for several
-consecutive profiles.  In the \thisv Level~2 algorithms, the state vector
+consecutive profiles.  In the \thisv\CheckThis Level~2 algorithms, the state vector
 consists of ``chunks'' of several profiles of atmospheric temperature and
 composition, which are then simultaneously retrieved from radiances
 measured in a similar number of MLS scans.  Results from these ``chunks''
@@ -105,7 +105,7 @@ both from the instrument (such as gain and offset during the limb scan)
 and from the ``forward model'' (such as knowledge of continuum emission
 and the impact of some approximations made in the forward model in order
 to increase its speed).  In order to account for such effects, the
-\thisv algorithms also retrieve spectrally flat (or slowly spectrally
+\thisv\CheckThis algorithms also retrieve spectrally flat (or slowly spectrally
 varying) corrections to the MLS radiances, either in terms of an
 additive radiance offset or an additive atmospheric extinction.
 
@@ -132,7 +132,7 @@ complete system, in order to cut down on the effort involved in
 retrievals that require many iterations.
 
 For this and other reasons, most retrieval algorithms are split into
-\emph{phases}.  In the case of the MLS \thisv retrievals, there are many
+\emph{phases}.  In the case of the MLS \thisv\CheckThis retrievals, there are many
 such phases.  The first group of phases (collectively known as ``Core'')
 use the 118\,GHz and 240\,GHz observations of O\cs2 and O\cp{18}O,
 respectively, to establish estimates for temperature and tangent
@@ -142,7 +142,7 @@ humidity.  The ``Core'' phases also include ``cloud screening''
 computations (based on differences between observed and estimated
 clear-sky radiances).  These identify minor frames where radiances in a
 given radiometer have been subject to significant (and currently poorly
-modeled) cloud scattering.  Such minor frames are ignored in \thisv
+modeled) cloud scattering.  Such minor frames are ignored in \thisv\CheckThis
 processing in certain radiometers.  Including information in such
 cloud-contaminated conditions is a goal for future MLS data processing
 versions.
@@ -165,13 +165,13 @@ products (e.g.,\ ozone) are produced in more than one phase.  All the
 separate measurements of these species are produced as diagnostic
 quantities, and labeled according to the spectral region from which they
 originated.  For example, the ozone obtained from the
-\texttt{CorePlusR2} retrieval is known in the \thisv dataset as
-\texttt{O3-190}.  In \thisv in order to reduce confusion for users of
+\texttt{CorePlusR2} retrieval is known in the \thisv\CheckThis dataset as
+\texttt{O3-190}.  In \thisv\CheckThis in order to reduce confusion for users of
 MLS data, the algorithms also output ``standard products'', which is
 typically a copy of one of the products from the
 \texttt{CorePlusR\emph{n}} phases.  For example, the ``standard''
 chlorine monoxide product is a copy of the \texttt{ClO-640} product.  In
-the case of \thisv nitric acid, the standard product represents a hybrid
+the case of \thisv\CheckThis nitric acid, the standard product represents a hybrid
 of the results from two phases.  Details of which standard product is
 obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 
@@ -184,7 +184,7 @@ obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 \begin{sidewaystable}
 \renewcommand{\thempfootnote}{\sffamily[\arabic{mpfootnote}]}
 \renewcommand{\arraystretch}{1.2}
-\caption{The phases that form the \thisv retrieval
+\caption{The phases that form the \thisv\CheckThis retrieval
   algorithms.}  \vspace{1ex}
 \label{tab:Phases}
 \begin{minipage}{\linewidth}
@@ -332,7 +332,7 @@ obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 \sffamily
 \renewcommand{\arraystretch}{1.3}
 \caption{The origin of each of the ``standard products'' from
-  \thisv.}
+  \thisv\CheckThis.}
 \vspace{1ex}
 \label{tab:StandardProducts}
 \centering\begin{tabular}{l>{\ttfamily}ll}
@@ -385,9 +385,9 @@ obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 \end{tabular}
 \end{table}
 
-\section{Forward models used in \thisv}
+\section{Forward models used in \thisv\CheckThis}
 
-The retrieval algorithms in \thisv make use of a variety of different
+The retrieval algorithms in \thisv\CheckThis make use of a variety of different
 forward models.  The most accurate is the so-called ``full'' forward
 model described in \citet{EOSMLSFWMATBD} and
 \citet{EOSMLSPolarizedFWMATBD}.  This is a hybrid line-by-line and
@@ -416,17 +416,17 @@ In addition, a ``cloud'' forward model can be invoked to model the
 effects of scattering from cloud particles in the troposphere and
 lower stratosphere \citep{EOSMLSCloudATBD}.  This model was used in
 the simulation of radiances based on known model atmospheres for the
-\thisv testing, but is not invoked in the \thisv retrieval algorithms
+\thisv\CheckThis testing, but is not invoked in the \thisv\CheckThis retrieval algorithms
 (the handling of clouds is described in more detail in
 Section~\ref{sec:Clouds}).
 
-\section{The handling of clouds in \thisv}
+\section{The handling of clouds in \thisv\CheckThis}
 \label{sec:Clouds}
 \newcommand{\Tcir}{\ensuremath{T_\text{cir}}}
 
 Thin clouds and atmospheric aerosols do not affect MLS atmospheric
 composition measurements as the typical particle sizes are much smaller
-than the wavelengths of the radiation being observed. The MLS \thisv
+than the wavelengths of the radiation being observed. The MLS \thisv\CheckThis
 algorithms can reliably retrieve composition in moderately cloudy cases
 (having small limb radiance perturbations) and in the case of the
 Core+R3 retrieval this is handled by retrieving a frequency squared
@@ -438,7 +438,7 @@ mainly through scattering processes.  Such situations and the affected
 radiances are excluded from the retrievals, or their influence
 down-weighted.
 
-The first aspect of handling clouds in \thisv is therefore the flagging
+The first aspect of handling clouds in \thisv\CheckThis is therefore the flagging
 of radiances that are believed to be significantly contaminated by cloud
 effects.  To determine if a cloud is present in each MLS radiance
 measurement, we estimate the so-called cloud-induced radiance (\Tcir).
@@ -464,7 +464,7 @@ RHi from a previous phase is used to compute a cloud induced radiance
 analyzed to find the highest limb view affected by cloud scattering, and
 radiances below are handled accordingly.
 
-The other aspect of cloud handling in \thisv is the estimation of cloud
+The other aspect of cloud handling in \thisv\CheckThis is the estimation of cloud
 ice water content (IWC) and ice water path (IWP) products from the final
 \Tcir\ computed by the retrieval in the \texttt{HighCloud} phase.  More
 information on these products and their derivation is given in
@@ -509,13 +509,13 @@ from instrumental issues (e.g., radiometric calibration, field of view
 characterization), spectroscopic uncertainty, and through
 approximations in the retrieval formulation and implementation.  A
 comprehensive quantification of these uncertainties has been performed
-for the older \prevv\ MLS products, updated from that described in the
+for the older \prevv\CheckThis\ MLS products, updated from that described in the
 MLS validation papers (which were based on v2.2).  The individual
 sections of Chapter~\ref{chap:Results} detail the results of this
 quantification product-by-product.  We do not expect the estimated
 systematic errors in the MLS products to vary significantly between
-\thisv\ and \prevv; however, we do plan to update these estimates for
-\thisv\ and report findings in an updated version of this document.
+\thisv\CheckThis\ and \prevv\CheckThis; however, we do plan to update these estimates for
+\thisv\CheckThis\ and report findings in an updated version of this document.
 
 For each identified source of systematic uncertainty, its impact on MLS
 measurements of radiance (or pointing where appropriate) has been
@@ -565,7 +565,7 @@ Ideally, the typical values of these normalized $\chi^2$ statistics will
 be around one, indicating that radiances are typically fitted to around
 their noise levels.  \texttt{Quality} will therefore also ideally have a
 typical value of one.  For some species, however, because of uncertain
-knowledge of spectroscopy and/or instrument calibration, the \thisv
+knowledge of spectroscopy and/or instrument calibration, the \thisv\CheckThis
 algorithms are known to be consistently unable to fit some observed
 radiances to within their predicted noise.  In many of these cases, the
 noise reported on the radiances has been ``inflated'' to allow the

@@ -3,27 +3,41 @@
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navfalse
+\newif\ifnav\navtrue
 % Dummy change
 %
 \usepackage{accsupp}
 %
 % ---------------------------------------- Fonts
+% New (texlive 2023) approach to cochineal
 \usepackage[T1]{fontenc}
-% \usepackage{microtype}
-% \usepackage{inconsolata}
-\usepackage{beramono}
-% \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
-\usepackage[bitstream-charter]{mathdesign}
-\newcommand{\figureversion}[1]{}
-% \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
-\usepackage{berasans}
-% \usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
-%
+\usepackage{cochineal}
+\usepackage[varqu,varl,var0]{inconsolata}
+\usepackage{tabfigures}
+\usepackage[scale=.95,type1]{cabin}
+% \usepackage[scaled=0.85]{DejaVuSans}
+\usepackage[cochineal,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+\usepackage{textgreek}
+
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\mddefault}{m}
+
+% \usepackage[T1]{fontenc}
+% % \usepackage{microtype}
+% % \usepackage{inconsolata}
+% \usepackage{beramono}
+% % \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
+% \usepackage[bitstream-charter]{mathdesign}
+% \newcommand{\figureversion}[1]{}
+% % \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
+% \usepackage{berasans}
+% % \usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
+% %
+% \renewcommand{\familydefault}{\rmdefault}
+% \renewcommand{\mddefault}{m}
 %
-\newcommand{\mytexttilde}{\textasciitilde}
+\newcommand{\mytexttilde}{\ensuremath{\sim}}
 %
 % ---------------------------------------- Various other packages
 \usepackage[final]{graphicx}
@@ -58,16 +72,34 @@
 pdfusetitle]{hyperref}
 %
 % --------------------------------------- Colors
-%\colorlet{ChapterColor}{Purple!50!Maroon!90!Black}
-\colorlet{ChapterColor}{DarkOrange!70!black}
-\colorlet{ChapterBackground}{ChapterColor!25}
-\colorlet{ChapterBackgroundA}{ChapterColor!20}
-\colorlet{ChapterBackgroundB}{ChapterColor!30}
-\colorlet{SectionColor}{SeaGreen!80!black}% 
-\colorlet{SectionBackground}{SectionColor!20}
-\colorlet{SectionBackgroundA}{SectionColor!15}
-\colorlet{SectionBackgroundB}{SectionColor!25}
-\colorlet{HeaderFooterColor}{DarkSlateGrey}
+%
+% \definecolor{ThemeA}{HTML}{03254e}
+% \definecolor{ThemeB}{HTML}{a23e48}
+\colorlet{ThemeA}{DarkTurquoise}
+\colorlet{ThemeB}{Coral}
+
+\definecolor{ThemeA}{HTML}{0e7c7b}
+\colorlet{ThemeB}{Coral}
+%
+\colorlet{ChapterColor}{white}
+\colorlet{ChapterBackground}{ThemeA}
+%
+\colorlet{SectionColor}{ThemeB}
+\colorlet{ProductColor}{white}
+\colorlet{ProductBackground}{SectionColor}
+%
+\colorlet{ChapterTabColor}{white}
+\colorlet{ChapterTabBackgroundA}{ChapterBackground!40}
+\colorlet{ChapterTabBackgroundB}{ChapterBackground!20}
+\colorlet{ProductTabColor}{black}
+\colorlet{ProductTabBackgroundA}{ProductBackground!40}
+\colorlet{ProductTabBackgroundB}{ProductBackground!20}
+%
+\colorlet{HeaderFooterColor}{ThemeA}
+%
+\newcommand{\RegularSections}{\colorlet{topsectioncolor}{SectionColor}}
+\newcommand{\ProductSections}{\colorlet{topsectioncolor}{white}}
+\RegularSections
 %
 % --------------------------------------- Page layout and other lengths
 \usepackage{geometry}
@@ -131,7 +163,7 @@ pdfusetitle]{hyperref}
   {0pt}%
   {-4pt plus -2pt minus -3pt}%
   {4pt plus 2pt minus 3pt}%
-  {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+  {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{topsectioncolor}\figureversion{tabular}}}%
 \renewcommand{\subsection}{\@startsection%
   {subsection}%
   {2}%
@@ -200,6 +232,7 @@ pdfusetitle]{hyperref}
 \newcommand{\degsym}{\textdegree}
 % 
 \newcommand{\mycomment}[1]{{\small\sffamily\color{red}[\textsl{COMMENT: #1}]}}
+\newcommand{\CheckThis}{{\small\sffamily\color{DarkOrange}[\textsl{Check this}]}}
 %
 \newcommand{\dontincludegraphics}[2][]{\framebox{Graphics missing}}
 %
@@ -236,8 +269,8 @@ Richard~R.~Lay}
 \newcommand{\myshorttitle}{Level~2/3 Version 5.0\emph{x} Quality}
 \shorttitle{\myshorttitle}
 \version{5.0--1.1a}
-\newcommand{\thisv}{v5.0\emph{x}\xspace}
-\newcommand{\prevv}{v4.2\emph{x}\xspace}
+\newcommand{\thisv}{v6.0\emph{x}\xspace}
+\newcommand{\prevv}{v5.0\emph{x}\xspace}
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
 \pagenumbering{roman}
@@ -344,8 +377,3 @@ Richard~R.~Lay}
 \bibliography{shortnames,mybib}
 %
 \end{document}
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End: 

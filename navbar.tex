@@ -25,15 +25,15 @@
   \ifthenelse{\equal{#1}{\currentnav}}%
   {%
     \def\nbnudge{\rule{3mm}{0pt}}%
-    \colorlet{NBColor}{white}%
-    \colorlet{NBBackground}{SectionColor}}%
+    \colorlet{NBColor}{ProductColor}%
+    \colorlet{NBBackground}{ProductBackground}}%
   {%
     \def\nbnudge{\rule{0pt}{0pt}}%
     \colorlet{NBColor}{SectionColor}%
     \ifoddrow
-      \colorlet{NBBackground}{SectionBackgroundA}%
+      \colorlet{NBBackground}{ProductTabBackgroundA}%
     \else
-      \colorlet{NBBackground}{SectionBackgroundB}%
+      \colorlet{NBBackground}{ProductTabBackgroundB}%
     \fi}%
   \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
   \def\nbsecref{sec:Standard#1}%
@@ -60,13 +60,13 @@
  }%
   {\def\nbnudge{\rule{3mm}{0pt}}%
     \colorlet{NBColor}{white}%
-    \colorlet{NBBackground}{ChapterColor}}%
+    \colorlet{NBBackground}{ChapterBackground}}%
   {\def\nbnudge{\rule{0pt}{0pt}}%
-    \colorlet{NBColor}{ChapterColor}%
+    \colorlet{NBColor}{ChapterBackground}%
     \ifoddrow
-      \colorlet{NBBackground}{ChapterBackgroundA}%
+      \colorlet{NBBackground}{ChapterTabBackgroundA}%
     \else
-      \colorlet{NBBackground}{ChapterBackgroundB}%
+      \colorlet{NBBackground}{ChapterTabBackgroundB}%
     \fi}%
   \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
   \nbnudge\hyperref[#1]{\begin{tikzpicture}[outer sep=0pt, inner sep=5pt]

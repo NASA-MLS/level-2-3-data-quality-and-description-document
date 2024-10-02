@@ -4,7 +4,7 @@
   \email{Michael.J.Schwartz@jpl.nasa.gov}}
 \subsection{Introduction}
 
-The MLS \thisv temperature product is nearly identical to the \prevv
+The MLS \thisv\CheckThis temperature product is nearly identical to the \prevv\CheckThis
 product and is generally similar to the v3.3 product and to the v2.2
 product that is described in~\citet{SchwartzEtal:2008:Validation}.
 MLS temperature is retrieved primarily from bands near O\cs2 spectral
@@ -12,26 +12,26 @@ lines at 118\,GHz and 239\,GHz that are measured with MLS radiometers
 R1A/B and R3, respectively.  The isotopic 239\,GHz line is the primary
 source of temperature information in the troposphere, while the
 118\,GHz line is the primary source of temperature in the stratosphere
-and above.  MLS \thisv temperature has an approximately $-1\,$K bias
+and above.  MLS \thisv\CheckThis temperature has an approximately $-1\,$K bias
 with respect to correlative measurements in the troposphere and
 stratosphere, with 2--3\,K peak-to-peak additional systematic
 vertical structure.  Table~\ref{tab:TemperatureSummary} summarizes the
 measurement precision, resolution, and modeled and observed biases.
 The following sections provide details.
 
-\subsection{Differences between \thisv and \prevv}
-Mean differences between \thisv temperature and \prevv temperature are
+\subsection{Differences between \thisv\CheckThis and \prevv\CheckThis}
+Mean differences between \thisv\CheckThis temperature and \prevv\CheckThis temperature are
 typically less than 0.2\,K, although vertically oscillating bias
 structure in the tropopause can be as large as $\pm$0.8\,K.
-Temperature \prevv temperature
+Temperature \prevv\CheckThis temperature
  
-Both \thisv and \prevv use GEOS-5 ``Forward Processing for Instrument
+Both \thisv\CheckThis and \prevv\CheckThis use GEOS-5 ``Forward Processing for Instrument
 Teams'' \href{https://gmao.gsfc.nasa.gov/products/
   documents/GEOS_5_FPIT_File_Specification_ON02_v1_2.pdf}{(FP-IT)} 
 temperatures as their retrieval \emph{a priori}, each using the
-version available at the time of processing.  \prevv uses GEOS-5.9.1
+version available at the time of processing.  \prevv\CheckThis uses GEOS-5.9.1
 from the beginning of the mission through 2016 and GEOS-5.12.4 from
-2017 into 2020, whereas \thisv uses GEOS-5.12.4 from the beginning of
+2017 into 2020, whereas \thisv\CheckThis uses GEOS-5.12.4 from the beginning of
 the mission into 2020, and differences in these \emph{a priori} can
 result in small differences in retrieved values. Throughout the rest
 of this section, ``GEOS-5'' without additional qualification refers
@@ -40,7 +40,7 @@ to GEOS-5.12.4 FP-IT.
 Versions v3.x and v2.x took the standard temperature product from
 \texttt{FinalPtan}, a preliminary ``phase'' of the MLS retrieval that
 uses only the O\cs2 bands and that focuses on retrieval of temperature
-and tangent-point pressure. The standard \thisv and \prevv temperature
+and tangent-point pressure. The standard \thisv\CheckThis and \prevv\CheckThis temperature
 products are both taken from the \texttt{CorePlusR3} phase, which adds
 radiances from the 240-GHz radiometer and which simultaneously
 retrieves standard products for a number of atmospheric constituents.
@@ -53,7 +53,7 @@ and GPH products of previous versions.
 \begin{figure}
   \centering\includegraphics[angle=0,width=\linewidth]{%
     figures/diffv5v4T_plot1bylat}
-  \caption{Temperature differences between \thisv and \prevv standard
+  \caption{Temperature differences between \thisv\CheckThis and \prevv\CheckThis standard
     products, screened per recommendations of this document (green)
     and unscreened (red).  2009 data are shown.  Top row is mean
     difference between versions, binned by latitude. Screening has a
@@ -79,13 +79,13 @@ be on the order of 1--2\,K, temperatures from an analysis like GEOS-5
 retrieval product, and differences between the MLS and GEOS-5
 temperatures can be useful in the identification of retrieval
 artifacts.  Cloud-induced perturbations generally occur in the tropics
-and mid-latitudes (where convective storms occur) in both the \thisv
-and \prevv retrieval versions. In unscreened data at retrieval levels
+and mid-latitudes (where convective storms occur) in both the \thisv\CheckThis
+and \prevv\CheckThis retrieval versions. In unscreened data at retrieval levels
 316--178\,hPa, clouds produce primarily positive outliers in
-\thisv and \prevv.  The top panels of
+\thisv\CheckThis and \prevv\CheckThis.  The top panels of
 Figure\,\ref{fig:v5v4__215hPa_pcolorhist2} show this behavior at
 215\,hPa. Conversely, at 121\,hPa, outliers are primarily positive in
-\thisv and \prevv.
+\thisv\CheckThis and \prevv\CheckThis.
 
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{%
@@ -101,7 +101,7 @@ Figure\,\ref{fig:v5v4__215hPa_pcolorhist2} show this behavior at
 \end{figure}
 
 Unscreened and screened histograms of tropical
-(20\degsym{}S--20\degsym{}N) \thisv and \prevv temperature from 2009
+(20\degsym{}S--20\degsym{}N) \thisv\CheckThis and \prevv\CheckThis temperature from 2009
 are shown in Figure\,\ref{fig:v5v4_68-316hPa_linehists}.  Tails of
 low, unscreened outliers are particularly evident from 316--147\,hPa,
 but are greatly reduced by recommended screening (magenta).
@@ -121,10 +121,10 @@ level is not recommended to be used for scientific work.}
 \label{fig:v5v4_68-316hPa_linehists}
 \end{figure}
 
-The highest level (lowest pressure) of the \prevv temperature
+The highest level (lowest pressure) of the \prevv\CheckThis temperature
 retrieval recommended for scientific work in the previous version of
 this document is 0.001\,hPa, but temperature is retrieved, in both
-\prevv and \thisv, up to the 0.0001\,hPa level. The 0.00046\,hPa level
+\prevv\CheckThis and \thisv\CheckThis, up to the 0.0001\,hPa level. The 0.00046\,hPa level
 is typically near the top tangent point of the MLS scan while the
 0.00022\,hPa surface is often above the height of the highest tangent
 point in the MLS limb scan (depending upon latitude). The estimated
@@ -134,12 +134,12 @@ seen from Figure~\ref{fig:AvkTemperature_HR} for both latitudes shown,
 the averaging kernels of the 0.00046\,hPa retrieval level is sharply
 peaked at 0.00046\,hPa, while the averaging kernel of the 0.00022\,hPa
 retrieval level shows a larger contribution from 0.00046\,hPa than
-from 0.00022\,hPa.  As was the case in \prevv, the precisions of the
-0.00046\,hPa and 0.00022\,hPa levels in \thisv are set negative ``by
-hand'' to advise against their casual use, but for \thisv, we are
+from 0.00022\,hPa.  As was the case in \prevv\CheckThis, the precisions of the
+0.00046\,hPa and 0.00022\,hPa levels in \thisv\CheckThis are set negative ``by
+hand'' to advise against their casual use, but for \thisv\CheckThis, we are
 recommending that 0.00046~hPa temperature may be generally useful,
 while 0.00022\,hPa may have some value in for some scientific studies.
-Further validation of \thisv temperature at these levels is planned.
+Further validation of \thisv\CheckThis temperature at these levels is planned.
 
 \subsection{Resolution}
 \onestandardavk{Temperature_HR}{Temperature}%
@@ -162,7 +162,7 @@ polar regions.
 
 \subsection{Precision}
 
-The precision of the MLS \thisv temperature measurement is summarized
+The precision of the MLS \thisv\CheckThis temperature measurement is summarized
 in Table\,\ref{tab:TemperatureSummary}.  Precision is the random
 component of measurements which would average down if the measurement
 were repeated.  The retrieval software returns an estimate of
@@ -186,9 +186,9 @@ middle stratosphere through the mesosphere.
 \subsection{Accuracy}
 
 A substantial study was made of sources of systematic error in MLS
-\prevv measurements, similar to that which was done as a part of the
-validation of v2.2. The accuracy of the \thisv temperature
-measurements should be nearly identical to that of \prevv. This
+\prevv\CheckThis measurements, similar to that which was done as a part of the
+validation of v2.2. The accuracy of the \thisv\CheckThis temperature
+measurements should be nearly identical to that of \prevv\CheckThis. This
 accuracy was estimated both by modeling the impact of uncertainties in
 measurement and retrieval parameters that could lead to systematic
 errors, and through comparisons with correlative data sets.  Column~5
@@ -198,7 +198,7 @@ in~\citet{SchwartzEtal:2008:Validation}.  This estimate is broken into
 two pieces.  The first term was modeled as amplifier non-linearity,
 referred to as ``gain compression,'' and was believed to have a known
 sign, as gain is known to drop at high background signal
-levels. Correction of these nonlinearities was a goal of \prevv, but
+levels. Correction of these nonlinearities was a goal of \prevv\CheckThis, but
 closer examination of the simple non-linearity model found that it did
 not close forward model and measured radiances as expected.  It had
 been hoped that better radiance closure would permit the use of more
@@ -248,13 +248,13 @@ is shown in Figure~\ref{fig:TempSummary2}.
   reflect poor retrieval behavior.
 
 \item[Cloud Screening:] The ``low cloud'' bit of the temperature
-  \texttt{Status} field does not contain useful information in \thisv,
+  \texttt{Status} field does not contain useful information in \thisv\CheckThis,
   so it cannot be used to screen temperature as it was in version
   v03.2.  However, cloud impacts can largely be removed using the ice
   water content (IWC) product, rejecting profiles between
   261--100\,hPa for which the 215\,hPa value of IWC is greater than
   0.005\,g/m$^3$.  Implementation of this criteria requires the
-  loading of the \thisv IWC swath, but is responsible for most of the
+  loading of the \thisv\CheckThis IWC swath, but is responsible for most of the
   rejection of cloud-induced outliers seen in
   Figure~\ref{fig:v5v4_68-316hPa_linehists}.  This criteria removes
   4.7\% of UT profiles globally and 15\% of profiles in the tropics
@@ -279,8 +279,8 @@ respect to analysis and correlative measurements in the troposphere
 and stratosphere that are an area of continued research.  The impact
 of clouds is generally limited to tropospheric levels and to the
 tropics and, to a lesser extent, mid-latitudes.  Cloud impacts in
-unscreened data at the lowest retrieved levels are larger in \thisv
-than they were in \prevv and are harder to screen due to the lack of a
+unscreened data at the lowest retrieved levels are larger in \thisv\CheckThis
+than they were in \prevv\CheckThis and are harder to screen due to the lack of a
 useful ``low cloud'' status bit.  However, after recommended
 screening, tropical negative departures from \emph{a priori} of
 greater than 10\,K (believed almost always to cloud-induced artifacts)
@@ -295,7 +295,7 @@ in~\citet{SchwartzEtal:2008:Validation}.
   \centering\includegraphics[width=0.7\linewidth]{%
     figures/TempSummary2}
   \caption{The left panel shows globally-averaged mean differences
-    between MLS \prevv temperature and eight correlative data sets.
+    between MLS \prevv\CheckThis temperature and eight correlative data sets.
     Criteria for coincidences are described in detain
     in~\citet{SchwartzEtal:2008:Validation}.  The right panel shows
     the global standard deviations about the means.}
@@ -305,7 +305,7 @@ in~\citet{SchwartzEtal:2008:Validation}.
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{%
     figures/binbylat_v5-ap_2009}
-  \caption{Zonal mean of the difference between MLS \thisv temperature
+  \caption{Zonal mean of the difference between MLS \thisv\CheckThis temperature
     and GEOS-5 temperature (upper), and variability about that mean
     (lower), averaged for 2009. Y-axes are pressure in hPa.}
   \label{fig:MLSminusGEOS5_zonalmean}
@@ -343,7 +343,7 @@ residuals, so further study is needed to understand the forward-model
 inadequacies.
 
 The upper panel of Figure~\ref{fig:MLSminusGEOS5_zonalmean} shows
-zonal-mean differences between \thisv temperature and GEOS-5
+zonal-mean differences between \thisv\CheckThis temperature and GEOS-5
 temperature, averaged over 2009; the lower panel is the $1\sigma$
 variability about that mean.  Persistent vertical structure in the
 troposphere and lower stratosphere is evident, with the oscillations
