@@ -1,65 +1,104 @@
 \speciestitle{Hydrogen Chloride}{HCl}{HCl}{%
-  \item[Useful range:] 100--0.32\,hPa
-  \item[Contact:] Lucien Froidevaux, \email{Lucien.Froidevaux@jpl.nasa.gov}}
+\item[Useful range:] 100--0.32\,hPa 
+\item[Contact:] Lucien Froidevaux,
+  \email{Lucien.Froidevaux@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-There has been very little change in the \thisv\CheckThis HCl retrieval results, in comparison to \prevv\CheckThis. We provide below sample mean HCl distributions for the two data versions, and their differences. Otherwise, previous information regarding this species remains largely unchanged; the main points are mentioned here mainly for new data users.
+There has been very little change in the \thisv\CheckThis HCl retrieval results, in comparison to \prevv\CheckThis. We provide below sample
+mean HCl distributions for the two data versions, and their differences. Otherwise, previous information regarding this species remains
+largely unchanged; the main points are mentioned here mainly for new data users.
 
-The MLS \thisv\CheckThis retrievals of the HCl standard product (from the 640\,GHz radiometer) use channels from band 14, as a result of the deterioration observed since early 2006 in nearby band 13, originally targeted (with narrower channels than band 14) at the main HCl emission line center. Full measurement days with band 13 on after The MLS \thisv retrievals of the HCl standard product (from the 640\,GHz radiometer) use channels from band 14, as a result of the deterioration observed since early 2006 in nearby band 13, originally targeted (with narrower channels than band 14) at the main HCl emission line center. Full measurement days with band 13 on after February 15, 2006, are as follows: March 15, 2006 (2006d074), April 14, 2006 (2006d104), January 6 through 8, 2009 (2009d006 through 2009d008), and January 24 through 27, 2010 (2010d024 through 2010d027). For days prior to February 16, 2006 and for the few days (as listed above) when band 13 gets turned on thereafter, the MLS Level~2 software also produces a separate \texttt{HCl-640-B13} product (stored in the \texttt{L2GP-DGG} file), using the band 13 radiances. This product has slightly better precision and vertical resolution in the upper stratosphere than the standard HCl product. The MLS team plans to turn band 13 on very infrequently (possibly only one more time), as its lifetime is estimated at a few days to a few weeks at most, based on the channel counts and channel noise characteristics observed during the 3-day turn-on period in late January, 2010; band 13 should provide useful trend information for upper stratospheric data, given its narrower channels. Upper stratospheric trends from the (uninterrupted from 2004 to present) band 14 retrievals are not reliable enough and are too small, compared to band 13 data and expectations, as well as versus ACE-FTS HCl data. Scientific usage of the MLS standard HCl (band 14) dataset should therefore be restricted to the lower stratosphere; in this region, studies of tendencies and longer-term trends are justified (e.g., see the HCl comparisons discussed by \citet{MahieuEtal:2014}).
+The MLS \thisv\CheckThis retrievals of the HCl standard product (from the 640\,GHz radiometer) use channels from band 14, as a result of the deterioration observed since early 2006 in nearby band 13, originally targeted (with narrower channels than band 14) at the main HCl emission line center. Full measurement days with band 13 on after The MLS \thisv retrievals of the HCl standard product (from the 640\,GHz radiometer) use channels from band 14, as a result of the deterioration observed since early 2006 in nearby band 13, originally targeted (with narrower channels than band 14) at the main HCl emission line center. Full measurement days with band 13 on after February 15, 2006, are as follows: March 15, 2006 (2006d074), April 14, 2006 (2006d104), January 6 through 8, 2009 (2009d006 through 2009d008), and January 24 through 27, 2010 (2010d024 through 2010d027).  For days prior to February 16, 2006 and for the few days (as listed above) when band 13 gets turned on thereafter, the MLS Level~2 software also produces a separate \texttt{HCl-640-B13} product (stored in the \texttt{L2GP-DGG} file), using the band 13 radiances. This product has slightly better precision and vertical resolution in the upper stratosphere than the standard HCl product.  The MLS team plans to turn band 13 on very infrequently (possibly only one more time), as its lifetime is estimated at a few days to a few weeks at most, based on the channel counts and channel noise characteristics observed during the 3-day turn-on period in late January, 2010; band 13 should provide useful trend information for upper stratospheric data, given its narrower channels.  Upper stratospheric trends from the (uninterrupted from 2004 to present) band 14 retrievals are not reliable enough and are too small, compared to band 13 data and expectations, as well as versus ACE-FTS HCl data.  Scientific usage of the MLS standard HCl (band 14) dataset should therefore be restricted to the lower stratosphere; in this region, studies of tendencies and longer-term trends are justified (e.g., see the HCl comparisons discussed by \citet{MahieuEtal:2014}).
 
 \begin{figure}
-  \centering\includegraphics[angle=90,width=0.6\linewidth]{%
-    figures/HCl_2bands_0-46hpa_trends_2004_2010}
-  \caption{Daily zonal averages for MLS HCl at 0.46\,hPa, from mid-August, 2004, through January, 2010, for the originally-targeted band 13 measurements (red points), now available only on occasion (to preserve lifetime), and the band 14 data (blue points).  The lines are simple linear fits through the daily data points; trend differences are apparent in this region of the atmosphere, where the information obtained from band 14 HCl data is not reliable enough.}
-  \label{fig:MLSHCl2bands}
+  \centering\includegraphics[angle=90,width=0.6\linewidth]{figures/HCl_2bands_0-46hpa_trends_2004_2010}
+    \caption{Daily zonal averages for MLS HCl at 0.46\,hPa, from mid-August, 2004, through January, 2010, for the originally-targeted band 13 measurements (red points), now available only on occasion (to preserve lifetime), and the band 14 data (blue points).  The lines are simple linear fits through the daily data points; trend differences are apparent in this region of the atmosphere, where the information obtained from band 14 HCl data is not reliable enough.}
+\label{fig:MLSHCl2bands}
 \end{figure}
 
-See Figure~\ref{fig:MLSHCl2bands} for an illustration of the trend differences between these two MLS band measurements of HCl. In the lower stratosphere, however, variations in the two HCl products are closer together, although there is also more seasonal variability. We believe that the band 14 retrievals are quite appropriate to use in studies of seasonal (and latitudinal) changes (e.g., during polar winter/spring), and for longer-term trend studies in the lower stratosphere, despite some systematic trend differences with respect to some model results, as discussed by \citet{FroidevauxEtal:2019}.
+See Figure~\ref{fig:MLSHCl2bands} for an illustration of the trend differences between these two MLS band measurements of HCl.  In the lower stratosphere, however, variations in the two HCl products are closer together, although there is also more seasonal variability. We believe that the band 14 retrievals are quite appropriate to use in studies of seasonal (and latitudinal) changes (e.g., during polar winter/spring), and for longer-term trend studies in the lower stratosphere, despite some systematic trend differences with respect to some model results, as discussed by \citet{FroidevauxEtal:2019}.
 
-Table~\ref{tab:HClSummary} summarizes the MLS HCl resolution, precision, and accuracy estimates as a function of pressure. More discussion and data screening recommendations for the MLS HCl \thisv\CheckThis data are provided below. Analyses describing detailed validation of the MLS (v2.2) product and comparisons with other data sets are described in \citet{FroidevauxEtal:2008:HCl}. Based on the fairly small overall changes in HCl data since v2.2, the conclusions of the latter reference should remain essentially unchanged.
+Table~\ref{tab:HClSummary} summarizes the MLS HCl resolution, precision, and accuracy estimates as a function of pressure.  More discussion and data screening recommendations for the MLS HCl \thisv\CheckThis data are provided below.  Analyses describing detailed validation of the MLS (v2.2) product and comparisons with other data sets are described in \citet{FroidevauxEtal:2008:HCl}.  Based on the fairly small overall changes in HCl data since v2.2, the conclusions of the latter reference should remain essentially unchanged.
 
 \subsection{Changes from  \prevv\CheckThis}
 
 There were no significant algorithmic changes relating to HCl for the \thisv\CheckThis retrievals. Small differences in HCl abundances (see below) have occurred mainly in the bottom part of the lower stratosphere, mainly as a result of changes in retrieved MLS water vapor in the UTLS.
 
-The background observed in the 640-GHz radiances includes emissions from N\cs2, O\cs2, and H\cs2O. There are laboratory-based and ground-based models for the continuum absorptions that are the basis for the MLS absorption model [{\it Pardo, 2001}, and references therein]. These models were tested against MLS extinction measurements from the wing channels in the 640-GHz radiometer. The latitude dependence of this extinction was found to agree better with the expected moist plus dry continuum extinction values if the dry and moist continuum functions were scaled by factors close to 20\%; however, this is not a change from the \prevv\CheckThis retrievals.
+The background observed in the 640-GHz radiances includes emissions from N\cs2, O\cs2, and H\cs2O.  There are laboratory-based and ground-based models for the continuum absorptions that are the basis for the MLS absorption model [{\it Pardo, 2001}, and references therein].  These models were tested against MLS extinction measurements from the wing channels in the 640-GHz radiometer.  The latitude dependence of this extinction was found to agree better with the expected moist plus dry continuum extinction values if the dry and moist continuum functions were scaled by factors close to 20\%; however, this is not a change from the \prevv\CheckThis retrievals.
 
-A comparison plot showing zonal average HCl profile contours versus latitude and differences between the \thisv\CheckThis and \prevv\CheckThis fields for a typical month (March, 2009) is provided in Figure~\ref{fig:MLSv4v5HClContour}. For pressures larger than or equal to 0.22\,hPa, the average differences between the two data versions are typically within 0.05\,ppbv (or 1--2\%). These average changes are easily within the estimated accuracy values (see Table~\ref{tab:HClSummary}). The largest percentage changes in HCl occur for very small mixing ratio values; \thisv\CheckThis values are larger than \prevv\CheckThis values by a few to 25\% in the 100 to 68\,hPa region, and also (not shown here) in the polar lower stratospheric regions during winter/spring. There is still an unrealistic high bias in HCl at 147\,hPa in the tropics, so values at this pressure are not recommended or reliable within the 40\degsym S to 40\degsym N latitude range. The precision (single profile random uncertainty) estimates provided in the Level~2 files are essentially unchanged from \prevv\CheckThis.
+A comparison plot showing zonal average HCl profile contours versus latitude and differences between the \thisv\CheckThis and \prevv\CheckThis fields for a typical month (March, 2009) is provided in Figure~\ref{fig:MLSv4v5HClContour}.  For pressures larger than or equal to 0.22\,hPa, the average differences between the two data versions are typically within 0.05\,ppbv (or 1--2\%).  These average changes are easily within the estimated accuracy values (see Table~\ref{tab:HClSummary}).  The largest percentage changes in HCl occur for very small mixing ratio values; \thisv\CheckThis values are larger than \prevv\CheckThis values by a few to 25\% in the 100 to 68\,hPa region, and also (not shown here) in the polar lower stratospheric regions during winter/spring.  There is still an unrealistic high bias in HCl at 147\,hPa in the tropics, so values at this pressure are not recommended or reliable within the 40\degsym S to 40\degsym N latitude range. The precision (single profile random uncertainty) estimates provided in the Level~2 files are essentially unchanged from \prevv\CheckThis.
 
 \begin{figure}
   \centering\includegraphics[angle=90,width=\linewidth]{%
     figures/Fig-HCl_v5_v4_difs_ZMContours_2009m03.pdf}
-  \caption{Zonal averages for MLS HCl profiles during March, 2009, showing the MLS \prevv\CheckThis HCl mixing ratio contours (top left panel), the \thisv\CheckThis contours (top right panel), and their differences in ppbv (\thisv\CheckThis minus \prevv\CheckThis , bottom left panel) and percent (\thisv\CheckThis minus \prevv\CheckThis versus \prevv\CheckThis, bottom right panel).}
-  \label{fig:MLSv4v5HClContour}
+  \caption{Zonal averages for MLS HCl profiles during March, 2009,
+    showing the MLS \prevv\CheckThis HCl mixing ratio contours (top left panel),
+    the \thisv\CheckThis contours (top right panel), and their differences in
+    ppbv (\thisv\CheckThis minus \prevv\CheckThis , bottom left panel) and percent (\thisv\CheckThis
+    minus \prevv\CheckThis versus \prevv\CheckThis, bottom right panel).}
+\label{fig:MLSv4v5HClContour}
 \end{figure}
 
 \subsection{Resolution}
 \onestandardavk{HCl}{HCl}%
 
-Typical (rounded off) values for resolution are provided in Table~\ref{tab:HClSummary}. Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkHCl}, the vertical resolution for the standard HCl stratospheric product is \mytexttilde3\,km (2.7\,km at best in the lower stratosphere), or about double the 640-GHz radiometer vertical field of view width at half-maximum; the vertical resolution degrades to 4--6\,km in the lower mesosphere. The along-track resolution is \mytexttilde200 to 350\,km for pressures of 2\,hPa or more, and \mytexttilde500\,km in the lower mesosphere. The cross-track resolution is set by the 3\,km width of the MLS 640-GHz field of view. The longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
+Typical (rounded off) values for resolution are provided in Table~\ref{tab:HClSummary}.  Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkHCl}, the vertical resolution for the standard HCl stratospheric product is \mytexttilde3\,km (2.7\,km at best in the lower stratosphere), or about double the 640-GHz radiometer vertical field of view width at half-maximum; the vertical resolution degrades to 4--6\,km in the lower mesosphere.  The along-track resolution is \mytexttilde200 to 350\,km for pressures of 2\,hPa or more, and \mytexttilde500\,km in the lower mesosphere.  The cross-track resolution is set by the 3\,km width of the MLS 640-GHz field of view.  The longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
 
 \subsection{Precision}
 
-The estimated single-profile precision reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere. These precision values have not changed significantly for \thisv\CheckThis data. The Level~2 precision values are often only slightly lower than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often smaller than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles. The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where there is a larger impact of \emph{a priori} and smoothing constraints. The HCl precision values increase rapidly at pressures less than 0.2\,hPa, and are generally flagged negative (or zero) at pressures less than 0.1\,hPa; this indicates an increasing influence from the \emph{a priori} (with poorer measurement sensitivity and reliability).
+The estimated single-profile precision reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere.  These precision values have not changed significantly for \thisv\CheckThis data.  The Level~2 precision values are often only slightly lower than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often smaller than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles.  The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where there is a larger impact of \emph{a priori} and smoothing constraints.  The HCl precision values increase rapidly at pressures less than 0.2\,hPa, and are generally flagged negative (or zero) at pressures less than 0.1\,hPa; this indicates an increasing influence from the \emph{a priori} (with poorer measurement sensitivity and reliability).
 
 \subsection{Accuracy}
 
-The accuracy estimates in the Table come from a quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HCl retrievals (based on version 4, for now); there are several error sources (mostly from radiometric calibration components) that contribute significantly to the total error. These values are intended to represent $2\sigma$ estimates of accuracy. For more details, see the MLS validation paper by \citet{FroidevauxEtal:2008:HCl}. For \thisv\CheckThis (as for \prevv\CheckThis), given the trend issues affecting the (band 14) standard HCl product in the upper stratosphere and lower mesosphere, we have recommended an accuracy estimate of no better than 10\% in this region (or about 0.3\,ppbv). For the lower stratosphere, given the agreement between the two bands' retrievals as well as some trend studies (for the standard product), we use the more formal accuracy estimates (see Table~\ref{tab:HClSummary}). The changes in the accuracy estimates in this Table are typically very small, except at the 147\,hPa level, where there are now larger systematic errors.
+The accuracy estimates in the Table come from a quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HCl retrievals (based on version 4, for now); there are several error sources (mostly from radiometric calibration components) that contribute significantly to the total error.  These values are intended to represent $2\sigma$ estimates of accuracy.  For more details, see the MLS validation paper by \citet{FroidevauxEtal:2008:HCl}.  For \thisv\CheckThis (as for \prevv\CheckThis), given the trend issues affecting the (band 14) standard HCl product in the upper stratosphere and lower mesosphere, we have recommended an accuracy estimate of no better than 10\% in this region (or about 0.3\,ppbv).  For the lower stratosphere, given the agreement between the two bands' retrievals as well as some trend studies (for the standard product), we use the more formal accuracy estimates (see Table~\ref{tab:HClSummary}). The changes in the accuracy estimates in this Table are typically very small, except at the 147\,hPa level, where there are now larger systematic errors.
 
 \subsection{Data screening}
 \label{sec:HClScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ We note that the MLS values at 147\,hPa are biased high, at least at low to mid-latitudes -- and these values are not recommended (particularly equatorward of about 40\degsym). Also, although the vertical range at the top end is recommended up to 0.32\,hPa, users should note the significant issues relating to HCl trend estimates in the upper stratosphere and lower mesosphere; average profiles in this region can be used for studies not involving trends (or accuracy requirements not as tight as 10$\%$).
+\item[Pressure range:] \screeningrule{100--0.32\,hPa}
+  \standardrangestatement\ We note that the MLS values at 147\,hPa are
+  biased high, at least at low to mid-latitudes -- and these values
+  are not recommended (particularly equatorward of about
+  40\degsym). Also, although the vertical range at the top end is
+  recommended up to 0.32\,hPa, users should note the significant
+  issues relating to HCl trend estimates in the upper stratosphere and
+  lower mesosphere; average profiles in this region can be used for
+  studies not involving trends (or accuracy requirements not as tight
+  as 10$\%$).
 
-    \standardprecisionrule
-    \evenstatusrule
+  \standardprecisionrule
+  \evenstatusrule
 
-  \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.} This criterion removes profiles with the poorest radiance fits, typically less than 0.1\% of the daily profiles. For HCl (and for other 640\,GHz MLS products), this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and \texttt{Convergence} fields for data screening.
+\item[Quality field:] \screeningrule{Only profiles with a value of the
+    \texttt{Quality} field \emph{greater} than 1.2 should be used.}
+  This criterion removes profiles with the poorest radiance fits,
+  typically less than 0.1\% of the daily profiles. For HCl (and for
+  other 640\,GHz MLS products), this screening correlates well with
+  the poorly converged sets of profiles (see below); we recommend the
+  use of both the \texttt{Quality} and \texttt{Convergence} fields for
+  data screening.
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have this \texttt{Convergence} field set to larger values, and should be discarded.
+\item[Convergence field:] \screeningrule{Only profiles with a value of
+    the \texttt{Convergence} field \emph{less} than 1.05 should be
+    used.}  For the vast majority of profiles (99\% or more for most
+  days), this field is less than 1.05.  Nevertheless, on occasion,
+  sets of profiles (typically one or more groups of ten profiles,
+  retrieved as a ``chunk'') have this \texttt{Convergence} field set
+  to larger values, and should be discarded.
 
-  \item[Clouds:] Thick clouds can add significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5 ppbv at 100 hPa and even larger at 147 hPa. Studies in this region could benefit from additional screening that correlates any outliers in the data with the occurrence of thick clouds (using some subset of the profiles with set cloud status flags, namely status bits 16 and 32, or using the MLS retrievals of ice water content). However, the large positive HCl bias at 147 hPa for low latitudes likely arises in part from unknown or improperly modeled systematic error sources, and not just from clouds. At other pressures, the potential impact on HCl from clouds is small or negligible.
+\item[Clouds:] Thick clouds can add significant artifacts (mainly in
+  the tropics, statistically), with total systematic errors
+  potentially as large as 0.5 ppbv at 100 hPa and even larger at 147
+  hPa. Studies in this region could benefit from additional screening
+  that correlates any outliers in the data with the occurrence of
+  thick clouds (using some subset of the profiles with set cloud
+  status flags, namely status bits 16 and 32, or using the MLS
+  retrievals of ice water content). However, the large positive HCl
+  bias at 147 hPa for low latitudes likely arises in part from unknown
+  or improperly modeled systematic error sources, and not just from
+  clouds. At other pressures, the potential impact on HCl from clouds
+  is small or negligible.
 
 \end{description}
 
@@ -69,17 +108,24 @@ The accuracy estimates in the Table come from a quantification of the combined e
 
 \subsection{Artifacts}
 \begin{itemize}
-  \item We do not recommend the use of the MLS HCl standard product in the upper stratosphere and lower mesosphere, especially in terms of trend studies, for reasons mentioned above.
-  \item The HCl values at 147\,hPa are biased high and generally not usable (except possibly at high latitudes). Please consult with the MLS team for further information.
-  \item Users should screen out the non-converged and poorest quality HCl profiles, as such profiles (typically less than 0.1\% of the data) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
-\end{itemize}
+\item We do not recommend the use of the MLS HCl standard product in
+  the upper stratosphere and lower mesosphere, especially in terms of
+  trend studies, for reasons mentioned above.
+\item The HCl values at 147\,hPa are biased high and generally not
+  usable (except possibly at high latitudes).  Please consult with the
+  MLS team for further information.
+\item Users should screen out the non-converged and poorest quality
+  HCl profiles, as such profiles (typically less than 0.1\% of the
+  data) tend to behave unlike the majority of the other MLS
+  retrievals.  See the criteria listed above.
+\end{itemize}  
 
 \begin{table}
-  \caption{Summary for MLS hydrogen chloride}
-  \vspace{\tablecaptionsep}
-  \label{tab:HClSummary}
-  \begin{minipage}{\linewidth}\small
-    \centering\begin{tabular}{ccccccm{25ex}} \toprule
+\caption{Summary for MLS hydrogen chloride}
+\vspace{\tablecaptionsep}
+\label{tab:HClSummary}
+\begin{minipage}{\linewidth}\small
+  \centering\begin{tabular}{ccccccm{25ex}} \toprule
     \parbox[m]{15mm}{\centering\textbf{Pressure}} &
     \multicolumn{2}{c}{\parbox[m]{17mm}{\centering\textbf{Precision\footnote{Precision
             ($1\sigma$) for individual profiles; note that $\%$ values
@@ -111,5 +157,10 @@ The accuracy estimates in the Table come from a quantification of the combined e
     1000--215   & --- & ---             & ---              & ---   & ---     & Unsuitable for scientific use \\
     \bottomrule
 \end{tabular}
-  \end{minipage}
+\end{minipage} 
 \end{table}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "v5-x-report"
+%%% End: 
