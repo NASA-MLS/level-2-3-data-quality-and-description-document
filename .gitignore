@@ -45,4 +45,4 @@ v6-x-report.pdf
 *.synctex*
 singlesection.pdf
 *.atfi
-shownav.flag
+shownav.flag*

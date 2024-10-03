@@ -1,102 +1,45 @@
 \speciestitle{Hydrogen Cyanide}{HCN}{HCN}{%
-\item[Useful range:] 21--0.1\,hPa
-\item[Contact:] Hugh C. Pumphrey,
-  \email{Hugh.Pumphrey@ed.ac.uk}}
+  \item[Useful range:] 21--0.1\,hPa
+  \item[Contact:] Hugh C. Pumphrey, \email{Hugh.Pumphrey@ed.ac.uk}}
 
 \subsection{Introduction}
 
-HCN is retrieved from bands encompassing, in the lower sideband, the
-177.26\,GHz spectral line of HCN\@. Although the target line is in an
-uncluttered part of the spectrum, the upper sideband contains many
-interfering lines of O\cs3 and HNO\cs3. As a result, the \thisv\CheckThis HCN
-product is not recommended for general use at altitudes below
-21\,hPa. In the recommended range it is usable, but has rather poor
-precision (necessitating averaging such as weekly zonal means) and
-resolution.
+HCN is retrieved from bands encompassing, in the lower sideband, the 177.26\,GHz spectral line of HCN\@. Although the target line is in an uncluttered part of the spectrum, the upper sideband contains many interfering lines of O\cs3 and HNO\cs3. As a result, the \thisv\CheckThis HCN product is not recommended for general use at altitudes below 21\,hPa. In the recommended range it is usable, but has rather poor precision (necessitating averaging such as weekly zonal means) and resolution.
 
-It is possible to retrieve weekly zonal means of HCN over a greater
-vertical range by first averaging the radiances. Results of this
-process and further information on the HCN measurement may be found in
-\cite{PumphreyEtal:2006}.
+It is possible to retrieve weekly zonal means of HCN over a greater vertical range by first averaging the radiances. Results of this process and further information on the HCN measurement may be found in \cite{PumphreyEtal:2006}.
 
 \subsection{Differences between earlier versions and \thisv\CheckThis}
 
-No changes specific to the HCN retrieval were made between v2.x and
-v3.x. For v4.x a new phase was introduced in which HCN is retrieved
-using only bands 6 and 27, rather than all of R2; this phase is also
-used in \thisv\CheckThis.  The v4.x HCN had obvious biases in the lower
-stratosphere, but they were far less severe than in v2.x and v3.x,
-both of which had large regions with negative mixing ratios. In \thisv\CheckThis
-the biases appear to be reduced again. Between 10\,hPa and 3\,hPa,
-\thisv\CheckThis HCN is somewhat lower than all three previous versions.  The
-lowest recommended level for \thisv\CheckThis is currently 21\,hPa, as it was
-for v4.x. However, it is possible that, after further validation work,
-the \thisv\CheckThis HCN data between 31\,hPa and 68\,hPa may ultimately be
-judged to be suitable for scientific use.  Any such updates will be
-reported in a new version of this document.
+No changes specific to the HCN retrieval were made between v2.x and v3.x. For v4.x a new phase was introduced in which HCN is retrieved using only bands 6 and 27, rather than all of R2; this phase is also used in \thisv\CheckThis. The v4.x HCN had obvious biases in the lower stratosphere, but they were far less severe than in v2.x and v3.x, both of which had large regions with negative mixing ratios. In \thisv\CheckThis the biases appear to be reduced again. Between 10\,hPa and 3\,hPa, \thisv\CheckThis HCN is somewhat lower than all three previous versions. The lowest recommended level for \thisv\CheckThis is currently 21\,hPa, as it was for v4.x. However, it is possible that, after further validation work, the \thisv\CheckThis HCN data between 31\,hPa and 68\,hPa may ultimately be judged to be suitable for scientific use. Any such updates will be reported in a new version of this document.
 
-Figure~\ref{fig:HCNPrecision} shows that the precisions in \thisv\CheckThis are
-essentially unchanged from earlier versions. The retrieved mixing
-ratios change very little in the region where use was recommended for
-earlier versions. Mixing ratios are considerably different between all
-four versions in the lower stratosphere. However, the values in \thisv\CheckThis
-appear less unrealistic than in any earlier version.
+Figure~\ref{fig:HCNPrecision} shows that the precisions in \thisv\CheckThis are essentially unchanged from earlier versions. The retrieved mixing ratios change very little in the region where use was recommended for earlier versions. Mixing ratios are considerably different between all four versions in the lower stratosphere. However, the values in \thisv\CheckThis appear less unrealistic than in any earlier version.
 
 \subsection{Vertical resolution}
 \onestandardavk{HCN}{HCN}%
 
-The HCN signal is rather small, so a rather strong smoothing constraint
-has to be applied to ensure that the retrieval is at all useful. As
-Figure~\ref{fig:AvkHCN} shows, the vertical resolution is about
-8\,km at 10\,hPa, degrading to 12\,km at 0.1\,hPa. The horizontal
-resolution along the measurement track is between 2 and 4 profile
-spacings.
+The HCN signal is rather small, so a rather strong smoothing constraint has to be applied to ensure that the retrieval is at all useful. As Figure~\ref{fig:AvkHCN} shows, the vertical resolution is about 8\,km at 10\,hPa, degrading to 12\,km at 0.1\,hPa. The horizontal resolution along the measurement track is between 2 and 4 profile spacings.
 
 \subsection{Precision}
 
-Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of
-the field {\tt L2gpPrecision}), together with the observed standard
-deviation in an equatorial latitude band where the natural variability
-of the atmosphere is small. The observed scatter is smaller than the
-estimated precision due to the effects of retrieval smoothing.
+Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of the field {\tt L2gpPrecision}), together with the observed standard deviation in an equatorial latitude band where the natural variability of the atmosphere is small. The observed scatter is smaller than the estimated precision due to the effects of retrieval smoothing.
 
 \begin{figure}
-\centering%
-\includegraphics[width=0.495\textwidth]{figures/hcn-prec-fig-eq-2005d028}\hfill%
-\includegraphics[width=0.495\textwidth]{figures/hcn-prec-fig-NP-2005d028}
-\caption{Estimated precision {\tt L2gpPrecision} and observed standard
-  deviation for MLS \thisv\CheckThis (green), v4.x (black), v3.x (blue) and v2.x
-  (red) HCN\@. The data shown are all profiles within 20\degsym\ of
-  the equator (left) and 70\degsym N--83\degsym N (right) for 28
-  January, 2005.  Mean mixing ratio (VMR) profiles are shown for
-  comparison. Between 3 and 10\,hPa, \thisv\CheckThis departs from the three
-  earlier versions. At altitudes below 10\,hPa, all four versions are
-  different, but v2.x and v3.x are less realistic than v4.x and
-  \thisv\CheckThis.}
-\label{fig:HCNPrecision}
+  \centering%
+  \includegraphics[width=0.495\textwidth]{figures/hcn-prec-fig-eq-2005d028}\hfill%
+  \includegraphics[width=0.495\textwidth]{figures/hcn-prec-fig-NP-2005d028}
+  \caption{Estimated precision {\tt L2gpPrecision} and observed standard deviation for MLS \thisv\CheckThis (green), v4.x (black), v3.x (blue) and v2.x (red) HCN\@. The data shown are all profiles within 20\degsym\ of the equator (left) and 70\degsym N--83\degsym N (right) for 28 January, 2005.  Mean mixing ratio (VMR) profiles are shown for comparison. Between 3 and 10\,hPa, \thisv\CheckThis departs from the three earlier versions. At altitudes below 10\,hPa, all four versions are different, but v2.x and v3.x are less realistic than v4.x and \thisv\CheckThis.}
+  \label{fig:HCNPrecision}
 \end{figure}
 
 \subsection{Accuracy}
 
-The accuracy of the HCN product has not been assessed in detail
-because a cursory inspection revealed that v2.x and v3.x HCN had
-extremely large systematic errors in the lower stratosphere. These
-errors are much smaller in v4.x and may be somewhat smaller again in
-\thisv\CheckThis, but remain present and un-quantified.  For this reason the
-data are not recommended for general use at pressures greater than 21\,hPa
-(altitudes below \mytexttilde27\,km).  In the upper stratosphere the
-values are in line with current understanding of the chemistry of
-HCN\@.  Comparison to historical values suggests an accuracy of no
-worse than 50\%. The precision, resolution and accuracy of the HCN
-data are summarized in table~\ref{tab:HCNSummary}.
+The accuracy of the HCN product has not been assessed in detail because a cursory inspection revealed that v2.x and v3.x HCN had extremely large systematic errors in the lower stratosphere. These errors are much smaller in v4.x and may be somewhat smaller again in \thisv\CheckThis, but remain present and un-quantified. For this reason the data are not recommended for general use at pressures greater than 21\,hPa (altitudes below \mytexttilde27\,km). In the upper stratosphere the values are in line with current understanding of the chemistry of HCN\@. Comparison to historical values suggests an accuracy of no worse than 50\%. The precision, resolution and accuracy of the HCN data are summarized in table~\ref{tab:HCNSummary}.
 
 \begin{table}
-  \caption{Summary of data quality for MLS \thisv\CheckThis HCN\@. The precision shown
-    is the estimated precision (\texttt{L2gpPrecision}); the observed
-    scatter is about 80\% of this value.}
+  \caption{Summary of data quality for MLS \thisv\CheckThis HCN\@. The precision shown is the estimated precision (\texttt{L2gpPrecision}); the observed scatter is about 80\% of this value.}
   \vspace{\tablecaptionsep}
-\label{tab:HCNSummary}
-\centering\begin{tabular}{ccccm{25ex}}
+  \label{tab:HCNSummary}
+  \centering\begin{tabular}{ccccm{25ex}}
   \toprule
   \parbox{10ex}{\bfseries\centering Pressure} &
   \parbox{11ex}{\bfseries\centering Resolution \mbox{V $\times$ H} / km} &
@@ -116,26 +59,12 @@ data are summarized in table~\ref{tab:HCNSummary}.
 \subsection{Data screening}
 \label{sec:HCNScreening}
 \begin{description}
-\item[Pressure range:] \screeningrule{21--0.1\,hPa}
-  \standardrangestatement\  Data in the 31\,hPa to 68\,hPa range may
-  prove to be usable after further validation (updates to this
-  document will report any new judgment along those lines).
-  \standardprecisionrule
-  \evenstatusrule
-\item[Clouds:] \screeningrule{Clouds have no impact, profiles with
-    non-zero even values of \texttt{Status} are suitable for use.}  As
-  HCN is only useable in regions unaffected by clouds, profiles which have
-  either, both or neither of the cloud flags set may be used.
-\item[Quality:] \qualityrule{0.2} Values of \texttt{Quality} are
-  usually near 1.5; occasional lower values do not seem correlated
-  with unusual profiles, but we suggest as a precaution that only
-  profiles with \texttt{Quality} $> 0.2$ be used.  Typically this will
-  eliminate only 1--2\% of profiles.
-  %% Number of rejected profiles remains small in V5
-\item[Convergence:] \convergencerule{2.0} This should eliminate any
-  chunks which have obviously failed to converge -- typically this is
-  only 1--2\% of the total.
-  %% Number of rejected profiles remains small in V5
+  \item[Pressure range:] \screeningrule{21--0.1\,hPa} \standardrangestatement\ Data in the 31\,hPa to 68\,hPa range may prove to be usable after further validation (updates to this document will report any new judgment along those lines). \standardprecisionrule \evenstatusrule
+  \item[Clouds:] \screeningrule{Clouds have no impact, profiles with non-zero even values of \texttt{Status} are suitable for use.} As HCN is only useable in regions unaffected by clouds, profiles which have either, both or neither of the cloud flags set may be used.
+  \item[Quality:] \qualityrule{0.2} Values of \texttt{Quality} are usually near 1.5; occasional lower values do not seem correlated with unusual profiles, but we suggest as a precaution that only profiles with \texttt{Quality} $> 0.2$ be used. Typically this will eliminate only 1--2\% of profiles.
+    %% Number of rejected profiles remains small in V5
+  \item[Convergence:] \convergencerule{2.0} This should eliminate any chunks which have obviously failed to converge -- typically this is only 1--2\% of the total.
+    %% Number of rejected profiles remains small in V5
 \end{description}
 
 \subsection{Artifacts}
@@ -144,11 +73,5 @@ There are no obvious artifacts within the recommended altitude range
 
 \subsection{Desired improvements for future data version(s)}
 
-Hopefully it will prove possible to make further improvements to the
-retrieval of HCN in the lower stratosphere.
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "v5-x-report"
-%%% End: 
+Hopefully it will prove possible to make further improvements to the retrieval of HCN in the lower stratosphere.
 
