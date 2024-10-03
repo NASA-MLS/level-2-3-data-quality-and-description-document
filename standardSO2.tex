@@ -1,150 +1,75 @@
 \speciestitle{Sulfur Dioxide}{SO\cs2}{SO2}{%
-\item[Useful range:] 215--10.0\,hPa
-\item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
+  \item[Useful range:] 215--10.0\,hPa
+  \item[Contact:] William Read, \email{william.g.read@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-The standard SO\cs2 product is taken from the 240-GHz retrieval
-(\texttt{CorePlusR3}). MLS can only measure significantly enhanced
-concentrations above nominal background such as that from volcanic
-injections. Validation of SO\cs2 is published in \citet{PumphreyEtal:2015}.
+The standard SO\cs2 product is taken from the 240-GHz retrieval (\texttt{CorePlusR3}). MLS can only measure significantly enhanced concentrations above nominal background such as that from volcanic injections. Validation of SO\cs2 is published in \citet{PumphreyEtal:2015}.
 
 \subsection{Changes from v4}
 
-Changes in the 240-GHz MLS products from \prevv\CheckThis to \thisv\CheckThis are minor
-and mostly affect O\cs3 and CO\@. A new O\cs3 \emph{a priori} and
-updated smoothing parameters are incorporated, and a non-linear
-radiance model is used to calculate the signals in the high spectral
-resolution digital autocorrellator spectrometer (DACS) channels for
-the O\cs3 and CO lines. In addition to these changes, the accuracy
-threshold for the non-linear radiance model calculations was reduced
-from 0.02\,K to best possible (i.e., 0\,K). These changes will have
-secondary impacts on SO\cs2.
+Changes in the 240-GHz MLS products from \prevv\CheckThis to \thisv\CheckThis are minor and mostly affect O\cs3 and CO\@. A new O\cs3 \emph{a priori} and updated smoothing parameters are incorporated, and a non-linear radiance model is used to calculate the signals in the high spectral resolution digital autocorrellator spectrometer (DACS) channels for the O\cs3 and CO lines. In addition to these changes, the accuracy threshold for the non-linear radiance model calculations was reduced from 0.02\,K to best possible (i.e., 0\,K). These changes will have secondary impacts on SO\cs2.
 
 \begin{figure}
-\begin{center}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60n-90n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30n-60n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30s-30n}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60s-30s}
-\includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_90s-60s}
-\end{center}
-\caption{A comparison of v2.2 (dark blue), v3.3 (light blue), v4.2
-  (orange) and v5.0 (red) SO\cs2 for Jan-Feb-Mar 2009 in five latitude
-  bands. Other time periods are similar. The left panel compares mean
-  profiles, the center shows the mean difference (red diamonds)
-  surrounded by each versions' estimated precision, and the right
-  panel shows the estimated retrieval precision (solid and bullets),
-  measured variability (dotted) which includes atmospheric variability
-  about the mean profile, and \emph{a priori} precision (dashed and
-  diamonds).}
-\label{fig:avgmlsso2prflcomp}
+  \begin{center}
+    \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60n-90n}
+    \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30n-60n}
+    \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_30s-30n}
+    \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_60s-30s}
+    \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5_prfl_comp_90s-60s}
+  \end{center}
+  \caption{A comparison of v2.2 (dark blue), v3.3 (light blue), v4.2 (orange) and v5.0 (red) SO\cs2 for Jan-Feb-Mar 2009 in five latitude bands. Other time periods are similar. The left panel compares mean profiles, the center shows the mean difference (red diamonds) surrounded by each versions' estimated precision, and the right panel shows the estimated retrieval precision (solid and bullets), measured variability (dotted) which includes atmospheric variability about the mean profile, and \emph{a priori} precision (dashed and diamonds).}
+  \label{fig:avgmlsso2prflcomp}
 \end{figure}
 
-Figure~\ref{fig:avgmlsso2prflcomp} compares MLS v4.2 and v3.3. The
-atmosphere typically has \mytexttilde0.1\,ppbv SO\cs2, which is far
-smaller than the MLS SO\cs2 accuracy estimate.  All versions
-(erroneously) report typical abundance of order of a few ppbv, due to
-systematic errors in the MLS measurement system. The
-$-20\,\text{ppbv}$ reported at 215\,hPa is also a systematic
-artifact. Changes from v2 through to v4 involved handling of the
-background radiance signals which evolved from an absorption continuum
-(v2) to an RHi continnuum (v3) to a MLS minor frame absorption
-continuum with a frequency squared spectral dependence (v4 and
-v5). Versions~4 and~5 also uses improved cloud detection and radiance
-screening for them.
+Figure~\ref{fig:avgmlsso2prflcomp} compares MLS v4.2 and v3.3. The atmosphere typically has \mytexttilde0.1\,ppbv SO\cs2, which is far smaller than the MLS SO\cs2 accuracy estimate. All versions (erroneously) report typical abundance of order of a few ppbv, due to systematic errors in the MLS measurement system. The $-20\,\text{ppbv}$ reported at 215\,hPa is also a systematic artifact. Changes from v2 through to v4 involved handling of the background radiance signals which evolved from an absorption continuum (v2) to an RHi continnuum (v3) to a MLS minor frame absorption continuum with a frequency squared spectral dependence (v4 and v5). Versions~4 and~5 also uses improved cloud detection and radiance screening for them.
 
 \subsection{Resolution}
 \onestandardavk{SO2}{SO\cs2}%
 
-Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2
-is \mytexttilde3\,km and the horizontal resolution is 170\,km. The
-horizontal resolution perpendicular to the orbit track is 6\,km, the
-full width at half maximum of the MLS antenna, for all pressures.
+Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2 is \mytexttilde3\,km and the horizontal resolution is 170\,km. The horizontal resolution perpendicular to the orbit track is 6\,km, the full width at half maximum of the MLS antenna, for all pressures.
 
 \subsection{Precision}
 
-The estimated precision for SO\cs2 is \mytexttilde4\,ppbv for all
-heights between 215--10\,hPa. The precisions are set to negative
-values (or zero in some cases) in situations when the retrieved
-precision is larger than 50\% of the a priori precision -- an
-indication that the data is biased toward the a priori value. Even
-though the changes between v4 and v5 are minor, there is a change in
-the estimated precision.  An example of this is shown in
-Figure~\ref{fig:so2prec}. SO\cs2 precision from v5 shows much less
-variability and less latitude dependence than v4. Although only
-100\,hPa is shown here, it is similar for other stratospheric levels
-and it also affects other species retrieved from the 240-GHz
-radiances, such as HNO\cs3. The change in behavior occurred as a
-result of reducing the forward model accuracy threshold from 0.02\,K
-to ``best possible.''
+The estimated precision for SO\cs2 is \mytexttilde4\,ppbv for all heights between 215--10\,hPa. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision -- an indication that the data is biased toward the a priori value. Even though the changes between v4 and v5 are minor, there is a change in the estimated precision. An example of this is shown in Figure~\ref{fig:so2prec}. SO\cs2 precision from v5 shows much less variability and less latitude dependence than v4. Although only 100\,hPa is shown here, it is similar for other stratospheric levels and it also affects other species retrieved from the 240-GHz radiances, such as HNO\cs3. The change in behavior occurred as a result of reducing the forward model accuracy threshold from 0.02\,K to ``best possible.''
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/so2_2009d045_100hPa_precision}
-\end{center}
-\caption{A comparison of estimated precision for SO\cs2 from v4 (blue)
-  and v5(red) and 100\,hPa.}
-\label{fig:so2prec}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/so2_2009d045_100hPa_precision}
+  \end{center}
+  \caption{A comparison of estimated precision for SO\cs2 from v4 (blue)
+    and v5(red) and 100\,hPa.}
+  \label{fig:so2prec}
 \end{figure}
-
 
 \subsection{Accuracy}
 
-Accuracy is estimated to be 10--20\,ppbv over the useful pressure range.
-These are not expeted to change significantly for the v5 SO\cs2 product yet
-to be determined.
+Accuracy is estimated to be 10--20\,ppbv over the useful pressure range. These are not expeted to change significantly for the v5 SO\cs2 product yet to be determined.
 
 \subsection{Data screening}
 \label{sec:SO2Screening}
 \begin{description}
-\item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
-\item[Estimated Precision:] \screeningrule{Values with negative
-    precision can be used, though with caution.}
+  \item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
+  \item[Estimated Precision:] \screeningrule{Values with negative precision can be used, though with caution.}
 
-  Although it is generally recommended to not use values where
-  precision is flagged negative, SO\cs2 is an exception and it is
-  appropriate to use values with negatively flagged precision
-  (provided that the entire profile is not so flagged). High retrieved
-  values of SO\cs2 at the larger pressures (e.g., 215 and 147\,hPa)
-  will also have larger (i.e., poorer) precision values which are
-  sometimes large enough to trigger the ``too much \emph{a priori}
-  influence'' negative-precision flag. In these cases, there will be
-  an \emph{a priori} influence, and the retrieved value will probably
-  be smaller than reality because the retrieval is being pulled
-  towards the \emph{a priori} value of zero ppbv. Nonetheless, this
-  does not detract from the fact that greatly enhanced SO\cs2 is being
-  observed, reflecting the detection of a plume.  Profiles where the
-  precision is set to zero, however, should be omitted from analyses.
+    Although it is generally recommended to not use values where precision is flagged negative, SO\cs2 is an exception and it is appropriate to use values with negatively flagged precision (provided that the entire profile is not so flagged). High retrieved values of SO\cs2 at the larger pressures (e.g., 215 and 147\,hPa) will also have larger (i.e., poorer) precision values which are sometimes large enough to trigger the ``too much \emph{a priori} influence'' negative-precision flag. In these cases, there will be an \emph{a priori} influence, and the retrieved value will probably be smaller than reality because the retrieval is being pulled towards the \emph{a priori} value of zero ppbv. Nonetheless, this does not detract from the fact that greatly enhanced SO\cs2 is being observed, reflecting the detection of a plume. Profiles where the precision is set to zero, however, should be omitted from analyses.
 
-\evenstatusrule
-\item[Quality field:] \screeningrule{Only profiles having
-    \texttt{Quality}\, \emph{greater} than 0.95 should be used.}  As
-  with water vapor, this value represents where the quality versus
-  yield sharply drops indicating the transition from well fit profiles
-  toward more poorly fit ones as shown in
-  Figure~\ref{fig:so2datayields}
-\item[Convergence field:] \screeningrule{Only profiles having
-    \texttt{Convergence}\, \emph{less} than 1.03 should be used.}
+    \evenstatusrule
+  \item[Quality field:] \screeningrule{Only profiles having \texttt{Quality}\, \emph{greater} than 0.95 should be used.} As with water vapor, this value represents where the quality versus yield sharply drops indicating the transition from well fit profiles toward more poorly fit ones as shown in Figure~\ref{fig:so2datayields}
+  \item[Convergence field:] \screeningrule{Only profiles having \texttt{Convergence}\, \emph{less} than 1.03 should be used.}
 \end{description}
 
 \subsection{Artifacts}
 
-High values of SO\cs2 accompanied with negative errors are likely to
-be underestimated due to \emph{a priori} influence which biases the
-value toward zero. The atmospheric background SO\cs2
-(\mytexttilde0.1\,ppbv) cannot be measured by MLS even with extensive
-data averaging because there are systematic errors producing biases of
-a few ppbv. The 215-hPa SO\cs2 has a background bias of approximately
-$-20\,$ppbv.
+High values of SO\cs2 accompanied with negative errors are likely to be underestimated due to \emph{a priori} influence which biases the value toward zero. The atmospheric background SO\cs2 (\mytexttilde0.1\,ppbv) cannot be measured by MLS even with extensive data averaging because there are systematic errors producing biases of a few ppbv. The 215-hPa SO\cs2 has a background bias of approximately $-20\,$ppbv.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{figures/so2_data_yields}
-\end{center}
-\caption{Percentage of data having a quality greater than that indicated
-  on the x-axis for v5.0 data processed for June-July-August 2005.}
-\label{fig:so2datayields}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/so2_data_yields}
+  \end{center}
+  \caption{Percentage of data having a quality greater than that indicated
+    on the x-axis for v5.0 data processed for June-July-August 2005.}
+  \label{fig:so2datayields}
 \end{figure}
 
 \subsection{Review of comparisons with other datasets}
@@ -162,67 +87,32 @@ MLS has successfully detected SO\cs2 from many eruptions since launch.
 %Nabro (Eritrea), Paluweh (Indonesia), Sangeang Api (Indonesia).
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{figures/sarychev_14062009}
-\includegraphics[width=0.7\linewidth]{figures/sarychev_16062009}
-\end{center}
-\caption{An overlay of MLS measurement tracks on an OMI SO\cs2
-  measurement on 14 and 16 June 2009 (separate maps) showing the
-  dispersial of SO\cs2 from the Sarychev eruption (13~June 2009, black
-  triangle). The OMI instrument has some non operational pixels also
-  known as the row anomaly where measurements are not possible. It
-  turns out that one of these row anomalies is perfectly aligned with
-  the MLS track and therefore there are no coaligned OMI-MLS
-  measurements.  The color scale indicates the SO\cs2 column measured
-  by OMI\@. The daytime MLS tracks are small open circles and the
-  nighttime tracks are filled black. When the calculated column from
-  MLS exceeds 1\,DU, that measurement is indicated by a larger open
-  circle filled with the color of the column measurement as indicated
-  by the color scale below (same as for OMI)\@. The panels at right
-  show all the measured profiles covering the area shown in the maps
-  for SO\cs2 and HCl. Profiles where the MLS column calculation
-  exceeds 1\,DU are highlighted in red.}
-\label{fig:so2overlay}
+  \begin{center}
+    \includegraphics[width=0.7\linewidth]{figures/sarychev_14062009}
+    \includegraphics[width=0.7\linewidth]{figures/sarychev_16062009}
+  \end{center}
+  \caption{An overlay of MLS measurement tracks on an OMI SO\cs2 measurement on 14 and 16 June 2009 (separate maps) showing the dispersial of SO\cs2 from the Sarychev eruption (13~June 2009, black triangle). The OMI instrument has some non operational pixels also known as the row anomaly where measurements are not possible. It turns out that one of these row anomalies is perfectly aligned with the MLS track and therefore there are no coaligned OMI-MLS measurements.  The color scale indicates the SO\cs2 column measured by OMI\@. The daytime MLS tracks are small open circles and the nighttime tracks are filled black. When the calculated column from MLS exceeds 1\,DU, that measurement is indicated by a larger open circle filled with the color of the column measurement as indicated by the color scale below (same as for OMI)\@. The panels at right show all the measured profiles covering the area shown in the maps for SO\cs2 and HCl. Profiles where the MLS column calculation exceeds 1\,DU are highlighted in red.}
+  \label{fig:so2overlay}
 \end{figure}
 
-Figure~\ref{fig:so2overlay} shows an overlay comparison of column
-SO\cs2 measured by OMI and the same calculated by MLS for two days
-following the Sarychev eruption. It is clear that MLS detects the main
-plume dispersal features. It also appears that MLS columns are often
-smaller than those from OMI\@. Interpreting the significance of this
-is not straightforward given that OMI has to make assumptions
-regarding the profile shape and can observe SO\cs2 down to the
-boundary layer. The MLS column begins at 215\,hPa and integrates
-upward neglecting the tropospheric contributions. Another limitation
-is that OMI can only make measurements during the day whereas MLS can
-make them day and night.  Since the plume is moving relatively quickly
-over the 12-hour measurement separation time, MLS nighttime
-measurements often miss and/or detect plume features differently than
-OMI\@.
+Figure~\ref{fig:so2overlay} shows an overlay comparison of column SO\cs2 measured by OMI and the same calculated by MLS for two days following the Sarychev eruption. It is clear that MLS detects the main plume dispersal features. It also appears that MLS columns are often smaller than those from OMI\@. Interpreting the significance of this is not straightforward given that OMI has to make assumptions regarding the profile shape and can observe SO\cs2 down to the boundary layer. The MLS column begins at 215\,hPa and integrates upward neglecting the tropospheric contributions. Another limitation is that OMI can only make measurements during the day whereas MLS can make them day and night. Since the plume is moving relatively quickly over the 12-hour measurement separation time, MLS nighttime measurements often miss and/or detect plume features differently than OMI\@.
 
-Figure~\ref{fig:so2timeseries} shows a comparison between v5 and v4
-for a track showing the maximum SO\cs2 measured on 16~June 2009. As
-expected v5 and v4 show similar amounts of SO\cs2 at levels
-215--68\,hPa. Nominally the SO\cs2 is concentrated between 147 and
-100\,hPa.
+Figure~\ref{fig:so2timeseries} shows a comparison between v5 and v4 for a track showing the maximum SO\cs2 measured on 16~June 2009. As expected v5 and v4 show similar amounts of SO\cs2 at levels 215--68\,hPa. Nominally the SO\cs2 is concentrated between 147 and 100\,hPa.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
-\end{center}
-\caption{Time series overlay where MLS measures more than 500\,ppbv at
-  100\,hPa for the Sarychev erruption. Blue is version 4, and red is
-  version 5.}
-\label{fig:so2timeseries}
+  \begin{center}
+    \includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
+  \end{center}
+  \caption{Time series overlay where MLS measures more than 500\,ppbv at 100\,hPa for the Sarychev erruption. Blue is version 4, and red is version 5.}
+  \label{fig:so2timeseries}
 \end{figure}
 
-
 \begin{table}
-\caption{Summary of MLS v3.3 SO\cs2 product.}
-\label{tab:SO2Summary}
-\vspace{\tablecaptionsep}
-\begin{minipage}{\linewidth}
-\centering\begin{tabular}{ccccl}
+  \caption{Summary of MLS v3.3 SO\cs2 product.}
+  \label{tab:SO2Summary}
+  \vspace{\tablecaptionsep}
+  \begin{minipage}{\linewidth}
+    \centering\begin{tabular}{ccccl}
 \toprule
 \parbox[m]{6em}{\bfseries\centering Pressure / hPa} &
 \parbox[m]{6em}{\bfseries\centering Resolution V~$\times$~H \ km} &
@@ -243,10 +133,5 @@ $<$ 10 & --- & --- & --- &  Unsuitable for scientific use \\
 $>$215 & --- & --- & --- & Unsuitable for scientific use \\
 \bottomrule
 \end{tabular}
-\end{minipage}
+  \end{minipage}
 \end{table}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "v5-x-report"
-%%% End:
