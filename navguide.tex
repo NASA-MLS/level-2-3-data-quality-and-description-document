@@ -7,12 +7,9 @@
 \setlength{\navguidegap}{1.5cm}%
 \thispagestyle{plain}%
 
-\noindent\parbox{\navguidewidth}{%
-\section*{Navigating this document}
-\label{sec:NavGuide}
+\noindent\parbox{\navguidewidth}{\section*{Navigating this document} \label{sec:NavGuide}%
 
-\tikzset{guidearrow/.style={ultra thick, color=Purple,
-    arrows=-stealth, rounded corners=3mm}}
+\tikzset{guidearrow/.style={ultra thick, color=Purple, arrows=-stealth, rounded corners=3mm}}
 \tikzset{hookoffset/.style={xshift=-1ex, yshift=0.5ex}}
 \begin{tikzpicture}[remember picture, overlay]
   \coordinate (NBGOrigin) at
@@ -25,35 +22,28 @@
   \coordinate (TTarget) at ($ (NBGOrigin) + (5.8mm, -15.43cm) $);
 \end{tikzpicture}%
 
-Clicking on ``Help'' takes you back to this page.
-\begin{tikzpicture}[remember picture, overlay]
+  Clicking on ``Help'' takes you back to this page.
+  \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (HelpHook) {};
   \draw [guidearrow] (HelpHook) -| ($ (HelpTarget-|OverviewTarget) - (3cm,0) $) -- (HelpTarget);
 \end{tikzpicture}
 
-\vspace{\navguidegap} An \hyperref[chap:Overview]{overview of the information in this
-  document} is given on the next page.  You can return to it by clicking
-on the ``Overview'' tab in the navigation bar.
+\vspace{\navguidegap}
+An \hyperref[chap:Overview]{overview of the information in this document} is given on the next page.  You can return to it by clicking on the ``Overview'' tab in the navigation bar.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (OverviewHook) {};
   \draw [guidearrow] (OverviewHook) -| ($ (OverviewTarget) - (2cm,0) $) -- (OverviewTarget);
 \end{tikzpicture}
 
-\vspace{\navguidegap} First-time users of MLS data are advised to read
-\hyperref[chap:Essential]{Chapter~\ref*{chap:Essential}} first.  The
-discussion includes \hyperref[tab:ProductSummary]{a table summarizing
-  key aspects of each MLS product.}  This table can be accessed from
-anywhere in the document by clicking on the ``Table'' tab in the
-navigation bar.
+\vspace{\navguidegap}
+First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapter~\ref*{chap:Essential}} first.  The discussion includes \hyperref[tab:ProductSummary]{a table summarizing key aspects of each MLS product.}  This table can be accessed from anywhere in the document by clicking on the ``Table'' tab in the navigation bar.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (MainTableHook) {};
   \draw [guidearrow] (MainTableHook) -| ($ (MainTableTarget) - (1cm,0) $) -- (MainTableTarget);
 \end{tikzpicture}
 
 \vspace{\navguidegap}
-\hyperref[chap:Results]{Chapter~\ref*{chap:Results}} describes each of
-the MLS data products individually.  You can use the navigation bar to
-skip immediately to any of the product-specific sections.
+\hyperref[chap:Results]{Chapter~\ref*{chap:Results}} describes each of the MLS data products individually.  You can use the navigation bar to skip immediately to any of the product-specific sections.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (ProductHook) {};
   \draw [guidearrow] (ProductHook) -| ($ (GenericProductTarget) -
@@ -62,32 +52,18 @@ skip immediately to any of the product-specific sections.
 
 \vspace{2ex}Each section includes
 \begin{itemize}
-\item A set of rules for screening out data not recommended for
-  scientific use.
-\begin{tikzpicture}[remember picture, overlay]
-  \node [hookoffset] (SHook) {};
-  \draw [guidearrow] (SHook) -| ($ (STarget-|OverviewTarget) - (1.5cm,0) $) coordinate (Bend) -- (STarget);
-\end{tikzpicture}
-\item A table summarizing the precision, accuracy, resolution, etc., for each product.
-\begin{tikzpicture}[remember picture, overlay]
-  \node [hookoffset] (THook) {};
-  \draw [guidearrow] (THook) -- (THook-|Bend) |- (TTarget);
-\end{tikzpicture}
+  \item A set of rules for screening out data not recommended for scientific use.
+    \begin{tikzpicture}[remember picture, overlay]
+      \node [hookoffset] (SHook) {};
+      \draw [guidearrow] (SHook) -| ($ (STarget-|OverviewTarget) - (1.5cm,0) $) coordinate (Bend) -- (STarget);
+    \end{tikzpicture}
+  \item A table summarizing the precision, accuracy, resolution, etc., for each product.
+    \begin{tikzpicture}[remember picture, overlay]
+      \node [hookoffset] (THook) {};
+      \draw [guidearrow] (THook) -- (THook-|Bend) |- (TTarget);
+    \end{tikzpicture}
 \end{itemize}
-Clicking on the product name in the navigation bar takes you to the
-beginning of that section; clicking on the ``S'' and ``T'' symbols takes
-you directly to the screening rules and summary table, respectively, for
-that product.}
+  Clicking on the product name in the navigation bar takes you to the beginning of that section; clicking on the ``S'' and ``T'' symbols takes you directly to the screening rules and summary table, respectively, for that product.}
 
 \vspace{1.5in}
-\noindent\parbox{\navguidewidth}{%
-\section*{Acknowledgment}
-This research was carried out at the Jet Propulsion Laboratory,
-California Institute of Technology, under a contract with the National
-Aeronautics and Space Administration.}
-\clearpage
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "v5-x-report"
-%%% End: 
+\noindent\parbox{\navguidewidth}{\section*{Acknowledgment} This research was carried out at the Jet Propulsion Laboratory, California Institute of Technology, under a contract with the National Aeronautics and Space Administration.} \clearpage%
