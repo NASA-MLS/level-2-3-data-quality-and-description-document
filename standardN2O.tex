@@ -1,68 +1,18 @@
 \speciestitle{Nitrous Oxide}{N\cs2O}{N2O}{%
-\item[Useful range:] 100--0.46\,hPa
-\item[Contact:] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
+  \item[Useful range:] 100--0.46\,hPa
+  \item[Contact:] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
 \subsubsection{N\cs2O standard product}
 
-The standard product for \thisv\CheckThis N\cs2O is taken from the MLS
-``band~3'' 190-GHz radiances (retrieved in the \texttt{NitrousOxide}
-phase) in order to provide a continuous data product
-(\texttt{N2O-NitrousOxide}) from launch.  Previous versions (v3 and
-earlier) of the N\cs2O standard product relied on the ``band~12''
-640-GHz (\texttt{CorePlusR4B}) retrieval, however, as documented in
-the \prevv\CheckThis data quality document, a noticeable reduction in quality of
-the band~12 radiance signals became evident during June-August
-2013. Band~12 was finally turned off on August 6, 2013, and the data
-collected on and after 7~June 2013 for \texttt{N2O-640} are not
-recommended for scientific use.
+The standard product for \thisv\CheckThis N\cs2O is taken from the MLS ``band~3'' 190-GHz radiances (retrieved in the \texttt{NitrousOxide} phase) in order to provide a continuous data product (\texttt{N2O-NitrousOxide}) from launch. Previous versions (v3 and earlier) of the N\cs2O standard product relied on the ``band~12'' 640-GHz (\texttt{CorePlusR4B}) retrieval, however, as documented in the \prevv\CheckThis data quality document, a noticeable reduction in quality of the band~12 radiance signals became evident during June-August 2013. Band~12 was finally turned off on August 6, 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
 
-During the MLS \thisv\CheckThis development the opportunity was taken to address
-the problem of the high bias in the \prevv\CheckThis 190-GHz N\cs2O product at
-100\,hPa, which has rendered this pressure level unsuitable for
-scientific use in all previous versions. For \thisv\CheckThis, a separate
-retrieval phase for the N\cs2O product has been devised to improve the
-treatment of spectral ``background'' signals, in which the continuum
-absorption from O\cs2, N\cs2, and H\cs2O is modeled with an expected
-$\nu^2$ dependence in frequency. The double sideband receiver folds
-together the upper frequency side band (containing the N\cs2O line)
-and lower frequency side band, thus making it impossible to
-disentangle the degree of interference between the continuum
-absorption and the N\cs2O line.  The legacy 190\,GHz N\cs2O data
-product (\texttt{N2O-190}), retrieved in the ``CorePlusR2'' phase
-(which retrieves water vapor and other 190-GHz products), is used by
-the MLS team purely for internal monitoring purposes and with \thisv\CheckThis
-it is no longer intended for scientific use.
+During the MLS \thisv\CheckThis development the opportunity was taken to address the problem of the high bias in the \prevv\CheckThis 190-GHz N\cs2O product at 100\,hPa, which has rendered this pressure level unsuitable for scientific use in all previous versions. For \thisv\CheckThis, a separate retrieval phase for the N\cs2O product has been devised to improve the treatment of spectral ``background'' signals, in which the continuum absorption from O\cs2, N\cs2, and H\cs2O is modeled with an expected $\nu^2$ dependence in frequency. The double sideband receiver folds together the upper frequency side band (containing the N\cs2O line) and lower frequency side band, thus making it impossible to disentangle the degree of interference between the continuum absorption and the N\cs2O line. The legacy 190\,GHz N\cs2O data product (\texttt{N2O-190}), retrieved in the ``CorePlusR2'' phase (which retrieves water vapor and other 190-GHz products), is used by the MLS team purely for internal monitoring purposes and with \thisv\CheckThis it is no longer intended for scientific use.
 
-Unfortunately, including the sideband fraction offset developed
-for H\cs2O in the standalone N\cs2O retrieval phase did not alleviate
-the high bias in lower stratospheric N\cs2O. Accordingly, the decision
-was made to implement a sideband fraction correction that contains
-only the drift term, and not the offset term, for the N\cs2O-focused
-phase.  The new N\cs2O retrieval phase (``N2O-NitrousOxide'') uses the
-prelaunch sideband fraction values, but with the same drift correction
-derived from post-launch measurements of H\cs2O. The latter is
-necessary because without an imposed temporal sideband fraction drift,
-the UTLS N\cs2O does not display the expected trend upwards with time, 
-resulting from the secular emissions increase seen in ground based
-observations.  These
-changes are expected to affect the concentration bias but do not
-change the morphology of the MLS N\cs2O measurement. As reprocessing
-of the v5 dataset continues, planned comparisons with other N\cs2O
-observations (e.g., from ACE-FTS) will be used to re-validate the MLS
-N\cs2O product in the lower stratosphere
+Unfortunately, including the sideband fraction offset developed for H\cs2O in the standalone N\cs2O retrieval phase did not alleviate the high bias in lower stratospheric N\cs2O. Accordingly, the decision was made to implement a sideband fraction correction that contains only the drift term, and not the offset term, for the N\cs2O-focused phase. The new N\cs2O retrieval phase (``N2O-NitrousOxide'') uses the prelaunch sideband fraction values, but with the same drift correction derived from post-launch measurements of H\cs2O. The latter is necessary because without an imposed temporal sideband fraction drift, the UTLS N\cs2O does not display the expected trend upwards with time, resulting from the secular emissions increase seen in ground based observations. These changes are expected to affect the concentration bias but do not change the morphology of the MLS N\cs2O measurement. As reprocessing of the v5 dataset continues, planned comparisons with other N\cs2O observations (e.g., from ACE-FTS) will be used to re-validate the MLS N\cs2O product in the lower stratosphere
 
-The 190-GHz N\cs2O data product in general shows slightly worse
-precision and resolution compared to the 640-GHz retrievals, although
-the 190-GHz precision is substantially better at 100--68~hPa.  Data
-from \texttt{N2O-NitrousOxide} and \texttt{N2O-640} have been compared
-from launch until the end of band~12 operations.  A persistent low
-bias over the pressure range 46 to 22\,hPa peaking at $-$15\% is seen
-in the \texttt{N2O-NitrousOxide} product compared to
-\texttt{N2O-640}. The biases are generally smaller than 5\% from 100
-to 68\,hPa and 10\% from 15 to 4.5\,hPa (see
-Figure~\ref{fig:N2O190640Comparison}).
+The 190-GHz N\cs2O data product in general shows slightly worse precision and resolution compared to the 640-GHz retrievals, although the 190-GHz precision is substantially better at 100--68~hPa. Data from \texttt{N2O-NitrousOxide} and \texttt{N2O-640} have been compared from launch until the end of band~12 operations. A persistent low bias over the pressure range 46 to 22\,hPa peaking at $-$15\% is seen in the \texttt{N2O-NitrousOxide} product compared to \texttt{N2O-640}. The biases are generally smaller than 5\% from 100 to 68\,hPa and 10\% from 15 to 4.5\,hPa (see Figure~\ref{fig:N2O190640Comparison}).
 
 \begin{figure}
   \includegraphics[width=\linewidth]
@@ -72,16 +22,9 @@ Figure~\ref{fig:N2O190640Comparison}).
   \label{fig:N2O190640Comparison}
 \end{figure}
 
-Other significant differences between the \thisv\CheckThis
-\texttt{N2O-NitrousOxide} and \texttt{N2O-640} data such as the
-resolution, precision, recommended pressure levels, quality and
-convergence criteria are noted below.
+Other significant differences between the \thisv\CheckThis \texttt{N2O-NitrousOxide} and \texttt{N2O-640} data such as the resolution, precision, recommended pressure levels, quality and convergence criteria are noted below.
 
-The secondary \thisv\CheckThis N\cs2O 640-GHz product is available for the
-period from launch until June 6, 2013 and stored in the
-\texttt{L2GP-DGG} files in the \texttt{N2O-640} swath.  Details of the
-retrieval method and validation results are presented in
-\citep{LambertEtal:2007}.
+The secondary \thisv\CheckThis N\cs2O 640-GHz product is available for the period from launch until June 6, 2013 and stored in the \texttt{L2GP-DGG} files in the \texttt{N2O-640} swath. Details of the retrieval method and validation results are presented in \citep{LambertEtal:2007}.
 
 \subsection{Resolution}
 
@@ -89,113 +32,48 @@ retrieval method and validation results are presented in
 
 \onestandardavk{N2O-640}{640\,GHz N\cs2O}
 
-The spatial resolution reported by the averaging kernel matrices is
-shown in Figures~\ref{fig:AvkN2O} for the 190\,GHz measurements
-and~\ref{fig:AvkN2O-640} for the 640\,GHz measurements (available in
-the \texttt{L2GP-DGG} files for data prior to June~6, 2013).  For
-\texttt{N2O-NitrousOxide}, the vertical resolution is 5--8\,km and
-the horizontal along-track resolution is 165--260\,km.  For
-\texttt{N2O-640}, the vertical resolution is 4--6\,km and the
-horizontal along-track resolution is 330--600\,km over most of the
-useful range of the retrievals.
+The spatial resolution reported by the averaging kernel matrices is shown in Figures~\ref{fig:AvkN2O} for the 190\,GHz measurements and~\ref{fig:AvkN2O-640} for the 640\,GHz measurements (available in the \texttt{L2GP-DGG} files for data prior to June~6, 2013). For \texttt{N2O-NitrousOxide}, the vertical resolution is 5--8\,km and the horizontal along-track resolution is 165--260\,km. For \texttt{N2O-640}, the vertical resolution is 4--6\,km and the horizontal along-track resolution is 330--600\,km over most of the useful range of the retrievals.
 
-The horizontal cross-track resolution is set by the 7\,km width of the
-MLS 190-GHz field-of-view for all pressures. Note that the higher
-frequency MLS 640-GHz measurements have a narrower 3\,km
-field-of-view.  The longitudinal separation of the MLS measurements is
-10\degsym--\,20\degsym\ over middle and lower latitudes, with much
-finer sampling in polar regions.
+The horizontal cross-track resolution is set by the 7\,km width of the MLS 190-GHz field-of-view for all pressures. Note that the higher frequency MLS 640-GHz measurements have a narrower 3\,km field-of-view. The longitudinal separation of the MLS measurements is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
 
 \subsection{Precision}
 
-Precision as defined here is the $1\sigma$ uncertainty in the retrieved
-value calculated by the Level~2 algorithms and has been validated
-against the scatter about the mean of coincident ascending/descending
-MLS profile differences.  The estimated precision on a single retrieved
-profile given in Tables~\ref{tab:N2OSummary} and~\ref{tab:N2O640Summary}
-varies with height from \mytexttilde12--18\,ppbv for 
-\texttt{N2O-NitrousOxide} and
-\mytexttilde12--25\,ppbv for \texttt{N2O-640}.
+Precision as defined here is the $1\sigma$ uncertainty in the retrieved value calculated by the Level~2 algorithms and has been validated against the scatter about the mean of coincident ascending/descending MLS profile differences. The estimated precision on a single retrieved profile given in Tables~\ref{tab:N2OSummary} and~\ref{tab:N2O640Summary} varies with height from \mytexttilde12--18\,ppbv for \texttt{N2O-NitrousOxide} and \mytexttilde12--25\,ppbv for \texttt{N2O-640}.
 
 \subsection{Accuracy}
 
-The accuracy values given in Table~\ref{tab:N2O640Summary} were
-obtained for both \prevv\CheckThis N\cs2O products using the same detailed
-analyses presented for MLS \texttt{N2O-640} v2.2 data in
-\citet{LambertEtal:2007} to quantify the systematic uncertainties
-associated with the MLS instrument calibration, spectroscopic
-uncertainty and approximations in the retrieval formulation and
-implementation. These systematics will be evaluated for \thisv\CheckThis at a
-later date, but the estimates presented here for \prevv\CheckThis are expected to be
-fairly representative.
+The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \prevv\CheckThis N\cs2O products using the same detailed analyses presented for MLS \texttt{N2O-640} v2.2 data in \citet{LambertEtal:2007} to quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty and approximations in the retrieval formulation and implementation. These systematics will be evaluated for \thisv\CheckThis at a later date, but the estimates presented here for \prevv\CheckThis are expected to be fairly representative.
 
 \subsection{Data screening}
 \label{sec:N2OScreening}
 \begin{description}
-\item[Pressure range (\texttt{N2O-NitrousOxide}):] \screeningrule{100--0.46\,hPa}
-\item[Pressure range (\texttt{N2O-640}):] \screeningrule{100--0.46\,hPa}
-\standardrangestatement\ In the upper stratosphere and lower
-  mesosphere \thisv\CheckThis N\cs2O requires significant averaging for useful
-  signals, but see the note under ``Artifacts'' for issues at pressures below
-  0.1\,hPa.
+  \item[Pressure range (\texttt{N2O-NitrousOxide}):] \screeningrule{100--0.46\,hPa}
+  \item[Pressure range (\texttt{N2O-640}):] \screeningrule{100--0.46\,hPa} \standardrangestatement\ In the upper stratosphere and lower mesosphere \thisv\CheckThis N\cs2O requires significant averaging for useful signals, but see the note under ``Artifacts'' for issues at pressures below 0.1\,hPa.
 
-\standardprecisionrule
-\evenstatusrule
+    \standardprecisionrule
+    \evenstatusrule
 
-\item[Quality (\texttt{N2O-NitrousOxide}):] \qualityrule{0.8} 
-  A small fraction of \texttt{N2O-NitrousOxide} profiles (typically less than 1.5\%) will
-  be discarded via this screening.
+  \item[Quality (\texttt{N2O-NitrousOxide}):] \qualityrule{0.8} A small fraction of \texttt{N2O-NitrousOxide} profiles (typically less than 1.5\%) will be discarded via this screening.
 
-\item[Convergence (\texttt{N2O-NitrousOxide}):] \convergencerule{2.0}
-  A fraction of the \texttt{N2O-NitrousOxide} data (typically less than 0.5\%) at this level
-  will be discarded via this screening.
+  \item[Convergence (\texttt{N2O-NitrousOxide}):] \convergencerule{2.0} A fraction of the \texttt{N2O-NitrousOxide} data (typically less than 0.5\%) at this level will be discarded via this screening.
 
-\item[Quality (\texttt{N2O-640}):] \qualityrule{1.4}
-  A small fraction of \texttt{N2O-640} profiles (typically less than 1.5\%) will
-  be discarded via this screening.
+  \item[Quality (\texttt{N2O-640}):] \qualityrule{1.4} A small fraction of \texttt{N2O-640} profiles (typically less than 1.5\%) will be discarded via this screening.
 
-\item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01}
-  A fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level
-  will be discarded via this screening.
+  \item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01} A fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level will be discarded via this screening.
 
-\item[Clouds:] Clouds have little impact on the N\cs2O products at the recommended pressure levels. 
-Ignore status bit 16 (high cloud) or bit 32 (low cloud) indicating the presence of clouds. See
-artifacts for more details.
+  \item[Clouds:] Clouds have little impact on the N\cs2O products at the recommended pressure levels. Ignore status bit 16 (high cloud) or bit 32 (low cloud) indicating the presence of clouds. See artifacts for more details.
 
 \end{description}
 
 \subsection{Artifacts}
 
-There are occasional outliers at the highest presure levels in
-\texttt{N2O-NitrousOxide} and \texttt{N2O-640} products.  As with
-\prevv\CheckThis, very thick clouds in the tropics produce a low rate of
-artifacts in the \thisv\CheckThis N\cs2O products since improvements in the
-handling of radiances affected by clouds have reduced the frequency of
-outliers compared to older versions. The cloud bits of the
-\texttt{Status} field are too blunt a tool to identify these rare
-cases, needlessly discarding reasonable data.  Screening using the
-convergence and quality fields (see above) is recommended to remove
-the majority of these data points.
+There are occasional outliers at the highest presure levels in \texttt{N2O-NitrousOxide} and \texttt{N2O-640} products. As with \prevv\CheckThis, very thick clouds in the tropics produce a low rate of artifacts in the \thisv\CheckThis N\cs2O products since improvements in the handling of radiances affected by clouds have reduced the frequency of outliers compared to older versions. The cloud bits of the \texttt{Status} field are too blunt a tool to identify these rare cases, needlessly discarding reasonable data. Screening using the convergence and quality fields (see above) is recommended to remove the majority of these data points.
 
-The retrieval restricts N\cs2O values to be greater than
-$-40\,\text{ppbv}$ (approximately three times the retrieval noise
-level in the recommended pressure range) in order to prevent problems
-in the minimization search process.  The low bound is applied at all
-levels, but it is only evident in the data for pressures less than
-0.1\,hPa, where the vertical smoothing is relaxed and the retrieval
-noise becomes comparable to the magnitude of the low bound value.
-Accordingly, statistical averaging of the data (zonal means or longer
-time periods) cannot be applied successfully for pressures at and less
-than 0.1\,hPa as the $-40\,\text{ppbv}$ hard limit introduces a
-positive bias in any average.
+The retrieval restricts N\cs2O values to be greater than $-40\,\text{ppbv}$ (approximately three times the retrieval noise level in the recommended pressure range) in order to prevent problems in the minimization search process. The low bound is applied at all levels, but it is only evident in the data for pressures less than 0.1\,hPa, where the vertical smoothing is relaxed and the retrieval noise becomes comparable to the magnitude of the low bound value. Accordingly, statistical averaging of the data (zonal means or longer time periods) cannot be applied successfully for pressures at and less than 0.1\,hPa as the $-40\,\text{ppbv}$ hard limit introduces a positive bias in any average.
 
 \subsection{Review of comparisons between MLS N\cs2O versions and other datasets}
 
-Average values for \thisv\CheckThis 190-GHz N\cs2O are substantially smaller and
-more realistic than in previous versions for the 100 and 68\,hPa
-pressure levels.  For pressures smaller than 68\,hPa (i.e., at
-altitudes higher than this pressure surface) differences are within a
-few percent (see Figure~\ref{fig:N2O190Comparison}).
+Average values for \thisv\CheckThis 190-GHz N\cs2O are substantially smaller and more realistic than in previous versions for the 100 and 68\,hPa pressure levels. For pressures smaller than 68\,hPa (i.e., at altitudes higher than this pressure surface) differences are within a few percent (see Figure~\ref{fig:N2O190Comparison}).
 
 \begin{figure}
   \includegraphics[width=\linewidth]
@@ -205,19 +83,9 @@ few percent (see Figure~\ref{fig:N2O190Comparison}).
   \label{fig:N2O190Comparison}
 \end{figure}
 
-Average values for \thisv\CheckThis 640-GHz N\cs2O are 20\% larger than in v2.2
-for the 100\,hPa pressure level, up to 10\% smaller at the 46--32\,hPa
-levels, and within 5\% for pressures greater than 22\,hPa (see
-Figure~\ref{fig:N2O640Comparison}). Differences between \thisv\CheckThis 640-GHz
-N\cs2O and \prevv\CheckThis are less than 10\% at all levels.
+Average values for \thisv\CheckThis 640-GHz N\cs2O are 20\% larger than in v2.2 for the 100\,hPa pressure level, up to 10\% smaller at the 46--32\,hPa levels, and within 5\% for pressures greater than 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between \thisv\CheckThis 640-GHz N\cs2O and \prevv\CheckThis are less than 10\% at all levels.
 
-Apart from the differences noted above, the MLS \thisv\CheckThis 640 GHz N\cs2O
-is similar to the MLS v2.2 product described and validated in
-\citet{LambertEtal:2007}.  Comparisons of v2.2 640 GHz N\cs2O with
-coincident measuremements by ACE-FTS, Odin/SMR, and Envisat/MIPAS and
-balloon borne observations are shown in \citet{LambertEtal:2007}.  A
-revised validation paper for N\cs2O is not planned and users are
-encouraged to read \citet{LambertEtal:2007} for more information.
+Apart from the differences noted above, the MLS \thisv\CheckThis 640 GHz N\cs2O is similar to the MLS v2.2 product described and validated in \citet{LambertEtal:2007}. Comparisons of v2.2 640 GHz N\cs2O with coincident measuremements by ACE-FTS, Odin/SMR, and Envisat/MIPAS and balloon borne observations are shown in \citet{LambertEtal:2007}. A revised validation paper for N\cs2O is not planned and users are encouraged to read \citet{LambertEtal:2007} for more information.
 
 \begin{figure}
   \includegraphics[width=\linewidth]
@@ -229,14 +97,13 @@ encouraged to read \citet{LambertEtal:2007} for more information.
 
 \subsection{Desired improvements for future data version(s)}
 
-Retrievals of N\cs2O to pressures greater than 100\,hPa \emph{may} be
-possible in later versions from the 190-GHz observations.
+Retrievals of N\cs2O to pressures greater than 100\,hPa \emph{may} be possible in later versions from the 190-GHz observations.
 
 \begin{table}[b]
   \caption{Summary of MLS \thisv\CheckThis N\cs2O (\texttt{N2O-NitrousOxide}) product.}\vspace{0.5ex}
   \label{tab:N2OSummary}
   \begin{minipage}{\linewidth}
-\centering\begin{tabular}{ccccccl}
+    \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Region}} &
 \parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
@@ -259,14 +126,14 @@ $\leq$0.33   & ---                 & ---   & ---       & --- & --- & Unsuitable 
 147          & ---                 & ---   & ---    & --- & ---& Unsuitable for scientific use \\   
 $\geq$215    & ---                 & ---   & ---    & --- & ---& Unsuitable for scientific use \\\bottomrule
 \end{tabular}
-\end{minipage}
+  \end{minipage}
 \end{table}
 
 \begin{table}[b]
   \caption{Summary of MLS \thisv\CheckThis N\cs2O (\texttt{N2O-640}) product.}\vspace{0.5ex}
-\label{tab:N2O640Summary}
-\begin{minipage}{\linewidth}
-\centering\begin{tabular}{ccccccl}
+  \label{tab:N2O640Summary}
+  \begin{minipage}{\linewidth}
+    \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Region}} &
 \parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
@@ -291,11 +158,6 @@ $\leq$0.33   & ---                 & ---   & ---       & --- & --- & Unsuitable 
 $\geq$215    & ---                 & ---   & ---       & --- & --- & Not retrieved \\
 \bottomrule
 \end{tabular}
-\end{minipage}
+  \end{minipage}
 \end{table}
-
-%%% Local Variables:  
-%%% mode: latex 
-%%% TeX-master: "v5-x-report" 
-%%% End:  
 
