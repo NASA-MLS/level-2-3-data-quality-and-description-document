@@ -40,9 +40,8 @@ diffs*
 figures/old-avks
 patch-tex-master-files.sh
 tags
-v4-2_data_quality_document-v3-1.pdf
-v5-x-report*.pdf
-v5-x-report.synctex.gz
+v6-x-report*.pdf
+v6-x-report.synctex.gz
 singlesection.pdf
 singlesection.synctex.gz
-v5-x-report.atfi
+v6-x-report.atfi
