@@ -3,11 +3,14 @@
 % ---------------------------------------- Fundamentals
 \documentclass[11pt,draft]{report}
 %
-\newif\ifnav\navfalse
+\newif\ifnav
+%
+\IfFileExists{shownav.flag}{\navtrue}{\navfalse}
+
 % Dummy change
 %
 \usepackage{accsupp}
-%
+% 
 % ---------------------------------------- Fonts
 % New (texlive 2023) approach to cochineal
 \usepackage[T1]{fontenc}
@@ -73,13 +76,8 @@ pdfusetitle]{hyperref}
 %
 % --------------------------------------- Colors
 %
-% \definecolor{ThemeA}{HTML}{03254e}
-% \definecolor{ThemeB}{HTML}{a23e48}
-\colorlet{ThemeA}{DarkTurquoise}
-\colorlet{ThemeB}{Coral}
-
 \definecolor{ThemeA}{HTML}{0e7c7b}
-\colorlet{ThemeB}{Coral}
+\colorlet{ThemeB}{Coral!90!Purple}
 %
 \colorlet{ChapterColor}{white}
 \colorlet{ChapterBackground}{ThemeA}
@@ -231,7 +229,7 @@ pdfusetitle]{hyperref}
 \newcommand{\cp}[1]{\ensuremath{^{\text{#1}}}}
 \newcommand{\degsym}{\textdegree}
 % 
-\newcommand{\mycomment}[1]{{\small\sffamily\color{red}[\textit{COMMENT: #1}]}}
+\newcommand{\mycomment}[1]{\textsf{\textcolor{red}{[\textit{COMMENT: #1}]}}}
 \newcommand{\CheckThis}{\textcolor{red}{\textsf{[\textit{Check this}]}}\xspace}
 %
 \newcommand{\dontincludegraphics}[2][]{\framebox{Graphics missing}}
