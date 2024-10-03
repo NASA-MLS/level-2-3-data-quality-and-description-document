@@ -40,7 +40,7 @@ diffs*
 figures/old-avks
 patch-tex-master-files.sh
 tags
-v6-x-report*.pdf
+v6-x-report.pdf
 v6-x-report.synctex.gz
 singlesection.pdf
 singlesection.synctex.gz
