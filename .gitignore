@@ -42,8 +42,7 @@ figures/old-avks
 patch-tex-master-files.sh
 tags
 v6-x-report.pdf
-v6-x-report.synctex.gz
+*.synctex*
 singlesection.pdf
-singlesection.synctex.gz
-v6-x-report.atfi
+*.atfi
 shownav.flag
