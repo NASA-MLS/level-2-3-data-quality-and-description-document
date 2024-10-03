@@ -1,291 +1,89 @@
 \speciestitle{Methyl chloride}{CH\cs3Cl}{CH3Cl}%
 {\item[Useful range:] 147--4.6\,hPa
-\item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
+  \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-The v2.2 MLS ClO measurements were characterized by a substantial
-(\mytexttilde0.1--0.4\,ppbv) negative bias at retrieval levels
-below (i.e., pressures larger than) 22\,hPa.
-\citet{SanteeEtal:2008:ClO} suggested that contamination from an
-interfering species such as \mecl, which has lines in two wing
-channels of the \mbox{640-GHz} band used to measure ClO, could have
-given rise to the bias; they showed results from precursory v3
-algorithms in which \mecl was also retrieved that demonstrated
-significant reduction in the bias in lower stratospheric ClO\@.
-Further refinements in the v3.3\emph{x}/v3.4\emph{x} algorithms
-yielded not only an improved ClO product, but also a reliable
-retrieval of \mecl.  The quality and reliability of the
-v3.3\emph{x}/v3.4\emph{x} MLS \mecl measurements were assessed in
-detail by \citet{SanteeEtal:2013}.
+The v2.2 MLS ClO measurements were characterized by a substantial (\mytexttilde0.1--0.4\,ppbv) negative bias at retrieval levels below (i.e., pressures larger than) 22\,hPa. \citet{SanteeEtal:2008:ClO} suggested that contamination from an interfering species such as \mecl, which has lines in two wing channels of the \mbox{640-GHz} band used to measure ClO, could have given rise to the bias; they showed results from precursory v3 algorithms in which \mecl was also retrieved that demonstrated significant reduction in the bias in lower stratospheric ClO\@. Further refinements in the v3.3\emph{x}/v3.4\emph{x} algorithms yielded not only an improved ClO product, but also a reliable retrieval of \mecl. The quality and reliability of the v3.3\emph{x}/v3.4\emph{x} MLS \mecl measurements were assessed in detail by \citet{SanteeEtal:2013}.
 
-As is the case for ClO, the standard \mecl product is derived from
-radiances measured by the radiometer centered near 640\,GHz. The MLS
-\thisv\CheckThis \mecl data are scientifically useful over the range 147 to
-4.6\,hPa.  A summary of the estimated precision, resolution (vertical
-and horizontal), and systematic uncertainty of the \thisv\CheckThis \mecl
-measurements as a function of altitude is given in
-Table~\ref{tab:CH3ClSummary}.
+As is the case for ClO, the standard \mecl product is derived from radiances measured by the radiometer centered near 640\,GHz. The MLS \thisv\CheckThis \mecl data are scientifically useful over the range 147 to 4.6\,hPa. A summary of the estimated precision, resolution (vertical and horizontal), and systematic uncertainty of the \thisv\CheckThis \mecl measurements as a function of altitude is given in Table~\ref{tab:CH3ClSummary}.
 
 \subsection{Differences between \prevv\CheckThis and \thisv\CheckThis}
 
-As with other species retrieved from the MLS \mbox{640-GHz} receiver,
-lower stratospheric signals for \mecl are affected by water
-vapor. Therefore, for the retrieval phase CorePlusR4AB14, which
-includes \mecl (see Table~\ref{tab:Phases}), water vapor is
-constrained to the values from the MLS H\cs2O standard product.  As
-discussed in Section~\ref{sec:H2OChanges}, the dry bias below the
-tropopause present in earlier MLS data versions has been mitigated in
-\thisv\CheckThis.  Some of the differences between \thisv\CheckThis and \prevv\CheckThis \mecl can
-thus be attributed to the improvement in H\cs2O between the two
-versions.  \mecl abundances are uniformly larger in \thisv\CheckThis than in
-\prevv\CheckThis at the lowest retrieval levels (68--147\,hPa).  Low-latitude
-differences are generally in the range of 10--20\% or less, whereas
-differences in the Southern Hemisphere polar region typically exceed
-30\% during austral summer and those in the Northern Hemisphere polar
-region typically exceed 20\% during boreal summer
-(Figure~\ref{fig:zmcontourCH3Cl}).  In addition, \thisv\CheckThis mixing ratios
-are typically larger than those in \prevv\CheckThis in the polar lower
-stratosphere in both hemispheres during their respective winter
-seasons, with differences of more than 30\% in the Arctic (less in the
-Antarctic).  In contrast, \thisv\CheckThis abundances are smaller than those in
-\prevv\CheckThis almost everywhere at higher altitudes ($\mytexttilde$10\,hPa
-and lower pressures).  In general, the zonal-mean \mecl distribution
-(at all latitudes) is smoother and more realistic in \thisv\CheckThis
-(Figure~\ref{fig:zmcontourCH3Cl}), although the overall systematic
-uncertainty at 147\,hPa has increased (see
-Section~\ref{sec:ch3clacc}).
+As with other species retrieved from the MLS \mbox{640-GHz} receiver, lower stratospheric signals for \mecl are affected by water vapor. Therefore, for the retrieval phase CorePlusR4AB14, which includes \mecl (see Table~\ref{tab:Phases}), water vapor is constrained to the values from the MLS H\cs2O standard product. As discussed in Section~\ref{sec:H2OChanges}, the dry bias below the tropopause present in earlier MLS data versions has been mitigated in \thisv\CheckThis. Some of the differences between \thisv\CheckThis and \prevv\CheckThis \mecl can thus be attributed to the improvement in H\cs2O between the two versions. \mecl abundances are uniformly larger in \thisv\CheckThis than in \prevv\CheckThis at the lowest retrieval levels (68--147\,hPa). Low-latitude differences are generally in the range of 10--20\% or less, whereas differences in the Southern Hemisphere polar region typically exceed 30\% during austral summer and those in the Northern Hemisphere polar region typically exceed 20\% during boreal summer (Figure~\ref{fig:zmcontourCH3Cl}). In addition, \thisv\CheckThis mixing ratios are typically larger than those in \prevv\CheckThis in the polar lower stratosphere in both hemispheres during their respective winter seasons, with differences of more than 30\% in the Arctic (less in the Antarctic). In contrast, \thisv\CheckThis abundances are smaller than those in \prevv\CheckThis almost everywhere at higher altitudes ($\mytexttilde$10\,hPa and lower pressures). In general, the zonal-mean \mecl distribution (at all latitudes) is smoother and more realistic in \thisv\CheckThis (Figure~\ref{fig:zmcontourCH3Cl}), although the overall systematic uncertainty at 147\,hPa has increased (see Section~\ref{sec:ch3clacc}).
 
 \begin{figure}
   \begin{center}
-      \includegraphics[width=10.0cm]{figures/Zm_CH3Cl_2014d015}
-      \includegraphics[width=10.0cm]{figures/Zm_CH3Cl_2019d218}
+    \includegraphics[width=10.0cm]{figures/Zm_CH3Cl_2014d015}
+    \includegraphics[width=10.0cm]{figures/Zm_CH3Cl_2019d218}
   \end{center}
-\caption{Zonal mean pressure-latitude cross sections of MLS \mecl, for
-  (left) \thisv\CheckThis, (middle) \prevv\CheckThis, and (right) their differences
-  (\thisv\CheckThis minus \prevv\CheckThis, in percent).  Results are shown for
-  representative days during summer in each hemisphere.  The black
-  curves overlaid on the abundance panels (left and middle) mark the
-  zero contour.}
-\label{fig:zmcontourCH3Cl}
+  \caption{Zonal mean pressure-latitude cross sections of MLS \mecl, for (left) \thisv\CheckThis, (middle) \prevv\CheckThis, and (right) their differences (\thisv\CheckThis minus \prevv\CheckThis, in percent).  Results are shown for representative days during summer in each hemisphere.  The black curves overlaid on the abundance panels (left and middle) mark the zero contour.}
+  \label{fig:zmcontourCH3Cl}
 \end{figure}
 
 \subsection{Resolution}
 \onestandardavk{CH3Cl}{\mecl}%
 
-The resolution of the retrieved data can be described using
-``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the
-two-dimensional nature of the MLS data processing system means that
-the kernels describe both vertical and horizontal resolution.  Values
-of the integrated kernel near unity indicate that the majority of
-information for that level has come from the measurements themselves
-and not the a priori; Figure~\ref{fig:AvkCH3Cl} shows that the
-measurements dominate at pressures greater than 3.2\,hPa, above which
-level the integrated kernel drops below 0.5. Smoothing, imposed on the
-retrieval system in both the vertical and horizontal directions to
-enhance retrieval stability and precision, degrades the inherent
-resolution of the measurements.  Thus, although \mecl measurements are
-reported at six pressure levels per decade change in pressure (spacing
-of \mytexttilde2.7\,km), the vertical resolution of the \thisv\CheckThis \mecl
-data as determined from the full width at half maximum of the rows of
-the averaging kernel matrix shown in Figure~\ref{fig:AvkCH3Cl} is
-\mytexttilde4--6\,km in most of the lower stratosphere, degrading
-to \mytexttilde8--10\,km at and above (i.e., at pressures less
-than) 15\,hPa.  The averaging kernels are fairly symmetric, and for
-the most part they peak at their nominal position.  However, overlap
-in the averaging kernels for the 100 and 147\,hPa retrieval surfaces
-indicates that the 147\,hPa retrieval does not provide as much
-independent information as is given by retrievals at higher altitudes.
-Figure~\ref{fig:AvkCH3Cl} also shows horizontal averaging kernels,
-from which the along-track horizontal resolution is determined to be
-\mytexttilde600\,km at 147\,hPa, \mytexttilde450--500\,km from
-100 to 22\,hPa, and \mytexttilde600--850\,km at and above
-15\,hPa.  The cross-track resolution, set by the width of the field of
-view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km.  The
-along-track separation between adjacent retrieved profiles is
-1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the
-longitudinal separation of MLS measurements, set by the Aura orbit, is
-10\degsym--20\degsym\ over low and middle latitudes, with much finer
-sampling in the polar regions.
+The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Values of the integrated kernel near unity indicate that the majority of information for that level has come from the measurements themselves and not the a priori; Figure~\ref{fig:AvkCH3Cl} shows that the measurements dominate at pressures greater than 3.2\,hPa, above which level the integrated kernel drops below 0.5. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, degrades the inherent resolution of the measurements. Thus, although \mecl measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv\CheckThis \mecl data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkCH3Cl} is \mytexttilde4--6\,km in most of the lower stratosphere, degrading to \mytexttilde8--10\,km at and above (i.e., at pressures less than) 15\,hPa. The averaging kernels are fairly symmetric, and for the most part they peak at their nominal position. However, overlap in the averaging kernels for the 100 and 147\,hPa retrieval surfaces indicates that the 147\,hPa retrieval does not provide as much independent information as is given by retrievals at higher altitudes. Figure~\ref{fig:AvkCH3Cl} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde600\,km at 147\,hPa, \mytexttilde450--500\,km from 100 to 22\,hPa, and \mytexttilde600--850\,km at and above 15\,hPa. The cross-track resolution, set by the width of the field of view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
 
 \subsection{Precision}
 
 \begin{figure}
-\centering\includegraphics[width=10.0cm]{figures/MLSascdsc_CH3Cl_clim}
-\caption{(left) Ensemble mean profiles for ascending (light red) and
-  descending (dark red) orbit matching pairs of MLS \thisv\CheckThis \mecl
-  profiles averaged over several months of a representative year of
-  data (2009).  Symbols indicate MLS retrieval pressure levels.
-  (right) Mean differences (ascending$-$descending) in pptv (green
-  solid line).  Also shown are the standard deviations about the mean
-  differences (light blue solid line) and the root sum square (RSS) of
-  the precisions calculated by the retrieval algorithm for the two
-  sets of profiles (light blue dotted line). The observed scatter
-  about the mean differences and the reported precision values have
-  been scaled by $\mathsf{1/\sqrt{2}}$ (to convert from standard
-  deviations of differences into standard deviations of individual
-  data points); hence the light blue solid line represents the
-  statistical repeatability of the MLS measurements, and the light
-  blue dotted line represents the expected $1\sigma$ precision for a
-  single profile.  The thin black lines mark zero in each panel.  The
-  number of crossing pairs of measurements being compared at each
-  pressure level is noted in the space between the panels.}
-\label{fig:mlsascdscCH3Cl}
+  \centering\includegraphics[width=10.0cm]{figures/MLSascdsc_CH3Cl_clim} \caption{(left) Ensemble mean profiles for ascending (light red) and descending (dark red) orbit matching pairs of MLS \thisv\CheckThis \mecl profiles averaged over several months of a representative year of data (2009).  Symbols indicate MLS retrieval pressure levels. (right) Mean differences (ascending$-$descending) in pptv (green solid line).  Also shown are the standard deviations about the mean differences (light blue solid line) and the root sum square (RSS) of the precisions calculated by the retrieval algorithm for the two sets of profiles (light blue dotted line). The observed scatter about the mean differences and the reported precision values have been scaled by $\mathsf{1/\sqrt{2}}$ (to convert from standard deviations of differences into standard deviations of individual data points); hence the light blue solid line represents the statistical repeatability of the MLS measurements, and the light blue dotted line represents the expected $1\sigma$ precision for a single profile.  The thin black lines mark zero in each panel.  The number of crossing pairs of measurements being compared at each pressure level is noted in the space between the panels.}
+  \label{fig:mlsascdscCH3Cl}
 \end{figure}
 
-The precision of the MLS \mecl data is estimated empirically by
-comparing profiles measured at the intersections of ascending (mainly
-day) and descending (mainly night) portions of the orbit. Under ideal
-conditions (i.e., a quiescent atmosphere), the standard deviation
-about the mean differences between such matched profile pairs provides
-a measure of the precision of the individual data points. In practice,
-however, real changes in the atmosphere may occur over the 12\,h
-interval between the intersecting measurement points, in which case
-the observed scatter provides an upper limit on the estimate of
-precision, assuming that the a priori has a negligible influence on
-the retrieval (a reasonable assumption at least at pressures greater
-than 3.2\,hPa). The precision estimates were found to be essentially
-invariant with time; results for several months of a representative
-year of data are shown in Figure~\ref{fig:mlsascdscCH3Cl}. The
-observed standard deviation values are \mytexttilde100\,pptv or less
-throughout the vertical domain. Mean differences between paired
-crossing profiles are \mytexttilde10\,pptv or less except at the
-lowest two levels, where they reach \mytexttilde15--25\,pptv. Given
-the large number of data points being compared, these
-ascending$-$descending differences are substantially larger than the
-standard error of the mean, implying the presence of significant
-systematic biases. These biases likely arise from the cumulative
-effect of various factors in the retrieval system that can vary
-diurnally or along the orbit, such as interferences from temperature
-or other atmospheric constituents (e.g., H\cs2O and ClO), or thermal
-emissions from the MLS antenna.
+The precision of the MLS \mecl data is estimated empirically by comparing profiles measured at the intersections of ascending (mainly day) and descending (mainly night) portions of the orbit. Under ideal conditions (i.e., a quiescent atmosphere), the standard deviation about the mean differences between such matched profile pairs provides a measure of the precision of the individual data points. In practice, however, real changes in the atmosphere may occur over the 12\,h interval between the intersecting measurement points, in which case the observed scatter provides an upper limit on the estimate of precision, assuming that the a priori has a negligible influence on the retrieval (a reasonable assumption at least at pressures greater than 3.2\,hPa). The precision estimates were found to be essentially invariant with time; results for several months of a representative year of data are shown in Figure~\ref{fig:mlsascdscCH3Cl}. The observed standard deviation values are \mytexttilde100\,pptv or less throughout the vertical domain. Mean differences between paired crossing profiles are \mytexttilde10\,pptv or less except at the lowest two levels, where they reach \mytexttilde15--25\,pptv. Given the large number of data points being compared, these ascending$-$descending differences are substantially larger than the standard error of the mean, implying the presence of significant systematic biases. These biases likely arise from the cumulative effect of various factors in the retrieval system that can vary diurnally or along the orbit, such as interferences from temperature or other atmospheric constituents (e.g., H\cs2O and ClO), or thermal emissions from the MLS antenna.
 
-The precision reported for each data point by the Level~2 data
-processing system exceeds the observationally determined precision
-throughout the vertical range (Figure~\ref{fig:mlsascdscCH3Cl}),
-indicating that the vertical smoothing (regularization) applied to
-stabilize the retrieval system and improve the precision has a
-non-negligible influence. Because the reported precisions take into
-account occasional variations in instrument performance, the best
-estimate of the precision of an individual data point is the value
-quoted for that point in the L2GP files, but it should be borne in mind
-that this approach slightly overestimates the actual measurement
-noise. The estimates reported here represent the precisions at each
-pressure level of a single profile; precision can generally be improved
-by averaging, with the precision of an average of $N$ profiles being
-1/$\sqrt{N}$ times the precision of an individual profile (although the
-actual standard error of the mean can in some cases be even smaller
-\citep{TooheyAndVonClarmann:2013}).
+The precision reported for each data point by the Level~2 data processing system exceeds the observationally determined precision throughout the vertical range (Figure~\ref{fig:mlsascdscCH3Cl}), indicating that the vertical smoothing (regularization) applied to stabilize the retrieval system and improve the precision has a non-negligible influence. Because the reported precisions take into account occasional variations in instrument performance, the best estimate of the precision of an individual data point is the value quoted for that point in the L2GP files, but it should be borne in mind that this approach slightly overestimates the actual measurement noise. The estimates reported here represent the precisions at each pressure level of a single profile; precision can generally be improved by averaging, with the precision of an average of $N$ profiles being 1/$\sqrt{N}$ times the precision of an individual profile (although the actual standard error of the mean can in some cases be even smaller \citep{TooheyAndVonClarmann:2013}).
 
 \subsection{Range}
 
-Although \mecl is retrieved over the range 147 to 0.001\,hPa, because
-of the degradation in resolution and expected precision, the reduction
-in independent information contributed by the measurements, and the
-results of simulations using synthetic data as input radiances to test
-the closure of the retrieval system, the data are not deemed reliable
-at retrieval pressures less than 4.6\,hPa. Despite the overlap in the
-averaging kernels for the 147 and 100\,hPa surfaces discussed above,
-the simulations show that the retrieved \mecl values track the
-variations in the ``truth'' field at both levels.  Moreover, the
-retrievals (of real data) at 147\,hPa display significant features not
-seen at 100\,hPa (not shown) that are believed to represent actual
-atmospheric variations. Thus, we recommend that the \thisv\CheckThis \mecl data
-may be used for scientific studies between 147 and 4.6\,hPa
-(inclusive), although the reduced sensitivity at the extremes of this
-range, as well as the relatively coarse vertical resolution of the
-retrieved profiles, should be borne in mind.
+Although \mecl is retrieved over the range 147 to 0.001\,hPa, because of the degradation in resolution and expected precision, the reduction in independent information contributed by the measurements, and the results of simulations using synthetic data as input radiances to test the closure of the retrieval system, the data are not deemed reliable at retrieval pressures less than 4.6\,hPa. Despite the overlap in the averaging kernels for the 147 and 100\,hPa surfaces discussed above, the simulations show that the retrieved \mecl values track the variations in the ``truth'' field at both levels. Moreover, the retrievals (of real data) at 147\,hPa display significant features not seen at 100\,hPa (not shown) that are believed to represent actual atmospheric variations. Thus, we recommend that the \thisv\CheckThis \mecl data may be used for scientific studies between 147 and 4.6\,hPa (inclusive), although the reduced sensitivity at the extremes of this range, as well as the relatively coarse vertical resolution of the retrieved profiles, should be borne in mind.
 
 \subsection{Accuracy}
 \label{sec:ch3clacc}
 
-The effects of various sources of systematic uncertainty (e.g.,
-instrumental issues, spectroscopic uncertainty, and approximations in
-the retrieval formulation and implementation) on the MLS \thisv\CheckThis \mecl
-measurements have been quantified through a comprehensive set of
-retrievals of synthetic radiances; see \citet{SanteeEtal:2013} for
-details of a similar analysis conducted on MLS
-v3.3\emph{x}/v3.4\emph{x} \mecl data.  The overall systematic
-uncertainty, or accuracy, is calculated by combining (RSS) the
-contributions from both the expected biases and the additional scatter
-each source of uncertainty may introduce into the data.  In aggregate,
-the factors considered in these simulations are estimated to give rise
-to total systematic uncertainty of approximately 25--65\% in the MLS
-\thisv\CheckThis \mecl data in the upper troposphere / lower stratosphere (see
-Table~\ref{tab:CH3ClSummary}).  These values for the overall
-uncertainty in \thisv\CheckThis \mecl are slightly smaller (better accuracy)
-than those estimated for the \prevv\CheckThis data
-\citep[see][]{EOSMLSV4Quality} at the top of the recommended range but
-slightly larger (poorer accuracy) at 147\,hPa.
+The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv\CheckThis \mecl measurements have been quantified through a comprehensive set of retrievals of synthetic radiances; see \citet{SanteeEtal:2013} for details of a similar analysis conducted on MLS v3.3\emph{x}/v3.4\emph{x} \mecl data. The overall systematic uncertainty, or accuracy, is calculated by combining (RSS) the contributions from both the expected biases and the additional scatter each source of uncertainty may introduce into the data. In aggregate, the factors considered in these simulations are estimated to give rise to total systematic uncertainty of approximately 25--65\% in the MLS \thisv\CheckThis \mecl data in the upper troposphere / lower stratosphere (see Table~\ref{tab:CH3ClSummary}). These values for the overall uncertainty in \thisv\CheckThis \mecl are slightly smaller (better accuracy) than those estimated for the \prevv\CheckThis data \citep[see][]{EOSMLSV4Quality} at the top of the recommended range but slightly larger (poorer accuracy) at 147\,hPa.
 
 \subsection{Review of comparisons with other datasets}
 
-Extensive comparisons of MLS v3.3\emph{x}/v3.4\emph{x} \mecl data with
-a variety of different platforms (balloon-borne, aircraft, and
-satellite instruments) were presented by \citet{SanteeEtal:2013}.
-Comparisons of \thisv\CheckThis \mecl with correlative data have not been
-conducted but are expected to yield results similar to those for
-previous versions.
+Extensive comparisons of MLS v3.3\emph{x}/v3.4\emph{x} \mecl data with a variety of different platforms (balloon-borne, aircraft, and satellite instruments) were presented by \citet{SanteeEtal:2013}. Comparisons of \thisv\CheckThis \mecl with correlative data have not been conducted but are expected to yield results similar to those for previous versions.
 
 \subsection{Data screening}
 \label{sec:CH3ClScreening}
 \begin{description}
-\item[Pressure range:]  \screeningrule{147--4.6\,hPa}
+  \item[Pressure range:] \screeningrule{147--4.6\,hPa}
 
-  \standardrangestatement
-  
-  \standardprecisionrule
-  
-\item[Status flag:] \screeningrule{Only use profiles for which the
-    \texttt{Status} field is zero.}  We recommend that all profiles with
-  nonzero values of \texttt{Status} be discarded, because of the
-  potential impact of cloud artifacts at lower levels.  Note, however,
-  that rejecting in their entirety all profiles with nonzero
-  \texttt{Status} may be unnecessarily severe at and above (i.e., at
-  pressures equal to or smaller than) 46\,hPa, where clouds have
-  negligible impact; thus otherwise good-quality profiles with nonzero
-  but even \texttt{Status} values may be used without restriction at
-  those levels as long as they are removed at larger pressures.  See
-  Section~\ref{sec:StatusQuality} for more information on the
-  interpretation of the \texttt{Status} field.
+    \standardrangestatement
 
-\item[Quality:] \qualityrule{1.3} This threshold for \texttt{Quality}
-  (unchanged from \prevv\CheckThis) typically excludes less than 1\% of \mecl
-  profiles on a daily basis; note that it potentially discards some
-  ``good'' data points while not necessarily identifying all ``bad''
-  ones.
+    \standardprecisionrule
 
-\item[Convergence:] \convergencerule{1.05} On a typical day this
-  threshold for \texttt{Convergence} (unchanged from \prevv\CheckThis) discards
-  few (0.5\% or less) of the \mecl profiles, most (but not all) of
-  which are also filtered out by the other quality control measures.
+  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is zero.} We recommend that all profiles with nonzero values of \texttt{Status} be discarded, because of the potential impact of cloud artifacts at lower levels. Note, however, that rejecting in their entirety all profiles with nonzero \texttt{Status} may be unnecessarily severe at and above (i.e., at pressures equal to or smaller than) 46\,hPa, where clouds have negligible impact; thus otherwise good-quality profiles with nonzero but even \texttt{Status} values may be used without restriction at those levels as long as they are removed at larger pressures. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.
+
+  \item[Quality:] \qualityrule{1.3} This threshold for \texttt{Quality} (unchanged from \prevv\CheckThis) typically excludes less than 1\% of \mecl profiles on a daily basis; note that it potentially discards some ``good'' data points while not necessarily identifying all ``bad'' ones.
+
+  \item[Convergence:] \convergencerule{1.05} On a typical day this threshold for \texttt{Convergence} (unchanged from \prevv\CheckThis) discards few (0.5\% or less) of the \mecl profiles, most (but not all) of which are also filtered out by the other quality control measures.
 \end{description}
 
 \subsection{Artifacts}
 
 \begin{itemize}
-\item Significant ascending$-$descending differences imply the
-  presence of systematic biases at the bottom two retrieval pressure
-  levels.  However, various analyses performed separately on sets of
-  ascending-only and descending-only measurements suggest that,
-  although significant, these biases will have little or no impact on
-  most scientific conclusions based on the MLS \mecl measurements.
+  \item Significant ascending$-$descending differences imply the presence of systematic biases at the bottom two retrieval pressure levels. However, various analyses performed separately on sets of ascending-only and descending-only measurements suggest that, although significant, these biases will have little or no impact on most scientific conclusions based on the MLS \mecl measurements.
 \end{itemize}
 
 \subsection{Desired improvements for future data version(s)}
 
 \begin{itemize}
-\item Minimize the impact of thick clouds on the retrievals to further
-  improve the \mecl measurements in the upper troposphere and
-  lowermost stratosphere.
+  \item Minimize the impact of thick clouds on the retrievals to further improve the \mecl measurements in the upper troposphere and lowermost stratosphere.
 \end{itemize}
 
 \begin{table*}[bp]
-\caption{Summary of Aura MLS \thisv\CheckThis \mecl Characteristics}\vspace{0.5ex}
-\label{tab:CH3ClSummary}
-\begin{minipage}{\linewidth}
-\renewcommand{\thefootnote}{\thempfootnote}
-\centering\begin{tabular}{ccccl}
+  \caption{Summary of Aura MLS \thisv\CheckThis \mecl Characteristics}\vspace{0.5ex}
+  \label{tab:CH3ClSummary}
+  \begin{minipage}{\linewidth}
+    \renewcommand{\thefootnote}{\thempfootnote}
+    \centering\begin{tabular}{ccccl}
 \toprule
 \parbox[m]{18mm}{\bfseries\centering{Pressure\\ / hPa}} &
 \parbox[m]{24mm}{\bfseries\centering{Resolution\\ V $\times$ H%
@@ -311,11 +109,6 @@ previous versions.
 %
 \bottomrule
 \end{tabular}
-\end{minipage}
+  \end{minipage}
 \end{table*}
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: "v5-x-report"
-%%% End: 
 
