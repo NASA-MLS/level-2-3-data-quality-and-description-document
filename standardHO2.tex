@@ -22,15 +22,15 @@ Figure~\ref{fig:AvkHO2} shows the HO\cs2 averaging kernel for daytime at 70\degs
 
 \subsection{Precision}
 
-A typical HO\cs2 profile and the associated precisions (for both \prevv\CheckThis and \thisv\CheckThis) are shown in Figure~\ref{fig:HO2profiles}. The profile is shown in both volume mixing ratio (vmr) and density units. All MLS data are reported in vmr for consistency with the other retrieved molecules. However, use of density units (10\cp{6}\,cm\cp{$-$3}) reduces the apparent steep gradient of HO\cs2 vertical profile, allowing one to see the profile with more detail. The night HO\cs2 profile is expected to exhibit a narrow layer near the altitudes of the nighttime OH layer at \mytexttilde82\,km \citep{PickettEtal:2006:NightOH}, which is not shown in Figure~\ref{fig:HO2profiles} since MLS HO\cs2 data is not recommended for altitudes above 0.046\,hPa (\mytexttilde70\,km). Precisions are such that an HO\cs2 zonal average within a 10\degsym\ latitude bin can be determined with better than 10\% relative precision with 20 days of data (\mytexttilde2000 samples) for most pressure levels over 22--0.046\,hPa.
+A typical HO\cs2 profile and the associated precisions (for both \prevv and \thisv) are shown in Figure~\ref{fig:HO2profiles}. The profile is shown in both volume mixing ratio (vmr) and density units. All MLS data are reported in vmr for consistency with the other retrieved molecules. However, use of density units (10\cp{6}\,cm\cp{$-$3}) reduces the apparent steep gradient of HO\cs2 vertical profile, allowing one to see the profile with more detail. The night HO\cs2 profile is expected to exhibit a narrow layer near the altitudes of the nighttime OH layer at \mytexttilde82\,km \citep{PickettEtal:2006:NightOH}, which is not shown in Figure~\ref{fig:HO2profiles} since MLS HO\cs2 data is not recommended for altitudes above 0.046\,hPa (\mytexttilde70\,km). Precisions are such that an HO\cs2 zonal average within a 10\degsym\ latitude bin can be determined with better than 10\% relative precision with 20 days of data (\mytexttilde2000 samples) for most pressure levels over 22--0.046\,hPa.
 
 \oneverticalavk{HO2}{HO\cs2}%
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{figures/plot_ho2zmv5}%
+    \includegraphics[width=0.8\linewidth]{figures/plot_ho2zmv6}%
   \end{center}
-  \caption{Monthly zonal mean of retrieved HO\cs2 and its estimated precision (horizontal error bars) for January, 2009 averaged over 29\degsym N to 39\degsym N. Panel (a) shows \thisv\CheckThis HO\cs2 vmr vs.\ pressure for day (black) and night (blue). Panel (b) shows the same data plotted as a day-night difference (note that a day-night difference is required for HO\cs2 for all pressure levels). Panel (c) shows the same data in (a) converted into density units. Panel (d) shows the day-night differences for the data in panel (c). Panels (e) and (f) are equivalent to (c) and (d) but using \prevv\CheckThis data.}
+  \caption{Monthly zonal mean of retrieved HO\cs2 and its estimated precision (horizontal error bars) for January, 2005 averaged over 29\degsym N to 39\degsym N. Panel (a) shows \thisv HO\cs2 vmr vs.\ pressure for day (black) and night (blue). Panel (b) shows the same data plotted as a day-night difference (note that a day-night difference is required for HO\cs2 for all pressure levels). Panel (c) shows the same data in (a) converted into density units. Panel (d) shows the day-night differences for the data in panel (c). Panels (e) and (f) are equivalent to (c) and (d) but using \prevv data.}
   \label{fig:HO2profiles}
 \end{figure}
 
@@ -44,19 +44,19 @@ Table~\ref{tab:HO2Summary} summarizes the accuracy expected for HO\cs2. The effe
 It is recommended that HO\cs2 data values be used in scientific investigations if all the following tests are successful:
 \begin{description}
   \item[Pressure range:] \screeningrule{22--0.046\,hPa} \standardrangestatement \standardprecisionrule \evenstatusrule
-  \item[Quality:] \screeningrule{MLS \thisv\CheckThis HO\cs2 data can be used irrespective of the value of the \texttt{Quality} field.}
-  \item[Convergence:] \convergencerule{1.1} In version v2.2 this test often fails for 100 out of 3500 profiles in a day. In the current version, \thisv\CheckThis, there are often zero or very few non-converged profiles.
+  \item[Quality:] \screeningrule{MLS \thisv HO\cs2 data can be used irrespective of the value of the \texttt{Quality} field.}
+  \item[Convergence:] \convergencerule{1.1} In version v2.2 this test often fails for 100 out of 3500 profiles in a day. In the subsequent versions, including \thisv, there are often zero or very few non-converged profiles.
 \end{description}
 
 \subsection{Artifacts}
 Currently there are no known artifacts in the HO\cs2 product. The primary limitation is the precision and the altitude range.
 
 \subsection{Review of comparisons with other datasets}
-HO\cs2 data from MLS v2.2 software have been validated with two balloon-borne remote-sensing instruments. Details of the comparison are given in \citet{PickettEtal:2006:Validation}. Differences between v2.2 and \thisv\CheckThis show no differences large enough to alter results of previous validation studies.
+HO\cs2 data from MLS v2.2 software have been validated with two balloon-borne remote-sensing instruments. Details of the comparison are given in \citet{PickettEtal:2006:Validation}. Differences between v2.2 and \thisv show no differences large enough to alter results of previous validation studies.
 
 \begin{table}
   \caption{Summary of precisions, resolution, and uncertainties for
-    the MLS \thisv\CheckThis HO\cs2 product}
+    the MLS \thisv HO\cs2 product \lmv{This table needs updating}}
   \vspace{\tablecaptionsep}
   \label{tab:HO2Summary}
   \begin{minipage}{\linewidth}
