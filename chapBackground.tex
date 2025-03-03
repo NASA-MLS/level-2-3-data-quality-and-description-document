@@ -31,32 +31,32 @@ In operation, the instrument performs a continuous vertical scan of both the GHz
 
 The Level~2 algorithms implement a standard \emph{Optimal Estimation} retrieval approach \citep{Rodgers:1976,Rodgers:2000} that seeks the ``best'' value for the state vector (the profiles of temperature and abundances) based on an optimal combination of the fit to the MLS radiance observations, \emph{a priori} estimates of the state vector (from climatological information and, for temperature in the troposphere and lower stratosphere, analysis fields), and constraints on the smoothness of the result. This fit must often be arrived at in an iterative manner because of the non-linear nature of the Aura MLS measurement system.
 
-An innovative aspect of the retrieval algorithms for Aura MLS arises from taking advantage of the fact that the MLS instrument looks in the forward direction from the spacecraft. Figure~\ref{fig:Geometry} reviews the Aura MLS measurement geometry and shows that each radiance observation is influenced by the state of the atmosphere for several consecutive profiles. In the \thisv\CheckThis Level~2 algorithms, the state vector consists of ``chunks'' of several profiles of atmospheric temperature and composition, which are then simultaneously retrieved from radiances measured in a similar number of MLS scans. Results from these ``chunks'' are then joined together to produce the products at a granularity of one day (the chunks overlap in order to avoid ``edge effects'').
+An innovative aspect of the retrieval algorithms for Aura MLS arises from taking advantage of the fact that the MLS instrument looks in the forward direction from the spacecraft. Figure~\ref{fig:Geometry} reviews the Aura MLS measurement geometry and shows that each radiance observation is influenced by the state of the atmosphere for several consecutive profiles. In the \thisv Level~2 algorithms, as with earlier versions, the state vector consists of ``chunks'' of several profiles of atmospheric temperature and composition, which are then simultaneously retrieved from radiances measured in a similar number of MLS scans. Results from these ``chunks'' are then joined together to give products at a granularity of one day (the chunks overlap in order to avoid ``edge effects'').
 
 The retrieval state vector consists of vertical profiles of temperature and composition on fixed pressure surfaces. Between these fixed surfaces, the forward models assume that species abundances and temperature vary from surface to surface in a piecewise-linear fashion (except for the abundance of H\cs2O, which is assumed to vary linearly in the logarithm of the mixing ratio). This has important implications for the interpretation of the data as was described in Section~\ref{sec:BasisIssues}. In addition to these profiles, the pressure at the tangent point for the mid-point of each minor frame is retrieved, based on both radiance observations and knowledge of tangent point height from the MLS antenna position encoder and the Aura spacecraft ephemeris and attitude determination.
 
-Most of the MLS data products are deduced from observations of spectral contrast, that is, variations in radiance as a function of frequency for a given limb pointing. Many of the systematic errors in the MLS measurement system manifest themselves as a spectrally flat or slowly spectrally varying error in radiance. This is true of effects arising both from the instrument (such as gain and offset during the limb scan) and from the ``forward model'' (such as knowledge of continuum emission and the impact of some approximations made in the forward model in order to increase its speed). In order to account for such effects, the \thisv\CheckThis algorithms also retrieve spectrally flat (or slowly spectrally varying) corrections to the MLS radiances, either in terms of an additive radiance offset or an additive atmospheric extinction.
+Most of the MLS data products are deduced from observations of spectral contrast, that is, variations in radiance as a function of frequency for a given limb pointing. Many of the systematic errors in the MLS measurement system manifest themselves as a spectrally flat or slowly spectrally varying error in radiance. This is true of effects arising both from the instrument (such as gain and offset during the limb scan) and from the ``forward model'' (such as knowledge of continuum emission and the impact of some approximations made in the forward model in order to increase its speed). In order to account for such effects, the \thisv algorithms also retrieve spectrally flat (or slowly spectrally varying) corrections to the MLS radiances, either in terms of an additive radiance offset or an additive atmospheric extinction.
 
 \section{The \texttt{Core}, \texttt{CorePlusR\emph{n}} approach}
 
 \subsection{The need for separate ``phases''}
 
-Many aspects of the MLS measurement system are linear in nature. In other words, there is a linear relationship between changes in aspects of the atmospheric state and consequent changes in the MLS radiance observations. However, there are some components of the state vector whose impact on the radiances is non-linear. The most non-linear of these is the estimate of the tangent pressure for each MIF of observation. The impact of water vapor in the upper troposphere on the MLS radiance observations is also highly non-linear. Solving for these aspects of the state vector therefore requires several iterations.
+Many aspects of the MLS measurement system are close to being linear in nature. In other words, there is a linear relationship between changes in aspects of the atmospheric state and consequent changes in the MLS radiance observations. However, there are some components of the state vector whose impact on the radiances is non-linear. The most non-linear of these is the estimate of the tangent pressure for each MIF of observation. The impact of water vapor in the upper troposphere on the MLS radiance observations is also highly non-linear. Solving for these aspects of the state vector therefore requires several iterations.
 
 The computational effort involved in retrieval and forward models scales very rapidly (arguably as high as cubically) as a function of the size of the measurement system (i.e., the number of elements in the state and measurement vectors). Thus it is desirable to simplify retrievals involving strongly non-linear variables to a small subset of the complete system, in order to cut down on the effort involved in retrievals that require many iterations.
 
-For this and other reasons, most retrieval algorithms are split into \emph{phases}. In the case of the MLS \thisv\CheckThis retrievals, there are many such phases. The first group of phases (collectively known as ``Core'') use the 118\,GHz and 240\,GHz observations of O\cs2 and O\cp{18}O, respectively, to establish estimates for temperature and tangent pressure. Upper tropospheric 190\,GHz radiances are used in these early phases to establish a first order estimate of upper tropospheric humidity. The ``Core'' phases also include ``cloud screening'' computations (based on differences between observed and estimated clear-sky radiances). These identify minor frames where radiances in a given radiometer have been subject to significant (and currently poorly modeled) cloud scattering. Such minor frames are ignored in \thisv\CheckThis processing in certain radiometers. Including information in such cloud-contaminated conditions is a goal for future MLS data processing versions.
+For this and other reasons, most retrieval algorithms are split into \emph{phases}. In the case of the MLS \thisv retrievals, there are many such phases. The first group of phases (collectively known as ``Core'') use the 118\,GHz and 240\,GHz observations of O\cs2 and O\cp{18}O, respectively, to establish estimates for temperature and tangent pressure. Upper tropospheric 190\,GHz radiances are used in these early phases to establish a first order estimate of upper tropospheric humidity. The ``Core'' phases also include ``cloud screening'' computations (based on differences between observed and estimated clear-sky radiances). These identify minor frames where radiances in a given radiometer have been subject to significant (and poorly modeled) cloud scattering. Such minor frames are ignored in \thisv processing of measurements from certain radiometers.
 
-The ``Core'', phases are followed by phases such as \texttt{CorePlusR3} and \texttt{CorePlusR5}, where composition profiles are retrieved from a given radiometer. Sometimes (e.g., for \texttt{CorePlusR3}) these later phases continue to retrieve temperature and pressure, continuing using information from the 118\,GHz radiometers, as in ``Core''. In other phases (e.g., the \texttt{CorePlusR2} and \texttt{CorePlusR4} families of phases), the 118\,GHz information is neglected and temperature and pressure are constrained to the results of ``Core''. This choice is made based on extensive testing aimed at maximizing the information yield from MLS while minimizing the impact of inevitable systematic disagreements among the different radiometers, introduced by uncertain spectroscopy and/or calibration knowledge.
+The ``Core'', phases are followed by phases such as \texttt{CorePlusR3} and \texttt{CorePlusR5}, where composition profiles are retrieved from a given radiometer. Sometimes (e.g., for \texttt{CorePlusR3}) these later phases continue to retrieve temperature and pressure, continuing using information from the 118\,GHz radiometers, as in ``Core''. In other phases (e.g., the \texttt{CorePlusR2} and \texttt{CorePlusR4} families of phases \mycomment{Still true in v6?}), the 118\,GHz information is neglected and temperature and pressure are constrained to the results of ``Core''. This choice is made based on extensive testing aimed at maximizing the information yield from MLS while minimizing the impact of inevitable systematic disagreements among the different radiometers, introduced by uncertain spectroscopy and/or calibration knowledge.
 
-Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,\ ozone) are produced in more than one phase. All the separate measurements of these species are produced as diagnostic quantities, and labeled according to the spectral region from which they originated. For example, the ozone obtained from the \texttt{CorePlusR2} retrieval is known in the \thisv\CheckThis dataset as \texttt{O3-190}. In \thisv\CheckThis in order to reduce confusion for users of MLS data, the algorithms also output ``standard products'', which is typically a copy of one of the products from the \texttt{CorePlusR\emph{n}} phases. For example, the ``standard'' chlorine monoxide product is a copy of the \texttt{ClO-640} product. In the case of \thisv\CheckThis nitric acid, the standard product represents a hybrid of the results from two phases. Details of which standard product is obtained from which phase are given in Table~\ref{tab:StandardProducts}.
+Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,\ ozone) are produced in more than one phase. All the separate measurements of these species are produced as diagnostic quantities, and labeled according to the spectral region from which they originated. For example, the ozone obtained from the \texttt{CorePlusR2} retrieval is known in the \thisv dataset as \texttt{O3-190}. In \thisv, in order to reduce confusion for users of MLS data, the algorithms also output ``standard products'', which is typically a copy of one of the products from the \texttt{CorePlusR\emph{n}} phases. For example, the ``standard'' chlorine monoxide product is a copy of the \texttt{ClO-640} product. In the case of \thisv nitric acid, the standard product represents a hybrid of the results from two phases. Details of which standard product is obtained from which phase are given in Table~\ref{tab:StandardProducts}.
 
 \newcommand{\mybox}[2]{\parbox[m]{#1}{\raggedright #2}} \newcommand{\phase}[1]{\mybox{1.0in}{\texttt{#1}}} \newcommand{\species}[1]{\mybox{2.2in}{#1}} \newcommand{\measurements}[1]{\mybox{1.5in}{#1}} \newcommand{\tablecomments}[1]{\mybox{3.6in}{#1}}
 
 \begin{sidewaystable}
   \renewcommand{\thempfootnote}{\sffamily[\arabic{mpfootnote}]}
   \renewcommand{\arraystretch}{1.2}
-  \caption{The phases that form the \thisv\CheckThis retrieval
+  \caption{The phases that form the \thisv retrieval
     algorithms.}  \vspace{1ex}
   \label{tab:Phases}
   \begin{minipage}{\linewidth}
@@ -90,8 +90,8 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \phase{CloudDetector} &
 \species{none} &
 \measurements{R3 (240\,GHz)} &
-\tablecomments{Determines cloud screening for R2 (190\,GHz) and R3
-  (240\,GHz)} \\
+\tablecomments{Determines cloud impacted radiance usage for R2 (190\,GHz), R3
+  (240\,GHz) and R4 (640\,GHz)} \\
 
 \flipfloprow
 \phase{FinalPTan} &
@@ -103,7 +103,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \phase{InitLowCloud} &
 \species{T\cs{cir}} &
 \measurements{All radiometers} &
-\tablecomments{Determines cloud flags for all phases} \\
+\tablecomments{Computes cloud-induced radiance terms (T\cs{cir})} \\
 
 \flipfloprow
 \phase{InitRHi} &
@@ -116,7 +116,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \phase{InitUTH} &
 \species{Upper tropospheric H\cs2O} & 
 \measurements{R2~(190\,GHz)} &
-\tablecomments{Low vertical resolution (6/decade)} \\ 
+\tablecomments{Low vertical resolution (6/decade) H\cs2O retrieval} \\ 
 
 \flipfloprow
 \phase{CorePlusR3} & \species{T, pTan~(GHz), GPH, O\cs3\footnote{\sffamily On high vertical resolution
@@ -129,27 +129,20 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \phase{OzoneOnly} &
 \species{O\cs3, CO} &
 \measurements{R3~(240\,GHz)} &
-\tablecomments{Retrievals down to 316\,hPa}\\ 
+\tablecomments{Retrievals down to 316\,hPa optimized for O\cs3 product}\\ 
 
 \flipfloprow
 \phase{CorePlusR2} &
 \species{H\cs2O, N\cs2O, HNO\cs3, ClO, O\cs3, HCN, CH\cs3CN, SO\cs2, pTan~(GHz)} &
 \measurements{R1A \& R1B~(118\,GHz), R2~(190\,GHz)} & 
 \tablecomments{H\cs2O retrieved down to 316\,hPa, other species 100\,hPa
-(note no T, GPH retrieval)} \\ 
+(note no T, GPH, pTan retrieval)} \\ 
 
 \flipfloprow
 \phase{Hydrogen Cyanide} &
 \species{HCN, O\cs3, HNO\cs3} &
 \measurements{R2~(190\,GHz)} & 
 \tablecomments{Retrievals down to 100\,hPa} \\ 
-
-\flipfloprow
-\phase{NitrousOxide} &
-\species{H\cs2O, N\cs2O} &
-\measurements{R2~(190\,GHz)} & 
-\tablecomments{Optimized to produce good N\cs2O product, retrievals
-  down to 215\,hPa} \\ 
 
 \flipfloprow
 \phase{CorePlusR4AB14} & \species{ClO, BrO, HO\cs2, HOCl,
@@ -173,12 +166,12 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \phase{CorePlusR4B} & \species{N\cs2O, SO\cs2} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa}\\ 
+
 \flipfloprow
 \phase{HighCloud} &
 \species{Cloud induced radiance, IWC, IWP} &
 --- &
-\tablecomments{Used for flagging clouds in Core+R3 and later phases and
-  forms basis for cloud ice products.} \\ 
+\tablecomments{Generates cloud ice (IWC, IWP) products} \\ 
 
 \flipfloprow
 \phase{CorePlusR5} & \species{T, pTan~(GHz,~THz), GPH, OH, O\cs3} &
@@ -198,7 +191,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
   \sffamily
   \renewcommand{\arraystretch}{1.3}
   \caption{The origin of each of the ``standard products'' from
-    \thisv\CheckThis.}
+    \thisv.}
   \vspace{1ex}
   \label{tab:StandardProducts}
   \centering\begin{tabular}{l>{\ttfamily}ll}
@@ -237,7 +230,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
   \flipfloprow 
   IWP       & HighCloud & 240\,GHz \\
   \flipfloprow 
-  N\cs2O    & NitrousOxide& 190\,GHz \\ 
+  N\cs2O    & CorePlusR2 & 190\,GHz \\ 
   \flipfloprow 
   O\cs3     & OzoneOnly & 240\,GHz \\
   \flipfloprow 
@@ -251,25 +244,27 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \end{tabular}
 \end{table}
 
-\section{Forward models used in \thisv\CheckThis}
+\section{Forward models used in \thisv}
 
-The retrieval algorithms in \thisv\CheckThis make use of a variety of different forward models. The most accurate is the so-called ``full'' forward model described in \citet{EOSMLSFWMATBD} and \citet{EOSMLSPolarizedFWMATBD}. This is a hybrid line-by-line and channel averaged model that computes radiances on appropriate grids of frequency and tangent pressure that are then convolved with the MLS frequency and angular responses.
+The retrieval algorithms in \thisv make use of a variety of different forward models. The most accurate is the so-called ``full'' forward model described in \citet{EOSMLSFWMATBD} and \citet{EOSMLSPolarizedFWMATBD}. This is a hybrid line-by-line and channel averaged model that computes radiances on appropriate grids of frequency and tangent pressure that are then convolved with the MLS frequency and angular responses.
 
 This model is generally rather time consuming, although for some comparatively ``clean'' spectral regions the computational burden is small enough that the full forward model can be used in the operational retrievals. Further, in the years since the Aura launch, computational capabilities have improved significantly, allowing for wider use of the full forward model in the MLS retrievals.
 
-For some of the MLS channels, a simpler ``Linearized'' forward model can be used to estimate either radiances, or more typically the ``Jacobian'' (also know as ``weighing function'') information. The Linearized model invokes a simple first-order Taylor series to estimate radiances as a function of the deviation of the state from one of several pre-selected representative states. The inputs to this model are pre-computed radiances and derivatives corresponding to the pre-selected states, generated by ``off-line'' runs of the full forward model.
+For some of the MLS channels, a simpler ``linearized'' forward model can be used to estimate either radiances, or more typically the ``Jacobian'' (also know as ``weighing function'') information. The linearized model invokes a simple first-order Taylor series to estimate radiances as a function of the deviation of the state from one of several pre-selected representative states. The inputs to this model are pre-computed radiances and derivatives corresponding to the pre-selected states, generated by ``off-line'' runs of the full forward model.
 
-In addition, a ``cloud'' forward model can be invoked to model the effects of scattering from cloud particles in the troposphere and lower stratosphere \citep{EOSMLSCloudATBD}. This model was used in the simulation of radiances based on known model atmospheres for the \thisv\CheckThis testing, but is not invoked in the \thisv\CheckThis retrieval algorithms (the handling of clouds is described in more detail in Section~\ref{sec:Clouds}).
+In addition, a ``cloud'' forward model can be invoked to model the effects of scattering from cloud particles in the troposphere and lower stratosphere \citep{EOSMLSCloudATBD}. This model was used in the simulation of radiances based on known model atmospheres for the \thisv testing, but is not invoked in the \thisv retrieval algorithms (the handling of clouds is described in more detail in Section~\ref{sec:Clouds}).
 
-\section{The handling of clouds in \thisv\CheckThis}
+\section{The handling of clouds in \thisv}
 \label{sec:Clouds}
 \newcommand{\Tcir}{\ensuremath{T_\text{cir}}}
 
-Thin clouds and atmospheric aerosols do not affect MLS atmospheric composition measurements as the typical particle sizes are much smaller than the wavelengths of the radiation being observed. The MLS \thisv\CheckThis algorithms can reliably retrieve composition in moderately cloudy cases (having small limb radiance perturbations) and in the case of the Core+R3 retrieval this is handled by retrieving a frequency squared dependent extinction (including background atmospheric absorption from N\cs2, H\cs2O and unknown emitters). In the other retrieval phases, by contrast, a spectrally-flat baseline is used. Thick clouds can affect the MLS radiances beyond the modeling capability of this approach, mainly through scattering processes. Such situations and the affected radiances are excluded from the retrievals, or their influence down-weighted.
+Thin clouds and atmospheric aerosols do not affect MLS atmospheric composition measurements as the typical particle sizes are much smaller than the wavelengths of the radiation being observed. The MLS \thisv algorithms can reliably retrieve composition in moderately cloudy cases (having small limb radiance perturbations) and in the case of the Core+R3 retrieval this is handled by retrieving a frequency squared dependent extinction (including background atmospheric absorption from N\cs2, H\cs2O and unknown emitters). In the other retrieval phases, by contrast, a spectrally-flat baseline is used. Thick clouds can affect the MLS radiances beyond the modeling capability of this approach, mainly through scattering processes. In such situations, the affected radiances are excluded from the retrievals, or their influence down-weighted.
 
-The first aspect of handling clouds in \thisv\CheckThis is therefore the flagging of radiances that are believed to be significantly contaminated by cloud effects. To determine if a cloud is present in each MLS radiance measurement, we estimate the so-called cloud-induced radiance (\Tcir). This is defined as the difference between the measured radiance and the radiance from a forward model calculation assuming clear-sky conditions. Specific window channels (those that are most transparent deepest into the atmosphere) in each radiometer are chosen to set these flags.
+The first aspect of handling clouds in \thisv is therefore the flagging of radiances that are believed to be significantly contaminated by cloud effects. To determine if a cloud is present in each MLS radiance measurement, \mycomment{[What follows is the old text, my sense is that it might have been incorrect even in v5] we estimate the so-called cloud-induced radiance (\Tcir). This is defined as the difference between the measured radiance and the radiance from a forward model calculation assuming clear-sky conditions. Specific window channels (those that are most transparent deepest into the atmosphere) in each radiometer are chosen to set these flags.}
 
-Cloud screening in the Core+R2 and Core+R3 phases is based on determining the highest altitude limb view contaminated by cloud signals and either rejecting all radiances below that altitude or, in the case of less impacted channels, inflating their estimated radiance precisions. Clouds are detected by a combination of a radiance fit $\chi^2$ quantity from Band~8 (240\,GHz isotopic oxygen line) retrieval of temperature and pointing, and a cloud induced radiance calculation, also using 240\,GHz measurements. Cloud radiance scattering causes severe line shape distortions which are most reliably detectable in the Band~8 O\cp{18}O line fit, based on extrapolating a tangent pressure estimate into the upper troposphere from the pressure information obtained from the 118\,GHz Band~1 measurements (unaffected by clouds). RHi from a previous phase is used to compute a cloud induced radiance (T\cs{cir}). The vertical profiles of $\chi^2$ and T\cs{cir} are analyzed to find the highest limb view affected by cloud scattering, and radiances below are handled accordingly.
+Cloud screening in the Core+R2 and Core+R3 phases is based on determining the highest altitude limb view contaminated by cloud signals and either rejecting all radiances below that altitude or, in the case of less impacted channels, inflating their estimated radiance precisions. \mycomment{The following sentence is garbled, and probably wrong.} Clouds are detected by a combination of a radiance fit $\chi^2$ quantity from Band~8 (240\,GHz isotopic oxygen line) retrieval of temperature and pointing, and a cloud induced radiance calculation, also using 240\,GHz measurements. Cloud radiance scattering causes severe line shape distortions which are most reliably detectable in the Band~8 O\cp{18}O line fit, based on extrapolating a tangent pressure estimate into the upper troposphere from the pressure information obtained from the 118\,GHz Band~1 measurements (unaffected by clouds). RHi from a previous phase is used to compute a cloud induced radiance (T\cs{cir}). The vertical profiles of $\chi^2$ and T\cs{cir} are analyzed to find the highest limb view affected by cloud scattering, and radiances below are handled accordingly. \mycomment{Is this true, we use both $\chi^2$ and T\cs{cir}?}
+
+\mycomment{Should we add new words on the cloud flagging.}
 
 The other aspect of cloud handling in \thisv\CheckThis is the estimation of cloud ice water content (IWC) and ice water path (IWP) products from the final \Tcir\ computed by the retrieval in the \texttt{HighCloud} phase. More information on these products and their derivation is given in Section~\ref{sec:StandardIWC}.
 
@@ -306,18 +301,18 @@ R4:640 & B11F:BrO.C23 & 635.9 / 649.8 & $\mathsf{\Tcir < -10}$\,K & none \\
 \section{The quantification of systematic uncertainty in MLS data}
 \label{sec:SystematicUncertainty}
 
-A major component of the validation of MLS data is the quantification of the various sources of systematic uncertainty. These can arise from instrumental issues (e.g., radiometric calibration, field of view characterization), spectroscopic uncertainty, and through approximations in the retrieval formulation and implementation. A comprehensive quantification of these uncertainties has been performed for the older \prevv\CheckThis\ MLS products, updated from that described in the MLS validation papers (which were based on v2.2). The individual sections of Chapter~\ref{chap:Results} detail the results of this quantification product-by-product. We do not expect the estimated systematic errors in the MLS products to vary significantly between \thisv\CheckThis\ and \prevv\CheckThis; however, we do plan to update these estimates for \thisv\CheckThis\ and report findings in an updated version of this document.
+A major component of the validation of MLS data is the quantification of the various sources of systematic uncertainty. These can arise from instrumental issues (e.g., radiometric calibration, field of view characterization), spectroscopic uncertainty, and through approximations in the retrieval formulation and implementation. A comprehensive quantification of these uncertainties has been performed for the older \prevv MLS products, updated from that described in the MLS validation papers (which were based on v2.2). The individual sections of Chapter~\ref{chap:Results} detail the results of this quantification product-by-product. We do not expect the estimated systematic errors in the MLS products to vary significantly between \thisv and \prevv; however, we do plan to update these estimates for \thisv. Any significant deviations from the \prevv information repeated in this document will be noted in an updated version of this document.
 
 For each identified source of systematic uncertainty, its impact on MLS measurements of radiance (or pointing where appropriate) has been quantified and modeled. These modeled impacts correspond to either 2$\sigma$ estimates of uncertainties in the relevant parameter(s), or an estimate of their maximum reasonable error(s) based on instrument knowledge and/or design requirements. Accordingly, the numbers reported for each product in Chapter~\ref{chap:Results} reflect 2$\sigma$ estimates of potential systematic error.
 
 For most of the uncertainty sources, the impact on MLS standard products has been quantified by running perturbed radiances through the MLS data processing algorithms. Other (typically smaller) uncertainty sources have been quantified by simple perturbation calculations.
 
-Although the term ``systematic uncertainty'' is often associated with consistent biases and/or scaling errors, many sources of ``systematic'' error in the MLS measurement system give rise to additional scatter. For example, an error in the O\cs3 spectroscopy, while being a bias on the fundamental parameter, will have an impact on the retrievals of species with weaker signals (e.g., CO) that is dependent on the amount and morphology of atmospheric ozone. The extent to which such terms can be expected to average down is estimated to first order by these ``full up studies'' through their separate consideration of the bias and scatter each uncertainty source introduces.
+Although the term ``systematic uncertainty'' is often associated with consistent biases and/or scaling errors, many sources of ``systematic'' error in the MLS measurement system give rise to additional scatter. For example, an error in the O\cs3 spectroscopy, while being a constant bias on the fundamental parameter, will have an impact on the retrievals of species with weaker signals (e.g., CO) that is dependent on the amount and morphology of atmospheric ozone. The extent to which such terms can be expected to average down is estimated to first order by these ``full up studies'' through their separate consideration of the bias and scatter each uncertainty source introduces.
 
-The results of these studies are summarized as ``accuracy'' (and in some cases additional contributions to ``precision'') on a product by product basis in the next chapter. More details on the quantification for each product are given in the MLS validation papers. In addition Appendix~A of \citet{ReadEtal:2007} gives more specific details of the perturbations used in the study.
+The results of these studies are summarized as ``accuracy'' (and in some cases additional contributions to ``precision'') on a product by product basis in the next chapter. More details on the quantification for each product are given in the MLS validation papers. In addition, Appendix~A of \citet{ReadEtal:2007} gives more specific details of the perturbations used in the study.
 
 \section{A brief note on the \texttt{Quality} field}
 
-As described in Section~\ref{sec:StatusQuality}, the \texttt{Quality} field in the \texttt{L2GP} files gives a measure of the fit achieved between the observed MLS radiances and those computed by the forward model given the retrieved MLS profiles. \texttt{Quality} is computed from a $\chi^2$ statistic for all the radiances considered to have significantly affected the retrieved species (i.e., those close to the relevant spectral lines), normalized by dividing by the number of radiances. \texttt{Quality} is simply the reciprocal of this statistic (i.e., low values indicate large $\chi^2$, i.e., poor fits).
+As described in Section~\ref{sec:StatusQuality}, the \texttt{Quality} field in the \texttt{L2GP} files gives a measure of the fit achieved between the observed MLS radiances and those computed by the forward model given the retrieved MLS profiles. \texttt{Quality} is computed from a $\chi^2$ statistic for all the radiances considered to have significantly affected the retrieved species (i.e., those close to the relevant spectral lines), normalized by dividing by the number of radiances. \texttt{Quality} is simply the reciprocal of this statistic (so low values indicate large $\chi^2$, i.e., poor fits).
 
-Ideally, the typical values of these normalized $\chi^2$ statistics will be around one, indicating that radiances are typically fitted to around their noise levels. \texttt{Quality} will therefore also ideally have a typical value of one. For some species, however, because of uncertain knowledge of spectroscopy and/or instrument calibration, the \thisv\CheckThis algorithms are known to be consistently unable to fit some observed radiances to within their predicted noise. In many of these cases, the noise reported on the radiances has been ``inflated'' to allow the retrieval more leeway in fitting to radiances known to be challenging. As the noise level is the denominator in the $\chi^2$ statistic, these species will have typical $\chi^2$ statistics that are less than one and thus typical values of \texttt{Quality} higher than one. Accordingly, differences in \texttt{Quality} from one species to another do not reflect the species' relative validity, nor do version-to-version increases in \texttt{Quality} for a given product necessarily indicate improvements (or vice versa)
+Ideally, the typical values of these normalized $\chi^2$ statistics will be around one, indicating that radiances are typically fitted to around their noise levels. \texttt{Quality} will therefore also ideally have a typical value of one. For some species, however, because of uncertain knowledge of spectroscopy and/or instrument calibration, the \thisv algorithms are known to be consistently unable to fit some observed radiances to within their predicted noise. In many of these cases, the noise reported on the radiances has been ``inflated'' to allow the retrieval more leeway in fitting to radiances known to be challenging. As the noise level is the denominator in the $\chi^2$ statistic, these species will have typical $\chi^2$ statistics that are less than one and thus typical values of \texttt{Quality} higher than one. Accordingly, differences in \texttt{Quality} from one species to another do not reflect the species' relative validity, nor do version-to-version increases in \texttt{Quality} for a given product necessarily indicate improvements (or vice versa)
