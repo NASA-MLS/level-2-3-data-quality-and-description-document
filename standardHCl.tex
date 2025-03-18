@@ -20,16 +20,15 @@ Table~\ref{tab:HClSummary} summarizes the MLS HCl resolution, precision, and acc
 
 \subsection{Changes from  \prevv}
 
-There were no significant algorithmic changes relating to HCl for the \thisv retrievals. %Small differences in HCl abundances (see below) have occurred mainly in the bottom part of the lower stratosphere, mainly as a result of changes in retrieved MLS water vapor in the UTLS.
+There were no significant algorithmic changes relating to HCl for the \thisv retrievals.
 
-The background observed in the 640-GHz radiances includes emissions from N\cs2, O\cs2, and H\cs2O. There are laboratory-based and ground-based models for the continuum absorptions that are the basis for the MLS absorption model [{\it Pardo, 2001}, and references therein]. These models were tested against MLS extinction measurements from the wing channels in the 640-GHz radiometer. The latitude dependence of this extinction was found to agree better with the expected moist plus dry continuum extinction values if the dry and moist continuum functions were scaled by factors close to 20\%; however, this is not a change from the \prevv retrievals.
+\mycomment{I'd be tempted to remove this paragraph - Nathaniel} The background observed in the 640-GHz radiances includes emissions from N\cs2, O\cs2, and H\cs2O. There are laboratory-based and ground-based models for the continuum absorptions that are the basis for the MLS absorption model [{\it Pardo, 2001}, and references therein]. These models were tested against MLS extinction measurements from the wing channels in the 640-GHz radiometer. The latitude dependence of this extinction was found to agree better with the expected moist plus dry continuum extinction values if the dry and moist continuum functions were scaled by factors close to 20\%; however, this is not a change from the \prevv retrievals.
 
 A comparison plot showing zonal average HCl profile contours versus latitude and differences between the \thisv and \prevv fields for a typical month (April, 2009) is provided in Figure~\ref{fig:MLSv5v6HClContour}. For pressures larger than or equal to 0.22\,hPa, the average differences between the two data versions are typically within about 0.05\,ppbv (or 1--2\%). These average changes are easily within the estimated accuracy values (see Table~\ref{tab:HClSummary}). 
-%The largest percentage changes in HCl occur for very small mixing ratio values; \thisv\CheckThis values are larger than \prevv\CheckThis values by a few to 25\% in the 100 to 68\,hPa region, and also (not shown here) in the polar lower stratospheric regions during winter/spring. 
 There is still an unrealistic high bias in HCl at 147\,hPa in the tropics, so values at this pressure are not recommended or reliable within the 40\degsym S to 40\degsym N latitude range. The precision (single profile random uncertainty) estimates provided in the Level~2 files are essentially unchanged from \prevv.
 
 \begin{figure}
-  \centering\includegraphics[angle=0,width=\linewidth]{%
+  \centering\includegraphics[width=\linewidth]{%
     figures/Fig-HCl_v6v5_ZmContours_Difs.pdf}
   \caption{Zonal averages for MLS HCl profiles during April, 2009,
     showing the MLS \prevv HCl mixing ratio contours (top left panel),
@@ -50,13 +49,12 @@ The estimated single-profile precision reported by the Level~2 software varies f
 
 \subsection{Accuracy}
 
-The accuracy estimates in the Table come from a quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HCl retrievals (based on version 5, for now, although we would not expect much of a change to these estimates in the future); there are several error sources (mostly from radiometric calibration components) that contribute significantly to the total error. These values are intended to represent $2\sigma$ estimates of accuracy. For more details, see the MLS validation paper by \citet{FroidevauxEtal:2008:HCl}. For \thisv (as for \prevv), given the trend issues affecting the (band 14) standard HCl product in the upper stratosphere and lower mesosphere, we have recommended an accuracy estimate of no better than 10\% in this region (or about 0.3\,ppbv). For the lower stratosphere, given the agreement between the two bands' retrievals as well as some trend studies (for the standard product), we use the more formal accuracy estimates (see Table~\ref{tab:HClSummary}). 
-%The changes in the accuracy estimates in this Table are typically very small, except at the 147\,hPa level, %where there are now larger systematic errors.
+The accuracy estimates in the Table come from a quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HCl retrievals (based on version 5, for now, although we would not expect much of a change to these estimates in the future); there are several error sources (mostly from radiometric calibration components) that contribute significantly to the total error. These values are intended to represent $2\sigma$ estimates of accuracy. For more details, see the MLS validation paper by \citet{FroidevauxEtal:2008:HCl}. For \thisv (as for \prevv), given the trend issues affecting the (band 14) standard HCl product in the upper stratosphere and lower mesosphere, we have recommended an accuracy estimate of no better than 10\% in this region (or about 0.3\,ppbv). For the lower stratosphere, given the agreement between the two bands' retrievals as well as some trend studies (for the standard product), we use the more formal accuracy estimates (see Table~\ref{tab:HClSummary}).
 
 \subsection{Data screening}
 \label{sec:HClScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ We note that the MLS values at 147\,hPa are biased high, at least at low to mid-latitudes -- and these values are not recommended (particularly equatorward of about 40\degsym). Also, although the vertical range at the top end is recommended up to 0.32\,hPa, users are reminded about the issues relating to HCl trend estimates in the upper stratosphere and lower mesosphere; average profiles in this region should only be used for studies not involving trends (or accuracy requirements not as tight as about 10$\%$).
+  \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ We note that the MLS values at 147\,hPa are biased high, at least at low to mid-latitudes -- and these values are not recommended (particularly equatorward of about 40\degsym). Also, although the vertical range at the top end is recommended up to 0.32\,hPa, users are reminded about the issues relating to HCl trend estimates in the upper stratosphere and lower mesosphere; average profiles in this region should only be used for studies not involving trends (or accuracy requirements not as tight as about 10\%).
 
     \standardprecisionrule
     \evenstatusrule
@@ -65,17 +63,13 @@ The accuracy estimates in the Table come from a quantification of the combined e
 
   \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have this \texttt{Convergence} field set to larger values, and should be discarded.
 
-  \item[Clouds:] Thick clouds can add significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5 ppbv at 100 hPa and even larger at 147 hPa. 
-%Studies in this region could benefit from additional screening that correlates any outliers in the data with the occurrence of thick clouds (using some subset of the profiles with set cloud status flags, namely status bits 16 and 32, or using the MLS retrievals of ice water content). 
-The large positive HCl bias at 147 hPa for low latitudes likely arises in part from unknown or improperly modeled systematic error sources, and not just from clouds. At other pressures, the potential impact on HCl from clouds is small or negligible.
+  \item[Clouds:] Thick clouds can add significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5\,ppbv at 100\,hPa and even larger at 147\,hPa. The large positive HCl bias at 147\,hPa for low latitudes likely arises in part from unknown or improperly modeled systematic error sources, and not just from clouds. At other pressures, the potential impact on HCl from clouds is small or negligible.
 
 \end{description}
 
 \subsection{Review of comparisons with other datasets}
 
-\citet{FroidevauxEtal:2008:HCl} provided results of generally good comparisons between MLS HCl and other satellite, balloon, and aircraft measurements.  Both MLS and ACE-FTS HCl values have generally been larger (by about 10--15\%) than the HCl values from HALOE, especially at upper stratospheric altitudes. 
-%This feature has not changed, overall, with the new data version(s) from both MLS and ACE-FTS.  
-MLS HCl at 147\,hPa was shown to be biased high versus WB-57 aircraft in-situ (CIMS) measurements (low to mid-latitudes); while this is still true for \thisv data, MLS HCl data at this pressure level are potentially useful and accurate enough at high latitudes.
+\citet{FroidevauxEtal:2008:HCl} provided results of generally good comparisons between MLS HCl and other satellite, balloon, and aircraft measurements.  Both MLS and ACE-FTS HCl values have generally been larger (by about 10--15\%) than the HCl values from HALOE, especially at upper stratospheric altitudes.  MLS HCl at 147\,hPa was shown to be biased high versus WB-57 aircraft in-situ (CIMS) measurements (low to mid-latitudes); while this is still true for \thisv data, MLS HCl data at this pressure level are potentially useful and accurate enough at high latitudes.
 
 \subsection{Artifacts}
 \begin{itemize}

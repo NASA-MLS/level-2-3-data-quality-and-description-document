@@ -30,7 +30,7 @@ Except near the top of the retrieval range (where the data are generally of less
 \subsection{Resolution}
 \onestandardavk{CH3CN}{\mecn}%
 
-The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Values of the integrated kernel near unity indicate that the majority of information for that level has come from the measurements themselves and not the a priori; Figure~\ref{fig:AvkCH3CN} shows that the measurements dominate throughout most of the vertical range. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, degrades the inherent resolution of the measurements. Thus, although \mecn measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv\CheckThis \mecn data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkCH3CN} degrades from 4.5\,km at 147\,hPa to \mytexttilde5--6.5\,km in the lower stratosphere, and then further worsens to \mytexttilde7--8\,km in the upper stratosphere. Substantial overlap in the averaging kernels for the 100 and 147\,hPa retrieval surfaces (which both peak at 100\,hPa) indicates that the 147\,hPa retrieval does not provide as much independent information as is given by retrievals at higher altitudes. Figure~\ref{fig:AvkCH3CN} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde400--700\,km over most of the vertical range. The cross-track resolution, set by the width of the field of view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
+\mycomment{This discussion should be checked/updated once the averaging kernels are avaialble} The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Values of the integrated kernel near unity indicate that the majority of information for that level has come from the measurements themselves and not the a priori; Figure~\ref{fig:AvkCH3CN} shows that the measurements dominate throughout most of the vertical range. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, degrades the inherent resolution of the measurements. Thus, although \mecn measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv \mecn data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkCH3CN} degrades from 4.5\,km at 147\,hPa to \mytexttilde5--6.5\,km in the lower stratosphere, and then further worsens to \mytexttilde7--8\,km in the upper stratosphere. Substantial overlap in the averaging kernels for the 100 and 147\,hPa retrieval surfaces (which both peak at 100\,hPa) indicates that the 147\,hPa retrieval does not provide as much independent information as is given by retrievals at higher altitudes. Figure~\ref{fig:AvkCH3CN} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde400--700\,km over most of the vertical range. The cross-track resolution, set by the width of the field of view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
 
 \subsection{Precision}
 
@@ -69,11 +69,11 @@ Detailed quantification of differences from correlative data sets has not been p
 
   \item[Quality:] \qualityrule{1.4}
 
-    On a typical day this threshold for \texttt{Quality} (unchanged from \prevv) discards few (0.2\% or less) of the \mecn profiles; note that it potentially discards some ``good'' data points while not necessarily identifying all ``bad'' ones.
+    In a typical month this threshold for \texttt{Quality} (unchanged from \prevv) discards few (0.2\% or less) of the \mecn profiles; note that it potentially discards some ``good'' data points while not necessarily identifying all ``bad'' ones.
 
   \item[Convergence:] \convergencerule{1.05}
 
-    On a typical day this threshold for \texttt{Convergence} (unchanged from \prevv) discards few (0.2\% or less) of the \mecn profiles, many (but not all) of which are filtered out by the other quality control measures.
+    In a typical month this threshold for \texttt{Convergence} (unchanged from \prevv) discards few (0.2\% or less) of the \mecn profiles, many (but not all) of which are filtered out by the other quality control measures.
 \end{description}
 
 \subsection{Artifacts}
@@ -88,7 +88,7 @@ Detailed quantification of differences from correlative data sets has not been p
 \end{itemize}
 
 \begin{table*}[bp]
-  \caption{Summary of Aura MLS \thisv\CheckThis \mecn Characteristics}\vspace{0.5ex}
+  \caption{Summary of Aura MLS \thisv \mecn Characteristics \mycomment{Update when averaging kernels are available}}\vspace{0.5ex}
   \label{tab:CH3CNSummary}
   \begin{minipage}{\linewidth}
     \renewcommand{\thefootnote}{\thempfootnote}
