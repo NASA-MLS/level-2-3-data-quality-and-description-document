@@ -4,27 +4,27 @@
 
 \subsection{Introduction}
 
-The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to nadir sounding humidity receivers (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``UTRHI'' (upper tropospheric relative humidity with respect to ice) value representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower altitude constraint and \emph{a priori} for the vertically resolved humidity product that begins at 316\,hPa. From 316--10\cp{$-$5}\,hPa, RHI is derived from the standard products of water and temperature using the Goff-Gratch ice humidity saturation formula. RHI validation is presented in \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} is a summary of precision, resolution, and accuracy. The accuracy figures for \thisv\CheckThis have yet to be determined but are not expected to differ significantly from those of \prevv\CheckThis, the source of the values listed here.
+The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to nadir sounding humidity receivers (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``UTRHI'' (upper tropospheric relative humidity with respect to ice) value representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower altitude constraint and \emph{a priori} for the vertically resolved humidity product that begins at 316\,hPa. From 316--10\cp{$-$5}\,hPa, RHI is derived from the standard products of water and temperature using the Goff-Gratch ice humidity saturation formula. RHI validation is presented in \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} is a summary of precision, resolution, and accuracy. The accuracy figures for \thisv have yet to be determined but are not expected to differ significantly from those of \prevv, the source of the values listed here.
 
-\subsection{Changes from \prevv\CheckThis}
+\subsection{Changes from \prevv}
 
-There are no changes between \thisv\CheckThis and \prevv\CheckThis for the UTRHI (1000--383\,hPa) retrieval approach. RHI for pressures $\le$ 316\,hPa is a derived product from H\cs2O and Temperature and reflect changes in H\cs2O (\ref{sec:StandardH2O}) and temperature (\ref{sec:StandardTemperature}).
+There are no changes between \thisv and \prevv for the UTRHI (1000--383\,hPa) retrieval approach. RHI for pressures $\le$ 316\,hPa is a derived product from H\cs2O and Temperature and reflect changes in H\cs2O (\ref{sec:StandardH2O}) and temperature (\ref{sec:StandardTemperature}).
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5_prfl_comp_60n-90n}
-    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5_prfl_comp_30n-60n}
-    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5_prfl_comp_30s-30n}
-    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5_prfl_comp_60s-30s}
-    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5_prfl_comp_90s-60s}
+    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_60n-90n.pdf}
+    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_30n-60n.pdf}
+    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_30s-30n.pdf}
+    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_60s-30s.pdf}
+    \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_90s-60s.pdf}
   \end{center}
-  \caption{A zonal mean comparison of RHI profiles in 5 latitude bands. v2.2 (blue), v3.3 (cyan), v4.2 (orange), and v5.0 (red) RHI for Jan-Feb-Mar 2009.  Other time periods are similar. The left panel shows the mean profiles, the center shows the mean difference from v2.2 (cyan, orange and red lines with diamonds). The colored lines without symbols are each versions' estimated precision. The right panel shows the estimated retrieval precision (solid lines with bullets) and measured variability (dotted lines) which includes atmospheric variability about the mean profile. X-axes are RHi in percent, y-axis are pressure in hPa.}
+  \caption{A zonal mean comparison of RHI profiles in 5 latitude bands. v2.2x (blue), v3.3x (cyan), v4.2x (mustard), v5.0x (Dk. blue/orange), and v6.01 (Dk. Red). RHI for Jan-Feb-Mar 2005.  Other time periods are similar. The left panel shows the mean profiles, the center shows the mean difference from v5.0x (blue, cyan, mustard, orange and red lines with diamonds). The colored lines without symbols are each versions' estimated precision. The right panel shows the estimated retrieval precision (solid lines with bullets) and measured variability (dotted lines) which includes atmospheric variability about the mean profile. X-axes are RHi in percent, y-axis are pressure in hPa.}
   \label{fig:avgmlsRHIprflcomp}
 \end{figure}
 
-Figure~\ref{fig:avgmlsRHIprflcomp} compares MLS v5.0, v4.2, and v3.3 to v2.2. The changes seen in here mostly reflect those seen for H\cs2O because H\cs2O experienced bigger changes than temperature in this version.
+Figure~\ref{fig:avgmlsRHIprflcomp} compares MLS v6.0, v4.2, v3.3, and v2.2 to v5.0. The changes seen in here reflect changes in temperature resulting from adjustments made to the filter shapes in band1 and the N\cs2O residual correction in bands 2, 3, and 4.
 
-Relative humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low limb viewing MLS wing channel radiances) similar to that obtained from NOAA operational humidity sounders such as TOVS\@. As noted in \citep{ReadEtal:2007}, the v2.2 retrieval at these pressures was likely to be \mytexttilde30\% too high based on comparisons with AIRS\@. The accuracy of this retrieval is highly sensitive to the transmission efficiency of the MLS optics system. In v3.3 this was adjusted empirically (within the uncertainty range established from MLS calibration) to give better agreement with AIRS in the tropics. In v4 the N\cs2 continuum was adjusted only for this phase to minimize the clear sky cloud induced radiance bias. Other than changes to sideband fractions and pointing offsets detailed in section~\ref{sec:StandardH2O}, no specific changes are implemented for \thisv\CheckThis. This retrieval is used as an a priori and profile constraint for the humidity profile at pressures greater than 316\,hPa which are not retrieved in the standard H\cs2O product retrieval.
+Relative humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low limb viewing MLS wing channel radiances) similar to that obtained from NOAA operational humidity sounders such as TOVS\@. As noted in \citep{ReadEtal:2007}, the v2.2 retrieval at these pressures was likely to be \mytexttilde30\% too high based on comparisons with AIRS\@. The accuracy of this retrieval is highly sensitive to the transmission efficiency of the MLS optics system. In v3.3 this was adjusted empirically (within the uncertainty range established from MLS calibration) to give better agreement with AIRS in the tropics. In v4 the N\cs2 continuum was adjusted only for this phase to minimize the clear sky cloud induced radiance bias. Other than changes to sideband fractions and pointing offsets detailed in section~\ref{sec:StandardH2O}, no specific changes are implemented for v5 and v6. This retrieval is used as an a priori and profile constraint for the humidity profile at pressures greater than 316\,hPa which are not retrieved in the standard H\cs2O product retrieval.
 
 The third panel in Figure~\ref{fig:avgmlsRHIprflcomp} shows the mean estimated single profile precision and the measured variability (which includes instrument noise and atmospheric variability). The precisions among the versions are similar and in the lower stratosphere and upper troposphere are much less than the measured atmospheric variability. The precision for 383~hPa (and higher pressures) is reported in the \texttt{L2GP} as 0\% by mistake. The actual precision is typically 0.2\%.
 
@@ -76,27 +76,24 @@ Also, users should note the possibility of a potential drift in the MLS lower st
 
 \subsection{Review of comparisons with other datasets}
 
-Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show comparisons between AIRS v6 and MLS v2.2, v3.3, v4.2 and v5.0. Mapped features tend to agree well but MLS produces higher relative humidities in the moist regions of the tropics relative to AIRS. Except as noted previously, the four MLS versions show little change amongst themselves.
+Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show comparisons between AIRS v6 and MLS v2.2, v3.3, v4.2, v5.0, and v6.0. Mapped features tend to agree well but MLS produces higher relative humidities in the moist regions of the tropics relative to AIRS. One noteworthy feature is that at high latitudes at 200 and 250~hPa, v6 and v5 have higher relative humidity than previous versions that was an effort to adress a likely dry bias in the MLS H\cs2O retrieval.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.9\linewidth]
-    {figures/rhi_grid_maps_jfm2009_airsv6-mlsv2-v3-v4-v5.png}
+    {figures/rhi_grid_maps_djf2005_airsv7-mlsv2-v6.png}
   \end{center}
-  \caption{Mapped fields from AIRS v6 (left panel), MLS v2.2 (2nd from
-    left), MLS v3.3 (3rd from left), MLS v4.2 (4th from left) and MLS
-    v5.0 (right panel) pressures between 300--150 hPa for January,
-    February, and March 2009.  The black-white lines indicate the
-    tropopause where the region poleward is in the stratosphere.}
+  \caption{Mapped RHi fields from AIRS v7 (left panel), MLS v2.2 (2nd from left), MLS v3.3 (3rd from left), MLS v4.2 (3rd from right), MLS v5.0 (2nd from right), and MLS v6.0 (right panel) pressures between 300--150 hPa for December, January, and
+    February 2005.}
   \label{fig:RHIairsmlsjfm2009maps}
 \end{figure}
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.9\linewidth]
-    {figures/rhi_grid_maps_jja2009_airsv6-mlsv2-v3-v4-v5.png}
+    {figures/rhi_grid_maps_jja2005_airsv7-mlsv2-v6.png}
   \end{center}
-  \caption{Mapped fields from AIRS v6 (left panel), MLS v2.2 (2nd from left), MLS v3.3 (3rd from left), MLS v4.2 (4th from left) and MLS v5.0 (right panel) pressures between 300--150 hPa for June, July, and August 2009.  The black-white lines indicate the tropopause where the region poleward is in the stratosphere.}
+  \caption{Mapped RHi fields from AIRS v7 (left panel), MLS v2.2 (2nd from left), MLS v3.3 (3rd from left), MLS v4.2 (3rd from right), MLS v5.0 (2nd from right), and v6.0 (right panel) pressures between 300--150 hPa for June, July, and August 2005.}
   \label{fig:RHIairsmlsjja2009maps}
 \end{figure}
 

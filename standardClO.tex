@@ -15,6 +15,46 @@ In addition to the standard product (derived from the \mbox{640-GHz} radiances),
 
 The biases in the \thisv \mbox{640-GHz} ClO data are quantified and further compared to those in \prevv in Section~\ref{sec:cloBias}.
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.64\linewidth]{figures/Zm_ClO_2020d065.pdf}
+    \includegraphics[width=0.33\linewidth]{figures/Prof_NoQual_ClO_2020d065.pdf}
+    \includegraphics[width=0.64\linewidth]{figures/Zm_ClO_2020d259.pdf}
+    \includegraphics[width=0.33\linewidth]{figures/Prof_NoQual_ClO_2020d259.pdf}
+  \end{center}
+  \caption{(left-hand panels) Zonal mean pressure-latitude cross sections of MLS daytime (ascending) ClO, for (left) \thisv, (middle) \prevv, and (right) their differences (\thisv minus \prevv, in percent). The black curves overlaid on the abundance panels (left and middle) mark the zero contour. No bias corrections or quality screening have been applied. (right-hand panels) Black lines show all profiles (day and night) measured on the given day, and the cyan line depicts the global mean profile; the pink line marks zero. Results for days with strong ClO enhancement in the winter polar region are shown for (top panels) the Northern Hemisphere and (bottom panels) the Southern Hemisphere.}
+  \label{fig:zmcontourClO}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=15.0cm]{figures/Zm_TS_ClO.pdf}
+  \end{center}
+  \caption{Time series for a representative year (2020) of \thisv minus \prevv MLS ClO (percent differences), for (top) 75{\degsym}S, (middle) the equator, and (bottom) 75{\degsym}N. No bias corrections or quality screening have been applied.}
+  \label{fig:zmtsClO}
+\end{figure}
+
+\begin{figure}
+  \begin{center} \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_NHPolar.pdf}\hfill    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_NHPolar.pdf}
+  \end{center}
+  \begin{center} \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_Tropical.pdf}\hfill \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_Tropical.pdf}
+  \end{center}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_SHPolar.pdf}\hfill \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_SHPolar.pdf}
+  \end{center}
+  \caption{MLS \thisv (dark colors) and \prevv (light colors) profiles of \texttt{ClO-640} (blues) and \texttt{ClO-190} (reds) averaged over the Northern Hemisphere polar (top set), tropical (middle set), and Southern Hemisphere polar (bottom set) regions for days with strong ClO enhancement during winter in the Northern (left side) and Southern (right side) Hemispheres. Each set of plots contains four panels, comparing \thisv and \prevv \texttt{ClO-640} retrievals, \thisv and \prevv \texttt{ClO-190} retrievals, \prevv \texttt{ClO-640} and \texttt{ClO-190} retrievals, and \thisv \texttt{ClO-640} and \texttt{ClO-190} retrievals. Solid lines show ascending (mainly daytime) and dashed lines show descending (mainly nighttime) averages. No bias corrections or quality screening have been applied.}
+  \label{fig:cloMeanProfs}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.48\linewidth]{figures/clov6v5bylat_ClO-640_2020d065.pdf}%
+    \includegraphics[width=0.48\linewidth]{figures/clov6v5bylat_ClO-640_2020d259.pdf}%
+  \end{center}
+  \caption{Nighttime \thisv (dark blue) and \prevv (light blue) MLS ClO data as a function of latitude for the six lowest retrieval pressure surfaces (21--147\,hPa) for days with strong ClO enhancement during winter in the Northern (left) and Southern (right) Hemispheres. No bias corrections or quality screening have been applied.}
+  \label{fig:clov6v5bylat}
+\end{figure}
+
 \subsection{Resolution}
 \onestandardavk{ClO}{ClO}%
 
@@ -45,46 +85,6 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
 \subsection{Quantification and correction of biases in
   \thisv}
 \label{sec:cloBias}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.64\linewidth]{figures/Zm_ClO_2020d065.pdf}
-    \includegraphics[width=0.33\linewidth]{figures/Prof_NoQual_ClO_2020d065.pdf}
-    \includegraphics[width=0.64\linewidth]{figures/Zm_ClO_2020d259.pdf}
-    \includegraphics[width=0.33\linewidth]{figures/Prof_NoQual_ClO_2020d259.pdf}
-  \end{center}
-  \caption{(left-hand panels) Zonal mean pressure-latitude cross sections of MLS daytime (ascending) ClO, for (left) \thisv, (middle) \prevv, and (right) their differences (\thisv minus \prevv, in percent). The black curves overlaid on the abundance panels (left and middle) mark the zero contour. No bias corrections or quality screening have been applied. (right-hand panels) Black lines show all profiles (day and night) measured on the given day, and the cyan line depicts the global mean profile; the pink line marks zero. Results for days with strong ClO enhancement in the winter polar region are shown for (top panels) the Northern Hemisphere and (bottom panels) the Southern Hemisphere. }
-  \label{fig:zmcontourClO}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=15.0cm]{figures/Zm_TS_ClO.pdf}
-  \end{center}
-  \caption{Time series for a representative year (2020) of \thisv minus \prevv MLS ClO (percent differences), for (top) 75{\degsym}S, (middle) the equator, and (bottom) 75{\degsym}N. No bias corrections or quality screening have been applied.}
-  \label{fig:zmtsClO}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=0.48\linewidth]{figures/clov6v5bylat_ClO-640_2020d065.pdf}%
-    \includegraphics[width=0.48\linewidth]{figures/clov6v5bylat_ClO-640_2020d259.pdf}%
-  \end{center}
-  \caption{Nighttime \thisv (dark blue) and \prevv (light blue) MLS ClO data as a function of latitude for the six lowest retrieval pressure surfaces (21--147\,hPa) for days with strong ClO enhancement during winter in the Northern (left) and Southern (right) Hemispheres. No bias corrections or quality screening have been applied.}
-  \label{fig:clov6v5bylat}
-\end{figure}
-
-\begin{figure}
-  \begin{center} \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_NHPolar.pdf}\hfill    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_NHPolar.pdf}
-  \end{center}
-  \begin{center} \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_Tropical.pdf}\hfill \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_Tropical.pdf}
-  \end{center}
-  \begin{center}
-    \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d065_SHPolar.pdf}\hfill \includegraphics[width=0.48\linewidth]{figures/meanprofcomparison_ClO_2020d259_SHPolar.pdf}
-  \end{center}
-  \caption{MLS \thisv (dark colors) and \prevv (light colors) profiles of \texttt{ClO-640} (blues) and \texttt{ClO-190} (reds) averaged over the Northern Hemisphere polar (top set), tropical (middle set), and Southern Hemisphere polar (bottom set) regions for days with strong ClO enhancement during winter in the Northern (left side) and Southern (right side) Hemispheres. Each set of plots contains four panels, comparing \thisv and \prevv \texttt{ClO-640} retrievals, \thisv and \prevv \texttt{ClO-190} retrievals, \prevv \texttt{ClO-640} and \texttt{ClO-190} retrievals, and \thisv \texttt{ClO-640} and \texttt{ClO-190} retrievals. Solid lines show ascending (mainly daytime) and dashed lines show descending (mainly nighttime) averages. No bias corrections or quality screening have been applied.}
-  \label{fig:cloMeanProfs}
-\end{figure}
 
 As noted in Section~\ref{sec:clov5v6Diffs}, substantial biases are present in the \thisv ClO data at the lowest retrieval levels. To investigate in more detail the magnitude of and temporal variations in the bias in the \thisv MLS ClO data and compare them to \prevv, we show in Figure~\ref{fig:cloBiasByMonth} monthly zonal means of MLS nighttime ClO measurements for pressure levels 147--46\,hPa. Each panel represents a calendar month; nighttime data taken during that month over a \mbox{6-yr} period (2005--2010) for which reprocessing of \thisv data has been completed have been binned and averaged in 5{\degsym}-wide latitude bands between $\pm$85{\degsym}. Results for a second \mbox{6-yr} period (2019--2024) of reprocessed \thisv data are similar (not shown). Figure~\ref{fig:cloBiasByPress} is the same kind of plot but encompasses all of the MLS nighttime ClO data (i.e., the climatological annual mean over the two separate periods, 2005--2010 and 2019--2024) for pressure levels 147--10\,hPa. In both figures, bold colors represent \thisv data, while corresponding pale colors represent \prevv data. To guide the eye, the global-mean annual-mean bias calculated over the climatological period is indicated for each pressure level (horizontal solid lines in the respective bold and pale colors). Figures~\ref{fig:clov6v5bylat}, \ref{fig:cloBiasByMonth}, and \ref{fig:cloBiasByPress} show that the magnitude, and at 100 and 147\,hPa even the sign, of the bias varies with latitude as well as pressure. At 46\,hPa, the two versions track one another closely, and a negligible negative bias present in \prevv is essentially unchanged in \thisv in either period. At 68\,hPa, the small negative bias in \thisv is approximately equal to that in \prevv during the earlier period but slightly larger at all latitudes in the later period. At 100\,hPa, the moderate positive bias in the tropics in \prevv has been reduced in \thisv, but the small negative bias at higher latitudes (in both hemispheres) has grown slightly. Similarly, at 147\,hPa the large positive bias at low and middle latitudes has diminished, whereas the negative bias in the polar regions has worsened slightly. Nevertheless, the global-mean annual-mean bias at 147\,hPa is smaller than it was in \prevv. In contrast to the strong altitude and latitude dependence of the ClO bias evident in these plots, Figure~\ref{fig:cloBiasByMonth} reveals only modest month-to-month variability in most places. The results shown in Figures~\ref{fig:cloBiasByMonth} and \ref{fig:cloBiasByPress} are preliminary; final quantification of the ClO bias estimates is awaiting reprocessing of the entire mission dataset with \thisv algorithms.
 
