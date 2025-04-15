@@ -7,13 +7,13 @@
 
 In \thisv, there are only minor changes in the standard O\cs3 product in comparison to \prevv, with some impacts at the highest altitudes arising from small differences in temperature and/or tangent pressure. Generally, the retrievals and the resulting data for the standard ozone product have not changed significantly. Recommended \thisv data screening is again based on thresholds for \texttt{Status}, \texttt{Quality}, and \texttt{Convergence}.
 
-The most significant difference for the \prevv MLS ozone was the use a more accurate non-linear radiative transfer model (in place of an approximate linear model) for the digital autocorrelator (DAC) channels covering the center of the 236-GHz ozone line. This changed the ozone retrieval results for pressures less than about 0.02\,hPa. While there is no comprehensive validation of global MLS ozone at this higher altitude range, there is clearly sensitivity to the nighttime ozone maximum mixing ratio near 0.001\,hPa. The work of \citep{LeeAndWu:2020} had demonstrated that the \prevv ozone retrieval has enough radiance sensitivity in this altitude range to show strong dependence on the 11-year solar cycle variations (as for carbon monoxide).
+The most significant improvement made between v4.0x and \prevv MLS ozone was the use a more accurate non-linear radiative transfer model (in place of an approximate linear model) for the digital autocorrelator (DAC) channels covering the center of the 236-GHz ozone line. This changed the ozone retrieval results for pressures less than about 0.02\,hPa. While there is no comprehensive validation of global MLS ozone at this higher altitude range, there is clearly sensitivity to the nighttime ozone maximum mixing ratio near 0.001\,hPa. The work of \citep{LeeAndWu:2020} had demonstrated that the \prevv ozone retrieval has enough radiance sensitivity in this altitude range to show strong dependence on the 11-year solar cycle variations (as for carbon monoxide).
 
-As was the case for previous data versions, the \thisv standard O\cs3 product is taken from a retrieval using 240-GHz radiances, providing sensitivity from the upper troposphere to high altitudes (and into the thermosphere, with \thisv retrievals). In \thisv, as in v5, there is an optimized retrieval phase for the production of the O\cs3 standard product prior to the phase that uses 240-GHz radiances to produce the standard carbon monoxide and nitric acid products. Table~\ref{tab:O3Summary} summarizes typical O\cs3 resolution, precision (random uncertainty), and accuracy (systematic uncertainty) estimates versus pressure. There are some small differences between the two versions regarding the locations of cloud-flagged profiles, as a result of an updated cloud characterization methodology \emph{[see Section XXXX? - maybe one should copy some of the appropriate wording summary into each species' section?]}.
+As was the case for previous data versions, the \thisv standard O\cs3 product is taken from a retrieval using 240-GHz radiances, providing sensitivity from the upper troposphere to high altitudes (and into the thermosphere, with \thisv retrievals). In \thisv, as in \prevv, there is an optimized retrieval phase for the production of the O\cs3 standard product prior to the phase that uses 240-GHz radiances to produce the standard carbon monoxide and nitric acid products. Table~\ref{tab:O3Summary} summarizes typical O\cs3 resolution, precision (random uncertainty), and accuracy (systematic uncertainty) estimates versus pressure. There are some small differences between the two versions regarding the locations of cloud-flagged profiles, as a result of an updated cloud characterization methodology \emph{[see Section XXXX? - maybe one should copy some of the appropriate wording summary into each species' section?]}.
 
 Papers describing detailed validation of the MLS (v2.2) ozone product and comparisons with other data sets were published in a special Aura validation issue of the {\it Journal of Geophysical Research}, see \citep{FroidevauxEtal:2008:O3,JiangEtal:2007:MLSO3Valid,LiveseyEtal:2008}. 
 
-Vertical oscillations in the UTLS ozone profiles as well as the ozone sensitivity to thick clouds were reduced previously through changes in the spectral form used to model cloud impacts on MLS radiances, through tightening of vertical smoothing at pressures greater than 67\,hPa, and by retrieving a spectrally-flat baseline over the ozone band for each limb view to better account for cloud inhomogeneity. No further reduction of the persistent oscillations in UTLS ozone were achieved for the \thisv ozone product. 
+Vertical oscillations in the UTLS and sensitivity to thick clouds were reduced in the development of v04.2x ozone through changes in the spectral form used to model cloud impacts on MLS radiances, through tightening of vertical smoothing at pressures greater than 67\,hPa, and through retreival of a spectrally-flat baseline over the ozone band for each limb view to better account for cloud inhomogeneity. No further reduction of the persistent oscillations in UTLS ozone were achieved for the \thisv ozone product. 
 
 
 
@@ -27,7 +27,7 @@ In addition to the swath \texttt{O3}, which gives the O\cs3 profile on 55 pressu
 
 \subsection{Comparison of \thisv with past data versions}
 
-The vertical retrieval grid has not changed from \prevv; between 316\,hPa and 1\,hPa, \thisv ozone profiles are retrieved on 12 surfaces per decade, with a coarser retrieval grid at higher altitudes.
+The vertical retrieval grid is the same as that of \prevv; between 316\,hPa and 1\,hPa, \thisv ozone profiles are retrieved on 12 surfaces per decade, with a coarser retrieval grid at higher altitudes.
 
 
 
@@ -44,13 +44,15 @@ The vertical retrieval grid has not changed from \prevv; between 316\,hPa and 1\
 \end{figure}
 
 Figure \ref{fig:MLSv5v6O3ContourStrat} shows zonally-averaged stratospheric and mesospheric ozone field comparisons between \prevv and \thisv for the (full) month of April, 2009, for properly screened profiles only; mean differences (ppmv and percent) are also shown. Similar plots focusing on the UTLS are provided in 
-Figure \ref{fig:MLSv5v6O3ContourUTLS}. The absolute values of the differences above the tropopause between \prevv and \thisv for this year and month (but also for various other periods that we have checked) are typically quite small, meaning less than 1 to 2\%, and under 0.1 ppmv; for the upper troposphere (meaning the tropical region in particular), absolute differences between the two versions are usually less than 2 ppbv, and under 1 to 2\% as well.
+Figure \ref{fig:MLSv5v6O3ContourUTLS}. The absolute values of the differences above the tropopause between \prevv and \thisv for this year and month (but also for various other periods that we have checked) are typically less than 1 to 2\%, and under 0.1 ppmv; for the upper troposphere, 
+%(meaning the tropical region in particular)
+absolute differences between the two versions are usually less than 2 ppbv, and under 1 to 2\% as well.
 
 %Average stratospheric ozone abundances (monthly zonal means) have typically not changed by more than 1 to 2\% for %pressures less than 100\,hPa, and have changed by only slightly more (in \%) at pressures larger than 100\,hPa. Average %\thisv\CheckThis values from 0.1 to 0.02\,hPa are larger than \prevv\CheckThis data by 5 to 10\%. 
 
 %We show average UTLS profiles during March, 2009 from three data versions for 0\degsym --\,10\degsym N in Figure \ref{fig:MLSO3v5kinkUTLS}. Version 5 is very close to version 4 in terms of the vertical oscillations in these tropical profiles. For certain months, there is a slightly larger oscillation in v5 ozone, but there is also a slight decrease (typically only by a few percent) in the tropical v5 data from about 215 to 261\,hPa, in comparison to v4. This latter change goes in the right direction, as we know that average MLS ozone is biased high in this region versus ozonesonde profiles. This slight improvement is mainly the result of a more accurately calculated forward model (in the ray tracing calculations) in MLS version 5. None of these changes are outside the accuracy (systematic error) estimates for the MLS profiles. 
 
-Table~\ref{tab:O3Summary} summarizes resolution, precision, and accuracy estimates. Systematic error estimates are provided in this Table, but based on v5 sensitivity tests. Updated (v5) accuracy estimates may be provided at a later date, but changes relative to \prevv are expected to be quite small. 
+Table~\ref{tab:O3Summary} summarizes resolution, precision, and accuracy estimates. Systematic error estimates are provided in this Table are based upon \prevv sensitivity tests. Updated \thisv accuracy estimates may be provided at a later date, but changes relative to \prevv are expected to be quite small. 
 %except at the top of the retrieval, where better use of line-center radiances has allowed the retrieval to be extended to lower pressures.
 %\begin{figure}
 %  \centering\includegraphics[angle=90,width=0.6\linewidth]{figures/Fig-O3_v5_kink_v4_v3_2009_March_0-10N}
@@ -76,7 +78,7 @@ Typical resolution values are provided in the summary Table~\ref{tab:O3Summary},
 
 As found previously, the Level~2 precision values are often slightly lower than the scatter observed in a narrow latitude band centered around the equator (where atmospheric variability is expected to be small) or obtained from a comparison between ascending and descending coincident MLS profiles.
 
-Negative precision values for ozone sometimes occur at the largest and smallest pressure values within the recommended range. Such flags on the precision values indicate that there is quite a significant influence from the \emph{a priori}, although some MLS information can exist in these cases also. Caution is required if one wants to include such profile portions in scientific analyses, and our default recommendation is to ignore these values.
+Negative precision values for ozone sometimes occur at the largest and smallest pressure values within the recommended range. Negative precision values indicate that retrieved values are stronglyinfluence by the \emph{a priori}, although some geophysical information may also be present. Caution is required if one wants to include such profile portions in scientific analyses, and the general recommendation is to ignore these values.
 
 \paragraph*{Column values} The estimated precisions for the \thisv MLS column ozone abundances down to pressures of 100 to 215\,hPa are 2\% or less. The typical empirical precision in the columns based on ($1\sigma$) variability in the tropics is 2 to 3\%.
 
@@ -86,13 +88,13 @@ The accuracy estimates shown in Table~\ref{tab:O3Summary} are from a v5 analysis
 
 %In recent years, validation studies have focused more on longer-term changes or drifts (with good stability being observed versus other reliable measurements) and on the UTLS region. Validation updates are to be expected for \thisv\CheckThis, after the multi-year dataset has been reprocessed.
 
-\paragraph*{Column values} Sensitivity tests using systematic changes in various parameters that could affect the accuracy of the MLS retrievals lead to possible biases ($2\sigma$ estimates) of about 4\%, as an estimated accuracy for the MLS column values (from integrated MLS ozone profiles down to 100, 147, and 215\,hPa). This estimate is still expected to hold for v6 data. See the validation papers (and subsequent ozone-related publications, e.g., available from the MLS website) for results on column ozone comparisons versus satellite, sonde, and lidar data.
+\paragraph*{Column values} During development of \prevv ozone, sensitivity tests using systematic changes in various uncertain parameters that impact the ozone retrieval revealed possible biases ($2\sigma$ estimates) of about 4\%, as an estimated accuracy for the MLS column values (from integrated MLS ozone profiles down to 100, 147, and 215\,hPa). This estimate is still expected to hold for \thisv data. See the validation papers (and subsequent ozone-related publications, e.g., available from the MLS website) for results on column ozone comparisons versus satellite, sonde, and lidar data.
 
 \subsection{Data screening}
 \label{sec:O3Screening}
 \begin{description}
 
-  \item[Pressure range:] \screeningrule{261--0.001\,hPa.} \standardrangestatement{} Data at 0.00046\,hPa represents a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but requires consultation with the MLS team. \standardprecisionrule \evenstatusrule
+  \item[Pressure range:] \screeningrule{261--0.001\,hPa.} \standardrangestatement{} Data at 0.00046\,hPa represents a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but would benefit from consultation with the MLS team. \standardprecisionrule \evenstatusrule
   \item[Quality:] \qualityrule{1.0}
   \item[Convergence:] \convergencerule{1.03}
   \item[Clouds:] \screeningrule{Scattering from thick clouds can lead to more systematic effects in the UTLS.} Most of the affected profiles are removed by the \texttt{Quality} and \texttt{Convergence} screening recommendations (although \texttt{Convergence} issues occur only rarely).
