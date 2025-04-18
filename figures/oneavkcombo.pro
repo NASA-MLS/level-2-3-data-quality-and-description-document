@@ -1,14 +1,16 @@
 pro OneAVKCombo, product=product, all=all, $
   noHorizontal=noHorizontal, bonus=bonus
 
+compile_opt idl2
+
 if keyword_set ( all ) then begin
   mainProducts = [  'CH3Cl', 'CH3CN', 'CH3OH', 'ClO', 'CO', 'GPH', 'H2O_HR', 'HCl', $
     'HCN', 'HNO3', 'IWC', 'N2O', 'O3_HR', 'OH', 'SO2', 'Temperature_HR' ]
   bonusProducts = [ 'O3_HR' ]
   noHorizProducts = [ 'BrO', 'HO2', 'HOCl' ]
-  ;; for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts(p)
-  for p = 0, n_elements ( bonusProducts ) - 1 do OneAvkCombo, product=bonusProducts(p), /bonus
-  ;; for p = 0, n_elements ( noHorizProducts ) - 1 do OneAvkCombo, product=noHorizProducts(p), /noHorizontal
+  for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts[p]
+  for p = 0, n_elements ( bonusProducts ) - 1 do OneAvkCombo, product=bonusProducts[p], /bonus
+  for p = 0, n_elements ( noHorizProducts ) - 1 do OneAvkCombo, product=noHorizProducts[p], /noHorizontal
   return
 endif
 
@@ -51,7 +53,7 @@ case product of
   'HO2'   : phases = 'CorePlusR4AB14'
   'HOCl'  : phases = 'CorePlusR4AB14'
   'IWC'   : phases = '' 
-  'N2O'   : phases = 'NitrousOxide'
+  'N2O'   : phases = 'CorePlusR2'
   'O3_HR' : phases = 'OzoneOnly'
   'OH'    : phases = 'CorePlusR5'
   'SO2'   : phases = 'CorePlusR3'
@@ -75,27 +77,21 @@ case product of
   'Temperature-CorePlusR4B' : phases = 'CorePlusR4B'
   'Temperature-CorePlusR5'  : phases = 'CorePlusR5'
 endcase
-if phases(0) eq '' then return
+if phases[0] eq '' then return
 noPhases = n_elements(phases)
 
 if product ne 'OH' then begin
-  rootPrefix = 'MLS-Aura_L2MTX-Full_v05-00-'
-  rootSuffix = [ $
-    'S103a_1996d051.h5', $
-    'S103b_1996d051.h5' ]
-  paths = [ $
-    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103a/103a/', $
-    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103b/103b/' ]
+  filenames = [ $
+    '/users/bill/uth_valid/emls/v6/quality_document/MLS-Aura_L2MTX-Full_v06-00-VEQ_1996d051.h5', $
+    '/users/bill/uth_valid/emls/v6/quality_document/MLS-Aura_L2MTX-Full_v06-00-V78N-night_1996d051.h5' ]
   bins = [ 'LAT0N', 'LAT70N' ]
   binNames = bins
   binTitles = [ 'Equator', '70!E0!NN' ]
   noBins = n_elements ( bins )
 endif else begin
-  paths = [ $
-    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103a/103a/', $
-    '/testing/workspace/pwagner/l2tests/avgkrnls/v5.00/SA-103n/103n/' ]
-  rootPrefix = 'MLS-Aura_L2MTX-Full_v05-00-'
-  rootSuffix =  'S103' + [ 'a', 'n' ] + '_1996d051.h5'
+  filenames = [ $
+    '/users/bill/uth_valid/emls/v6/quality_document/MLS-Aura_L2MTX-Full_v06-00-VEQ_1996d051.h5', $
+    '/users/bill/uth_valid/emls/v6/quality_document/MLS-Aura_L2MTX-Full_v06-00-V70N_1996d051.h5' ]
   bins = [ 'LAT0N', 'LAT0N' ]
   binTitles = [ 'Day', 'Night' ]
   binNames = binTitles
@@ -137,9 +133,8 @@ endelse
 for bin = 0, noBins - 1 do begin
   for phase = 0, noPhases - 1 do begin 
     words = strsplit ( product, '-', /extract )
-    name = words(0)
-    filename = paths [ bin ] + $
-      rootPrefix + rootSuffix [ bin ]
+    name = words[0]
+    filename = filenames[bin]
     print, '---- ' + filename
     print, format=fmt, '  Reading phase ' + strupcase ( phases[phase] ) + ', A'
     A = ReadHDF5L2PCFile ( filename=filename, $
@@ -241,8 +236,8 @@ for bin = 0, noBins - 1 do begin
       colorRange=colorRange, $
       yRange=yRange, $
       xRange=[-0.2,1.2], $
-      firstSurf=heightRange(0), $
-      lastSurf=heightRange(1), $
+      firstSurf=heightRange[0], $
+      lastSurf=heightRange[1], $
       /noErase, /fullColorRange, $
       yTitle=yTitle, yTickFormat=yTickFormat, $
       vertRes=vertRes, strictRange=strictRange
@@ -251,9 +246,9 @@ for bin = 0, noBins - 1 do begin
     
     ;; Put up a label
     BoxedXYOUTs, /normal, $
-      !p.position(0)-0.04+0.08*keyword_set(noHorizontal), $
-      !p.position(3)+0.03+0.03*keyword_set(noHorizontal), $
-      binTitles(bin), background=col.lightGrey, charsize=1.2, align=0.5, $
+      !p.position[0]-0.04+0.08*keyword_set(noHorizontal), $
+      !p.position[3]+0.03+0.03*keyword_set(noHorizontal), $
+      binTitles[bin], background=col.lightGrey, charsize=1.2, align=0.5, $
       fraction=1.0 + (1-bin)*0.2
 
     ;; -------------------------------- Horizontal kernel
@@ -275,8 +270,8 @@ for bin = 0, noBins - 1 do begin
         /noErase, $
         yTitle='', $
         yTickFormat='NothingFormat' , $
-        firstSurf=heightRange(0), $
-        lastSurf=heightRange(1), $
+        firstSurf=heightRange[0], $
+        lastSurf=heightRange[1], $
         horizRes=horizRes, $
         strictRange=strictRange
       horizontal = RecordDisplay()
