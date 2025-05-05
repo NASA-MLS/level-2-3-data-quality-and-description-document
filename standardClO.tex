@@ -11,9 +11,7 @@ As in previous versions, in \thisv the standard ClO product is derived from radi
 
 Zonal-mean differences between \prevv and \thisv ClO are generally small (less than $\pm$10\%) in the lower stratosphere during winter at high latitudes in both hemispheres, where ClO is often strongly enhanced in the sunlit polar vortices (Figures~\ref{fig:zmcontourClO} and \ref{fig:zmtsClO}). The two versions are also in very close agreement near the broad secondary peak in the ClO profile centered around 2--3\,hPa (see also Figure~\ref{fig:cloMeanProfs}). Outside of those regions, low ClO abundances lead to larger percent differences between the two versions. For example, large positive \mbox{\thisv$-$ \prevv} differences are seen at 1\,hPa, where an unphysical kink in the \prevv global-mean profile has been ameliorated in \thisv (Figure~\ref{fig:zmcontourClO}). Similarly, large negative \mbox{\thisv$-$ \prevv} differences are found at the bottom of the retrieval range (Figures~\ref{fig:zmcontourClO} and \ref{fig:zmtsClO}). In particular, the substantial positive bias at low latitudes at 100 and 147\,hPa present in \prevv has been somewhat mitigated in \thisv, while the negative bias at middle and high latitudes at those levels has been slightly exacerbated (Figures~\ref{fig:cloMeanProfs} and \ref{fig:clov6v5bylat}).
 
-In addition to the standard product (derived from the \mbox{640-GHz} radiances), Figure~\ref{fig:cloMeanProfs} includes results for the ClO product retrieved from the \mbox{190-GHz} radiances. As was the case in \prevv, the two \thisv ClO products agree fairly well in the middle and upper stratosphere. The very large negative bias in \texttt{ClO-190} at its lowest retrieval levels (68--100\,hPa) has been reduced in \thisv; thus the two ClO products correspond more closely in the lower stratosphere now than they did in \prevv. Nevertheless, as was the case in previous versions, both ClO products continue to display non-negligible biases that need to be corrected before the data can be used in detailed quantitative studies.
-
-The biases in the \thisv \mbox{640-GHz} ClO data are quantified and further compared to those in \prevv in Section~\ref{sec:cloBias}.
+In addition to the standard product (derived from the \mbox{640-GHz} radiances), Figure~\ref{fig:cloMeanProfs} includes results for the ClO product retrieved from the \mbox{190-GHz} radiances. As was the case in \prevv, the two \thisv ClO products agree fairly well in the middle and upper stratosphere. The very large negative bias in \texttt{ClO-190} at its lowest retrieval levels (68--100\,hPa) has been reduced in \thisv; thus the two ClO products correspond more closely in the lower stratosphere now than they did in \prevv. Nevertheless, as was the case in previous versions, both ClO products continue to display non-negligible biases that need to be corrected before the data can be used in detailed quantitative studies. The biases in the \thisv \mbox{640-GHz} ClO data are quantified and further compared to those in \prevv in Section~\ref{sec:cloBias}.
 
 \begin{figure}
   \begin{center}
@@ -58,7 +56,7 @@ The biases in the \thisv \mbox{640-GHz} ClO data are quantified and further comp
 \subsection{Resolution}
 \onestandardavk{ClO}{ClO}%
 
-\mycomment{This should be checked/updated when we have the averaging kernels} The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, degrades the inherent resolution of the measurements. Thus, although ClO measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv ClO data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkClO} is \mytexttilde3--4.5\,km throughout the retrieval range (with a mean of \mytexttilde3.5\,km). The averaging kernels are sharply peaked at all levels, even at 147\,hPa, where the kernel indicates that the retrieval has sensitivity to ClO abundances higher in the atmosphere (particularly 100\,hPa). Nevertheless, the 147\,hPa surface provides independent information. Figure~\ref{fig:AvkClO} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde300--500\,km over most of the vertical range. The cross-track resolution, set by the width of the field of view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km. The along-track separation between adjacent retrieved profiles is 1.5{\degsym} great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10{\degsym}--20{\degsym} over low and middle latitudes, with much finer sampling in the polar regions.
+The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, degrades the inherent resolution of the measurements. Thus, although ClO measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv ClO data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkClO} is \mytexttilde3--4.5\,km throughout the retrieval range (with a mean of \mytexttilde3.3\,km). The averaging kernels are sharply peaked at all levels, even at 147\,hPa, where the kernel indicates that the retrieval has sensitivity to ClO abundances higher in the atmosphere (particularly 100\,hPa). Nevertheless, the 147\,hPa surface provides independent information. Figure~\ref{fig:AvkClO} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde300--500\,km over most of the vertical range. The cross-track resolution, set by the width of the field of view of the \mbox{640-GHz} radiometer, is \mytexttilde3\,km. The along-track separation between adjacent retrieved profiles is 1.5{\degsym} great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10{\degsym}--20{\degsym} over low and middle latitudes, with much finer sampling in the polar regions.
 
 \subsection{Precision}
 
@@ -102,7 +100,7 @@ In many cases the ClO bias can be essentially eliminated by subtracting daily gr
   \includegraphics[width=0.48\linewidth,clip=false,trim=0cm 2mm 0cm 2mm]{figures/plotBiasV6-Clim_2005-2010_ClO640.pdf}
   \includegraphics[width=0.48\linewidth,clip=false,trim=0cm 2mm 0cm 2mm]{figures/plotBiasV6-Clim_2019-2024_ClO640.pdf}
   \end{center}
-  \caption{Estimates of the bias in MLS \thisv nighttime (solar zenith angle $>$ 100{\degsym}) ClO data in 5{\degsym}-wide geographic latitude bands on MLS retrieval pressure surfaces from 147 to 10\,hPa (see legend) calculated over two \mbox{6-yr} periods (left: 2005--2010; right: 2019--2024).  Results for \thisv are depicted in bold colors, those for \prevv in corresponding pale colors.  The horizontal lines denote the global-mean annual-mean bias estimates over the climatological period for both versions at each level. To ensure that ClO was not enhanced, consideration was restricted to latitudes equatorward of 50{\degsym}S for the days between 1~May and 1~November and to latitudes equatorward of 50{\degsym}N for the days between 1~December and 1~April.}
+  \caption{Estimates of the bias in MLS \thisv nighttime (solar zenith angle $>$ 100{\degsym}) ClO data in 5{\degsym}-wide geographic latitude bands on MLS retrieval pressure surfaces from 147 to 10\,hPa (see legend) calculated over two \mbox{6-yr} periods (left: 2005--2010; right: 2019--2024).  Results for \thisv are depicted in bold colors, those for \prevv (2005--2020) in corresponding pale colors.  The horizontal lines denote the global-mean annual-mean bias estimates over the climatological period for both versions at each level. To ensure that ClO was not enhanced, consideration was restricted to latitudes equatorward of 50{\degsym}S for the days between 1~May and 1~November and to latitudes equatorward of 50{\degsym}N for the days between 1~December and 1~April.}
   \label{fig:cloBiasByPress}
 \end{figure}
 
@@ -144,7 +142,7 @@ Extensive comparisons of MLS v2.2 ClO data with measurements from a variety of d
 
 \begin{DIFnomarkup}
   \begin{table*}[bp]
-    \caption{Summary of Aura MLS \thisv ClO Characteristics \mycomment{Update when averaging kernels are available}}\vspace{0.5ex}
+    \caption{Summary of Aura MLS \thisv ClO Characteristics}\vspace{0.5ex}
     \label{tab:ClOSummary}
     \begin{minipage}{\linewidth}\small
       \renewcommand{\thefootnote}{\thempfootnote}
@@ -166,20 +164,20 @@ Extensive comparisons of MLS v2.2 ClO data with measurements from a variety of d
 %
 1.0         & 3        $\times$ 500      & $\pm$0.3 & $\pm$0.02 & \\
 %
-6.8--1.5    & 3.5--4   $\times$ 250--350 & $\pm$0.1 & $\pm$0.02 & \\
+6.8--1.5    & 3.5--4   $\times$ 300--400 & $\pm$0.1 & $\pm$0.02 & \\
 %
-15--10     & 3.5   $\times$ 250 & $\pm$0.1 & $\pm$0.03 & \\
+15--10     & 3.5   $\times$ 300 & $\pm$0.1 & $\pm$0.03 & \\
 %
-22          & 3        $\times$ 300      & $\pm$0.1 & $\pm$0.05  & \\
+22          & 3        $\times$ 350      & $\pm$0.1 & $\pm$0.05  & \\
 %
-46--32      & 3        $\times$ 300--400 & $\pm$0.1 & $\pm$0.15  & \\
+46--32      & 3        $\times$ 400 & $\pm$0.1 & $\pm$0.15  & \\
 %
 68 & 3 $\times$ 450 & $\pm$0.1 & $\pm$0.2 & Latitude-dependent
 bias\footnote{Correct for the bias by subtracting from the individual
   measurements at this level the latitude-dependent bias estimates
   (see Section~\ref{sec:cloBias}).}\gdef\fnDirect{\value{mpfootnote}} \\
 %
-100         & 3        $\times$ 500      & $\pm$0.1 & $\pm$0.3  & 
+100         & 3.5        $\times$ 500      & $\pm$0.1 & $\pm$0.3  & 
 Latitude-dependent bias\footnotemark[\fnDirect] \\
 %
 147         & 4.5      $\times$ 650      & $\pm$0.3 & $\pm$0.6  & 
