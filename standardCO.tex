@@ -7,11 +7,11 @@
 Carbon monoxide is retrieved from radiance measurements of two bands in the MLS 240\,GHz radiometer. Full details are given in \citet{PumphreyEtal:2007} and \citet{LiveseyEtal:2008}.
 
 \subsection{Differences between \thisv and \prevv}
-The \thisv carbon monoxide (CO) product is extremely similar to the \prevv product, and both are very similar to v04.2x in the upper troposphere and stratosphere, with improvement in some cases relative v4.2x in the mesosphere and mesopause region resulting from the use of a more computationally expensive, nonlinear forward model for radiances near the 230-GHz line center. Small differences between \thisv and \prevv CO in the upper stratosphere result from changes in the temperature and pointing retrieval, discussed in Section~\ref{sec:StandardTemperature}. 
+The \thisv carbon monoxide (CO) product is extremely similar to the \prevv product, and both are very similar to v04.2x in the upper troposphere and stratosphere, with improvement in some cases relative to v4.2x in the mesosphere and mesopause region, which results from the use of a more computationally expensive, nonlinear forward model for radiances near the 230-GHz line center. Small differences between \thisv and \prevv CO in the upper stratosphere result from changes in the temperature and pointing retrieval, discussed in Section~\ref{sec:StandardTemperature}. 
 
 In the upper mesosphere, \thisv and \prevv CO are less tightly constrained to the \emph{a priori} than is v04.2x CO (\emph{a priori} precision is 1.5$\times$ larger at 0.046\,hPa and 2$\times$ larger at and above 0.01\,hPa). Horizontal smoothing of \thisv has been tightened at and above 0.01\,hPa to maintain retrieval stability, but this change has no appreciable impact on the sharpness of horizontal features seen in preliminary validation. The top of the vertical range of the retrieval remains 0.00046\,hPa and profiles are recommended for scientific use up to 0.001\,hPa.
 
-Figure~\ref{fig:CO_scatv6v5} shows scatter plots of screened \prevv vs.\ \thisv CO from 215\,hPa to 0.01\,hPa, showing that the two versions are almost identical. 
+Figure~\ref{fig:CO_scatv6v5} shows scatter plots of screened \prevv vs.\ \thisv CO from 215\,hPa to 0.01\,hPa during 2009, showing that the two versions are almost identical. 
 High outlier values of CO along the 1:1 lines of panels for 216--46.4\,hPa in Figure~\ref{fig:CO_scatv6v5} are measurements within the plume from the ``Black Saturday'' Australian wildfires and confirm the consistency of the \thisv and \prevv retrievals in the upper troposphere and lower stratosphere, even when unusally high values are retrieved .
 
 The calculation of cloud flags bits in the product status has changed significantly in \thisv, as is discussed in Section~\mycomment{Point to appropriate section}.  \Thisv CO has approximately twice as many profiles marked as possibly influenced by low cloud than \prevv, and no profiles flagged as influenced by only high clouds.  Neither of these flags is used in the recommended screening.
@@ -21,14 +21,8 @@ The calculation of cloud flags bits in the product status has changed significan
 Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging kernels for \thisv MLS CO\@. Estimated vertical and horizontal resolutions are essentially identical to those of \prevv and v04.2x. The vertical resolution is in the range 3.5--5\,km from the upper troposphere to the lower mesosphere, degrading to 6--7\,km in the upper mesosphere. Down to the 215\,hPa level, the vertical averaging kernels are sharply peaked at the level being retrieved, but while the \mbox{316-hPa} measurement contains contribution from 316\,hPa, it has a larger contribution from 215\,hPa and a negative contribution around 100\,hPa of similar magnitude to that at 316\,hPa. The retrieved value at 316\,hPa is thus more an extrapolation of the profile higher in the UTLS than it is an independent measurement at 316\,hPa, and it is not recommended for scientific use. The horizontal resolution is about 200\,km in the mesosphere, degrading slowly to 300\,km with decreasing height in the stratosphere and more rapidly to about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figures/CO_scatv6v5}\hfill%
+  \includegraphics[width=\textwidth, trim=1.4cm 1cm 1.8cm 12.5cm]{figures/CO_scatv6v5}
   \caption{Joint histograms of \prevv CO and \thisv CO for 2009 data show the general consistency of the two versions.  The color scale is logarithmic, with red points along the 1:1 line corresponding to pairs of values that are identical in the two versions. }
-  % Good agreement between the versions is seen in high outliers in
-  % the 215\,hPa--46.4\,hPa panels from plume from the ``Black
-  % Saturday'' Australian bush fires. Pairs off of the 1:1 line from
-  % 31.6--4.64\,hPa are primarily associated with sharp features in
-  % descending high CO in the southern winter polar vortex, where the
-  % tendency to retrieve negative values has been reduced.  }
   \label{fig:CO_scatv6v5}
 \end{figure}
 
@@ -38,7 +32,7 @@ The MLS data are supplied with an estimated precision (the field \texttt{L2gpPre
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figures/COplot1bylat_log}
-  \caption{The top row shows 2009 zonal means of \thisv\CheckThis and \prevv\CheckThis mixing ratios and their \emph{a priori} values.  The \prevv\CheckThis retrieved mixing ratio line (purple) lies on top of the \thisv\CheckThis mixing ratio line (yellow) for all but the highest altitude pressure surfaces, despite significant differences in their \emph{a priori} profiles. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines).  The bottom row shows the number of good profiles, limited at the highest retrieval levels where retrieved precision exceeds half of the \emph{a priori} precision.}
+  \caption{\mycomment{This figure is still old, right?} The top row shows 2009 zonal means of \thisv\CheckThis and \prevv\CheckThis mixing ratios and their \emph{a priori} values.  The \prevv\CheckThis retrieved mixing ratio line (purple) lies on top of the \thisv\CheckThis mixing ratio line (yellow) for all but the highest altitude pressure surfaces, despite significant differences in their \emph{a priori} profiles. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines).  The bottom row shows the number of good profiles, limited at the highest retrieval levels where retrieved precision exceeds half of the \emph{a priori} precision.}
   \label{fig:COplot1bylat_log}
 \end{figure}
 
