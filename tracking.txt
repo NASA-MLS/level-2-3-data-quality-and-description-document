@@ -1,15 +1,36 @@
-Chapter 1:
+=============================================== Chapter 1
 
-Largely complete, but may need more material on new cloud flags.
+- Largely complete, but may need more material on new cloud flags.
 
-------------------------------------------------------------------------
 
-Chapter 2:
+=============================================== Chapter 2
 
-More work needed on cloud flagging etc.
+- More work needed on cloud flagging etc.
 
-------------------------------------------------------------------------
+=============================================== Chapter 3
 
-Chapter 3:
+------------------ BrO
 
-BrO: 
+- Resolution discussion finalized (no change from v5)
+- Updates/sign off on Precision discussion still pending
+
+------------------ CH3Cl
+
+- Looks done, did make an edit that Michelle shouls sign off
+
+------------------ CH3CN
+
+
+[MEETING IN THE MIDDLE]
+
+------------------ RHI
+
+- OK, some tidy ups and some comments for Bill to consider
+
+------------------ SO2
+
+- Some, mainly cosmetic, edits, think it's done
+
+------------------ Temperature
+
+- Still being worked on I'm guessing
