@@ -53,7 +53,7 @@ Mean profiles computed from measurements taken during the ascending (mainly dayt
 \subsection{Resolution}
 \onestandardavk{HNO3}{\nitac}%
 
-\mycomment{This should be checked/updated when we have the averaging kernels} The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, reduces the inherent resolution of the measurements. Thus, although \nitac measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv \nitac data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkHNO3} varies from \mytexttilde3.5 to 5\,km over the useful vertical range (see Table~\ref{tab:HNO3Summary} for estimates at individual levels). Substantial overlap in the averaging kernels for the 215 and 316\,hPa retrieval surfaces (which both peak at 215\,hPa) indicates that the 316\,hPa retrieval provides little independent information. Figure~\ref{fig:AvkHNO3} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde350--500\,km over most of the vertical range, degrading to 550--800\,km at 1.5 and 1\,hPa. The cross-track resolution, set by the widths of the fields of view of the \mbox{190-GHz} and \mbox{240-GHz} radiometers, is \mytexttilde10\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
+The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, reduces the inherent resolution of the measurements. Thus, although \nitac measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv \nitac data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkHNO3} varies from \mytexttilde3.5 to 5\,km over the useful vertical range (see Table~\ref{tab:HNO3Summary} for estimates at individual levels). Substantial overlap in the averaging kernels for the 215 and 316\,hPa retrieval surfaces (which both peak at 215\,hPa) indicates that the 316\,hPa retrieval provides little independent information. Figure~\ref{fig:AvkHNO3} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde350--500\,km over most of the vertical range, degrading to 550--800\,km at 1.5 and 1\,hPa. The cross-track resolution, set by the widths of the fields of view of the \mbox{190-GHz} and \mbox{240-GHz} radiometers, is \mytexttilde10\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
 
 \subsection{Precision}
 
@@ -124,7 +124,7 @@ A persistent ``notch'' in the profile, with low values at 100 or 147\,hPa and hi
 Further work to diagnose and eliminate the persistent unphysical oscillations at the lowest retrieval levels will be explored in the future.
 
 \begin{table}
-  \caption{Summary of Aura MLS \thisv \nitac Characteristics \mycomment{Update when averaging kernels are available}}\vspace{0.5ex}
+  \caption{Summary of Aura MLS \thisv \nitac Characteristics}\vspace{0.5ex}
   \label{tab:HNO3Summary}
   \begin{minipage}{\linewidth}\small
     \renewcommand{\thefootnote}{\thempfootnote}
@@ -151,7 +151,7 @@ recommended \\
 %
 2.1 & 5 $\times$ 450--500 & $\pm$0.8  & $\pm$0.5 & \\
 %
-3.2 & 4.5 $\times$ 350--400 & $\pm$0.6  & $\pm$0.1  & \\
+3.2 & 4.5 $\times$ 400 & $\pm$0.6  & $\pm$0.1  & \\
 %
 15--4.6  & 3.5--4 $\times$ 250--350 & $\pm$0.6 & $\pm$0.5--0.7  & \\
 %
@@ -159,7 +159,7 @@ recommended \\
 %
 32 & 4 $\times$ 450 & $\pm$0.6 & $\pm$1.4 & \\
 %
-147--46  & 3.5 $\times$ 400--450 & $\pm$0.6 & $\pm$1.0 & Consult MLS team for use in tropical UTLS\\
+147--46  & 3.5--4 $\times$ 400--450 & $\pm$0.6 & $\pm$1.0 & Consult MLS team for use in tropical UTLS\\
 %
 215        & 4.5 $\times$ 500  & $\pm$0.6 & $\pm$1.1    &  Consult MLS team for use in tropical UTLS\\
 %
