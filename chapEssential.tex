@@ -55,7 +55,14 @@ The MLS can measure atmospheric temperature profiles by two largely independent 
 
 \subsection{sec:V6CloudWork}
 
-
+The MLS retrieval algorithms and software take steps to avoid using radiances that may have been contaminated by clouds (see section~\ref{sec:Cloud}).  The \thisv algorithms use the same approach as \prev in this regard.  However, the MLS team has adopted a new philosophy for setting the flags (in the \texttt{Status} diagnostic, see below) that indicate possible cloud effects on the retrieved composition and temperature profiles.  In \prevv and earlier versions, these flags were set based on an assessment of the potential cloudiness of a scene using criteria that were decoupled from those used in the composition and temperature retrievals.  For \thisv, the flags are set purely on whether the retrievals avoided specific radiances because of potential cloud contamination.  Put more simply, in \prevv and earlier versions, the cloud flag would indicate:
+\begin{quote}
+\emph{The region of the atmosphere measured here includes signatures of clouds that may have impacted the measurements}\quad(\prevv and earlier versions)
+\end{quote}
+whereas, the \thisv flags should be interpreted as:
+\begin{quote}
+\emph{The MLS retrieval algorithms identified some of the radiances in this region as being affected by clouds, and opted not to use them in the retrieval, thus changing the character of the retrieved profiles in some manner that may set it apart from those in ``cloud free'' observations.}\quad(\thisv)
+\end{quote}
 
 While MLS observations are insensitive to aerosols and thin clouds, the particles and number densities associated with deep convective clouds can lead to scattering of the millimeter-scale signals observed by MLS.  Broadly speaking, this scattering redirects some fraction of the ambient radiation (which will be a mix of bright upwelling radiances and ``dark'' signals from downwelling) towards the MLS antenna.  Thus, for high-altitude limb views, where small radiances signals are seen in cloud-free situations, cloud scattering will increase the observed radiances. Clouds in the line-of-sight of low-altitude limb views, (characterized by large radiances in cloud-free scenes) will act to suppress the observed radiances, as some of the observed signal originates from downwelling signatures of cold space scattered into the beam.
 
