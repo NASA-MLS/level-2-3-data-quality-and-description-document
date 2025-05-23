@@ -8,7 +8,7 @@ The standard SO\cs2 product is taken from the 240-GHz retrieval (\texttt{CorePlu
 
 \subsection{Changes from v5}
 
-Changes in the 240-GHz MLS products from v5 to v6 are minor. The standard SO\cs2 product is retrieved from the CorePlusR3 phase that simultaneously retrieves tangent pressure, temperature, and its targeted species from 118 and 240 GHz signals. Changes made to improve the tangent pressure and temperature will have some impact on the SO\cs2 retrieval. Another change is the new approach to cloud flagging discussed in section~\ref{sec:V6CloudFlagging}
+Changes in the 240-GHz MLS products from v5 to v6 are minor. The standard SO\cs2 product is retrieved from the CorePlusR3 phase that simultaneously retrieves tangent pressure, temperature, and its targeted species from 118 and 240 GHz signals. Changes made to improve the tangent pressure and temperature will have some impact on the SO\cs2 retrieval. Similarly, the new approach to cloud flagging discussed in section~\ref{sec:V6CloudWork} should be noted.
 
 \begin{figure}
   \begin{center}
@@ -22,7 +22,7 @@ Changes in the 240-GHz MLS products from v5 to v6 are minor. The standard SO\cs2
   \label{fig:avgmlsso2prflcomp}
 \end{figure}
 
-Figure~\ref{fig:avgmlsso2prflcomp} compares MLS v2.2, v3.3, v4.2, v5.0, and v6.0. The atmosphere typically has \mytexttilde0.1\,ppbv SO\cs2, which is far smaller than the MLS SO\cs2 accuracy estimate. All versions (erroneously) report typical abundance of order of a few ppbv, due to systematic errors in the MLS measurement system. The $-20\,\text{ppbv}$ reported at 215\,hPa is also a systematic artifact. Changes from v2 through to v6 involved handling of the background radiance signals which evolved from an absorption continuum (v2) to an RHi continnuum (v3) to a MLS minor frame absorption continuum with a frequency squared spectral dependence (v4--v6). Versions~4--6 also uses improved cloud detection and radiance screening for them.
+Figure~\ref{fig:avgmlsso2prflcomp} compares SO\cs2 in MLS v2.2, v3.3, v4.2, v5.0, and v6.0. The atmosphere typically has \mytexttilde0.1\,ppbv SO\cs2, which is far smaller than the MLS SO\cs2 accuracy estimate. All versions (erroneously) report typical abundance of order of a few ppbv, due to systematic errors in the MLS measurement system. The $-20\,\text{ppbv}$ reported at 215\,hPa is also a systematic artifact. Changes from v2 through to v6 involved handling of the background radiance signals which evolved from an absorption continuum (v2) to an RHi continnuum (v3) to a MLS limb-pointing-based absorption continuum with a frequency squared spectral dependence (v4--v6). Versions~4--6 also uses improved cloud detection and radiance screening.
 
 \subsection{Resolution}
 \onestandardavk{SO2}{SO\cs2}%
@@ -31,21 +31,21 @@ Based on Figure~\ref{fig:AvkSO2}, the vertical resolution for SO\cs2 is \mytextt
 
 \subsection{Precision}
 
-The estimated precision for SO\cs2 is \mytexttilde4\,ppbv for all heights between 215--10\,hPa. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision -- an indication that the data is biased toward the a~priori value. The changes between v5 and v6 are minor and carries over to the estimated precision. An example of this is shown in Figure~\ref{fig:so2prec}. SO\cs2 precision from v5 and v6 show much less variability and less latitude dependence than was present in v4. Although only 100\,hPa is shown here, it is similar for other stratospheric levels and it also affects other species retrieved from the 240-GHz radiances, such as HNO\cs3. The change in behavior occurred as a result of reducing the forward model accuracy threshold from 0.02\,K to ``best possible'' in
+The estimated precision for SO\cs2 is \mytexttilde4\,ppbv for all heights between 215--10\,hPa. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision -- an indication that the data is biased toward the a~priori value. The changes between v5 and v6 are minor and result in only small differences in the estimated precision. An example of this is shown in Figure~\ref{fig:so2prec}. SO\cs2 precision from v5 and v6 show much less variability and less latitude dependence than was present in v4. Although only 100\,hPa is shown here, similar behavior is seen at other stratospheric levels and also in other species retrieved from the 240-GHz radiances, such as HNO\cs3. The change in behavior occurred as a result of reducing the forward model accuracy threshold from 0.02\,K to ``best possible'' in
 v5 and v6.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.8\linewidth]{figures/so2_2009d045_100hPa_precision}
   \end{center}
-  \caption{A comparison of estimated precision for SO\cs2 from v4 (green), v5(orange) and 
-  v6(red) and 100\,hPa.}
+  \caption{A comparison of estimated precision for SO\cs2 from v4 (green), v5 (orange) and 
+  v6 (red) at 100\,hPa.}
   \label{fig:so2prec}
 \end{figure}
 
 \subsection{Accuracy}
 
-Accuracy is estimated to be 10--20\,ppbv over the useful pressure range. These are not expected to change significantly for the v6 SO\cs2 product yet to be determined.
+In \prev, SO\cs2 accuracy is estimated to be 10--20\,ppbv over the useful pressure range. This is not expected to change significantly for the v6 SO\cs2 product, for which accuracy estimates are yet to be updated.
 
 \subsection{Data screening}
 \label{sec:SO2Screening}
@@ -62,7 +62,7 @@ Accuracy is estimated to be 10--20\,ppbv over the useful pressure range. These a
 
 \subsection{Artifacts}
 
-High values of SO\cs2 accompanied with negative errors are likely to be underestimated due to \emph{a priori} influence which biases the value toward zero. The atmospheric background SO\cs2 (\mytexttilde0.1\,ppbv) cannot be measured by MLS even with extensive data averaging because there are systematic errors producing biases of a few ppbv. The 215-hPa SO\cs2 has a background bias of approximately $-20\,$ppbv.
+High values of SO\cs2 accompanied with negative errors are likely to be underestimated due to \emph{a priori} influence, which biases the value toward zero. The atmospheric background SO\cs2 (\mytexttilde0.1\,ppbv) cannot be measured by MLS, even with extensive data averaging, as there are systematic errors that induce biases of a few ppbv. The 215-hPa SO\cs2 has a background bias of approximately $-20\,$ppbv.
 
 \begin{figure}
   \begin{center}
@@ -92,19 +92,19 @@ MLS has successfully detected SO\cs2 from 36 eruptions since launch.
     \includegraphics[width=0.7\linewidth]{figures/sarychev_14062009}
     \includegraphics[width=0.7\linewidth]{figures/sarychev_16062009}
   \end{center}
-  \caption{An overlay of MLS measurement tracks on an OMI SO\cs2 measurement on 14 and 16 June 2009 (separate maps) showing the dispersial of SO\cs2 from the Sarychev eruption (13~June 2009, black triangle). The OMI instrument has some non operational pixels also known as the row anomaly where measurements are not possible. It turns out that one of these row anomalies is perfectly aligned with the MLS track and therefore there are no coaligned OMI-MLS measurements.  The color scale indicates the SO\cs2 column measured by OMI\@. The daytime MLS tracks are small open circles and the nighttime tracks are filled black. When the calculated column from MLS exceeds 1\,DU, that measurement is indicated by a larger open circle filled with the color of the column measurement as indicated by the color scale below (same as for OMI)\@. The panels at right show all the measured profiles covering the area shown in the maps for SO\cs2 and HCl. Profiles where the MLS column calculation exceeds 1\,DU are highlighted in red.}
+  \caption{An overlay of MLS measurement tracks on an OMI SO\cs2 measurement on 14 and 16 June 2009 (separate maps) showing the dispersal of SO\cs2 from the Sarychev eruption (13~June 2009, black triangle). The OMI instrument has some non operational pixels (known as the ``row anomaly'') where measurements are not possible. It turns out that one of these row anomalies is perfectly aligned with the MLS track and therefore there are no co-aligned OMI and MLS measurements.  The color scale indicates the SO\cs2 column measured by OMI\@. The daytime MLS tracks are small open circles and the nighttime tracks are filled black. When the calculated column from MLS exceeds 1\,DU, that measurement is indicated by a larger open circle filled with the color of the column measurement as indicated by the color scale below (same as for OMI)\@. The panels at right show all the measured profiles covering the area shown in the maps for SO\cs2 and HCl. Profiles where the MLS column calculation exceeds 1\,DU are highlighted in red.}
   \label{fig:so2overlay}
 \end{figure}
 
-Figure~\ref{fig:so2overlay} shows an overlay comparison of column SO\cs2 measured by OMI and the same calculated by MLS for two days following the Sarychev eruption. It is clear that MLS detects the main plume dispersal features. It also appears that MLS columns are often smaller than those from OMI\@. Interpreting the significance of this is not straightforward given that OMI has to make assumptions regarding the profile shape and can observe SO\cs2 down to the boundary layer. The MLS column begins at 215\,hPa and integrates upward neglecting the tropospheric contributions. Another limitation is that OMI can only make measurements during the day whereas MLS can make them day and night. Since the plume is moving relatively quickly over the 12-hour measurement separation time, MLS nighttime measurements often miss and/or detect plume features differently than OMI\@.
+Figure~\ref{fig:so2overlay} shows an overlay comparison of column SO\cs2 measured by OMI and the same calculated by MLS for two days following the Sarychev eruption. It is clear that MLS detects the main plume dispersal features. It also appears that MLS columns are often smaller than those from OMI\@. Interpreting the significance of this is not straightforward given that OMI has to make assumptions regarding the profile shape and can observe SO\cs2 down to the boundary layer. The MLS column begins at 215\,hPa and integrates upward, thus neglecting the tropospheric contributions. Another limitation is that OMI can only make measurements during the day whereas MLS can make them day and night. Since the plume is moving relatively quickly over the 12-hour measurement separation time, MLS nighttime measurements often miss and/or detect plume features differently than OMI\@.
 
-Figure~\ref{fig:so2timeseries} shows a comparison among v3, v4, v5, and v6 for a track showing the maximum SO\cs2 measured on 16~June 2009. As expected v5 and v6 show similar amounts of SO\cs2 at levels 215--68\,hPa. Nominally the SO\cs2 is concentrated between 147 and 100\,hPa.
+Figure~\ref{fig:so2timeseries} shows a comparison among v3, v4, v5, and v6 for a track showing the maximum SO\cs2 measured on 16~June 2009. As expected, v5 and v6 show similar amounts of SO\cs2 at levels 215--68\,hPa. Nominally the SO\cs2 is concentrated between 147 and 100\,hPa.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.7\linewidth]{figures/sarychev_time_series_20090616_2120}
   \end{center}
-  \caption{Time series overlay where MLS measures more than 500\,ppbv at 100\,hPa for the Sarychev erruption (June 16, 2009). Blue is version 3, lt. blue, version 4, yellow version 5, and red is version 6.}
+  \caption{Time series overlay where MLS measures more than 500\,ppbv at 100\,hPa for the Sarychev erruption (June 16, 2009). Blue is version 3, light blue is version 4, yellow is version 5, and red is version 6.}
   \label{fig:so2timeseries}
 \end{figure}
 
