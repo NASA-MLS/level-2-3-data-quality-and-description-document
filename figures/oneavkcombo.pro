@@ -1,5 +1,5 @@
 pro OneAVKCombo, product=product, all=all, $
-  noHorizontal=noHorizontal, bonus=bonus
+  noHorizontal=noHorizontal, bonus=bonus, absolute=absolute
 
 compile_opt idl2
 
@@ -8,9 +8,9 @@ if keyword_set ( all ) then begin
     'HCN', 'HNO3', 'IWC', 'N2O', 'O3_HR', 'OH', 'SO2', 'Temperature_HR' ]
   bonusProducts = [ 'O3_HR' ]
   noHorizProducts = [ 'BrO', 'HO2', 'HOCl' ]
-  for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts[p]
-  for p = 0, n_elements ( bonusProducts ) - 1 do OneAvkCombo, product=bonusProducts[p], /bonus
-  for p = 0, n_elements ( noHorizProducts ) - 1 do OneAvkCombo, product=noHorizProducts[p], /noHorizontal
+  for p = 0, n_elements ( mainProducts ) - 1 do OneAvkCombo, product=mainProducts[p], absolute=absolute
+  for p = 0, n_elements ( bonusProducts ) - 1 do OneAvkCombo, product=bonusProducts[p], /bonus, absolute=absolute
+  for p = 0, n_elements ( noHorizProducts ) - 1 do OneAvkCombo, product=noHorizProducts[p], /noHorizontal, absolute=absolute
   return
 endif
 
@@ -221,7 +221,7 @@ for bin = 0, noBins - 1 do begin
     ;; Possibly 'return' to this plot
     if phase ne 0 then SelectDisplay, vertical
     print, format=fmt, '; V'
-    avkV = CollapseMatrix ( A )
+    avkV = CollapseMatrix ( A, absolute=absolute)
     if keyword_set ( noHorizontal ) and bin eq 1 then begin
       yTitle = ''
       yTickFormat = 'NothingFormat'
@@ -240,7 +240,8 @@ for bin = 0, noBins - 1 do begin
       lastSurf=heightRange[1], $
       /noErase, /fullColorRange, $
       yTitle=yTitle, yTickFormat=yTickFormat, $
-      vertRes=vertRes, strictRange=strictRange
+      vertRes=vertRes, strictRange=strictRange, $
+      absolute=absolute
     DestroyMatrix, avkV
     vertical = RecordDisplay()
     
@@ -260,7 +261,7 @@ for bin = 0, noBins - 1 do begin
         SelectDisplay, horizontal
       endelse
       print, format=fmt, '; H'
-      avkH = VerticallyCollapseMatrix ( A )
+      avkH = VerticallyCollapseMatrix ( A, absolute=absolute )
       ShowHorizontalAVK, avkH, $
         quantity=name, keyProf=profile, $
         overplot=phase gt 0, $
@@ -273,7 +274,8 @@ for bin = 0, noBins - 1 do begin
         firstSurf=heightRange[0], $
         lastSurf=heightRange[1], $
         horizRes=horizRes, $
-        strictRange=strictRange
+        strictRange=strictRange, $
+        absolute=absolute
       horizontal = RecordDisplay()
       DestroyMatrix, avkH
     endif
