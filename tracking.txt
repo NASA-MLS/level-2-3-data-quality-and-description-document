@@ -16,9 +16,14 @@
 
 ------------------ CH3Cl
 
-- Looks done, did make an edit that Michelle shouls sign off
+- Looks done, did make an edit that Michelle should sign off
 
 ------------------ CH3CN
+
+- Looks good, just one minor edit (higher -> greater pressure)
+
+------------------ CH3OH
+
 
 
 [MEETING IN THE MIDDLE]
