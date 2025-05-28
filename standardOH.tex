@@ -26,7 +26,7 @@ A typical OH profile and the associated precisions (for both \prevv and \thisv) 
 
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{figures/plot_ohzmv6.pdf}
-  \caption{Zonal mean of retrieved OH and its estimated precision (horizontal error bars) for October 1, 2005 averaged over 29\degsym N to 39\degsym N\@. The average includes  \mytexttilde100 profiles. Panel (a) shows \thisv OH vmr vs. pressure for day (black) and night (blue). The retrieved night OH concentration is near zero for altitudes below 1\,hPa.  Note that the day-night difference is required for altitudes below 10\,hPa. Panel (c) shows the same data in (a) converted into density units. Panels (b) and (d) are equivalent to (a) and (c) but using \prevv OH  data.}
+  \caption{Zonal mean of retrieved OH and its estimated precision (horizontal error bars) for October 1, 2005 averaged over 29\degsym N to 39\degsym N\@. The average includes \mytexttilde100 profiles. Panel (a) shows \thisv OH vmr vs. pressure for day (black) and night (blue). The retrieved night OH concentration is near zero for altitudes below 1\,hPa.  Note that the day-night difference is required for altitudes below 10\,hPa. Panel (c) shows the same data in (a) converted into density units. Panels (b) and (d) are equivalent to (a) and (c) but using \prevv OH  data.}
   \label{fig:OHprofiles}
 \end{figure}
 
@@ -47,7 +47,7 @@ investigations if all the following tests are successful:
 
 \subsection{Artifacts}
 
-For some seasons, the Gas Laser Local Oscillator (GLLO) for the THz receiver is automatically ``relocked'' as many as 5 times during a day, leading to data gaps. In these cases the \texttt{Status} flag is set to \texttt{257} and the profile is ignored. This can present a problem when compiling maps, because the missing data may appear at the same latitude and longitude on successive days.
+During some seasons, the Gas Laser Local Oscillator (GLLO) for the THz receiver is automatically ``relocked'' as many as 5 times during a day, leading to data gaps. In these cases the \texttt{Status} flag is set to \texttt{257} and the profile is to be ignored. This can present a problem when compiling maps, because the missing data may appear at the same latitude and longitude on successive days.
 
 \subsection{Review of comparisons with other datasets}
 
