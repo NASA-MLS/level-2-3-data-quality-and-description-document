@@ -28,6 +28,16 @@
 
 [MEETING IN THE MIDDLE]
 
+
+
+------------------ O3
+
+- Good shape.  Accepted Lucien's changes made a few minor ones of my one, left those and Michael's in the file for their review.
+
+------------------ OH
+
+- Pretty good.  Luis needs to update numbers in table (looks like resolution has improved at high altitudes compared to what he quotes).
+
 ------------------ RHI
 
 - OK, some tidy ups and some comments for Bill to consider
