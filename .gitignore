@@ -46,3 +46,5 @@ v6-x-report.pdf
 singlesection.pdf
 *.atfi
 shownav.flag*
+*-checkpoint.ipynb
+.ipynb_checkpoints
