@@ -23,7 +23,7 @@ The IWC accuracy values listed in Table~\ref{tab:IWCSummary} are estimates from 
 \label{sec:IWCScreening}
 \begin{description}
   \item[Pressure range (215--83\,hPa):] \standardrangestatement\ The maximum detectable IWC is \mytexttilde100\,mg/m\cp3.
-  \item[Use Temperature Status, Quality and Convergence:] The user is recommended to screen the IWC data using the \texttt{Status} field in the collocated temperature profile to exclude bad retrievals \citep{SchwartzEtal:2008:Validation}. In other words, only IWC profiles for which temperature \texttt{Status} is an even number should be used. Similarly, the users should only use IWC profiles where the corresponding Temperature profiles have \emph{Quality} of 0.9 or larger and \texttt{Convergence} less than 1.03.
+  \item[Use Temperature Status, Quality and Convergence:] The user is recommended to screen the IWC data using the \texttt{Status} field in the collocated temperature profile to exclude bad retrievals \citep{SchwartzEtal:2008:Validation}. In other words, only IWC profiles for which temperature \texttt{Status} is an even number should be used. Similarly, the users should only use IWC profiles where the corresponding Temperature profiles have \emph{Quality} of \CheckThis 0.9 or larger and \texttt{Convergence} less than \CheckThis 1.03.
   \item[Other screening:] The IWC product derives from differences between measured radiances and those predicted assuming cloud free conditions. Spectroscopic and calibration uncertainties give rise to temporally and geographically varying biases in this difference, and hence the IWC product. These biases must be iteratively identified and removed, using a ``$2\sigma$, $3\sigma$'' screening method, as described below.
 
     \begin{enumerate}
@@ -39,14 +39,14 @@ At wintertime mid-to-high latitudes, strong stratospheric gravity waves may indu
 
 \subsection{Comparisons with other datasets}
 
-Scatter plots of \thisv\CheckThis vs v2.2 IWC show mean biases of less than 10\% in the pressure range 215--83\,hPa and histograms show that the random noise in \thisv\CheckThis IWC is generally larger than in v2.2 (see Figure~\ref{fig:IWC} and Table~\ref{tab:IWCSummary}). However, in localized regions, there can be substantial differences in IWC values between these versions that are driven by the reaction of the IWC retrieval to the changes in \thisv\CheckThis UTLS H\cs2O. These effects are largest at pressures of 215~hPa and higher and have been verified by examining the negative correlations between the changes in H\cs2O and IWC.
+Scatter plots of \thisv vs v2.2 IWC show mean biases of less than 10\% in the pressure range 215--83\,hPa and histograms show that the random noise in \thisv IWC is generally larger than in v2.2 (see Figure~\ref{fig:IWC} and Table~\ref{tab:IWCSummary}). However, in localized regions, there can be substantial differences in IWC values between these versions that are driven by the reaction of the IWC retrieval to the changes in \thisv UTLS H\cs2O. These effects are largest at pressures of 215~hPa and higher and have been verified by examining the negative correlations between the changes in H\cs2O and IWC.
 
-Apart from the differences noted above, the MLS \thisv\CheckThis IWC is similar to the MLS v2.2 product described and validated in \citet{WuEtal:2008}. A revised validation paper for IWC is not planned in the near future and users are encouraged to read \citet{WuEtal:2008} for more information.
+Apart from the differences noted above, the MLS \thisv IWC is similar to the MLS v2.2 product described and validated in \citet{WuEtal:2008}. A revised validation paper for IWC is not planned in the near future and users are encouraged to read \citet{WuEtal:2008} for more information.
 
 Comparisons between v2.2 MLS and CloudSat IWC showed good agreement with PDF differences $<$50\% for the IWC ranges specified in Table~\ref{tab:IWCSummary}. Comparisons with AIRS, OMI and MODIS suggest that MLS cloud tops are slightly higher by \mytexttilde1\,km than the correlative data in general.
 
 \begin{table}
-  \caption{Summary of MLS \thisv\CheckThis IWC precision, accuracy, and resolution.}
+  \caption{Summary of MLS \thisv IWC precision, accuracy, and resolution.}
   \vspace{\tablecaptionsep}
   \label{tab:IWCSummary}
   \begin{minipage}{\linewidth} \centering\begin{tabular}{cccccc} \toprule
@@ -72,19 +72,19 @@ Comparisons between v2.2 MLS and CloudSat IWC showed good agreement with PDF dif
         require further validation for quantitative interpretation.} \\ /
       mg/m\cp3} \\ \midrule
 p$<$70 & \multicolumn{5}{c}{Unsuitable for scientific use} \\
- 83 & 200$\times$7$\times$5 & 0.06--0.15     & 100\% & ---   & 0.02--50 \\
-100 & 200$\times$7$\times$5 & 0.08--0.18     & 100\% & 150\% & 0.02--50 \\
-121 & 250$\times$7$\times$4 & 0.08--0.24     & 100\% & 100\% & 0.04--50 \\
-147 & 300$\times$7$\times$4 & 0.20--0.65 & 100\% & 100\% & 0.1--50  \\
-177 & 300$\times$7$\times$4 & 0.5--2.3   & 150\% & 100\% & 0.3--50  \\
-215 & 300$\times$7$\times$4 & 1.2--5.5   & 300\% & 100\% & 0.6--50  \\
+ 83 & 200$\times$7$\times$5 & 0.06--0.11     & 100\% & ---   & 0.02--50 \\
+100 & 200$\times$7$\times$5 & 0.07--0.13     & 100\% & 150\% & 0.02--50 \\
+121 & 250$\times$7$\times$4 & 0.09--0.19     & 100\% & 100\% & 0.04--50 \\
+147 & 300$\times$7$\times$4 & 0.20--0.45 & 100\% & 100\% & 0.1--50  \\
+177 & 300$\times$7$\times$4 & 0.5--1.7   & 150\% & 100\% & 0.3--50  \\
+215 & 300$\times$7$\times$4 & 0.5--4.5   & 300\% & 100\% & 0.6--50  \\
 p$>$260 & \multicolumn{5}{c}{Unsuitable for scientific use} \\ \bottomrule
 \end{tabular}
   \end{minipage}
 \end{table}
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figures/IWC-240-v05-00-dataqual-JUL2009-v2}
-  \caption{MLS v5, v4 and v2 IWC comparisons for July 2009 at 146\,hPa and 100\,hPa.  (a) Left: Probability density functions (PDF) (v5, red; v4, blue; and v2, green) with dashed lines showing the corresponding noise levels (obtained by folding the negative IWC values about the origin) and the thin black lines representing the Gaussian error function.  (b) Right: Scatter plots of IWC v5 vs.\ v2 (black points) with dashed red lines indicating the 1:1 line, dashed yellow lines the $1\sigma$ uncertainties. The solid yellow lines are linear fits to the data (which lie practically on the 1:1 line).}
+  \includegraphics[width=\textwidth]{figures/IWC-240-v6-dataqual-JUN2009}
+  \caption{MLS v6, v5, v4 and v2 IWC comparisons for June 2009 at 146\,hPa and 100\,hPa.  (a) Left: Probability density functions (PDF) (v6, red; v5, purple; v4, blue; and v2, green) with dashed lines showing the corresponding noise levels (obtained by folding the negative IWC values about the origin) and the thin black lines representing the Gaussian error function.  (b) Right: Scatter plots of IWC v5 vs.\ v2 (black points) with dashed red lines indicating the 1:1 line, dashed yellow lines the $1\sigma$ uncertainties. The solid yellow lines are linear fits to the data (which lie practically on the 1:1 line).}
   \label{fig:IWC}
 \end{figure}
