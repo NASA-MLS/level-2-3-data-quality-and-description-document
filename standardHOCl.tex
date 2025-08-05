@@ -6,43 +6,43 @@
 
 There has been very little change in the \thisv HOCl retrieval results since \prevv, and any small changes are well within the somewhat large estimated accuracies (systematic uncertainties). We provide below sample mean HOCl distributions for the \thisv and \prevv data versions, and their differences. Otherwise, previous information regarding this species remains largely unchanged; the main points are mentioned here mainly for new data users.
 
-The HOCl retrieval is quite noisy for individual profiles and HOCl data require some averaging (e.g., in 10\degsym\ zonal means for one or more weeks) to get useful precision of better than 10\,pptv, in comparison to typical upper stratospheric HOCl abundances of 100--150\,pptv. Table~\ref{tab:HOClSummary} summarizes the MLS HOCl resolution, precision, and accuracy estimates for the upper stratosphere. More discussion and a brief validation summary are given in the following sections, along with data screening recommendations. For trend results regarding MLS HOCl in the upper stratosphere, see \citep{FroidevauxEtal:2022:HOCl}.
+The HOCl retrieval is quite noisy for individual profiles and HOCl data require some averaging (e.g., in 10\degsym{}-latitude-resolution zonal means for one or more weeks) to get useful precision of better than 10\,pptv, in comparison to typical upper stratospheric HOCl abundances of 100--150\,pptv. Table~\ref{tab:HOClSummary} summarizes the MLS HOCl resolution, precision, and accuracy estimates for the upper stratosphere. More discussion and a brief validation summary are given in the following sections, along with data screening recommendations. For trend results regarding MLS HOCl in the upper stratosphere, see \citep{FroidevauxEtal:2022:HOCl}.
 
-An algorithm to retrieve daily zonal means of HOCl by first averaging the radiances has been developed by the MLS team, building on the work described in \citet{MillanEtal:2012} and \citet{MillanEtal:2015} for BrO and HO\cs2, respectively. This dataset reduces the variability slightly and will be available for \thisv from the GSFC DISC soon; it is expected to be very similar to the (\prevv) HOCl dataset used by \citep{FroidevauxEtal:2022:HOCl}. 
+An algorithm to retrieve daily zonal means of HOCl by first averaging the radiances has been developed by the MLS team, building on the work described in \citet{MillanEtal:2012} and \citet{MillanEtal:2015} for BrO and HO\cs2, respectively. The resulting alternative dataset reduces the variability slightly and will be available, along with associated documentation, for \thisv from the GSFC DISC soon; it is expected to be very similar to the (\prevv) HOCl dataset used by \citep{FroidevauxEtal:2022:HOCl}. 
 
 \subsection{Changes from \prevv}
-There were no significant algorithmic changes relating directly to HOCl for the \thisv retrievals. However, given the small level of HOCl spectral radiance signal, the retrieved HOCl abundances can be sensitive, indirectly, to even minor changes in the retrieval system, such as changes in temperature or tangent pressure. 
+There were no significant algorithmic changes relating directly to HOCl for the \thisv retrievals. However, given the small level of HOCl spectral radiance signal, the retrieved HOCl abundances can be sensitive, indirectly, to even minor changes in the retrieval system, such as changes in temperature or tangent pressure. \mycomment{If the R2 cycling impacts HOCl, this would be hte place to discuss it}
 
-A comparison plot showing zonal average upper stratospheric HOCl contours (from 10 to 2\, hPa) and differences between the two data versions for a typical month (April, 2009) is provided in Figure~\ref{fig:MLSv5v6HOClContour}. The average \thisv HOCl abundances are slightly larger than the \prevv retrievals, typically by about 10 to 15\,pptv (or 10 to 15\%); this has removed some of the small negative values that often occurred in \prevv HOCl contour plots at the highest southern latitudes, between 5 and 10\,hPa.  The estimated precision values are essentially unchanged from \prevv.
+A comparison plot showing zonal average upper stratospheric HOCl contours (from 10 to 2\,hPa) and differences between the two data versions for a typical month (April 2009) is provided in Figure~\ref{fig:MLSv5v6HOClContour}. The average \thisv HOCl abundances are slightly larger than the \prevv retrievals, typically by about 10 to 15\,pptv (or 10 to 15\%); this has removed some of the small negative values that often occurred in \prevv HOCl averages at the highest southern latitudes, between 5 and 10\,hPa.  The estimated precision values are essentially unchanged from \prevv.
 
 \begin{figure}
   \centering\includegraphics[width=\linewidth]{figures/Fig-HOCl_v6v5_ZmContours_Difs.pdf}
-  \caption{Zonal averages for upper stratospheric MLS HOCl profiles during April, 2009, showing the MLS \prevv HOCl mixing ratio contours (top left panel), the \thisv contours (top right panel), and their differences in pptv (\thisv minus \prevv, bottom left panel) and percent (\thisv minus \prevv versus \prevv, bottom right panel). }
+  \caption{Zonal averages for upper stratospheric MLS HOCl profiles during April 2009, showing the MLS \prevv HOCl mixing ratio contours (top left panel), the \thisv contours (top right panel), and their differences in pptv (\thisv minus \prevv, bottom left panel) and percent (\thisv minus \prevv versus \prevv, bottom right panel).}
   \label{fig:MLSv5v6HOClContour}
 \end{figure}
 
 \subsection{Resolution}
 \oneverticalavk{HOCl}{HOCl}%
 
-Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkHOCl}, the vertical resolution for upper stratospheric HOCl is \mytexttilde6\,km (significantly worse than the 640-GHz radiometer vertical field of view width of 1.4\,km). This reflects the choice of smoothing constraints for HOCl which favor precision over vertical resolution.
+Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkHOCl}, the vertical resolution for upper stratospheric HOCl is \mytexttilde6\,km (significantly worse than the 640-GHz radiometer vertical field of view width of 1.4\,km). This reflects the choice of smoothing constraints for HOCl, which favor precision over vertical resolution.
 
 \subsection{Precision}
 
-The estimated single-profile precision reported by the Level~2 software is about 300 to 400\,pptv in the upper stratosphere. A more useful number of 5 to 10\,pptv is quoted in Table~\ref{tab:HOClSummary} for the typical precision of a 10\degsym\ weekly zonal means for this product.
+The estimated single-profile precision reported by the Level~2 software is about 300 to 400\,pptv in the upper stratosphere. A more useful number of 5 to 10\,pptv is quoted in Table~\ref{tab:HOClSummary} for the typical precision of a 10\degsym{}-latitude-resolution weekly zonal means for this product.
 
 \subsection{Accuracy}
 
-The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HOCl retrievals \citep{ReadEtal:2007}. These values are intended to represent $2\sigma$ estimates of accuracy. The largest contributors to possible errors for HOCl are contaminant species, gain compression, and sideband ratio uncertainties. The Table gives a range of error estimates (for now, these are based on \prevv but they are not expected to change significantly). The average changes for upper stratospheric HOCl between \prevv and \thisv are well within the quoted accuracy estimates. The HOCl signal becomes too small compared to the systematic uncertainties to allow for reliable retrievals at pressures larger than 10 hPa.
+The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HOCl retrievals \citep{ReadEtal:2007}. These values are intended to represent $2\sigma$ estimates of accuracy. The largest contributors to possible errors for HOCl are contaminant species, gain compression, and sideband ratio uncertainties. The Table gives a range of error estimates (for now, these are based on \prevv but they are not expected to change significantly for \thisv). The average changes for upper stratospheric HOCl between \prevv and \thisv are well within the quoted accuracy estimates. The HOCl signal becomes too small compared to the systematic uncertainties to allow for reliable retrievals at pressures larger than 10\,hPa.
 
 \subsection{Data screening}
 \label{sec:HOClScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{10--2.2\,hPa} \standardrangestatement\ Artifacts (negative averages) for pressures larger than about 10\,hPa make this product unsuitable for use in the lower stratosphere. Regarding the topmost altitude range, the sensitivity to \emph{a priori} increases rapidly at pressures of 1\,hPa or less; we continue to recommend the use of (average) HOCl values only up to 2.2\, hPa. \standardprecisionrule \evenstatusrule
+  \item[Pressure range:] \screeningrule{10--2.2\,hPa} \standardrangestatement\ Artifacts (negative averages) for pressures larger than about 10\,hPa make this product unsuitable for use in the lower stratosphere. Regarding the topmost altitude range, the sensitivity to \emph{a priori} increases rapidly at pressures of 1\,hPa or less; we continue to recommend the use of (average) HOCl values only up to 2.2\,hPa. \standardprecisionrule \evenstatusrule
 
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.}
   This criterion removes profiles with the poorest radiance fits, typically less than 0.2\% of the daily profiles. For HOCl, this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and \texttt{Convergence} fields for data screening.
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99$\%$ or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a `chunk') have this \texttt{Convergence} field set to larger values, and should be discarded.
+  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a `chunk') have this \texttt{Convergence} field set to larger values, and should be discarded.
 
   \item[Clouds:] \cloudsokrule
 
@@ -54,7 +54,7 @@ The MLS HOCl retrievals exhibit the expected morphology in monthly mean latitude
 
 \subsection{Artifacts}
 \begin{itemize}
-  \item The 640-GHz radiometer bands 10 (for ClO) and 29 (for HOCl) were turned off for a few time periods in 2006 to investigate degradation issues that might affect these channels in the future. These bands were off on April 8,9, and 10, 2006, and also for April 17, 2006 (after 19:52 UT) through May 17, 2006. There are essentially no useful HOCl (or ClO) data for these time periods. The \thisv (as for previous data versions) software correctly flags these incidents with poor (odd) \texttt{Status} values (which should be screened out).
+  \item The 640-GHz radiometer bands 10 (for ClO) and 29 (for HOCl) were turned off for a few time periods in 2006 to investigate degradation issues that might affect these channels in the future. These bands were off on April 8, 9, and 10, 2006, and also for April 17, 2006 (after 19:52 UT) through May 17, 2006. There are essentially no useful HOCl (or ClO) data for these time periods. The \thisv (as for previous data versions) software correctly flags these incidents with poor (odd) \texttt{Status} values (which should be screened out).
   \item There are significant artifacts in the mean values (large negative values) for HOCl in the lower stratosphere, where the use of this product is not recommended.
   \item Users should screen out the non-converged and poorest quality HOCl profiles, as such profiles (typically a very small number per day) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
 \end{itemize}
