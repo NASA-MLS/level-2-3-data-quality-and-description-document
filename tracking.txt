@@ -1,57 +1,69 @@
 =============================================== Chapter 1
 
-- Largely complete, but may need more material on new cloud flags.
+Largely complete, but may need more material on new cloud flags.
 
 
 =============================================== Chapter 2
 
-- More work needed on cloud flagging etc.
+More work needed on cloud flagging etc.
 
 =============================================== Chapter 3
 
 ------------------ BrO
 
-- Resolution discussion finalized (no change from v5)
-- Updates/sign off on Precision discussion still pending
+Resolution discussion finalized (no change from v5)
+Updates/sign off on Precision discussion still pending
 
 ------------------ CH3Cl
 
-- Looks done, did make an edit that Michelle should sign off
+Looks done, did make an edit that Michelle should sign off
 
 ------------------ CH3CN
 
-- Looks good, just one minor edit (higher -> greater pressure)
+Looks good, just one minor edit (higher -> greater pressure)
 
 ------------------ CH3OH
 
+------------------ ClO
 
+------------------ GPH
 
-[MEETING IN THE MIDDLE]
+------------------ H2O
+
+------------------ HCN
+
+------------------ HNO3
 
 ------------------- HO2
 
 Mostly OK, some comments for Luis.
 
-[MEETING IN THE MIDDLE]
+------------------- HOCl
 
+Minor changes, seems in good shape
 
+------------------- IWC
+
+------------------- IWP
+
+------------------- N2O
 
 ------------------ O3
 
-- Good shape.  Accepted Lucien's changes made a few minor ones of my one, left those and Michael's in the file for their review.
+Good shape.  Accepted Lucien's changes made a few minor ones of my one, left those and Michael's in the file for their review.
 
 ------------------ OH
 
-- Pretty good.  Luis needs to update numbers in table (looks like resolution has improved at high altitudes compared to what he quotes).
+Pretty good.  Luis needs to update numbers in table (looks like resolution has improved at high altitudes compared to what he quotes).
 
 ------------------ RHI
 
-- OK, some tidy ups and some comments for Bill to consider
+OK, some tidy ups and some comments for Bill to consider
 
 ------------------ SO2
 
-- Some, mainly cosmetic, edits, think it's done
+Some, mainly cosmetic, edits, think it's done
 
 ------------------ Temperature
 
-- Still being worked on I'm guessing
+Still being worked on I'm guessing
