@@ -1,15 +1,15 @@
 \speciestitle{Cloud Ice Water Content}{IWC}{IWC}{%
   \item[Units:] g/m\cp3
   \item[Useful range:] 215--83\,hPa
-  \item[Contact: ] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
+  \item[Contact:] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-The MLS IWC is retrieved from cloud-induced radiances (\Tcir) of the 240-GHz window channel in a separate processing step after the atmospheric state (Temperature and tangent height pressure) and important gaseous species (H\cs2O, O\cs3, HNO\cs3) have been finalized in the retrieval processing. The derived \Tcir\ are binned onto the standard horizontal (1.5\degsym\ along track) and vertical (12 surfaces per decade change in pressure) grids, and converted to IWC using the modeled \Tcir--IWC relations \citep{WuEtal:2006}. The standard IWC profile has a useful vertical range between 215--83\,hPa although the validation has been conducted for a subset of the range of IWC values. IWC measurements beyond the value ranges specified in Table~\ref{tab:IWCSummary} are to be regarded currently as giving only qualitative information on cloud ice. They require further validation for quantitative interpretation.
+The MLS IWC is retrieved from cloud-induced radiances (\Tcir) of the 240-GHz window channel in a separate processing step after the atmospheric state (Temperature and tangent point pressure) and important gaseous species (H\cs2O, O\cs3, HNO\cs3) have been finalized in the retrieval processing. The derived \Tcir\ are binned onto the standard horizontal (1.5\degsym\ along track) and vertical (12 surfaces per decade change in pressure) grids, and converted to IWC using the modeled \Tcir--IWC relations \citep{WuEtal:2006}. The standard IWC profile has a useful vertical range between 215--83\,hPa although the validation has only been conducted for a subset of the range of IWC values. IWC measurements beyond the value ranges specified in Table~\ref{tab:IWCSummary} are to be regarded currently as giving only qualitative information on cloud ice. They require further validation for quantitative interpretation.
 
 \subsection{Resolution}
 
-In the IWC ranges specified in Table~\ref{tab:IWCSummary}, each MLS measurement can be quantitatively interpreted as the average IWC for the volume sampled. This volume has a vertical extent of \mytexttilde3\,km, with \mytexttilde300\,km and 7\,km along and cross track respectively.
+In the IWC ranges specified in Table~\ref{tab:IWCSummary}, each MLS measurement can be quantitatively interpreted as the average IWC for the volume sampled. This volume has a vertical extent of \mytexttilde3\,km, with \mytexttilde300\,km and 7\,km along- and cross-track, respectively.
 
 \subsection{Precision}
 
@@ -23,13 +23,13 @@ The IWC accuracy values listed in Table~\ref{tab:IWCSummary} are estimates from 
 \label{sec:IWCScreening}
 \begin{description}
   \item[Pressure range (215--83\,hPa):] \standardrangestatement\ The maximum detectable IWC is \mytexttilde100\,mg/m\cp3.
-  \item[Use Temperature Status, Quality and Convergence:] The user is recommended to screen the IWC data using the \texttt{Status} field in the collocated temperature profile to exclude bad retrievals \citep{SchwartzEtal:2008:Validation}. In other words, only IWC profiles for which temperature \texttt{Status} is an even number should be used. Similarly, the users should only use IWC profiles where the corresponding Temperature profiles have \emph{Quality} of \CheckThis 0.9 or larger and \texttt{Convergence} less than \CheckThis 1.03.
+  \item[Use Temperature Status, Quality and Convergence:] The user is advised to screen the IWC data using the \texttt{Status} field in the collocated temperature profile to exclude bad retrievals \citep{SchwartzEtal:2008:Validation}. In other words, only IWC profiles for which Temperature \texttt{Status} is an even number should be used. Similarly, the users should only use IWC profiles where the corresponding Temperature profiles have \emph{Quality} of \CheckThis 0.9 or larger and \texttt{Convergence} less than \CheckThis 1.03.
   \item[Other screening:] The IWC product derives from differences between measured radiances and those predicted assuming cloud free conditions. Spectroscopic and calibration uncertainties give rise to temporally and geographically varying biases in this difference, and hence the IWC product. These biases must be iteratively identified and removed, using a ``$2\sigma$, $3\sigma$'' screening method, as described below.
 
     \begin{enumerate}
       \item Uncertainties in spectroscopy and atmospheric composition are manifested as residual biases in the IWC fields which should be identified and removed as follows. IWC data should be averaged in a 10\degsym\ latitude bins and outliers rejected iteratively by excluding measurements greater than $2\sigma$ standard deviation about the mean ($\mu$) of the bin. Repeat the $\sigma$ and $\mu$ calculations after every new set of rejections. Convergence is usually reached within 5--10 iterations, and the final $\sigma$ is the estimated precision for the IWC measurements.
       \item Interpolate the final $\sigma$ and $\mu$ to the latitude of each measurement, and subtract $\mu$ from IWC for each measurement.
-      \item Finally, apply the 3$\sigma$ threshold to determine if an IWC measurement is statistically significant. In other words, it must have $\text{IWC} > \mu + 3\sigma$ in order to be considered as a significant cloud hit. The $3\sigma$ threshold is needed for cloud detection since a small percentage of clear-sky residual noise can result in a large percentage of ``false alarms'' in cloud detection.
+      \item Finally, apply the 3$\sigma$ threshold to determine if an IWC measurement is statistically significant. In other words, it must have $\text{IWC} > \mu + 3\sigma$ in order to be considered as a significant cloud hit (where $\mu$ and $\sigma$ are those resulting from step~1, i.e., computed excluding the identified rejected outliers) . The $3\sigma$ threshold is needed for cloud detection since a small percentage of clear-sky residual noise can result in a large percentage of ``false alarms'' in cloud detection.
     \end{enumerate}
 \end{description}
 
@@ -39,7 +39,7 @@ At wintertime mid-to-high latitudes, strong stratospheric gravity waves may indu
 
 \subsection{Comparisons with other datasets}
 
-Scatter plots of \thisv vs v2.2 IWC show mean biases of less than 10\% in the pressure range 215--83\,hPa and histograms show that the random noise in \thisv IWC is generally larger than in v2.2 (see Figure~\ref{fig:IWC} and Table~\ref{tab:IWCSummary}). However, in localized regions, there can be substantial differences in IWC values between these versions that are driven by the reaction of the IWC retrieval to the changes in \thisv UTLS H\cs2O. These effects are largest at pressures of 215~hPa and higher and have been verified by examining the negative correlations between the changes in H\cs2O and IWC.
+Scatter plots of \thisv vs v2.2 IWC show mean biases of less than 10\% in the pressure range 215--83\,hPa and histograms show that the random noise in \thisv IWC is generally larger than in v2.2 (see Figure~\ref{fig:IWC} and Table~\ref{tab:IWCSummary}). However, in localized regions, there can be substantial differences in IWC values between these versions that are driven by the reaction of the IWC retrieval to the changes in \thisv UTLS H\cs2O. These effects are largest at pressures of 215\,hPa and greater, and have been verified by examining the negative correlations between the changes in H\cs2O and IWC.
 
 Apart from the differences noted above, the MLS \thisv IWC is similar to the MLS v2.2 product described and validated in \citet{WuEtal:2008}. A revised validation paper for IWC is not planned in the near future and users are encouraged to read \citet{WuEtal:2008} for more information.
 
