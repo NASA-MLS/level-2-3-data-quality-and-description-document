@@ -3,14 +3,14 @@
   \item[Contact:] Michael J. Schwartz, \email{Michael.J.Schwartz@jpl.nasa.gov}}
 \subsection{Introduction}
 
- MLS temperature is retrieved primarily from bands near O\cs2 spectral lines at 118\,GHz and 239\,GHz that are measured with MLS radiometers R1A/B and R3, respectively. The isotopic 239\,GHz line is the primary source of temperature information in the troposphere, while the 118\,GHz line is the primary source of temperature in the stratosphere and above. \thisv algorithms have been
+ MLS temperature is retrieved primarily from bands near O\cs2 spectral lines at 118\,GHz and 239\,GHz that are measured with MLS radiometers R1A/B and R3, respectively. The isotopic 239\,GHz line is the primary source of temperature information in the troposphere, while the 118\,GHz line is the primary source of temperature in the stratosphere and above. 
  
- The MLS \thisv temperature product is nearly identical to the \prevv\CheckThis product and is generally similar to the v3.3 product and to the v2.2 product that is described in~\citet{SchwartzEtal:2008:Validation}.
+ The MLS \thisv temperature product substantially improves upon the \prevv product in the mid and upper stratosphere and lower mesosphere, with a reduction of vertical oscillations in the stratosphere and a significant improvement in vertical resolution at these levels. In the upper troposphere and in the upper mesophere and above, the \thisv product is very similar that of \prevv, and both are generally similar to the v3.3 product and to the v2.2 product that is described in~\citet{SchwartzEtal:2008:Validation}.
  
- MLS \thisv\CheckThis temperature has an approximately $-1\,$K bias with respect to correlative measurements in the troposphere and stratosphere, with 2--3\,K peak-to-peak additional systematic vertical structure. Table~\ref{tab:TemperatureSummary} summarizes the measurement precision, resolution, and modeled and observed biases. The following sections provide details.
+ MLS \thisv temperature has an approximately $-1\,$K bias with respect to correlative measurements in the troposphere and lower stratosphere. Table~\ref{tab:TemperatureSummary} summarizes the measurement precision, resolution, and modeled and observed biases. The following sections provide details.
 
-\subsection{Differences between \thisv\CheckThis and \prevv}
-
+\subsection{Differences between \thisv and \prevv}
+The most significant differences between the \thisv and \prevv Temperature products result from shifts of the filter positions of the 25-channel filterbank (band~1) htat is centered on the 118.75~GHz O\sc2 line.
 Mean differences between \thisv temperature and \prevv temperature are typically less than 1\,K, in the although vertically oscillating bias structure  can be as large as $\pm$0.8\,K. Temperature \prevv\CheckThis temperature
 
  The \thisv temperature retrieval uses Goddard Earth Observing System for Instrument Teams (GEOS-IT) which is GEOS-5.29.4 as it \emph{a priori} in the upper troposphere and stratosphere, replacing the GEOS-5 ``Forward Processing for Instrument Teams'' \href{https://gmao.gsfc.nasa.gov/products/ documents/GEOS_5_FPIT_File_Specification_ON02_v1_2.pdf}{(FP-IT)} used as \emph{a priori} in \prevv. For both products, the same climatology is used above 1\,hPa.

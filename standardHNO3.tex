@@ -6,7 +6,7 @@
 
 \subsection{Introduction}
 
-The standard \nitac product is a hybrid constructed by merging retrievals based on radiances from different radiometers: at pressures equal to or greater than 22\,hPa, the standard product is derived from the \mbox{240-GHz} retrievals, whereas above that level (i.e., at lesser pressures), it is derived from the \mbox{190-GHz} retrievals. Consequently, the intermittent operation of the \mbox{190-GHz} receiver since May 2024 has affected the availability of \nitac data in the middle and upper stratosphere. The quality and reliability of the Aura MLS v2.2 \nitac measurements were assessed in detail by \citet{SanteeEtal:2007:HNO3}. V3.3\emph{x}/v3.4\emph{x} \nitac was greatly improved over that in v2.2; in particular, a low bias through much of the stratosphere (especially evident at pressures greater than or equal to 100\,hPa) was largely eliminated. However, the v3.3\emph{x}/v3.4\emph{x} \mbox{240-GHz} \nitac was adversely impacted by clouds \citep{EOSMLSV33V34Quality}, leading to a noisy \nitac product in the upper troposphere / lower stratosphere (UTLS). The adverse cloud impacts were substantially mitigated in v4.2\emph{x} \citep{EOSMLSV4Quality}. For the most part, \nitac mixing ratios did not change dramatically in \prevv, nor have they changed substantially in \thisv. A summary of the estimated precision, resolution (vertical and horizontal), and systematic uncertainty of the \thisv \nitac measurements as a function of altitude is given in Table~\ref{tab:HNO3Summary}.
+The standard \nitac product is a hybrid constructed by merging retrievals based on radiances from different radiometers: at pressures equal to or greater than 22\,hPa, the standard product is derived from the \mbox{240-GHz} retrievals, whereas above that level (i.e., at lesser pressures), it is derived from the \mbox{190-GHz} retrievals. Consequently, the intermittent operation of the \mbox{190-GHz} receiver since May 2024 (see Section~\ref{sec:R2DutyCycling}) has affected the availability of \nitac data in the middle and upper stratosphere. The quality and reliability of the Aura MLS v2.2 \nitac measurements were assessed in detail by \citet{SanteeEtal:2007:HNO3}. V3.3\emph{x}/v3.4\emph{x} \nitac was greatly improved over that in v2.2; in particular, a low bias through much of the stratosphere (especially evident at pressures greater than or equal to 100\,hPa) was largely eliminated. However, the v3.3\emph{x}/v3.4\emph{x} \mbox{240-GHz} \nitac was adversely impacted by clouds \citep{EOSMLSV33V34Quality}, leading to a noisy \nitac product in the upper troposphere / lower stratosphere (UTLS). The adverse cloud impacts were substantially mitigated in v4.2\emph{x} \citep{EOSMLSV4Quality}. For the most part, \nitac mixing ratios did not change dramatically in \prevv, nor have they changed substantially in \thisv. A summary of the estimated precision, resolution (vertical and horizontal), and systematic uncertainty of the \thisv \nitac measurements as a function of altitude is given in Table~\ref{tab:HNO3Summary}.
 
 \subsection{Differences between \prevv and \thisv}
 
@@ -17,7 +17,7 @@ Mean profiles computed from measurements taken during the ascending (mainly dayt
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2019d349.pdf}
-    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2020d015}
+    \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2020d015.pdf}
     \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2020d136.pdf}
     \includegraphics[width=0.48\linewidth]{figures/Zm_HNO3_2020d197.pdf}
   \end{center}
@@ -35,15 +35,15 @@ Mean profiles computed from measurements taken during the ascending (mainly dayt
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_NHPolar}\hfill
+    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_NHPolar.pdf}\hfill
     \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d197_NHPolar.pdf}
   \end{center}
   \begin{center}  
-    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_Tropical}\hfill
+    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_Tropical.pdf}\hfill
     \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d197_Tropical.pdf}
   \end{center}
   \begin{center}
-    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_SHPolar}\hfill
+    \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d015_SHPolar.pdf}\hfill
     \includegraphics[width=0.49\linewidth]{figures/meanprofcomparison_HNO3_2020d197_SHPolar.pdf}
   \end{center}
   \caption{MLS \thisv (dark colors) and \prevv (light colors) profiles of \texttt{HNO3-240} (blues) and \texttt{HNO3-190} (reds) averaged over the Northern Hemisphere polar (top set), tropical (middle set), and Southern Hemisphere polar (bottom set) regions for a representative day during winter in the Northern (left side) and Southern (right side) Hemispheres. Each set of plots contains four panels, comparing \thisv and \prevv \texttt{HNO3-240} retrievals, \thisv and \prevv \texttt{HNO3-190} retrievals, \prevv \texttt{HNO3-240} and \texttt{HNO3-190} retrievals, and \thisv \texttt{HNO3-240} and \texttt{HNO3-190} retrievals. Solid lines show ascending (mainly daytime) and dashed lines show descending (mainly nighttime) averages. No quality screening of the data has been performed. For completeness, full profiles are shown in all panels, but the standard \nitac product is derived from the \texttt{HNO3-240} retrievals at and at pressures greater than 22\,hPa (marked by the horizontal black line) and from the \texttt{HNO3-190} retrievals at lower pressures.}

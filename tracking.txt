@@ -34,6 +34,8 @@ Accepted Michelle's changes.  Work needed to ensure that bias file is indeed onl
 
 ------------------ HCN
 
+Accepted Hugh's edits. Just had a few minor comments.
+
 ------------------ HNO3
 
 ------------------- HO2
