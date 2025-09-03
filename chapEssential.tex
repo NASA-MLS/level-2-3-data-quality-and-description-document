@@ -163,7 +163,7 @@ In most cases, consideration of the \mbox{1-D} vertical averaging kernels is lik
 \mycomment{Double check the array ordering discusion for numpy} The \mbox{2-D} averaging kernels give weights for every level of every nearby (within $\pm5$) profile of truth, so in a row-major language are $11 \times N\cs{lev} \times N\cs{lev}$ and in column-major language will be $N\cs{lev} \times N\cs{lev} \times 11$. To perform the convolution, blocks of eleven adjacent truth and \emph{a priori} profiles centered on the retrieved profile location are unwrapped into length $N\cs{lev} \times 11$ vectors, $\b{X}$ and $\b{X}_a$. The \mbox{2-D} averaging kernel, $\b{A}\cs{2D}$, is reshaped into a two dimensional matrix $N\cs{lev} \times \left(N\cs{lev} \times 11\right)$ and the retrieved state is estimated as
 \begin{equation}
   \hat{\b{x}} = \b{x}_a + \b{A}\cs{2D}\left[\b{X}-\b{X}_a\right].
-  \label{eqn:AVKApplication}
+  \label{eqn:AVKApplication2D}
 \end{equation}
 
 Vertical averaging kernels for each product for 70\degsym{}N and the equator are also available as text files, in the format used for previous MLS releases. These files are named according to
