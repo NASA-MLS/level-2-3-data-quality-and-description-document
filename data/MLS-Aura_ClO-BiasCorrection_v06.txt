@@ -1,0 +1,49 @@
+#################################################################################
+# File contains MLS Version v6 ClO bias correction values (NOT scaled to ppbv)
+# These bias correction values pertain ONLY to MLS v06.0x ClO measurements
+# Each row is a different latitude in degrees
+# Each column is a different MLS retrieval pressure surface in hPa
+# The bad/missing data value is:      -999.990
+# The bias values need to be interpolated to the MLS L2 measurement locations
+# Correct for the bias by subtracting these values from MLS L2 ClO data values
+# Perform the bias correction *before* interpolating to a different vertical grid
+# See the v06.0x MLS Data Quality Document [Livesey et al., 2025] for more details
+#################################################################################
+35 Number of Latitudes
+ 3 Number of Surfaces
+         146.78    100.00     68.13 
+-85.0   -999.99   -999.99   -999.99
+-80.0 -4.76E-11 -7.74E-11 -5.78E-11
+-75.0 -8.27E-11 -9.41E-11 -7.15E-11
+-70.0 -1.02E-10 -9.69E-11 -7.54E-11
+-65.0 -1.08E-10 -1.00E-10 -7.54E-11
+-60.0 -8.31E-11 -1.13E-10 -7.66E-11
+-55.0 -4.60E-11 -1.20E-10 -7.42E-11
+-50.0 -1.21E-11 -1.17E-10 -7.25E-11
+-45.0  1.97E-11 -1.18E-10 -7.40E-11
+-40.0  5.58E-11 -1.11E-10 -7.04E-11
+-35.0  8.58E-11 -9.67E-11 -6.58E-11
+-30.0  1.47E-10 -8.22E-11 -6.35E-11
+-25.0  1.81E-10 -7.02E-11 -5.53E-11
+-20.0  2.31E-10 -4.28E-11 -5.03E-11
+-15.0  3.03E-10 -1.99E-11 -4.81E-11
+-10.0  3.48E-10  2.61E-12 -4.62E-11
+ -5.0  3.74E-10  1.32E-11 -4.74E-11
+  0.0  3.87E-10  6.97E-12 -4.91E-11
+  5.0  3.87E-10  6.78E-12 -4.89E-11
+ 10.0  3.73E-10 -8.23E-12 -5.12E-11
+ 15.0  3.31E-10 -2.93E-11 -5.21E-11
+ 20.0  2.73E-10 -4.65E-11 -5.44E-11
+ 25.0  2.11E-10 -7.16E-11 -5.99E-11
+ 30.0  1.52E-10 -9.52E-11 -6.72E-11
+ 35.0  9.84E-11 -1.09E-10 -7.71E-11
+ 40.0  5.14E-11 -1.30E-10 -8.46E-11
+ 45.0  2.03E-11 -1.32E-10 -8.45E-11
+ 50.0  5.20E-12 -1.37E-10 -8.24E-11
+ 55.0 -1.73E-11 -1.42E-10 -8.25E-11
+ 60.0 -3.62E-11 -1.30E-10 -8.08E-11
+ 65.0 -4.34E-11 -1.21E-10 -7.58E-11
+ 70.0 -5.33E-11 -1.16E-10 -7.15E-11
+ 75.0 -5.09E-11 -1.02E-10 -6.48E-11
+ 80.0 -5.14E-11 -9.37E-11 -5.64E-11
+ 85.0   -999.99   -999.99   -999.99
