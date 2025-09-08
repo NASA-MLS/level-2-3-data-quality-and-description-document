@@ -20,10 +20,10 @@ A defect in v4.2x and prior versions was that MLS H\cs2O exhibited a rather low 
 
 The \prevv algorithms included a correction for these issues, including a time-dependent sideband fraction estimate derived internally from the MLS observations (with atmospheric reanalysis temperatures being the only external input).  Importantly, as described in more detail in \citet{LiveseyEtal:2021}, this correction makes no reference to correlative measurements of stratospheric water vapor from satellite or ballon observations, although improved agreement with such correlative measurements builds confidence in the validity of these corrections.
 
-These same corrections are applied in a more-or-less identical manner in \thisv, with one minor difference in that tangent pressure is no longer retrieved from the H\cs2O linewidth, rather the tangent pressure estimated from the O\cs2 measurements in an earlier phase of processing is used. Two reasons for this change are:
+These same corrections are applied in a more-or-less identical manner in \thisv.  However, one difference between \prev and \thisv is that tangent pressure is no longer retrieved from the H\cs2O linewidth in \thisv. Instead, the tangent pressure estimated from the O\cs2 measurements in an earlier phase of processing is used.  This change was enacted because:
 \begin{enumerate}
-\item there is a small drift between the tangent pressures retrieved from the CorePlusR3 and CorePlusR2 phases of 20\,m over the mission lifetime, and
-\item during the Hunga event, the Ptan retrieval from CorePlusR2 (H\cs2O) failed forcing users to revert to v4.23 retrievals of H\cs2O in the vicinity of that event for a month after that event.
+\item there is a small drift, of around 20\,m over the mission lifetime, between the tangent pressures retrieved from the CorePlusR3 and CorePlusR2 phases, and
+\item in the immediate aftermath of the January 2022 Hunga eruption, the tangent pressure retrieval from CorePlusR2 (H\cs2O) failed, forcing users to revert to v4.23 retrievals of H\cs2O in the vicinity of that event for a month after that event.
 \end{enumerate}
 The cause for the 20\,m drift between the two tangent pressure estimates is not fully understood, but may originate from subtle aspects of the method used to estimate the 190-GHz sideband fraction drift in \prevv (which derives the correction using v4.2x data).  A new approach for estimating that was developed for \thisv (and for v5.04, which can no longer use v4.2x input data now MLS v4.2x processing is discontinued).  The differences in these two sideband drift estimates are at most 0.01\%, and impacts of this difference on the H\cs2O product can be considered negligible.
 
