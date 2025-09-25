@@ -143,55 +143,140 @@ pdfusetitle]{hyperref}
 % we include the section number in the page numbers for the appendices)
 \cftsetpnumwidth{8mm}
 %
-\makeatletter
-%
-\def\@makechapterhead#1{%
-  \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox[b]{\linewidth-2\fboxsep}{\flushright%
-      \color{ChapterColor}\LARGE\sffamily\bfseries
-      \ifnum \c@secnumdepth >\m@ne
-      \@chapapp{} \thechapter\\
-      \fi #1}}\nobreak\par}
-%
-\def\@makeschapterhead#1{%
-  \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox{\linewidth-2\fboxsep}{\flushright%
-      \color{ChapterColor}\LARGE\sffamily\bfseries #1}}\nobreak\par}
-%
-\renewcommand{\section}{\@startsection%
-  {section}%
-  {1}%
-  {0pt}%
-  {-4pt plus -2pt minus -3pt}%
-  {4pt plus 2pt minus 3pt}%
-  {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{topsectioncolor}\figureversion{tabular}}}%
-\renewcommand{\subsection}{\@startsection%
-  {subsection}%
-  {2}%
-  {0pt}%
-  {-2pt plus -1pt minus -2pt}%
-  {2pt plus 1pt minus 2pt}%
-  {\large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
-\renewcommand{\subsubsection}{\@startsection%
-  {subsubsection}%
-  {3}%
-  {0pt}%
-  {-0.1ex plus -0.1ex minus -0.1ex}%
-  {0.1ex plus 0.1ex minus 0.1ex}%
-  {\normalsize\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
-\renewcommand{\paragraph}{\@startsection%
-  {paragraph}%
-  {4}%
-  {0pt}%
-  {-0.1ex plus -0.1ex minus -0.1ex}%
-  {0.1ex plus 0.1ex minus 0.1ex}%
-  {\normalsize\sffamily\flushleft\color{SectionColor}\figureversion{tabular}}}%
-\renewcommand{\subparagraph}{\@startsection%
-  {subparagraph}%
-  {5}%
-  {0pt}%
-  {-0.1ex plus -0.1ex minus -0.1ex}%
-  {0.1ex plus 0.1ex minus 0.1ex}%
-  {\small\sffamily\itshape\flushleft\color{SectionColor}\figureversion{tabular}}}%
-\makeatother
+\usepackage[explicit]{titlesec}
+
+% ----- Public, appendix-aware “chapter app” without @-macros
+\newif\ifinappendix
+\inappendixfalse
+\pretocmd{\appendix}{\inappendixtrue}{}{}
+\newcommand{\ChapterHeadingName}{\ifinappendix \appendixname \else \chaptername \fi}
+
+% Chapter (numbered)
+\titleformat{\chapter}[display]
+  {\sffamily\bfseries\LARGE\color{ChapterColor}\filright}
+  {}% label built in the body
+  {0pt}
+  {%
+    \vspace*{-2.5em}%
+    \noindent
+    \colorbox{ChapterBackground}{%
+      \parbox[b]{\linewidth-2\fboxsep}{%
+        \filright
+        % Respect secnumdepth without \m@ne or \c@secnumdepth:
+        \ifnum\value{secnumdepth}>-1
+          \ChapterHeadingName\ \thechapter\\
+        \fi
+        #1%
+      }%
+    }%
+  }
+\titlespacing*{\chapter}{0pt}{0pt}{\baselineskip}
+% Spacing to mimic your glue (-2.5em already applied above)
+\titlespacing*{\chapter}{0pt}{0pt}{\baselineskip}
+
+% Chapter (unnumbered)
+\titleformat{name=\chapter,numberless}[display]
+  {\sffamily\bfseries\LARGE\color{ChapterColor}\filright}
+  {}{0pt}
+  {%
+    \vspace*{-2.5em}%
+    \noindent
+    \colorbox{ChapterBackground}{%
+      \parbox{\linewidth-2\fboxsep}{%
+        \filright #1%
+      }%
+    }%
+  }
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{\baselineskip}
+
+% Section
+\titleformat{\section}
+  {\Large\sffamily\bfseries\color{topsectioncolor}\figureversion{tabular}\raggedright}
+  {\thesection}{0.5em}{#1}
+\titlespacing*{\section}
+  {0pt}{4pt plus 2pt minus 3pt}{4pt plus 2pt minus 3pt}
+
+% Subsection
+\titleformat{\subsection}
+  {\large\sffamily\bfseries\color{SectionColor}\figureversion{tabular}\raggedright}
+  {\thesubsection}{0.5em}{#1}
+\titlespacing*{\subsection}
+  {0pt}{2pt plus 1pt minus 2pt}{2pt plus 1pt minus 2pt}
+
+% Subsubsection
+\titleformat{\subsubsection}
+  {\normalsize\sffamily\bfseries\color{SectionColor}\figureversion{tabular}\raggedright}
+  {\thesubsubsection}{0.5em}{#1}
+\titlespacing*{\subsubsection}
+  {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.1ex plus 0.1ex minus 0.1ex}
+
+% Paragraph (run-in head, unnumbered)
+% Keep hierarchy shallow by not numbering at this level:
+% \setcounter{secnumdepth}{3} (or lower) in your preamble if needed.
+\titleformat{\paragraph}[runin]
+  {\normalsize\sffamily\color{SectionColor}\figureversion{tabular}}
+  {}% empty label = no printed number
+  {0pt}
+  {#1:\ }% run-in delimiter
+\titlespacing*{\paragraph}
+  {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
+  
+% Subparagraph (run-in, italic)
+\titleformat{\subparagraph}[runin]
+  {\small\sffamily\itshape\color{SectionColor}\figureversion{tabular}}
+  {}{0pt}{#1\enspace}
+\titlespacing*{\subparagraph}
+  {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
+
+% \makeatletter
+% %
+% \def\@makechapterhead#1{%
+%   \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox[b]{\linewidth-2\fboxsep}{\flushright%
+%       \color{ChapterColor}\LARGE\sffamily\bfseries
+%       \ifnum \c@secnumdepth >\m@ne
+%       \@chapapp{} \thechapter\\
+%       \fi #1}}\nobreak\par}
+% %
+% \def\@makeschapterhead#1{%
+%   \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox{\linewidth-2\fboxsep}{\flushright%
+%       \color{ChapterColor}\LARGE\sffamily\bfseries #1}}\nobreak\par}
+% %
+% \renewcommand{\section}{\@startsection%
+%   {section}%
+%   {1}%
+%   {0pt}%
+%   {-4pt plus -2pt minus -3pt}%
+%   {4pt plus 2pt minus 3pt}%
+%   {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{topsectioncolor}\figureversion{tabular}}}%
+% \renewcommand{\subsection}{\@startsection%
+%   {subsection}%
+%   {2}%
+%   {0pt}%
+%   {-2pt plus -1pt minus -2pt}%
+%   {2pt plus 1pt minus 2pt}%
+%   {\large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+% \renewcommand{\subsubsection}{\@startsection%
+%   {subsubsection}%
+%   {3}%
+%   {0pt}%
+%   {-0.1ex plus -0.1ex minus -0.1ex}%
+%   {0.1ex plus 0.1ex minus 0.1ex}%
+%   {\normalsize\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
+% \renewcommand{\paragraph}{\@startsection%
+%   {paragraph}%
+%   {4}%
+%   {0pt}%
+%   {-0.1ex plus -0.1ex minus -0.1ex}%
+%   {0.1ex plus 0.1ex minus 0.1ex}%
+%   {\normalsize\sffamily\flushleft\color{SectionColor}\figureversion{tabular}}}%
+% \renewcommand{\subparagraph}{\@startsection%
+%   {subparagraph}%
+%   {5}%
+%   {0pt}%
+%   {-0.1ex plus -0.1ex minus -0.1ex}%
+%   {0.1ex plus 0.1ex minus 0.1ex}%
+%   {\small\sffamily\itshape\flushleft\color{SectionColor}\figureversion{tabular}}}%
+% \makeatother
 %
 % ------------------------------------- Other minutea
 %

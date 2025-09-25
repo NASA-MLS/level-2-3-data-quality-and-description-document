@@ -18,11 +18,18 @@ A subset of the information in those documents is also reported in a series of a
 
 \section{Overview of the MLS dataset and \thisv}
 
-\paragraph{Standard products} Chapter~\ref{chap:Results} describes the data quality for ``Standard'' products from the MLS instrument for \thisv. These are observations of vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN, CH\cs3OH, ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2, HOCl, N\cs2O, O\cs3, OH, and SO\cs2, along with temperature, geopotential height, relative humidity (deduced from the H\cs2O and temperature data), cloud ice water content and cloud ice water path, all described as functions of pressure. These profiles are mostly output on a grid that has a vertical spacing of six surfaces per decade change in pressure (\mytexttilde2.5\,km), thinning out to three surfaces per decade above 0.1\,hPa. Exceptions to this are water vapor, temperature, ozone and relative humidity, which are on a finer 12-per-decade grid from 1000\,hPa to 1\,hPa. Cloud ice water content is also reported on this fine grid, though these profiles do not extend to the stratosphere and mesosphere. The OH product maintains a six-per-decade grid spacing into the upper mesosphere. Horizontally, the profiles are spaced by 1.5\degsym\ great-circle angle along the orbit, which corresponds to about 160\,km along track. The true vertical and along-track horizontal resolution of the products is typically somewhat coarser than the reporting grid described here. The cross-track resolution of the MLS products is set by the horizontal width of the MLS antenna beam.  This  varies by observing frequency, but is typically of the order 5--10\,km \mycomment{Check this}.  For some of the products, the signal to noise ratio is too low to yield scientifically useful data from a single MLS profile observation. In these cases, some form of averaging (e.g.,\ weekly maps, monthly zonal means etc.) will be required to obtain more useful results.
+\subsection{Standard Level-2 products}
 
-\paragraph{Diagnostic products} In addition to these standard products, the algorithms also produce data for many ``diagnostic'' products. The bulk of these are similar to the standard products, in that they represent vertical profiles of retrieved species abundances. However, the information on these diagnostic products has typically been obtained from a different spectral region than that used for the standard products. These diagnostic products are not discussed in this document. Further information on these is available from the MLS science team.
+Chapter~\ref{chap:Results} describes the data quality for ``Standard'' products from the MLS instrument for \thisv. These are observations of vertical profiles of the abundance of BrO, CH\cs3Cl, CH\cs3CN, CH\cs3OH, ClO, CO, H\cs2O, HCl, HCN, HNO\cs3, HO\cs2, HOCl, N\cs2O, O\cs3, OH, and SO\cs2, along with temperature, geopotential height, relative humidity (deduced from the H\cs2O and temperature data), cloud ice water content and cloud ice water path, all described as functions of pressure. These profiles are mostly output on a grid that has a vertical spacing of six surfaces per decade change in pressure (\mytexttilde2.5\,km), thinning out to three surfaces per decade above 0.1\,hPa. Exceptions to this are water vapor, temperature, ozone and relative humidity, which are on a finer 12-per-decade grid from 1000\,hPa to 1\,hPa. Cloud ice water content is also reported on this fine grid, though these profiles do not extend to the stratosphere and mesosphere. The OH product maintains a six-per-decade grid spacing into the upper mesosphere. Horizontally, the profiles are spaced by 1.5\degsym\ great-circle angle along the orbit, which corresponds to about 160\,km along track. The true vertical and along-track horizontal resolution of the products is typically somewhat coarser than the reporting grid described here. The cross-track resolution of the MLS products is set by the horizontal width of the MLS antenna beam.  This  varies by observing frequency, but is typically of the order 5--10\,km \mycomment{Check this}.  For some of the products, the signal to noise ratio is too low to yield scientifically useful data from a single MLS profile observation. In these cases, some form of averaging (e.g.,\ weekly maps, monthly zonal means etc.) will be required to obtain more useful results. 
 
-\paragraph{Different versions within the \thisv family} At the time of writing, the current version of the data processing software is version~6.02, producing files labeled \texttt{v06-02}. Any minor updates for bug fixes (typically related to a failure to process a specific day within the record, and having no impact on other days), or to reflect changes in input data such as the analysis fields used as \emph{a priori} information for temperature will be referred to as v6.03, v6.04, etc. This version of the document is intended to be applicable to any v6.0\emph{x} data files (we note that the bulk of the MLS 20-plus-year data record were processed with the earlier 6.01 software).  More substantial changes at a later date (e.g., due to a change in the MLS instrument performance) may necessitate a larger change in the data processing software and/or its configuration. These will be numbered v6.1\emph{x} etc., and will be accompanied by an updated version of this document (though not necessarily immediately, depending on the circumstances dictating the update).
+% Comment to Nathaniel.  This feels like a good place to have the "screened" L2GP products when avaialble.
+
+\subsection{Diagnostic products Level-2 products} In addition to these standard products, the algorithms also produce data for many ``diagnostic'' products. The bulk of these are similar to the standard products, in that they represent vertical profiles of retrieved species abundances. However, the information on these diagnostic products has typically been obtained from a different spectral region than that used for the standard products. These diagnostic products are not discussed in this document. Further information on these is available from the MLS science team.
+
+\subsection{Level-3 products}
+\mycomment{Write something here}
+
+\subsection{Different versions within the \thisv family} At the time of writing, the current version of the data processing software is version~6.02, producing files labeled \texttt{v06-02}. Any minor updates for bug fixes (typically related to a failure to process a specific day within the record, and having no impact on other days), or to reflect changes in input data such as the analysis fields used as \emph{a priori} information for temperature will be referred to as v6.03, v6.04, etc. This version of the document is intended to be applicable to any v6.0\emph{x} data files (we note that the bulk of the MLS 20-plus-year data record were processed with the earlier 6.01 software).  More substantial changes at a later date (e.g., due to a change in the MLS instrument performance) may necessitate a larger change in the data processing software and/or its configuration. These will be numbered v6.1\emph{x} etc., and will be accompanied by an updated version of this document (though not necessarily immediately, depending on the circumstances dictating the update).
 
 \section{MLS data validation status}
 
@@ -68,9 +75,11 @@ whereas, in \thisv, these flags should be interpreted as:
 In addition, some new cloud diagnostics products were added in \thisv, which are described in \mycomment{Add material and refer to it}.
 
 
-\section{Aura MLS file formats, contents, and quality information}
+\section{Aura MLS Level-2 data file formats, contents, and quality information}
 \label{sec:FilesAndFormats}
 \label{sec:NegativePrecision}
+
+% TODO: When we've completed the "Screened" files, we should update this, perhaps splitting it into two sections, one for screeneed, one for unscreened? (Which order?)
 
 All the MLS Level~2 data files described here are available from the NASA Goddard Space Flight Center Earth Science Data and Information Services Center (GES-DISC, see \url{https://disc.gsfc.nasa.gov/}). The standard and diagnostic products are stored in the EOS MLS \emph{Level 2 Geophysical Product} (L2GP) files. These are standard HDF-EOS (version~5) files containing swaths in the Aura-wide standard format. For more information on this format see \citet{AuraFileConventions}. A sample reading function for the Interactive Data Language (IDL, version 6.1 or later required), known as \texttt{readl2gp.pro}, may have been supplied with the data and is available from \url{https://mls.jpl.nasa.gov/data/readers.php} \mycomment{That link doesn't work} A reader for MATLAB (\texttt{readL2GP.m}) is also available at the same site. Standard HDF and NetCDF readers (e.g., in Python, Julia, etc.) are able to read the files as regular HDF-5/NetCDF-4 files (the HDF-EOS ``swaths'' discussed below can be found in the \texttt{HDFEOS/SWATHS} group).
 
@@ -80,7 +89,7 @@ The standard products are stored in files named according to the convention
 \end{quote}
 where \verb+<product>+ is \texttt{BrO}, \texttt{O3}, \texttt{Temperature}, etc.  The files are produced on a one-day granularity (midnight to midnight, universal time), and named according to the observation date where \verb+<yyyy>+ is the four digit calendar year and \verb+<ddd>+ is the day number in that year (\texttt{001} = 1 January).
 
-These files contain the corresponding standard product in an HDF-EOS swath given the same name as the product, e.g., ``\texttt{H2O}''. With the exception of IWC, each file also contains the \emph{a priori} values for that product inside a second swath whose name ends with the substring ``\texttt{-APriori}''. HNO\cs3, IWC, O3, RHI, and Temperature files are special in that they carry extra standard or non-standard products, as detailed in Table~\ref{tab:SwathExtras}.
+These files contain the corresponding standard product in an HDF-EOS swath given the same name as the product, e.g., ``\texttt{H2O}''. With the exception of the \texttt{IWC}, and \texttt{CloudTopPressure} files, each file also contains the \emph{a priori} values for that product inside a second swath whose name ends with the substring ``\texttt{-APriori}''. HNO\cs3, IWC, O3, RHI, and Temperature files are special in that they carry extra standard or non-standard products, as detailed in Table~\ref{tab:SwathExtras}. Given that some L2GP files contain multiple swaths, it is important to ensure that the correct swath in the \texttt{L2GP} files is requested from the file. In the case where the ``default'' swath is requested (i.e., no swath name is supplied) most HDF software will access the one whose name falls earliest in ASCII order. This generally results in the desired result for all products. For example, for temperature, the standard ``\texttt{Temperature}'' product will be read in preference to the ``\texttt{WMOTPPressure}'' swath that gives tropopause pressures.
 
 \begin{table}
   \caption{Additional swaths in specific standard product
@@ -103,9 +112,7 @@ These files contain the corresponding standard product in an HDF-EOS swath given
   \end{center}
 \end{table}
 
-The files contain an HDF-EOS swath given the same name as the product. In addition, the standard O\cs3 product files also contain swaths describing column abundances, and the standard Temperature file contains additional swaths describing tropopause pressure. As some L2GP files contain multiple swaths, it is important to ensure that the correct swath in the \texttt{L2GP} files is requested from the file. In the case where the ``default'' swath is requested (i.e., no swath name is supplied) most HDF software will access the one whose name falls earliest in ASCII order. This generally results in the desired result for all products. For example, for temperature, the standard ``\texttt{Temperature}'' product will be read in preference to the ``\texttt{WMOTPPressure}'' swath that gives tropopause pressures.
-
-Each swath contains data fields \texttt{L2gpValue} and \texttt{L2gpPrecision}, which describe the value and precision (reported at 1$\sigma$) of the data, respectively. Data points for which \texttt{L2gpPrecision} is set negative or zero \emph{should not be used}, as this flags that the resulting precision is worse than 50\% of the \emph{a priori} precision, indicating that instrument and/or the algorithms have failed to provide enough useful information for that point. In addition to these fields, fields such as \texttt{latitude} etc.\ describe geolocation information. The field \texttt{time} describes time, in the EOS standard manner, as the number of seconds (including leap seconds) elapsed since midnight universal time on 1~January 1993.
+Each swath contains data fields \texttt{L2gpValue} and \texttt{L2gpPrecision}, which describe the value and precision (reported at 1$\sigma$) of the data, respectively. Data points for which \texttt{L2gpPrecision} is set negative or zero \emph{should not be used}, as this flags that the resulting precision is worse than 50\% of the \emph{a priori} precision, indicating that instrument and/or the algorithms have failed to provide enough useful information for that point (the rare exceptions to this rule are noted on a product-by-product basis in Chapter~\ref{chap:Results}). In addition to these fields, fields such as \texttt{latitude} etc.\ describe geolocation information. The field \texttt{time} describes time, in the EOS standard manner, as the number of seconds (including leap seconds) elapsed since midnight universal time on 1~January 1993.
 
 The \texttt{L2GP-DGG} (``Diagnostic products on a Geophysical Grid'') file contains a large number of additional swath quantities. The vast majority of these are MLS diagnostic products that will be of little interest to most data users. A few that may be of interest to some users are detailed below.
 
@@ -148,7 +155,7 @@ The MLS retrieval algorithms are ``tomographic'' in nature, in that they use inf
 
 The MLS averaging kernels typically change little with latitude, season, or atmospheric state. Accordingly, two representative kernels are shown for each product, one for the tropics and one for polar winter conditions. These representative kernels are available to users, as described below. If variability in the averaging kernels is a concern, comparison of $\hat{\b{x}}$ profiles obtained using each of the two kernels (typically representing extreme cases) can provide a quantitative estimate of the magnitude of differences introduced by kernel variations.
 
-Representative vertical, horizontal and \mbox{2-D} averaging kernels have been archived for each MLS standard product on the MLS website, and are also attached to this document (see Appendix~\ref{app:Embedded}). Two sets of kernels are provided, each comprising five files corresponding to five broad latitude bands. One set contains \mbox{1-D} (horizontal and vertical) kernels, the other the full \mbox{2-D} kernels, making ten files in all. Each file contains kernels (either \mbox{1-D} or \mbox{2-D}) for each of the MLS standard products for the given latitude band. Again, as the averaging kernels vary little with latitude, a file for a single latitude will generally be globally representative. These kernels were calculated from simulated MLS data for a single day (based on output from the SLIMCAT model for February 20, 1996). The resolution of most MLS products varies little seasonally, as can be inferred from the minimal hemispheric variability within the single day used to compute the kernels. These files can be read as either NetCDF or HDF-5 files, for which interfaces exist in many high-level analysis environments such as IDL, Python and Matlab. These files contain multi-dimensional arrays, with dimensions named \texttt{RetrievalLevel}, \texttt{TruthLevel} and \texttt{TruthPhi}. The latter is the along-track horizontal coordinate used in the MLS retrievals, within which profiles are spaced 1.5\degsym{} great circle distance apart.
+Representative vertical, horizontal and \mbox{2-D} averaging kernels have been archived for each MLS standard product on the MLS website, and are also attached to this document (see Appendix~\ref{app:Embedded}). Two sets of kernels are provided, each comprising five files corresponding to five broad latitude bands. One set contains \mbox{1-D} (horizontal and vertical) kernels, the other the full \mbox{2-D} kernels, making ten files in all. Each file contains kernels (either \mbox{1-D} or \mbox{2-D}) for each of the MLS standard products for the given latitude band. Again, as the averaging kernels vary little with latitude, a file for a single latitude will generally be globally representative. These kernels were calculated from simulated MLS data for a single day (based on output from the SLIMCAT model for February 20, 1996). The resolution of most MLS products varies little seasonally, as can be inferred from the minimal hemispheric variability within the single day used to compute the kernels. These files can be read as either NetCDF or HDF-5 files, for which interfaces exist in many high-level analysis environments such as IDL, Python, and Matlab. These files contain multi-dimensional arrays, with dimensions named \texttt{RetrievalLevel}, \texttt{TruthLevel} and \texttt{TruthPhi}. The latter is the along-track horizontal coordinate used in the MLS retrievals, within which profiles are spaced 1.5\degsym{} great circle distance apart.
 
 In most cases, consideration of the \mbox{1-D} vertical averaging kernels is likely sufficient to quantify the impact of the finite MLS resolution on a scientific study. In a column-major language (e.g., Matlab, IDL, Fortran), the \mbox{1-D} vertical $\b{A}$ matrix will be dimensioned [\texttt{RetrievalLevel}, \texttt{TruthLevel}], and the truth profiles should be multiplied by averaging kernels from the left (as in Equation~\ref{eqn:AVKApplication}, above). In a row-major language (e.g., C, Numpy), the order of dimensions in $\b{A}$ is reversed, and the averaging kernels should be multiplied by truth from the right. Horizontal averaging kernels (\texttt{avkh}), have size $N\cs{lev} \times 11$ in a column major and $11 \times N\cs{lev}$ in a row major environment, where $N\cs{lev}$ is 55 for a high-resolution MLS product (Temperature, GPH, water vapor, and ozone), and 37 for most other products. The side on which \texttt{avkh} has the 11-element dimension is the side against which truth profiles should be multiplied for all horizontal averaging kernels.
 
@@ -162,12 +169,7 @@ Vertical averaging kernels for each product for 70\degsym{}N and the equator are
 \begin{quote}
   \verb+MLS-Aura_L2AK-<product>-<case>_v06-01_0000d000.txt+
 \end{quote}
-where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and
-70\degsym{}N, respectively (or \verb+Day+ and \verb+Night+ for OH, see
-Section~\ref{sec:StandardOH}).  These files, for all products, are
-available as a single tar archive from the MLS web site at
-\url{https://mls.jpl.nasa.gov/eos-aura-mls/data-products/averaging-kernels/}.
-\mycomment{Make sure both the 2D and 1D files are available on the MLS website, and that the link is correct.}
+where \verb+<case>+ is \verb+Eq+ or \verb+70N+ for the equator and 70\degsym{}N, respectively (or \verb+Day+ and \verb+Night+ for OH, see Section~\ref{sec:StandardOH}).  These files, for all products, are available as a single tar archive from the MLS web site at \url{https://mls.jpl.nasa.gov/eos-aura-mls/data-products/averaging-kernels/}.  \mycomment{Make sure both the 2D and 1D files are available on the MLS website, and that the link is correct.}
 
 These files contain comment lines (prefixed with a semicolon) describing their format. The first non-comment line gives the name of the product and the number of levels in the vertical profile. A list of the pressure levels in the profile (matching those in the L2GP files) is then given, followed by all the values of the averaging kernel matrix, with the row index (the level in the retrieved profile) varying most rapidly.
 
@@ -186,10 +188,7 @@ Consider a high resolution profile described by the vector $\b{z}_h$, and a lowe
   \b{x}_h = \b{H}\b{x}_l
   \label{eqn:EtaForward}
 \end{equation}
-where $\b{x}_h$ is the high resolution interpolation of the low
-resolution $\b{x}_l$.  It can be shown that the best estimate profile
-that an idealized MLS instrument could obtain, were the true atmosphere
-in the state described by $\b{z}_h$, is given by
+where $\b{x}_h$ is the high resolution interpolation of the low resolution $\b{x}_l$.  It can be shown that the best estimate profile that an idealized MLS instrument could obtain, were the true atmosphere in the state described by $\b{z}_h$, is given by
 \begin{equation}
   \b{z}_l = \b{W}\b{z}_h
   \label{eqn:EtaBackward}
@@ -198,19 +197,11 @@ where
 \begin{equation}
   \b{W} = \left[ \b{H}\T \b{H} \right]\inv \b{H}\T
 \end{equation}
-In other words, $\b{z}_l$ represents a least squares linear fit to
-$\b{z}_h$. This operation is illustrated by an example in
-Figure~\ref{fig:BasisExample}.  Precision uncertainty on high resolution
-measurements may be similarly converted to the MLS grid by applying
+In other words, $\b{z}_l$ represents a least squares linear fit to $\b{z}_h$. This operation is illustrated by an example in Figure~\ref{fig:BasisExample}.  Precision uncertainty on high resolution measurements may be similarly converted to the MLS grid by applying
 \begin{equation}
   \b{S}_l = \b{W} \b{S}_h \b{W}\T
 \end{equation}
-where $\b{S}_h$ is the covariance of the original high resolution data
-(typically diagonal) and $\b{S}_l$ is its low resolution representation
-on the MLS pressure grid.  Following this transfer of the
-high-resolution profile onto the state vector vertical grid, the profile
-can be multiplied by the averaging kernels, as described above,
-according to equation~\ref{eqn:AVKApplication}.
+where $\b{S}_h$ is the covariance of the original high resolution data (typically diagonal) and $\b{S}_l$ is its low resolution representation on the MLS pressure grid.  Following this transfer of the high-resolution profile onto the state vector vertical grid, the profile can be multiplied by the averaging kernels, as described above, according to equation~\ref{eqn:AVKApplication}.
 
 In some cases, the application of this least-squares ``smoothing'' is as important, if not more important, than the application of the averaging kernels described above. This is particularly true when the averaging kernels are close to delta functions, indicating that the vertical resolution is comparable to the retrieved profile level spacing.
 
@@ -218,20 +209,7 @@ In the case of water vapor, where a logarithmic vertical basis is used, the $\b{
 
 \begin{figure}[tb]
   \includegraphics[width=\textwidth]{figures/basisexample}
-  \caption{Comparisons of MLS (v1.5) N\cs2O observations with in-situ
-    balloon data (courtesy of J.~Elkins).  The raw balloon data
-    ($\b{z}_h$) are shown as the grey shaded region (shading indicates
-    precision).  A coincident MLS profile ($\b{x}_l$) is shown in red with
-    the red error bars indicating precision.  The red dots show the MLS
-    data linearly interpolated to the balloon pressures using the $\b{H}$
-    matrix (i.e., $\b{x}_h$ from equation~\ref{eqn:EtaForward}).  The
-    black line shows the ``least squares'' interpolation of the balloon data
-    onto the MLS grid using the $\b{W}$ matrix as described in the text
-    (i.e., $\b{z}_l$ from equation~\ref{eqn:EtaBackward}).  The black line
-    therefore represents the closest possible match at this resolution to
-    the original grey line, and is the appropriate quantity to compare to
-    the red MLS profile, and to be multiplied by the averaging kernels for
-    formal comparison.}
+  \caption{Comparisons of MLS (v1.5) N\cs2O observations with in-situ     balloon data (courtesy of J.~Elkins).  The raw balloon data  ($\b{z}_h$) are shown as the grey shaded region (shading indicates precision).  A coincident MLS profile ($\b{x}_l$) is shown in red with the red error bars indicating precision.  The red dots show the MLS data linearly interpolated to the balloon pressures using the $\b{H}$ matrix (i.e., $\b{x}_h$ from equation~\ref{eqn:EtaForward}).  The black line shows the ``least squares'' interpolation of the balloon data onto the MLS grid using the $\b{W}$ matrix as described in the text (i.e., $\b{z}_l$ from equation~\ref{eqn:EtaBackward}).  The black line therefore represents the closest possible match at this resolution to the original grey line, and is the appropriate quantity to compare to the red MLS profile, and to be multiplied by the averaging kernels for formal comparison.}
   \label{fig:BasisExample}
 \end{figure}
 
