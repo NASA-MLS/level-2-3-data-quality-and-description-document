@@ -19,9 +19,10 @@
 \usepackage[varqu,varl,var0]{inconsolata}
 \usepackage{tabfigures}
 \usepackage[scale=.95,type1]{cabin}
-% \usepackage[scaled=0.85]{DejaVuSans}
 \usepackage[cochineal,vvarbb]{newtxmath}
-\usepackage[cal=boondoxo]{mathalfa}
+% \usepackage{lmodern}
+\usepackage[scaled=0.95]{nimbusmononarrow}
+\usepackage[cal=boondoxo]{mathalpha}
 \usepackage{textgreek}
 
 \renewcommand{\familydefault}{\rmdefault}
@@ -227,56 +228,7 @@ pdfusetitle]{hyperref}
   {}{0pt}{#1\enspace}
 \titlespacing*{\subparagraph}
   {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
-
-% \makeatletter
-% %
-% \def\@makechapterhead#1{%
-%   \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox[b]{\linewidth-2\fboxsep}{\flushright%
-%       \color{ChapterColor}\LARGE\sffamily\bfseries
-%       \ifnum \c@secnumdepth >\m@ne
-%       \@chapapp{} \thechapter\\
-%       \fi #1}}\nobreak\par}
-% %
-% \def\@makeschapterhead#1{%
-%   \noindent\rule[-2.5em]{0pt}{0pt}\colorbox{ChapterBackground}{\parbox{\linewidth-2\fboxsep}{\flushright%
-%       \color{ChapterColor}\LARGE\sffamily\bfseries #1}}\nobreak\par}
-% %
-% \renewcommand{\section}{\@startsection%
-%   {section}%
-%   {1}%
-%   {0pt}%
-%   {-4pt plus -2pt minus -3pt}%
-%   {4pt plus 2pt minus 3pt}%
-%   {\Large\sffamily\fontseries{b}\selectfont\flushleft\color{topsectioncolor}\figureversion{tabular}}}%
-% \renewcommand{\subsection}{\@startsection%
-%   {subsection}%
-%   {2}%
-%   {0pt}%
-%   {-2pt plus -1pt minus -2pt}%
-%   {2pt plus 1pt minus 2pt}%
-%   {\large\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
-% \renewcommand{\subsubsection}{\@startsection%
-%   {subsubsection}%
-%   {3}%
-%   {0pt}%
-%   {-0.1ex plus -0.1ex minus -0.1ex}%
-%   {0.1ex plus 0.1ex minus 0.1ex}%
-%   {\normalsize\sffamily\fontseries{b}\selectfont\flushleft\color{SectionColor}\figureversion{tabular}}}%
-% \renewcommand{\paragraph}{\@startsection%
-%   {paragraph}%
-%   {4}%
-%   {0pt}%
-%   {-0.1ex plus -0.1ex minus -0.1ex}%
-%   {0.1ex plus 0.1ex minus 0.1ex}%
-%   {\normalsize\sffamily\flushleft\color{SectionColor}\figureversion{tabular}}}%
-% \renewcommand{\subparagraph}{\@startsection%
-%   {subparagraph}%
-%   {5}%
-%   {0pt}%
-%   {-0.1ex plus -0.1ex minus -0.1ex}%
-%   {0.1ex plus 0.1ex minus 0.1ex}%
-%   {\small\sffamily\itshape\flushleft\color{SectionColor}\figureversion{tabular}}}%
-% \makeatother
+%
 %
 % ------------------------------------- Other minutea
 %
@@ -327,6 +279,27 @@ pdfusetitle]{hyperref}
 \setlist[description,1]{itemsep=0.5ex,parsep=0.5ex,partopsep=0.5ex}
 \setlist[enumerate,1]{itemsep=0.5ex,parsep=0.5ex,partopsep=0.5ex}
 %
+% ------------------------------------------------------------------------------
+%
+% Now some macros for defining versions
+%
+\newcommand{\vi}{v1.5\emph{x}\xspace}
+\newcommand{\Vi}{V1.5\emph{x}\xspace}
+\newcommand{\vii}{v2.2\emph{x}\xspace}
+\newcommand{\Vii}{V2.2\emph{x}\xspace}
+\newcommand{\viii}{v3.3\emph{x}/v3.4\emph{x}\xspace}
+\newcommand{\Viii}{V3.3\emph{x}/v3.4\emph{x}\xspace}
+\newcommand{\viv}{v4.2\emph{x}\xspace}
+\newcommand{\Viv}{V4.2\emph{x}\xspace}
+\renewcommand{\vv}{v5.0\emph{x}\xspace}
+\newcommand{\Vv}{V5.0\emph{x}\xspace}
+\newcommand{\vvi}{v6.0\emph{x}\xspace}
+\newcommand{\Vvi}{V6.0\emph{x}\xspace}
+%
+\newcommand{\prevv}{\vv}
+\newcommand{\Prevv}{\Vv}
+\newcommand{\thisv}{\vvi}
+\newcommand{\Thisv}{\Vvi}
 %
 % ------------------------------------------------------------------------------
 %
@@ -355,10 +328,7 @@ Richard~R.~Lay}
 \newcommand{\myshorttitle}{Level~2/3 Version 5.0\emph{x} Quality}
 \shorttitle{\myshorttitle}
 \version{6.0--0.1}
-\newcommand{\thisv}{v6.0\emph{x}\xspace}
-\newcommand{\Thisv}{V6.0\emph{x}\xspace}
-\newcommand{\prevv}{v5.0\emph{x}\xspace}
-\newcommand{\Prevv}{V5.0\emph{x}\xspace}
+%
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
 \pagenumbering{roman}
@@ -448,10 +418,13 @@ Richard~R.~Lay}
 \input{chapEssential}
 
 \input{chapBackground}
-\input{chapResults}
+\FigTabWithinSection
+% \rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
+\input{chapLevel2}
 \renewcommand{\currentnav}{Lvl~3}
 \clearpage
-\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
+\FigTabWithinChapter
+% Restore the original header/footers
 \input{chapLevel3}
 \clearpage
 %

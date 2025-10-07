@@ -1,52 +1,121 @@
 % These rather complex beasties are the various macros used to make up
 % The information on a product.
 
-% ---------------------------------------- Defining a product
-% This command sets up a section for a species.
-%
-% Arguments are:
-% #1: Optional note after the swath name
-% #2: Full English name (e.g., Nitrous Oxide)
-% #3: LaTeX formula (e.g., N\cs2O)
-% #4: Swath name
-% #5: Remaining contents of the \description environment
+% THIS IS THE ORIGINAL ONE FROM CHATGPT
+% % ---------------------------------------- Defining a product
+% % This command sets up a section for a species.
+% %
+% % Arguments are:
+% % #1: Optional note after the swath name
+% % #2: Full English name (e.g., Nitrous Oxide)
+% % #3: LaTeX formula (e.g., N\cs2O)
+% % #4: Swath name
+% % #5: Remaining contents of the \description environment
+% \newcommand{\speciestitle}[5][]{%
+% \cleardoublepage
+% \suppressfloats%
+% \thispagestyle{plain}%
+% {\noindent\colorbox{ProductBackground}{%
+% \begin{minipage}{\linewidth-2\fboxsep}%
+% \flushleft%
+% \section{#2 (\texorpdfstring{#3}{#4})}%
+% % Not sure why this bit is needed, it it's a working work around
+% \rhead{\large\sffamily\color{HeaderFooterColor}\nouppercase{\thesection.\
+%   #2 (#3)}}
+% \label{navSection#4}%
+% \label{sec:Standard#4}%
+% \color{ProductColor}\sffamily
+% \begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
+% \item[Swath name:] \texttt{#4} #1
+% #5
+% \end{description}
+% \end{minipage}}}%
+% \renewcommand{\currentnav}{#4}%
+% }
+
+% Requires fancyhdr loaded and your header template using \rightmark, e.g.:
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead[RO]{\nouppercase{\rightmark}} % example
+% \fancyhead[LE]{\nouppercase{\leftmark}}  % report class: chapters set \leftmark
+
 \newcommand{\speciestitle}[5][]{%
-\cleardoublepage
-\suppressfloats%
-\thispagestyle{plain}%
-{\noindent\colorbox{ProductBackground}{%
-\begin{minipage}{\linewidth-2\fboxsep}%
-\flushleft%
-\section{#2 (\texorpdfstring{#3}{#4})}%
-% Not sure why this bit is needed, it it's a working work around
-\rhead{\large\sffamily\color{HeaderFooterColor}\nouppercase{\thesection.\
-  #2 (#3)}}
-\label{navSection#4}%
-\label{sec:Standard#4}%
-\color{ProductColor}\sffamily
-\begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
-\item[Swath name:] \texttt{#4} #1
-#5
-\end{description}
-\end{minipage}}}%
-\renewcommand{\currentnav}{#4}%
+  \cleardoublepage
+  \suppressfloats
+  \thispagestyle{plain}% first page: plain (no header)
+  {%
+    \noindent\colorbox{ProductBackground}{%
+      \begin{minipage}{\linewidth-2\fboxsep}%
+        \flushleft
+        % Keep the real (numbered) \section here if you want TOC/numbering/refs auto:
+        \section{#2 (\texorpdfstring{#3}{#4})}%
+        \label{navSection#4}%
+        \label{sec:Standard#4}%
+        \color{ProductColor}\sffamily
+        \begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
+          \item[Swath name:] \texttt{#4} #1
+          #5
+        \end{description}
+      \end{minipage}%
+    }%
+  }\vspace{10pt}% <-- group ends; now we are back in vertical mode
+  % Update the running head mark OUTSIDE the box/group:
+  \sectionmark{#2 (\texorpdfstring{#3}{#4})}%
+  % If your fancyhdr template uses \rightmark directly, that's enough.
+  % If you prefer to hardwire the field instead of relying on \rightmark,
+  % you can uncomment the next line to set it globally for following pages:
+  % \fancyhead[RO]{\large\sffamily\color{HeaderFooterColor}%
+  %   \nouppercase{\thesection.\enspace #2 (#3)}}
+  \renewcommand{\currentnav}{#4}%
 }
 
-\newcommand{\email}[1]{\mbox{\textbf{Email:} $<$\texttt{#1}$>$}}
-%
-% Change the figures/table counters
-\makeatletter
-\def\renewcounter#1{%
-    \@ifundefined{c@#1}
-    {\@latex@error{counter #1 undefined}\@ehc}%
-    \relax
-    \let\@ifdefinable\@rc@ifdefinable
-    \@ifnextchar[{\@newctr{#1}}{}}
-\makeatother
-\renewcounter{figure}[section]
-\renewcounter{table}[section]
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}
-\renewcommand{\thetable}{\thesection.\arabic{table}}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\mbox{$<$\texttt{#1}$>$}}}
+
+% -------------------------- Switch figure/table numbering to section/chapter based
+
+\usepackage{chngcntr} % for \counterwithin / \counterwithout
+
+% ---- Figures & tables numbered within CHAPTER ----
+\newcommand{\FigTabWithinChapter}{%
+  % Remove any previous "within section" setting
+  \counterwithout{figure}{section}%
+  \counterwithout{table}{section}%
+  % Attach to chapter
+  \counterwithin{figure}{chapter}%
+  \counterwithin{table}{chapter}%
+  % Hyperref anchor format (keeps link targets unique)
+  \renewcommand*{\theHfigure}{\theHchapter.\arabic{figure}}%
+  \renewcommand*{\theHtable}{\theHchapter.\arabic{table}}%
+}
+
+% ---- Figures & tables numbered within SECTION ----
+\newcommand{\FigTabWithinSection}{%
+  % Remove any previous "within chapter" setting
+  \counterwithout{figure}{chapter}%
+  \counterwithout{table}{chapter}%
+  % Attach to section
+  \counterwithin{figure}{section}%
+  \counterwithin{table}{section}%
+  % Hyperref anchor format (keeps link targets unique)
+  \renewcommand*{\theHfigure}{\theHsection.\arabic{figure}}%
+  \renewcommand*{\theHtable}{\theHsection.\arabic{table}}%
+}
+
+% %
+% % Change the figures/table counters
+% \makeatletter
+% \def\renewcounter#1{%
+%     \@ifundefined{c@#1}
+%     {\@latex@error{counter #1 undefined}\@ehc}%
+%     \relax
+%     \let\@ifdefinable\@rc@ifdefinable
+%     \@ifnextchar[{\@newctr{#1}}{}}
+% \makeatother
+% \renewcounter{figure}[section]
+% \renewcounter{table}[section]
+% \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+% \renewcommand{\thetable}{\thesection.\arabic{table}}
 %
 \newcommand{\screeningrule}[1]{\textbf{#1}\par}
 
