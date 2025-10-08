@@ -16,17 +16,19 @@ Updates/sign off on Precision discussion still pending
 
 ------------------ CH3Cl
 
-Revisited after Michelle's new discussion on R2-driven screening.  Looks good to me; all changes accepted
+9/4/25 Revisited after Michelle's new discussion on R2-driven screening.  Looks good to me; all changes accepted
 
 ------------------ CH3CN
 
-Looks good, just one minor edit (higher -> greater pressure)
+9/8/25 Revisited after Michelle's new discussion on R2-driven screening; all changes accepted
 
 ------------------ CH3OH
 
+9/8/25 Revisited after Michelle's new discusson of R2 cycling impacts and other tweaks.  All changes accepted.
+
 ------------------ ClO
 
-Accepted Michelle's changes.  Work needed to ensure that bias file is indeed online (if that's what we want) and embedded in the document.  Also, wording needed on the issue with discontinuities when R2 is deactivated.
+9/8/25 Accepted Michelle's changes, followed up on a comment.  Work needed to ensure that bias file is indeed online (if that's what we want) as well as embedded in the document.
 
 ------------------ GPH
 
