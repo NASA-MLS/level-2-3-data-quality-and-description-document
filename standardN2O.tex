@@ -8,7 +8,7 @@
 
 The standard product for \thisv N\cs2O is retrieved in the ``CorePlusR2'' phase, which also retrieves water vapor and other 190-GHz products, and replaces the customized \prevv N\cs2O ``N2O-NitrousOxide'' retrieval phase. Improvements in the treatment of the N\cs2O retrieval in the \thisv ``CorePlusR2'' phase are described in detail in Section~\ref{sec:V6N2OCorrectionBriefSummary}.
 
-The decision to use the MLS ``band~3'' 190-GHz radiances in preference to the ``band-12'' 640-GHz measurements for v4 and later versions was undertaken in order to provide a continuous data product (\texttt{N2O-190}) for the entire mission. Earlier versions (prior to v4) of the N\cs2O standard product relied on the ``band~12'' 640-GHz (\texttt{CorePlusR4B}) retrieval, however, as discussed in \ref{sec:Chap1N2ONote}, and in the v4 data quality document, a noticeable reduction in quality of the band~12 radiance signals became evident during June-August 2013. Band~12 was finally turned off on August 6, 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
+The decision to use the MLS ``band~3'' 190-GHz radiances in preference to the ``band-12'' 640-GHz measurements for v4 and later versions was undertaken in order to provide a continuous data product (\texttt{N2O-190}) for the entire mission. Earlier versions (prior to v4) of the N\cs2O standard product relied on the ``band~12'' 640-GHz (\texttt{CorePlusR4B}) retrieval, however, a noticeable reduction in quality of the band~12 radiance signals became evident during June-August 2013. Band~12 was finally turned off on August 6, 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
 
 The 190-GHz N\cs2O data product in general shows slightly worse precision and resolution compared to the 640-GHz retrievals, although the 190-GHz precision is substantially better at 100--68~hPa. Data from \texttt{N2O-190} and \texttt{N2O-640} have been compared from launch until the end of band~12 operations. A persistent, latitude-dependent, low bias over the pressure range 100 to 15\,hPa is seen in the \texttt{N2O-190} product compared to \texttt{N2O-640} (see Figure~\ref{fig:N2O190640Comparison}).
 
@@ -101,7 +101,9 @@ Given the demonstrated utility of N\cs2O as a long-lived tracer in the lowermost
     \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Region}} &
-\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
+\parbox[m]{24mm}{\centering\textbf{Resolution%
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}
+\\ Vert. $\times$ Horiz.}} &
 \multicolumn{2}{c}{\parbox[m]{18mm}{\centering\textbf{Precision\footnote{Precision on individual profiles}}}} &
 \multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy}}} &
 \textbf{Comments} \\
@@ -131,7 +133,9 @@ $\geq$215    & ---                 & ---   & ---    & --- & ---& Unsuitable for 
     \centering\begin{tabular}{ccccccl}
 \toprule
 \parbox[m]{15mm}{\centering\textbf{Region}} &
-\parbox[m]{24mm}{\centering\textbf{Resolution\\ Vert. $\times$ Horiz.}} &
+\parbox[m]{24mm}{\centering\textbf{Resolution%
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.}
+\\ Vert. $\times$ Horiz.}} &
 \multicolumn{2}{c}{\parbox[m]{18mm}{\centering\textbf{Precision\footnote{Precision on individual profiles}}}} &
 \multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy}}} &
 \textbf{Comments} \\

@@ -168,20 +168,22 @@ The MLS limb scan nominally tops out around 0.001\,hPa. Therefore, the 0.00046\,
 While many defects in v4.2x and earlier versions have been addressed, further investigation of their effectiveness, especially the drift reduction and high latitude low value retrievals in the upper troposphere is possible, and improvements may be theoretically feasible. Also, it may be possible to obtain a vertically resolved H\cs2O product for pressure $>316\,$hPa at high latitudes during dry conditions.
 
 \begin{table}
-  \caption{Summary of MLS \thisv\CheckThis H\cs2O product.}
+  \caption{Summary of MLS \thisv H\cs2O product.}
   \vspace{\tablecaptionsep}
   \label{tab:H2OSummary}
   \begin{minipage}{\linewidth}
     \centering\begin{tabular}{ccccc>{\raggedright}m{28ex}}
       \toprule
       \parbox{10ex}{\centering\bfseries Pressure / hPa} &
-      \parbox{11ex}{\centering\bfseries Resolution V$\times$H / km} &
-      \parbox{10ex}{\centering\bfseries Precision\footnote{Precision for a single MLS profile} / \%} &
+      \parbox{13ex}{\centering\bfseries Resolution
+      \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}
+      V$\times$H / km} &
+      \parbox{11ex}{\centering\bfseries Precision\footnote{Precision for a single MLS profile} / \%} &
       \parbox{10ex}{\centering\bfseries Accuracy / \%} &
       \parbox{9ex}{\centering\bfseries Min. / ppmv\footnote{Minimum H\cs2O is an estimate of the minimum H\cs2O concentration measurable by \thisv MLS.}} &
       \bfseries Comments \tabularnewline
       \midrule
-      $\le$0.00022 & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline
+      $\le$0.00022 & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline\addlinespace
       %
       0.0005 & NVR\footnote{Not Vertically resolved (NVR)} $\times$ TBD & 
       1210 & TBD\footnote{Not yet determined} & 0.1 &

@@ -36,7 +36,7 @@ The MLS data are supplied with an estimated precision (the field \texttt{L2gpPre
   \label{fig:COplot1bylat_log}
 \end{figure}
 
-Note that the random errors (precisions) are larger than 100\% of the mixing ratio for much of the vertical range, meaning that significant averaging (e.g., daily zonal mean or weekly map) is typially needed to make use of the data.
+Note that the random errors (precisions) are larger than 100\% of the mixing ratio for much of the vertical range, meaning that significant averaging (e.g., daily zonal mean or weekly map) is typically needed to make use of the data.
 
 \subsection{Accuracy}
 The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle atmosphere the accuracies are estimated by comparisons with the ACE-FTS instrument; see \citet{PumphreyEtal:2007} for further details. The MLS v2.2 CO data at 215\,hPa showed high (factor of \mytexttilde2) biases compared to other observations. The morphology, however, was generally realistic \citep{LiveseyEtal:2008}. In \thisv (as in \prevv) this bias has been essentially eliminated through a change in the approach to modeling the background radiance upon which the CO spectral line sits, and a small reduction in the number of MLS spectral channels considered in the retrieval. Tropospheric (215--100\,hPa) accuracies in Table~\ref{tab:COSummary} are 2-$\sigma$ estimates obtained by propagating parameter uncertainties through a model of the measurement system, and are unchanged from those calculated for \prevv.
@@ -80,7 +80,8 @@ Further validation of the \thisv retrieval above 0.01\,hPa is needed.
     \centering\begin{tabular}{ccccl}
 \toprule
 \textbf{Pressure} &
-\textbf{Resolution / km} & 
+\textbf{Resolution / km%
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.}} & 
 \textbf{Precision} / &
 \textbf{Accuracy} &  
 \textbf{Comment} \\
