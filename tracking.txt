@@ -1,3 +1,13 @@
+=============================================== Notes
+
+FOV horiztonal resolutions:
+
+R1A: 13 km
+R1B: 13 km
+R2: 9 km
+R3: 7 km
+R4: 3 km
+
 =============================================== Chapter 1
 
 Largely complete, but may need more material on new cloud flags.
