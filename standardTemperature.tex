@@ -22,7 +22,8 @@ The most significant differences between the \thisv and \prevv temperature produ
 The standard \thisv and \prevv temperature products are both taken from the \texttt{CorePlusR3} phase, which uses radiances from the 240-GHz radiometer in addition to those from O\cs2 lines, the primary source of retrieved temperature and tangent-point pressure. In addition to temperature, this phase simultaneously retrieves standard products for a number of atmospheric constituents. The \texttt{CorePlusR3} temperature and GPH along with the accompanying tangent-point pressures, are used for all subsequent constituent retrievals, so standard temperature and GPH are internally consistent with the suite of constituent retrievals.
 
 \begin{figure}
-  \centering\includegraphics[angle=0,width=\linewidth]{figures/diffv6v5T_plot1bylat}
+  \mycomment{Graphics import commented out to temporarily sidestep compilation errors --- NJL.}
+  % \centering\includegraphics[angle=0,width=\linewidth]{figures/diffv6v5T_plot1bylat}
   \caption{Temperature differences between \thisv and \prevv standard products, screened per recommendations of this document (green) and unscreened (red).  2009 data are shown.  Top row is mean difference between versions, binned by latitude. Screening has a significant impact on mean values only at low latitudes in the troposphere.  The middle row of panels shows that there is considerably more scatter in unscreened data at the bottom of the retrieval, particularly at low latitudes.  The bottom row's difference between red and green lines is the number of points that are screened out.  Y-axes are pressure in hPa.}
   \label{fig:v6T-v5T_2009}
 \end{figure}
@@ -30,7 +31,8 @@ The standard \thisv and \prevv temperature products are both taken from the \tex
 MLS is generally insensitive to the presence of thin clouds, but scattering in the cores of convective storms can produce significant perturbations in MLS retrieved quantities, including temperature. Indeed, \emph{a priori } knowledge of temperature from analysis is often so good in the lower and middle atmosphere that perturbations of a few percent (a level typically considered to be negligible for trace-gas constituent retrievals) are considered ``significant'' for temperature. In the troposphere where \emph{a priori} knowledge may be on the order of 1--2\,K, temperatures from an analysis like GEOS-5 (the retrieval \emph{a priori}) may be more reliable than the MLS retrieval product, and differences between the MLS and GEOS-5 temperatures can be useful in the identification of retrieval artifacts. Cloud-induced perturbations generally occur in the tropics and mid-latitudes (where convective storms occur) in both the \thisv\CheckThis and \prevv\CheckThis retrieval versions. In unscreened data at retrieval levels 316--178\,hPa, clouds produce primarily positive outliers in \thisv\CheckThis and \prevv\CheckThis. The top panels of Figure\,\ref{fig:v5v4__215hPa_pcolorhist2} show this behavior at 215\,hPa. Conversely, at 121\,hPa, outliers are primarily positive in \thisv\CheckThis and \prevv\CheckThis.
 
 \begin{figure}
-  \centering\includegraphics[width=0.7\linewidth]{figures/v6v5_215hPa_pcolorhist2}
+  \mycomment{Graphics import commented out to temporarily sidestep compilation errors --- NJL.}
+  % \centering\includegraphics[width=0.7\linewidth]{figures/v6v5_215hPa_pcolorhist2}
   \caption{The top row shows histograms of unscreened 215\,hPa v04.20 (left) and v05.00 (right) temperature differences from GEOS-5.9.1 temperature for 2009.  The horizontal bin spacing is that of the \mytexttilde1.5\degsym\ latitudinal spacing of the MLS scans. The bottom panels show histograms of differences of the screened profiles on a finer vertical scale.  Outliers beyond $\pm$20\,K have been almost completely eliminated and are not shown.}
   \label{fig:v5v4__215hPa_pcolorhist2}
 \end{figure}
