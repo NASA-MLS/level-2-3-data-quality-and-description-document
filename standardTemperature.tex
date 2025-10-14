@@ -33,17 +33,17 @@ MLS is generally insensitive to the presence of thin clouds, but scattering in t
 \begin{figure}
   \mycomment{Graphics import commented out to temporarily sidestep compilation errors --- NJL.}
   % \centering\includegraphics[width=0.7\linewidth]{figures/v6v5_215hPa_pcolorhist2}
-  \caption{The top row shows histograms of unscreened 215\,hPa v04.20 (left) and v05.00 (right) temperature differences from GEOS-5.9.1 temperature for 2009.  The horizontal bin spacing is that of the \mytexttilde1.5\degsym\ latitudinal spacing of the MLS scans. The bottom panels show histograms of differences of the screened profiles on a finer vertical scale.  Outliers beyond $\pm$20\,K have been almost completely eliminated and are not shown.}
-  \label{fig:v5v4__215hPa_pcolorhist2}
+  \caption{The top row shows histograms of unscreened 215\,hPa v04.20 (left) and v06.01 (right) temperature differences from GEOS-5.29.4 temperature for 2009.  The horizontal bin spacing is that of the \mytexttilde1.5\degsym\ latitudinal spacing of the MLS scans. The bottom panels show histograms of differences of the screened profiles on a finer vertical scale.  Outliers beyond $\pm$20\,K have been almost completely eliminated and are not shown.}
+  \label{fig:v6v5_215hPa_pcolorhist2}
 \end{figure}
 
-Unscreened and screened histograms of tropical (20\degsym{}S--20\degsym{}N) \thisv\CheckThis and \prevv\CheckThis temperature from 2009 are shown in Figure\,\ref{fig:v5v4_68-316hPa_linehists}. Tails of low, unscreened outliers are particularly evident from 316--147\,hPa, but are greatly reduced by recommended screening (magenta).
+Unscreened and screened histograms of tropical (20\degsym{}S--20\degsym{}N) \thisv\CheckThis and \prevv\CheckThis temperature from 2009 are shown in Figure\,\ref{fig:v6v5_68-316hPa_linehists}. Tails of low, unscreened outliers are particularly evident from 316--147\,hPa, but are greatly reduced by recommended screening (magenta).
 
 \begin{figure}
   \centering\includegraphics[angle=0,width=\linewidth]{%
-    figures/v5v4_68-316hPa_linehists}
-  \caption{Panels show histograms of tropical (20\degsym{}S--20\degsym{}N) differences between MLS retrieved temperatures and GEOS-5.12.4, temperature for all of 2005.  Blue and green lines are unscreened and screened v04.2x, respectively. Red and magenta are unscreened and screened v05.00, respectively. Distribution means and standard deviations are given in the upper left of each panel along with the percentage of points included after screening.  The 316-hPa level is shown for reference although this level is not recommended to be used for scientific work.}
-  \label{fig:v5v4_68-316hPa_linehists}
+    figures/v6v5_68-316hPa_linehists}
+  \caption{Panels show histograms of tropical (20\degsym{}S--20\degsym{}N) differences between MLS retrieved temperatures and GEOS-5.29.4, temperature for all of 2005.  Blue and green lines are unscreened and screened v05.0x, respectively. Red and magenta are unscreened and screened v06.0x, respectively. Distribution means and standard deviations are given in the upper left of each panel along with the percentage of points included after screening.  The 316-hPa level is shown for reference although this level is not recommended to be used for scientific work.}
+  \label{fig:v6v5_68-316hPa_linehists}
 \end{figure}
 
 The highest level (lowest pressure) of the \prevv\CheckThis temperature retrieval recommended for scientific work in the previous version of this document is 0.001\,hPa, but temperature is retrieved, in both \prevv\CheckThis and \thisv\CheckThis, up to the 0.0001\,hPa level. The 0.00046\,hPa level is typically near the top tangent point of the MLS scan while the 0.00022\,hPa surface is often above the height of the highest tangent point in the MLS limb scan (depending upon latitude). The estimated precision of the retrieval at both of these levels is less than half of the precision of the retrieval \emph{a priori}. However, as can be seen from Figure~\ref{fig:AvkTemperature_HR} for both latitudes shown, the averaging kernels of the 0.00046\,hPa retrieval level is sharply peaked at 0.00046\,hPa, while the averaging kernel of the 0.00022\,hPa retrieval level shows a larger contribution from 0.00046\,hPa than from 0.00022\,hPa. As was the case in \prevv\CheckThis, the precisions of the 0.00046\,hPa and 0.00022\,hPa levels in \thisv\CheckThis are set negative ``by hand'' to advise against their casual use, but for \thisv\CheckThis, we are recommending that 0.00046~hPa temperature may be generally useful, while 0.00022\,hPa may have some value in for some scientific studies. Further validation of \thisv\CheckThis temperature at these levels is planned.
@@ -99,8 +99,8 @@ MLS temperature has persistent, vertically oscillating biases with respect to an
 \end{figure}
 
 \begin{figure}
-  \centering\includegraphics[width=0.7\linewidth]{figures/binbylat_v5-ap_2009}
-  \caption{Zonal mean of the difference between MLS \thisv\CheckThis temperature and GEOS-5 temperature (upper), and variability about that mean (lower), averaged for 2009. Y-axes are pressure in hPa.}
+  \centering\includegraphics[width=0.7\linewidth]{figures/binbylat_v6-ap_2021}
+  \caption{Zonal mean of the difference between MLS \thisv\CheckThis temperature and GEOS-5 temperature (upper), and variability about that mean (lower), averaged for 2021. Y-axes are pressure in hPa.}
   \label{fig:MLSminusGEOS5_zonalmean}
 \end{figure}
 
