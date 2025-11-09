@@ -281,16 +281,22 @@ The other aspect of cloud handling in \thisv\CheckThis is the estimation of clou
   \tableheadentry{Low threshold} & \tableheadentry{High threshold} \\
 %
 \flipfloprow
-R1[A/B]:118 & B[32/34]W:PT.C4 & 115.3 (LSB only) & $\mathsf{\Tcir <
--4}$\,K & none \\
+R1[A/B]:118 & B[32/34]W:PT.C4 & 115.3 (LSB only) & 
+% $\mathsf{\Tcir < -4}$\,K &
+T\cs{cir}\,\textless\,\textminus4\,K &
+ none \\
 %
 \flipfloprow
-R2:190 & B5F:ClO.C1 & 178.8 / 204.9 & $\mathsf{\Tcir <
--20}$\,K & $\mathsf{\Tcir > 10}$\,K \\
+R2:190 & B5F:ClO.C1 & 178.8 / 204.9 &
+% $\mathsf{\Tcir <-20}$\,K &
+T\cs{cir}\,\textless\,\textminus20\,K &
+% $\mathsf{\Tcir > 10}$\,K \\
+T\cs{cir}\,\textgreater\,10\,K\\
 %
 \flipfloprow
 R3:240 & B8F:PT & 233.4--234.5 / 244.8--245.9 & none &
-$\mathsf{\chi^2>30}$ \\
+% $\mathsf{\chi^2>30}$ \\
+$\chi$\cp2\,\textgreater\,30 \\
 %
 \flipfloprow
 R4:640 & B11F:BrO.C23 & 635.9 / 649.8 & $\mathsf{\Tcir < -10}$\,K & none \\
