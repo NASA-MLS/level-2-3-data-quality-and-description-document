@@ -48,3 +48,4 @@ singlesection.pdf
 shownav.flag*
 *-checkpoint.ipynb
 .ipynb_checkpoints
+.latexmkrc
