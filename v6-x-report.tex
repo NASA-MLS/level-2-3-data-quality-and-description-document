@@ -198,21 +198,24 @@ pdfusetitle]{hyperref}
 
 % Section
 \titleformat{\section}
-  {\Large\sffamily\bfseries\color{topsectioncolor}\figureversion{tabular}\raggedright}
+  {\Large\sffamily\bfseries\color{topsectioncolor}%\figureversion{tabular}
+  \raggedright}
   {\thesection}{0.5em}{#1}
 \titlespacing*{\section}
   {0pt}{4pt plus 2pt minus 3pt}{4pt plus 2pt minus 3pt}
 
 % Subsection
 \titleformat{\subsection}
-  {\large\sffamily\bfseries\color{SectionColor}\figureversion{tabular}\raggedright}
+  {\large\sffamily\bfseries\color{SectionColor}%\figureversion{tabular}
+  \raggedright}
   {\thesubsection}{0.5em}{#1}
 \titlespacing*{\subsection}
   {0pt}{2pt plus 1pt minus 2pt}{2pt plus 1pt minus 2pt}
 
 % Subsubsection
 \titleformat{\subsubsection}
-  {\normalsize\sffamily\bfseries\color{SectionColor}\figureversion{tabular}\raggedright}
+  {\normalsize\sffamily\bfseries\color{SectionColor}%\figureversion{tabular}
+  \raggedright}
   {\thesubsubsection}{0.5em}{#1}
 \titlespacing*{\subsubsection}
   {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.1ex plus 0.1ex minus 0.1ex}
@@ -221,8 +224,8 @@ pdfusetitle]{hyperref}
 % Keep hierarchy shallow by not numbering at this level:
 % \setcounter{secnumdepth}{3} (or lower) in your preamble if needed.
 \titleformat{\paragraph}[runin]
-  {\normalsize\sffamily\color{SectionColor}\figureversion{tabular}}
-  {}% empty label = no printed number
+  {\normalsize\sffamily\color{SectionColor}%\figureversion{tabular}
+  }{}% empty label = no printed number
   {0pt}
   {#1:\ }% run-in delimiter
 \titlespacing*{\paragraph}
@@ -230,15 +233,16 @@ pdfusetitle]{hyperref}
   
 % Subparagraph (run-in, italic)
 \titleformat{\subparagraph}[runin]
-  {\small\sffamily\itshape\color{SectionColor}\figureversion{tabular}}
-  {}{0pt}{#1\enspace}
+  {\small\sffamily\itshape\color{SectionColor}%\figureversion{tabular}
+  }{}{0pt}{#1\enspace}
 \titlespacing*{\subparagraph}
   {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
 %
 %
 % ------------------------------------- Other minutea
 %
-\renewcommand{\linenumberfont}{\color{black}\tiny\sffamily\mdseries\upshape\figureversion{tabular}}
+\renewcommand{\linenumberfont}{\color{black}\tiny\sffamily\mdseries\upshape%\figureversion{tabular}
+}
 %\linenumbers
 %
 % For avoiding problems with latexdiff
@@ -247,7 +251,8 @@ pdfusetitle]{hyperref}
 %
 \newfixedcaption{\myfigcaption}{figure}
 \newfixedcaption{\mytabcaption}{table}
-\captionnamefont{\small\sffamily\fontseries{b}\selectfont\color{SectionColor}\selectfont\figureversion{tabular}}
+\captionnamefont{\small\sffamily\fontseries{b}\selectfont\color{SectionColor}\selectfont%\figureversion{tabular}
+}
 % \captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont\mathversion{sans}}
 \captiontitlefont{\small\sffamily\fontseries{r}\fontshape{n}\selectfont}
 %
