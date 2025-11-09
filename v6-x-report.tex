@@ -13,35 +13,38 @@
 \usepackage{accsupp}
 % 
 % ---------------------------------------- Fonts
-% New (texlive 2023) approach to cochineal
-\usepackage[T1]{fontenc}
-\usepackage{cochineal}
-\usepackage[varqu,varl,var0]{inconsolata}
-\usepackage{tabfigures}
-\usepackage[scale=.95,type1]{cabin}
-\usepackage[cochineal,vvarbb]{newtxmath}
-% \usepackage{lmodern}
-\usepackage[scaled=0.95]{nimbusmononarrow}
-\usepackage[cal=boondoxo]{mathalpha}
-\usepackage{textgreek}
-
-\renewcommand{\familydefault}{\rmdefault}
-\renewcommand{\mddefault}{m}
-
+% % New (texlive 2023) approach to cochineal
 % \usepackage[T1]{fontenc}
-% % \usepackage{microtype}
-% % \usepackage{inconsolata}
-% \usepackage{beramono}
-% % \usepackage[lf,mathlf,swash,mathtabular,medfamily]{MinionPro}
-% \usepackage[bitstream-charter]{mathdesign}
-% \newcommand{\figureversion}[1]{}
-% % \usepackage[noopticals,lf,medfamily,sansmath,mathtabular]{MyriadPro}
-% \usepackage{berasans}
-% % \usepackage[toc,eqno,enum,bib,lineno]{tabfigures}
-% %
+% \usepackage{cochineal}
+% \usepackage[varqu,varl,var0]{inconsolata}
+% \usepackage{tabfigures}
+% \usepackage[scale=.95,type1]{cabin}
+% \usepackage[cochineal,vvarbb]{newtxmath}
+% % \usepackage{lmodern}
+% \usepackage[scaled=0.95]{nimbusmononarrow}
+% \usepackage[cal=boondoxo]{mathalpha}
+% \usepackage{textgreek}
+
 % \renewcommand{\familydefault}{\rmdefault}
 % \renewcommand{\mddefault}{m}
+
+% Set the encoding for the source
+\usepackage[utf8]{inputenc}
 %
+% Set up the fonts for the output
+\usepackage[T1]{fontenc}
+% \usepackage[charter, expert, scaled=0.91]{mathdesign}
+\usepackage[charter, scaled=0.91]{newtxmath}
+\usepackage[scaled=0.91]{XCharter}
+\usepackage[regular, scaled=0.85]{roboto}
+\usepackage[regular, scaled=0.85]{roboto-mono}
+%
+% Some style stuff
+\renewcommand{\emph}[1]{\textit{#1}}
+%
+% Command for semibold
+\newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
+
 \newcommand{\mytexttilde}{\ensuremath{\sim}}
 %
 % ---------------------------------------- Various other packages

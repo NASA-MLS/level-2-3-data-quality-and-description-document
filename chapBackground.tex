@@ -265,7 +265,6 @@ The first aspect of handling clouds in \thisv is therefore the flagging of radia
 The detection of cloud scattering is based on a poor lineshape fit (typically manifested as measured linewidth being unphysically too narrow compared to the calculated width).  The calculation uses an estimate of tangent pressure obtained from the 118-GHz Band~1 measurements (unaffected by clouds) along with  estimated temperature and tangent heights from Level-1 pointing information. RHi from a previous phase is used to compute a cloud induced radiance (T\cs{cir}). The vertical profiles of $\chi^2$ and T\cs{cir} are analyzed to find the highest limb view affected by cloud scattering, and radiances below are handled accordingly.
 
 The other aspect of cloud handling in \thisv\CheckThis is the estimation of cloud ice water content (IWC) and ice water path (IWP) products from the final \Tcir\ computed by the retrieval in the \texttt{HighCloud} phase. More information on these products and their derivation is given in Section~\ref{sec:StandardIWC}.
-
 \mycomment{Put some discussion of Frank's new products here}
 
 \begin{table}
@@ -297,6 +296,11 @@ $\mathsf{\chi^2>30}$ \\
 R4:640 & B11F:BrO.C23 & 635.9 / 649.8 & $\mathsf{\Tcir < -10}$\,K & none \\
 \end{tabular}
 \end{table}
+
+\subsection{Changes in \thisv retrievals of N\cs2O}
+\label{sec:V6N2OCorrectionDetails}
+
+As discussed in Section~\ref{sec:V6N2OCorrectionBriefSummary}, changes were made in the \thisv algorithms to the manner in which N\cs2O is retrieved from radiances measured by the MLS 190-GHz radiometer.  MLS observes N\cs2O by measuring a spectral line that is spectrally close to (particularly in the folded-sideband MLS measurements), but 25 times weaker than, the H\cs2O line at 183\,GHz. The sideband fraction fix developed for the CorePlusR2 products in \prevv clearly improved H\cs2O (and O\cs3 measurements made by the 190-GHz receiver) but, for unknown reasons, degraded N\cs2O. As an unsatisfying work around for this issue, N\cs2O is \prevv was retrieved from a separate phase where the sideband fractions were based on the prelaunch calibration value (in contrast with H\cs2O, which was retrieved using a corrected value for this fraction), with a correction for the drift. This phase also unrealistically assumed no contribution to the 190-GHz signals from continuum emission.  With the exception of drift correction, these changes were empirically derived and non-physical \citep{LiveseyEtal:2021:Drifts}.  For \thisv N\cs2O we opted to instead determine a correction for the 190-GHz radiances based on N\cs2O information obtained from the stronger and less interference-prone 640-GHz line (measurements from which were available from launch through August 2013). Using a subset of the days for which 640-GHz N\cs2O measurements are available, we examined the spectral and scan-angle-dependent form of the correction needed to improve the agreement between the 190- and 640-GHz N\cs2O products.  In order to reduce the dependence on specifics of the MLS scan etc., we opted to characterize the correction as a function of the total integrated radiance measured across the 190-GHz band, as a proxy for limb tangent pressure and other parameters.  With this correction in place a separate phase for retrieving N\cs2O was no longer needed, and the standard N\cs2O product is again retrieved concurrently with H\cs2O and HNO\cs3 (for Pressure $\le$ 14.7\,hPa) from the CorePlusR2 phase, as in v4.2x and previous versions. The root of the issue is that the interference between the strong H\cs2O line and the weak N\cs2O signature is not modeled well enough to provide an accurate N\cs2O retrieval (e.g., to within 10\%), especially in the lower stratosphere and upper troposphere.
 
 \section{The quantification of systematic uncertainty in MLS data}
 \label{sec:SystematicUncertainty}
