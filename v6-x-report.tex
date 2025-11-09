@@ -28,24 +28,45 @@
 % \renewcommand{\familydefault}{\rmdefault}
 % \renewcommand{\mddefault}{m}
 
-% Set the encoding for the source
-\usepackage[utf8]{inputenc}
-%
-% Set up the fonts for the output
-\usepackage[T1]{fontenc}
-% \usepackage[charter, expert, scaled=0.91]{mathdesign}
-\usepackage[charter, scaled=0.91]{newtxmath}
-\usepackage[scaled=0.91]{XCharter}
-\usepackage[regular, scaled=0.85]{roboto}
-\usepackage[regular, scaled=0.85]{roboto-mono}
-%
-% Some style stuff
+% % Set the encoding for the source
+% \usepackage[utf8]{inputenc}
+% %
+% % Set up the fonts for the output
+% \usepackage[T1]{fontenc}
+% % \usepackage[charter, expert, scaled=0.91]{mathdesign}
+% \usepackage[charter, scaled=0.91]{newtxmath}
+% \usepackage[scaled=0.91]{XCharter}
+% \usepackage[regular, scaled=0.85]{roboto}
+% \usepackage[regular, scaled=0.85]{roboto-mono}
+% %
+% % Some style stuff
+% \renewcommand{\emph}[1]{\textit{#1}}
+% %
+% % Command for semibold
+% \newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
+
+% \newcommand{\mytexttilde}{\ensuremath{\sim}}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+\setmainfont{XCharter}[Scale=0.91]
+\setsansfont{Roboto}[
+  Scale=0.85,
+  FontFace = {sb}{n}{* Medium},
+  FontFace = {sb}{it}{* Medium Italic},
+]
+\setmonofont{Roboto Mono}[Scale=0.85]
+
+% Choose a math font that pairs well with Charter; a few good options:
+\setmathfont{STIX Two Math}
+% \setmathfont{Libertinus Math}
+% \setmathfont{XITS Math}
+
 \renewcommand{\emph}[1]{\textit{#1}}
-%
-% Command for semibold
 \newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
 
-\newcommand{\mytexttilde}{\ensuremath{\sim}}
+\newcommand{\mytexttilde}{\textasciitilde}
 
 % Map non-existent 'r' (regular) to 'm' (medium) for Roboto-LF (avoids noisy but unncessary warnings)
 % \DeclareFontSeriesSubstitution{T1}{Roboto-LF}{r}{m}
@@ -302,7 +323,7 @@ pdfusetitle]{hyperref}
 \newcommand{\Viii}{V3.3\emph{x}/v3.4\emph{x}\xspace}
 \newcommand{\viv}{v4.2\emph{x}\xspace}
 \newcommand{\Viv}{V4.2\emph{x}\xspace}
-\renewcommand{\vv}{v5.0\emph{x}\xspace}
+\newcommand{\vv}{v5.0\emph{x}\xspace}
 \newcommand{\Vv}{V5.0\emph{x}\xspace}
 \newcommand{\vvi}{v6.0\emph{x}\xspace}
 \newcommand{\Vvi}{V6.0\emph{x}\xspace}
