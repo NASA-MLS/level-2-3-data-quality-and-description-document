@@ -1,7 +1,8 @@
 %
 \newenvironment{tablenotes}{%
   \begin{list}{}{%
-      \renewcommand{\makelabel}[1]{##1}%
+      % \renewcommand{\makelabel}[1]{##1}%
+      \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
       \setlength{\itemsep}{0.5ex}%
       \setlength{\topsep}{0.5ex}%
       \setlength{\parskip}{0pt}\setlength{%
