@@ -22,7 +22,7 @@
   \coordinate (TTarget) at ($ (NBGOrigin) + (5.8mm, -15.43cm) $);
 \end{tikzpicture}%
 
-  Clicking on ``Help'' takes you back to this page.
+  Clicking on ``Help'' takes you back to this page. \mycomment{Check link works!}
   \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (HelpHook) {};
   \draw [guidearrow, ThemeA] (HelpHook) -| ($ (HelpTarget-|OverviewTarget) - (3cm,0) $) -- (HelpTarget);
@@ -42,7 +42,7 @@ First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapt
   \draw [guidearrow, ThemeA] (MainTableHook) -| ($ (MainTableTarget) - (1cm,0) $) -- (MainTableTarget);
 \end{tikzpicture}
 
-\vspace{\navguidegap+2ex}
+\vspace{\navguidegap}
 \hyperref[chap:Level2]{Chapter~\ref*{chap:Level2}} describes each of the MLS data products individually.  You can use the navigation bar to skip immediately to any of the product-specific sections.
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (ProductHook) {};
