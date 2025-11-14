@@ -6,34 +6,34 @@
 
 \begin{multicols}{2}
 
-  \noindent This document serves two purposes. Firstly, it summarizes the quality of version~6.0 Aura MLS Level~2 and Level~3 data. Secondly, it conveys important information to the scientific community on how to read and interpret the data.
+  \noindent This document serves two purposes. Firstly, it summarizes the quality of version~6.0 Aura MLS Level-2 and Level-3 data. Secondly, it conveys important information to the scientific community on how to read and interpret those data.
 
-  The MLS science team strongly encourages users of MLS data to thoroughly read the parts of the document relevant to their research interests. Chapter~\ref{chap:Essential} should be read by all, as it describes essential general information. Chapter~\ref{chap:Background} is considered background material that may be of interest to some data users. Chapter~\ref{chap:Level2} discusses individual MLS Level 2 data (profiles of geophysical quantities along the orbit track) in detail, product-by-product.  Chapter~\ref{chap:Level3} describes the MLS Level 3 data, which are averages of the quality-screened Level 2 products in various coordinate systems (maps, zonal means, etc.).
+  The MLS science team strongly encourages users of MLS data to thoroughly read the parts of the document relevant to their research interests. Chapter~\ref{chap:Essential} should be read by all, as it describes essential general information. Chapter~\ref{chap:Background} is considered background material that may be of interest to some data users. Chapter~\ref{chap:Level2} discusses individual MLS Level-2 data (profiles of geophysical quantities along the orbit track) in detail, product-by-product.  Chapter~\ref{chap:Level3} describes the MLS Level-3 data, which are averages of the quality-screened Level-2 products in various coordinate systems (maps, zonal means, etc.).
 
-  For convenience, this page provides answers, or pointers to answers, for anticipated questions.
+  For convenience, this page provides answers, or pointers to answers, to anticipated questions.
 
   \subsection*{Where do I get \thisv MLS data?}
   All the MLS Level~2 and Level-3 data described here can be obtained from the NASA Goddard Space Flight Center Earth Science Data and Information Services Center (GES-DISC, see \url{https://disc.gsfc.nasa.gov/}).  In addition, selected products are in the process of being made available on the Zenodo archive.
 
   \subsection*{What format are MLS data files in? }
 
-  MLS Level~2 data are in HDF-EOS version~5 format (section~\ref{sec:FilesAndFormats}, page~\pageref{sec:FilesAndFormats}). Level~3 data are in netCDF~4 (section~\ref{sec:L3files}, page~\pageref{sec:L3files}).
+  MLS Level-2 data are in HDF-EOS version~5 format (see Section~\ref{sec:FilesAndFormats}, page~\pageref{sec:FilesAndFormats}). Level-3 data are in netCDF~4 (see Section~\ref{sec:L3files}, page~\pageref{sec:L3files}).
 
   \subsection*{Which MLS data points should be avoided?  How much should I trust
     the remainder?}
 
-  These issues are described in section~\ref{sec:StatusQuality} (starting on page~\pageref{sec:StatusQuality}), and on a product by product basis in chapter~\ref{chap:Level2}. The key rules are:
+  These issues are described in section~\ref{sec:StatusQuality} (starting on page~\pageref{sec:StatusQuality}), and on a product-by-product basis in Chapter~\ref{chap:Level2}. The key rules are:
   \begin{itemize}[leftmargin=2ex, itemsep=2pt]
-    \item Only data within the appropriate pressure range (described product by product in chapter~\ref{chap:Level2}) are to be used.
+    \item Only data within the appropriate pressure range (described product by product in Chapter~\ref{chap:Level2}) are to be used.
     \item Always consider the precision of the data, as reported in the \texttt{L2gpPrecision} field.
     \item Do not use any data points where the precision is zero or a negative number. This indicates poor information yield from MLS.
-    \item Do not use data for any profile where the field \texttt{Status} is an odd number.
-    \item Data for profiles where the \texttt{Status} field is a non-zero even number should be approached with caution. See Section~\ref{sec:StatusQuality} on page~\pageref{sec:StatusQuality}, and the product by product description in Chapter~\ref{chap:Level2} for details on how to interpret the \texttt{Status} field.
-    \item Do not use any data for profiles where the \texttt{Quality} field is \emph{smaller} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
-    \item Do not use any data for profiles where the \texttt{Convergence} field is \emph{larger} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
-    \item Some products require additional screening to remove biases or outliers (see chapter~\ref{chap:Level2}).
+    \item Do not use data for any profile where the corresponding entry in the integer \texttt{Status} array is an odd number.
+    \item Data for profiles where \texttt{Status} is a non-zero even number should be approached with caution. See Section~\ref{sec:StatusQuality} on page~\pageref{sec:StatusQuality}, and the product-by-product descriptions in Chapter~\ref{chap:Level2} for details on how to interpret the \texttt{Status} information.
+    \item Do not use any data for profiles where the corresponding entry in the \texttt{Quality} array is \emph{smaller} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
+    \item Do not use any data for profiles where the corresponding value in the \texttt{Convergence} array is \emph{larger} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
+    \item Some products require additional screening to remove biases or outliers; see specific sections of Chapter~\ref{chap:Level2} for details.
     \item Chapter~\ref{chap:Level2} also provides information on the accuracy of each product.
-    \item Data users are strongly encouraged to contact the MLS science team to discuss their anticipated usage of the data, and are always welcome to ask further data quality questions.
+    \item Data users are strongly encouraged to contact the MLS science team to discuss their anticipated usage of the data, and are always welcome to ask further data quality questions. \mycomment{How are they to do that?}
   \end{itemize}
 
   \subsection*{Why do some species abundances show negative values, and how do I
