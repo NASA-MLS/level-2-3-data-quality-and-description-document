@@ -33,7 +33,7 @@ The Level~2 algorithms implement a standard \emph{Optimal Estimation} retrieval 
 
 An innovative aspect of the retrieval algorithms for Aura MLS \citep{LiveseyAndRead:2000, LiveseyEtal:2006} arises from taking advantage of the fact that the MLS instrument looks in the forward direction from the spacecraft. Figure~\ref{fig:Geometry} reviews the Aura MLS measurement geometry and shows that each radiance observation is influenced by the state of the atmosphere for several consecutive profiles. In the \thisv Level~2 algorithms, as with earlier versions, the state vector consists of ``chunks'' of several profiles of atmospheric temperature and composition, which are then simultaneously retrieved from radiances measured in a similar number of MLS scans. Results from these chunks are joined together to give products at a granularity of one day (the chunks overlap in order to avoid edge effects).
 
-The retrieval state vector consists of vertical profiles of temperature and composition on fixed pressure surfaces. Between these fixed surfaces, the retrieval algorithms (more specifically the ``forward models'' within the retrieval system, see below) assume that species abundances and temperature vary from surface to surface in a piecewise-linear fashion (except for the abundance of \ce{H2O}, which is assumed to vary linearly in the logarithm of the mixing ratio). This has important implications for the interpretation of the data, as was described in Section~\ref{sec:BasisIssues}. In addition to these profiles, the pressure at the tangent point for the mid-point of each minor frame is retrieved, based on both radiance observations and knowledge of tangent point height, the latter computed from the MLS antenna position encoder readout and Aura spacecraft ephemeris and attitude information.
+The retrieval state vector consists of vertical profiles of temperature and composition on fixed pressure surfaces. Between these fixed surfaces, the retrieval algorithms (more specifically the ``forward models'' within the retrieval system, see below) assume that species abundances and temperature vary from surface to surface in a piecewise-linear fashion (except for the abundance of \ch{H2O}, which is assumed to vary linearly in the logarithm of the mixing ratio). This has important implications for the interpretation of the data, as was described in Section~\ref{sec:BasisIssues}. In addition to these profiles, the pressure at the tangent point for the mid-point of each minor frame is retrieved, based on both radiance observations and knowledge of tangent point height, the latter computed from the MLS antenna position encoder readout and Aura spacecraft ephemeris and attitude information.
 
 Most of the MLS data products are deduced from observations of spectral contrast, that is, variations in radiance as a function of frequency for a given limb pointing. Many of the systematic errors in the MLS measurement system manifest themselves as a spectrally flat or slowly spectrally varying error in radiance. This is true of effects arising both from the instrument (such as gain and offset during the limb scan) and from the ``forward model'' (such as knowledge of continuum emission and the impact of some approximations made in the forward model in order to increase its speed). In order to account for such effects, the \thisv algorithms also retrieve spectrally flat (or slowly spectrally varying) corrections to the MLS radiances, either in terms of an additive radiance offset or an additive atmospheric extinction.
 
@@ -60,7 +60,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
         \centering\begin{tabular}{llll}
         \rowcolor{tableheadbackground}
 \tableheadentry{Phase} &
-\tableheadentry{Target species\footnote{\sffamily Tangent pressure and Geopotential height have been abbreviated to pTan (GHz/THz) and GPH respectively.  Minor state vector components such as ``baseline'' and/or ``extinction'' have been omitted unless they are the specific focus of the phase.  Temperature, IWC, \ce{H2O}, RHi are ``high resolution'' (12 surfaces per decade change in pressure from 1000\,hPa to 1\,hPa) unless otherwise stated. \ce{O3} is low resolution except for the Core+R3 phase.}} &
+\tableheadentry{Target species\footnote{\sffamily Tangent pressure and Geopotential height have been abbreviated to pTan (GHz/THz) and GPH respectively.  Minor state vector components such as ``baseline'' and/or ``extinction'' have been omitted unless they are the specific focus of the phase.  Temperature, IWC, \ch{H2O}, RHi are ``high resolution'' (12 surfaces per decade change in pressure from 1000\,hPa to 1\,hPa) unless otherwise stated. \ch{O3} is low resolution except for the Core+R3 phase.}} &
 \tableheadentry{Measurements} &
 \tableheadentry{Comment} \\
 \flipfloprow
@@ -71,7 +71,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 
 \flipfloprow
 \phase{InitR2} &
-\species{\ce{H2O}, \ce{N2O}, \ce{CH3CN}, HCN, ClO, \ce{HNO3}, \ce{O3}, SO\cs2} &
+\species{\ch{H2O}, \ch{N2O}, \ch{CH3CN}, HCN, ClO, \ch{HNO3}, \ch{O3}, SO\cs2} &
 \measurements{R2~(190\,GHz)} &
 \tablecomments{Initial trace gas estimator, lower limit 100\,hPa} \\
 
@@ -110,53 +110,53 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 
 \flipfloprow
 \phase{InitUTH} &
-\species{Upper tropospheric \ce{H2O}} & 
+\species{Upper tropospheric \ch{H2O}} & 
 \measurements{R2~(190\,GHz)} &
-\tablecomments{Low vertical resolution (6/decade) \ce{H2O} retrieval} \\ 
+\tablecomments{Low vertical resolution (6/decade) \ch{H2O} retrieval} \\ 
 
 \flipfloprow
-\phase{CorePlusR3} & \species{T, pTan~(GHz), GPH, \ce{O3}\footnote{\sffamily On high vertical resolution grid}, CO, \ce{HNO3}, SO\cs2, RHi} &
+\phase{CorePlusR3} & \species{T, pTan~(GHz), GPH, \ch{O3}\footnote{\sffamily On high vertical resolution grid}, CO, \ch{HNO3}, SO\cs2, RHi} &
 \measurements{R1A \& R1B~(118\,GHz), R3~(240\,GHz)} &
 \tablecomments{Retrievals down to 316\,hPa}\\ 
 
 \flipfloprow
 \phase{OzoneOnly} &
-\species{\ce{O3}, CO} &
+\species{\ch{O3}, CO} &
 \measurements{R3~(240\,GHz)} &
-\tablecomments{Retrievals down to 316\,hPa optimized for \ce{O3} product}\\ 
+\tablecomments{Retrievals down to 316\,hPa optimized for \ch{O3} product}\\ 
 
 \flipfloprow
 \phase{CorePlusR2} &
-\species{\ce{H2O}, \ce{N2O}, \ce{HNO3}, ClO, \ce{O3}, HCN, \ce{CH3CN}, SO\cs2, pTan~(GHz)} &
+\species{\ch{H2O}, \ch{N2O}, \ch{HNO3}, ClO, \ch{O3}, HCN, \ch{CH3CN}, SO\cs2, pTan~(GHz)} &
 \measurements{R1A \& R1B~(118\,GHz), R2~(190\,GHz)} & 
-\tablecomments{\ce{H2O} retrieved down to 316\,hPa, other species 100\,hPa (note no T, GPH, pTan retrieval)} \\ 
+\tablecomments{\ch{H2O} retrieved down to 316\,hPa, other species 100\,hPa (note no T, GPH, pTan retrieval)} \\ 
 
 \flipfloprow
 \phase{Hydrogen Cyanide} &
-\species{HCN, \ce{O3}, \ce{HNO3}} &
+\species{HCN, \ch{O3}, \ch{HNO3}} &
 \measurements{R2~(190\,GHz)} & 
 \tablecomments{Retrievals down to 100\,hPa} \\ 
 
 \flipfloprow
-\phase{CorePlusR4AB14} & \species{ClO, BrO, \ce{HO2}, HOCl,
-  HCl, \ce{O3}, \ce{HNO3}, \ce{CH3CN}, SO\cs2, \ce{CH3Cl}} &
+\phase{CorePlusR4AB14} & \species{ClO, BrO, \ch{HO2}, HOCl,
+  HCl, \ch{O3}, \ch{HNO3}, \ch{CH3CN}, SO\cs2, \ch{CH3Cl}} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa}\\ 
 
 \flipfloprow
 \phase{Methanol} &
-\species{\ce{CH3OH}, ClO, BrO, \ce{HO2}, HOCl, \ce{HNO3}, SO\cs2, \ce{CH3Cl}} &
+\species{\ch{CH3OH}, ClO, BrO, \ch{HO2}, HOCl, \ch{HNO3}, SO\cs2, \ch{CH3Cl}} &
 \measurements{R2~(190\,GHz) and R4~(640\,GHz)} & 
 \tablecomments{Retrievals down to 147\,hPa} \\ 
 
 \flipfloprow
-\phase{CorePlusR4AB13} & \species{HCl, \ce{O3}, SO\cs2} &
+\phase{CorePlusR4AB13} & \species{HCl, \ch{O3}, SO\cs2} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa. This phase is only executed when
   MLS band~13 is operating}\\ 
 
 \flipfloprow
-\phase{CorePlusR4B} & \species{\ce{N2O}, SO\cs2} &
+\phase{CorePlusR4B} & \species{\ch{N2O}, SO\cs2} &
 \measurements{R4~(640\,GHz)} &
 \tablecomments{Retrievals down to 147\,hPa. This phase is only executed when MLS band~12 is operating}\\ 
 
@@ -167,7 +167,7 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
 \tablecomments{Generates cloud ice (IWC, IWP) products} \\ 
 
 \flipfloprow
-\phase{CorePlusR5} & \species{T, pTan~(GHz,~THz), GPH, OH, \ce{O3}} &
+\phase{CorePlusR5} & \species{T, pTan~(GHz,~THz), GPH, OH, \ch{O3}} &
 \measurements{R1A \& R1B~(118\,GHz), R5H and R5V~(2.5\,THz)} &
 \tablecomments{Retrievals down to 68\,hPa (147\,hPa for Temperature). This phase is only executed when the MLS THz module is operating} \\
 
@@ -193,11 +193,11 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
   \flipfloprow
   BrO       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
-  \ce{CH3Cl}  & CorePlusR4AB14 & 640\,GHz \\
+  \ch{CH3Cl}  & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
-  \ce{CH3CN}  & CorePlusR4AB14 & 640\,GHz \\
+  \ch{CH3CN}  & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
-  \ce{CH3OH}  & Methanol & 640\,GHz \\
+  \ch{CH3OH}  & Methanol & 640\,GHz \\
   \flipfloprow 
   ClO       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
@@ -205,17 +205,17 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
   \flipfloprow 
   GPH       & GPHOnly & 118 \& 240\,GHz \\
   \flipfloprow 
-  \ce{H2O}    & CorePlusR2 & 190\,GHz \\
+  \ch{H2O}    & CorePlusR2 & 190\,GHz \\
   \flipfloprow 
   HCl       & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
   HCN       & HydrogenCyanide & 190\,GHz \\ 
   \flipfloprow 
-  \ce{HNO3}   & \mybox{6cm}{CorePlusR2 \textsf{(15\,hPa and less)} \\ CorePlusR3 \textsf{(larger
+  \ch{HNO3}   & \mybox{6cm}{CorePlusR2 \textsf{(15\,hPa and less)} \\ CorePlusR3 \textsf{(larger
     than 15\,hPa)}} &
   \mybox{2.5cm}{190\,GHz\\240\,GHz} \\
   \flipfloprow 
-  \ce{HO2}    & CorePlusR4AB14 & 640\,GHz \\
+  \ch{HO2}    & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
   HOCl      & CorePlusR4AB14 & 640\,GHz \\
   \flipfloprow 
@@ -223,13 +223,13 @@ Table~\ref{tab:Phases} describes the phases in more detail. Many products (e.g.,
   \flipfloprow 
   IWP       & HighCloud & 240\,GHz \\
   \flipfloprow 
-  \ce{N2O}    & CorePlusR2 & 190\,GHz \\ 
+  \ch{N2O}    & CorePlusR2 & 190\,GHz \\ 
   \flipfloprow 
-  \ce{O3}     & OzoneOnly & 240\,GHz \\
+  \ch{O3}     & OzoneOnly & 240\,GHz \\
   \flipfloprow 
   OH        & CorePlusR5 & 2.5\,THz \\
   \flipfloprow 
-  RHi       & \mybox{6cm}{\sffamily\raggedright Computed from Temperature and \ce{H2O}} & 190\,GHz \\
+  RHi       & \mybox{6cm}{\sffamily\raggedright Computed from Temperature and \ch{H2O}} & 190\,GHz \\
   \flipfloprow 
   SO\cs2    & CorePlusR3 & 240\,GHz \\
   \flipfloprow 
@@ -251,7 +251,7 @@ In addition, a ``cloud forward model'' can be invoked to model the effects of sc
 
 While MLS observations are insensitive to aerosols and thin clouds, the particle sizes and number densities associated with strong deep convective clouds can lead to scattering of the signals at the millimeter-scale wavelengths observed by MLS.  Broadly speaking, this scattering redirects some fraction of the ambient radiation in the cloudy region towards the MLS antenna. This ambient radiation will be a mix of ``bright'' upwelling radiances and ``dark'' signals downwelling from cold space. Thus, for high-altitude, optically thin, limb views, where small radiances signals are seen in cloud-free situations, cloud scattering will increase the observed radiances. Clouds in the line-of-sight of low-altitude limb views, characterized by large radiances in cloud-free scenes, will act to suppress the observed radiances, as some of the observed signal will originate from downwelling signatures of cold space scattered into the beam.
 
-The MLS \thisv algorithms can reliably retrieve composition in moderately cloudy cases (i.e., those having small limb radiance perturbations).  In the case of the \texttt{CorePlusR3} retrieval this is handled by retrieving a frequency-squared-dependent extinction (including background atmospheric absorption from N\cs2, \ce{H2O} and unknown emitters). In the other retrieval phases, by contrast, a spectrally-flat radiance baseline term is used. Thick clouds can affect the MLS radiances beyond the modeling capability of this approach, mainly through scattering processes. In such situations, the affected radiances are excluded from the retrievals, or their influence down-weighted.
+The MLS \thisv algorithms can reliably retrieve composition in moderately cloudy cases (i.e., those having small limb radiance perturbations).  In the case of the \texttt{CorePlusR3} retrieval this is handled by retrieving a frequency-squared-dependent extinction (including background atmospheric absorption from N\cs2, \ch{H2O} and unknown emitters). In the other retrieval phases, by contrast, a spectrally-flat radiance baseline term is used. Thick clouds can affect the MLS radiances beyond the modeling capability of this approach, mainly through scattering processes. In such situations, the affected radiances are excluded from the retrievals, or their influence down-weighted.
 
 The first aspect of handling clouds in \thisv is therefore the flagging of radiances that are believed to be significantly contaminated by cloud effects.  Cloud flagging in the \texttt{CorePlusR2}, \texttt{CorePlusR3}, and \texttt{CorePlusR4[\ldots]/\texttt{Methanol}} phases is based on determining the highest altitude limb view contaminated by cloud signals and rejecting all radiances below that targeted altitude.  Cloud radiance scattering narrows the line shape for any molecule.  The O\cp{18}O line measured by MLS ``band~8'' is a convenient signal to use for cloud detection as (1) the concentration of O\cp{18}O is well known, (2) its signal is at a relatively high frequency making it more susceptible to cloud scattering effects then many (but not all) other MLS signals, and (3) the line never goes opaque at any altitude, making it sensitive to tangent pressure into the upper troposphere.
 
@@ -299,10 +299,10 @@ none \\
 \end{tabular}
 \end{table}
 
-\section{Changes in \thisv retrievals of \texorpdfstring{\ce{N2O}}{N2O}}
+\section{Changes in \thisv retrievals of \texorpdfstring{\ch{N2O}}{N2O}}
 \label{sec:V6N2OCorrectionDetails}
 
-As discussed in Section~\ref{sec:V6N2OCorrectionBriefSummary}, changes were made in the \thisv algorithms to the manner in which \ce{N2O} is retrieved from radiances measured by the MLS 190-GHz radiometer.  MLS observes \ce{N2O} by measuring a spectral line that is spectrally close to (particularly in the folded-sideband MLS measurements), but 25 times weaker than, the \ce{H2O} line at 183\,GHz. The sideband fraction fix developed for the CorePlusR2 products in \prevv clearly improved \ce{H2O} (and \ce{O3} measurements made by the 190-GHz receiver) but, for unknown reasons, degraded \ce{N2O}. As an unsatisfying work around for this issue, \ce{N2O} is \prevv was retrieved from a separate phase where the sideband fractions were based on the prelaunch calibration value (in contrast with \ce{H2O}, which was retrieved using a corrected value for this fraction), with a correction for the drift. This phase also unrealistically assumed no contribution to the 190-GHz signals from continuum emission.  With the exception of drift correction, these changes were empirically derived and non-physical \citep{LiveseyEtal:2021:Drifts}.  For \thisv \ce{N2O} we opted to instead determine a correction for the 190-GHz radiances based on \ce{N2O} information obtained from the stronger and less interference-prone 640-GHz line (measurements from which were available from launch through August 2013). Using a subset of the days for which 640-GHz \ce{N2O} measurements are available, we examined the spectral and scan-angle-dependent form of the correction needed to improve the agreement between the 190- and 640-GHz \ce{N2O} products.  In order to reduce the dependence on specifics of the MLS scan etc., we opted to characterize the correction as a function of the total integrated radiance measured across the 190-GHz band, as a proxy for limb tangent pressure and other parameters.  With this correction in place, a separate phase for retrieving \ce{N2O} is no longer needed, and the standard \ce{N2O} product is again retrieved concurrently with \ce{H2O} and \ce{HNO3} (for pressure $\le$ 14.7\,hPa) from the CorePlusR2 phase, as in \viv and previous versions. The root of the issue is that the interference between the strong \ce{H2O} line and the weak \ce{N2O} signature is not modeled well enough to provide an accurate \ce{N2O} retrieval (e.g., to within 10\%), especially in the lower stratosphere and upper troposphere.
+As discussed in Section~\ref{sec:V6N2OCorrectionBriefSummary}, changes were made in the \thisv algorithms to the manner in which \ch{N2O} is retrieved from radiances measured by the MLS 190-GHz radiometer.  MLS observes \ch{N2O} by measuring a spectral line that is spectrally close to (particularly in the folded-sideband MLS measurements), but 25 times weaker than, the \ch{H2O} line at 183\,GHz. The sideband fraction fix developed for the CorePlusR2 products in \prevv clearly improved \ch{H2O} (and \ch{O3} measurements made by the 190-GHz receiver) but, for unknown reasons, degraded \ch{N2O}. As an unsatisfying work around for this issue, \ch{N2O} is \prevv was retrieved from a separate phase where the sideband fractions were based on the prelaunch calibration value (in contrast with \ch{H2O}, which was retrieved using a corrected value for this fraction), with a correction for the drift. This phase also unrealistically assumed no contribution to the 190-GHz signals from continuum emission.  With the exception of drift correction, these changes were empirically derived and non-physical \citep{LiveseyEtal:2021:Drifts}.  For \thisv \ch{N2O} we opted to instead determine a correction for the 190-GHz radiances based on \ch{N2O} information obtained from the stronger and less interference-prone 640-GHz line (measurements from which were available from launch through August 2013). Using a subset of the days for which 640-GHz \ch{N2O} measurements are available, we examined the spectral and scan-angle-dependent form of the correction needed to improve the agreement between the 190- and 640-GHz \ch{N2O} products.  In order to reduce the dependence on specifics of the MLS scan etc., we opted to characterize the correction as a function of the total integrated radiance measured across the 190-GHz band, as a proxy for limb tangent pressure and other parameters.  With this correction in place, a separate phase for retrieving \ch{N2O} is no longer needed, and the standard \ch{N2O} product is again retrieved concurrently with \ch{H2O} and \ch{HNO3} (for pressure $\le$ 14.7\,hPa) from the CorePlusR2 phase, as in \viv and previous versions. The root of the issue is that the interference between the strong \ch{H2O} line and the weak \ch{N2O} signature is not modeled well enough to provide an accurate \ch{N2O} retrieval (e.g., to within 10\%), especially in the lower stratosphere and upper troposphere.
 
 \section{The quantification of systematic uncertainty in MLS data}
 \label{sec:SystematicUncertainty}
@@ -313,7 +313,7 @@ For each identified source of systematic uncertainty, its impact on MLS measurem
 
 For most of the uncertainty sources, the impact on MLS standard products has been quantified by running perturbed radiances through the MLS data processing algorithms. Other (typically smaller) uncertainty sources have been quantified by simple perturbation calculations.
 
-Although the term ``systematic uncertainty'' is often associated with consistent biases and/or scaling errors, many sources of ``systematic'' error in the MLS measurement system give rise to additional scatter. For example, an error in the \ce{O3} spectroscopy, while being a constant bias on the fundamental parameter, will have an impact on the retrievals of species with weaker signals (e.g., CO) that is dependent on the amount and morphology of atmospheric ozone. The extent to which such terms can be expected to average down is estimated to first order by these ``full up studies'' through their separate consideration of the bias and scatter each uncertainty source introduces.
+Although the term ``systematic uncertainty'' is often associated with consistent biases and/or scaling errors, many sources of ``systematic'' error in the MLS measurement system give rise to additional scatter. For example, an error in the \ch{O3} spectroscopy, while being a constant bias on the fundamental parameter, will have an impact on the retrievals of species with weaker signals (e.g., CO) that is dependent on the amount and morphology of atmospheric ozone. The extent to which such terms can be expected to average down is estimated to first order by these ``full up studies'' through their separate consideration of the bias and scatter each uncertainty source introduces.
 
 The results of these studies are summarized as ``accuracy'' (and in some cases additional contributions to ``precision'') on a product by product basis in the next chapter. More details on the quantification for each product are given in the MLS validation papers. In addition, Appendix~A of \citet{ReadEtal:2007} gives more specific details of the perturbations used in the study.
 
