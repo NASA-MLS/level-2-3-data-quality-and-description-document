@@ -6,7 +6,7 @@
 
 The other chapters of this guide describe MLS ``Level~2'' data -- geophysical products along the instrument observing track. This chapter describes MLS ``Level~3'' data -- geophysical products binned onto regular grids. There is a wide array of techniques for transforming along-track observations into regular grids, including ``kriging'' approaches {[}e.g., \emph{Cressie}, 2015{]}, Fourier-series-based approaches {[}\emph{Salby}, 1982{]}, approaches using various windowing functions such as Hamming windows, and simple binning approaches. All methods have strengths and weaknesses, and the choice of which one to use is best made by the individual data user, based on the nature of the specific scientific question to be tackled. For this reason, until 2020, the MLS team had not produced any ``official'' Level~3 data products.
 
-However, in order to facilitate certain studies by MLS data users, the MLS team is now producing and distributing a select set of Level~3 products derived using a simple ``binning'' approach (i.e., simply reporting the mean measured value within a given spatial/temporal ``box''). As part of the generation of these data products, all the data screening rules described in chapters 1 and 3 are applied (along with the ClO bias correction, see section~\ref{sec:StandardClO}), providing a significant additional simplification to data users. Level~3 data are supplied for most MLS standard products. BrO and HO\cs2 are excluded, as they have have a different Level~3 product available (see sections~\ref{sec:StandardBrO} and~\ref{sec:StandardHO2}). We also exclude CH\cs3CN and CH\cs3OH in light of the narrow range over which these products are recommended for scientific use.
+However, in order to facilitate certain studies by MLS data users, the MLS team is now producing and distributing a select set of Level~3 products derived using a simple ``binning'' approach (i.e., simply reporting the mean measured value within a given spatial/temporal ``box''). As part of the generation of these data products, all the data screening rules described in chapters 1 and 3 are applied (along with the ClO bias correction, see section~\ref{sec:StandardClO}), providing a significant additional simplification to data users. Level~3 data are supplied for most MLS standard products. BrO and \ce{HO2} are excluded, as they have have a different Level~3 product available (see sections~\ref{sec:StandardBrO} and~\ref{sec:StandardHO2}). We also exclude \ce{CH3CN} and \ce{CH3OH} in light of the narrow range over which these products are recommended for scientific use.
 
 Three sets of Level~3 products are provided:
 \begin{description}
@@ -23,7 +23,7 @@ Three sets of Level~3 products are provided:
   \item[Zonal Mean Binned Files:] These files contain ``roll-ups'' of all the datasets in the daily binned files, excluding the ``3D'' maps. These are provided with fields having 365 or 366 entries per dataset in each file.
 \end{description}
 For species with non-negligible diurnal variations over all or part of
-their vertical range (ClO, OH, HOCl, and O\cs3), the datasets
+their vertical range (ClO, OH, HOCl, and \ce{O3}), the datasets
 described above are further subdivided into five different datasets
 containing:
 \begin{itemize}

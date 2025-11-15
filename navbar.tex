@@ -21,7 +21,7 @@
 \newif\ifoddrow\oddrowtrue
 \newcommand{\DrawNavBarProduct}[2]{%
   % #1 is the tag for the product (e.g., H2O)
-  % #2 is the name for it (e.g., H\cs2O)
+  % #2 is the name for it (e.g., \ce{H2O})
   \ifthenelse{\equal{#1}{\currentnav}}%
   {%
     \def\nbnudge{\rule{3mm}{0pt}}%
@@ -87,22 +87,22 @@
         \node {\DrawNavBarExtra{tab:ProductSummary}{Table}{MainTable}}; \\
         % Then the products
         \node {\DrawNavBarProduct{BrO}{BrO}};\\
-        \node {\DrawNavBarProduct{CH3Cl}{CH\cs3Cl}};\\
-        \node {\DrawNavBarProduct{CH3CN}{CH\cs3CN}};\\
-        \node {\DrawNavBarProduct{CH3OH}{CH\cs3OH}};\\
+        \node {\DrawNavBarProduct{CH3Cl}{\ce{CH3Cl}}};\\
+        \node {\DrawNavBarProduct{CH3CN}{\ce{CH3CN}}};\\
+        \node {\DrawNavBarProduct{CH3OH}{\ce{CH3OH}}};\\
         \node {\DrawNavBarProduct{ClO}{ClO}};\\
         \node {\DrawNavBarProduct{CO}{CO}};\\
         \node {\DrawNavBarProduct{GPH}{GPH}};\\
-        \node {\DrawNavBarProduct{H2O}{H\cs2O}};\\
+        \node {\DrawNavBarProduct{H2O}{\ce{H2O}}};\\
         \node {\DrawNavBarProduct{HCl}{HCl}};\\
         \node {\DrawNavBarProduct{HCN}{HCN}};\\
-        \node {\DrawNavBarProduct{HNO3}{HNO\cs3}};\\
-        \node {\DrawNavBarProduct{HO2}{HO\cs2}};\\
+        \node {\DrawNavBarProduct{HNO3}{\ce{HNO3}}};\\
+        \node {\DrawNavBarProduct{HO2}{\ce{HO2}}};\\
         \node {\DrawNavBarProduct{HOCl}{HOCl}};\\
         \node {\DrawNavBarProduct{IWC}{IWC}};\\
         \node {\DrawNavBarProduct{IWP}{IWP}};\\
-        \node {\DrawNavBarProduct{N2O}{N\cs2O}};\\
-        \node {\DrawNavBarProduct{O3}{O\cs3}};\\
+        \node {\DrawNavBarProduct{N2O}{\ce{N2O}}};\\
+        \node {\DrawNavBarProduct{O3}{\ce{O3}}};\\
         \node {\DrawNavBarProduct{OH}{OH}};\\
         \node {\DrawNavBarProduct{RHI}{RHI}};\\
         \node {\DrawNavBarProduct{SO2}{SO\cs2}};\\
