@@ -14,7 +14,7 @@
 % 
 % ---------------------------------------- Fonts
 \usepackage{fontspec}
-\usepackage{unicode-math}
+% \usepackage{unicode-math}
 
 \setmainfont{XCharter}[Scale=0.91]
 \setsansfont{Roboto}[
@@ -25,9 +25,10 @@
 \setmonofont{Roboto Mono}[Scale=0.85]
 
 % Choose a math font that pairs well with Charter; a few good options:
-\setmathfont{STIX Two Math}
+% \setmathfont{STIX Two Math}
 % \setmathfont{Libertinus Math}
 % \setmathfont{XITS Math}
+\usepackage[math-style=ISO]{mathastext}
 
 \renewcommand{\emph}[1]{\textit{#1}}
 \newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
@@ -45,6 +46,7 @@
 \usepackage{pifont}
 \usepackage{rotating}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{booktabs}
 \usepackage{colortbl}
