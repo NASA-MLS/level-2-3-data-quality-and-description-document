@@ -15,10 +15,20 @@
 % ---------------------------------------- Fonts
 \usepackage[otfmath, scale=0.91]{XCharter}
 % loads fontspec, unicode-math, and sets XCharter-Math.otf
-\newcommand{\mytexttilde}{\textasciitilde}
 \usepackage[scaled=0.83]{roboto}
 \usepackage[scaled=0.83]{roboto-mono}
+% After XCharter has loaded realscripts, force the fake superscripts everywhere
+\makeatletter
+\renewcommand\textsuperscript[1]{\fakesuperscript{#1}}
+\makeatother
 
+
+% \setmainfont{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont{Libertinus Math}
+
+\newcommand{\mytexttilde}{\textasciitilde}
 
 % \setsansfont{Roboto}[Scale=MatchLowercase]
 %   Scale=0.85,
