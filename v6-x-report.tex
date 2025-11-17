@@ -13,28 +13,41 @@
 \usepackage{accsupp}
 % 
 % ---------------------------------------- Fonts
-\usepackage{fontspec}
-% \usepackage{unicode-math}
-
-\setmainfont{XCharter}[Scale=0.91]
-\setsansfont{Roboto}[
-  Scale=0.85,
-  FontFace = {sb}{n}{* Medium},
-  FontFace = {sb}{it}{* Medium Italic},
-]
-\setmonofont{Roboto Mono}[Scale=0.85]
-
-% Choose a math font that pairs well with Charter; a few good options:
-% \setmathfont{STIX Two Math}
-% \setmathfont{Libertinus Math}
-% \setmathfont{XITS Math}
-\usepackage[math-style=ISO]{mathastext}
-\usepackage{textgreek}
-
-\renewcommand{\emph}[1]{\textit{#1}}
-\newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
-
+\usepackage[otfmath]{XCharter}
+% loads fontspec, unicode-math, and sets XCharter-Math.otf
 \newcommand{\mytexttilde}{\textasciitilde}
+\setsansfont{Roboto}[Scale=MatchLowercase]
+%   Scale=0.85,
+%   FontFace = {sb}{n}{* Medium},
+%   FontFace = {sb}{it}{* Medium Italic},
+% ]
+
+% \setmonofont{Roboto Mono}[Scale=0.85]
+% \setsansfont{Cabin}[Scale=MatchLowercase] % sf
+% \setmonofont{Inconsolatazi4}[Scale=MatchLowercase]
+
+% \usepackage{fontspec}
+% % \usepackage{unicode-math}
+
+% \setmainfont{XCharter}[Scale=0.91]
+% \setsansfont{Roboto}[
+%   Scale=0.85,
+%   FontFace = {sb}{n}{* Medium},
+%   FontFace = {sb}{it}{* Medium Italic},
+% ]
+% \setmonofont{Roboto Mono}[Scale=0.85]
+
+% % Choose a math font that pairs well with Charter; a few good options:
+% % \setmathfont{STIX Two Math}
+% % \setmathfont{Libertinus Math}
+% % \setmathfont{XITS Math}
+% \usepackage[math-style=ISO]{mathastext}
+% \usepackage{textgreek}
+
+% \renewcommand{\emph}[1]{\textit{#1}}
+% \newcommand{\textsb}[1]{{\fontseries{sb}\sffamily #1}}
+
+% \newcommand{\mytexttilde}{\textasciitilde}
 
 % Map non-existent 'r' (regular) to 'm' (medium) for Roboto-LF (avoids noisy but unncessary warnings)
 % \DeclareFontSeriesSubstitution{T1}{Roboto-LF}{r}{m}
@@ -47,7 +60,7 @@
 \usepackage{pifont}
 \usepackage{rotating}
 \usepackage{amsmath}
-\usepackage{amssymb}
+% \usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{booktabs}
 \usepackage{colortbl}
