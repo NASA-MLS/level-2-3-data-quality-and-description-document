@@ -82,7 +82,7 @@
 \usepackage{enumitem}
 \usepackage{xspace}
 \usepackage{fancyhdr}
-\usepackage{ccaption}
+\usepackage{caption}
 \usepackage{lineno}
 %
 % --------------------------------------- Bibliography
@@ -267,12 +267,16 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 %
 \usepackage{chemformula}
 %
+\newcommand{\guidebox}[1]{{\setlength{\fboxsep}{0pt}\fbox{#1}}}
+%
 % ---------------------------------------- Captions
 %
-\newfixedcaption{\myfigcaption}{figure}
-\newfixedcaption{\mytabcaption}{table}
-\captionnamefont{\small\sffamily\bfseries\color{SectionColor}}
-\captiontitlefont{\small\sffamily\mdseries}
+\usepackage{caption}
+\captionsetup{
+  font={small,sf},                    % caption text: \small\sffamily
+  labelfont={bf,color=SectionColor},  % label ("Figure 1"): \bfseries + color
+  skip=6pt plus 6pt minus 4pt         % << space between figure and caption
+}
 %
 \newcommand{\tabletitle}[1]{\textbf{\textcolor{tableheadcolor}{#1}}\global\oddrowtrue}
 %
