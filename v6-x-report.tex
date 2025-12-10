@@ -94,23 +94,27 @@ Brian~W.~Knosp\\
 \renewcommand{\textfraction}{0.1}
 %
 \pagenumbering{arabic}
+%
 \input{chapEssential}
-
+%
 \input{chapBackground}
+%
 \FigTabWithinSection
 % \rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
 \input{chapLevel2}
+%
 \renewcommand{\currentnav}{Lvl~3}
 \clearpage
 \FigTabWithinChapter
-% Restore the original header/footers
+%
 \input{chapLevel3}
 \clearpage
 %
 \appendix
-\input{appEmbedded}
-\renewcommand{\currentnav}{BLANK}
 %
+\input{appEmbedded}
+%
+\renewcommand{\currentnav}{BLANK}
 \renewcommand{\leftmark}{Bibliography}
 \renewcommand{\rightmark}{Bibliography}
 \bibliography{shortnames,mybib}
