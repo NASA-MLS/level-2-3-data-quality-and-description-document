@@ -45,6 +45,7 @@
       at (NBProduct#1.north west) {\hyperref[\nbscrref]{S}};
     \node (NBProductTableLink#1) [nblinks, anchor=south east]
       at (NBProduct#1.north east) {\hyperref[\nbtabref]{T}};
+    % \node [anchor=east, inner sep=0pt, outer sep=0pt] at (NBProduct#1.west) {\nbnudge};
   \end{tikzpicture}}}
 %
 \newcommand{\DrawNavBarExtra}[3]{%
@@ -71,6 +72,7 @@
   \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
   \nbnudge\hyperref[#1]{\begin{tikzpicture}[outer sep=0pt, inner sep=5pt]
       \node (#3) [nbentry] {#2};
+      % \node [anchor=east, inner sep=0pt, outer sep=0pt] at (#3.west) {\nbnudge};
     \end{tikzpicture}}}
 %
 \newsavebox\navbar
