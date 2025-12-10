@@ -5,14 +5,14 @@
   \suppressfloats
   \thispagestyle{plain}% first page: plain (no header)
   {%
-    \noindent\colorbox{ProductBackground}{%
+    \noindent\colorbox{ProductBoxBackgroundColor}{%
       \begin{minipage}{\linewidth-2\fboxsep}%
         \flushleft
         % Keep the real (numbered) \section here if you want TOC/numbering/refs auto:
         \section{#2 (\texorpdfstring{#3}{#4})}%
         \label{navSection#4}%
         \label{sec:Standard#4}%
-        \color{ProductColor}\sffamily
+        \color{ProductBoxTextColor}\sffamily
         \begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
           \item[Swath name:] \texttt{#4} #1
           #5
@@ -101,10 +101,10 @@ Typical vertical averaging kernels for the MLS \thisv #2#1 data at the equator (
   Only profiles whose \texttt{Convergence} field is less than #1 should be used.}}
 
 % ----------------------------------- Table flipflopping
-\colorlet{tableheadbackground}{SectionColor}
+\colorlet{tableheadbackground}{HighlightColor}
 \colorlet{tableheadcolor}{white}
-\colorlet{tableoddbackground}{SectionColor!20}
-\colorlet{tableevenbackground}{SectionColor!40}
+\colorlet{tableoddbackground}{HighlightColor!20}
+\colorlet{tableevenbackground}{HighlightColor!40}
 \newif\ifoddrow\oddrowtrue
 \newcommand{\flipfloprow}{%
   \ifoddrow

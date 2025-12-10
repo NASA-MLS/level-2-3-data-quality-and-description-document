@@ -25,11 +25,11 @@
   \ifthenelse{\equal{#1}{\currentnav}}%
   {%
     \def\nbnudge{\rule{2mm}{0pt}}%
-    \colorlet{NBColor}{ProductColor}%
-    \colorlet{NBBackground}{ProductBackground}}%
+    \colorlet{NBColor}{SelectedProductTabTextColor}%
+    \colorlet{NBBackground}{SelectedProductTabBackroundColor}}%
   {%
     \def\nbnudge{\rule{0pt}{0pt}}%
-    \colorlet{NBColor}{SectionColor}%
+    \colorlet{NBColor}{ProductTabTextColor}%
     \ifoddrow
       \colorlet{NBBackground}{ProductTabBackgroundA}%
     \else
@@ -59,10 +59,10 @@
    \equal{#2}{\currentnav}
  }%
   {\def\nbnudge{\rule{2mm}{0pt}}%
-    \colorlet{NBColor}{white}%
-    \colorlet{NBBackground}{ChapterBackground}}%
+    \colorlet{NBColor}{SelectedChapterTabTextColor}%
+    \colorlet{NBBackground}{SelectedChapterTabBackroundColor}}%
   {\def\nbnudge{\rule{0pt}{0pt}}%
-    \colorlet{NBColor}{ChapterBackground}%
+    \colorlet{NBColor}{ChapterTabTextColor}%
     \ifoddrow
       \colorlet{NBBackground}{ChapterTabBackgroundA}%
     \else

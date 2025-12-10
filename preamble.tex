@@ -91,26 +91,37 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 %
 % --------------------------------------- Colors
 %
-\definecolor{ThemeA}{HTML}{0e7c7b}
-\colorlet{ThemeB}{Coral!90!Purple}
+\definecolor{NASABlue}{RGB}{0, 89, 146}
+\definecolor{NASARed}{RGB}{218, 61, 69}
 %
-\colorlet{ChapterColor}{white}
-\colorlet{ChapterBackground}{ThemeA}
+% \definecolor{ThemeA}{HTML}{0e7c7b}
+% \colorlet{ThemeB}{Coral!90!Purple}
+\colorlet{ThemeA}{NASABlue}
+\colorlet{ThemeB}{NASARed}
 %
-\colorlet{SectionColor}{ThemeB}
-\colorlet{ProductColor}{white}
-\colorlet{ProductBackground}{SectionColor}
+\colorlet{HighlightColor}{ThemeA}
 %
-\colorlet{ChapterTabColor}{white}
-\colorlet{ChapterTabBackgroundA}{ChapterBackground!40}
-\colorlet{ChapterTabBackgroundB}{ChapterBackground!20}
-\colorlet{ProductTabColor}{black}
-\colorlet{ProductTabBackgroundA}{ProductBackground!40}
-\colorlet{ProductTabBackgroundB}{ProductBackground!20}
+\colorlet{ChapterBoxTextColor}{white}
+\colorlet{ChapterBoxBackgroundColor}{ThemeA}
+%
+\colorlet{ProductBoxTextColor}{white}
+\colorlet{ProductBoxBackgroundColor}{HighlightColor}
+%
+\colorlet{ChapterTabTextColor}{ThemeA}
+\colorlet{ChapterTabBackgroundA}{ThemeA!40}
+\colorlet{ChapterTabBackgroundB}{ThemeA!20}
+\colorlet{SelectedChapterTabTextColor}{white}
+\colorlet{SelectedChapterTabBackroundColor}{ThemeA}
+%
+\colorlet{ProductTabTextColor}{black}
+\colorlet{ProductTabBackgroundA}{Black!30}
+\colorlet{ProductTabBackgroundB}{Black!15}
+\colorlet{SelectedProductTabTextColor}{white}
+\colorlet{SelectedProductTabBackroundColor}{black}
 %
 \colorlet{HeaderFooterColor}{ThemeA}
 %
-\newcommand{\RegularSections}{\colorlet{topsectioncolor}{SectionColor}}
+\newcommand{\RegularSections}{\colorlet{topsectioncolor}{HighlightColor}}
 \newcommand{\ProductSections}{\colorlet{topsectioncolor}{white}}
 \RegularSections
 %
@@ -167,13 +178,13 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 
 % Chapter (numbered)
 \titleformat{\chapter}[display]
-  {\sffamily\bfseries\LARGE\color{ChapterColor}\filright}
+  {\sffamily\bfseries\LARGE\color{ChapterBoxTextColor}\filright}
   {}% label built in the body
   {0pt}
   {%
     \vspace*{-2.5em}%
     \noindent
-    \colorbox{ChapterBackground}{%
+    \colorbox{ChapterBoxBackgroundColor}{%
       \parbox[b]{\linewidth-2\fboxsep}{%
         \filright
         % Respect secnumdepth without \m@ne or \c@secnumdepth:
@@ -190,12 +201,12 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 
 % Chapter (unnumbered)
 \titleformat{name=\chapter,numberless}[display]
-  {\sffamily\bfseries\LARGE\color{ChapterColor}\filright}
+  {\sffamily\bfseries\LARGE\color{ChapterBoxTextColor}\filright}
   {}{0pt}
   {%
     \vspace*{-2.5em}%
     \noindent
-    \colorbox{ChapterBackground}{%
+    \colorbox{ChapterBoxBackgroundColor}{%
       \parbox{\linewidth-2\fboxsep}{%
         \filright #1%
       }%
@@ -213,7 +224,7 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 
 % Subsection
 \titleformat{\subsection}
-  {\large\sffamily\bfseries\color{SectionColor}%\figureversion{tabular}
+  {\large\sffamily\bfseries\color{HighlightColor}%\figureversion{tabular}
   \raggedright}
   {\thesubsection}{0.5em}{#1}
 \titlespacing*{\subsection}
@@ -221,7 +232,7 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 
 % Subsubsection
 \titleformat{\subsubsection}
-  {\normalsize\sffamily\bfseries\color{SectionColor}%\figureversion{tabular}
+  {\normalsize\sffamily\bfseries\color{HighlightColor}%\figureversion{tabular}
   \raggedright}
   {\thesubsubsection}{0.5em}{#1}
 \titlespacing*{\subsubsection}
@@ -231,7 +242,7 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 % Keep hierarchy shallow by not numbering at this level:
 % \setcounter{secnumdepth}{3} (or lower) in your preamble if needed.
 \titleformat{\paragraph}[runin]
-  {\normalsize\sffamily\color{SectionColor}%\figureversion{tabular}
+  {\normalsize\sffamily\color{HighlightColor}%\figureversion{tabular}
   }{}% empty label = no printed number
   {0pt}
   {#1:\ }% run-in delimiter
@@ -240,7 +251,7 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
   
 % Subparagraph (run-in, italic)
 \titleformat{\subparagraph}[runin]
-  {\small\sffamily\itshape\color{SectionColor}%\figureversion{tabular}
+  {\small\sffamily\itshape\color{HighlightColor}%\figureversion{tabular}
   }{}{0pt}{#1\enspace}
 \titlespacing*{\subparagraph}
   {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
@@ -266,7 +277,7 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 \usepackage{caption}
 \captionsetup{
   font={small,sf},                    % caption text: \small\sffamily
-  labelfont={bf,color=SectionColor},  % label ("Figure 1"): \bfseries + color
+  labelfont={bf,color=HighlightColor},  % label ("Figure 1"): \bfseries + color
   skip=6pt plus 6pt minus 4pt         % << space between figure and caption
 }
 %
