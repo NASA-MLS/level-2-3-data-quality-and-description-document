@@ -1,44 +1,6 @@
 % These rather complex beasties are the various macros used to make up
 % The information on a product.
 
-% THIS IS THE ORIGINAL ONE FROM CHATGPT
-% % ---------------------------------------- Defining a product
-% % This command sets up a section for a species.
-% %
-% % Arguments are:
-% % #1: Optional note after the swath name
-% % #2: Full English name (e.g., Nitrous Oxide)
-% % #3: LaTeX formula (e.g., \ch{N2O})
-% % #4: Swath name
-% % #5: Remaining contents of the \description environment
-% \newcommand{\speciestitle}[5][]{%
-% \cleardoublepage
-% \suppressfloats%
-% \thispagestyle{plain}%
-% {\noindent\colorbox{ProductBackground}{%
-% \begin{minipage}{\linewidth-2\fboxsep}%
-% \flushleft%
-% \section{#2 (\texorpdfstring{#3}{#4})}%
-% % Not sure why this bit is needed, it it's a working work around
-% \rhead{\large\sffamily\color{HeaderFooterColor}\nouppercase{\thesection.\
-%   #2 (#3)}}
-% \label{navSection#4}%
-% \label{sec:Standard#4}%
-% \color{ProductColor}\sffamily
-% \begin{description}[font=\sffamily\bfseries,topsep=0pt,partopsep=0pt]
-% \item[Swath name:] \texttt{#4} #1
-% #5
-% \end{description}
-% \end{minipage}}}%
-% \renewcommand{\currentnav}{#4}%
-% }
-
-% Requires fancyhdr loaded and your header template using \rightmark, e.g.:
-% \usepackage{fancyhdr}
-% \pagestyle{fancy}
-% \fancyhead[RO]{\nouppercase{\rightmark}} % example
-% \fancyhead[LE]{\nouppercase{\leftmark}}  % report class: chapters set \leftmark
-
 \newcommand{\speciestitle}[5][]{%
   \cleardoublepage
   \suppressfloats
@@ -101,23 +63,7 @@
   \renewcommand*{\theHfigure}{\theHsection.\arabic{figure}}%
   \renewcommand*{\theHtable}{\theHsection.\arabic{table}}%
 }
-
-% %
-% % Change the figures/table counters
-% \makeatletter
-% \def\renewcounter#1{%
-%     \@ifundefined{c@#1}
-%     {\@latex@error{counter #1 undefined}\@ehc}%
-%     \relax
-%     \let\@ifdefinable\@rc@ifdefinable
-%     \@ifnextchar[{\@newctr{#1}}{}}
-% \makeatother
-% \renewcounter{figure}[section]
-% \renewcounter{table}[section]
-% \renewcommand{\thefigure}{\thesection.\arabic{figure}}
-% \renewcommand{\thetable}{\thesection.\arabic{table}}
-%
-\newcommand{\screeningrule}[1]{\textbf{#1}\par}
+nd{\screeningrule}[1]{\textbf{#1}\par}
 
 % -------------------------- Averaging kernels
 \newcommand{\extracaption}{}
