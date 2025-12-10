@@ -49,50 +49,18 @@ Brian~W.~Knosp\\
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
 \pagenumbering{roman}
 
-\maketitle
-%
-\renewcommand{\chaptermark}[1]{%
-   \markboth{\chaptername\ \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{%
-   \markright{\thesection.\ #1}{}}
-%
-% --------------------------------------- Headers / footers
-%
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
-%
-\pagestyle{fancyplain}
-\renewcommand{\chaptermark}[1]{%
-   \markboth{\chaptername\ \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{%
-   \markright{\thesection.\ #1}{}}
-\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
-\lhead{}
-\cfoot{%\RenderNavBar%
-\sffamily\textcolor{HeaderFooterColor}{\thepage}}
-\lfoot{\sffamily\textcolor{HeaderFooterColor}{Aura Microwave Limb Sounder (MLS)}}
-\rfoot{\sffamily\textcolor{HeaderFooterColor}{\myshorttitle}}
-%
-\fancypagestyle{plain}{%
-  \fancyhead{}
-  \cfoot{%\RenderNavBar%
-    \sffamily\textcolor{HeaderFooterColor}{\thepage}}
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0.5pt}
-}
-%
-\makeatletter
-\def\headrule{{\color{HeaderFooterColor}\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
-   \hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
 
-\def\footrule{{\color{HeaderFooterColor}\if@fancyplain\let\footrulewidth\plainfootrulewidth\fi
-   \vskip-\footruleskip\vskip-\footrulewidth
-   \hrule\@width\headwidth\@height\footrulewidth\vskip\footruleskip}}
-\makeatother
+% Now a new title page
+\input{titlepage}
+\clearpage
+%
+\maketitle
 %
 % --------------------------------------- Document proper
 %
 \input{navguide.tex}
+
+\pagestyle{fancy}
 \rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
 \lhead{}
 \cfoot{\RenderNavBar%
@@ -107,19 +75,14 @@ Brian~W.~Knosp\\
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0.5pt}
 }
-%
+% 
 % Do the quick summary
-%
 \input{quicksummary.tex}
-%
 % Do the revision history
-%
 \input{history.tex}
-%
+
 % Now do the table of contents etc.
-%
 \tableofcontents
-%
 % ------------------------------------------------------------------------------
 %
 % Now call in the various chapters

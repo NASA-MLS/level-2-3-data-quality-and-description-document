@@ -82,7 +82,7 @@
 %
 % --------------------------------------- Tikz
 \usepackage{tikz}
-\usetikzlibrary{calc,matrix}
+\usetikzlibrary{calc, matrix, backgrounds}
 %
 % --------------------------------------- Finally, hyperref
 %
@@ -120,8 +120,8 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
   paperwidth=8.5in,%
   paperheight=11in,%
   top=1in,%
-  left=1in,%
-  right=1in,%
+  left=1.15in,%
+  right=0.85in,%
   bottom=1in,%
   headheight=20pt,%
   headsep=0.2in,%
@@ -295,3 +295,43 @@ pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality an
 \setlist[itemize,1]{itemsep=0.5ex,parsep=0.5ex,partopsep=0.5ex}
 \setlist[description,1]{itemsep=0.5ex,parsep=0.5ex,partopsep=0.5ex}
 \setlist[enumerate,1]{itemsep=0.5ex,parsep=0.5ex,partopsep=0.5ex}
+
+
+%
+\renewcommand{\chaptermark}[1]{%
+   \markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{%
+   \markright{\thesection.\ #1}{}}
+%
+% --------------------------------------- Headers / footers
+%
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%
+\renewcommand{\chaptermark}[1]{%
+   \markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{%
+   \markright{\thesection.\ #1}{}}
+\rhead{\large\sffamily\textcolor{HeaderFooterColor}{\nouppercase{\rightmark}}}
+\lhead{}
+\cfoot{%\RenderNavBar%
+\sffamily\textcolor{HeaderFooterColor}{\thepage}}
+\lfoot{\sffamily\textcolor{HeaderFooterColor}{Aura Microwave Limb Sounder (MLS)}}
+\rfoot{\sffamily\textcolor{HeaderFooterColor}{\myshorttitle}}
+%
+\fancypagestyle{plain}{%
+  \fancyhead{}
+  \cfoot{%\RenderNavBar%
+    \sffamily\textcolor{HeaderFooterColor}{\thepage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.5pt}
+}
+%
+\makeatletter
+\def\headrule{{\color{HeaderFooterColor}\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+   \hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+
+\def\footrule{{\color{HeaderFooterColor}\if@fancyplain\let\footrulewidth\plainfootrulewidth\fi
+   \vskip-\footruleskip\vskip-\footrulewidth
+   \hrule\@width\headwidth\@height\footrulewidth\vskip\footruleskip}}
+\makeatother

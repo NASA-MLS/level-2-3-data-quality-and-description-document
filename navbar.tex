@@ -2,7 +2,7 @@
 \newif\ifhighlight
 % Set up some lengths
 \newlength{\navbaryunit}
-\setlength{\navbaryunit}{0.40in}
+\setlength{\navbaryunit}{0.433in}
 %
 \newlength{\navbartextheight}
 \setlength{\navbartextheight}{4mm}
@@ -24,7 +24,7 @@
   % #2 is the name for it (e.g., \ch{H2O})
   \ifthenelse{\equal{#1}{\currentnav}}%
   {%
-    \def\nbnudge{\rule{3mm}{0pt}}%
+    \def\nbnudge{\rule{2mm}{0pt}}%
     \colorlet{NBColor}{ProductColor}%
     \colorlet{NBBackground}{ProductBackground}}%
   {%
@@ -58,7 +58,7 @@
    \or
    \equal{#2}{\currentnav}
  }%
-  {\def\nbnudge{\rule{3mm}{0pt}}%
+  {\def\nbnudge{\rule{2mm}{0pt}}%
     \colorlet{NBColor}{white}%
     \colorlet{NBBackground}{ChapterBackground}}%
   {\def\nbnudge{\rule{0pt}{0pt}}%
@@ -80,7 +80,7 @@
   \oddrowtrue
   \savebox{\navbar}{%
     \begin{tikzpicture}
-      \matrix[row sep=0pt, inner sep=0pt, outer sep=0pt] {
+      \matrix[row sep=0pt, inner sep=0pt, outer sep=0pt, nodes={anchor=west}] {
         % First the things in the early chapters
         \node {\DrawNavBarExtra{sec:NavGuide}{Help}{Help}}; \\
         \node {\DrawNavBarExtra{chap:Overview}{Overview}{Overview}}; \\
@@ -116,6 +116,6 @@
     \ifthenelse{\equal{\savednav}{\currentnav}}%
     {}{\BuildNavBar\renewcommand{\savednav}{\currentnav}}
     \begin{tikzpicture}[remember picture, overlay, inner sep=0pt, outer sep=0pt]
-      \node [anchor=north] at ($ (current page.south west) + (8in, 10.7in) $) {\usebox\navbar};
+      \node [anchor=south west] at (current page.south west) {\usebox\navbar};
 \end{tikzpicture}}}
 \ifnav\else\renewcommand{\RenderNavBar}{}\fi
