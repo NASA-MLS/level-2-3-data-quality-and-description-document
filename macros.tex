@@ -1,6 +1,5 @@
 % These rather complex beasties are the various macros used to make up
 % The information on a product.
-
 \newcommand{\speciestitle}[5][]{%
   \cleardoublepage
   \suppressfloats
@@ -20,24 +19,14 @@
         \end{description}
       \end{minipage}%
     }%
-  }\vspace{10pt}% <-- group ends; now we are back in vertical mode
+  }\vspace{10pt}%
   % Update the running head mark OUTSIDE the box/group:
   \sectionmark{#2 (\texorpdfstring{#3}{#4})}%
-  % If your fancyhdr template uses \rightmark directly, that's enough.
-  % If you prefer to hardwire the field instead of relying on \rightmark,
-  % you can uncomment the next line to set it globally for following pages:
-  % \fancyhead[RO]{\large\sffamily\color{HeaderFooterColor}%
-  %   \nouppercase{\thesection.\enspace #2 (#3)}}
   \renewcommand{\currentnav}{#4}%
 }
 
-
-\newcommand{\email}[1]{\href{mailto:#1}{\mbox{$<$\texttt{#1}$>$}}}
-
 % -------------------------- Switch figure/table numbering to section/chapter based
-
 \usepackage{chngcntr} % for \counterwithin / \counterwithout
-
 % ---- Figures & tables numbered within CHAPTER ----
 \newcommand{\FigTabWithinChapter}{%
   % Remove any previous "within section" setting
@@ -50,7 +39,6 @@
   \renewcommand*{\theHfigure}{\theHchapter.\arabic{figure}}%
   \renewcommand*{\theHtable}{\theHchapter.\arabic{table}}%
 }
-
 % ---- Figures & tables numbered within SECTION ----
 \newcommand{\FigTabWithinSection}{%
   % Remove any previous "within chapter" setting
@@ -63,52 +51,17 @@
   \renewcommand*{\theHfigure}{\theHsection.\arabic{figure}}%
   \renewcommand*{\theHtable}{\theHsection.\arabic{table}}%
 }
-nd{\screeningrule}[1]{\textbf{#1}\par}
+
+\newcommand{\screeningrule}[1]{\textbf{#1}\par}
 
 % -------------------------- Averaging kernels
 \newcommand{\extracaption}{}
 
 \newcommand{\avkcaption}[2]{%
-  Typical two-dimensional (vertical and horizontal along-track)
-  averaging kernels for the MLS \thisv #2#1 data at the equator (upper)
-  and at 70\degsym N (lower); variation in the averaging kernels is
-  sufficiently small that these are representative of typical profiles.
-  Colored lines show the averaging kernels as a function of MLS
-  retrieval level, indicating the region of the atmosphere from which
-  information is contributing to the measurements on the individual
-  retrieval surfaces, which are denoted by plus signs in corresponding
-  colors.  The dashed black line indicates the resolution, determined
-  from the full width at half maximum (FWHM) of the averaging kernels,
-  approximately scaled into kilometers (top axes).  (Left) Vertical
-  averaging kernels (integrated in the horizontal dimension for five
-  along-track profiles) and resolution.  The solid black line shows the
-  integrated area under each kernel (horizontally and vertically);
-  values near unity imply that the majority of information for that MLS
-  data point has come from the measurements, whereas lower values imply
-  substantial contributions from a priori information.  (Right)
-  Horizontal averaging kernels (integrated in the vertical dimension)
-  and resolution.  The horizontal averaging kernels are shown scaled
-  such that a unit averaging kernel amplitude is equivalent to a factor
-  of 10 change in pressure.}
+Typical two-dimensional (vertical and horizontal along-track) averaging kernels for the MLS \thisv #2#1 data at the equator (upper) and at 70\degsym N (lower); variation in the averaging kernels is sufficiently small that these are representative of typical profiles. Colored lines show the averaging kernels as a function of MLS retrieval level, indicating the region of the atmosphere from which information is contributing to the measurements on the individual retrieval surfaces, which are denoted by plus signs in corresponding colors.  The dashed black line indicates the resolution, determined from the full width at half maximum (FWHM) of the averaging kernels, approximately scaled into kilometers (top axes).  (Left) Vertical averaging kernels (integrated in the horizontal dimension for five along-track profiles) and resolution.  The solid black line shows the integrated area under each kernel (horizontally and vertically); values near unity imply that the majority of information for that MLS data point has come from the measurements, whereas lower values imply substantial contributions from a priori information.  (Right) Horizontal averaging kernels (integrated in the vertical dimension) and resolution.  The horizontal averaging kernels are shown scaled such that a unit averaging kernel amplitude is equivalent to a factor of 10 change in pressure.}
 
 \newcommand{\vertavkcaption}[2]{%
-  Typical vertical averaging kernels for the MLS \thisv #2#1 data at the
-  equator (left) and at 70\degsym N (right); variation in the averaging
-  kernels is sufficiently small that these are representative of typical
-  profiles.  Colored lines show the averaging kernels as a function of
-  MLS retrieval level, indicating the region of the atmosphere from
-  which information is contributing to the measurements on the
-  individual retrieval surfaces, which are denoted by plus signs in
-  corresponding colors.  The dashed black line indicates the vertical
-  resolution, determined from the full width at half maximum (FWHM) of
-  the averaging kernels, approximately scaled into kilometers (top
-  axes).  The solid black line shows the integrated area under each
-  kernel; values near unity imply that the majority of information for
-  that MLS data point has come from the measurements, whereas lower
-  values imply substantial contributions from a priori information.  The
-  low signal to noise for this product necessitates the use of
-  significant averaging (e.g., monthly zonal mean), making horizontal
-  averaging kernels largely irrelevant.}
+Typical vertical averaging kernels for the MLS \thisv #2#1 data at the equator (left) and at 70\degsym N (right); variation in the averaging kernels is sufficiently small that these are representative of typical profiles.  Colored lines show the averaging kernels as a function of MLS retrieval level, indicating the region of the atmosphere from which information is contributing to the measurements on the individual retrieval surfaces, which are denoted by plus signs in corresponding colors.  The dashed black line indicates the vertical resolution, determined from the full width at half maximum (FWHM) of the averaging kernels, approximately scaled into kilometers (top axes).  The solid black line shows the integrated area under each kernel; values near unity imply that the majority of information for that MLS data point has come from the measurements, whereas lower values imply substantial contributions from a priori information.  The low signal to noise for this product necessitates the use of significant averaging (e.g., monthly zonal mean), making horizontal averaging kernels largely irrelevant.}
 
 \newcommand{\onestandardavk}[2]{%
 \begin{figure}%
@@ -129,26 +82,23 @@ nd{\screeningrule}[1]{\textbf{#1}\par}
 \end{figure}}
 
 % ------------------------------------ Other boilerplate
-\newcommand{\standardrangestatement}{Values outside this range are not
-  recommended for scientific use.}
+\newcommand{\standardrangestatement}{%
+  Values outside this range are not recommended for scientific use.}
+%
 \newcommand{\standardprecisionrule}{%
-\item[Estimated precision:] \screeningrule{Only use values for which the
-    estimated precision is a positive number.} Values where the \emph{a
-    priori} information has a strong influence are flagged with negative
-  or zero precision and should not be used in scientific analyses (see
-  Section~\ref{sec:NegativePrecision}).}  \newcommand{\evenstatusrule}{%
-\item[Status flag:] \screeningrule{Only use profiles for which the
-    \texttt{Status} field is an even number.}  Odd values of \texttt{Status}
-  indicate that the profile should not be used in scientific studies.
-  See Section~\ref{sec:StatusQuality} for more information on the
-  interpretation of the \texttt{Status} field.}
+  \item[Estimated precision:] \screeningrule{Only use values for which the estimated precision is a positive number.} Values where the \emph{a priori} information has a strong influence are flagged with negative or zero precision and should not be used in scientific analyses (see Section~\ref{sec:NegativePrecision}).}
+%
+\newcommand{\evenstatusrule}{%
+\item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is an even number.}  Odd values of \texttt{Status} indicate that the profile should not be used in scientific studies. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.}
+%
 \newcommand{\cloudsokrule}{\screeningrule{%
-    Profiles identified as being affected by clouds can be used with no
-    restriction.}}
-\newcommand{\qualityrule}[1]{\screeningrule{Only
-    profiles whose \texttt{Quality} field is greater than #1 should be used.}}
-\newcommand{\convergencerule}[1]{\screeningrule{Only profiles whose
-    \texttt{Convergence} field is less than #1 should be used.}}
+  Profiles identified as being affected by clouds can be used with no restriction.}}
+%
+\newcommand{\qualityrule}[1]{\screeningrule{%
+  Only profiles whose \texttt{Quality} field is greater than #1 should be used.}}
+%
+\newcommand{\convergencerule}[1]{\screeningrule{%
+  Only profiles whose \texttt{Convergence} field is less than #1 should be used.}}
 
 % ----------------------------------- Table flipflopping
 \colorlet{tableheadbackground}{SectionColor}
@@ -171,8 +121,29 @@ nd{\screeningrule}[1]{\textbf{#1}\par}
   \rowcolor{tableoddbackground}
   \fi}  
 
-% ----------------------------------- Shortcuts
+% ----------------------------------- Shortcuts for some species
 \newcommand{\mecn}{\ch{CH3CN}\xspace}
 \newcommand{\mecl}{\ch{CH3Cl}\xspace}
 \newcommand{\meoh}{\ch{CH3OH}\xspace}
-
+%
+% ----------------------------------- Macros for naming MLS data verisons
+%
+% The first batch are static
+\newcommand{\vi}{v1.5\emph{x}\xspace}
+\newcommand{\Vi}{V1.5\emph{x}\xspace}
+\newcommand{\vii}{v2.2\emph{x}\xspace}
+\newcommand{\Vii}{V2.2\emph{x}\xspace}
+\newcommand{\viii}{v3.3\emph{x}/v3.4\emph{x}\xspace}
+\newcommand{\Viii}{V3.3\emph{x}/v3.4\emph{x}\xspace}
+\newcommand{\viv}{v4.2\emph{x}\xspace}
+\newcommand{\Viv}{V4.2\emph{x}\xspace}
+\newcommand{\vv}{v5.0\emph{x}\xspace}
+\newcommand{\Vv}{V5.0\emph{x}\xspace}
+\newcommand{\vvi}{v6.0\emph{x}\xspace}
+\newcommand{\Vvi}{V6.0\emph{x}\xspace}
+%
+% The second batch update with data version (if we ever do a new version)
+\newcommand{\prevv}{\vv}
+\newcommand{\Prevv}{\Vv}
+\newcommand{\thisv}{\vvi}
+\newcommand{\Thisv}{\Vvi}
