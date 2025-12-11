@@ -1,3 +1,5 @@
+% This package allows us to suppress contents when printing
+\usepackage{ocgx2}
 %
 \newif\ifhighlight
 % Set up some lengths
@@ -115,9 +117,12 @@
 \newcommand{\savednav}{EMPTY}
   
 \newcommand{\RenderNavBar}{{%
-    \ifthenelse{\equal{\savednav}{\currentnav}}%
-    {}{\BuildNavBar\renewcommand{\savednav}{\currentnav}}
-    \begin{tikzpicture}[remember picture, overlay, inner sep=0pt, outer sep=0pt]
-      \node [anchor=south west] at (current page.south west) {\usebox\navbar};
-\end{tikzpicture}}}
-\ifnav\else\renewcommand{\RenderNavBar}{}\fi
+    \begin{ocg}[printocg=never]{Navigation toolbar}{navigation}{1}
+        \ifthenelse{\equal{\savednav}{\currentnav}}%
+        {}{\BuildNavBar\renewcommand{\savednav}{\currentnav}}
+        \begin{tikzpicture}[remember picture, overlay, inner sep=0pt, outer sep=0pt]
+          \node [anchor=south west] at (current page.south west) {\usebox\navbar};
+        \end{tikzpicture}
+    \end{ocg}}}%
+    \ifnav\else\renewcommand{\RenderNavBar}{}\fi
+
