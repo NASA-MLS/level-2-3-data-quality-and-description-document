@@ -1,13 +1,14 @@
 \clearpage
 \renewcommand{\currentnav}{Help}
-\RenderNavBar
 \newlength{\navguidewidth}%
 \setlength{\navguidewidth}{\linewidth-2in}%
 \newlength{\navguidegap}%
 \setlength{\navguidegap}{1.5cm}%
 \thispagestyle{plain}%
 
-\null\hspace{1in}\parbox{\navguidewidth}{\section*{Navigating this document} \label{sec:NavGuide}%
+\RenderNavBar
+\null\hspace{1in}\parbox{\navguidewidth}{%
+\section*{Navigating this document}
 
 \tikzset{guidearrow/.style={ultra thick, arrows=-stealth, rounded corners=3mm}}
 \tikzset{hookoffset/.style={xshift=-0.5ex, yshift=0.5ex}}
@@ -34,7 +35,7 @@ Clicking on ``Help'' takes you back to this page. \mycomment{Check link works!}
   \node [hookoffset] (OverviewHook) {};
   \draw [guidearrow, ThemeA] (OverviewHook) -| ($ (OverviewTarget) + (2cm,0) $) -- (OverviewTarget);
 \end{tikzpicture}%
-An \hyperref[chap:Overview]{overview of the information in this document} is given on the next page.  You can return to it by clicking on the ``Overview'' tab in the navigation bar.
+This documment starts with an \hyperref[chap:Overview]{overview of the information in this document}.  You can return to it by clicking on the ``Overview'' tab in the navigation bar.
 
 \vspace{\navguidegap}
 \begin{tikzpicture}[remember picture, overlay]
@@ -68,4 +69,7 @@ First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapt
 \end{itemize}
 
 Clicking on the product name in the navigation bar takes you to the beginning of that section; clicking on the ``S'' and ``T'' symbols takes you directly to the screening rules and summary table, respectively, for that product.}
-
+\phantomsection
+\label{sec:NavGuide}
+\clearpage
+\renewcommand{\currentnav}{BLANK}
