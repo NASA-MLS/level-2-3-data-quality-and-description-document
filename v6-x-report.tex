@@ -5,35 +5,24 @@
 \input{preamble}
 %
 % Set up some document stuff
-\hypersetup
-%
-% The macros.tex file contains various boilerplate text, notably
-% captions for the averaging kernel figures.
-\input{macros}
-%
-% Now begin the document and set a few various counters and values etc.
-\begin{document}
-%
-% ------------------------------------------------------------------------------
-%
-% Now do the title page
-%
-\title{Version~6.0x Level~2 and~3 data quality and description document.}
+\title{Version~6.0x Level~2 and~3 data quality and description document}
 \author{%
-Nathaniel~J.~Livesey,
-William~G.~Read,
-Paul~A.~Wagner\cp{*},
-Lucien~Froidevaux\cp{*},
-Michelle~L.~Santee,
-Michael~J.~Schwartz,
-Alyn~Lambert,
-Luis~F.~Mill\'an,
-Hugh~C.~Pumphrey\cp{\dag},
-Gloria~L.~Manney\cp{*\ddag},
+Nathaniel~J.~Livesey\cp1,
+William~G.~Read\cp1,
+Paul~A.~Wagner\cp{1*},
+Lucien~Froidevaux\cp{1*},
+Michelle~L.~Santee\cp1,
+Michael~J.~Schwartz\cp1,
+Alyn~Lambert\cp1,
+Luis~F.~Mill\'an\cp1,
+Hugh~C.~Pumphrey\cp{2},
+Gloria~L.~Manney\cp{3*},
 %
-Ryan~A.~Fuller,
-Robert~F.~Jarnot,
-Brian~W.~Knosp\\
+Ryan~A.~Fuller\cp1,
+Robert~F.~Jarnot\cp1,
+Brian~W.~Knosp\cp1}
+%
+\
 %
 \vspace{0.5\baselineskip}
 \cp{*} Retired\\
@@ -46,6 +35,25 @@ Brian~W.~Knosp\\
 \newcommand{\myshorttitle}{Level~2/3 Version 5.0\emph{x} Quality}
 \shorttitle{\myshorttitle}
 \version{6.0--0.1}
+
+\hypersetup{%
+  pdftitle={Aura Microwave Limb Sounder Version 6.0x Level 2 and 3 data quality and description document},
+  pdfauthor={Nathaniel J. Livesey, William G. Read, Paul A. Wagner, Lucien Froidevaux, Michelle L. Santee, Michael J. Schwartz, Alyn Lambert, Luis F. Millán, Hugh C. Pumphrey, Gloria L. Manney, Ryan A. Fuller, Robert F. Jarnot, Brian W. Knosp},
+  pdfsubject={Aura Microwave Limb Sounder},
+  pdfkeyword={NASA, Aura, MLS, Ozone, Stratosphere, Mesosphere},
+  }
+%
+% The macros.tex file contains various boilerplate text, notably
+% captions for the averaging kernel figures.
+\input{macros}
+%
+% Now begin the document and set a few various counters and values etc.
+\begin{document}
+%
+% ------------------------------------------------------------------------------
+%
+% Now do the title page
+%
 %
 \otherrefs{}
 \coverpicture{\rule{1in}{0in}\includegraphics[width=3.5in]{figures/avk-O3_HR}\RenderNavBar}
