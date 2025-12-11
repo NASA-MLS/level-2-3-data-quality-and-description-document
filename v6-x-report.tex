@@ -50,6 +50,7 @@ Brian~W.~Knosp\cp1}
 % ------------------------------------------------------------------------------
 %
 % Now begin the document and set a few various counters and values etc.
+\pagenumbering{roman}
 \begin{document}
 %
 % Now do the title pages
@@ -75,6 +76,9 @@ Brian~W.~Knosp\cp1}
   \renewcommand{\footrulewidth}{0.5pt}
 }
 %
+% Now do the table of contents etc.
+\tableofcontents
+%
 % Now the preface
 \input{preface}
 %
@@ -83,9 +87,6 @@ Brian~W.~Knosp\cp1}
 %
 % Do the revision history
 \input{history.tex}
-%
-% Now do the table of contents etc.
-\tableofcontents
 % ------------------------------------------------------------------------------
 %
 % Now call in the various chapters
@@ -117,6 +118,7 @@ Brian~W.~Knosp\cp1}
 %
 \input{appEmbedded}
 %
+\renewcommand{\bibsection}{\chapter{References}}
 \renewcommand{\currentnav}{BLANK}
 \renewcommand{\leftmark}{Bibliography}
 \renewcommand{\rightmark}{Bibliography}
