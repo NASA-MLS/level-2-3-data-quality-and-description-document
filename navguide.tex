@@ -27,7 +27,7 @@
   \node [hookoffset] (HelpHook) {};
   \draw [guidearrow, ThemeA] (HelpHook) -| ($ (HelpTarget-|OverviewTarget) + (3cm,0) $) -- (HelpTarget);
 \end{tikzpicture}%
-Clicking on ``Help'' takes you back to this page. \mycomment{Check link works!}
+Clicking on ``Help'' takes you back to this page.
 
 
 \vspace{\navguidegap}
@@ -35,14 +35,14 @@ Clicking on ``Help'' takes you back to this page. \mycomment{Check link works!}
   \node [hookoffset] (OverviewHook) {};
   \draw [guidearrow, ThemeA] (OverviewHook) -| ($ (OverviewTarget) + (2cm,0) $) -- (OverviewTarget);
 \end{tikzpicture}%
-This documment starts with an \hyperref[chap:Overview]{overview of the information in this document}.  You can return to it by clicking on the ``Overview'' tab in the navigation bar.
+There is a \hyperref[chap:Overview]{one-page overview of the information in this document}.  You can return to it by clicking on the ``Overview'' tab in the navigation bar.
 
 \vspace{\navguidegap}
 \begin{tikzpicture}[remember picture, overlay]
   \node [hookoffset] (MainTableHook) {};
   \draw [guidearrow, ThemeA] (MainTableHook) -| ($ (MainTableTarget) + (1cm,0) $) -- (MainTableTarget);
 \end{tikzpicture}%
-First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapter~\ref*{chap:Essential}} first.  The discussion includes \hyperref[tab:ProductSummary]{a table summarizing key aspects of each MLS product.}  This table can be accessed from anywhere in the document by clicking on the ``Table'' tab in the navigation bar.
+First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapter~\ref*{chap:Essential}} first.  The discussion includes \hyperref[tab:ProductSummary]{a table summarizing key aspects of each MLS product} that can be accessed from anywhere in the document by clicking on the ``Table'' tab in the navigation bar.
 
 \vspace{\navguidegap}
 \begin{tikzpicture}[remember picture, overlay]
@@ -50,7 +50,7 @@ First-time users of MLS data are advised to read \hyperref[chap:Essential]{Chapt
   \draw [guidearrow, ThemeB] (ProductHook) -| ($ (GenericProductTarget) +
   (2.5cm,0) $) -- (GenericProductTarget);
 \end{tikzpicture}%
-\hyperref[chap:Level2]{Chapter~\ref*{chap:Level2}} describes each of the MLS data products individually (mainly the ``Level-2'' products).  You can use the navigation bar to skip immediately to any of the product-specific sections.
+\hyperref[chap:Level2]{Chapter~\ref*{chap:Level2}} describes each of the MLS ``Level-2'' data products individually.  You can use the navigation bar to skip immediately to any of the product-specific sections.
 
 \vspace{2ex}Each section includes
 \begin{itemize}
