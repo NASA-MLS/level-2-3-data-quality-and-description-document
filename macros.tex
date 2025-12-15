@@ -1,5 +1,12 @@
 % These rather complex beasties are the various macros used to make up
 % The information on a product.
+%
+% #1 (optional): note before full product name
+% #2: full product name (e.g., "Water Vapor")
+% #3: chemical formula (e.g., "\ch{H2O}")
+% #4: tag for various cross references (e.g., "H2O")
+% #5: notes (other description \item's) that appear in header box
+
 \newcommand{\speciestitle}[5][]{%
   \cleardoublepage
   \suppressfloats
