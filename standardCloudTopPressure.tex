@@ -1,24 +1,46 @@
-\speciestitle[(not an L2GP quantity, stored differently, see text)]{Cloud Top Pressure}{CloudTopPressure}{CldTopP}{%
+\speciestitle{Cloud Top Pressure}{CloudTopPressure}{CldTopP}{%
   \item[Units:] hPa
   \item[Useful range:] 1000--70\,hPa
   \item[Product Lead: ] Frank Werner, \email{Frank.Werner@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
+This product is new in \thisv, and is described in more detail in \citet{WernerEtal:2021}. \mycomment{Summarize how the product is generated and any differences in how this shoud be interpreted compared to other L2GP products.  I realize I was confused in our discussion earlier today, it seems that this is indeed an L2GP product.  However, given that it is created directly from the radiances (at least as I understand it), hope is the mapping from major frames to profiles accomplished here?  Is this something Paul arranged for?}
+
 \subsection{Precision}
 
+\mycomment{Add a discussion of how the precision has been computed (if value in file is meaningless (don't think it is), then better to say so rather than delete the section}
+
 \subsection{Accuracy}
+
+\mycomment{Not sure what you can say on accuracy, but probably good to keep this section.}
 
 \subsection{Data screening}
 \label{sec:pCldTopScreening}
 \begin{description}
-  \item[Topic:] 
+  \item[Pressure range (1000--70\,hPa):] \standardrangestatement\ \mycomment{Edit/expand as needed.}
+
+  \standardprecisionrule
+
+    \item[Quality:] \qualityrule{\mycomment{x.x}}
+
+  \item[Convergence:] \convergencerule{\mycomment{x.x}}
+
+
+  \item[Others:] \mycomment{Add other rules if/as needed.  Examine other sections for examples.}
 \end{description}
 
 \subsection{Artifacts}
 
+\mycomment{Delete this subsection if/as needed}
+
 
 \subsection{Comparisons with other datasets}
 
+\mycomment{Delete this subsection if/as needed}
+
 \subsection{Desired improvements for future data version(s)}
 
+\mycomment{Delete this subsection if/as needed}
+
+\mycomment{Think about whether there is some kind of table it makes sense to include, but not for it's own sake.  We can delete the "T" in the toolbar for this product if need be.}}
