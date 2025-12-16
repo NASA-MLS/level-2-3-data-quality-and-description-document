@@ -17,12 +17,13 @@
 \begin{table}
   \renewcommand{\thefootnote}{\sffamily[\arabic{footnote}]}
   \renewcommand{\arraystretch}{1.3}
+  \setlength{\extrarowheight}{-0.1pt} % Needed to fit table on page
   %
   \caption{Summary of key information for each MLS standard product in \thisv. See Chapter~\ref{chap:Level2} for details.}
   \label{tab:ProductSummary}
-  \vspace{-2mm}
+  \vspace{-5mm}
   %
-  \setlength{\tabcoli}{2.4cm}
+  \setlength{\tabcoli}{2.8cm}
   \setlength{\tabcolii}{2.2cm}
   \setlength{\tabcoliii}{2.0cm}
   \setlength{\tabcoliv}{2.5cm}
@@ -45,7 +46,7 @@
     \tableheadentry{Quality threshold\,\footnotemark[1]} &
     \tableheadentry{Convergence threshold\,\footnotemark[2]} &
     \tableheadentry{Notes} &
-    \tableheadentry{Product lead}%
+    \tableheadentry{Product lead(s)}%
     \tabularnewline\flipfloprow
     %
 \hyperref[sec:StandardBrO]{\texttt{BrO}} & 10--3.2 & 1.3 & 1.05 & A,D,N & Luis Mill\'an
@@ -62,6 +63,9 @@
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardClO]{\texttt{ClO}} & 147--1.0 & 1.3 & 1.05 & B,D,W & Michelle Santee
+\tabularnewline\flipfloprow
+%
+\hyperref[sec:StandardCldTopP]{\texttt{CloudTopPressure}} & 1000--70 & \mycomment{xx} & \mycomment{xx} & & Frank Werner
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardCO]{\texttt{CO}} &
@@ -141,7 +145,7 @@ O \newline C,O &
 \end{tabular}
 \end{center}
   %
-  \vspace{-5mm}\parbox[t]{0.5\textwidth-0.5\columnsep}{\sffamily\fontsize{9pt}{10pt}\selectfont\flushleft\textbf{Notes:}
+  \vspace{-6mm}\parbox[t]{0.5\textwidth-0.5\columnsep}{\sffamily\fontsize{9pt}{10pt}\selectfont\flushleft\textbf{Notes:}
     \begin{tablenotes}
       \item[A] Users should consider using alternative versions of this product, generated using different algorithms. See Chapter~\ref{chap:Level2}.
       \item[B] This product has significant biases in certain regions should be considered or corrected for. See Chapter~\ref{chap:Level2}.
