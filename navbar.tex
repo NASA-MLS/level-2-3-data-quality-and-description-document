@@ -21,10 +21,10 @@
 
 % This macro constructs a single entry in the navbar
 \newif\ifoddrow\oddrowtrue
-\newcommand{\DrawNavBarProduct}[2]{%
+\NewDocumentCommand{\DrawNavBarProduct}{s m m}{%
   % #1 is the tag for the product (e.g., H2O)
   % #2 is the name for it (e.g., \ch{H2O})
-  \ifthenelse{\equal{#1}{\currentnav}}%
+  \ifthenelse{\equal{#2}{\currentnav}}%
   {%
     \def\nbnudge{\rule{2mm}{0pt}}%
     \colorlet{NBColor}{SelectedProductTabTextColor}%
@@ -38,16 +38,18 @@
       \colorlet{NBBackground}{ProductTabBackgroundB}%
     \fi}%
   \ifoddrow\global\oddrowfalse\else\global\oddrowtrue\fi%
-  \def\nbsecref{sec:Standard#1}%
-  \def\nbscrref{sec:#1Screening}%
-  \def\nbtabref{tab:#1Summary}%
+  \def\nbsecref{sec:Standard#2}%
+  \def\nbscrref{sec:#2Screening}%
+  \def\nbtabref{tab:#2Summary}%
   \nbnudge\hyperref[\nbsecref]{\begin{tikzpicture}[outer sep=0pt, inner sep=5pt]
-    \node (NBProduct#1) [nbentry] {#2};
-    \node (NBProductRulesLink#1) [nblinks, anchor=north east]
-      at (NBProduct#1.north west) {\hyperref[\nbscrref]{S}};
-    \node (NBProductTableLink#1) [nblinks, anchor=south east]
-      at (NBProduct#1.north east) {\hyperref[\nbtabref]{T}};
-    % \node [anchor=east, inner sep=0pt, outer sep=0pt] at (NBProduct#1.west) {\nbnudge};
+    \node (NBProduct#2) [nbentry] {#3};
+    \node (NBProductRulesLink#2) [nblinks, anchor=north east]
+      at (NBProduct#2.north west) {\hyperref[\nbscrref]{S}};
+    \IfBooleanTF{#1}{% The asterisked form has no (visible "T" button)
+    }{%
+    \node (NBProductTableLink#2) [nblinks, anchor=south east]
+      at (NBProduct#2.north east) {\hyperref[\nbtabref]{T}};}
+    % \node [anchor=east, inner sep=0pt, outer sep=0pt] at (NBProduct#2.west) {\nbnudge};
   \end{tikzpicture}}}
 %
 \newcommand{\DrawNavBarExtra}[3]{%
@@ -95,7 +97,7 @@
         \node {\DrawNavBarProduct{CH3CN}{\ch{CH3CN}}};\\
         \node {\DrawNavBarProduct{CH3OH}{\ch{CH3OH}}};\\
         \node {\DrawNavBarProduct{ClO}{ClO}};\\
-        \node {\DrawNavBarProduct{CldTopP}{CldTopP}};\\
+        \node {\DrawNavBarProduct*{CldTopP}{CldTopP}};\\
         \node {\DrawNavBarProduct{CO}{CO}};\\
         \node {\DrawNavBarProduct{GPH}{GPH}};\\
         \node {\DrawNavBarProduct{H2O}{\ch{H2O}}};\\
@@ -105,7 +107,7 @@
         \node {\DrawNavBarProduct{HO2}{\ch{HO2}}};\\
         \node {\DrawNavBarProduct{HOCl}{HOCl}};\\
         \node {\DrawNavBarProduct{IWC}{IWC}};\\
-        \node {\DrawNavBarProduct{IWP}{IWP}};\\
+        \node {\DrawNavBarProduct*{IWP}{IWP}};\\
         \node {\DrawNavBarProduct{N2O}{\ch{N2O}}};\\
         \node {\DrawNavBarProduct{O3}{\ch{O3}}};\\
         \node {\DrawNavBarProduct{OH}{OH}};\\
