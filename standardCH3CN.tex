@@ -48,7 +48,7 @@ Although \mecn is retrieved (and reported in the L2GP files) over the range 147 
 
 \subsection{Accuracy}
 
-The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv \mecn measurements were quantified through a comprehensive set of retrievals of synthetic radiances. The overall systematic uncertainty, or accuracy, is calculated by combining (RSS) the contributions from both the expected biases and the additional scatter each source of uncertainty may introduce into the data. In aggregate, the factors considered in these simulations are estimated to give rise to total systematic uncertainty in the MLS \thisv \mecn data of approximately 65--200\% (see Table~\ref{tab:CH3CNSummary}).
+The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv \mecn measurements were quantified through a comprehensive set of retrievals of synthetic radiances. The overall systematic uncertainty, or accuracy, is calculated by combining (RSS) the contributions from both the expected biases and the additional scatter each source of uncertainty may introduce into the data. In aggregate, the factors considered in these simulations are estimated to give rise to total systematic uncertainty in the MLS \thisv \mecn data ranging from approximately 20 to more than 100\,pptv, depending on the level (see Table~\ref{tab:CH3CNSummary}). 
 
 \subsection{Review of comparisons with other datasets}
 
@@ -98,31 +98,42 @@ Specific achievable improvements in the \mecn retrieval remain to be determined.
     \renewcommand{\thefootnote}{\thempfootnote}
     \centering\begin{tabular}{ccccl}
 \toprule
-\parbox[m]{18mm}{\bfseries\centering{Pressure\\ / hPa}} &
+\parbox[m]{18mm}{\bfseries\centering{Pressure\\ hPa}} &
 \parbox[m]{24mm}{\bfseries\centering{Resolution\\ V $\times$ H%
-\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.} \\ / km}} &
-\parbox[m]{18mm}{\bfseries\centering{Precision%
-    \footnote{Precision on individual profiles.} \\/ pptv}} &
-\parbox[m]{22mm}{\bfseries\centering{Systematic\\ Uncertainty%
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.} \\ km}} &
+\parbox[m]{22mm}{\bfseries\centering{Single-Profile\\ Precision%
+    \footnote{Precision on individual profiles, determined from observed
+      scatter in the data in a region of minimal atmospheric
+      variability.} \\ pptv}} &
+\parbox[m]{18mm}{\bfseries\centering{Accuracy%
 \footnote{Values should be interpreted as 2$\sigma$ estimates
- of the probable magnitude.}\\ / \%}} &
+ of the probable magnitude.}\\ pptv}} &
 \parbox[m]{40mm}{\bfseries\centering{Known Artifacts\\ or Other Comments}} \\
 %
 \midrule
 %
-0.68--0.001 & ---                          & ---      & --- & Unsuitable for scientific use\\
+0.68--0.001 & ---             & ---       & ---     & Unsuitable for scientific use\\
 %
-1.0           & 6 $\times$ 850                 & $\pm$100 & $\pm$125 & Consult with MLS science team\\
+1.0         & 6 $\times$ 900   & $\pm$100 & $\pm$10 & Consult with MLS science team\\
 %
-10--1.5   & 7--8 $\times$ 400--700 & $\pm$50  & $\pm$75--165 & Consult with MLS science team\\
+1.5         & 7.5 $\times$ 700 & $\pm$50  & $\pm$15 & Consult with MLS science team\\
 %
-46--15    & 5--6.5 $\times$ 400--500 & $\pm$50  & $\pm$80--150 & Consult with MLS science team\\
+3.2--2.2    & 8.5 $\times$ 600 & $\pm$50  & $\pm$20 & Consult with MLS science team\\
 %
-100--68   & 5.5--6 $\times$ 570--700 & $\pm$50  & $\pm$65--105 & Consult with MLS science team\\
+6.8--4.6    & 7.5 $\times$ 450 & $\pm$50  & $\pm$25 & Consult with MLS science team\\
+15--10      & 7 $\times$ 400   & $\pm$50  & $\pm$20 & Consult with MLS science team\\
 %
-147           & 4.5 $\times$ 750                 & $\pm$120 & $\pm$200 & Consult with MLS science team\\
+22          & 6 $\times$ 450   & $\pm$50  & $\pm$40 & Consult with MLS science team\\
+%        
+32          & 5.5 $\times$ 500 & $\pm$50  & $\pm$55 & Consult with MLS science team\\
 %
-1000--215 & ---                            & ---      & --- & Not retrieved\\
+68--46      & 5.5 $\times$ 600 & $\pm$50  & $\pm$35 & Consult with MLS science team\\
+%
+100         & 6 $\times$ 700   & $\pm$50  & $\pm$60 & Consult with MLS science team\\
+%
+147         & 4.5 $\times$ 800 & $\pm$120 & $\pm$110 & Consult with MLS science team\\
+%
+1000--215   & ---              & ---      & ---      & Not retrieved\\
 %
 \bottomrule
 \end{tabular}

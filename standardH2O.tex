@@ -6,7 +6,7 @@
 
 The standard water vapor product is taken from the 190\nobreakdash-GHz ``\texttt{CorePlusR2}'' retrieval. The vertical grid for \ch{H2O} is 12 levels per decade change in pressure (LPD) for 1000--1\,hPa, 6\,LPD for 1.0--0.1\,hPa, and 3\,LPD for 0.1--10\cp{$-5$}\,hPa. The horizontal grid is every 1.5\degsym\ along the orbit track. \ch{H2O} is unusual among MLS products in that it is assumed that the logarithm of the volume mixing ratio (VMR), and not mixing ratio itself, varies linearly with log-pressure; however, \ch{H2O} is still retrieved in VMR (not $\log$ VMR) just as is the case for the other MLS constituents. This means that, when interpolating MLS measurements to other locations (along track and/or vertically), such interpolation should be performed linearly on the logarithm of the \ch{H2O} concentration (VMR).
 
-The recommended vertical range for MLS \thisv \ch{H2O} is 316--0.001\,hPa.  The uppermost retrieved level, 0.00046\,hPa, is not vertically resolved from the levels above it and should be regarded as a measure of the total column water vapor at and above this level. The 0.00046\nobreakdash-hPa data may be usable for some studies when interpreted in this manner, but only in consultation with the MLS science team.  The MLS \ch{H2O} data between 1000 and 383\,hPa are taken from a retrieval of relative humidity with respect to ice (RHi), converted to specific humidity using the Goff-Gratch vapor pressure over ice equation. This RHi retrieval is not vertically resolved, and all levels between 1000 and 383\,hPa are assumed to have the same RHi. See Section~\ref{sec:StandardRHI} for more information. \ch{H2O} for pressures smaller than 0.001\,hPa are filled with \emph{a priori} values.
+The recommended vertical range for MLS \thisv \ch{H2O} is 316--0.001\,hPa.  The uppermost retrieved level, 0.00046\,hPa, is not vertically resolved from the levels above it and should be regarded as a measure of the total column water vapor at and above this level. The 0.00046\nobreakdash-hPa data may be usable for some studies when interpreted in this manner, but only in consultation with the MLS science team.  The MLS \ch{H2O} data between 1000 and 383\,hPa are taken from a retrieval of relative humidity with respect to ice (RHi), converted to specific humidity using the Goff-Gratch vapor pressure over ice equation. This RHi retrieval is not vertically resolved, and all levels between 1000 and 383\,hPa are assumed to have the same RHi. See Section~\ref{sec:StandardRHI} for more information. \ch{H2O} for pressures less than or equal to 0.000215\,hPa are filled with \emph{a priori} values.
 
 Validation of MLS \vii water vapor is presented in \citet{ReadEtal:2007} and \citet{LambertEtal:2007}. This section reiterates the key information from those studies, and updates them for \thisv. Table~\ref{tab:H2OSummary} gives a summary of MLS \thisv \ch{H2O} precision, resolution, and accuracy.
 
@@ -24,14 +24,14 @@ A defect in MLS \viv and prior versions was that \ch{H2O} exhibited a rather low
 
 The \prevv algorithms included a correction for these issues, including a time-dependent sideband fraction estimate derived internally from the MLS observations (with atmospheric reanalysis temperatures being the only external input).  Importantly, as described in more detail in \citet{LiveseyEtal:2021}, this correction makes no reference to correlative measurements of stratospheric water vapor from satellite or ballon observations, although improved agreement with such correlative measurements builds confidence in the validity of the correction.
 
-The same correction is applied in a more-or-less identical manner in \thisv.  However, one difference between \prevv and \thisv is that limb tangent pressure is no longer retrieved from the \ch{H2O} linewidth in \thisv. Instead, the tangent pressure estimated from the \ch{O2} measurements in an earlier phase of processing is used.  This change was enacted because:
+The same correction is applied in a more-or-less identical manner in \thisv. In version 5, the correction was based on a version 4 band 2 opacity calculation that used the pre-launch sideband fraction for computing the correction. This requires that version 4 also be available alongside version 5 processing. In version 6 The correction is based on the band 2 opacity calculation using the sideband fraction that was used for the calculation, typically the sideband fraction in effect for the prior month, as this quantity is updated monthly. This change was implemented such that updating the sideband fraction can be done within the version being processed. In other words the version 6 processing does not require version 5 or 4 processing to be going on concurrently. The difference in the two methods are negligibly small on the order of less than 0.01\% in the correction. Of note is that version 4 processing was halted on May 31, 2024 but version 5 processing continues to the present day. Beginning on 1 June 2024 version 5 processing used sideband fractions based on the v6 sideband calculation. Another difference between \prevv and \thisv is that limb tangent pressure is no longer retrieved from the \ch{H2O} linewidth in \thisv. Instead, the tangent pressure estimated from the \ch{O2} measurements in an earlier phase of processing is used.  This change was enacted because:
 \begin{enumerate}
   \item there is a small drift (equivalent to a \mytexttilde20\,m change in altitude over the mission lifetime) between the tangent pressures retrieved from the \texttt{CorePlusR3} and \texttt{CorePlusR2} phases, and
   \item in the immediate aftermath of the January 2022 Hunga eruption, the tangent pressure retrieved from the \texttt{CorePlusR2} (\ch{H2O}) phase failed, given the unprecedented levels of \ch{H2O} and SO\cs2 in the atmosphere at that time.  This forced users to revert to \viv retrievals of \ch{H2O} in the vicinity of the Hunga plume for a month after that event.
 \end{enumerate}
 The cause for the 20\,m drift between the two tangent pressure estimates is not fully understood, but may originate from subtle aspects of the method used to estimate the 190\nobreakdash-GHz sideband fraction drift in \prevv (which derives the correction using \viv data).  A new approach for estimating the sideband fraction drift was developed for \thisv (and for v5.04, which can no longer use \viv input data now that MLS \viv processing is discontinued).  The differences in these two sideband fraction drift estimates are at most 0.01\%, and impacts of this difference on the \ch{H2O} product can be considered negligible.  One final change between \prevv and \thisv that impacts the \ch{H2O} product results from efforts to place the retrievals of \ch{N2O} on a sounder footing.  These are described in more detail in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
 
-As for \prevv, humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low limb viewing MLS wing channel radiances), this is similar means that used for NOAA operational humidity sounders such as TOVS\@. As noted in \citet{ReadEtal:2007}, the \vii \ch{H2O} retrievals at pressures larger than 316\,hPa were likely to be \mytexttilde30\% too high, based on comparisons with AIRS\@. The accuracy of this retrieval is highly sensitive to the transmission efficiency of the MLS optics system. In \viv and thereafter, the assumed value of the MLS antenna transmission efficiency was adjusted empirically (within the uncertainty range established from MLS pre-launch \mycomment{and post-launch?} calibration) to give better agreement with AIRS in the tropics. Also in \viv and later versions, the assumed \ch{N2} continuum emission/absorption coefficient was adjusted (only for this preliminary relative humidity retrieval phase), to minimize the clear sky cloud induced radiance bias. This retrieval is used as an \emph{a priori} and profile constraint for the humidity profile at pressures greater than 316\,hPa, which are not retrieved in the standard \ch{H2O} product retrieval.
+As for \prevv, humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low limb viewing MLS wing channel radiances), this is similar means that used for NOAA operational humidity sounders such as TOVS\@. As noted in \citet{ReadEtal:2007}, the \vii \ch{H2O} retrievals at pressures larger than 316\,hPa were likely to be \mytexttilde30\% too high, based on comparisons with AIRS\@. The accuracy of this retrieval is highly sensitive to the transmission efficiency of the MLS optics system. In \viv and thereafter, the assumed value of the MLS antenna transmission efficiency was adjusted empirically (within the uncertainty range established from MLS pre-launch calibration) to give better agreement with AIRS in the tropics. Also in \viv and later versions, the assumed \ch{N2} continuum emission/absorption coefficient was adjusted (only for this preliminary relative humidity retrieval phase), to minimize the clear sky cloud induced radiance bias. This retrieval is used as an \emph{a priori} and profile constraint for the humidity profile at pressures greater than 316\,hPa, which are not retrieved in the standard \ch{H2O} product retrieval.
 
 The number of ``good'' \ch{H2O} profiles has declined slightly over the mission life. A typical day has 3495 available profiles and, depending on the season, the number passing the quality screens runs from 95--99\%, corresponding to 35--175 of profiles being rejected per day. Most of these rejections are caused by poor radiance fits (quality $<0.7$). Over the course of the mission, for \viv this has increased by \mytexttilde25 profiles per day. The changes in \prevv reduced this trend to only 8 profiles per day. For \thisv, this difference between the start of the mission and the most recent data has increased slightly to 10 profiles per day.
 
@@ -53,7 +53,7 @@ The \thisv \ch{H2O} product agrees with \prevv to within 2\% in the bulk of the 
 
 Figure~\ref{fig:avgmlsprflcomptropstrat} compares all MLS \ch{H2O} versions to \thisv for various latitude bins. Notable differences in earlier versions include the removal of a kink that was present in \vii at 32/26\,hPa. This kink was caused by a linewidth error and fixed in version \viii. In \vii, \ch{H2O} was retrieved on a fine 12\,LPD grid from the bottom of the retrieval range to 22\,hPa. Version~3.3 extended that region up to 1\,hPa. Version~4.2 saw improvements in cloud screening and in the lower resolution initial \ch{H2O} phase that is used to initialize values and profile shape smoothing for the final high resolution phase. These changes improved agreement with simulated data at the 316--215\,hPa levels. The change in sideband fraction in \prevv leads to a 5--10\% reduction in \ch{H2O} in the stratosphere and above. The combined changes in sideband fraction and assumed radiometer alignment results in a moistening of the levels 2\,km below the tropopause. Nominally this is 147\,hPa in the tropics, 215\,hPa at mid-latitudes and 261\,hPa at high latitudes. The extremely low values retrieved at 215\,hPa at high latitudes seen in previous versions appear to be less dry in \vv.
 
-The third panel in Figure~\ref{fig:avgmlsprflcomptropstrat} shows the mean estimated single profile precision and the measured variability (which reflects a combination of instrument noise and atmospheric variability). The estimated precisions are similar for most heights. One exception is at high altitudes (0.0046--0.00046\,hPa), where the smoothing was changed and the uppermost retrieval level raised. Notable changes are also seen in the upper troposphere, where the estimated precision roughly scales by the amount of \ch{H2O}\@. Higher concentrations of \ch{H2O} are typically accompanied by larger (i.e., worse) estimated precision. Taken together, the large dynamic range of possible humidity in the upper troposphere, combined with the non-linear behavior of the instrument response to these concentrations, are the main motivation for choosing a logarithmic representation for \ch{H2O} in the retrievals. Differences in precision between \vii and later versions result from the use of a coarser retrieval grid above 22\,hPa and a different value of the \ch{H2O} linewidth.
+The third panel in Figure~\ref{fig:avgmlsprflcomptropstrat} shows the mean estimated single profile precision and the measured variability (which reflects a combination of instrument noise and atmospheric variability). The estimated precisions are similar for most heights. One exception is at high altitudes (0.0046--0.00046\,hPa), where the smoothing was changed and the uppermost retrieval level raised. Notable changes are also seen in the upper troposphere, where the estimated precision roughly scales by the amount of \ch{H2O}\@. Higher concentrations of \ch{H2O} are typically accompanied by larger (i.e., worse) estimated precision (in VMR); however, in terms of percent of concentration the precision value declines somewhat. Taken together, the large dynamic range of possible humidity in the upper troposphere, combined with the non-linear behavior of the instrument response to these concentrations, are the main motivation for choosing a logarithmic representation for \ch{H2O} in the retrievals. Differences in precision between \vii and later versions result from the use of a coarser retrieval grid above 22\,hPa and a different value of the \ch{H2O} linewidth.
 
 \begin{figure}
   \begin{center}
@@ -94,9 +94,7 @@ Table~\ref{tab:H2OSummary} summarizes the estimated precision of the MLS \thisv 
 
 \subsection{Accuracy}
 
-\CheckThis AL: note 0.001-177 hPa accuracy values in the table have been updated for v6
-
-The values for accuracy are based primarily on two sources: comparisons with other validated instruments and a full systematic error analysis performed on the MLS measurement system as described (for v2) in \citet{ReadEtal:2007} and \citet{LambertEtal:2007} (the same approach is planned for \thisv). The results shown in Table~\ref{tab:H2OSummary} are for \prevv; analysis for \thisv is yet to be performed. However, it is expected that accuracy estimates for \thisv will be similar to those in \prevv repeated here. For pressures between 316 and 178\,hPa, comparisons between AIRS v7 and MLS \thisv show agreement within 20\% in the zonal mean (with MLS usually drier for low concentrations and wetter for high concentrations) equatorward of 40\degsym, with MLS having a dry biases at higher latitudes.  The values in Table~\ref{tab:H2OSummary} for pressures between 316 and 178\,hPa are drawn from AIRS validated accuracies, which are better than those theoretically possible for the MLS measurement system. For the pressure range 178--83\,hPa, the quoted values come directly from the systematic error analysis performed on the MLS measurement system.
+The values for accuracy are based on a full systematic error analysis performed on the MLS measurement system as described (for v2) in \citet{ReadEtal:2007} and \citet{LambertEtal:2007}. The results are shown in Table~\ref{tab:H2OSummary}. For pressures between 316 and 178\,hPa, comparisons between AIRS v7 and MLS \thisv show agreement within 20\% in the zonal mean (with MLS usually drier for low concentrations and wetter for high concentrations) equatorward of 40\degsym, with MLS having a dry biases at higher latitudes.  The values in Table~\ref{tab:H2OSummary} for pressures between 316 and 178\,hPa from the systematic errors analysis suggest that those values are pessimistic relative to that seen with comparisons with AIRS validated accuracies. For the pressure range 178--83\,hPa, the quoted values come directly from the systematic error analysis performed on the MLS measurement system.
 
 \subsection{A note about the water vapor averaging kernels}
 
@@ -176,55 +174,57 @@ While many defects in \viv and earlier versions have been addressed, further inv
   \vspace{\tablecaptionsep}
   \label{tab:H2OSummary}
   \begin{minipage}{\linewidth}
-    \centering\begin{tabular}{ccccc>{\raggedright}m{28ex}}
+    \centering\begin{tabular}{ccccc>{\raggedright}p{28ex}}
       \toprule
-      \parbox{10ex}{\centering\bfseries Pressure / hPa} &
-      \parbox{13ex}{\centering\bfseries Resolution
+      \parbox[t]{10ex}{\centering\bfseries Pressure \newline\newline hPa} &
+      \parbox[t]{13ex}{\centering\bfseries Resolution
       \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}
-      V$\times$H / km} &
-      \parbox{11ex}{\centering\bfseries Precision\footnote{Precision for a single MLS profile} / \%} &
-      \parbox{10ex}{\centering\bfseries Accuracy / \%} &
-      \parbox{9ex}{\centering\bfseries Min. / ppmv\footnote{Minimum \ch{H2O} is an estimate of the minimum \ch{H2O} concentration measurable by \thisv MLS.}} &
-      \bfseries Comments \tabularnewline
+      \newline
+      V$\times$H \newline km} &
+      \parbox[t]{11ex}{\centering\bfseries Precision\footnote{Precision for a single MLS profile} \newline\newline \%} &
+      \parbox[t]{10ex}{\centering\bfseries Accuracy \newline\newline \%} &
+      \parbox[t]{10ex}{\centering\bfseries Minimum \newline Value  \footnote{Minimum \ch{H2O} is an estimate of the minimum \ch{H2O} concentration measurable by \thisv MLS.} \newline ppmv} &
+      \textbf{Comments}
+      \tabularnewline
       \midrule
       $\le$0.00022 & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline\addlinespace
       %
-      0.0005 & NVR\footnote{Not Vertically resolved (NVR)} $\times$ TBD & 
-      1210 & TBD\footnote{Not yet determined} & 0.1 &
-      Nominally a slant column measurement for p $\le$ 0.001 hPa. \tabularnewline
+      0.0005 & NVR\footnote{Not vertically resolved (NVR)} $\times$ 650 & 
+      738 & ND\footnote{Not determined (ND)} & 0.1 &
+      Slant column ($p \le 0.001\,$hPa) \tabularnewline
       %
-      0.001 & 7.1 $\times$ 650  & 973 & 38 & 0.1 & \tabularnewline
-      0.002 & 7.8 $\times$ 430  & 417 & 45 & 0.1 & \tabularnewline
-      0.005 & 9.4 $\times$ 340  & 127 & 23 & 0.1 & \tabularnewline
-      0.010 & 8.3 $\times$ 310  & 60  & 15 & 0.1 & \tabularnewline
-      0.022 & 7.3 $\times$ 300  & 39  & 16 & 0.1 & \tabularnewline
-      0.046& 7.0 $\times$ 250  & 28   & 16 & 0.1 & \tabularnewline
-      0.10 & 4.8 $\times$ 210  & 20   & 10 & 0.1 & \tabularnewline
-      0.22 & 3.3 $\times$ 200  & 17   & 8  & 0.1 & \tabularnewline
-      0.46 & 3.2 $\times$ 200  & 12   & 6  & 0.1 & \tabularnewline
-      1.0  & 2.5 $\times$ 270  & 6    & 5  & 0.1 & \tabularnewline
-      2.2  & 3.6 $\times$ 260  & 6    & 7  & 0.1 & \tabularnewline
-      4.6  & 3.5 $\times$ 245  & 5    & 6  & 0.1 & \tabularnewline
-      10   & 3.6 $\times$ 240  & 5    & 5  & 0.1 & \tabularnewline
-      22   & 3.8 $\times$ 220  & 6    & 5  & 0.1 & \tabularnewline
-      46   & 3.8 $\times$ 210  & 6    & 6  & 0.1 & \tabularnewline
-      68   & 3.7 $\times$ 185  & 6    & 9  & 0.1 & \tabularnewline
-      83   & 3.6 $\times$ 185  & 7    & 9  & 0.1 & \tabularnewline
-      100  & 3.5 $\times$ 190  & 7    & 10 & 0.1 & \tabularnewline
-      121  & 3.5 $\times$ 200  & 7    & 13 & 0.1 & \tabularnewline
-      147  & 3.1 $\times$ 200  & 7    & 18 & 0.1 & \tabularnewline
-      178  & 3.3 $\times$ 205  & 6    & 25 & 3   & \tabularnewline\addlinespace
+      0.001 & 7.1 $\times$ 650  & 305 & 63 & 0.1 & \tabularnewline
+      0.002 & 7.8 $\times$ 430  & 117 & 78 & 0.1 & \tabularnewline
+      0.005 & 9.4 $\times$ 340  & 55 & 39 & 0.1 & \tabularnewline
+      0.010 & 8.3 $\times$ 310  & 35  & 26 & 0.1 & \tabularnewline
+      0.022 & 7.3 $\times$ 300  & 32  & 27 & 0.1 & \tabularnewline
+      0.046& 7.0 $\times$ 250  & 30   & 26 & 0.1 & \tabularnewline
+      0.10 & 4.8 $\times$ 210  & 29   & 17 & 0.1 & \tabularnewline
+      0.22 & 3.3 $\times$ 200  & 24   & 12 & 0.1 & \tabularnewline
+      0.46 & 3.2 $\times$ 200  & 15   & 9  & 0.1 & \tabularnewline
+      1.0  & 2.5 $\times$ 270  & 8    & 8  & 0.1 & \tabularnewline
+      2.2  & 3.6 $\times$ 260  & 7    & 9  & 0.1 & \tabularnewline
+      4.6  & 3.5 $\times$ 245  & 7    & 8  & 0.1 & \tabularnewline
+      10   & 3.6 $\times$ 240  & 7    & 8  & 0.1 & \tabularnewline
+      22   & 3.8 $\times$ 220  & 7    & 8  & 0.1 & \tabularnewline
+      46   & 3.8 $\times$ 210  & 7    & 9  & 0.1 & \tabularnewline
+      68   & 3.7 $\times$ 185  & 7    & 15 & 0.1 & \tabularnewline
+      83   & 3.6 $\times$ 185  & 7    & 18 & 0.1 & \tabularnewline
+      100  & 3.5 $\times$ 190  & 7    & 18 & 0.1 & \tabularnewline
+      121  & 3.5 $\times$ 200  & 6    & 29 & 0.1 & \tabularnewline
+      147  & 3.1 $\times$ 200  & 5    & 48 & 0.1 & \tabularnewline
+      178  & 3.3 $\times$ 205  & 3    & 49 & 3   & \tabularnewline
       %
-      215  & 2.8 $\times$ 205  & 6    & 35 & 3   &
-      Extent of a low bias for latitudes $>60$\degsym\ to be investigated.
-      \tabularnewline\addlinespace
+      215  & 2.8 $\times$ 205  & 2    & 60 & 3   &
+      Low bias for latitudes $>\pm60$\degsym
+      \tabularnewline
       %
-      261 & 2.8 $\times$ 190 & 35      & 46 & 4 & 
-      Extent of low bias for latitudes $>60$\degsym\ to be investigated.\tabularnewline\addlinespace
+      261 & 2.8 $\times$ 190 & 3      & 80 & 4 & 
+      Low bias for latitudes $>\pm60$\degsym\tabularnewline
       %
-      316 & 1.3 $\times$ 168 & 65     & 66 & 7 &
-      Extent of low bias for latitudes $>60$\degsym\ to be investigated.
-      Occasionally erroneous low value $<1\,\text{ppmv}$ and high value fliers are retrieved in the tropics, usually in clouds.
+      316 & 1.3 $\times$ 168 & 7     & 167 & 7 &
+      Low bias for latitudes $>\pm60$\degsym.
+      Occasionally erroneous small ($<1\,\text{ppmv}$) and large fliers in the tropics, usually in clouds
       \tabularnewline\addlinespace
       %
       $>316$ & --- & --- & --- & --- & Unsuitable for scientific use \tabularnewline

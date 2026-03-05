@@ -45,7 +45,7 @@ v5 and v6.
 
 \subsection{Accuracy}
 
-In \prevv, SO\cs2 accuracy is estimated to be 10--20\,ppbv over the useful pressure range. This is not expected to change significantly for the v6 SO\cs2 product, for which accuracy estimates are yet to be updated.
+SO\cs2 accuracy is estimated to be 20 and 10\,ppbv at 215 and 147\,hPa respectively based on actual unexplained retrieval biases. The other pressure levels are results from the systematic errors analysis described by \citet{ReadEtal:2007}. Some errors that existed in the systematic error analysis in \prevv are fixed in \thisv.
 
 \subsection{Data screening}
 \label{sec:SO2Screening}
@@ -75,7 +75,7 @@ High values of SO\cs2 accompanied with negative errors are likely to be underest
 
 \subsection{Review of comparisons with other datasets}
 
-MLS has successfully detected SO\cs2 from 36 eruptions since launch.
+MLS has successfully detected SO\cs2 from 37 eruptions since launch.
 % my list is at work that I dont have access to.
 %MLS has successfully detected SO\cs2 from 23 eruptions since launch.
 %These include Manam (Papua, New Guinea -- 3 events), Anatahan (Mariana
@@ -115,23 +115,24 @@ Figure~\ref{fig:so2timeseries} shows a comparison among v3, v4, v5, and v6 for a
   \begin{minipage}{\linewidth}
     \centering\begin{tabular}{ccccl}
 \toprule
-\parbox[m]{6em}{\bfseries\centering Pressure / hPa} &
+\parbox[m]{6em}{\bfseries\centering Pressure\newline\newline hPa} &
 \parbox[m]{6em}{\bfseries\centering Resolution%
 \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.}
-V~$\times$~H \ km} &
-\parbox[m]{8em}{\bfseries\centering Single profile precision \ ppbv} &
-\parbox[m]{6em}{\bfseries\centering Accuracy / ppbv} &
-\bfseries Comments \\
+V~$\times$~H\\ km} &
+\parbox[m]{8em}{\bfseries\centering Single-Profile Precision\\ ppbv} &
+\parbox[m]{6em}{\bfseries\centering Accuracy\newline\newline ppbv} &
+\parbox[m]{7em}{\bfseries\centering Comments \newline\newline} \\
 \midrule
-$\leq$ 10 & --- & --- & --- &  Unsuitable for scientific use \\
-15  & 3.4 $\times$ 170 &  5.3 &  1 & \\
-22  & 3.3 $\times$ 170 &  4.5 &  2 & \\
-32  & 3.0 $\times$ 170 &  4.0 &  3 & \\
-46  & 3.0 $\times$ 170 &  3.7 &  2 & \\
-68  & 2.9 $\times$ 170 &  3.6 &  3 & \\
-100 & 2.9 $\times$ 170 &  3.6 &  4 & \\
-147 & 2.9 $\times$ 170 &  3.8 & 10 & \\
-215 & 2.8 $\times$ 180 &  4.4 & 20 & \\
+$<$ 10 & --- & --- & --- &  Unsuitable for scientific use \\
+10  & 3.5 $\times$ 170 &  5.4 &  1 & \\
+15  & 3.4 $\times$ 170 &  5.0 &  1 & \\
+22  & 3.3 $\times$ 170 &  4.3 &  2 & \\
+32  & 3.0 $\times$ 170 &  3.7 &  3 & \\
+46  & 3.0 $\times$ 170 &  3.4 &  3 & \\
+68  & 2.9 $\times$ 170 &  3.3 &  3 & \\
+100 & 2.9 $\times$ 170 &  3.4 &  4 & \\
+147 & 2.9 $\times$ 170 &  3.5 & 10 & \\
+215 & 2.8 $\times$ 180 &  4.3 & 20 & \\
 $>$215 & --- & --- & --- & Unsuitable for scientific use \\
 \bottomrule
 \end{tabular}

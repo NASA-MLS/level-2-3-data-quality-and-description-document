@@ -4,7 +4,7 @@
 
 \subsection{Introduction}
 
-The MLS THz radiometer is dedicated to measuring OH in the 2.5\,THz spectral region. The methanol laser driving this radiometer, designed with an expected lifespan of 18 months, began to show signs of aging after five years of operation and was deactivated in December 2009. Between 2011 and 2014, the THz subsystem was reactivated annually for 30 days around August to capture data across an 11-year solar cycle. However, due to instrument aging, OH data from 2014 are notably noisier and have limited spatial coverage at mid to low latitudes.
+The MLS THz radiometer is dedicated to measuring OH in the 2.5\,THz spectral region. The methanol laser driving this radiometer, designed with an expected lifespan of 18 months, began to show signs of aging after five years of operation and was deactivated in December 2009. Between 2011 and 2014, the THz subsystem was reactivated annually for 30 days around August to capture data across an 11-year solar cycle. However, due to instrument aging, OH data from 2014 are notably noisier and have limited spatial coverage at mid to low latitudes. In September and October 2025, the THz subsystem was reactivated again; however, the limited data collected were of poor quality. 
 
 A description of OH data quality, precision and systematic errors for an earlier version, \vii, is given in \citet{PickettEtal:2006:Validation}. The validation studies are described in \citet{PickettEtal:2008} and \citet{WangEtal:2008}. While the OH data quality is generally similar between \vii and \viii, there were significant improvements in \viv that have been carried into \prevv and \thisv. Previous to \viii, OH data near the mesospheric density peak, \mytexttilde0.032 hPa, often showed considerable amount of data flagged with negative precision, indicating strong influence of \emph{a priori} information, particularly in the summer hemisphere (or tropics for times near the equinox) and sometimes caused gaps in zonal mean time series. Starting with \viv, the software resolved this issue by fixing the overly tight \texttt{a priori} constraints. The resulting mesospheric OH data are less noisy and generally have somewhat larger values than previous versions for the problematic seasons/latitudes. Another improvement is the smaller bias at 10--15\,hPa. Therefore, applying a day-minus-night correction to reduce biases is only required at pressure the levels of 21 and 32\,hPa (\viii required such differences to be taken over a larger vertical range). Note that users may notice more zig-zags in nighttime mesospheric OH vertical profiles. This is a side effect of fixing the possible positive bias introduced by tight lower limits set in previous version retrievals.
 
@@ -12,7 +12,7 @@ The estimated uncertainties, precisions, and resolution for \thisv OH are summar
 
 \subsection{Resolution}
 
-Figure~\ref{fig:AvkOH} shows the OH averaging kernel for daytime and nighttime at 35\degsym N. Daytime and nighttime kernels are shown separately as largest natural variability in OH is diurnal. The vertical resolution is slightly different between day and night. The nighttime resolution is sufficient to allow the study of (for example) the ``nighttime OH layer'' around 82\,km. The vertical width of the averaging kernel for pressures greater than 0.01\,hPa is\,2.5 km. The horizontal width of the averaging kernel is equivalent to a width of 1.5\degsym (165\,km distance) along the orbit. The changes in vertical resolution above 0.01\,hPa are due mainly to use of a faster instrument vertical scan rate for tangent heights above 70\,km. The horizontal resolution across track is 2.5\,km. The averaging kernel and resolution for high and low latitudes are very similar to Figure~\ref{fig:AvkOH} for most pressure levels. At the topmost two pressure levels, 0.0046\,hPa and 0.0032\,hPa, the vertical resolution is slightly better at the equator than at 70\degsym N.
+Figure~\ref{fig:AvkOH} shows the OH averaging kernel for daytime and nighttime at 35\degsym N. Daytime and nighttime kernels are shown separately as largest natural variability in OH is diurnal. The vertical resolution is slightly different between day and night. The nighttime resolution is sufficient to allow the study of (for example) the ``nighttime OH layer'' around 82\,km. The vertical width of the averaging kernel for pressures greater than 0.01\,hPa is\,2.5 km. The horizontal width of the averaging kernel is equivalent to a width of 1.5\degsym~(165\,km distance) along the orbit. The changes in vertical resolution above 0.01\,hPa are due mainly to use of a faster instrument vertical scan rate for tangent heights above 70\,km. The horizontal resolution across track is 2.5\,km. The averaging kernel and resolution for high and low latitudes are very similar to Figure~\ref{fig:AvkOH} for most pressure levels. At the topmost two pressure levels, 0.0046\,hPa and 0.0032\,hPa, the vertical resolution is slightly better at the equator than at 70\degsym N.
 
 \subsection{Precision}
 
@@ -32,7 +32,7 @@ A typical OH profile and the associated precisions (for both \prevv and \thisv) 
 
 \subsection{Accuracy}
 
-Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The effect of each identified source of systematic error on MLS measurements of radiance has been quantified and modeled \citep{ReadEtal:2007}. These quantified effects correspond to either 2$\sigma$ estimates of uncertainties in each MLS product, or an estimate of the maximum reasonable uncertainty based on instrument knowledge and/or design requirements. Biases can be eliminated by taking day-night differences from 32--15\,hPa. For 10--0.1\,hPa, the observed night OH concentration is small and day-night differencing is not ordinarily needed. The overall uncertainty is the square root of the sum of squares of the precision and accuracy.
+Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The effect of each identified source of systematic error on MLS measurements of radiance has been quantified and modeled \citep{ReadEtal:2007}. These quantified effects correspond to either 2$\sigma$ estimates of uncertainties in each MLS product, or an estimate of the maximum reasonable uncertainty based on instrument knowledge and/or design requirements. Biases can be minimized by taking day-night differences from 32--15\,hPa. For 10--0.1\,hPa, the observed night OH concentration is small and day-night differencing is not ordinarily needed. The overall uncertainty is the square root of the sum of squares of the precision and accuracy.
 
 \subsection{Data screening}
 \label{sec:OHScreening}
@@ -54,29 +54,29 @@ During some seasons, the Gas Laser Local Oscillator (GLLO) for the THz radiomete
 Data from MLS \vii software have been validated with two balloon-borne remote-sensing instruments and with ground-based column measurements. Details of the comparison are given in \citet{PickettEtal:2008} and \citet{WangEtal:2008}. The comparison among \vii and \thisv show no significant differences except for the mesosphere where \thisv OH values are somewhat larger and less noisy in the summer hemisphere (or tropics when near equinox).
 
 \begin{table}
-  \caption{Summary of precisions, resolution, and uncertainties for the
-    MLS OH product \mycomment{This table needs to be updated}}
+  \caption{Summary of Aura MLS \thisv OH Characteristics}
   \vspace{\tablecaptionsep}
   \label{tab:OHSummary}
   \begin{minipage}{\textwidth}\small
     \centering\begin{tabular}{rcccl}
 \toprule
-\textbf{Pressure} &
+% \textbf{Pressure} &
+\parbox{10ex}{\bfseries\centering Pressure\\ hPa} &
 \parbox{6em}{\bfseries\centering Resolution
 \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.}
-\\ V $\times$ H /km} &
+\\ V $\times$ H \\km} &
 \parbox{6em}{\bfseries\centering Precision\footnote{Precision on an
-    individual profile} (day/night) / 10\cp6 cm\cp{$-$3}} &
-\parbox{5em}{\bfseries\centering Accuracy / 10\cp6 cm\cp{$-$3}} &
+    individual profile} (day/night) \\ 10\cp6 cm\cp{$-$3}} &
+\parbox{5em}{\bfseries\centering Accuracy \\ 10\cp6 cm\cp{$-$3}} &
 \textbf{Comments}\\
 \midrule
 $<$0.003\,hPa     & ---                  & ---                  & --- &  Unsuitable for scientific use\\
 0.003\,hPa        & 5.0 $\times$ 220     & 0.4 / 0.4            & 0.5 & \\
 0.01 \,hPa        & 2.5 $\times$ 180     & 1.0 / 0.7            & 2   & \\
-0.1\,hPa          & 2.5 $\times$ 165     & 3.6 / 0.5            & 1.0 & \\
-1.0\,hPa          & 2.5 $\times$ 165     & 2.8 / 0.6            & 1.0 & \\
-10 \,hPa          & 2.5 $\times$ 165     & 4.7 / 2.8            & 1.0 & \\
-32--14\,hPa       & 2.5 $\times$ 165     & 13.7 / 12.2          & 1.5\footnote{Use day--night difference} & \\
+0.1\,hPa          & 2.5 $\times$ 165     & 3 / 0.5            & 1.0 & \\
+1.0\,hPa          & 2.5 $\times$ 165     & 2 / 0.5            & 1.0 & \\
+10 \,hPa          & 2.5 $\times$ 165     & 3 / 2            & 1.0 & \\
+32--14\,hPa       & 2.5 $\times$ 165     & 10 / 9          & 1.5\footnote{Use day--night difference} & \\
 $>$32\,hPa        & ---                  & ---                  & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}

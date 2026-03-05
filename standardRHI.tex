@@ -4,7 +4,7 @@
 
 \subsection{Introduction}
 
-The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to those employed by nadir sounding humidity receivers (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``UTRHI'' (upper tropospheric relative humidity with respect to ice) value, representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower altitude constraint and \emph{a priori} for the vertically resolved humidity product that begins at 316\,hPa. From 316--10\cp{$-$5}\,hPa, RHI is derived from the standard products of water mixing ratio and temperature using the Goff-Gratch ice humidity saturation formula. RHI validation is presented in \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} is a summary of the RHI precision, resolution, and accuracy. The accuracy figures for \thisv have yet to be determined but are not expected to differ significantly from those of \prevv, the source of the values listed here.
+The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to those employed by nadir sounding humidity receivers (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``UTRHI'' (upper tropospheric relative humidity with respect to ice) value, representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower altitude constraint and \emph{a priori} for the vertically resolved humidity product that begins at 316\,hPa. From 316--10\cp{$-$5}\,hPa, RHI is derived from the standard products of water mixing ratio and temperature using the Goff-Gratch ice humidity saturation formula. RHI validation is presented in \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} is a summary of the RHI precision, resolution, and accuracy. The precision and accuracy figures for \thisv have been updated based upon systematic error analysis results described in \citet{ReadEtal:2007}. Some errors and footnote labels were discovered while performing this investigation that are present in \prevv have been corrected in Table~\ref{tab:RHISummary} for \thisv.
 
 \subsection{Changes from \prevv}
 
@@ -26,7 +26,7 @@ Figure~\ref{fig:avgmlsRHIprflcomp} compares MLS v6.0, v4.2, v3.3, and \vii to v5
 
 Relative humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low-limb-viewing MLS wing channel radiances) similar to that obtained from NOAA operational humidity sounders such as TOVS\@. As noted in \citep{ReadEtal:2007}, the \vii retrieval at these pressures was likely to be \mytexttilde30\% too high, based on comparisons with AIRS\@. The accuracy of this retrieval is highly sensitive to the assumed transmission efficiency of the MLS optics system. In v3.3 this was adjusted empirically (within the uncertainty range established from MLS calibration) to give better agreement with AIRS in the tropics. In v4 the N\cs2 continuum was adjusted only for this phase to minimize the clear sky cloud induced radiance bias. Other than changes to sideband fractions and pointing offsets detailed in section~\ref{sec:StandardH2O}, no specific changes are implemented for v5 and v6. This retrieval is used as an a priori and profile constraint for the humidity profile at pressures greater than 316\,hPa which are not retrieved in the standard \ch{H2O} product retrieval.
 
-The third panel in Figure~\ref{fig:avgmlsRHIprflcomp} shows the mean estimated single profile precision and the measured variability (which includes instrument noise and atmospheric variability). All the versions show very similar precision, and in the lower stratosphere and upper troposphere these precision uncertainties are much smaller than the measured atmospheric variability. The precision for 383\,hPa (and larger pressures) is reported in the \texttt{L2GP} as 0\% by mistake. The actual precision is typically 0.2\% \mycomment{Is this new to v6? Should we try to fix in future versions?}.
+The third panel in Figure~\ref{fig:avgmlsRHIprflcomp} shows the mean estimated single profile precision and the measured variability (which includes instrument noise and atmospheric variability). All the versions show very similar precision, and in the lower stratosphere and upper troposphere these precision uncertainties are much smaller than the measured atmospheric variability. The precision for 383\,hPa (and larger pressures) is reported in the \texttt{L2GP} as 0\% by mistake. The actual precision is typically 0.2\%.
 
 \subsection{Resolution}
 
@@ -36,7 +36,7 @@ The RHI for pressures greater than 316\,hPa, represents a mean value in a broad 
 
 \subsection{Precision}
 
-The values for precision are the root sum square (RSS) precisions for \ch{H2O} and temperature propagated through the Goff-Gratch relationship, see sections~\ref{navSectionH2O} and~\ref{navSectionTemperature} for more details. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision for either temperature or \ch{H2O} --- an indication that the data is biased toward the a priori value. The precisions for levels between 1000 and 383~hPa (vertical levels 1--6) are reported as 0\% by error. It should typically be 0.2\% and is one value for all levels between 1000 and 383~hPa.
+The values for precision are the root sum square (RSS) precisions for \ch{H2O} and temperature propagated through the Goff-Gratch relationship, see sections~\ref{navSectionH2O} and~\ref{navSectionTemperature} for more details. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision for either temperature or \ch{H2O} --- an indication that the data is biased toward the a priori value. The precisions for levels between 1000 and 383~hPa (vertical levels 1--6) are reported as 0\% by error. It should typically be 0.2\% and is the same value for all levels between 1000 and 383~hPa.
 
 \subsection{Accuracy}
 
@@ -100,47 +100,46 @@ Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show
 While many defects in v4.2 and earlier versions have been addressed, further investigation into their effectiveness, especially the drift reduction and high latitude low value retrievals in the upper troposphere needs to be assessed and improved upon if necessary. Retrieval of vertically resolved \ch{H2O} for pressures $>316$\,hPa may be possible at high latitudes during dry conditions, but that remains to be investigated.
 
 \begin{table}
-  \caption{Summary of MLS \thisv\CheckThis UTLS RHI product.}
+  \caption{Summary of MLS \thisv UTLS RHI product.}
   \vspace{\tablecaptionsep}
   \label{tab:RHISummary}
   \begin{minipage}{\linewidth}
     \centering\begin{tabular}{ccccl}
 \toprule
-\parbox[m]{5em}{\bfseries\centering Pressure / hPa} &
+\parbox[m]{5em}{\bfseries\centering Pressure \newline\newline hPa} &
 \parbox[m]{5.5em}{\bfseries\centering Resolution%
-\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}
-V~$\times$~H \ km} &
-\parbox[m]{7em}{\bfseries\centering Single profile precision
-\footnote{Absolute error in percent} / \%} &
-\parbox[m]{6em}{\bfseries\centering Accuracy%
-  \footnote{Fractional error ( [error in RHI] / RHI) in percent}/ \%} &
-\bfseries Comments
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\, km.}
+V~$\times$~H \newline km} &
+\parbox[m]{7em}{\bfseries\centering Single profile \newline precision
+\footnote{Fractional error ([error in RHI] / RHI) in percent} \newline \%} &
+\parbox[m]{7em}{\bfseries\centering Accuracy \footnote{Fractional error ( [error in RHI] / RHI) in percent}\newline\newline \%} &
+\parbox[m]{7em}{\bfseries\centering Comments \newline\newline}
 \\ \midrule
 0.00046 & --- & ---  & --- & Unsuitable for scientific use \\  
-0.001 & 13.9 $\times$ 708 & 393  & 59 &  \\
-0.002 & 14.0 $\times$ 508 & 157  & 53 &  \\
-0.004 & 14.7 $\times$ 428 & 81   & 37 & \\
-0.010 & 13.8 $\times$ 398 & 61   & 31 & \\
-0.022 & 12.0 $\times$ 374 & 50   & 34 & \\
-0.046 & 10.6 $\times$ 318 & 42   & 36 & \\
-0.10  & 8.0  $\times$ 270 & 40   & 35 & \\
-0.22  & 8.2  $\times$ 262 & 28   & 25 & \\
-0.46  & 8.3  $\times$ 261 & 18   & 17 & \\
-1.00  & 7.2  $\times$ 316 & 13   & 10 & \\
-2.15  & 6.9  $\times$ 308 & 10   & 15 & \\
-4.64  & 6.1  $\times$ 295 & 10   & 11 & \\
-10    & 5.5  $\times$ 291 & 10   & 22 & \\ 
-22    & 5.3  $\times$ 275 & 10   & 22 & \\
-46    & 5.3  $\times$ 267 & 10   & 11 & \\
-68    & 5.4  $\times$ 248 & 11   & 10 & \\
-83    & 5.6  $\times$ 248 & 11   & 12 & \\
-100   & 5.8  $\times$ 251 & 12   & 25 & \\
-121   & 5.6  $\times$ 259 & 11   & 23 & \\
-147   & 5.1  $\times$ 259 & 11   & 14 & \\
-178   & 5.0  $\times$ 263 & 11   & 13 & \\
-215   & 4.5  $\times$ 263 & 11   & 19 & see Table~\ref{tab:H2OSummary} \\
-261   & 4.7  $\times$ 253 & 10   & 24 & see Table~\ref{tab:H2OSummary} \\
-316   & 4.4  $\times$ 253 & 14   & 35 & see Table~\ref{tab:H2OSummary} \\
+0.001 & 13.9 $\times$ 708 & 184  & 76 &  \\
+0.002 & 14.0 $\times$ 508 & 145  & 74 &  \\
+0.004 & 14.7 $\times$ 428 & 88   & 49 & \\
+0.010 & 13.8 $\times$ 398 & 66   & 37 & \\
+0.022 & 12.0 $\times$ 374 & 53   & 40 & \\
+0.046 & 10.6 $\times$ 318 & 42   & 41 & \\
+0.10  & 8.0  $\times$ 270 & 38   & 37 & \\
+0.22  & 8.2  $\times$ 262 & 28   & 26 & \\
+0.46  & 8.3  $\times$ 261 & 17   & 17 & \\
+1.00  & 7.2  $\times$ 316 & 12   & 11 & \\
+2.15  & 6.9  $\times$ 308 & 10   & 17 & \\
+4.64  & 6.1  $\times$ 295 & 10   & 18 & \\
+10    & 5.5  $\times$ 291 & 10   & 14 & \\ 
+22    & 5.3  $\times$ 275 & 11   & 33 & \\
+46    & 5.3  $\times$ 267 & 12   & 16 & \\
+68    & 5.4  $\times$ 248 & 12   & 23 & \\
+83    & 5.6  $\times$ 248 & 13   & 27 & \\
+100   & 5.8  $\times$ 251 & 12   & 30 & \\
+121   & 5.6  $\times$ 259 & 11   & 55 & \\
+147   & 5.1  $\times$ 259 & 11   & 51 & \\
+178   & 5.0  $\times$ 263 & 10   & 51 & \\
+215   & 4.5  $\times$ 263 & 10   & 61 & see Table~\ref{tab:H2OSummary} \\
+261   & 4.7  $\times$ 253 & 9   & 80 & see Table~\ref{tab:H2OSummary} \\
+316   & 4.4  $\times$ 253 & 13   & 167 & see Table~\ref{tab:H2OSummary} \\
 UTRHI, $>$316 & 6 $\times$ 155 & 40(est) & 10(est) & measurement height
 depends \\
 &                &    &     &   on atmospheric humidity \\

@@ -53,7 +53,7 @@ Mean profiles computed from measurements taken during the ascending (mainly dayt
 \subsection{Resolution}
 \onestandardavk{HNO3}{\nitac}%
 
-The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, reduces the inherent resolution of the measurements. Thus, although \nitac measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv \nitac data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkHNO3} varies from \mytexttilde3.5 to 5\,km over the useful vertical range (see Table~\ref{tab:HNO3Summary} for estimates at individual levels). Substantial overlap in the averaging kernels for the 215 and 316\,hPa retrieval surfaces (which both peak at 215\,hPa) indicates that the 316\,hPa retrieval provides little independent information. Figure~\ref{fig:AvkHNO3} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde350--500\,km over most of the vertical range, degrading to 550--800\,km at 1.5 and 1\,hPa. The cross-track resolution, set by the widths of the fields of view of the \mbox{190\nobreakdash-GHz} and \mbox{240\nobreakdash-GHz} radiometers, is \mytexttilde10\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
+The resolution of the retrieved data can be described using ``averaging kernels'' \citep[e.g.,][]{Rodgers:2000}; the two-dimensional nature of the MLS data processing system means that the kernels describe both vertical and horizontal resolution. Smoothing, imposed on the retrieval system in both the vertical and horizontal directions to enhance retrieval stability and precision, reduces the inherent resolution of the measurements. Thus, although \nitac measurements are reported at six pressure levels per decade change in pressure (spacing of \mytexttilde2.7\,km), the vertical resolution of the \thisv \nitac data as determined from the full width at half maximum of the rows of the averaging kernel matrix shown in Figure~\ref{fig:AvkHNO3} varies from \mytexttilde3.5 to 5\,km over the useful vertical range (see Table~\ref{tab:HNO3Summary} for estimates at individual levels). Substantial overlap in the averaging kernels for the 215 and 316\,hPa retrieval surfaces (which both peak at 215\,hPa) indicates that the 316\,hPa retrieval provides little independent information. Figure~\ref{fig:AvkHNO3} also shows horizontal averaging kernels, from which the along-track horizontal resolution is determined to be \mytexttilde250--500\,km over most of the vertical range, degrading to 600--800\,km at 1.5 and 1\,hPa. The cross-track resolution, set by the widths of the fields of view of the \mbox{190\nobreakdash-GHz} and \mbox{240\nobreakdash-GHz} radiometers, is \mytexttilde10\,km. The along-track separation between adjacent retrieved profiles is 1.5\degsym\ great circle angle (\mytexttilde165\,km), whereas the longitudinal separation of MLS measurements, set by the Aura orbit, is 10\degsym--20\degsym\ over low and middle latitudes, with much finer sampling in the polar regions.
 
 \subsection{Precision}
 
@@ -70,7 +70,7 @@ The single-profile precision estimates cited here are, to first order, independe
 
 \subsection{Accuracy}
 
-The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \prevv \nitac measurements were quantified through a comprehensive set of retrievals of synthetic radiances; see \citet{SanteeEtal:2007:HNO3} for details of a similar analysis conducted on MLS \vii \nitac data. The overall systematic uncertainty, or accuracy, is calculated by combining (RSS) the contributions from both the expected biases and the additional scatter each source of uncertainty may introduce into the data. In aggregate, the factors considered in these simulations were estimated to give rise to a total systematic uncertainty of approximately 0.1 to 2.2\,ppbv, depending on the level, in the MLS \prevv \nitac data. Although a similar analysis to quantify the systematic uncertainty in the \thisv retrievals is planned, large changes from the \prevv results are not expected for \nitac, and in the interim the \prevv values are adopted for \thisv (see Table~\ref{tab:HNO3Summary}).
+The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv \nitac measurements were quantified through a comprehensive set of retrievals of synthetic radiances; see \citet{SanteeEtal:2007:HNO3} for details of a similar analysis conducted on MLS \vii \nitac data. The overall systematic uncertainty, or accuracy, is calculated by combining (RSS) the contributions from both the expected biases and the additional scatter each source of uncertainty may introduce into the data. In aggregate, the factors considered in these simulations are estimated to give rise to a total systematic uncertainty in the MLS \thisv \nitac data ranging from approximately 0.2 to 2.4\,ppbv, depending on the level (see Table~\ref{tab:HNO3Summary}).
 
 \subsection{Comparisons with other datasets}
 
@@ -129,43 +129,52 @@ Further work to diagnose and eliminate the persistent unphysical oscillations at
   \begin{minipage}{\linewidth}\small
     \renewcommand{\thefootnote}{\thempfootnote}
     \centering\begin{tabular}{ccccl} \toprule
-\parbox[m]{16mm}{\bfseries\centering{Pressure\\ / hPa}} &
+\parbox[m]{16mm}{\bfseries\centering{Pressure\\ hPa}} &
 \parbox[m]{22mm}{\bfseries\centering{Resolution\\ \mbox{V $\times$ H}%
 \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is 7--9\,km.}
-\\ / km}} &
-\parbox[m]{16mm}{\bfseries\centering{Precision%
+\\ km}} &
+\parbox[m]{22mm}{\bfseries\centering{Single-Profile\\ Precision%
     \footnote{Precision on individual profiles, determined from observed
       scatter in the data in a region of minimal atmospheric
-      variability.} \\/ ppbv}} &
-\parbox[m]{20mm}{\bfseries\centering{Systematic\\Uncertainty%
+      variability.} \\ ppbv}} &
+\parbox[m]{18mm}{\bfseries\centering{Accuracy%
 \footnote{Values should be interpreted as \mbox{2-$\sigma$} estimates
-  of the probable magnitude.}\\ / ppbv}} &
+  of the probable magnitude.}\\ ppbv}} &
 \textbf{Comments} \\
 %
 \midrule
 %
-0.68--0.001 & ---  & ---    & ---    &  Unsuitable for scientific
-  use\\
+0.68--0.001 & ---  & ---    & ---    &  Unsuitable for scientific use\\
 %
-1.5--1.0 & 4--4.5 $\times$ 550--800  & $\pm$1.2 & $\pm$0.3 & Caution, averaging
-recommended \\
+1.0 & 4.5 $\times$ 800  & $\pm$1.4  & $\pm$0.3 & Caution, averaging recommended \\
 %
-2.1 & 5 $\times$ 450--500 & $\pm$0.8  & $\pm$0.5 & \\
+1.5 & 4.5 $\times$ 600  & $\pm$1.2  & $\pm$0.3 & Caution, averaging recommended \\
 %
-3.2 & 4.5 $\times$ 400 & $\pm$0.6  & $\pm$0.1  & \\
+2.2 & 5 $\times$ 500    & $\pm$0.8  & $\pm$0.5 & \\
 %
-15--4.6  & 3.5--4 $\times$ 250--350 & $\pm$0.6 & $\pm$0.4--0.6  & \\
+3.2 & 4.5 $\times$ 400  & $\pm$0.6  & $\pm$0.2 & \\
 %
-22 & 4.5 $\times$ 500 & $\pm$0.6 & $\pm$2.4 & \\
+4.6 & 4 $\times$ 300    & $\pm$0.6  & $\pm$0.5 & \\
 %
-32 & 4 $\times$ 450 & $\pm$0.6 & $\pm$1.2 & \\
+6.8 & 4 $\times$ 300    & $\pm$0.6  & $\pm$0.4 & \\
 %
-147--46  & 3.5--4 $\times$ 400--450 & $\pm$0.6 & $\pm$0.7--1.0 & Consult MLS team for use in tropical UTLS\\
+10  & 4 $\times$ 250    & $\pm$0.6  & $\pm$0.5 & \\
 %
-215        & 4.5 $\times$ 500  & $\pm$0.6 & $\pm$1.0    &  Consult MLS team for use in tropical UTLS\\
+15 & 4 $\times$ 250     & $\pm$0.6  & $\pm$0.6 & \\
 %
-316        & ---      & ---    & ---    & Unsuitable for
-scientific use\\
+22 & 4.5 $\times$ 500   & $\pm$0.6  & $\pm$2.4 & \\
+%
+32 & 4 $\times$ 450     & $\pm$0.6  & $\pm$1.3 & \\
+%
+46 & 3.5 $\times$ 400   & $\pm$0.6  & $\pm$1.0 & \\
+%
+100--68 & 3.5 $\times$ 400 & $\pm$0.6 & $\pm$0.8 & Consult MLS team for use in tropical UTLS\\
+%
+147     & 4 $\times$ 450   & $\pm$0.6 & $\pm$1.0 & Consult MLS team for use in tropical UTLS\\
+%
+215     & 4.5 $\times$ 500 & $\pm$0.6 & $\pm$1.1 &  Consult MLS team for use in tropical UTLS\\
+%
+316     & ---         & ---    & ---    & Unsuitable for scientific use\\
 %
 1000--464  & ---      & ---    & ---    & Not retrieved\\
 %

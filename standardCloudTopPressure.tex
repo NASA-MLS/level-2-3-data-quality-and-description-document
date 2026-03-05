@@ -1,46 +1,47 @@
 \speciestitle{Cloud Top Pressure}{CloudTopPressure}{CldTopP}{%
   \item[Units:] hPa
-  \item[Useful range:] 1000--70\,hPa
+  \item[Useful range:] 770--85\,hPa
   \item[Product Lead: ] Frank Werner \email{Frank.Werner@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-This product is new in \thisv, and is described in more detail in \citet{WernerEtal:2021}. \mycomment{Summarize how the product is generated and any differences in how this shoud be interpreted compared to other L2GP products.  I realize I was confused in our discussion earlier today, it seems that this is indeed an L2GP product.  However, given that it is created directly from the radiances (at least as I understand it), hope is the mapping from major frames to profiles accomplished here?  Is this something Paul arranged for?}
+This product is new in \thisv, and is described in more detail in \citet{WernerEtal:2021}. Note that the model setup has been updated since. More specifically, we increased the complexity of the feedforward neural network used for cloud masking and the cloud top pressure predictions are now provided by a Gradient Boosted Decision Tree model with noticeably improved performance.
+
+The two machine learning models have been trained on aggregated cloud properties reported by Aqua's Moderate Resolution Imaging Spectroradiometer (MODIS) around colocated MLS tangent points. This data set is comprised of $162,117$ cloud and clear sky scenes sampled on 208\,days between 2005 and 2020. The model input is a vector of 1,710 MLS brightness temperatures, sampled at 15 different tangent altitudes and as much as 13 spectral channels within 10 different MLS bands. The model first predicts a binary cloudiness flag for a $1^{\circ} \times 1^{\circ}$ latitude and longitude box around each MLS tangent point. If the observations is flagged to be cloudy, the model subsequently predicts the average cloud top pressure within that box. The \citet{WernerEtal:2021} study describes the model setup, training, and evaluation in extensive detail.
+
+This new cloud top pressure product differs from other MLS products, because it is not a profile quantity. Instead, it is a single scalar value that aims to add additional interpretability to each MLS tangent point. It should be interpreted as follows: "if there were colocated MODIS cloud top property observations available for an individual MLS profile location, this is a reliable prediction of what the average MODIS-retrieved cloud top pressure would have been in the immediate vicinity of that MLS profile." A fill value of $-999.99$ is assigned to samples where the model predicts clear sky conditions.
 
 \subsection{Precision}
 
-\mycomment{Add a discussion of how the precision has been computed (if value in file is meaningless (don't think it is), then better to say so rather than delete the section}
+In contrast with other MLS products, for which the precision can be computed from the solution covariance matrix after the optimal estimation retrieval, the machine learning predictions do not provide diagnostic variables that can be used for uncertainty estimates. Instead, we derived the root--mean--square deviation between the model predictions and colocated MODIS retrievals from an independent test data set. Each precision is initially set to that value of 70.73858429\,hPa. Subsequently, two tests are performed for each sample: (1) Is the predicted cloud top pressure within the range encountered in the full training data set (we allow for some extrapolation at either side); and (2) Are the input radiances within the range observed in the full training data set (again, the range is slightly extended at either side). If any of these tests fails, the precision is set to a fill value of $-999.99$.
+
+These values indicate samples where the cloud top pressure reported by the model is not reliable. 
 
 \subsection{Accuracy}
 
-\mycomment{Not sure what you can say on accuracy, but probably good to keep this section.}
+Similar to the precision, we can use the comparison between predicted and observed cloud top pressures from an independent test data set which is shown in Figure~\ref{fig:ctpcomp}. For this independent test data set the correlation coefficient $r > 0.86$ with a root-mean-square-deviation of $\approx 71$\,hPa. The median deviation indicates a small positive bias of $< 1.5$\,hPa. Looking at the difference between predicted and observed cloud top pressures, about half of the data points lie within the Full Width at Half Maximum (FWHM) of $\approx 42$\,hPa.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{figures/mls_ctp_model_performance_v2.pdf}
+  \end{center}
+  \caption{Left: Joint histogram of predicted and observed MODIS cloud top pressure from an independent test data set. Number of data points (\textit{N}), correlation coefficient (\textit{r}), and root mean square deviation are provided, as well as the 1$^\mathrm{st}$, 50$^\mathrm{th}$, and 99$^\mathrm{th}$ percentile of the deviation between predictions and observations. Right: Histogram of deviations between predicted and observed cloud top pressures. The FWHM is indicated by the white, dashed lines, and the percentage of data points within the FWHM is given in the panel.}
+  \label{fig:ctpcomp}
+\end{figure}
 
 \subsection{Data screening}
 \label{sec:CldTopPScreening}
 \begin{description}
-  \item[Pressure range (1000--70\,hPa):] \standardrangestatement\ \mycomment{Edit/expand as needed.}
-
-  \standardprecisionrule
-
-    \item[Quality:] \qualityrule{\mycomment{x.x}}
-
-  \item[Convergence:] \convergencerule{\mycomment{x.x}}
-
-
-  \item[Others:] \mycomment{Add other rules if/as needed.  Examine other sections for examples.}
+  \item[Pressure range (770--85\,hPa):] \standardrangestatement\
+  \item[Estimated precision:] Only use values for which the estimated precision is a positive number. If positive, the precision value is based on the root-mean-square deviation between predictions and colocated MODIS cloud top pressures from an independent test data set. These samples were not involved in the training procedure.
 \end{description}
 
 \subsection{Artifacts}
 
-\mycomment{Delete this subsection if/as needed}
-
+The current version of the algorithm relies on radiances from MLS radiometer at 190, 250, and 640\,GHz. Whenever any of those radiometers are turned off, or MLS sampled radiances that are outside the range observed in the extensive training data set, the algorithm will produce fill values of $-999.99$ for the cloud top pressure predictions, and the associated precisions for all samples is set to $-999.99$.
 
 \subsection{Comparisons with other datasets}
-
-\mycomment{Delete this subsection if/as needed}
+Please refer to the detailed analysis in \citet{WernerEtal:2021}, which provides statistical comparisons of cloud properties with MODIS, as well as maps of example cloud scenes.
 
 \subsection{Desired improvements for future data version(s)}
-
-\mycomment{Delete this subsection if/as needed}
-
-\mycomment{Think about whether there is some kind of table it makes sense to include, but not for it's own sake.  We can delete the "T" in the toolbar for this product if need be.}
+We would like to develop a second model that does not rely on radiances from the MLS radiometer at 190\,GHz, which would provide cloud top pressure estimates when those samples are not available.

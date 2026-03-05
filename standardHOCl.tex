@@ -5,24 +5,35 @@
 
 \subsection{Introduction}
 
-As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, \emph{a priori} information for \ch{H2O} (based on climatological values) is used in the HOCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HOClScreening}. 
 
-More generally, there has been very little change in the \thisv HOCl retrieval results since \prevv, and any small changes are well within the somewhat large estimated accuracies (systematic uncertainties). We provide below sample mean HOCl distributions for the \thisv and \prevv data versions, and their differences. Otherwise, previous information regarding this species remains largely unchanged; the main points are mentioned here mainly for new data users.
+There has been very little change in the \thisv HOCl retrieval results since \prevv, and any small changes are well within the somewhat large estimated accuracies (systematic uncertainties). We provide below sample mean HOCl distributions for the \thisv and \prevv data versions, and their differences. Otherwise, previous information regarding this species remains largely unchanged; the main points are mentioned here mainly for new data users.
 
 The HOCl retrieval is quite noisy for individual profiles and HOCl data require some averaging (e.g., in 10\degsym{}-latitude-resolution zonal means for one or more weeks) to get useful precision of better than 10\,pptv, in comparison to typical upper stratospheric HOCl abundances of 100--150\,pptv. Table~\ref{tab:HOClSummary} summarizes the MLS HOCl resolution, precision, and accuracy estimates for the upper stratosphere. More discussion and a brief validation summary are given in the following sections, along with data screening recommendations. For trend results regarding MLS HOCl in the upper stratosphere, see \citep{FroidevauxEtal:2022:HOCl}.
 
-An algorithm to retrieve daily zonal means of HOCl by first averaging the radiances has been developed by the MLS team, building on the work described in \citet{MillanEtal:2012} and \citet{MillanEtal:2015} for BrO and \ch{HO2}, respectively. The resulting alternative dataset reduces the variability slightly and will be available, along with associated documentation, for \thisv from the GSFC DISC soon; it is expected to be very similar to the (\prevv) HOCl dataset used by \citep{FroidevauxEtal:2022:HOCl}. 
+An algorithm to retrieve daily zonal means of HOCl by first averaging the radiances has been developed by the MLS team, building on the work described in \citet{MillanEtal:2012} and \citet{MillanEtal:2015} for BrO and \ch{HO2}, respectively. This alternative dataset slightly reduces the variability and is available, along with associated documentation, from the GSFC DISC. The product short name is ``\texttt{ML3DZMBRO}''. It is expected to be very similar to the HOCl dataset used by \citep{FroidevauxEtal:2022:HOCl}. 
 
 \subsection{Changes from \prevv}
-There were no significant algorithmic changes relating directly to HOCl for the \thisv retrievals. However, given the small level of HOCl spectral radiance signal, the retrieved HOCl abundances can be sensitive, indirectly, to even minor changes in the retrieval system, such as changes in temperature or tangent pressure. However, please see the comments in the Introduction above as well as further below regarding some retrieval issues when the \mbox{190\nobreakdash-GHz} radiometer is turned off intermittently (since May 2024).  \mycomment{If the R2 cycling impacts HOCl, this would be the place to discuss it}
+There were no significant algorithmic changes relating directly to HOCl for the \thisv retrievals. However, given the small level of HOCl spectral radiance signal, the retrieved HOCl abundances can be sensitive, indirectly, to even minor changes in the retrieval system, such as changes in temperature or tangent pressure.   
+As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, \emph{a priori} information for \ch{H2O} (based on climatological values) is used in the HOCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HOClScreening}. 
 
-A comparison plot showing zonal average upper stratospheric HOCl contours (from 10 to 2\,hPa) and differences between the two data versions for a typical month (April 2009) is provided in Figure~\ref{fig:MLSv5v6HOClContour}. The average \thisv HOCl abundances are slightly larger than the \prevv retrievals, typically by about 10 to 15\,pptv (or 10 to 15\%); this has removed some of the small negative values that often occurred in \prevv HOCl averages at the highest southern latitudes, between 5 and 10\,hPa.  The estimated precision values are essentially unchanged from \prevv.
+
+% \mycomment{If the R2 cycling impacts HOCl, this would be the place to discuss it}
+
+A comparison plot showing zonal average upper stratospheric HOCl contours (from 10 to 2\,hPa) and differences between the two data versions for a typical month (April 2009) is provided in Figure~\ref{fig:MLSv5v6HOClContour}. The average \thisv HOCl abundances are slightly larger than the \prevv retrievals, typically by about 5 to 15\,pptv (or 5 to 15\%); this has removed some of the small negative values that often occurred in \prevv HOCl averages at the highest southern latitudes, between 5 and 10\,hPa.  The estimated precision values are essentially unchanged from \prevv.
+
+% \begin{figure}
+%   \centering\includegraphics[width=\linewidth]{figures/Fig-HOCl_v6v5_ZmContours_Difs.pdf}
+%   \caption{Zonal averages for upper stratospheric MLS HOCl profiles during April 2009, showing the MLS \prevv HOCl mixing ratio contours (top left panel), the \thisv contours (top right panel), and their differences in pptv (\thisv minus \prevv, bottom left panel) and percent (\thisv minus \prevv versus \prevv, bottom right panel).}
+%   \label{fig:MLSv5v6HOClContour}
+% \end{figure}
 
 \begin{figure}
-  \centering\includegraphics[width=\linewidth]{figures/Fig-HOCl_v6v5_ZmContours_Difs.pdf}
-  \caption{Zonal averages for upper stratospheric MLS HOCl profiles during April 2009, showing the MLS \prevv HOCl mixing ratio contours (top left panel), the \thisv contours (top right panel), and their differences in pptv (\thisv minus \prevv, bottom left panel) and percent (\thisv minus \prevv versus \prevv, bottom right panel).}
+  \centering\includegraphics[width=0.9\linewidth]{figures/hoclcomp.eps}
+  \caption{Zonal averages for upper stratospheric MLS HOCl profiles during April 2009 for \prevv and \thisv, and their differences in pptv and percent.}
   \label{fig:MLSv5v6HOClContour}
 \end{figure}
+
+
 
 \subsection{Resolution}
 \oneverticalavk{HOCl}{HOCl}%
@@ -31,7 +42,7 @@ Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkHOCl}, t
 
 \subsection{Precision}
 
-The estimated single-profile precision reported by the Level~2 software is about 300 to 400\,pptv in the upper stratosphere. A more useful number of 5 to 10\,pptv is quoted in Table~\ref{tab:HOClSummary} for the typical precision of a 10\degsym{}-latitude-resolution weekly zonal means for this product.
+The estimated single-profile precision is about 300 to 450\,pptv in the upper stratosphere. A more useful number of 8.5 to 10\,pptv is quoted in Table~\ref{tab:HOClSummary} for the typical precision of a 10\degsym{} weekly zonal means. 
 
 \subsection{Accuracy}
 
@@ -53,6 +64,7 @@ The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal q
 
 \end{description}
 
+
 \subsection{Review of comparisons with other datasets}
 
 The MLS HOCl retrievals exhibit the expected morphology in monthly mean latitude / pressure contour plots; for example, such plots for September months from MLS compare favorably, to first-order, with results produced by the Michelson Interferometer for Passive Atmospheric Sounding (MIPAS) for September, 2002 \citep{VonClarmannEtal:2006}. MLS HOCl averages at midlatitudes are close to the results from balloon-borne infrared measurements. Generally favorable comparisons (within the error bars) have been made of the diurnal changes in upper stratospheric HOCl between Aura MLS (v3.3), other satellite datasets, and a 1-D photochemical model \citep{KhosraviEtal:2013}.
@@ -64,26 +76,54 @@ The MLS HOCl retrievals exhibit the expected morphology in monthly mean latitude
   \item Users should screen out the non-converged and poorest quality HOCl profiles, as such profiles (typically a very small number per day) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
   \item As discussed in Section~\ref{sec:HOClScreening}, biases in HOCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} \emph{a priori} information is used in the HOCl retrieval. Depending on the specific goals of any study based on these measurements, additional HOCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
 \end{itemize}
+
+
 \begin{table}
-  \caption{Summary for MLS hypochlorous acid}\vspace{0.5ex}
+  \caption{Summary Aura MLS \thisv \ch{HOCl} Characteristics}
+  \vspace{\tablecaptionsep}
   \label{tab:HOClSummary}
-  \begin{minipage}{\linewidth}\small
-    \centering\begin{tabular}{ccccccl}
+  \begin{minipage}{\linewidth}
+    \small\centering\begin{tabular}{rcccl}
 \toprule
-\parbox[m]{15mm}{\centering\textbf{Pressure}} &
-\multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Precision\footnote{Precision (1$\sigma$) 
-for 1 week/10 degrees zonal means or 2 weeks/5 degrees zonal means}}}} &
-\parbox[m]{24mm}{\centering\textbf{Vertical\\ Resolution}} &
-\multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy\footnote{2$\sigma$ estimate from systematic 
-uncertainty characterization tests}\\}}} 
-&
+\parbox{10ex}{\bfseries\centering Pressure\\ hPa} &
+\parbox{12ex}{\bfseries\centering Vertical\\ resolution\\ km} &
+\parbox{12ex}{\bfseries\centering Precision\footnote{Precision (1$\sigma$) 
+for 1 week/10 degrees zonal means or 2 weeks/5 degrees zonal means}  pptv} &
+\parbox{15ex}{\bfseries\centering Accuracy\footnote{2$\sigma$ estimate from systematic uncertainty characterization tests}\\  pptv} &
+
 \textbf{Comments} \\
-\textbf{/ hPa} & \textbf{/ pptv} & \textbf{/ \%} & \textbf{/ km}& \textbf{/ pptv} & \textbf{/ \%} & \\
 \midrule
-1.5 or less & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\ 
-2.2 to 10   & 5--10 & 5--20 & 5.5--6 & 40--80 & 25--100 & Some averaging required \\ 
-15 or more  & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\    
+ $<$ 1.5\,hPa  & ---   & ---               & ---  &  Unsuitable for scientific use\\
+ 10 to 2.2\,hPa     & 5.5 -- 6   & 8.5 -- 10  & 60 -- 90 &  Some averaging required\\
+ $>$ 15\,hPa    & ---   & ---               & ---  &  Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
   \end{minipage}
 \end{table}
+
+
+% \begin{table}
+%   \caption{Summary for MLS hypochlorous acid}\vspace{0.5ex}
+%   \label{tab:HOClSummary}
+%   \begin{minipage}{\linewidth}\small
+%     \centering\begin{tabular}{ccccccl}
+% \toprule
+% \parbox[m]{15mm}{\centering\textbf{Pressure}} &
+% \multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Precision\footnote{Precision (1$\sigma$) 
+% for 1 week/10 degrees zonal means or 2 weeks/5 degrees zonal means}}}} &
+% \parbox[m]{24mm}{\centering\textbf{Vertical\\ Resolution}} &
+% \multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy\footnote{2$\sigma$ estimate from systematic 
+% uncertainty characterization tests}\\}}} 
+% &
+% \textbf{Comments} \\
+% \textbf{/ hPa} & \textbf{/ pptv} & \textbf{/ \%} & \textbf{/ km}& \textbf{/ pptv} & \textbf{/ \%} & \\
+% \midrule
+% 1.5 or less & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\ 
+% 2.2 to 10   & 8.5--10 & 10--20 & 5.5--6 & 40--80 & 25--100 & Some averaging required \\ 
+% 15 or more  & ---   & ---   & ---    & ---    & ---     & Unsuitable for scientific use \\    
+% \bottomrule
+% \end{tabular}
+%   \end{minipage}
+% \end{table}
+
+

@@ -1,35 +1,35 @@
 \speciestitle{Hydrogen Chloride}{HCl}{HCl}{%
   \item[Useful range:] 100--0.32\,hPa
   \item[Product lead:] Lucien Froidevaux
-  \item[Contact:] Michelle Santee \email{Michelle.L.Santee@jpl.nasa.gov} \mycomment{Was this how we decided to have it end up?}}
+  \item[Contact:] Michelle Santee \email{Michelle.L.Santee@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-Multiple MLS bands measure the spectral signature of HCl around 624--626\,GHz.  Starting in February~2006, the MLS band designed to target HCl (specifically the HCl\cp{35} isotopologue), \texttt{R4:640.B13F:HCl}, known as ``band-13'' began to exhibit symptoms of aging and was deactivated to conserve life. This aging is likely to be due to a radiation susceptibility issue for a batch of transistors identified shortly before launch. Useful observations of HCl are still made with the adjacent band (\texttt{R4:640.B14F:O3}, ``band~14'') which, as can be seen from Figures~\ref{fig:UnfoldedSpectra} and~\ref{fig:FoldedSpectra} also observe the HCl\cp{35} line (and a smaller line for the HCl\cp{37} isotopologue); these retrievals produce the \thisv standard HCl product (as they did for most earlier MLS data versions).
+Multiple MLS bands measure the spectral signature of HCl around 624--626\,GHz.  Starting in February~2006, the MLS band designed to target HCl (specifically the HCl\cp{35} isotopologue), \texttt{R4:640.B13F:HCl}, known as ``band-13'', began to exhibit symptoms of aging and was deactivated to conserve life. This aging is likely due to a radiation susceptibility issue for a batch of transistors that was identified shortly before launch. Useful observations of HCl are still made with the adjacent band (\texttt{R4:640.B14F:O3}, ``band~14''), which, as can be seen from Figures~\ref{fig:UnfoldedSpectra} and~\ref{fig:FoldedSpectra}, also observes the HCl\cp{35} line (and a smaller line for the HCl\cp{37} isotopologue); these retrievals produce the \thisv standard HCl product (as they did for most earlier MLS data versions).
 
 In order to avoid undesirable discontinuities in the \thisv HCl dataset, the band~13 radiances are not considered in the retrieval of the standard HCl product, even on days for which it was active. For days prior to the 16~February 2006 deactivation of band~13, and the few subsequent days when band~13 has been (or may be) reactivated, the \thisv algorithms also produce a second HCl product (in the \texttt{HCl-640-B13} swath in the \texttt{L2GP-DGG}) file, which includes the band~13 radiances, giving a product with improved precision and resolution in the upper stratosphere and mesosphere. See Section~\ref{sec:StandardHCl} for more information.
 
-As the arrangement of channels ``band~14'' is not optimized to measure the HCl line, particularly at altitudes in the upper stratosphere where the line is narrow compared to the channel width, upper stratospheric trends from the (uninterrupted from 2004 to present) band~14 retrievals are not reliable enough and show too small a decrease in HCl, compared to band~13 data and expectations, as well as versus ACE-FTS HCl data results. Scientific usage of the MLS standard HCl (band~14) dataset should therefore be restricted to the lower stratosphere; in this region, studies of tendencies and longer-term trends are justified (e.g., see the HCl comparisons discussed by \citet{MahieuEtal:2014}).
+As the arrangement of channels in band~14 is not optimized to measure the HCl line, particularly at altitudes in the upper stratosphere where the line is narrow compared to the channel width, upper stratospheric trends from the (uninterrupted from 2004 to present) band~14 retrievals are not reliable enough and show too small a decrease in HCl, compared to estimates from band~13 data and expectations, as well as ACE-FTS HCl data results. Scientific usage of the MLS standard HCl (band~14) dataset should therefore be restricted to the lower stratosphere; in this region, studies of tendencies and longer-term trends are justified (e.g., see the HCl comparisons discussed by \citet{MahieuEtal:2014}).
 
-Complete days with band 13 on after February 15, 2006, are as follows: March 15, 2006 (2006d074), April 14, 2006 (2006d104), January 6 through 8, 2009 (2009d006 through 2009d008), and January 24 through 27, 2010 (2010d024 through 2010d027).  The \texttt{HCl-640-B13} product has slightly better precision and vertical resolution in the upper stratosphere than the standard HCl product. The MLS team plans to turn band 13 on very infrequently (possibly only one more time), as its lifetime is estimated at a few days to a few weeks at most, based on the channel counts and channel noise characteristics observed during the 3-day turn-on period in late January, 2010; band 13 could provide useful trend information for upper stratospheric data, given its narrower channels. 
+Complete days with band 13 on after 15~February 2006 are as follows: 15 March 2006 (2006d074), 14 April 2006 (2006d104), 6--8 January 2009 (2009d006 through 2009d008), and 14--27 January 2010 (2010d024 through 2010d027). The \texttt{HCl-640-B13} product has slightly better precision and vertical resolution in the upper stratosphere than the standard HCl product. The MLS team plans to turn band 13 on very infrequently (possibly only one more time), as its lifetime is estimated at a few days to a few weeks at most, based on the channel counts and channel noise characteristics observed during the 3-day turn-on period in late January 2010; band~13 could provide useful trend information for upper stratospheric data, given its narrower channels. 
 
 \begin{figure}
   \centering\includegraphics[angle=90,width=0.6\linewidth]{figures/HCl_2bands_0-46hpa_trends_2004_2010}
-  \caption{Daily zonal averages for MLS HCl at 0.46\,hPa, from mid-August, 2004, through January, 2010, for the originally-targeted band 13 measurements (red points), now available only on occasion (to preserve lifetime), and the band 14 data (blue points).  The lines are simple linear fits through the daily data points; trend differences are apparent in this region of the atmosphere, where the information obtained from band 14 HCl data is not reliable enough.}
+  \caption{Daily zonal averages for MLS HCl at 0.46\,hPa from mid-August 2004 through January 2010, for the originally targeted band~13 measurements (red points; available only on occasion since February 2006 to preserve lifetime) and the band~14 data (blue points).  The lines are simple linear fits through the daily data points; differences are apparent in this region of the atmosphere, where the information obtained from band~14 HCl data is not reliable enough for trend quantification.}
   \label{fig:MLSHCl2bands}
 \end{figure}
 
 See Figure~\ref{fig:MLSHCl2bands} for an illustration of past trend differences between the two MLS band measurements of HCl. In the lower stratosphere, however, variations in the two HCl products are closer together, although there is also more seasonal variability. We believe that the band 14 retrievals are quite appropriate to use in studies of seasonal (and latitudinal) changes (e.g., during polar winter/spring), and for longer-term trend studies in the lower stratosphere, despite some trend differences with respect to some model results, as discussed by \citet{FroidevauxEtal:2019}.
 
-Table~\ref{tab:HClSummary} summarizes the MLS HCl resolution, precision, and accuracy estimates as a function of pressure. More discussion and data screening recommendations for the MLS HCl \thisv data are provided below. Analyses describing detailed validation of the MLS (\vii) product and comparisons with other data sets were described in \citet{FroidevauxEtal:2008:HCl}. Based on the small overall changes in HCl data since \vii, the conclusions of the latter reference should remain essentially unchanged.
+Table~\ref{tab:HClSummary} summarizes the MLS HCl resolution, precision, and accuracy estimates as a function of pressure. More discussion and data screening recommendations for the MLS HCl \thisv data are provided below. Detailed validation of the MLS (\vii) product and comparisons with other data sets were presented by \citet{FroidevauxEtal:2008:HCl}; based on the overall small changes in HCl data since \vii, the conclusions of that study should remain essentially unchanged.
 
-\subsection{Changes from  \prevv}
+\subsection{Changes from \prevv}
 
 There have been no significant changes in the \thisv HCl retrieval results compared to \prevv. We provide below sample mean HCl distributions for the two data versions, and their differences. Otherwise, previous information regarding this species remains largely unchanged; the main points are mentioned here mainly for new data users.
 
 As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, \emph{a priori} information for \ch{H2O} (based on climatological values) is used in the HCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HClScreening}. 
 
-A comparison plot showing zonal average HCl profile contours versus latitude and differences between the \thisv and \prevv fields for a typical month (April, 2009) is provided in Figure~\ref{fig:MLSv5v6HClContour}. For pressures larger than or equal to 0.22\,hPa, the average differences between the two data versions are typically within about 0.05\,ppbv (or 1--2\%). These average changes are easily within the estimated accuracy values (see Table~\ref{tab:HClSummary}). There is still an unrealistic high bias in HCl at 147\,hPa in the tropics, so values at this pressure are not recommended or reliable within the 40\degsym S to 40\degsym N latitude range. The precision (single profile random uncertainty) estimates provided in the Level~2 files are essentially unchanged from \prevv.
+A comparison plot showing zonal average HCl profile contours versus latitude and differences between the \thisv and \prevv fields for a typical month (April 2009) is provided in Figure~\ref{fig:MLSv5v6HClContour}. For pressures larger than or equal to 0.22\,hPa, the average differences between the two data versions are typically within about 0.05\,ppbv (or 1--2\%). These average changes are easily within the estimated accuracy values (see Table~\ref{tab:HClSummary}). There is still an unrealistic high bias in HCl at 147\,hPa in the tropics, so values at this pressure are not recommended or reliable within the 40\degsym S to 40\degsym N latitude range. The precision (single profile random uncertainty) estimates provided in the Level~2 files are essentially unchanged from \prevv.
 
 \begin{figure}
   \centering\includegraphics[width=\linewidth]{%
@@ -79,38 +79,38 @@ The accuracy estimates in the Table come from a quantification of the combined e
   \item The HCl values at 147\,hPa are biased high and generally not usable (except possibly at high latitudes). Please consult with the MLS team for further information.
   \item Users should screen out the non-converged and poorest quality HCl profiles, as such profiles (typically less than 0.2\% of the data) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
   \item As discussed in Section~\ref{sec:HClScreening}, biases in HCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} \emph{a priori} information is used in the HCl retrieval. Depending on the specific goals of any study based on these measurements, additional HCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
-
 \end{itemize}
+
 \begin{table}
-  \caption{Summary for MLS hydrogen chloride}
+  \caption{Summary of Aura MLS \thisv HCl Characteristics}
   \vspace{\tablecaptionsep}
   \label{tab:HClSummary}
   \begin{minipage}{\linewidth}\small
-    \centering\begin{tabular}{ccccccm{25ex}} \toprule
+    \centering\begin{tabular}{ccccm{25ex}} \toprule
     \parbox[m]{15mm}{\centering\textbf{Pressure}} &
-    \multicolumn{2}{c}{\parbox[m]{17mm}{\centering\textbf{Precision%
-    \footnote{Precision (1$\sigma$) for individual profiles; note that $\%$ values tend to vary strongly with latitude in the lower stratosphere.}}}} &
-    \parbox[m]{24mm}{\centering\textbf{Resolution%
+    \parbox[m]{22mm}{\centering\textbf{Single-Profile\\ Precision%
+    \footnote{Precision (1$\sigma$) for individual profiles.}}} &
+    \parbox[m]{20mm}{\centering\textbf{Resolution%
     \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.}
        \\ V $\times$ H}} &
-    \multicolumn{2}{c}{\parbox[m]{17mm}{\centering\textbf{%
-          Accuracy\footnote{2$\sigma$ estimate from systematic uncertainty characterization tests (but see text for estimates at pressures lower than 10\,hPa); note that percent values tend to vary strongly with latitude and season in the lower stratosphere, due to the variability in HCl.%
-          }\\}}} & \textbf{Comments} \\
-    \textbf{hPa} & \textbf{ppbv} & \textbf{\%} & \textbf{km} & \textbf{ppbv} & \textbf{\%} & \\
+    \parbox[m]{17mm}{\centering\textbf{%
+          Accuracy\footnote{2$\sigma$ estimate from systematic uncertainty characterization tests (but see text for estimates at pressures lower than 10\,hPa).%
+          }\\}} & \textbf{Comments} \\
+    \textbf{hPa} & \textbf{ppbv} & \textbf{km} & \textbf{ppbv} & \\
     \midrule
-    0.22--0.001 & --- & ---             & ---              & ---   & ---     & Unsuitable for scientific use \\
-    0.32            & 0.7 &   20            &   5 $\times$ 450 & 0.3   &  10     & Unsuitable for trend studies \\
-    0.5             & 0.6 &   15            &   5 $\times$ 400 & 0.3   &  10     & Unsuitable for trend studies \\
-    1               & 0.5 &   15            &   3 $\times$ 300 & 0.3   &  10     & Unsuitable for trend studies \\
-    2               & 0.4 &   15            &   3 $\times$ 250 & 0.3   &  10     & Unsuitable for trend studies \\
-    5               & 0.3 &   10            &   3 $\times$ 200 & 0.3   &  10     & Unsuitable for trend studies \\
-    10              & 0.2 &   10            &   3 $\times$ 200 & 0.2   &  10     & \\
-    20              & 0.2 &   15            &   3 $\times$ 200 & 0.15  &  10     & \\
-    46              & 0.2 & 10 to $>$ 40    &   3 $\times$ 300 & 0.2   &  20     & \\
-    68              & 0.2 & 15 to $>$ 80    &   3 $\times$ 300 & 0.2   &  25     & \\
-    100             & 0.3 & 30 to $>$ 100   &   3 $\times$ 350 & 0.2   &  40--45 & \\
-    147             & 0.4 & 50 to $>$ 100   &   3 $\times$ 400 & 0.5   &  $\gtrsim$ 100  & High bias at low lats. (use with caution elsewhere) \\
-    1000--215   & --- & ---             & ---              & ---   & ---     & Unsuitable for scientific use \\
+    0.22--0.001 & ---             & ---              & ---     & Unsuitable for scientific use \\
+    0.32            & 0.7         &   5.5 $\times$ 450 & 0.3     & Unsuitable for trend studies \\
+    0.5             & 0.6         &   5 $\times$ 400 & 0.3     & Unsuitable for trend studies \\
+    1               & 0.5         &   3.5 $\times$ 300 & 0.3     & Unsuitable for trend studies \\
+    2               & 0.4         &   3 $\times$ 250 & 0.3     & Unsuitable for trend studies \\
+    5               & 0.3         &   3 $\times$ 200 & 0.3     & Unsuitable for trend studies \\
+    10              & 0.2         &   3 $\times$ 200 & 0.2     & \\
+    22              & 0.2         &   3 $\times$ 250 & 0.2    & \\
+    46              & 0.2         &   3 $\times$ 300 & 0.2     & \\
+    68              & 0.2         &   3 $\times$ 300 & 0.2     & \\
+    100             & 0.3         &   3 $\times$ 350 & 0.2     & \\
+    147             & 0.4         &   3 $\times$ 400 & 0.4     & High bias at low lats. (use with caution elsewhere) \\
+    1000--215   & ---             & ---              & ---     & Unsuitable for scientific use \\
     \bottomrule
 \end{tabular}
   \end{minipage}

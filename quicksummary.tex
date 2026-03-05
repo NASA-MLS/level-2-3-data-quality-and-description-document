@@ -18,23 +18,23 @@
 
   \subsection*{What format are MLS data files in? }
 
-  MLS \mbox{Level-2} data are in HDF-EOS version~5 format (see Section~\ref{sec:FilesAndFormats}, page~\pageref{sec:FilesAndFormats}). \mbox{Level-3} data are in netCDF~4 (see Section~\ref{sec:L3files}, page~\pageref{sec:L3files}).
+  MLS \mbox{Level-2} data are in HDF-EOS version~5 format (see Section~\ref{sec:FilesAndFormats}, page~\pageref{sec:FilesAndFormats}). \mbox{Level-3} data are in netCDF4 (see Section~\ref{sec:L3files}, page~\pageref{sec:L3files}).
 
   \subsection*{Which MLS data points should be avoided?  How much should I trust
     the remainder?}
 
-  These issues are described in section~\ref{sec:StatusQuality} (starting on page~\pageref{sec:StatusQuality}), and on a product-by-product basis in Chapter~\ref{chap:Level2}. The key rules are:
+  These issues are described in Section~\ref{sec:StatusQuality} (starting on page~\pageref{sec:StatusQuality}), and on a product-by-product basis in Chapter~\ref{chap:Level2}. The key rules are:
   \begin{itemize}[leftmargin=2ex, itemsep=2pt]
-    \item Only data within the appropriate pressure range (described product by product in Chapter~\ref{chap:Level2}) are to be used.
+    \item Only data within the appropriate pressure range (defined for each product in Chapter~\ref{chap:Level2}) should be used.
     \item Always consider the precision of the data, as reported in the \texttt{L2gpPrecision} field.
-    \item Do not use any data points where the precision is zero or a negative number. This indicates poor information yield from MLS.
-    \item Do not use data for any profile where the corresponding entry in the integer \texttt{Status} array is an odd number.
+    \item Do not use any data points for which the precision is zero or a negative number, as that indicates poor information yield from MLS.
+    \item Do not use data for any profile for which the corresponding entry in the integer \texttt{Status} array is an odd number.
     \item Data for profiles where \texttt{Status} is a non-zero even number should be approached with caution. See Section~\ref{sec:StatusQuality} on page~\pageref{sec:StatusQuality}, and the product-by-product descriptions in Chapter~\ref{chap:Level2} for details on how to interpret the \texttt{Status} information.
-    \item Do not use any data for profiles where the corresponding entry in the \texttt{Quality} array is \emph{smaller} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
-    \item Do not use any data for profiles where the corresponding value in the \texttt{Convergence} array is \emph{larger} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
+    \item Do not use any data for profiles for which the corresponding entry in the \texttt{Quality} array is \emph{smaller} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
+    \item Do not use any data for profiles for which the corresponding value in the \texttt{Convergence} array is \emph{larger} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
     \item Some products require additional screening to remove biases or outliers; see specific sections of Chapter~\ref{chap:Level2} for details.
     \item Chapter~\ref{chap:Level2} also provides information on the accuracy of each product.
-    \item Data users are strongly encouraged to contact the MLS science team (\href{mailto:mls-data@jpl.nasa.gov}{\texttt{mls-data@jpl.nasa.gov}}) to discuss their anticipated usage of the data, and are always welcome to ask further data quality questions.
+    \item Data users are strongly encouraged to contact the MLS science team (\href{mailto:mls-data@jpl.nasa.gov}{\texttt{mls-data@jpl.nasa.gov}}) to discuss their anticipated usage of the data and are always welcome to ask further data quality questions.
   \end{itemize}
 
   \subsection*{Why do some species abundances show negative values, and how do I
