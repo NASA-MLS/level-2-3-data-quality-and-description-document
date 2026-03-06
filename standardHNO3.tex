@@ -80,6 +80,7 @@ Extensive comparisons of MLS \vii \nitac data with a variety of different platfo
 \subsection{Data screening -- all data}
 \label{sec:HNO3Screening}
 
+\paragraph{General \ch{HNO3} screening considerations}
 \begin{description}
   \item[Pressure range:] \screeningrule{215--1.5\,hPa}
 
@@ -88,7 +89,7 @@ Extensive comparisons of MLS \vii \nitac data with a variety of different platfo
     \standardprecisionrule
 
 \end{description}
-\subsection{Data screening -- upper troposphere / lower stratosphere
+\paragraph{Upper troposphere / lower stratosphere
   (pressures of 22\,hPa or greater)}
 
 The \texttt{Quality} and \texttt{Convergence} fields included in the \texttt{HNO3} swath in the standard \texttt{L2GP-HNO3} files are appropriate for use in screening the data at and below (i.e., at pressures greater than) 22\,hPa. For those levels:
@@ -102,7 +103,7 @@ The \texttt{Quality} and \texttt{Convergence} fields included in the \texttt{HNO
 
 \end{description}
 
-\subsection{Data screening -- upper stratosphere (pressures of 15\,hPa or less)}
+\paragraph{Upper stratosphere (pressures of 15\,hPa or less)}
 
 The above screening criteria \emph{should not be used} for data at 15\,hPa and higher altitudes (lower pressures). Rather, the appropriate indicators to be used in masking \nitac data at these altitudes are the \texttt{Quality} and \texttt{Convergence} values pertinent to the \mbox{190\nobreakdash-GHz} retrievals. To aid that screening, the \texttt{HNO3-190} swath is included in the standard \nitac files. The following screening criteria are based on the \mbox{190\nobreakdash-GHz} \nitac information:
 
