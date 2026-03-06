@@ -68,6 +68,7 @@ The accuracy estimates shown in Table~\ref{tab:O3Summary} are from an analysis w
 
 \paragraph*{Column values} During development of \prevv ozone, sensitivity tests using systematic changes in various uncertain parameters that impact the ozone retrieval revealed possible biases (2$\sigma$ estimates) of about 4\%, as an estimated accuracy for the MLS column values (from integrated MLS ozone profiles down to 100, 147, and 215\,hPa). This estimate is still expected to hold for \thisv data. See the validation papers (and subsequent ozone-related publications, e.g., available from the MLS website) for results on column ozone comparisons versus satellite, sonde, and lidar data.
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:O3Screening}
 \begin{description}
@@ -80,6 +81,7 @@ The accuracy estimates shown in Table~\ref{tab:O3Summary} are from an analysis w
 %    Compared to data screening recommendations for \prevv\CheckThis, the screening of \thisv\CheckThis data typically removes slightly fewer ozone profiles on a typical day, but this difference is only a fraction of a percent.
 
 \end{description}
+\end{nofloatpages}
 
 \noindent In summary, one should \emph{reject} profiles with odd \texttt{Status} \emph{or} even \texttt{Status} profiles with \texttt{Convergence} above the convergence threshold \emph{or} \texttt{Quality} below the quality threshold. Conversely, one should \emph{keep} profile values with even status \emph{and} good \texttt{Convergence} \emph{and} good \texttt{Quality}. These criteria typically remove 1 to 2 \% of global daily data, with tropical latitudes showing somewhat larger data removal fractions of about 5\%. This screening generally maintains sufficient coverage for a near-complete daily map (for any given day), even in the UTLS\@.
 

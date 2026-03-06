@@ -273,6 +273,12 @@
 %
 \newcommand{\email}[1]{\href{mailto:#1}{\mbox{$<$\texttt{#1}$>$}}}
 %
+% For suppressing floats in a block
+\usepackage{placeins}
+\newenvironment{nofloatpages}
+  {\renewcommand{\floatpagefraction}{0.99}}
+  {\renewcommand{\floatpagefraction}{0.50}}
+%
 % ---------------------------------------- Captions
 %
 \usepackage{caption}

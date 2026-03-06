@@ -48,6 +48,7 @@ The estimated single-profile precision is about 300 to 450\,pptv in the upper st
 
 The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal quantification of the combined effects of possible systematic errors in MLS calibration, spectroscopy, etc.\ on the HOCl retrievals \citep{ReadEtal:2007}. These values are intended to represent 2$\sigma$ estimates of accuracy. The largest contributors to possible errors for HOCl are contaminant species, gain compression, and sideband ratio uncertainties. The Table gives a range of error estimates (for now, these are based on \prevv but they are not expected to change significantly for \thisv). The average changes for upper stratospheric HOCl between \prevv and \thisv are well within the quoted accuracy estimates. The HOCl signal becomes too small compared to the systematic uncertainties to allow for reliable retrievals at pressures larger than 10\,hPa.
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:HOClScreening}
 \begin{description}
@@ -63,6 +64,7 @@ The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal q
   \item[{Additional screening on \ch{H2O} \texttt{Status}:}] As noted earlier, HOCl retrieval quality is degraded at some levels when the \mbox{190\nobreakdash-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved HOCl values can reach more than 5 to 10\%  at 4.6 to 10\,hPa, while the upper altitudes (pressures less than 4 \,hPa) are largely unaffected.  These artifacts are not removed by the standard HOCl data filtering protocols. Thus, while the HOCl data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using HOCl data at the most affected  retrieval levels noted above, an additional screening step is recommended, whereby the \texttt{Status} field in the collocated \ch{H2O} profile is examined to remove affected HOCl retrievals. That is, only HOCl profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on HOCl measurements in the 4.6--10\,hPa range (at lower pressures / higher altitudes, all HOCl data points passing the standard quality screening measures may be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190\nobreakdash-GHz} radiometer is turned off can be intercompared.
 
 \end{description}
+\end{nofloatpages}
 
 
 \subsection{Review of comparisons with other datasets}

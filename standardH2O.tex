@@ -140,6 +140,7 @@ Apart from the differences noted above, the MLS \thisv \ch{H2O} is similar to th
 
 % \mycomment{Again, not sure this belongs here any more, at least acknowledge other discussions.} Comparisons of lower stratospheric MLS \viv \ch{H2O} between MLS and balloon-borne CFH and FPH\footnote{Cryogenic Frostpoint Hygrometer (CFH) and Frost Point Hygrometer (FPH)} measurements from 2004 to the 2024 cessation of MLS \viv processing show a drift between them, with MLS water vapor increasing at a rate of \mbox{0.03--0.07\,ppmv\,yr\cp{-1}} relative to the frostpoint sondes (roughly 0.6 to 1.5\% per year), starting around 2009 \citep{HurstEtal:2016}. Comparisons with the ACE-FTS instrument, and with measurements of upper stratospheric water vapor from ground-based microwave sensors, provide evidence for a smaller (\mytexttilde+0.2\% per year) drift. The new time-varying estimates for the MLS 190\nobreakdash-GHz sideband fraction used in \prevv and \thisv reduce the drift.  We anticipate that \thisv \ch{H2O} will show only a small drift compared to the ACE-FTS record, but continue show a drift compared to the frostpoint record. \mycomment{Let's revist this statement and update with new comparisons}
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:H2OScreening}
 \begin{description}
@@ -150,8 +151,8 @@ Apart from the differences noted above, the MLS \thisv \ch{H2O} is similar to th
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} \emph{greater} than 0.7 should be used in scientific studies.} The quality threshold is deliberately set low because it is not a very good discriminator of poor profiles except when quality is well below the mean value; therefore, we recommend the ``additional screening to avoid outliers,'' as described below.
   \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} \emph{less} than 2.0 should be used in scientific studies.}
   \item[Additional screening to avoid outliers:] After applying the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} screening described above, some unphysical profiles remain in the MLS \thisv\ \ch{H2O} dataset. These are characterized by unrealistically low water vapor mixing ratios in the upper troposphere and stratosphere. The cause behind this behavior is from using the logarithmic basis which excludes negative values. Sometimes the retrieval minimizer seeks a negative value at a given level (which is almost always accompanied by severe vertical profile oscillations). Such values are not allowed and therefore an optimal fit to the measurement signal is not achieved. \ch{H2O} profiles having values less than 0.101\,ppmv (0.101$\times 10^{-6}$\,VMR) at any pressure at or larger than 1\,hPa should not be used. Profiles with acceptable \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} having values less than 0.101\,ppmv at pressures $< 1$\,hPa (vertical levels 38--55) are acceptable and occur frequently, because the water vapor concentration in the mesosphere is often less than the measurement precision and negative values are preferable but not realizable due to the logarithmic basis definition being used.
-
 \end{description}
+\end{nofloatpages}
 
 \subsection{Artifacts}
 

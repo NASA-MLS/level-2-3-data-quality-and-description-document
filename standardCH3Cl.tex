@@ -59,6 +59,7 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
 
 Extensive comparisons of MLS v3.3\emph{x}/v3.4\emph{x} \mecl with measurements from a variety of instruments (balloon-borne, aircraft, and satellite) were presented by \citet{SanteeEtal:2013}. Comparisons of \thisv \mecl with correlative data have not been conducted but are expected to yield results similar to those for previous versions.
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:CH3ClScreening}
 \begin{description}
@@ -77,6 +78,7 @@ Extensive comparisons of MLS v3.3\emph{x}/v3.4\emph{x} \mecl with measurements f
   \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, \mecl retrieval quality is degraded at some levels when the \mbox{190\nobreakdash-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved \mecl values as large as 5\% at 68--100\,hPa and 20\% at 147\,hPa are seen. These artifacts are not removed by the standard \mecl data filtering protocols. Thus, while the \mecl data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using \mecl data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the collocated \ch{H2O} profile is examined to remove affected \mecl retrievals. That is, only \mecl profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on \mecl measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all \mecl data points passing the standard quality screening measures may be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190\nobreakdash-GHz} radiometer is turned off can be intercompared.
   
 \end{description}
+\end{nofloatpages}
 
 \subsection{Artifacts}
 

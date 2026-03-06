@@ -21,6 +21,7 @@ The precision values quoted in the IWC files do not represent the true precision
 
 The IWC accuracy values listed in Table~\ref{tab:IWCSummary} are estimates from comparisons of the earlier \vii MLS data product with CloudSat and detailed analyses on the \vii error budget can be found in \citet{WuEtal:2008}.
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:IWCScreening}
 \begin{description}
@@ -36,6 +37,7 @@ The IWC accuracy values listed in Table~\ref{tab:IWCSummary} are estimates from 
 
         \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, the quality of the IWC product is degraded when the \mbox{190\nobreakdash-GHz} radiometer is turned off, since only climatological \ch{H2O} is available in lieu of retrieved \ch{H2O}. In these circumstances, the IWC values cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. Therefore, for quantitative studies, an additional screening step is recommended, whereby the \texttt{Status} field in the collocated \ch{H2O} profile is examined to remove affected IWC data. That is, only IWC profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on IWC measurements.    
 \end{description}
+\end{nofloatpages}
 
 \subsection{Artifacts}
 

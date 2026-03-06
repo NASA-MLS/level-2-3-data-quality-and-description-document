@@ -42,6 +42,7 @@ The values for precision are the root sum square (RSS) precisions for \ch{H2O} a
 
 The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scaled into \%\,RHI units. see sections~\ref{sec:StandardH2O} and~\ref{sec:StandardTemperature} for more details.
 
+\begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:RHIScreening}
 \begin{description}
@@ -67,7 +68,7 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
 
   \item[Additional screening for based on \ch{H2O}:] Eliminate highly oscillatory profiles by eliminating \ch{H2O} profiles having values less than 0.101\,ppmv at any pressure $< 1$\,hPa (vertical levels 1--37).
 \end{description}
-
+\end{nofloatpages}
 \subsection{Artifacts}
 
 See sections~\ref{sec:StandardH2O} for \ch{H2O} and~\ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1--2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, systematic errors (such as tangent pressure retrieval and errors), in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set particularly for pressures greater than 200\,hPa. This will add to the frequency of supersaturation in the tail of MLS RHI distribution functions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, one must remove the contribution from temperature noise as part of the analysis. Measurements taken in the presence of clouds significantly degrade the precision, that is increases the scatter about the mean, but the mean bias as compared to AIRS changes by less than 10\%.  Also, users should note the possibility of a potential drift in the MLS lower stratospheric water vapor product, discussed in sections~\ref{sec:R2DutyCycling} and~\ref{sec:H2OChanges}. Such a drift will also impact the RHI product.
