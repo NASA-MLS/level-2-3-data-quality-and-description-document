@@ -18,7 +18,7 @@ Changes in the 240\nobreakdash-GHz MLS products from v5 to v6 are minor. The sta
     \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5-v6_prfl_60s-30s.pdf}
     \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5-v6_prfl_90s-60s.pdf}
   \end{center}
-  \caption{A comparison of v2.2x (blue), \viii (cyan), \viv (orange), \prevv (dark blue/orange), and \thisv (dark red) SO\cs2 for Jan-Feb-Mar 2005 in five latitude bands. Other time periods are similar. The left panel compares mean profiles, the center shows the mean difference (red diamonds) surrounded by each versions' estimated precision, and the right panel shows the estimated retrieval precision (solid and bullets), measured variability (dotted) which includes atmospheric variability about the mean profile, and \emph{a priori} precision (dashed and diamonds).}
+  \caption{A comparison of v2.2x (blue), \viii (cyan), \viv (orange), \prevv (dark blue/orange), and \thisv (dark red) SO\cs2 for Jan-Feb-Mar 2005 in five latitude bands. Other time periods are similar. The left panel compares mean profiles, the center shows the mean difference (red diamonds) surrounded by each versions' estimated precision, and the right panel shows the estimated retrieval precision (solid and bullets), measured variability (dotted) which includes atmospheric variability about the mean profile, and a priori precision (dashed and diamonds).}
   \label{fig:avgmlsso2prflcomp}
 \end{figure}
 
@@ -53,7 +53,7 @@ SO\cs2 accuracy is estimated to be 20 and 10\,ppbv at 215 and 147\,hPa respectiv
   \item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
   \item[Estimated Precision:] \screeningrule{Values with negative precision can be used, though with caution.}
 
-    Although it is generally recommended to not use values where precision is flagged negative, SO\cs2 is an exception and it is appropriate to use values with negatively flagged precision (provided that the entire profile is not so flagged). High retrieved values of SO\cs2 at the larger pressures (e.g., 215 and 147\,hPa) will also have larger (i.e., poorer) precision values which are sometimes large enough to trigger the ``too much \emph{a priori} influence'' negative-precision flag. In these cases, there will be an \emph{a priori} influence, and the retrieved value will probably be smaller than reality because the retrieval is being pulled towards the \emph{a priori} value of zero ppbv. Nonetheless, this does not detract from the fact that greatly enhanced SO\cs2 is being observed, reflecting the detection of a plume. Profiles where the precision is set to zero, however, should be omitted from analyses.
+    Although it is generally recommended to not use values where precision is flagged negative, SO\cs2 is an exception and it is appropriate to use values with negatively flagged precision (provided that the entire profile is not so flagged). High retrieved values of SO\cs2 at the larger pressures (e.g., 215 and 147\,hPa) will also have larger (i.e., poorer) precision values which are sometimes large enough to trigger the ``too much a priori influence'' negative-precision flag. In these cases, there will be an a priori influence, and the retrieved value will probably be smaller than reality because the retrieval is being pulled towards the a priori value of zero ppbv. Nonetheless, this does not detract from the fact that greatly enhanced SO\cs2 is being observed, reflecting the detection of a plume. Profiles where the precision is set to zero, however, should be omitted from analyses.
 
     \evenstatusrule
   \item[Quality field:] \screeningrule{Only profiles having \texttt{Quality}\, \emph{greater} than 0.95 should be used.} As with water vapor, this value represents where the quality versus yield sharply drops indicating the transition from well fit profiles toward more poorly fit ones as shown in Figure~\ref{fig:so2datayields}
@@ -62,7 +62,7 @@ SO\cs2 accuracy is estimated to be 20 and 10\,ppbv at 215 and 147\,hPa respectiv
 
 \subsection{Artifacts}
 
-High values of SO\cs2 accompanied with negative errors are likely to be underestimated due to \emph{a priori} influence, which biases the value toward zero. The atmospheric background SO\cs2 (\mytexttilde0.1\,ppbv) cannot be measured by MLS, even with extensive data averaging, as there are systematic errors that induce biases of a few ppbv. The 215\nobreakdash-hPa SO\cs2 has a background bias of approximately $-20\,$ppbv.
+High values of SO\cs2 accompanied with negative errors are likely to be underestimated due to a priori influence, which biases the value toward zero. The atmospheric background SO\cs2 (\mytexttilde0.1\,ppbv) cannot be measured by MLS, even with extensive data averaging, as there are systematic errors that induce biases of a few ppbv. The 215\nobreakdash-hPa SO\cs2 has a background bias of approximately $-20\,$ppbv.
 
 \begin{figure}
   \begin{center}

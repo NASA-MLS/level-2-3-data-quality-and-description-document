@@ -14,7 +14,7 @@ An algorithm to retrieve daily zonal means of HOCl by first averaging the radian
 
 \subsection{Changes from \prevv}
 There were no significant algorithmic changes relating directly to HOCl for the \thisv retrievals. However, given the small level of HOCl spectral radiance signal, the retrieved HOCl abundances can be sensitive, indirectly, to even minor changes in the retrieval system, such as changes in temperature or tangent pressure.   
-As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, \emph{a priori} information for \ch{H2O} (based on climatological values) is used in the HOCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HOClScreening}. 
+As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, a priori information for \ch{H2O} (based on climatological values) is used in the HOCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HOClScreening}. 
 
 
 % \mycomment{If the R2 cycling impacts HOCl, this would be the place to discuss it}
@@ -51,7 +51,7 @@ The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal q
 \subsection{Data screening}
 \label{sec:HOClScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{10--2.2\,hPa} \standardrangestatement\ Artifacts (negative averages) for pressures larger than about 10\,hPa make this product unsuitable for use in the lower stratosphere. Regarding the topmost altitude range, the sensitivity to \emph{a priori} increases rapidly at pressures of 1\,hPa or less; we continue to recommend the use of (average) HOCl values only up to 2.2\,hPa. \standardprecisionrule \evenstatusrule
+  \item[Pressure range:] \screeningrule{10--2.2\,hPa} \standardrangestatement\ Artifacts (negative averages) for pressures larger than about 10\,hPa make this product unsuitable for use in the lower stratosphere. Regarding the topmost altitude range, the sensitivity to a priori increases rapidly at pressures of 1\,hPa or less; we continue to recommend the use of (average) HOCl values only up to 2.2\,hPa. \standardprecisionrule \evenstatusrule
 
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.}
   This criterion removes profiles with the poorest radiance fits, typically less than 0.2\% of the daily profiles. For HOCl, this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and \texttt{Convergence} fields for data screening.
@@ -74,7 +74,7 @@ The MLS HOCl retrievals exhibit the expected morphology in monthly mean latitude
   \item The 640\nobreakdash-GHz radiometer bands 10 (for ClO) and 29 (for HOCl) were turned off for a few time periods in 2006 to investigate degradation issues that might affect these channels in the future. These bands were off on April 8, 9, and 10, 2006, and also for April 17, 2006 (after 19:52 UT) through May 17, 2006. There are essentially no useful HOCl (or ClO) data for these time periods. The \thisv (as for previous data versions) software correctly flags these incidents with poor (odd) \texttt{Status} values (which should be screened out).
   \item There are significant artifacts in the mean values (large negative values) for HOCl in the lower stratosphere, where the use of this product is not recommended.
   \item Users should screen out the non-converged and poorest quality HOCl profiles, as such profiles (typically a very small number per day) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
-  \item As discussed in Section~\ref{sec:HOClScreening}, biases in HOCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} \emph{a priori} information is used in the HOCl retrieval. Depending on the specific goals of any study based on these measurements, additional HOCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
+  \item As discussed in Section~\ref{sec:HOClScreening}, biases in HOCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} a priori information is used in the HOCl retrieval. Depending on the specific goals of any study based on these measurements, additional HOCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
 \end{itemize}
 
 

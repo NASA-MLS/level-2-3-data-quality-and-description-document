@@ -17,7 +17,7 @@ As the arrangement of channels in band~14 is not optimized to measure the HCl li
   \label{fig:MLSHCl2bands}
 \end{figure}
 
-As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, \emph{a priori} information for \ch{H2O} (based on climatological values) is used in the HCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HClScreening}. Detailed validation of the MLS \vii HCl product and comparisons with other data sets were presented by \citet{FroidevauxEtal:2008:HCl}; based on the overall small changes in HCl data since \vii, the conclusions of that study should remain essentially unchanged for \thisv. Table~\ref{tab:HClSummary} summarizes the estimated resolution, precision, and accuracy of the \thisv MLS HCl measurements as a function of pressure.
+As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, a priori information for \ch{H2O} (based on climatological values) is used in the HCl retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HClScreening}. Detailed validation of the MLS \vii HCl product and comparisons with other data sets were presented by \citet{FroidevauxEtal:2008:HCl}; based on the overall small changes in HCl data since \vii, the conclusions of that study should remain essentially unchanged for \thisv. Table~\ref{tab:HClSummary} summarizes the estimated resolution, precision, and accuracy of the \thisv MLS HCl measurements as a function of pressure.
 
 \subsection{Changes from \prevv}
 
@@ -38,40 +38,40 @@ Typical (rounded off) values for resolution are provided in Table~\ref{tab:HClSu
 
 \subsection{Precision}
 
-The estimated single-profile precision of MLS HCl reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere. The \thisv precision has not changed significantly from that in \prevv. The Level~2 precision values are often only slightly smaller than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often weaker than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles. The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where \emph{a priori} and smoothing constraints have a larger impact. The HCl precision values increase rapidly (i.e., precision worsens) at pressures less than 0.2\,hPa and are generally flagged negative (or zero) at pressures less than 0.1\,hPa, indicating increasing influence from the \emph{a priori} and thus poorer measurement sensitivity and reliability.
+The estimated single-profile precision of MLS HCl reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere. The \thisv precision has not changed significantly from that in \prevv. The Level~2 precision values are often only slightly smaller than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often weaker than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles. The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where a priori and smoothing constraints have a larger impact. The HCl precision values increase rapidly (i.e., precision worsens) at pressures less than 0.2\,hPa and are generally flagged negative (or zero) at pressures less than 0.1\,hPa, indicating increasing influence from the a priori and thus poorer measurement sensitivity and reliability.
 
 \subsection{Accuracy}
 
-The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv HCl measurements were quantified through a comprehensive set of retrievals of synthetic radiances; see \citet{FroidevauxEtal:2008:HCl} for details of a similar analysis conducted on MLS \vii HCl data. Several error sources (mostly from radiometric calibration components) contribute significantly to the total error, which is given for various pressure levels in Table~\ref{tab:HClSummary} (values are intended to represent 2-$\sigma$ estimates of the probable magnitude). Given the trend issues affecting the standard (band~14) HCl product in the upper stratosphere and lower mesosphere, we estimate an accuracy for \thisv (as for \prevv) of no better than about 0.3\,ppbv (or 10\%) in that region. For the lower stratosphere, based on the better agreement between the band~13 and band~14 retrievals as well as some trend studies (for the standard product), we use the accuracy estimates derived from the formal systematic error analysis.
+The effects of various sources of systematic uncertainty (e.g., instrumental issues, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation) on the MLS \thisv HCl measurements were quantified through a comprehensive set of retrievals of synthetic radiances; see \citet{FroidevauxEtal:2008:HCl} for details of a similar analysis conducted on MLS \vii HCl data. Several error sources (mostly from radiometric calibration components) contribute significantly to the total error, which is given for various pressure levels in Table~\ref{tab:HClSummary} (values are intended to represent 2$\sigma$ estimates of the probable magnitude). Given the trend issues affecting the standard (band~14) HCl product in the upper stratosphere and lower mesosphere, we estimate an accuracy for \thisv (as for \prevv) of no better than about 0.3\,ppbv (or 10\%) in that region. For the lower stratosphere, based on the better agreement between the band~13 and band~14 retrievals as well as some trend studies (for the standard product), we use the accuracy estimates derived from the formal systematic error analysis.
+
+\subsection{Review of comparisons with other datasets}
+
+\citet{FroidevauxEtal:2008:HCl} compared \vii MLS HCl measurements to those from other satellite, balloon, and aircraft sensors and found generally good agreement. HCl values from both MLS and ACE-FTS are generally larger (by about 10--15\%) than those from HALOE, especially at upper stratospheric altitudes. MLS HCl at 147\,hPa was shown to be biased high at low to middle latitudes compared to \mbox{WB-57} aircraft in situ (CIMS) measurements; while this is still true in \thisv, MLS HCl data at this pressure level are potentially useful for scientific studies at high latitudes.
 
 \subsection{Data screening}
 \label{sec:HClScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ We note that the MLS values at 147\,hPa are biased high, at least at low to mid-latitudes -- and these values are not recommended (particularly equatorward of about 40\degsym). Also, although the vertical range at the top end is recommended up to 0.32\,hPa, users are reminded about the issues relating to HCl trend estimates in the upper stratosphere and lower mesosphere; average profiles in this region should only be used for studies not involving trends (or accuracy requirements not as tight as about 10\%).
+  \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ MLS HCl values at 147\,hPa are biased high, at least at low to middle latitudes (equatorward of about 40\degsym), and thus they are not recommended. In addition, although the top of the recommended vertical range is 0.32\,hPa, users are reminded about the issues relating to HCl trend estimates in the upper stratosphere and lower mesosphere discussed earlier; average profiles in that region should only be used for studies that do not involve trends (or whose accuracy requirements are less stringent than about 0.3\,ppbv or 10\%).
 
     \standardprecisionrule
     \evenstatusrule
 
-  \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.} This criterion removes profiles with the poorest radiance fits, typically less than 0.1\% of the daily profiles. For HCl (and for other 640\,GHz MLS products), this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and \texttt{Convergence} fields for data screening.
+  \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.} This criterion removes the profiles with the poorest radiance fits, typically less than 0.1\% of the daily profiles. For HCl (as for other 640\,GHz MLS products), this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and the \texttt{Convergence} fields for data screening.
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have this \texttt{Convergence} field set to larger values, and should be discarded.
+  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field has values below 1.05. However, on occasion sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have the \texttt{Convergence} field set to larger values; such profiles should be discarded.
 
-  \item[Clouds:] Thick clouds can add significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5\,ppbv at 100\,hPa and even larger at 147\,hPa. The large positive HCl bias at 147\,hPa for low latitudes likely arises in part from unknown or improperly modeled systematic error sources, and not just from clouds. At other pressures, the potential impact on HCl from clouds is small or negligible.
+  \item[Clouds:] Thick clouds can induce significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5\,ppbv at 100\,hPa and even larger at 147\,hPa. The large positive HCl bias at 147\,hPa at low and middle latitudes likely arises in part from unknown or improperly modeled systematic error sources and not just from clouds. At other pressures, the potential impact on HCl from clouds is small or negligible.
   
   \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, HCl retrieval quality is degraded at some levels when the \mbox{190\nobreakdash-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved HCl values can reach more than 3\%  at 68\,hPa, with some biases as large as 50 to 100\% or more at 100 to 147 \,hPa, although the latter level is not recommended at extra-polar latitudes. These artifacts are not removed by the standard HCl data filtering protocols. Thus, while the HCl data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using HCl data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the collocated \ch{H2O} profile is examined to remove affected HCl retrievals. That is, only HCl profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on HCl measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all HCl data points passing the standard quality screening measures may be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190\nobreakdash-GHz} radiometer is turned off can be intercompared.
 
 \end{description}
 
-\subsection{Review of comparisons with other datasets}
-
-\citet{FroidevauxEtal:2008:HCl} provided results of generally good comparisons between MLS HCl and other satellite, balloon, and aircraft measurements.  Both MLS and ACE-FTS HCl values have generally been larger (by about 10--15\%) than the HCl values from HALOE, especially at upper stratospheric altitudes.  MLS HCl at 147\,hPa was shown to be biased high versus WB-57 aircraft in-situ (CIMS) measurements (low to mid-latitudes); while this is still true for \thisv data, MLS HCl data at this pressure level are potentially useful and accurate enough at high latitudes.
-
 \subsection{Artifacts}
 \begin{itemize}
-  \item We do not recommend the use of the MLS HCl standard product in the upper stratosphere and lower mesosphere, especially in terms of trend studies, for reasons mentioned above.
-  \item The HCl values at 147\,hPa are biased high and generally not usable (except possibly at high latitudes). Please consult with the MLS team for further information.
-  \item Users should screen out the non-converged and poorest quality HCl profiles, as such profiles (typically less than 0.2\% of the data) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
-  \item As discussed in Section~\ref{sec:HClScreening}, biases in HCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} \emph{a priori} information is used in the HCl retrieval. Depending on the specific goals of any study based on these measurements, additional HCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
+  \item We do not recommend the use of the MLS HCl standard product in the upper stratosphere and lower mesosphere, especially for trend studies, for reasons discussed above.
+  \item The HCl values at 147\,hPa are biased high and generally not recommended at low to middle latitudes (equatorward of about 40\degsym) but may be usable at high latitudes. Please consult with the MLS team for further information.
+  \item Users should screen out the non-converged and poorest-quality HCl profiles, as such profiles (typically less than 0.2\% of the data) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
+  \item As discussed in Section~\ref{sec:HClScreening}, biases in HCl values are present at some levels when coincident measurements from the \mbox{190\nobreakdash-GHz} radiometer are not available and \ch{H2O} a priori information is used in the HCl retrieval. Depending on the specific goals of any study based on these measurements, additional HCl data quality filtering may be necessary for days when the \mbox{190\nobreakdash-GHz} radiometer is off.
 \end{itemize}
 
 \begin{table}
@@ -91,19 +91,19 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
           }\\}} & \textbf{Comments} \\
     \textbf{hPa} & \textbf{ppbv} & \textbf{km} & \textbf{ppbv} & \\
     \midrule
-    0.22--0.001 & ---             & ---              & ---     & Unsuitable for scientific use \\
-    0.32            & 0.7         &   5.5 $\times$ 450 & 0.3     & Unsuitable for trend studies \\
-    0.5             & 0.6         &   5 $\times$ 400 & 0.3     & Unsuitable for trend studies \\
-    1               & 0.5         &   3.5 $\times$ 300 & 0.3     & Unsuitable for trend studies \\
-    2               & 0.4         &   3 $\times$ 250 & 0.3     & Unsuitable for trend studies \\
-    5               & 0.3         &   3 $\times$ 200 & 0.3     & Unsuitable for trend studies \\
-    10              & 0.2         &   3 $\times$ 200 & 0.2     & \\
-    22              & 0.2         &   3 $\times$ 250 & 0.2    & \\
-    46              & 0.2         &   3 $\times$ 300 & 0.2     & \\
-    68              & 0.2         &   3 $\times$ 300 & 0.2     & \\
-    100             & 0.3         &   3 $\times$ 350 & 0.2     & \\
-    147             & 0.4         &   3 $\times$ 400 & 0.4     & High bias at low lats. (use with caution elsewhere) \\
-    1000--215   & ---             & ---              & ---     & Unsuitable for scientific use \\
+    0.22--0.001 & ---     & ---                & ---     & Unsuitable for scientific use \\
+    0.32        & 0.7     &   5.5 $\times$ 450 & 0.3     & Unsuitable for trend studies \\
+    0.5         & 0.6     &   5 $\times$ 400   & 0.3     & Unsuitable for trend studies \\
+    1           & 0.5     &   3.5 $\times$ 300 & 0.3     & Unsuitable for trend studies \\
+    2           & 0.4     &   3 $\times$ 250   & 0.3     & Unsuitable for trend studies \\
+    5           & 0.3     &   3 $\times$ 200   & 0.3     & Unsuitable for trend studies \\
+    10          & 0.2     &   3 $\times$ 200   & 0.2     & \\
+    22          & 0.2     &   3 $\times$ 250   & 0.2     & \\
+    46          & 0.2     &   3 $\times$ 300   & 0.2     & \\
+    68          & 0.2     &   3 $\times$ 300   & 0.2     & \\
+    100         & 0.3     &   3 $\times$ 350   & 0.2     & \\
+    147         & 0.4     &   3 $\times$ 400   & 0.4     & High bias at low lats (use with caution elsewhere) \\
+    1000--215   & ---     & ---                & ---     & Unsuitable for scientific use \\
     \bottomrule
 \end{tabular}
   \end{minipage}
