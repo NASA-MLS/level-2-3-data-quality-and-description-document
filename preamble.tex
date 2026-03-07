@@ -242,13 +242,13 @@
 % Paragraph (run-in head, unnumbered)
 % Keep hierarchy shallow by not numbering at this level:
 % \setcounter{secnumdepth}{3} (or lower) in your preamble if needed.
-\titleformat{\paragraph}[runin]
-  {\normalsize\sffamily\color{HighlightColor}%\figureversion{tabular}
+\titleformat{\paragraph}
+  {\normalsize\sffamily\bfseries\color{HighlightColor}%\figureversion{tabular}
   }{}% empty label = no printed number
   {0pt}
-  {#1:\ }% run-in delimiter
+  {#1}% run-in delimiter
 \titlespacing*{\paragraph}
-  {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.5em}
+  {0pt}{0.1ex plus 0.1ex minus 0.1ex}{0.1ex plus 0.1ex minus 0.1ex}
   
 % Subparagraph (run-in, italic)
 \titleformat{\subparagraph}[runin]
