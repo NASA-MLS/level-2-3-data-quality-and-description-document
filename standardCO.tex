@@ -20,10 +20,12 @@ The calculation of cloud flags bits in the product status has changed significan
 \subsection{Use of High-Resolution Spectrometer}
 
 \begin{figure}
-\includegraphics[width=\textwidth, trim=0cm 3.8cm 0cm 0cm,clip]{figures/CO_pdfs/plot1bylat_61vs63}    \caption{Top row shows zonal averages of the highest levels of the MLS v06.01 (red) and v06.03 (blue) CO retrieved values, the former using high-resolution digital autocorrelator radiances covering the CO line center (Band\,26)  and the latter using a single 6-MHz channel covering the same spectrum (Band\,9 Channel\,13). The \textit{a priori} CO profile is shown in yellow.  The lower row of panels are zonal averages of the standard deviations (solid) and estimated precisions (dashed) with the same color scheme.  Data is from 2025d196.}
-  \label{fig:plot1bylat_61vs63}
+\includegraphics[width=\textwidth, trim=0cm 3.8cm 0cm 0cm,clip]{figures/CO_pdfs/plot1bylat_61vs63}
+\caption{Top row shows zonal averages of the highest levels of the MLS v06.01 (red) and v06.03 (blue) CO retrieved values, the former using high-resolution digital autocorrelator radiances covering the CO line center (Band\,26) and the latter using a single 6-MHz channel covering the same spectrum (Band\,9 Channel\,13). The a priori CO profile is shown in yellow.  The lower row of panels are zonal averages of the standard deviations (solid) and estimated precisions (dashed) with the same color scheme.  Data are from 2025d196.}
+\label{fig:plot1bylat_61vs63}
 \end{figure}
-Starting on 2025d324, the digital autocorrelator that provided to the v06.01 retrieval 6\,MHz of 96-kHz-resolution Band\,26 (B26) spectra around the center of the 230\,GHz CO line was repurposed. In the v06.03 CO retrieval, these spectra were replaced with a single 6-MHz channel from the center of filterbank Band\,9 (B9:Ch13) that covers the same bandwidth. The limb scan of the line center provides the highest part of the retrieval, and Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in resolution between v06.01 and v06.03. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, 
+
+Starting on 2025d324, the digital autocorrelator that provided to the v06.01 retrieval 6\,MHz of 96-kHz-resolution Band\,26 (B26) spectra around the center of the 230\,GHz CO line was repurposed. In the v06.03 CO retrieval, these spectra were replaced with a single 6-MHz channel from the center of filterbank Band\,9 (B9.C13) that covers the same bandwidth. The limb scan of the line center provides the highest part of the retrieval, and Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in resolution between v06.01 and v06.03. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, 
 
 
 \subsection{Resolution}
@@ -32,9 +34,9 @@ Starting on 2025d324, the digital autocorrelator that provided to the v06.01 ret
 Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging kernels for \thisv MLS CO\@. Estimated vertical and horizontal resolutions are essentially identical to those of \prevv and \viv. The vertical resolution is in the range 3.5--5\,km from the upper troposphere to the lower mesosphere, degrading to 6--7\,km in the upper mesosphere. Down to the 215\,hPa level, the vertical averaging kernels are sharply peaked at the level being retrieved, but while the \mbox{316-hPa} measurement contains contribution from 316\,hPa, it has a larger contribution from 215\,hPa and a negative contribution around 100\,hPa of similar magnitude to that at 316\,hPa. The retrieved value at 316\,hPa is thus more an extrapolation of the profile higher in the UTLS than it is an independent measurement at 316\,hPa, and it is not recommended for scientific use. The horizontal resolution is about 200\,km in the mesosphere, degrading slowly to 300\,km with decreasing height in the stratosphere and more rapidly to about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
 
 \begin{figure}
-\includegraphics[width=\textwidth, trim=1.4cm 0cm 1.6cm 0cm,clip]{figures/CO_pdfs/CO_scatv6v5}   %\includegraphics[width=\textwidth]{figures/CO_pdfs/CO_scatv6v5}
-  \caption{Joint histograms of \prevv CO and \thisv CO for 2009 data show the general consistency of the two versions.  The color scale is logarithmic, with red points along the 1:1 line corresponding to pairs of values that are identical in the two versions.}
-  \label{fig:CO_scatv6v5}
+\includegraphics[width=\textwidth, trim=1.4cm 0cm 1.6cm 0cm,clip]{figures/CO_pdfs/CO_scatv6v5}
+\caption{Joint histograms of \prevv CO and \thisv CO for 2009 data show the general consistency of the two versions.  The color scale is logarithmic, with red points along the 1:1 line corresponding to pairs of values that are identical in the two versions.}
+\label{fig:CO_scatv6v5}
 \end{figure}
 
 \subsection{Precision}
@@ -42,9 +44,9 @@ Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging kernels for \
 The MLS data are supplied with an estimated precision (the field \texttt{L2gpPrecision}) which is the \emph{a posteriori} precision as returned by the optimal estimation. The precision of the \thisv CO is nearly identical to that of \prevv, and very similar to that of \viv. Reported precision is greater than the scatter observed in the data in regions of low natural variability. This can be seen in the middle (low-latitude) panels of the second row of Figure~\ref{fig:COplot1bylat_log}, where the black solid line (scatter about the zonal mean) has smaller values than the black dashed lines (precisions). Where the estimated precision is greater than 50\% of the a priori precision the data will be influenced by the a priori to an undesirably large extent. In such cases, \texttt{L2gpPrecision} is set to be negative (or zero in some cases) to indicate that the data should not be used.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figures/CO_pdfs/COplot1bylat_logv6v5}
-  \caption{The top row shows 2009 zonal means of \thisv and \prevv  retrieved mixing ratios and their a priori values, with the \thisv retrieved mixing ratio lines (black) lying on top of the \prevv mixing ratio lines (yellow) and the \thisv a priori mixing ratio line (red) lying on top of the \prevv a priori lines (blue) throughout. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines). The bottom row shows that the number of good profiles drops to zero only at the highest retrieval levels (0.00046\,hPa and lower pressures) where retrieved precision exceeds half of the a priori precision.}
-  \label{fig:COplot1bylat_log}
+\includegraphics[width=\textwidth]{figures/CO_pdfs/COplot1bylat_logv6v5}
+\caption{The top row shows 2009 zonal means of \thisv and \prevv retrieved mixing ratios and their a priori values, with the \thisv retrieved mixing ratio lines (black) lying on top of the \prevv mixing ratio lines (yellow) and the \thisv a priori mixing ratio line (red) lying on top of the \prevv a priori lines (blue) throughout. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines). The bottom row shows that the number of good profiles drops to zero only at the highest retrieval levels (0.00046\,hPa and lower pressures) where retrieved precision exceeds half of the a priori precision.}
+\label{fig:COplot1bylat_log}
 \end{figure}
 
 Note that the random errors (precisions) are larger than 100\% of the mixing ratio for much of the vertical range, meaning that significant averaging (e.g., daily zonal mean or weekly map) is typically needed to make use of the data.
