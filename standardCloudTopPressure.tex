@@ -13,7 +13,7 @@ This new cloud top pressure product differs from other MLS products, because it 
 
 \subsection{Precision}
 
-In contrast to other MLS products, for which the precision can be computed from the solution covariance matrix after the optimal estimation retrieval, the machine learning predictions do not provide diagnostic variables that can be used for uncertainty estimates. Instead, we derived the root--mean--square deviation between the model predictions and colocated MODIS retrievals from an independent test data set. Each precision is initially set to that value of 70.73858429\,hPa. Subsequently, two tests are performed for each sample: (1) Is the predicted cloud top pressure within the range encountered in the full training data set (we allow for some extrapolation at either side); and (2) Are the input radiances within the range observed in the full training data set (again, the range is slightly extended at either side). If any of these tests fails, the precision is set to a fill value of $-999.99$.
+In contrast to other MLS products, for which the precision can be computed from the solution covariance matrix after the optimal estimation retrieval, the machine learning predictions do not provide diagnostic variables that can be used for uncertainty estimates. Instead, we derived the root--mean--square deviation between the model predictions and colocated MODIS retrievals from an independent test data set. Each precision is initially set to that value of 71\,hPa. Subsequently, two tests are performed for each sample: (1) Is the predicted cloud top pressure within the range encountered in the full training data set (we allow for some extrapolation at either side); and (2) Are the input radiances within the range observed in the full training data set (again, the range is slightly extended at either side). If any of these tests fails, the precision is set to a fill value of $-999.99$.
 
 These values indicate samples where the cloud top pressure reported by the model is not reliable. 
 
@@ -44,6 +44,3 @@ The current version of the algorithm relies on radiances from MLS radiometer at 
 
 \subsection{Comparisons with other datasets}
 Please refer to the detailed analysis in \citet{WernerEtal:2021}, which provides statistical comparisons of cloud properties with MODIS, as well as maps of example cloud scenes.
-
-\subsection{Desired improvements for future data version(s)}
-We would like to develop a second model that does not rely on radiances from the MLS radiometer at 190\,GHz, which would provide cloud top pressure estimates when those samples are not available.
