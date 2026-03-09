@@ -276,9 +276,9 @@
 % For suppressing floats in a block
 \usepackage{placeins}
 \newenvironment{nofloatpages}{%
-  \renewcommand{\floatpagefraction}{0}%
+  \renewcommand{\floatpagefraction}{0.99}%
   \renewcommand{\topfraction}{0}%
-  \renewcommand{\bottomfraction}{0.99}%
+  \renewcommand{\bottomfraction}{0.0}%
   }{%
   \renewcommand{\floatpagefraction}{0.50}%
   \renewcommand{\topfraction}{0.70}%
