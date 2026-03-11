@@ -4,17 +4,18 @@
 
 \subsection{Introduction}
 
-Carbon monoxide is retrieved from radiance measurements of two bands in the MLS 240\,GHz radiometer. Details are given in \citet{PumphreyEtal:2007} and \citet{LiveseyEtal:2008}.
+Carbon monoxide (CO) is retrieved from radiance measurements of two bands in the MLS \mbox{240-GHz} radiometer. Details are given by \citet{PumphreyEtal:2007} and \citet{LiveseyEtal:2008}.
 
 \subsection{Differences between \thisv and \prevv}
-The \thisv carbon monoxide (CO) product is almost identical to the \prevv product, and both are very similar to \viv in the upper troposphere and stratosphere, with improvement in some cases relative to \viv in the mesosphere and mesopause region, which results from the use of a more computationally expensive, nonlinear forward model for radiances near the 230\nobreakdash-GHz line center. Small differences between \thisv and \prevv CO in the upper stratosphere result from changes in the temperature and pointing retrieval, discussed in Section~\ref{sec:StandardTemperature}. 
+The \thisv CO product is almost identical to the \prevv product, and both are very similar to \viv in the upper troposphere and stratosphere, with improvement in some cases relative to \viv in the mesosphere and mesopause region resulting from the use of a more computationally expensive, nonlinear forward model for radiances near the 230\nobreakdash-GHz line center. Small differences between \thisv and \prevv CO in the upper stratosphere result from changes in the temperature and pointing retrieval, as discussed in Section~\ref{sec:StandardTemperature}. 
 
-In the upper mesosphere, \thisv and \prevv CO are less tightly constrained to the a priori than is \viv CO (a priori precision is 1.5$\times$ larger at 0.046\,hPa and 2$\times$ larger at and above 0.01\,hPa). Horizontal smoothing of \thisv and \prevv has been tightened at and above 0.01\,hPa to maintain retrieval stability, but this change has no appreciable impact on the sharpness of horizontal features seen in preliminary validation. The top of the vertical range of the retrieval remains 0.00046\,hPa and profiles are recommended for scientific use up to 0.001\,hPa.
+In the upper mesosphere, \thisv and \prevv CO are less tightly constrained to the a priori than was \viv CO (a priori precision is 1.5$\times$ larger at 0.046\,hPa and 2$\times$ larger at and above 0.01\,hPa than it was in \viv). Horizontal smoothing of \thisv and \prevv has been tightened at and above 0.01\,hPa to maintain retrieval stability, but this change has no appreciable impact on the sharpness of horizontal features seen in preliminary validation. The top of the vertical range of the retrieval remains 0.00046\,hPa, and profiles are recommended for scientific use up to 0.001\,hPa.
 
-Figure~\ref{fig:CO_scatv6v5} shows scatter plots of screened \prevv vs.\ \thisv CO from 215\,hPa to 0.01\,hPa during 2009, showing that the two versions are almost identical. 
-High outlier values of CO along the 1:1 lines of panels for 216--46.4\,hPa in Figure~\ref{fig:CO_scatv6v5} are measurements within the plume from the ``Black Saturday'' Australian wildfires and confirm the consistency of the \thisv and \prevv retrievals in the upper troposphere and lower stratosphere, even when unusally high values are retrieved .
+Figure~\ref{fig:CO_scatv6v5} shows scatter plots of data-quality-screened \prevv vs.\ \thisv CO from 215\,hPa to 0.01\,hPa during 2009, showing that the two versions are almost identical. 
+High outlier values of CO along the 1:1 lines of panels for 216--46.4\,hPa in Figure~\ref{fig:CO_scatv6v5} are measurements within the plume from the ``Black Saturday'' Australian wildfires and confirm the consistency of the \thisv and \prevv retrievals in the upper troposphere and lower stratosphere, even when unusally high values are retrieved.
 
-The calculation of cloud flags bits in the product status has changed significantly in \thisv, as is discussed in Section~\ref{sec:Clouds}.  \Thisv CO has approximately twice as many profiles marked as possibly influenced by low cloud than \prevv, and no profiles flagged as influenced by only high clouds, however neither of these flags is used in the recommended screening of CO.
+The calculation of cloud flags bits in the product status has changed significantly in \thisv, as is discussed in Section~\ref{sec:Clouds}.  \Thisv CO has approximately twice as many profiles marked as possibly influenced by low cloud than \prevv, and no profiles flagged as influenced by only high clouds; however, neither of those flags is used in the recommended screening of CO.
+
 \subsection{Use of High-Resolution Spectrometer}
 
 \begin{figure}
@@ -24,7 +25,7 @@ The calculation of cloud flags bits in the product status has changed significan
 \end{figure}
 
 
-Starting on 20 November 2026 (2025d324), the digital autocorrelator spectrometer that provided to the v06.01 retrieval (and retrievals for all previoius MLS data versions) 6\,MHz of 96-kHz-resolution Band\,26 (B26) spectra around the center of the 230\,GHz CO line was repurposed. In the v06.03 CO retrieval, these spectra were replaced with a single 6-MHz channel from the center of filterbank Band\,9 (B9.C13) that covers the same bandwidth. The limb scan of the line center provides the highest part of the retrieval, and Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in resolution between v06.01 and v06.03. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, 
+Starting on 20 November 2025 (2025d324), the digital autocorrelator spectrometer that provided to the v06.01 retrieval (and retrievals for all previous MLS data versions) 6\,MHz of 96-kHz-resolution Band\,26 (B26) spectra around the center of the 230\,GHz CO line was repurposed. In the v06.03 CO retrieval, these spectra were replaced with a single 6-MHz channel from the center of filterbank Band\,9 (B9.C13) that covers the same bandwidth. The limb scan of the line center provides the highest part of the retrieval, and Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in resolution between v06.01 and v06.03. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, 
 
 
 \subsection{Resolution}
