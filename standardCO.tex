@@ -16,7 +16,7 @@ High outlier values of CO along the 1:1 lines of panels for 216--46.4\,hPa in Fi
 
 The calculation of cloud flags bits in the product status has changed significantly in \thisv, as is discussed in Section~\ref{sec:Clouds}.  \Thisv CO has approximately twice as many profiles marked as possibly influenced by low cloud than \prevv, and no profiles flagged as influenced by only high clouds; however, neither of those flags is used in the recommended screening of CO.
 
-\subsection{Use of High-Resolution Spectrometer}
+\subsection{Impact of November 2025 MLS instrument configuration change on mesospheric CO data}
 
 \begin{figure}
 \includegraphics[width=\textwidth, trim=0cm 3.8cm 0cm 0cm,clip]{figures/CO_pdfs/plot1bylat_61vs63}
@@ -24,8 +24,7 @@ The calculation of cloud flags bits in the product status has changed significan
 \label{fig:plot1bylat_61vs63}
 \end{figure}
 
-
-Starting on 20 November 2025 (2025d324), the digital autocorrelator spectrometer that provided to the v06.01 retrieval (and retrievals for all previous MLS data versions) 6\,MHz of 96-kHz-resolution Band\,26 (B26) spectra around the center of the \mbox{230-GHz} CO line was repurposed. In the v06.03 CO retrieval, these spectra were replaced with a single \mbox{6-MHz} channel from the center of filterbank Band\,9 (B9.C13) that covers the same bandwidth. The limb scan of the line center provides the highest part of the retrieval, and Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in resolution between v06.01 and v06.03. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, 
+In the mesosphere, the spectral lines measured by MLS are very narrow compared to lower altitudes, with the mesospheric 230-GHz CO line being only \mycomment{how many}-MHz-wide.  MLS includes four high-spectral-resolution (128 96\,kHz-wide channels)  digital autocorrelator spectrometers (DACS) targeting \ch{O2}, \ch{H2O}, \ch{O3}, and \ch{CO} (MLS Bands 22 to 25, respectively).  Starting on 20 November 2026, a the spectrometer measuring CO was repurposed (to provide additional \ch{O2} information). In the v06.03 CO retrieval, information on mesospheric \ch{CO} is instead obtained from measurements in a single \mbox{6-MHz}-wide channel (at the center of filterbank spectrometer, Band\,9, \mbox{B9.C13}) that covers the same bandwidth as the DACS. Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in spectral resolution between v06.01 and v06.03 on the precision of MLS CO\@. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, \mycomment{more needed.}
 
 
 \subsection{Resolution}
