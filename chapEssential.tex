@@ -213,7 +213,7 @@ In some cases, the application of this least-squares ``smoothing'' is as importa
 In the case of water vapor, where a logarithmic vertical basis is used, the $\b{x}$ and $\b{z}$ vectors should describe the logarithm of the mixing ratio.
 
 \begin{figure}[tb]
-  \includegraphics[width=\textwidth, viewport=0 -10 504 360]{figures/basisexample}
+  \includegraphics[width=\textwidth]{figures/basisexample-padded}
   \caption{Comparisons of MLS (v1.5) \ch{N2O} observations with in situ balloon data (courtesy of J.~Elkins).  The raw balloon (``high-resolution'') data  (\textbf{z}\cs{h}) are shown as the gray-shaded region (shading indicates precision).  A coincident (``low-resolution'') MLS profile \textbf{x}\cs{l} is shown in red, with the red error bars indicating precision.  The red dots show the MLS data linearly interpolated to the balloon pressures using the \textbf{H} matrix (i.e., \textbf{x}\cs{h} from Equation~\ref{eqn:EtaForward}).  The black line shows the least-squares interpolation of the balloon data onto the MLS grid using the \textbf{W} matrix as described in the text (i.e., \textbf{z}\cs{l} from Equation~\ref{eqn:EtaBackward}).  The black line therefore represents the closest possible match at this resolution to the original gray line and is the appropriate quantity to compare to the red MLS profile, as well as to be multiplied by the averaging kernels for formal comparison.}
   \label{fig:BasisExample}
 \end{figure}
