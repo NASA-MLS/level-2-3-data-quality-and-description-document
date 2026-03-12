@@ -6,7 +6,10 @@
  
 MLS observes BrO emission lines within the \mbox{640-GHz} radiometer. The spectral signature of BrO in the MLS radiances is very small, leading to a very poor signal-to-noise ratio on individual MLS observations. Significant averaging (e.g., monthly zonal means) is required to obtain scientifically useful results. Large biases of between 12 and 40\,pptv (typical BrO abundances range from 5 to 15\,pptv) are seen in the data. These biases can be minimized by taking day/night differences. For pressures of 4.6 hPa and greater, nighttime BrO is negligible; however, for smaller pressures, nighttime BrO needs to be taken into account. Table~\ref{tab:BrOSummary} summarizes the precision, accuracy, and resolution of the MLS \thisv BrO product. The accuracy assessment is based on \vii data, as described in the validation paper \citep{KovalenkoEtal:2007:BrO}.
 
-The \thisv ``standard'' BrO product (as with earlier versions) contains systematic biases and horizontal oscillations that present a larger challenge than for other species. Those interested in using MLS BrO in scientific studies are strongly advised to contact the MLS team before embarking on their research. The MLS team has developed different algorithms for BrO aimed at ameliorating some of these artifacts \citep{MillanEtal:2012}, and those products are available from the GSFC DISC\@. The product short name is ``\texttt{ML3DZMBRO}''.
+The \thisv ``standard'' BrO product (as with earlier versions) contains systematic biases and horizontal oscillations that present a larger challenge than for other species. Those interested in using MLS BrO in scientific studies are strongly advised to contact the MLS team before embarking on their research. 
+An algorithm to retrieve daily zonal means of \ch{BrO} by first averaging the radiances has been developed by the MLS team \citep{MillanEtal:2012}. This dataset and associated documentation is available from the GSFC DISC with the product short name ``\texttt{ML3DZMBRO}''.
+
+
 
 \subsection{Vertical Resolution}
 \oneverticalavk{BrO}{BrO}
@@ -45,7 +48,7 @@ The accuracy of the MLS BrO product is summarized in Table~\ref{tab:BrOSummary}.
 \subsection{Artifacts}
 Significant biases exist in the BrO data, as discussed above. Day/night (or ascending/descending) differences must be used to reduce these biases. At 3.2\,hPa, nighttime BrO needs to be taken into account \citep{KovalenkoEtal:2007:BrO}.
 
-A systematic horizontal (i.e., profile-to-profile) oscillation has been discovered in the MLS \thisv (and earlier) standard BrO product. This presents a significant challenge to the interpretation of the BrO observations. Users are strongly advised to contact the MLS team before embarking on research involving the MLS standard BrO product. As described above, use of other BrO products is preferable to using the Level~2 BrO data.
+A systematic horizontal (i.e., profile-to-profile) oscillation has been discovered in the MLS \thisv (and earlier) standard BrO product. This presents a significant challenge to the interpretation of the BrO observations. Users are strongly advised to contact the MLS team before embarking on research involving the MLS standard BrO product. As noted above, an alternative zonal-mean BrO dataset produced by the MLS team is available from the GSFC DISC (product short name "ML3DZMBRO").
 
 \subsection{Review of comparisons with other data sets}
 We have calculated total bromine, Br$_{y}$, from MLS measurements of BrO using a photochemical model and compared that value with Br$_{y}$ similarly inferred from balloon-borne measurements of BrO; good agreement is seen \citep{KovalenkoEtal:2007:BrO, MillanEtal:2012}.
@@ -70,9 +73,9 @@ We have calculated total bromine, Br$_{y}$, from MLS measurements of BrO using a
       3.2 & 6 & $\pm$5 &$\pm$6 & \parbox[m]{10em}{\raggedright Need to account for non-negligible nighttime BrO} \\ \addlinespace[2ex]
 
       %
-      4.6 & 5.5 & $\pm$4 & $\pm$8  \\
-      6.8 & 5.5 & $\pm$4 & $\pm$9 \\ 
-      10  & 5.5 & $\pm$4 & $\pm$10 \\ 
+      4.6 & 5.5 & $\pm$4 & $\pm$8 & Use day–night difference \\
+      6.8 & 5.5 & $\pm$4 & $\pm$9 & Use day–night difference\\ 
+      10  & 5.5 & $\pm$4 & $\pm$10 & Use day–night difference\\ 
       150--15   & -- & -- & -- & Unsuitable for scientific use \\
       1000--215 & -- & -- & -- & Not retrieved \\
       \bottomrule

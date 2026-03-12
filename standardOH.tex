@@ -6,7 +6,7 @@
 
 The MLS THz radiometer is dedicated to measuring OH in the 2.5\,THz spectral region. The methanol laser driving this radiometer, designed with an expected lifespan of 18 months, began to show signs of aging after five years of operation and was deactivated in December 2009. Between 2011 and 2014, the THz subsystem was reactivated annually for 30 days around August to capture data across an 11-year solar cycle. However, due to instrument aging, OH data from 2014 are notably noisier and have limited spatial coverage at middle to low latitudes. In September and October 2025, the THz subsystem was reactivated again; however, the limited data collected were of poor quality. 
 
-A description of OH data quality, precision, and systematic errors for an earlier version, \vii, is given by \citet{PickettEtal:2006:Validation}. The validation studies are described by \citet{PickettEtal:2008} and \citet{WangEtal:2008}. While the OH data quality is generally similar between \vii and \viii, there were significant improvements in \viv that have been carried into \prevv and \thisv. Prior to \viii, OH data near the mesospheric density peak, \mytexttilde0.032\,hPa, often showed a considerable amount of data flagged with negative precision, indicating the strong influence of a priori information, particularly in the summer hemisphere (or tropics for times near the equinox); this sometimes caused gaps in zonal mean time series. Starting with \viv, the software resolved this issue by fixing the overly tight a priori constraints. The resulting mesospheric OH data are less noisy and generally have somewhat larger values than previous versions for the problematic seasons/latitudes. Another improvement is the smaller bias at 10--15\,hPa. Therefore, applying a day-minus-night correction to reduce biases is only required at pressure levels of 21 and 32\,hPa (\viii required such differences to be taken over a larger vertical range). Note that users may notice more zig-zags in nighttime mesospheric OH vertical profiles. This is a side effect of fixing the possible positive bias introduced by tight lower limits set in previous retrieval versions.
+A description of OH data quality, precision, and systematic errors for an earlier version, \vii, is given by \citet{PickettEtal:2006:Validation}. The validation studies are described by \citet{PickettEtal:2008} and \citet{WangEtal:2008}. While the OH data quality is generally similar between \vii and \viii, there were significant improvements in \viv that have been carried into \prevv and \thisv. Prior to \viv, OH data near the mesospheric density peak, \mytexttilde0.032\,hPa, often showed a considerable amount of data flagged with negative precision, indicating the strong influence of a priori information, particularly in the summer hemisphere (or tropics for times near the equinox); this sometimes caused gaps in zonal mean time series. Starting with \viv, the software resolved this issue by fixing the overly tight a priori constraints. The resulting mesospheric OH data are less noisy and generally have somewhat larger values than previous versions for the problematic seasons/latitudes. Another improvement is the smaller bias at 10--15\,hPa. Therefore, since \viv, applying a day-minus-night correction to reduce biases is only required at pressure levels of 21 and 32\,hPa (\viii required such differences to be taken over a larger vertical range). Note that users may notice more zig-zags in nighttime mesospheric OH vertical profiles. This is a side effect of fixing the possible positive bias introduced by tight lower limits set in previous retrieval versions.
 
 The estimated uncertainties, precisions, and resolution for \thisv OH are summarized in Table~\ref{tab:OHSummary}.
 
@@ -26,19 +26,17 @@ A typical OH profile and the associated precisions (for both \prevv and \thisv) 
 
 \begin{figure}
   \centering\includegraphics[width=0.7\linewidth]{figures/plot_ohzmv6.pdf}
-  \caption{Zonal mean retrieved OH and its estimated precision (horizontal error bars) for 1~October 2005 averaged over 29\degsym N to 39\degsym N\@. The average includes \mytexttilde100 profiles. Panel (a) shows \thisv OH vmr vs. pressure for day (black) and night (blue). The retrieved night OH concentration is near zero for altitudes below 1\,hPa.  Note that a day/night difference is required for altitudes below 10\,hPa. Panel (c) shows the same data in (a) converted into density units. Panels (b) and (d) are equivalent to (a) and (c) but using \prevv OH  data.}
+  \caption{Zonal mean retrieved OH and its estimated precision (horizontal error bars) for 1~October 2005 averaged over 29\degsym N to 39\degsym N\@. The average includes \mytexttilde100 profiles. Panel (a) shows \thisv OH vmr vs. pressure for day (black) and night (blue). The retrieved night OH concentration is near zero for altitudes below 1\,hPa.  Note that a day/night difference is required for altitudes below 14\,hPa. Panel (c) shows the same data in (a) converted into density units. Panels (b) and (d) are equivalent to (a) and (c) but using \prevv OH  data.}
   \label{fig:OHprofiles}
 \end{figure}
 
 \subsection{Accuracy}
 
-Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The effect of each identified source of systematic error on MLS measurements of radiance has been quantified and modeled \citep{ReadEtal:2007}. These quantified effects correspond to either 2$\sigma$ estimates of uncertainties in each MLS product or an estimate of the maximum reasonable uncertainty based on instrument knowledge and/or design requirements. Biases can be minimized by taking day/night differences over 32--15\,hPa. For 10--0.1\,hPa, the observed night OH concentration is small and day/night differencing is not ordinarily needed. The overall uncertainty is the square root of the sum of squares of the precision and accuracy.
+Table~\ref{tab:OHSummary} summarizes the accuracy expected for OH\@. The effect of each identified source of systematic error on MLS measurements of radiance has been quantified and modeled \citep{ReadEtal:2007}. These quantified effects correspond to either 2$\sigma$ estimates of uncertainties in each MLS product or an estimate of the maximum reasonable uncertainty based on instrument knowledge and/or design requirements. Biases can be minimized by taking day/night differences at 32 and 21\,hPa. For 14--0.1\,hPa, the observed night OH concentration is small and day/night differencing is not ordinarily needed. The overall uncertainty is the square root of the sum of squares of the precision and accuracy.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:OHScreening}
-It is recommended that OH data values be used in scientific
-investigations if all the following tests are successful:
 
 \begin{description}
   \item[Pressure range:] \screeningrule{32--0.0032\,hPa.} \standardrangestatement \standardprecisionrule \evenstatusrule
@@ -60,7 +58,7 @@ OH data from MLS \vii software were validated with two balloon-borne remote-sens
   \vspace{\tablecaptionsep}
   \label{tab:OHSummary}
   \begin{minipage}{\textwidth}\small
-    \centering\begin{tabular}{rcccl}
+    \centering\begin{tabular}{ccccl}
 \toprule
 % \textbf{Pressure} &
 \parbox{10ex}{\bfseries\centering Pressure\\ hPa} &
@@ -78,7 +76,7 @@ $<$0.003     & ---                  & ---                  & --- &  Unsuitable f
 0.1          & 2.5 $\times$ 165     & 3 / 0.5         & 1.0 & \\
 1.0          & 2.5 $\times$ 165     & 2 / 0.5         & 1.0 & \\
 10           & 2.5 $\times$ 165     & 3 / 2           & 1.0 & \\
-32--14       & 2.5 $\times$ 165     & 10 / 9          & 1.5\footnote{Use day/night difference} & \\
+32--21       & 2.5 $\times$ 165     & 10 / 9          & 1.5 & Use day/night difference \\
 $>$32        & ---                  & ---             & --- & Unsuitable for scientific use\\
 \bottomrule
 \end{tabular}
