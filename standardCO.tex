@@ -16,52 +16,52 @@ High outlier values of CO along the 1:1 lines of panels for 216--46.4\,hPa in Fi
 
 The calculation of cloud flags bits in the product status has changed significantly in \thisv, as is discussed in Section~\ref{sec:Clouds}.  \Thisv CO has approximately twice as many profiles marked as possibly influenced by low cloud than \prevv, and no profiles flagged as influenced by only high clouds; however, neither of those flags is used in the recommended screening of CO.
 
-\subsection{Impact of November 2025 MLS instrument configuration change on mesospheric CO data}
-
-\begin{figure}
-\includegraphics[width=\textwidth, trim=0cm 3.8cm 0cm 0cm,clip]{figures/CO_pdfs/plot1bylat_61vs63}
-\caption{Top row shows zonal averages of the highest levels of the MLS v06.01 (red) and v06.03 (blue) CO retrieved values, the former using high-resolution digital autocorrelator radiances covering the CO line center (Band\,26) and the latter using a single 6-MHz channel covering the same spectrum (Band\,9 Channel\,13). The a priori CO profile is shown in yellow.  The lower row of panels are zonal averages of the standard deviations (solid) and estimated precisions (dashed) with the same color scheme.  Data are from 2025d196.}
-\label{fig:plot1bylat_61vs63}
-\end{figure}
-
-In the mesosphere, the spectral lines measured by MLS are very narrow compared to lower altitudes, with the mesospheric 230-GHz CO line being only \mycomment{how many}-MHz-wide.  MLS includes four high-spectral-resolution (128 96\,kHz-wide channels)  digital autocorrelator spectrometers (DACS) targeting \ch{O2}, \ch{H2O}, \ch{O3}, and \ch{CO} (MLS Bands 22 to 25, respectively).  Starting on 20 November 2026, a the spectrometer measuring CO was repurposed (to provide additional \ch{O2} information). In the v06.03 CO retrieval, information on mesospheric \ch{CO} is instead obtained from measurements in a single \mbox{6-MHz}-wide channel (at the center of filterbank spectrometer, Band\,9, \mbox{B9.C13}) that covers the same bandwidth as the DACS. Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in spectral resolution between v06.01 and v06.03 on the precision of MLS CO\@. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, \mycomment{more needed.}
-
-
-\subsection{Resolution}
-\onestandardavk{CO}{CO}%
-
-Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging kernels for \thisv MLS CO\@. Estimated vertical and horizontal resolutions are essentially identical to those of \prevv and \viv. The vertical resolution is in the range 3.5--5\,km from the upper troposphere to the lower mesosphere, degrading to 6--7\,km in the upper mesosphere. Down to the 215\,hPa level, the vertical averaging kernels are sharply peaked at the level being retrieved, but while the \mbox{316-hPa} measurement contains contribution from 316\,hPa, it has a larger contribution from 215\,hPa and a negative contribution around 100\,hPa of similar magnitude to that at 316\,hPa. The retrieved value at 316\,hPa is thus more an extrapolation of the profile higher in the UTLS than it is an independent measurement at 316\,hPa, and it is not recommended for scientific use. The horizontal resolution is about 200\,km in the mesosphere, degrading slowly to 300\,km with decreasing height in the stratosphere and more rapidly to about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
-
 \begin{figure}
 \includegraphics[width=\textwidth, trim=1.4cm 0cm 1.6cm 0cm,clip]{figures/CO_pdfs/CO_scatv6v5}
 \caption{Joint histograms of \prevv CO and \thisv CO for 2009 data show the general consistency of the two versions.  The color scale is logarithmic, with red points along the 1:1 line corresponding to pairs of values that are identical in the two versions.}
 \label{fig:CO_scatv6v5}
 \end{figure}
 
+\subsection{Impact of November 2025 MLS instrument configuration change on mesospheric CO data}
+
+\begin{figure}
+\includegraphics[width=\textwidth, trim=0cm 3.8cm 0cm 0cm,clip]{figures/CO_pdfs/plot1bylat_61vs63}
+\caption{Top row shows zonal averages of the highest levels of the MLS v06.01 (red) and v06.03 (blue) CO retrieved values, the former using high-resolution digital autocorrelator radiances covering the CO line center (Band\,25) and the latter using a single 6-MHz channel covering the same spectrum (Band\,9 Channel\,13). The a priori CO profile is shown in yellow.  The lower row of panels are zonal averages of the standard deviations (solid) and estimated precisions (dashed) with the same color scheme.  Data are from 2025d196.}
+\label{fig:plot1bylat_61vs63}
+\end{figure}
+
+In the mesosphere, the spectral lines measured by MLS are very narrow compared to their width at lower altitudes, with the mesospheric \mbox{230-GHz} CO line being only \mytexttilde400\,kHz wide.  MLS includes four high-spectral-resolution (128 \mbox{96-kHz}-wide channels) digital autocorrelator spectrometers (DACS) targeting \ch{O2}, \ch{H2O}, \ch{O3}, and \ch{CO} (MLS Bands~22 to 25, respectively).  Starting on 20 November 2026, the spectrometer measuring CO was repurposed (to provide additional \ch{O2} information). In the v06.03 CO retrieval, information on mesospheric \ch{CO} is instead obtained from measurements in a single \mbox{6-MHz}-wide channel (at the center of filterbank spectrometer, Band\,9, \mbox{B9.C13}) that covers the same bandwidth as the DACS\@. Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in spectral resolution between v06.01 and v06.03 on the precision of MLS CO\@. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, \mycomment{more needed.}
+
+
+\subsection{Resolution}
+\onestandardavk{CO}{CO}%
+
+Figure~\ref{fig:AvkCO} shows the horizontal and vertical averaging kernels for \thisv MLS CO\@. Estimated vertical and horizontal resolutions are essentially identical to those of \prevv and \viv. The vertical resolution is in the range 3.5--5\,km from the upper troposphere to the lower mesosphere, degrading to 6--7\,km in the upper mesosphere. Down to the 215\,hPa level, the vertical averaging kernels are sharply peaked at the level being retrieved, but while the \mbox{316-hPa} measurement contains a contribution from 316\,hPa, it has a larger contribution from 215\,hPa and a negative contribution around 100\,hPa of similar magnitude to that at 316\,hPa. The retrieved value at 316\,hPa is thus more an extrapolation of the profile higher in the UTLS than it is an independent measurement at 316\,hPa, and it is not recommended for scientific use. The horizontal resolution is about 200\,km in the mesosphere, degrading slowly to 300\,km with decreasing height in the stratosphere and more rapidly to about 460\,km at 100\,hPa and 690\,km at 215\,hPa.
+
 \subsection{Precision}
 
-The MLS data are supplied with an estimated precision (the field \texttt{L2gpPrecision}) which is the \emph{a posteriori} precision as returned by the optimal estimation. The precision of the \thisv CO is nearly identical to that of \prevv, and very similar to that of \viv. Reported precision is greater than the scatter observed in the data in regions of low natural variability. This can be seen in the middle (low-latitude) panels of the second row of Figure~\ref{fig:COplot1bylat_log}, where the black solid line (scatter about the zonal mean) has smaller values than the black dashed lines (precisions). Where the estimated precision is greater than 50\% of the a priori precision the data will be influenced by the a priori to an undesirably large extent. In such cases, \texttt{L2gpPrecision} is set to be negative (or zero in some cases) to indicate that the data should not be used.
+The MLS data are supplied with an estimated precision (the field \texttt{L2gpPrecision}), which is the \emph{a posteriori} precision as returned by the optimal estimation. The precision of the \thisv CO is nearly identical to that of \prevv, and very similar to that of \viv. Reported precision is greater than the scatter observed in the data in regions of low natural variability. This can be seen in the middle (low-latitude) panels of the second row of Figure~\ref{fig:COplot1bylat_log}, where the black solid line (scatter about the zonal mean) has smaller values than the black dashed lines (precisions). Where the estimated precision is greater than 50\% of the a priori precision the data will be influenced by the a priori to an undesirably large extent. In such cases, \texttt{L2gpPrecision} is set to be negative (or zero in some cases) to indicate that the data should not be used.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/CO_pdfs/COplot1bylat_logv6v5}
-\caption{The top row shows 2009 zonal means of \thisv and \prevv retrieved mixing ratios and their a priori values, with the \thisv retrieved mixing ratio lines (black) lying on top of the \prevv mixing ratio lines (yellow) and the \thisv a priori mixing ratio line (red) lying on top of the \prevv a priori lines (blue) throughout. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines). The bottom row shows that the number of good profiles drops to zero only at the highest retrieval levels (0.00046\,hPa and lower pressures) where retrieved precision exceeds half of the a priori precision.}
+\caption{The top row shows 2009 zonal means of \thisv and \prevv retrieved mixing ratios and their a priori values, with the \thisv retrieved mixing ratio lines (black) lying on top of the \prevv mixing ratio lines (yellow) and the \thisv a priori mixing ratio line (red) lying on top of the \prevv a priori lines (blue) throughout. The middle row shows the zonal scatter about these zonal means (solid lines) and corresponding estimated precisions (dashed lines). The bottom row shows that the number of good profiles drops to zero only at the highest retrieval levels (0.00046\,hPa and lower pressures), where retrieved precision exceeds half of the a priori precision.}
 \label{fig:COplot1bylat_log}
 \end{figure}
 
 Note that the random errors (precisions) are larger than 100\% of the mixing ratio for much of the vertical range, meaning that significant averaging (e.g., daily zonal mean or weekly map) is typically needed to make use of the data.
 
 \subsection{Accuracy}
-The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle atmosphere the accuracies are estimated by comparisons with the ACE-FTS instrument; see \citet{PumphreyEtal:2007} for further details. The MLS \vii CO data at 215\,hPa showed high (factor of \mytexttilde2) biases compared to other observations. The morphology, however, was generally realistic \citep{LiveseyEtal:2008}. In \thisv (as in \prevv) this bias has been essentially eliminated through a change in the approach to modeling the background radiance upon which the CO spectral line sits, and a small reduction in the number of MLS spectral channels considered in the retrieval. Tropospheric (215--100\,hPa) accuracies in Table~\ref{tab:COSummary} are 2$\sigma$ estimates obtained by propagating parameter uncertainties through a model of the measurement system, and are unchanged from those calculated for \prevv.
+The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle atmosphere, the accuracies are estimated by comparisons with the ACE-FTS instrument; see \citet{PumphreyEtal:2007} for further details. The MLS \vii CO data at 215\,hPa showed high (factor of \mytexttilde2) biases compared to other observations. The morphology, however, was generally realistic \citep{LiveseyEtal:2008}. In \thisv (as in \prevv), this bias has been essentially eliminated through a change in the approach to modeling the background radiance upon which the CO spectral line sits and a small reduction in the number of MLS spectral channels considered in the retrieval. Tropospheric (215--100\,hPa) accuracies in Table~\ref{tab:COSummary} are 2$\sigma$ estimates obtained by propagating parameter uncertainties through a model of the measurement system, and they are unchanged from those calculated for \prevv.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:COScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{215--0.001\,hPa.} \standardrangestatement\ Data at 0.00046\,hPa represents a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but consultation with the MLS team is advised. \standardprecisionrule \evenstatusrule
+  \item[Pressure range:] \screeningrule{215--0.001\,hPa.} \standardrangestatement\ Data at 0.00046\,hPa represent a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but consultation with the MLS team is advised. \standardprecisionrule \evenstatusrule
 
-  \item[Clouds:] Clouds have no impact for pressures of 31\,hPa or less. \thisv, \prevv and \viv CO are much less susceptible to cloud-induced artifacts than was v03.x, so screening of the CO product is considerably simplified compared to that recommended for v03.x, needing only application of the standard \texttt{Quality} and \texttt{Convergence} rules as described below. The low-cloud status bit, which was set for 0.2\% of profiles in \prevv, is set for 0.6\% of profiles in \thisv, but preliminary validation does not find this flag to be useful for data screening.
+  \item[Clouds:] Clouds have no impact for pressures of 31\,hPa or less. \thisv, \prevv, and \viv CO are much less susceptible to cloud-induced artifacts than was \viii, so screening of the CO product is considerably simplified compared to that recommended for \viii, needing only application of the standard \texttt{Quality} and \texttt{Convergence} rules as described below. The low-cloud status bit, which was set for 0.2\% of profiles in \prevv, is set for 0.6\% of profiles in \thisv, but preliminary validation does not find this flag to be useful for data screening.
 
-  \item[Quality:] \screeningrule{Only use profiles with \texttt{Quality} greater than 1.5.} Profiles with \texttt{Quality} less than or equal to 1.5 comprise 0.7\% of all data, and \mytexttilde2\% of profiles in the tropics. At 215 hPa in the tropics, the rejected profiles have mixing ratios that are, on average, 7\% higher than other tropical values and the occurrence rates of high outliers with mixing ratios greater than 150\,ppbv is about twice that of the rest of the tropical ensemble. At 100\,hPa there is no significant difference in the means of tropical profiles with Quality less than or greater than 1.5.
+  \item[Quality:] \screeningrule{Only use profiles with \texttt{Quality} greater than 1.5.} Profiles with \texttt{Quality} less than or equal to 1.5 comprise 0.7\% of all data, and \mytexttilde2\% of profiles in the tropics. At 215 hPa in the tropics, the rejected profiles have mixing ratios that are, on average, 7\% higher than other tropical values, and the occurrence rates of high outliers with mixing ratios greater than 150\,ppbv is about twice that of the rest of the tropical ensemble. At 100\,hPa there is no significant difference in the means of tropical profiles with Quality less than or greater than 1.5.
 
   \item[Convergence:] \convergencerule{1.03} This \texttt{Convergence} criterion rejects fewer than 0.1\% of profiles. Almost all of the retrievals in the phase that produces \thisv CO converge to their target, so \texttt{Convergence} is of limited use in screening.
 \end{description}
@@ -71,15 +71,15 @@ The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle
 \begin{itemize}
   \item Positive systematic error of 20--50\% throughout the mesosphere, as was the case for \prevv.
   \item Negative systematic error of 50--70\% near 30\,hPa, as was the case for \prevv.
-  \item Retrieved profiles are rather jagged, especially between 1\,hPa (48\,km) and 0.1\,hPa (64\,km). The greater smoothing applied in \thisv, \prevv, \viv and v03.3 compared to \vii reduced this problem considerably but has not eliminated it entirely.
+  \item Retrieved profiles are rather jagged, especially between 1\,hPa (48\,km) and 0.1\,hPa (64\,km). The greater smoothing applied in \thisv, \prevv, \viv, and v03.3 compared to \vii reduced this problem considerably but has not eliminated it entirely.
   \item The tendency for negative values to occur at the level below a large positive value that was present in \viv is somewhat reduced in \thisv and \prevv.
   \item Upper-tropospheric \thisv CO retrieved values still show some anomalous sensitivity to thick clouds associated with deep convection. The screening procedure based upon \texttt{Quality} and \texttt{Convergence} that is described above is generally effective in removing these artifacts.
-  \item Negative outliers in UT CO have been observed in volcanic plumes, such as that from the eruption of Sarychev in June of 2009. These are likely the result of interference from spectral lines of a gas-phase plume component, and are a subject for further analysis and validation.
+  \item Negative outliers in UT CO have been observed in volcanic plumes, such as that from the eruption of Sarychev in June of 2009. These are likely the result of interference from spectral lines of a gas-phase plume component and are a subject for further analysis and validation.
 \end{itemize}
 
 \subsection{Review of comparisons with other datasets}
 
-In the upper troposphere, comparisons with various in situ CO observations (NASA DC-8, WB-57 and the MOZAIC dataset) indicate that the \emph{earlier} MLS \vii 215\,hPa CO product was biased high by a factor of \mytexttilde2. As in \viv and \prevv, this bias is largely eliminated in \thisv.
+In the upper troposphere, comparisons with various in situ CO observations (NASA DC-8, WB-57, and the MOZAIC dataset) indicate that the \emph{earlier} MLS \vii 215\,hPa CO product was biased high by a factor of \mytexttilde2. As in \viv and \prevv, this bias is largely eliminated in \thisv.
 
 In the mesosphere, comparisons of the earlier \vii MLS CO with ODIN-SMR and ACE-FTS suggest a positive bias: 30\%--50\% against ACE-FTS, 50\%--100\% against SMR. Near 31\,hPa, the MLS values are lower than SMR and ACE-FTS by at least 70\%. MLS CO values have not changed much between \vii and \thisv in the middle atmosphere, so these comparisons may mostly be considered valid for \thisv. What change there was between \vii and later versions consists of a slight lowering of the MLS values, bringing them slightly towards the ACE-FTS data; 20\% is now a better estimate of the MLS-ACE bias in much of the middle atmosphere (compared to 30\% with \vii).
 % Mean difference between \prevv\CheckThis and \thisv\CheckThis in the lower mesosphere
@@ -87,21 +87,19 @@ In the mesosphere, comparisons of the earlier \vii MLS CO with ODIN-SMR and ACE-
 Further validation of the \thisv retrieval above 0.01\,hPa is needed.
 
 \begin{table}
-  \caption{Data quality summary for MLS \thisv CO.}
+  \caption{Summary of Aura MLS \thisv CO Characteristics}
   \vspace{\tablecaptionsep}
   \label{tab:COSummary}
   \begin{minipage}{\linewidth}
+  \renewcommand{\thefootnote}{\thempfootnote}
     \centering\begin{tabular}{ccccl}
 \toprule
-\textbf{Pressure} &
-\textbf{Resolution / km%
-\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.}} & 
-\textbf{Precision} / &
+\parbox[m]{16mm}{\bfseries\centering{Pressure\\ hPa}} &
+\parbox[m]{22mm}{\bfseries\centering{Resolution\\ \mbox{V $\times$ H}}%
+\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.} \\ km} & 
+\parbox[m]{22mm}{\bfseries\centering{Single-Profile\\ Precision\\ ppbv}} &
 \textbf{Accuracy} &  
 \textbf{Comment} \\
-\textbf{/ hPa} &
-\textbf{Vert $\times$ Horiz.} &
-\textbf{ppbv} \\
 \midrule
 $<0.001$  &    ---        &   ---   &    ---      & Not retrieved\\
 0.00046  & ---       &   ---   &    ---    & Unsuitable

@@ -1,8 +1,8 @@
 \speciestitle{Hydrogen Cyanide}{HCN}{HCN}{%
-  \item[Useful range:] 21--0.1\,hPa
+  \item[Useful range:] 68--32\,hPa (use with caution) 21--0.1\,hPa (no restrictions)
   \item[Product lead:] Hugh C. Pumphrey
   \item[Contact:] Luis Mill\'an,
-\email{Luis.F.Millan@jpl.nasa.gov}}
+ \email{Luis.F.Millan@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
@@ -53,15 +53,15 @@ Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of the field
 
 \subsection{Accuracy}
 
-The accuracy of the HCN product has not been assessed in detail because a cursory inspection revealed that \vii and \viii HCN had extremely large systematic errors in the lower stratosphere. These errors are much smaller in \viv.  In \prevv and \thisv the errors are improved over those in \viv in some places and somewhat worse in others, while being far better than in earlier versions. Some comparisons with ACE-FTS data are shown in Figure~\ref{fig:HCNvsACE}. At 21\,hPa and higher altitudes the two instruments agree well, with MLS versions \prevv and \thisv agreeing better with ACE-FTS than \viv. In the tropics, the two instruments agree well in the 32--68\,hPa range apart from a constant systematic error. At middle and high latitudes, the MLS data differ considerably from ACE-FTS in a long-term (\mytexttilde10-year) average; the differences include a secular decrease at the lowest altitudes. However, the seasonal and interannual variability show many similarities between the two instruments. The MLS data in the lower stratosphere can therefore be used with caution; comparison with ACE-FTS data is advisable. In the upper stratosphere, the values are in line with current understanding of the chemistry of HCN\@. Comparison to historical values suggests an accuracy of no worse than 50\%. 
+The accuracy of the HCN product has not been assessed in detail because a cursory inspection revealed that \vii and \viii HCN had extremely large systematic errors in the lower stratosphere. These errors are much smaller in \viv.  In \prevv and \thisv the errors are improved over those in \viv in some places and somewhat worse in others, while being far better than in earlier versions. Some comparisons with ACE-FTS data are shown in Figure~\ref{fig:HCNvsACE}. At 21\,hPa and higher altitudes the two instruments agree well, with MLS versions \prevv and \thisv agreeing better with ACE-FTS than \viv. In the tropics, the two instruments agree well in the 32--68\,hPa range apart from a constant systematic error. At middle and high latitudes, the MLS data differ considerably from ACE-FTS in a long-term (\mytexttilde10-year) average; the differences include a decrease at the lowest altitudes. However, the seasonal and interannual variability show many similarities between the two instruments. The MLS data in the lower stratosphere can therefore be used with caution; comparison with ACE-FTS data is advisable. In the upper stratosphere, the values are in line with current understanding of the chemistry of HCN\@. Comparison to historical values suggests an accuracy of no worse than 50\%. 
 
 \begin{figure}
-\includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_14-67.pdf}\\
-\includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_68-12.pdf}\\
-\includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_21-54.pdf}\\
-\includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_46-41.pdf}
-
-\caption{\label{fig:HCNvsACE} Time series of HCN at selected latitudes and pressure levels from MLS versions \viv, \prevv, and \thisv, with ACE-FTS version~5.3 for comparison. The MLS data are plotted using translucent colors; purple areas are where \thisv (magenta) and \prevv (cyan) are overlapping.  }
+% \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_14-67.pdf}\\
+% \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_68-12.pdf}\\
+% \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_21-54.pdf}\\
+% \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_46-41.pdf}
+\includegraphics[width=0.9\textwidth]{figures/HCN_timeseries.pdf}
+\caption{\label{fig:HCNvsACE} Daily time series of HCN at selected latitudes and pressure levels from MLS versions \viv, \prevv, and \thisv, with seasonal ACE-FTS version~5.3 for comparison.  }
 \end{figure}
 
 \begin{nofloatpages}
@@ -99,14 +99,14 @@ There are no obvious artifacts within 21-0.1\,hPa recommended pressure range. At
   \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.} \\ km}} &
   \parbox[m]{22mm}{\bfseries\centering Single-Profile\\ Precision%
   \footnote{The precision shown is the estimated precision (\texttt{L2gpPrecision}); the observed scatter is about 80\% of this value.} \\pptv} &
-  \parbox[m]{20mm}{\bfseries\centering Accuracy \\ \%} &
+  \parbox[m]{20mm}{\bfseries\centering Accuracy \\ pptv} &
   \parbox[m]{40mm}{\bfseries Comments}\\
   \midrule
   $< 0.1$     & ---             &  --- &  ---      & Unsuitable for scientific use\\
-  1--0.1      & 12 $\times$ 500 & 50   & 50        & \\
-  21--1       & 10 $\times$ 300 & 30   & 50        & \\
-  68--21      & 10 $\times$ 300 & 50   & 50        &  Useable with caution\\
-  100         & 10 $\times$ 300 & 50   & Very poor &  Unsuitable for scientific use\\
+  1--0.1      & 12 $\times$ 500 & 50   & 5         & \\
+  21--1       & 10 $\times$ 300 & 40   & 15        & \\
+  68--21      & 10 $\times$ 300 & 40   & 60        &  Use with caution\\
+  100         & 10 $\times$ 300 & 50   & 130       &  Unsuitable for scientific use\\
   $> 100$     &                 &      &           &  Not Retrieved\\
   \bottomrule
 \end{tabular}
