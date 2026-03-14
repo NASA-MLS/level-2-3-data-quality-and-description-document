@@ -30,7 +30,7 @@ The calculation of cloud flags bits in the product status has changed significan
 \label{fig:plot1bylat_61vs63}
 \end{figure}
 
-In the mesosphere, the spectral lines measured by MLS are very narrow compared to their width at lower altitudes, with the mesospheric \mbox{230-GHz} CO line being only \mytexttilde400\,kHz wide.  MLS includes four high-spectral-resolution (128 \mbox{96-kHz}-wide channels) digital autocorrelator spectrometers (DACS) targeting \ch{O2}, \ch{H2O}, \ch{O3}, and \ch{CO} (MLS Bands~22 to 25, respectively).  Starting on 20 November 2026, the spectrometer measuring CO was repurposed (to provide additional \ch{O2} information). In the v06.03 CO retrieval, information on mesospheric \ch{CO} is instead obtained from measurements in a single \mbox{6-MHz}-wide channel (at the center of filterbank spectrometer, Band\,9, \mbox{B9.C13}) that covers the same bandwidth as the DACS\@. Figure~\ref{fig:plot1bylat_61vs63} shows the impact of this degradation in spectral resolution between v06.01 and v06.03 on the precision of MLS CO\@. In the southern hemisphere (left top panels of Figure~\ref{fig:plot1bylat_61vs63}, \mycomment{more needed.}
+In the mesosphere, the spectral lines measured by MLS are very narrow compared to their width at lower altitudes, with the Doppler-broadened mesospheric \mbox{230-GHz} CO line being only \mytexttilde400\,kHz full width at half maximum.  MLS includes four high-spectral-resolution (128 \mbox{96-kHz}-wide channels) digital autocorrelator spectrometers (DACS) targeting \ch{O2}, \ch{H2O}, \ch{O3}, and \ch{CO} (MLS Bands~22 to 25, respectively).  Prior to 20 November 2026, Band~25 (B25) provided 6~MHz of 96-kHz-resolution spectra around the center of the 230-Gz CO line to the \thisv (and all previous) retrievals. This DACS was repurposed for magnetic field studies using the Zeeman-split \ch{O2} line, so starting with v06.03, information on mesospheric \ch{CO} is obtained from a single, unresolved, \mbox{6-MHz}-wide channel (at the center of filterbank spectrometer, Band\,9, \mbox{B9.C13}) that covers the same bandwidth as the DACS\@. Figure~\ref{fig:plot1bylat_61vs63} shows the impact of the degradation in spectral resolution between v06.01 and v06.03 on the \ch{CO} retrieval. The upper panels show zonal-mean profiles from the degraded retrieval (v06.03, blue), the retrieval using the DACS (v06.01, red), and the a priori (yellow). In the southern hemisphere, both retrievals depart significantly from the a priori above 0.0046~hPa, and they do so similarly. Estimated precisions at pressures lower than 0.01~hPa are generally 10 
 
 
 \subsection{Resolution}
@@ -57,7 +57,7 @@ The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle
 \subsection{Data screening}
 \label{sec:COScreening}
 \begin{description}
-  \item[Pressure range:] \screeningrule{215--0.001\,hPa.} \standardrangestatement\ Data at 0.00046\,hPa represent a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but consultation with the MLS team is advised. \standardprecisionrule \evenstatusrule
+  \item[Pressure range:] \screeningrule{215--0.001\,hPa.} \standardrangestatement\ Data at 0.00046\,hPa represent a total column at and at pressures lower than that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but consultation with the MLS team is advised. \standardprecisionrule \evenstatusrule
 
   \item[Clouds:] Clouds have no impact for pressures of 31\,hPa or less. \thisv, \prevv, and \viv CO are much less susceptible to cloud-induced artifacts than was \viii, so screening of the CO product is considerably simplified compared to that recommended for \viii, needing only application of the standard \texttt{Quality} and \texttt{Convergence} rules as described below. The low-cloud status bit, which was set for 0.2\% of profiles in \prevv, is set for 0.6\% of profiles in \thisv, but preliminary validation does not find this flag to be useful for data screening.
 
@@ -71,10 +71,10 @@ The estimated accuracy is summarized in Table~\ref{tab:COSummary}. In the middle
 \begin{itemize}
   \item Positive systematic error of 20--50\% throughout the mesosphere, as was the case for \prevv.
   \item Negative systematic error of 50--70\% near 30\,hPa, as was the case for \prevv.
-  \item Retrieved profiles are rather jagged, especially between 1\,hPa (48\,km) and 0.1\,hPa (64\,km). The greater smoothing applied in \thisv, \prevv, \viv, and v03.3 compared to \vii reduced this problem considerably but has not eliminated it entirely.
+  \item Retrieved profiles are rather jagged, especially between 1\,hPa (48\,km) and 0.1\,hPa (64\,km). The greater smoothing applied in \thisv, \prevv, \viv, and \viii compared to \vii reduced this problem considerably but has not eliminated it entirely.
   \item The tendency for negative values to occur at the level below a large positive value that was present in \viv is somewhat reduced in \thisv and \prevv.
   \item Upper-tropospheric \thisv CO retrieved values still show some anomalous sensitivity to thick clouds associated with deep convection. The screening procedure based upon \texttt{Quality} and \texttt{Convergence} that is described above is generally effective in removing these artifacts.
-  \item Negative outliers in UT CO have been observed in volcanic plumes, such as that from the eruption of Sarychev in June of 2009. These are likely the result of interference from spectral lines of a gas-phase plume component and are a subject for further analysis and validation.
+  \item Negative outliers in UT CO have been observed in volcanic plumes, such as that from the eruption of Sarychev in June of 2009. These are likely the result of interference from spectral lines of a gas-phase plume component and could be a subject for further analysis and validation.
 \end{itemize}
 
 \subsection{Review of comparisons with other datasets}
