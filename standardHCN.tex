@@ -1,5 +1,5 @@
 \speciestitle{Hydrogen Cyanide}{HCN}{HCN}{%
-  \item[Useful range:] 68--32\,hPa (qualitative studies) 21--0.1\,hPa (no restrictions)
+  \item[Useful range:] 68--32\,hPa (qualitative studies), 21--0.1\,hPa (no restrictions)
   \item[Product lead:] Hugh C. Pumphrey
   \item[Contact:] Luis Mill\'an,
  \email{Luis.F.Millan@jpl.nasa.gov}}
@@ -52,23 +52,18 @@ Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of the field
 
 \subsection{Accuracy}
 
-
 There is no formal validation of the MLS HCN product because HCN had extremely large systematic errors in the lower stratosphere when initial validation efforts were undertaken (for \vii and \viii). In \prevv and \thisv, the errors are reduced over those in \viv in some places but are somewhat worse in others, while being far better than in earlier versions. Some comparisons with ACE-FTS data are shown in Figure~\ref{fig:HCNvsACE}. At 21\,hPa and smaller pressure levels the two instruments agree well, with MLS \prevv and \thisv agreeing better with ACE-FTS than \viv (Figure~\ref{fig:HCNvsACE}a, c). These values are consistent with the current understanding of HCN chemistry. 
 Comparisons with historical measurements suggest an accuracy no worse than 50\%.
 
-
 In the 68--32\,hPa range at the tropics, the two instruments agree well, except for a small, nearly constant systematic bias (e.g., Figure~\ref{fig:HCNvsACE}b). In this pressure range at middle and high latitudes, however, the MLS data differ considerably from \mbox{ACE-FTS} (e.g., Figure~\ref{fig:HCNvsACE}d), displaying larger biases that are not constant in time.  That said, the seasonal and interannual variability shows many similarities between the two instruments. Thus, the MLS data in the lower stratosphere can be used with caution for qualitative studies, although comparison with \mbox{ACE-FTS} data is advisable.
-
-
-% The accuracy of the HCN product has not been assessed in detail because a cursory inspection revealed that 
 
 \begin{figure}
 % \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_14-67.pdf}\\
 % \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_0_68-12.pdf}\\
 % \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_21-54.pdf}\\
 % \includegraphics[width=0.82\textwidth]{figures/mls_ace_HCN_-70_46-41.pdf}
-\includegraphics[width=0.9\textwidth]{figures/HCN_timeseries.pdf}
-\caption{\label{fig:HCNvsACE} Daily time series of HCN at selected latitudes and pressure levels from MLS versions \viv, \prevv, and \thisv, with seasonal ACE-FTS version~5.3 for comparison.  }
+\centering\includegraphics[width=0.9\textwidth]{figures/HCN_timeseries.pdf}
+\caption{\label{fig:HCNvsACE} Daily time series of HCN at selected latitudes and pressure levels from MLS versions \viv, \prevv, and \thisv, with seasonal ACE-FTS version~5.3 for comparison.}
 \end{figure}
 
 \begin{nofloatpages}
@@ -83,7 +78,7 @@ In the 68--32\,hPa range at the tropics, the two instruments agree well, except 
   \item[Clouds:] \screeningrule{Clouds have no impact; profiles with non-zero even values of \texttt{Status} are suitable for use.} As HCN is only generally recommended in regions unaffected by clouds, profiles which have either, both, or neither of the cloud flags set may be used.
   \item[Quality:] \qualityrule{0.2} Values of \texttt{Quality} are usually near 1.5; occasional lower values do not seem correlated with unusual profiles, but we suggest as a precaution that only profiles with \texttt{Quality} $> 0.2$ be used. Typically this will eliminate only 1--2\% of profiles.
     %% Number of rejected profiles remains small in V5
-  \item[Convergence:] \convergencerule{2.0} This should eliminate any chunks that have obviously failed to converge (typically only 1--2\% of the total).
+  \item[Convergence:] \convergencerule{2.0} This should eliminate any chunks that failed to converge (typically only 1--2\% of the total).
     %% Number of rejected profiles remains small in V5
 \end{description}
 \end{nofloatpages}
