@@ -12,7 +12,14 @@
 % ---------------------------------------- Fonts
 \usepackage[otfmath, scale=0.91]{XCharter}
 \usepackage[scaled=0.83]{roboto}
-\usepackage[scaled=0.83]{roboto-mono}
+\usepackage[scaled=0.78]{roboto-mono} % Was 0.83
+%
+% A different way to get the monospaced font, but with a bit less spacing doesn't look great, but OK.
+% \setmonofont[
+%   Scale=0.80,
+%   LetterSpace=-3
+% ]{Roboto Mono}
+
 % After XCharter has loaded realscripts, force the fake superscripts everywhere
 \makeatletter
 \renewcommand\textsuperscript[1]{\fakesuperscript{#1}}

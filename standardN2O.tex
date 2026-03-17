@@ -6,7 +6,7 @@
 
 \subsubsection{\ch{N2O} standard product}
 
-The standard product for \thisv \ch{N2O} is retrieved in the \texttt{CorePlusR2} phase, which also retrieves water vapor and other 190\nobreakdash-GHz products, and replaces the customized \prevv \ch{N2O} \texttt{NitrousOxide} retrieval phase. Improvements in the treatment of the \ch{N2O} retrieval in the \thisv \texttt{CorePlusR2} phase are described in detail in Section~\ref{sec:V6N2OCorrectionBriefSummary}.
+The standard product for \thisv \ch{N2O} is retrieved in the \texttt{CorePlusR2} phase, which also retrieves water vapor and other 190\nobreakdash-GHz products, and replaces the customized \prevv \ch{N2O} \texttt{NitrousOxide} retrieval phase. Improvements in the treatment of the \ch{N2O} retrieval in the \thisv \texttt{CorePlusR2} phase are described in detail in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
 
 The decision to use the MLS ``Band~3'' 190\nobreakdash-GHz radiances in preference to the ``Band~12'' 640\nobreakdash-GHz measurements for \viv and later versions was undertaken in order to provide a continuous data product (\texttt{N2O-190}) for the entire mission. Earlier versions (prior to \viv) of the \ch{N2O} standard product relied on the ``Band~12'' 640\nobreakdash-GHz (\texttt{CorePlusR4B}) retrieval, however, a noticeable reduction in quality of the Band~12 radiance signals became evident during June-August 2013. Band~12 was finally turned off on August 6, 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
 
@@ -31,7 +31,7 @@ The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the p
 
 The spatial resolution reported by the averaging kernel matrices is shown in Figures~\ref{fig:AvkN2O} for the \mbox{190-GHz} measurements and~\ref{fig:AvkN2O-640} for the \mbox{640-GHz} measurements (available in the \texttt{L2GP-DGG} files for data prior to June~6, 2013). For \texttt{N2O-190}, the vertical resolution is 5--7\,km and the horizontal along-track resolution is 330--525\,km. For \texttt{N2O-640}, the vertical resolution is 4--6\,km and the horizontal along-track resolution is 330--600\,km over most of the useful range of the retrievals.
 
-The horizontal cross-track resolution is set by the 7\,km width of the MLS 190\nobreakdash-GHz field-of-view for all pressures. Note that the higher frequency MLS 640\nobreakdash-GHz measurements have a narrower 3\,km field-of-view. The longitudinal separation of the MLS measurements is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
+The horizontal cross-track resolution is set by the 7\,km width of the MLS 190\nobreakdash-GHz field of view for all pressures. Note that the higher frequency MLS 640\nobreakdash-GHz measurements have a narrower 3\,km field of view. The longitudinal separation of the MLS measurements is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
 
 \subsection{Precision}
 
@@ -72,7 +72,7 @@ The retrieval restricts \ch{N2O} values to be greater than $-40\,\text{ppbv}$ (a
 
 \subsection{Review of comparisons between MLS \ch{N2O} versions and other datasets}
 
-Average values for \thisv 190\nobreakdash-GHz \ch{N2O} are substantially smaller and more realistic than in previous versions for the 100\,hPa pressure level. This is as a result of the work described in Section~\ref{sec:} For pressures smaller than 68\,hPa (i.e., at altitudes higher than this pressure surface) differences are within 10\% (see Figure~\ref{fig:N2O190Comparison}).
+Average values for \thisv 190\nobreakdash-GHz \ch{N2O} are substantially smaller and more realistic than in previous versions for the 100\,hPa pressure level. This is as a result of the work described in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}. For pressures smaller than 68\,hPa (i.e., at altitudes higher than this pressure surface) differences are within 10\% (see Figure~\ref{fig:N2O190Comparison}).
 
 \begin{figure}
   \centerline{\includegraphics[width=\linewidth-10pt]
