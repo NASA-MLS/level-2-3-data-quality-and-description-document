@@ -50,7 +50,7 @@ Based on comparisons with coincident OMI total column \ch{SO2} observations, the
 \label{sec:SO2Screening}
 \begin{description}
   \item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
-  \item[Estimated Precision:] \screeningrule{In general, as for other MLS species, retrieved \ch{SO2} values for which the associated precision is negative should not be used.  However, \ch{SO2} data showing strong ($>20$\,ppbv) enhancements that have negative precision may still be used.}
+  \item[Estimated Precision:] \screeningrule{In general, as for other MLS species, retrieved \ch{SO2} values for which the associated precision is negative should not be used.  However, \ch{SO2} data showing strong ($>$20\,ppbv) enhancements that have negative precision may still be used.}
 
   Although it is generally recommended to not use values where precision is flagged negative, \ch{SO2} is an exception, and it is appropriate to use values with negatively flagged precision (provided that the entire profile is not so flagged otherwise passes the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} criteria). High retrieved values of \ch{SO2} at larger pressures (e.g., 215 and 147\,hPa) also have larger (i.e., poorer) precision values that are sometimes large enough to trigger the ``too much a~priori influence'' negative-precision flag. In such cases, the retrieved value will probably be smaller than the true abundance because the retrieval is being pulled towards the a~priori value of zero ppbv. Nonetheless, greatly enhanced \ch{SO2} is being observed, reflecting the detection of a volcanic plume. Profiles where the precision is set to zero, however, should be omitted from scientific analyses.
 
