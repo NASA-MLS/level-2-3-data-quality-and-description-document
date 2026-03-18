@@ -93,3 +93,7 @@ p$>$260 & \multicolumn{5}{c}{Unsuitable for scientific use} \\ \bottomrule
   \caption{MLS \thisv, \vv, \viv, and \vii IWC comparisons for June 2009 at 146\,hPa and 100\,hPa.  (a) Left: Probability density functions (PDF) (\thisv, red; \vv, purple; \viv, blue; and \vii, green), with dashed lines showing the corresponding noise levels (obtained by folding the negative IWC values about the origin) and the thin black lines representing the Gaussian error function.  (b) Right: Scatter plots of IWC \thisv vs.\ \vii (black points), with dashed red lines indicating the 1:1 line and dashed yellow lines the 1$\sigma$ uncertainties. The solid yellow lines are linear fits to the data (which lie practically on the 1:1 line).}
   \label{fig:IWC}
 \end{figure}
+
+\subsection{Desired improvements for future data version(s)}
+
+The IWC retrieval in \thisv is a simple first-order conversion, applied independently to each \Tcir\ measurement. Future development work on the MLS IWC retrieval should consider implementing a 2-D cloudy-sky radiative transfer model. This will allow IWC to be retrieved jointly with the \Tcir\ measurements from adjacent scans.

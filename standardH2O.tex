@@ -148,7 +148,7 @@ Apart from the differences noted above, the MLS \thisv \ch{H2O} is similar to th
   \item[Pressure range:] \screeningrule{316--0.001\,hPa.} \standardrangestatement\ Data at 0.00046\,hPa represent a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible but requires consultation with the MLS team.
   \standardprecisionrule
   \evenstatusrule
-  \item[Clouds:] Profiles flagged as being affected by high or low clouds (i.e., with \texttt{Status} bits corresponding to values of \texttt{16} and \texttt{32} set) can continue to be used. See Section~\ref{sec:artifacts} for more details.
+  \item[Clouds:] Profiles flagged as being affected by high or low clouds (i.e., with \texttt{Status} bits corresponding to values of \texttt{16} and \texttt{32} set) can continue to be used. See Section~\ref{sec:H2Oartifacts} for more details.
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} \emph{greater} than 0.7 should be used in scientific studies.} The quality threshold is deliberately set low because it is not a very good discriminator of poor profiles except when quality is well below the mean value; therefore, we recommend the ``additional screening to avoid outliers,'' as described below.
   \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} \emph{less} than 2.0 should be used in scientific studies.}
   \item[Additional screening to avoid outliers:] After applying the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} screening described above, some unphysical profiles remain in the MLS \thisv \ch{H2O} dataset. These are characterized by unrealistically low water vapor mixing ratios in the upper troposphere and stratosphere. The cause of this behavior is the use of the logarithmic basis, which excludes negative values. Sometimes the retrieval minimizer seeks a negative value at a given level (which is almost always accompanied by severe vertical profile oscillations). Such values are not allowed, and therefore an optimal fit to the measurement signal is not achieved. \ch{H2O} profiles having values less than 0.101\,ppmv at pressures of 1\,hPa or greater should not be used. Profiles with acceptable \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} having values less than 0.101\,ppmv at pressures less than 1\,hPa are acceptable and occur frequently, because the water vapor concentration in the mesosphere is often less than the measurement precision, and although negative values are preferable, they are not realizable due to the logarithmic basis definition being used.
@@ -156,7 +156,7 @@ Apart from the differences noted above, the MLS \thisv \ch{H2O} is similar to th
 \end{nofloatpages}
 
 \subsection{Artifacts}
-\label{sec:artifacts}
+\label{sec:H2Oartifacts}
 
 There is a minimum concentration at which MLS \ch{H2O} measurements at a given level become unreliable, given in Table~\ref{tab:H2OSummary} under the ``Minimum Value'' column. The lowest allowable \ch{H2O} value is 0.1\,ppmv.
 

@@ -1,5 +1,5 @@
 \speciestitle{Relative Humidity with respect to Ice}{RHI}{RHI}{
-  \item[Useful range:] UTRHI, mean layer value for P $\le$ 383\,hPa, Profile from 316--0.001\,hPa.
+  \item[Useful range:] Mean layer value for pressures greater than 380\,hPa, vertically resolved profile from 316--0.001\,hPa.
   \item[Product lead:] William Read \email{william.g.read@jpl.nasa.gov}}
 
 \subsection{Introduction}
@@ -53,7 +53,7 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
   
   \evenstatusrule
 
-  \item[Clouds:] Profiles flagged as being affected by high or low clouds (i.e., with \texttt{Status} bits corresponding to values of \texttt{16} and \texttt{32} set) can continue to be used. See Section~\ref{sec:artifacts} for more details.
+  \item[Clouds:] Profiles flagged as being affected by high or low clouds (i.e., with \texttt{Status} bits corresponding to values of \texttt{16} and \texttt{32} set) can continue to be used. See Section~\ref{sec:RHIartifacts} for more details.
 
   \item[Quality field:] \screeningrule{The \texttt{Quality} fields for both the \texttt{L2GP-RHI} and \texttt{L2GP-Temperature} swaths need to be considered, as described below:}
     \begin{description}
@@ -75,7 +75,7 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
 \end{nofloatpages}
 
 \subsection{Artifacts}
-\label{sec:artifacts}
+\label{sec:RHIartifacts}
 
 See Sections~\ref{sec:StandardH2O} for \ch{H2O} and \ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1 to 2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, sources of systematic error, in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set, particularly for pressures greater than 200\,hPa. This will erroneously increase the frequency of occurrence of supersaturation in the tail of MLS RHI distributions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, the contribution from temperature noise must be removed as part of the analysis, as described by \citet{BuehlerEtal:2003}.  Clouds in the field of view degrade RHI measurement precision, increasing the scatter about the mean; nevertheless, comparisons with AIRS data show that the mean bias changes by less than 10\%. In addition, the drift in MLS water vapor, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}, also affects the RHI product.
 
