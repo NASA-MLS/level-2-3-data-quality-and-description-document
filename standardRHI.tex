@@ -70,16 +70,14 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
       \item[At 215\,hPa:] \texttt{L2gpPrecision} $>0.825$\,K
     \end{description}
 
-  \item[Additional screening for RHI based on \ch{H2O}:] Eliminate highly oscillatory RHI profiles by rejecting those that have collocated \ch{H2O} values less than 0.101\,ppmv at any pressure smaller than 1\,hPa.
+  \item[Additional screening for RHI based on \ch{H2O}:] Any RHI profiles for which the corresponding \ch{H2O} profiles contain values less than 0.101\,ppmv at any pressure larger than 1\,hPa should be rejected.  This step eliminates highly oscillatory RHI profiles.
 \end{description}
 \end{nofloatpages}
 
 \subsection{Artifacts}
 \label{sec:artifacts}
 
-See Sections~\ref{sec:StandardH2O} for \ch{H2O} and \ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1 to 2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, sources of systematic error, in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set, particularly for pressures greater than 200\,hPa. This will erroneously increase the frequency of occurrence of supersaturation in the tail of MLS RHI distributions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, the contribution from temperature noise must be removed as part of the analysis, as described by \citet{BuehlerEtal:2003}. Measurements taken in the presence of clouds significantly degrade the precision, that is increases the scatter about the mean, but the mean bias as compared to AIRS changes by less than 10\%.  Also, users should note the possibility of a potential drift in the MLS lower stratospheric water vapor product, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}. Such a drift will also impact the RHI product.
-
-\mycomment{Suggested replacements for above sentences: Clouds in the field of view degrade measurement precision, increasing the scatter about the mean; nevertheless, comparisons with AIRS data show that the mean bias changes by less than 10\%. In addition, the drift in MLS water vapor, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}, also affects the RHI product.}
+See Sections~\ref{sec:StandardH2O} for \ch{H2O} and \ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1 to 2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, sources of systematic error, in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set, particularly for pressures greater than 200\,hPa. This will erroneously increase the frequency of occurrence of supersaturation in the tail of MLS RHI distributions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, the contribution from temperature noise must be removed as part of the analysis, as described by \citet{BuehlerEtal:2003}.  Clouds in the field of view degrade RHI measurement precision, increasing the scatter about the mean; nevertheless, comparisons with AIRS data show that the mean bias changes by less than 10\%. In addition, the drift in MLS water vapor, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}, also affects the RHI product.
 
 \subsection{Review of comparisons with other datasets}
 
