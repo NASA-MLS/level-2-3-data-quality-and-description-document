@@ -1,6 +1,6 @@
 \speciestitle{Nitrous Oxide}{\ch{N2O}}{N2O}{%
   \item[Useful range:] 100--0.46\,hPa
-  \item[Product lead:] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
+  \item[Product lead:] Alyn Lambert \email{Alyn.Lambert@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
@@ -10,8 +10,6 @@ The standard product for \thisv \ch{N2O} is retrieved in the \texttt{CorePlusR2}
 
 The decision to use the MLS ``Band~3'' 190\nobreakdash-GHz radiances in preference to the ``Band~12'' 640\nobreakdash-GHz measurements for \viv and later versions was undertaken in order to provide a continuous data product (\texttt{N2O-190}) for the entire mission. Earlier versions (prior to \viv) of the \ch{N2O} standard product relied on the ``Band~12'' 640\nobreakdash-GHz (\texttt{CorePlusR4B}) retrieval, however, a noticeable reduction in quality of the Band~12 radiance signals became evident during June-August 2013. Band~12 was finally turned off on August 6, 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
 
-The 190\nobreakdash-GHz \ch{N2O} data product in general shows slightly worse precision and resolution compared to the 640\nobreakdash-GHz retrievals, although the 190\nobreakdash-GHz precision is substantially better at 100--68\,hPa. Data from \texttt{N2O-190} and \texttt{N2O-640} have been compared from launch until the end of Band~12 operations. A persistent, latitude-dependent, low bias over the pressure range 100 to 15\,hPa is seen in the \texttt{N2O-190} product compared to \texttt{N2O-640} (see Figure~\ref{fig:N2O190640Comparison}).
-
 \begin{figure}
   \centerline{\includegraphics[width=\linewidth-10pt]
   {figures/InspectZM_2009m04_N2O-190-v06-0x_N2O-640-v06-0x_userHeightRange}}
@@ -19,9 +17,7 @@ The 190\nobreakdash-GHz \ch{N2O} data product in general shows slightly worse pr
   \label{fig:N2O190640Comparison}
 \end{figure}
 
-Other significant differences between the \thisv \texttt{N2O-190} and \texttt{N2O-640} data such as the resolution, precision, recommended pressure levels, quality and convergence criteria are noted below.
-
-The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the period from launch until June 6, 2013 and stored in the \texttt{L2GP-DGG} files in the \texttt{N2O-640} swath. Details of the retrieval method and validation results are presented in \citet{LambertEtal:2007}.
+The 190\nobreakdash-GHz \ch{N2O} data product in general shows slightly worse precision and resolution compared to the 640\nobreakdash-GHz retrievals, although the 190\nobreakdash-GHz precision is substantially better at 100--68\,hPa. Data from \texttt{N2O-190} and \texttt{N2O-640} have been compared from launch until the end of Band~12 operations. A persistent, latitude-dependent, low bias over the pressure range 100 to 15\,hPa is seen in the \texttt{N2O-190} product compared to \texttt{N2O-640} (see Figure~\ref{fig:N2O190640Comparison}).  Other significant differences between the \thisv \texttt{N2O-190} and \texttt{N2O-640} data such as the resolution, precision, recommended pressure levels, quality and convergence criteria are noted below. The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the period from launch until June 6, 2013 and stored in the \texttt{L2GP-DGG} files in the \texttt{N2O-640} swath. Details of the retrieval method and validation results are presented in \citet{LambertEtal:2007}.
 
 \subsection{Resolution}
 
@@ -29,7 +25,7 @@ The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the p
 
 \onestandardavk{N2O-640}{640\,GHz \ch{N2O}}
 
-The spatial resolution reported by the averaging kernel matrices is shown in Figures~\ref{fig:AvkN2O} for the \mbox{190-GHz} measurements and~\ref{fig:AvkN2O-640} for the \mbox{640-GHz} measurements (available in the \texttt{L2GP-DGG} files for data prior to June~6, 2013). For \texttt{N2O-190}, the vertical resolution is 5--7\,km and the horizontal along-track resolution is 330--525\,km. For \texttt{N2O-640}, the vertical resolution is 4--6\,km and the horizontal along-track resolution is 330--600\,km over most of the useful range of the retrievals.
+The spatial resolution reported by the averaging kernel matrices is shown in Figures~\ref{fig:AvkN2O} for the \mbox{190-GHz} measurements and~\ref{fig:AvkN2O-640} for the \mbox{640-GHz} measurements. For \texttt{N2O-190}, the vertical resolution is 5--7\,km and the horizontal along-track resolution is 330--525\,km. For \texttt{N2O-640}, the vertical resolution is 4--6\,km and the horizontal along-track resolution is 330--600\,km over most of the useful range of the retrievals.
 
 The horizontal cross-track resolution is set by the 7\,km width of the MLS 190\nobreakdash-GHz field of view for all pressures. Note that the higher frequency MLS 640\nobreakdash-GHz measurements have a narrower 3\,km field of view. The longitudinal separation of the MLS measurements is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
 
@@ -39,14 +35,14 @@ Precision as defined here is the 1$\sigma$ uncertainty in the retrieved value ca
 
 \subsection{Accuracy}
 
-The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products using the same detailed analyses presented for MLS \texttt{N2O-640} \vii data in \citet{LambertEtal:2007} to quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty and approximations in the retrieval formulation and implementation.
+The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products using the same detailed analyses as were presented for MLS \texttt{N2O-640} \vii data in \citet{LambertEtal:2007}. These analyses quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty and approximations in the retrieval formulation and implementation.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:N2OScreening}
 \begin{description}
   \item[Pressure range (\texttt{N2O-190}):] \screeningrule{100--0.46\,hPa}
-  \item[Pressure range (\texttt{N2O-640}):] \screeningrule{100--0.46\,hPa} \standardrangestatement\ In the upper stratosphere and lower mesosphere \thisv \ch{N2O} requires significant averaging for useful signals, but see the note under ``Artifacts'' for issues at pressures below 0.1\,hPa.
+  \item[Pressure range (\texttt{N2O-640}):] \screeningrule{100--0.46\,hPa} \standardrangestatement\ In the upper stratosphere and lower mesosphere, \thisv \ch{N2O} requires significant averaging for in order to obtain a scientifically useful signal-to-noise ratio, but see the note under ``Artifacts'' for issues at pressures smaller than 0.1\,hPa.
 
     \standardprecisionrule
     \evenstatusrule
@@ -59,14 +55,14 @@ The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for bot
 
   \item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01} A fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level will be discarded via this screening.
 
-  \item[Clouds:] Clouds have little impact on the \ch{N2O} products at the recommended pressure levels. Ignore status bit 16 (high cloud) or bit 32 (low cloud) indicating the presence of clouds. See artifacts for more details.
+  \item[Clouds:] Clouds have little impact on the \ch{N2O} products at the recommended pressure levels. \ch{N2O} data can be used regardless of the value of the status bits 16 (high cloud) or bit 32 (low cloud) used to indicate the presence of clouds. See artifacts for more details.
 
 \end{description}
 \end{nofloatpages}
 
 \subsection{Artifacts}
 
-There are occasional outliers at the highest pressure levels in \texttt{N2O-190} and \texttt{N2O-640} products. As with \prevv, very thick clouds in the tropics produce a low rate of artifacts in the \thisv \ch{N2O} products since improvements in the handling of radiances affected by clouds have reduced the frequency of outliers compared to older versions. The cloud bits of the \texttt{Status} field are too blunt a tool to identify these rare cases, needlessly discarding reasonable data. Screening using the convergence and quality fields (see above) is recommended to remove the majority of these data points.
+There are occasional outliers at the largest pressures (lowest altitude) levels in \texttt{N2O-190} and \texttt{N2O-640} products. As with \prevv, very thick clouds in the tropics produce a low rate of artifacts in the \thisv \ch{N2O} products since improvements in the handling of radiances affected by clouds have reduced the frequency of outliers compared to older versions. The cloud bits of the \texttt{Status} field are too blunt a tool to identify these rare cases; rejecting profiles flagged with these bits would needlessly discard reasonable data. Screening using the \texttt{Convergence} and \texttt{Quality} fields (see above) is recommended to remove the majority of these data points.
 
 The retrieval restricts \ch{N2O} values to be greater than $-40\,\text{ppbv}$ (approximately three times the retrieval noise level in the recommended pressure range) in order to prevent problems in the minimization search process. The low bound is applied at all levels, but it is only evident in the data for pressures less than 0.1\,hPa, where the vertical smoothing is relaxed and the retrieval noise becomes comparable to the magnitude of the low bound value. Accordingly, statistical averaging of the data (zonal means or longer time periods) cannot be applied successfully for pressures at and less than 0.1\,hPa as the $-40\,\text{ppbv}$ hard limit introduces a positive bias in any average.
 

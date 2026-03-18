@@ -1,7 +1,8 @@
 \speciestitle{Ozone}{\ch{O3}}{O3}{%
   \item[Useful range:] 261--0.001\,hPa
-  \item[Product leads:] Lucien Froidevaux (stratosphere/mesosphere) \\ Michael Schwartz (upper troposphere), \email{Michael.J.Schwartz@jpl.nasa.gov}
-  \item[Contact:] Alyn Lambert (stratosphere/mesosphere), \email{Alyn.Lambert@jpl.nasa.gov}}
+  \item[Product leads:] Lucien Froidevaux (stratosphere/mesosphere), Michael Schwartz (upper troposphere) 
+  \item[Contacts:] Alyn Lambert (stratosphere/mesosphere) \email{Alyn.Lambert@jpl.nasa.gov} \newline
+  Michael Schwartz (upper troposphere) \email{Michael.J.Schwartz@jpl.nasa.gov}}
   
 \subsection{Introduction}
 
@@ -35,7 +36,7 @@ The vertical retrieval grid for the \thisv ozone product is the same as that of 
 
 Figure \ref{fig:MLSv5v6O3ContourStrat} shows zonally-averaged stratospheric and mesospheric ozone field comparisons between \prevv and \thisv for the (full) month of April, 2009, for properly screened profiles only; mean differences (ppmv and percent) are also shown. Similar plots focusing on the UTLS are provided in Figure \ref{fig:MLSv5v6O3ContourUTLS}. The absolute values of the differences between \prevv and \thisv above the tropopause for this year and month (but also for various other periods that we have checked) are typically less than 1 to 2\%, and under 0.1\,ppmv for the upper troposphere. In the UTLS, differences between the two versions are usually smaller than 2\,ppbv, and less than 1 to 2\% as well.
 
-% \paragraph*{Ozone Columns} Changes in the MLS stratospheric ozone columns between \prevv and \thisv are very small and not significant; daily zonal average column differences are typically less than one percent.
+Changes in the MLS stratospheric ozone columns between \prevv and \thisv are very small and not significant; daily zonal average column differences are typically less than one percent.
 
 \subsection{Resolution}
 
@@ -43,8 +44,7 @@ Figure \ref{fig:MLSv5v6O3ContourStrat} shows zonally-averaged stratospheric and 
 
 \begin{figure}
   \centering\includegraphics[width=0.8\linewidth]{figures/avk-O3_HR-UTLS}
-  \caption{As for Figure~\protect{\ref{fig:AvkO3_HR}} but zooming in on the
-    upper troposphere and lower stratosphere region.}
+  \caption{As for Figure~\protect{\ref{fig:AvkO3_HR}} but for the upper troposphere and lower stratosphere region.}
   \label{fig:AvkO3_HR_UTLS}
 \end{figure}
 
@@ -54,7 +54,7 @@ Typical resolution values are provided in the summary Table~\ref{tab:O3Summary},
 
 As found previously, the Level~2 precision values (Table~\ref{tab:O3Summary}) are often slightly smaller than the scatter observed in a narrow latitude band centered around the equator (where atmospheric variability is expected to be small) or obtained from a comparison between ascending and descending coincident MLS profiles.
 
-Negative precision values for ozone sometimes occur at the largest and smallest pressure values within the recommended range. Precision values are flagged negative to indicate that retrieved values are strongly influenced by the a priori, although some geophysical information may also be present. Caution is required if one wants to include such profile portions in scientific analyses, and the general recommendation is to ignore these values.
+Negative precision values for ozone sometimes occur at the largest and smallest pressure values within the recommended range. Precision values are flagged negative to indicate that retrieved values are strongly influenced by the a~priori, although some geophysical information may also be present. Caution is required if one wants to include such profile portions in scientific analyses, and the general recommendation is to ignore these values.
 
 The estimated precisions for the \thisv MLS column ozone abundances down to pressures of 100 to 215\,hPa are 2\% or less. The typical empirical precision in the columns based on (1$\sigma$) variability in the tropics is 2 to 3\%.
 
@@ -62,13 +62,13 @@ The estimated precisions for the \thisv MLS column ozone abundances down to pres
 
 The accuracy estimates shown in Table~\ref{tab:O3Summary} are from an analysis that propagates estimated systematic errors in MLS calibration, spectroscopy, etc., through the MLS measurement system, as described (for \vii) in \citet{ReadEtal:2007}. The values shown here are intended to represent 2$\sigma$ estimates of accuracy. Comparison of MLS \ch{O3} with well-established data sets shows no evidence of significant biases overall, although the oscillations in the UTLS at low latitudes lead to some systematic effects which can reach 20--40\%, depending on the pressure level. For more details, see the MLS validation papers by \citet{FroidevauxEtal:2008:O3}, \citet{JiangEtal:2007:MLSO3Valid}, and \citet{LiveseyEtal:2008}, as well as references therein. More recent references relevant to MLS ozone are available on the MLS website under ``Publications''. For validation purposes, see, in particular, the comprehensive work by \citet{HubertEtal:2016}. 
 
-During development of the \prevv MLS dataset, sensitivity tests using systematic changes in various uncertain parameters that impact the ozone retrieval revealed possible biases (2$\sigma$ estimates) of about 4\%, as an estimated accuracy for the MLS column values (from integrated MLS ozone profiles down to 100, 147, and 215\,hPa). This estimate is still expected to hold for \thisv data. See the validation papers (and subsequent ozone-related publications, e.g., available from the MLS website) for results on column ozone comparisons versus satellite, sonde, and lidar data. \mycomment{Can/should we update this based on the v6 results? [note this is COLUMN])}
+During development of the \viv MLS dataset, sensitivity tests using systematic changes in various uncertain parameters that impact the ozone retrieval revealed possible biases ($2\sigma$ estimates) of about 4\%, as an estimated accuracy for the MLS column values (from integrated MLS ozone profiles down to 100, 147, and 215\,hPa). This estimate is still expected to hold for \thisv data.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:O3Screening}
 \begin{description}
-\item[Pressure range:] \screeningrule{261--0.001\,hPa.} \standardrangestatement{} Data at 0.00046\,hPa represents a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but would benefit from consultation with the MLS team. \standardprecisionrule \evenstatusrule
+\item[Pressure range:] \screeningrule{261--0.001\,hPa.} \standardrangestatement{} Data at 0.00046\,hPa represents a total column at and above that pressure level. Scientific use of these 0.00046\,hPa data may be possible, but requires consultation with the MLS team. \standardprecisionrule \evenstatusrule
 
 \item[Quality:] \qualityrule{1.0}
 
@@ -89,7 +89,7 @@ We have found that latitudinal and temporal changes observed in various correlat
 \subsection{Artifacts}
 
 \begin{description}
-  \item[Oscillations in UTLS ozone:] While significant reduction in vertical oscillations in the UT ozone retrieval was accomplished in a previous version, oscillations are still evident in \thisv, particularly at low latitudes. We have performed studies with different a priori values, and have not found a satisfactory resolution of this issue for now. It is possible that the retrieval grid is slightly too fine; also, we are likely reaching the limit of possible retrieval remedies to the net impact of (known and unknown) systematic uncertainties on the MLS ozone retrievals. These oscillations are not expected to significantly impede studies of long-term trends.
+  \item[Oscillations in UTLS ozone:] While significant reduction in vertical oscillations in the UT ozone retrieval was accomplished in a previous version, oscillations are still evident in \thisv, particularly at low latitudes. We have performed studies with different a~priori values, and have not found a satisfactory resolution of this issue for now. It is possible that the retrieval grid is slightly too fine; also, we are likely reaching the limit of possible retrieval remedies to the net impact of (known and unknown) systematic uncertainties on the MLS ozone retrievals. These oscillations are not expected to significantly impede studies of long-term trends.
 \end{description}
 
 \begin{table}

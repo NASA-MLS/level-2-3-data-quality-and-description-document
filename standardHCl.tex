@@ -1,7 +1,7 @@
 \speciestitle{Hydrogen Chloride}{HCl}{HCl}{%
   \item[Useful range:] 100--0.32\,hPa
   \item[Product lead:] Lucien Froidevaux
-  \item[Contact:] Michelle Santee, \email{Michelle.L.Santee@jpl.nasa.gov}}
+  \item[Contact:] Michelle Santee \email{Michelle.L.Santee@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
@@ -17,7 +17,7 @@ As the arrangement of channels in Band~14 is not optimized to measure the HCl li
   \label{fig:MLSHCl2bands}
 \end{figure}
 
-Limb radiances measured by the MLS \mbox{640-GHz} radiometer are affected by water vapor (and other species) in addition to \ch{HCl}.  As noted in Section~\ref{sec:R2DutyCycling}, as of May 2024, the MLS \mbox{190-GHz} radiometer, which is used to measure water vapor, is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, a priori information for \ch{H2O} (based on climatological values) is used in the \ch{HCl} retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HClScreening}. Detailed validation of the MLS \vii \ch{HCl} product and comparisons with other data sets were presented by \citet{FroidevauxEtal:2008:HCl}; based on the overall small changes in \ch{HCl} data since \vii, the conclusions of that study should remain essentially unchanged for \thisv. Table~\ref{tab:HClSummary} summarizes the estimated resolution, precision, and accuracy of the \thisv MLS \ch{HCl} measurements as a function of pressure.
+Limb radiances measured by the MLS \mbox{640-GHz} radiometer are affected by water vapor (and other species) in addition to \ch{HCl}.  As noted in Section~\ref{sec:R2DutyCycling}, as of May 2024, the MLS \mbox{190-GHz} radiometer, which is used to measure water vapor, is operated only intermittently. When that radiometer is turned off and \ch{H2O} measurements are not available, a~priori information for \ch{H2O} (based on climatological values) is used in the \ch{HCl} retrievals, adversely affecting their quality; further details are given in Section~\ref{sec:HClScreening}. Detailed validation of the MLS \vii \ch{HCl} product and comparisons with other data sets were presented by \citet{FroidevauxEtal:2008:HCl}; based on the overall small changes in \ch{HCl} data since \vii, the conclusions of that study should remain essentially unchanged for \thisv. Table~\ref{tab:HClSummary} summarizes the estimated resolution, precision, and accuracy of the \thisv MLS \ch{HCl} measurements as a function of pressure.
 
 \subsection{Changes from \prevv}
 
@@ -38,7 +38,7 @@ Typical (rounded off) values for resolution are provided in Table~\ref{tab:HClSu
 
 \subsection{Precision}
 
-The estimated single-profile precision of MLS HCl reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere. The \thisv precision has not changed significantly from that in \prevv. The Level~2 precision values are often only slightly smaller than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often weaker than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles. The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where a priori and smoothing constraints have a larger impact. The HCl precision values increase rapidly (i.e., precision worsens) at pressures less than 0.2\,hPa and are generally flagged negative (or zero) at pressures less than 0.1\,hPa, indicating increasing influence from the a priori and thus poorer measurement sensitivity and reliability.
+The estimated single-profile precision of MLS HCl reported by the Level~2 software varies from \mytexttilde0.2 to 0.6\,ppbv in the stratosphere (see Table~\ref{tab:HClSummary}), with poorer precision obtained in the lower mesosphere. The \thisv precision has not changed significantly from that in \prevv. The Level~2 precision values are often only slightly smaller than the observed scatter in the data, as evaluated from a narrow latitude band centered around the equator where atmospheric variability is often weaker than elsewhere, or as obtained from a comparison between ascending and descending coincident MLS profiles. The scatter in MLS data and in simulated MLS retrievals (using noise-free radiances) becomes smaller than the theoretical precision (given in the Level~2 files) in the upper stratosphere and mesosphere, where a~priori and smoothing constraints have a larger impact. The HCl precision values increase rapidly (i.e., precision worsens) at pressures less than 0.2\,hPa and are generally flagged negative (or zero) at pressures less than 0.1\,hPa, indicating increasing influence from the a~priori and thus poorer measurement sensitivity and reliability.
 
 \subsection{Accuracy}
 
@@ -75,7 +75,7 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
   
   \item Users should screen out the non-converged and poorest-quality HCl profiles, as such profiles (typically less than 0.2\% of the data) tend to behave unlike the majority of the other MLS retrievals. See the criteria listed above.
   
-  \item As discussed in Section~\ref{sec:HClScreening}, biases in HCl values are present at some levels when coincident measurements from the \mbox{190-GHz} radiometer are not available and \ch{H2O} a priori information is used in the HCl retrieval. Depending on the specific goals of any study based on these measurements, additional HCl data quality filtering may be necessary for days when the \mbox{190-GHz} radiometer is off.
+  \item As discussed in Section~\ref{sec:HClScreening}, biases in HCl values are present at some levels when coincident measurements from the \mbox{190-GHz} radiometer are not available and \ch{H2O} a~priori information is used in the HCl retrieval. Depending on the specific goals of any study based on these measurements, additional HCl data quality filtering may be necessary for days when the \mbox{190-GHz} radiometer is off.
 \end{itemize}
 
 \begin{table}

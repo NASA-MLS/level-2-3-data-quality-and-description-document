@@ -1,10 +1,10 @@
 \speciestitle{Relative Humidity with respect to Ice}{RHI}{RHI}{
   \item[Useful range:] UTRHI, mean layer value for P $\le$ 383\,hPa, Profile from 316--0.001\,hPa.
-  \item[Product lead:] William Read, \email{william.g.read@jpl.nasa.gov}}
+  \item[Product lead:] William Read \email{william.g.read@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
-The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa, thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to those employed for nadir sounding humidity instruments (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``\texttt{UTRHI}'' (upper tropospheric relative humidity with respect to ice) value, representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower altitude constraint and a priori for the vertically resolved humidity product that begins at 316\,hPa. From 316 to 10\cp{$-$5}\,hPa, RHI is derived from the standard products of water mixing ratio and temperature using the Goff-Gratch ice humidity saturation formula. Validation of the \vii RHI product is presented in \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} summarizes the RHI precision, resolution, and accuracy. The precision and accuracy figures for \thisv have been updated based upon error analysis following the methods described in \citet{ReadEtal:2007}. The equivalent table for \prevv in \citet{EOSMLSV5Quality} included some analysis errors and footnote mislabeling that were discovered while performing this investigation. Those errors are corrected in Table~\ref{tab:RHISummary} herein for \thisv.
+The vertical grid for the relative humidity with respect to ice (RHI) product is 12 levels per decade change in pressure for 1000--1.0\,hPa, thinning to 6~levels per decade for 1.0--0.1\,hPa and finally 3~levels per decade for 0.1--10\cp{$-$5}\,hPa. The RHI product is a fusion of results from two separate retrievals. From 1000--383\,hPa, RHI is retrieved directly from optically thick radiances using measurement and retrieval principles similar to those employed for nadir sounding humidity instruments (e.g., TOVS). All grid levels between 1000--383\,hPa are filled with a uniform ``\texttt{UTRHI}'' (upper tropospheric relative humidity with respect to ice) value, representing the mean value of a broad layer (\mytexttilde4--6\,km) that peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes). This humidity is used as a lower-altitude constraint and a~priori for the vertically resolved humidity product that begins at 316\,hPa. From 316 to 10\cp{$-$5}\,hPa, RHI is derived from the standard products of water vapor mixing ratio and temperature using the Goff-Gratch ice humidity saturation formula. Validation of the \vii RHI product is presented by \citet{ReadEtal:2007}. Table~\ref{tab:RHISummary} summarizes the RHI precision, resolution, and accuracy. The precision and accuracy figures for \thisv have been updated based upon error analysis following the methods described by \citet{ReadEtal:2007}. The equivalent table for \prevv in the previous edition of this document \citep{EOSMLSV5Quality} included some analysis errors and footnote mislabeling that were discovered while performing this investigation. Those errors are corrected in Table~\ref{tab:RHISummary} herein for \thisv.
 
 \subsection{Changes from \prevv}
 
@@ -18,50 +18,50 @@ There are no changes between \prevv and \thisv for the \texttt{UTRHI} (1000--383
     \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_60s-30s.pdf}
     \includegraphics[width=0.8\linewidth]{figures/mls_rhi_v2-v3-v4-v5-v6_prfl_90s-60s.pdf}
   \end{center}
-  \caption{A zonal mean comparison of RHI profiles in five latitude bands. MLS \vii (blue), \viii (cyan), \viv (mustard), \vv (dark blue/orange), and \vvi (dark red). RHI for Jan-Feb-Mar 2005.  Other time periods are similar. The left panel shows the mean profiles, the center shows the mean difference from \vv (blue, cyan, mustard, orange and red lines with diamonds). The colored lines without symbols are each versions' estimated precision. The right panel shows the estimated retrieval precision (solid lines with bullets) and measured variability (dotted lines) which includes atmospheric variability about the mean profile. x-axes are RHi in percent, y-axis are pressure in hPa.}
+  \caption{Comparisons of MLS \vii (blue), \viii (cyan), \viv (mustard), \vv (orange), and \vvi (dark red) RHI profiles (in percent) for January-February-March 2005 in five latitude bands. Results for other time periods (not shown) are similar. Left panels show mean profiles, center panels show the mean differences from \vv (colored  lines with diamonds) surrounded by each version's estimated precision (colored lines with no symbols), and right panels show the estimated retrieval precision (solid lines with bullets) and measured variability (which includes atmospheric variability about the mean profile; dotted lines).}
   \label{fig:avgmlsRHIprflcomp}
 \end{figure}
 
-Figure~\ref{fig:avgmlsRHIprflcomp} compares MLS \vi, \vii, \viii, \viv and \prevv RHI to \thisv. The changes seen reflect changes in temperature resulting from adjustments made to the filter shapes in the temperature-sounding channels and from changes in \ch{H2O} resulting from an adjustment made to the MLS 190\nobreakdash-GHz radiance observations in order to improve the \ch{N2O} product (see Sections~\ref{sec:V6N2OCorrectionBriefSummary}, \ref{sec:V6N2OCorrectionDetails}, and~\ref{sec:StandardN2O}).
+Figure~\ref{fig:avgmlsRHIprflcomp} compares MLS \vii, \viii, \viv and \prevv RHI to \thisv. The changes seen reflect changes in temperature resulting from adjustments made to the filter shapes in the temperature-sounding channels and changes in \ch{H2O} resulting from an adjustment made to the MLS 190\nobreakdash-GHz radiance observations in order to improve the \ch{N2O} product (see Sections~\ref{sec:V6N2OCorrectionBriefSummary}, \ref{sec:V6N2OCorrectionDetails}, and~\ref{sec:StandardN2O}).
 
-Relative humidity data at pressures greater than 316\,hPa are derived from a broad layer relative humidity retrieval (using low-limb-viewing MLS wing channel radiances) similar to that obtained from NOAA operational humidity sounders such as TOVS\@. As noted in \citet{ReadEtal:2007}, the \vii retrieval at these pressures was likely to be \mytexttilde30\% too high, based on comparisons with AIRS\@. The accuracy of the low-altitude RHI retrieval is highly sensitive to the assumed transmission efficiency of the MLS optics system. In \viii (and later verions) this transmission was adjusted empirically (within the uncertainty range established from MLS calibration) to give better agreement with AIRS in the tropics. In \viv (and later versions) the N\cs2 continuum was adjusted (for this low-altitude RHI phase only) in order to minimize the clear sky cloud induced radiance bias. Other than the changes to sideband fractions and pointing offsets detailed in Section~\ref{sec:StandardH2O}, no specific changes are implemented in this low-altitude RHI retrieval for either \prevv or \thisv. The results of this retrieval provide an a priori and profile constraint for the humidity profile at pressures greater than 316\,hPa which are not retrieved in the standard \ch{H2O} product retrieval.
+Relative humidity data at pressures greater than 316\,hPa are derived from a retrieval of RHI over a single broad layer (using low-limb-viewing MLS wing channel radiances); a similar approach is employed by NOAA nadir-viewing operational humidity sounders such as TOVS\@. As noted by \citet{ReadEtal:2007}, the MLS \vii RHI retrievals at pressures larger than 316\,hPa were likely to be \mytexttilde30\% too high, based on comparisons with AIRS\@. The accuracy of the low-altitude RHI retrieval is highly sensitive to the assumed transmission efficiency of the MLS optics system. In \viii \mycomment{H2O section says this was v4, Bill to fix} (and later versions) the assumed value of the MLS antenna transmission efficiency was adjusted empirically (within the uncertainty range established from MLS pre-launch calibration) to give better agreement with AIRS in the tropics. Also in \viv and later versions, the assumed \ch{N2} continuum emission/absorption coefficient was adjusted (for this low-altitude RHI phase only), to minimize the clear sky cloud induced radiance bias. Other than the changes to sideband fractions and pointing offsets detailed in Section~\ref{sec:StandardH2O}, no specific changes are implemented in the low-altitude RHI retrieval for either \prevv or \thisv. The results of this retrieval provide an a~priori and profile constraint for the humidity profile at pressures greater than 316\,hPa, where the standard \ch{H2O} product is not retrieved.
 
-The third panel in Figure~\ref{fig:avgmlsRHIprflcomp} shows the mean estimated single profile precision and the measured variability (which includes instrument noise and atmospheric variability). All the versions show very similar precision, and in the lower stratosphere and upper troposphere these precision uncertainties are much smaller than the measured atmospheric variability. The precision for 383\,hPa (and larger pressures) is reported in the \texttt{L2GP} files as 0\% by mistake. The actual precision is typically 0.2\%.
+The third column in Figure~\ref{fig:avgmlsRHIprflcomp} shows the mean estimated single-profile precision and the measured variability (which reflects a combination of instrument noise and atmospheric variability). All versions show very similar precision, and in the lower stratosphere and upper troposphere these precision estimates are much smaller than the measured atmospheric variability. The precision for 383\,hPa (and larger pressures) is reported in the \texttt{L2GP} RHI files as 0\% by mistake. The actual precision is typically 0.2\%.
 
 \subsection{Resolution}
 
-RHI for pressures of 316\,hPa and smaller is a derived product and therefore a retrieval averaging kernel is not directly available. An estimate for the spatial resolution (vertical \texttimes along track) of this product is a combination of the temperature and \ch{H2O} resolutions. Typically \ch{H2O} has the poorer horizontal resolution and temperature has the poorer vertical resolution. Therefore, as a first-order estimate of spatial resolution, the horizontal resolution of the \ch{H2O} product should be assumed, along with the vertical resolution for temperature (see \ref{sec:StandardH2O} and \ref{sec:StandardTemperature}). The cross track resolution is probably 12\,km, the larger of the temperature and \ch{H2O} cross track resolutions. These resolutions are only true under the assumption that the mean $\log(\text{\ch{H2O}})$ doesn't change appreciably over the broader temperature measurement volume. The longitudinal separation of the MLS measurements, set by the Aura orbit, is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
+RHI for pressures of 316\,hPa and smaller is a derived product, and therefore a retrieval averaging kernel is not directly available. An estimate for the spatial resolution (vertical \texttimes\ along track) of this product is a combination of the temperature and \ch{H2O} resolutions. Typically \ch{H2O} has poorer horizontal resolution and temperature has poorer vertical resolution. Therefore, as a first-order estimate of spatial resolution, the horizontal resolution of the \ch{H2O} product should be assumed, along with the vertical resolution for temperature (see Sections~\ref{sec:StandardH2O} and \ref{sec:StandardTemperature}). The cross-track resolution should he assumed to be 12\,km, the larger of the temperature and \ch{H2O} cross-track resolutions. These estimated resolution values are only valid under the assumption that the mean $\log(\text{\ch{H2O}})$ does not change appreciably over the broader temperature measurement volume. The longitudinal separation of the MLS measurements, set by the Aura orbit, is 10\degsym--\,20\degsym\ over middle and lower latitudes, with much finer sampling in polar regions.
 
-The RHI for pressures greater than 316\,hPa, represents the mean value over a broad layer (4--6\,km) whose sensitivity peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes).
+RHI for pressures greater than 316\,hPa represents the mean value over a broad layer (4--6\,km) whose sensitivity peaks between \mytexttilde350\,hPa (in the moist tropics) and \mytexttilde650\,hPa (typical for dry high latitudes).
 
 \subsection{Precision}
 
-The values for precision are the root sum square (RSS) precisions for \ch{H2O} and temperature propagated through the Goff-Gratch relationship, see Sections~\ref{navSectionH2O} and~\ref{navSectionTemperature} for more details. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a priori precision for either temperature or \ch{H2O} --- an indication that the data are biased toward the a priori value. The precisions for levels between 1000 and 383~hPa (vertical levels 1--6) are reported as 0\% by error. It should typically be 0.2\% and is the same value for all levels between 1000 and 383~hPa.
+The values for precision are the root sum square (RSS) precisions for \ch{H2O} and temperature propagated through the Goff-Gratch relationship; see Sections~\ref{navSectionH2O} and \ref{navSectionTemperature} for more details. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a~priori precision for either temperature or \ch{H2O} --- an indication that the data are biased toward the a~priori value. The precisions for all levels between 1000 and 383\,hPa, which are erroneously reported as 0\% in the RHI L2GP files, should typically be 0.2\%.
 
 \subsection{Accuracy}
 
-The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scaled into \%\,RHI units. see sections~\ref{sec:StandardH2O} and~\ref{sec:StandardTemperature} for more details.
+The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scaled into \%\,RHI units; see Sections~\ref{sec:StandardH2O} and~\ref{sec:StandardTemperature} for more details.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:RHIScreening}
 \begin{description}
 
-  \item[Pressure range:] \screeningrule{The product describes a vertically resolve profile from 316--0.001\,hPa; data for pressures larger than 316\,hPa represent mid/upper troposphere column.} \standardrangestatement 
+  \item[Pressure range:] \screeningrule{The product describes a vertically resolved profile over the range 316--0.001\,hPa; data for pressures larger than 316\,hPa represent the mid-to-upper tropospheric column.} \standardrangestatement 
   
   \standardprecisionrule
   
   \evenstatusrule
 
-  \item[Clouds:] Ignore status bits 16 (high clouds) or 32 (low clouds) set indicating the presence of clouds. See artifacts for more details.
+  \item[Clouds:] Profiles flagged as being affected by high or low clouds (i.e., with \texttt{Status} bits corresponding to values of \texttt{16} and \texttt{32} set) can continue to be used. See Section~\ref{sec:artifacts} for more details.
 
   \item[Quality field:] \screeningrule{The \texttt{Quality} fields for both the \texttt{L2GP-RHI} and \texttt{L2GP-Temperature} swaths need to be considered, as described below:}
     \begin{description}
-      \item[For pressures of 83\,hPa and smaller:] Use only profiles with RHI \texttt{Quality} \emph{greater} than 0.7 and Temperature \texttt{Quality} \emph{greater} than 0.2
-      \item[For pressures of 100\,hPa and larger:] Use only profiles with RHI \texttt{Quality} \emph{greater} than 0.7 and Temperature \texttt{Quality} \emph{greater} than 0.9.
+      \item[For pressures of 83\,hPa and smaller:] Only use profiles with RHI \texttt{Quality} \emph{greater} than 0.7 and temperature \texttt{Quality} \emph{greater} than 0.2
+      \item[For pressures of 100\,hPa and larger:] Only use profiles with RHI \texttt{Quality} \emph{greater} than 0.7 and temperature \texttt{Quality} \emph{greater} than 0.9.
     \end{description}
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the RHI \texttt{Convergence} \emph{less} than 2.0 and Temperature \texttt{Convergence} \emph{less} than 1.03 should be used in scientific studies.}
+  \item[Convergence field:] \screeningrule{Only profiles with a value of the RHI \texttt{Convergence} \emph{less} than 2.0 and temperature \texttt{Convergence} \emph{less} than 1.03 should be used in scientific studies.}
 
   \item[Temperature precision:] The \texttt{L2gpPrecision} field in the \texttt{L2GP-Temperature} file can be used to further eliminate outliers that are believed to be the result of thick clouds, primarily in the tropics. If careful screening of the troposphere is required, levels 261--178\,hPa should be avoided if any of the following criteria are met:
     \begin{description}
@@ -70,24 +70,27 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
       \item[At 215\,hPa:] \texttt{L2gpPrecision} $>0.825$\,K
     \end{description}
 
-  \item[Additional screening for RHI based on \ch{H2O}:] Eliminate highly oscillatory profiles by rejecting \ch{H2O} profiles having values less than 0.101\,ppmv at any pressure $< 1$\,hPa (vertical levels 1--37).
+  \item[Additional screening for RHI based on \ch{H2O}:] Eliminate highly oscillatory RHI profiles by rejecting those that have collocated \ch{H2O} values less than 0.101\,ppmv at any pressure smaller than 1\,hPa.
 \end{description}
 \end{nofloatpages}
-\subsection{Artifacts}
 
-See Sections~\ref{sec:StandardH2O} for \ch{H2O} and \ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1 to 2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, sources of systematic error, in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set, particularly for pressures greater than 200\,hPa. This will erroneously increase the frequency of occurrence of supersaturation in the tail of MLS RHI distributions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, one must remove the contribution from temperature noise as part of the analysis as described in \citet{BuehlerEtal:2003}. Measurements taken in the presence of clouds significantly degrade the precision, that is increases the scatter about the mean, but the mean bias as compared to AIRS changes by less than 10\%.  Also, users should note the possibility of a potential drift in the MLS lower stratospheric water vapor product, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}. Such a drift will also impact the RHI product.
+\subsection{Artifacts}
+\label{sec:artifacts}
+
+See Sections~\ref{sec:StandardH2O} for \ch{H2O} and \ref{sec:StandardTemperature} for temperature for specific issues related to these parent products. Effects of MLS temperature precision (\mytexttilde1 to 2\,K) must be considered if one wishes to use MLS RHI to study supersaturation. In simulation studies, sources of systematic error, in addition to introducing biases, also increase variability in differences with respect to a ``truth'' data set, particularly for pressures greater than 200\,hPa. This will erroneously increase the frequency of occurrence of supersaturation in the tail of MLS RHI distributions. Therefore, MLS RHI is not recommended for studying statistics of supersaturation at pressures greater than 178\,hPa. For smaller pressures, the contribution from temperature noise must be removed as part of the analysis, as described by \citet{BuehlerEtal:2003}. Measurements taken in the presence of clouds significantly degrade the precision, that is increases the scatter about the mean, but the mean bias as compared to AIRS changes by less than 10\%.  Also, users should note the possibility of a potential drift in the MLS lower stratospheric water vapor product, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}. Such a drift will also impact the RHI product.
+
+\mycomment{Suggested replacements for above sentences: Clouds in the field of view degrade measurement precision, increasing the scatter about the mean; nevertheless, comparisons with AIRS data show that the mean bias changes by less than 10\%. In addition, the drift in MLS water vapor, discussed in Sections~\ref{sec:R2Drift} and~\ref{sec:H2OChanges}, also affects the RHI product.}
 
 \subsection{Review of comparisons with other datasets}
 
-Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show comparisons between AIRS v7 and MLS \vii, \viii, \viv, \vv, and \vvi. Mapped features tend to agree well but MLS produces higher relative humidities in the moist regions of the tropics relative to AIRS. One noteworthy feature is that at high latitudes at 200 and 250\,hPa, \thisv and \prevv have higher relative humidity than previous versions. This difference likely reflects an effort to address a dry bias in the MLS \ch{H2O} retrieval discussed in Section~\ref{sec:StandardH2O}.
+Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show comparisons between AIRS v7 and MLS \vii, \viii, \viv, \vv, and \vvi RHI\@. Mapped features generally agree well, but MLS produces higher relative humidities in the moist regions of the tropics relative to AIRS\@. One noteworthy feature is that at high latitudes at 200 and 250\,hPa, \thisv and \prevv have higher relative humidity than previous versions. This difference likely reflects changes made to address a dry bias in the MLS \ch{H2O} retrieval discussed in Section~\ref{sec:StandardH2O}.
 
 \begin{figure}
   \begin{center}
     \includegraphics[width=0.9\linewidth, trim=0mm 24mm 0mm 8mm]
     {figures/rhi_grid_maps_djf2005_airsv7-mlsv2-v6.png}
   \end{center}
-  \caption{Mapped RHI fields from AIRS v7 (left panel), MLS \vii (2nd from left), MLS \viii (3rd from left), MLS \viv (3rd from right), MLS \vv (2nd from right), and MLS \vvi (right panel) pressures between 300--150\,hPa for December, January, and
-    February 2005.}
+  \caption{Mapped RHI fields from AIRS v7 and MLS \vii,  \viii,  \viv,  \vv, and \vvi at pressures between 300 and 150\,hPa for December-January-February 2005.}
   \label{fig:RHIairsmlsjfm2009maps}
 \end{figure}
 
@@ -96,7 +99,7 @@ Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show
     \includegraphics[width=0.9\linewidth, trim=0mm 24mm 0mm 8mm]
     {figures/rhi_grid_maps_jja2005_airsv7-mlsv2-v6.png}
   \end{center}
-  \caption{Mapped RHI fields from AIRS v7 (left panel), MLS \vii (2nd from left), MLS \viii (3rd from left), MLS \viv (3rd from right), MLS \vv (2nd from right), and \vvi (right panel) pressures between 300--150 hPa for June, July, and August 2005.}
+  \caption{As in Figure~\ref{fig:RHIairsmlsjfm2009maps} but for June-July-August 2005.}
   \label{fig:RHIairsmlsjja2009maps}
 \end{figure}
 
@@ -115,9 +118,9 @@ Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show
 \parbox[m]{5.5em}{\bfseries\centering Resolution%
 \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\, km.}
 V~$\times$~H \newline km} &
-\parbox[m]{7em}{\bfseries\centering Single profile \newline precision
+\parbox[m]{7em}{\bfseries\centering Single-profile \newline precision%
 \footnote{Fractional error ([error in RHI] / RHI) in percent} \newline \%} &
-\parbox[m]{7em}{\bfseries\centering Accuracy \footnote{Fractional error ( [error in RHI] / RHI) in percent}\newline\newline \%} &
+\parbox[m]{7em}{\bfseries\centering Accuracy \footnote{Fractional error ([error in RHI] / RHI) in percent}\newline\newline \%} &
 \parbox[m]{7em}{\bfseries\centering Comments \newline\newline}
 \\ \midrule
 0.00046 & --- & ---  & --- & Unsuitable for scientific use \\  
@@ -145,7 +148,7 @@ V~$\times$~H \newline km} &
 215   & 4.5  $\times$ 263 & 10   & 61 & see Table~\ref{tab:H2OSummary} \\
 261   & 4.7  $\times$ 253 & 9   & 80 & see Table~\ref{tab:H2OSummary} \\
 316   & 4.4  $\times$ 253 & 13   & 167 & see Table~\ref{tab:H2OSummary} \\
-UTRHI, $>$316 & 6 $\times$ 155 & 40(est) & 10(est) & measurement height
+UTRHI, $>$316 & 6 $\times$ 155 & 40(est) & 10(est) & Measurement height
 depends \\
 &                &    &     &   on atmospheric humidity \\
 \bottomrule

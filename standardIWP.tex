@@ -2,13 +2,13 @@
   file).]{Cloud Ice Water Path}{IWP}{IWP}{%
   \item[Units:] g/m\cp2
   \item[Useful range:] MLS IWP is the ice water column above \mytexttilde6\,km
-  \item[Contact: ] Alyn Lambert, \email{Alyn.Lambert@jpl.nasa.gov}}
+  \item[Contact: ] Alyn Lambert \email{Alyn.Lambert@jpl.nasa.gov}}
 
 \subsection{Introduction}
 
 MLS standard IWP is retrieved from cloud-induced radiances (\Tcir) of the 240\nobreakdash-GHz window channel at 650\,hPa tangent pressure (see Figure~\ref{fig:IWPSketch}). It represents a partial column above \mytexttilde6\,km, and is stored in the \thisv L2GP IWC file as a separate swath. For the IWP retrieval, \Tcir\ is first converted to a near horizontal slant path (with a \mytexttilde3\degsym\ elevation angle) IWP ``hIWP'', using the modeled \Tcir--hIWP relation. The hIWP is then converted to the nadir IWP at the tangent point location, and interpolated to the MLS standard horizontal grid.
 
-As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off, in the absence of \ch{H2O} measurements, a priori information for \ch{H2O} (based on climatological values) is used in the derivation of the IWP data product, adversely affecting the quality. Therefore, we do not recommend the use of IWP data during the periods that the \mbox{190\nobreakdash-GHz} radiometer is turned off. Further details are given in Section~\ref{sec:IWPScreening}.
+As noted in Section~\ref{sec:R2DutyCycling}, since May 2024 the \mbox{190\nobreakdash-GHz} radiometer is operated only intermittently. When that radiometer is turned off, in the absence of \ch{H2O} measurements, a~priori information for \ch{H2O} (based on climatological values) is used in the derivation of the IWP data product, adversely affecting the quality. Therefore, we do not recommend the use of IWP data during the periods that the \mbox{190\nobreakdash-GHz} radiometer is turned off. Further details are given in Section~\ref{sec:IWPScreening}.
 
 \subsection{Resolution}
 
