@@ -83,7 +83,7 @@ Column~6 contains estimates of bias based upon comparisons with analyses and wit
 
   \item[Precision:] The \texttt{L2gpPrecision} field can be used to further eliminate outliers that are believed to be the result of thick clouds, primarily in the tropics. If careful screening of the troposphere is required, levels 261--178\,hPa should be avoided if any of the following criteria are met:
     \begin{description}
-      \item[At 316\,hPa:] \texttt{L2gpPrecision} \textgreater\,1.1\,K \textbf{and} latitude \textgreater\,\textminus60\degsym
+      \item[At 316\,hPa:] \texttt{L2gpPrecision} \textgreater\,1.1\,K \textbf{and} latitude \textgreater\,\textminus60\degsym\ (i.e., this rule only applies at latitudes north of 60\degsym{}S)
       \item[At 261\,hPa:] \texttt{L2gpPrecision} \textgreater\,0.7\,K
       \item[At 215\,hPa:] \texttt{L2gpPrecision} \textgreater\,0.825\,K
     \end{description}
