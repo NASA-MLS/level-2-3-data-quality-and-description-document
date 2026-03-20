@@ -33,7 +33,7 @@ Precision as defined here is the 1$\sigma$ uncertainty in the retrieved value ca
 
 \subsection{Accuracy}
 
-The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products by repeating the same detailed analyses as were presented for MLS \texttt{N2O-640} \vii data by \citet{LambertEtal:2007}. These analyses quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation.
+The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products by employing the same analysis approach as described by \citet{LambertEtal:2007} for MLS \texttt{N2O-640} \vii data. These analyses quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation.
 
 \begin{nofloatpages}
 \subsection{Data screening}
@@ -47,11 +47,11 @@ The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for bot
 
   \item[Quality (\texttt{N2O-190}):] \qualityrule{0.8} A small fraction of \texttt{N2O-190} profiles (typically less than 1.5\%) will be discarded via this screening.
 
-  \item[Convergence (\texttt{N2O-190}):] \convergencerule{2.0} A small fraction of the \texttt{N2O-190} data (typically less than 0.5\%) at this level will be discarded via this screening.
+  \item[Convergence (\texttt{N2O-190}):] \convergencerule{2.0} A small fraction of \texttt{N2O-190} profiles (typically less than 0.5\%) will be discarded via this screening.
 
   \item[Quality (\texttt{N2O-640}):] \qualityrule{1.4} A small fraction of \texttt{N2O-640} profiles (typically less than 1.5\%) will be discarded via this screening.
 
-  \item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01} A small fraction of the \texttt{N2O-640} data (typically less than 0.5\%) at this level will be discarded via this screening.
+  \item[Convergence (\texttt{N2O-640}):] \convergencerule{1.01} A small fraction of \texttt{N2O-640} profiles (typically less than 0.5\%) will be discarded via this screening.
 
   \item[Clouds:] Clouds have little impact on the \ch{N2O} products at the recommended pressure levels. \ch{N2O} data can be used regardless of the value of the \texttt{Status} bits 16 (high cloud) or 32 (low cloud) used to indicate the presence of clouds. See ``Artifacts'' for more details.
 
@@ -73,7 +73,7 @@ The retrieval restricts \ch{N2O} values to be greater than $-$40\,ppbv (approxim
   \label{fig:N2O190Comparison}
 \end{figure}
 
-The \thisv \ch{N2O} product shows significantly larger abundances (by up to 20\%) in the lower stratosphere (100--10\,hPa) than \prevv, especially in the tropics (see Figure~\ref{fig:N2O190Comparison}), improving agreement with expectations and other observations.  Averaged monthly vertical profiles of \prevv and \thisv 190\nobreakdash-GHz \ch{N2O} have been compared to matching ACE-FTS v5.2 profiles, and an example is shown for April 2019 in Figure~\ref{fig:N2OMLSACEComparison}, where the MLS \thisv \ch{N2O} values are seen to be in much better agreement with those from ACE-FTS throughout the stratosphere.
+The \thisv \ch{N2O} product shows significantly larger abundances (by up to 20\%) in the lower stratosphere (100--10\,hPa) than \prevv, especially in the tropics (see Figure~\ref{fig:N2O190Comparison}), improving agreement with expectations and other observations.  Averaged monthly vertical profiles of \prevv and \thisv 190\nobreakdash-GHz \ch{N2O} have been compared to matching ACE-FTS v5.2 profiles, and an example is shown for April 2019 in Figure~\ref{fig:N2OMLSACEComparison}, where the MLS \thisv \ch{N2O} values are seen to be in much better agreement with those from ACE-FTS throughout the stratosphere. These improvements for \thisv 190\nobreakdash-GHz \ch{N2O} are a result of the work described in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
 
 \begin{figure}
   \includegraphics[width=0.98\linewidth]
@@ -81,7 +81,6 @@ The \thisv \ch{N2O} product shows significantly larger abundances (by up to 20\%
   \caption{MLS \prevv (upper) and \thisv (lower) \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2 in April 2019. Left: MLS and ACE-FTS averaged matching profiles. Middle: percent differences, observed standard deviation (SD) of the differences, and expected SD based on the retrieval uncertainties. Right: same as for the middle panel but in mixing ratio units. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
   \label{fig:N2OMLSACEComparison}
 \end{figure}
-The improvements noted above for \thisv 190\nobreakdash-GHz \ch{N2O} are a result of the work described in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
 
 Average values for \thisv 640\nobreakdash-GHz \ch{N2O} are 20\% larger than in \vii for the 100\,hPa pressure level, up to 10\% smaller at the 46--32\,hPa levels, and within 5\% for pressures greater than 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between \thisv and \prevv 640\nobreakdash-GHz \ch{N2O} are less than 10\% at all levels.
 Apart from the differences noted above, the MLS \thisv 640\nobreakdash-GHz \ch{N2O} is similar to the MLS \vii product described and validated by \citet{LambertEtal:2007}. Comparisons of \vii 640\nobreakdash-GHz \ch{N2O} with coincident measurements by ACE-FTS, Odin/SMR, and Envisat/MIPAS, as well as balloon-borne observations, are shown by \citet{LambertEtal:2007}. A revised validation paper for \ch{N2O} is not planned, and users are encouraged to read \citet{LambertEtal:2007} for more information.
