@@ -108,7 +108,7 @@ Persistent vertically oscillating biases in \prevv temperature with respect to a
 \label{sec:TComparisons}
 
 \begin{figure}
-  \centering\includegraphics[width=0.99\linewidth]{figures/T_pdfs/TemperatureSummaryPlotV6_NoGC.pdf}
+  \centering\includegraphics[width=0.98\linewidth]{figures/T_pdfs/TemperatureSummaryPlotV6_NoGC.pdf}
   \caption{The left panel shows globally averaged mean differences between MLS temperature and four correlative data sets. ACE-FTS, SABER, and \mbox{COSMIC-1} mean profiles are averages of pairs of coincident profiles, within 3\,hours and 5\,degrees of great circle from a corresponding MLS profile.  Methods are described in detail by \citet{SchwartzEtal:2008:Validation}.  The right panel shows the global standard deviations about the means.}
   \label{fig:TempSummary2}
 \end{figure}
@@ -165,19 +165,16 @@ Persistent vertically oscillating biases in \prevv temperature with respect to a
     \centering
     \begin{tabular}{cccccc>{\raggedright}p{1.0in}}
       \toprule
-      \textbf{Pressure} &
-      \parbox[m]{5.0em}{\centering\textbf{Single-Profile \\ Precision \\ K}} &
-      \parbox[m]{4.5em}{\centering\textbf{Observed
-          Scatter\footnote{Precision inferred from differences of
-            individual profiles from successive orbits (\vii results
-            shown)} \\ K}} &
-      \parbox[m]{5.5em}{\centering\textbf{Resolution%
-      \footnote{Vertical and along-track horizontal resolutions; see text for a discussion of the (altitude dependent) cross-track horizontal resolution.}%
-      \\ V $\times$ H\\
-           km}} &
-      \parbox[m]{6em}{\centering\textbf{Modeled\\accuracy\\ K}} &
-      \parbox[m]{6em}{\centering\textbf{Observed\\accuracy\\ K}} &
-      \textbf{Comments} \tabularnewline
+      \tableheaderbox{Pressure\\ \\ \\hPa} &
+      \tableheaderbox{Single-\\Profile\\Precision\\ K} &
+      \tableheaderbox{Observed\\Scatter%
+        \footnote{Precision inferred from differences of individual profiles from successive orbits (\vii results shown)}\\ \\K} &
+      \tableheaderbox{Resolution%
+        \footnote{Vertical and along-track horizontal resolutions; see text for a discussion of the (altitude dependent) cross-track horizontal resolution.}\\%
+        V $\times$ H\\ \\km} &
+      \tableheaderbox{Modeled\\accuracy\\ \\K} &
+      \tableheaderbox{Observed\\accuracy\\ \\K} &
+      \tableheaderbox{Comments}\tabularnewline
       \midrule
       $<$0.00022    & ---       & ---        &  ---             & --- & --- & Unsuitable for scientific use \tabularnewline
       0.00022       & $\pm$4.8  & ---        & 12     $\times$ 370 & --- & --- & Further validation needed.  Generally not useful. \tabularnewline

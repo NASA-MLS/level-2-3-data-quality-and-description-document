@@ -93,11 +93,11 @@ Latitudinal and temporal variability observed in various correlative datasets ar
   \label{tab:O3Summary}
   \begin{minipage}{\linewidth}\small
     \centering\begin{tabular}{cccccc>{\raggedright}p{1.8in}} \toprule
-    \parbox[m]{15mm}{\centering\textbf{Pressure  hPa}} &
-    \parbox[m]{24mm}{\centering\textbf{Resolution%
-    \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.}\\V $\times$ H \\ km}}  &
-    \multicolumn{2}{c}{\parbox[m]{20mm}{\centering\textbf{Single-Profile \\ Precision \\ ppmv\hfill\%}}} &
-    \multicolumn{2}{c}{\parbox[m]{20mm}{\centering\textbf{Accuracy\footnote{
+    \textbf{Pressure} &
+    \tableheaderbox{Resolution%
+    \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde7\,km.}\\V $\times$ H}  &
+    \multicolumn{2}{c}{\tableheaderbox{Single-Profile\\Precision}} &
+    \multicolumn{2}{c}{\textbf{Accuracy\footnote{
             Primarily as estimated from systematic uncertainty
             characterization tests (based on a full day of retrieval
             perturbations).  Stratospheric values are expressed in
@@ -105,8 +105,10 @@ Latitudinal and temporal variability observed in various correlative datasets ar
             quoted. 261--100\,hPa accuracies are the \emph{sum of the ppmv
             and percentage} uncertainties; the ppmv terms arise
             from observed average positive biases in the MLS values
-            relative to climatological tropical sonde data.} \\ ppmv\hfill\%}}}
-            & \textbf{Comments} \tabularnewline \midrule
+            relative to climatological tropical sonde data.}}}
+            & \textbf{Comments} \tabularnewline
+    \textbf{hPa} & \textbf{km} & \textbf{ppmv} & \textbf{\%} & \textbf{ppmv} & \textbf{\%} \tabularnewline
+    \midrule
     $\leq$ 0.0005 & --- & --- & --- & --- & --- & Unsuitable for
     scientific use \tabularnewline
     0.001 & 7 $\times$ 650 & 3.4 & > 40 & 0.9 & 30 & Requires averaging\tabularnewline

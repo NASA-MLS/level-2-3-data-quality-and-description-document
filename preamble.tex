@@ -93,7 +93,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc, matrix, backgrounds}
 %
-% --------------------------------------- Finally, hyperref
+% --------------------------------------- Hyperref
 %
 \usepackage[final,hidelinks,breaklinks=true,bookmarksopen=true,pdflang={en-US}]{hyperref}
 %
@@ -305,6 +305,15 @@
 %
 \input{navbar.tex}
 %
+% ---------------------------------------- Tables
+\newcommand{\tableheaderbox}[2][c]{%
+  \begingroup
+  \bfseries
+  \begin{tabular}[t]{@{}#1@{}}
+    \strut #2
+  \end{tabular}%
+  \endgroup
+}
 % -------------------------------------------------------------------------------
 
 % Define various low level macros
