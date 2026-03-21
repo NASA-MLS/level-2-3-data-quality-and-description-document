@@ -3,6 +3,15 @@
 %
 % The preamble.tex contains all the formatting information
 \input{preamble}
+% If the line below, "\navtrue" is included (i.e., not commented out), it turns on the
+% navigation bar.  To disable it (including it makes the compiliation slow) simply comment
+% out this line.  If it's commented out, then the navigation bar may sill be shown 
+% if the file "shownav.flag" exists in the top-level directory.  This allows a git clone
+% of the project to include that file (which is ignored in .gitignore) while sparing
+% the Overleaf users from the slow compile associated with the navigation bar.
+\navtrue
+\input{navbar.tex}
+%
 %
 % Set up some document stuff
 \newcommand{\documenttitle}{Version~6.0\emph{x} \mbox{Level-2} and \mbox{Level-3} data quality and description document}
