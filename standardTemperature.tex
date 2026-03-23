@@ -113,51 +113,8 @@ Persistent vertically oscillating biases in \prevv temperature with respect to a
   \label{fig:TempSummary2}
 \end{figure}
 
-\mycomment{This paragraph needs to be updated for the new figure}
-\citet{SchwartzEtal:2008:Validation} describe detailed comparisons of MLS \vii temperature with products from the Goddard Earth Observing System, version~5 \citep{RieneckerEtal:2007} (GEOS-5), the European Center for Medium-Range Weather Forecast~\citep[e.g.,][]{SimmonsEtal05} (ECMWF), the CHAllenging Minisatellite Payload (CHAMP)~\citep{WickertEtal01}, the combined Atmospheric Infrared Sounder / Advanced Microwave Sounding Unit (AIRS/AMSU), the Sounding of the Atmosphere using Broadband Radiometry (SABER) \citep{MlynczakAndRussell:1995}, the Halogen Occultation Experiment \citep{HervigEtal:1996} (HALOE) and the Atmospheric Chemistry Experiment \citep{BernathEtal:2004} (ACE), as well as to radiosondes from the global network. This work is currently being repeated with \thisv temperature and this document will be updated with those results. Using the \vii data, from 261\,hPa to \mytexttilde10\,hPa there is generally agreement to \mytexttilde1\,K between the assimilations (ECMWF and GEOS-5) and AIRS, radiosondes and CHAMP, with SABER and ACE having generally warm biases of \mytexttilde2\,K relative to this group. Figure~\ref{fig:TempSummary2} shows the global mean biases in the left panel and the $1\sigma$ scatter about the mean in the right panel for these eight comparisons.  Between 1\,hPa and 0.001\,hPa, MLS has biases with respect to SABER of $+1$\,K~to~$-5$\,K between 1\,hPa and 0.1\,hPa, of 0\,K~to~$-3$\,K between 0.1\,K and 0.01\,K and increasing in magnitude to $-10$\,K at 0.001\,hPa.  Estimates of systematic error in the MLS temperature are shown in black, with $2\sigma$ uncertainty shown with gray shading.  The black line is the modeled contribution of ``gain compression'', which was hoped would explain much of the vertical structure of MLS biases in the upper troposphere and lower stratosphere.  
+\citet{SchwartzEtal:2008:Validation} describe detailed comparisons of MLS \vii temperature with products from the Goddard Earth Observing System, version~5 \citep{RieneckerEtal:2007} (GEOS-5), the European Center for Medium-Range Weather Forecast \citep[e.g.,][]{SimmonsEtal05} (ECMWF), the CHAllenging Minisatellite Payload (CHAMP) \citep{WickertEtal01}, the combined Atmospheric Infrared Sounder / Advanced Microwave Sounding Unit (AIRS/AMSU), the Sounding of the Atmosphere using Broadband Radiometry (SABER) \citep{MlynczakAndRussell:1995}, the Halogen Occultation Experiment \citep{HervigEtal:1996} (HALOE) and the Atmospheric Chemistry Experiment \citep{BernathEtal:2004} (ACE), as well as to radiosondes from the global network. A similar validation effort is planned for \thisv temperature and this document will be updated with those results. Preliminary validation of \thisv temperature has consisted of comparison with temperature from \mbox{GEOS-5} and the Constellation Observing System for Meteorology, Ionsophere and Climate (\mbox{COSMIC-1}) \citep{AnthesEtal:2008} in the upper troposphere to the upper stratosphere and with SABER and ACE in the upper stratosphere, mesosphere and  lower thermosphere. Figure~\ref{fig:TempSummary2} shows the global mean biases in the left panel and the $1\sigma$ scatter about the mean in the right panel for these comparisons.  From 261\,hPa to 68\,hPa, MLS has a $-$2.5\,K to 0\,K, vertically oscillating bias with respect to \mbox{GEOS-5} and \mbox{COSMIC-1}, settling to a $-$0.5\,K bias in the upper stratosphere. As was shown in \citet{SchwartzEtal:2008:Validation},  there is generally agreement to \mytexttilde1\,K between assimilation (ECMWF and \mbox{GEOS-5}) and AIRS, radiosondes and radio-occultation instruments like \mbox{COSMIC-1} and CHAMP in the upper troposphere and stratosphere.   Between 1\,hPa and 0.001\,hPa, MLS has generally consistent vertically oscillating biases with respect to SABER and ACE, with values with respect to SABER  of $+1$\,K~to~$-5$\,K between 1\,hPa and 0.01\,hPa,  increasing in magnitude to $-10$\,K at 0.001\,hPa with ACE  \mytexttilde1\,K lower than SABER in the mesosphere and \mytexttilde2K higher in the lower thermosphere. 
  
-
-% \begin{sidewaystable}
-%   \caption{Summary of MLS Temperature product}\vspace{0.5ex}
-%   \label{tab:TemperatureSummary_}
-%   \begin{minipage}{\textheight}
-%     \centering\begin{tabular}{cccccc>{\raggedright}p{2.5in}} \toprule \textbf{Pressure} &
-%       \parbox[m]{5.0em}{\centering\textbf{Precision\footnote{Precision
-%             on individual profiles} \\ K}} &
-%       \parbox[m]{4.5em}{\centering\textbf{Observed
-%           Scatter\footnote{Precision inferred from differences of
-%             individual profiles from successive orbits (\vii results
-%             shown)} \\ K}} &
-%       \parbox[m]{5.0em}{\centering\textbf{Resolution%
-%       \footnote{Vertical and along-track horizontal resolutions; see text for a discussion of the (altitude dependent) cross-track horizontal resolution.}
-%       \\ V $\times$ H\\
-%            km}} &
-%       \parbox[m]{6em}{\centering\textbf{Modeled\\accuracy\\ K}} &
-%       \parbox[m]{6em}{\centering\textbf{Observed\\accuracy\\ K}} &
-%       \textbf{Comments} \tabularnewline
-%       \midrule
-%       $<$0.00022\,hPa    & ---       & ---        &  ---             & --- & --- & Unsuitable for scientific use \tabularnewline
-%       0.00022\,hPa       & $\pm$4.8  & ---        & 12     $\times$ 370 & --- & --- & Further validation needed.  Generally not useful. \tabularnewline
-%       0.00046\,hPa       & $\pm$3.7  & ---        & 13     $\times$ 316 & --- & --- &  Further validation needed.  Use with caution. \tabularnewline
-%       0.001\,hPa         & $\pm$3.5  & $\pm$4.0   & 11.5   $\times$ 280 & $-$1.7\,$\pm$\,2.8      & $-$9     & \tabularnewline
-%       0.01\,hPa          & $\pm$3.2  & $\pm$3.7   & 10.5   $\times$ 250 & $-$1.4\,$\pm$\,1.8      & $-$2\,to\,0 & \tabularnewline
-%       0.1\,hPa           & $\pm$2.1  & $\pm$2.5   & 5.6    $\times$ 170 & $-$5.5\,$\pm$\,0.9    & $-$8\,to\,0 & \tabularnewline
-%       0.316\,hPa         & $\pm$1.0  & $\pm$1.3   & 6.2    $\times$ 170 & $-$2.7\,$\pm$\,0.7    & $-$7\,to\,$-$4& \tabularnewline
-%       1\,hPa             & $\pm$1.0  & $\pm$1.2   & 4.3    $\times$ 165 & $-$2.5\,$\pm$\,0.7    &  0\,to\,$+$5 & \tabularnewline
-%       3.16\,hPa          & $\pm$0.7  & $\pm$1.0   & 4.3    $\times$ 165 & $-$4.4\,$\pm$\,1.2    & $+$1 & \tabularnewline
-%       10\,hPa            & $\pm$0.6  & $\pm$0.9   & 3.8    $\times$ 165 & $-$2.2\,$\pm$\,0.5      & $-$1\,to\,0& \tabularnewline
-%       14.7\,hPa          & $\pm$0.6  & $\pm$0.9   & 3.7    $\times$ 165 & $-$2.0\,$\pm$\,0.5    &  0\,to\,$+$1 & \tabularnewline
-%       31.6\,hPa          & $\pm$0.6  & $\pm$0.8   & 3.6    $\times$ 165 & $-$1.7\,$\pm$\,0.6    & $-$2\,to\,0 & \tabularnewline
-%       56.2\,hPa          & $\pm$0.6  & $\pm$0.8   & 3.7    $\times$ 165 & $+$1.9\,$\pm$\,0.7    & $-$2\,to\,0 & \tabularnewline
-%       100\,hPa           & $\pm$0.7  & $\pm$1.3   & 4.6    $\times$ 165 & $-$2.0\,$\pm$\,1.5    &  0\,to\,$+$1  & \tabularnewline
-%       215\,hPa           & $\pm$0.8  & $\pm$2.3   & 3.3    $\times$ 165 & $+$0.7\,$\pm$\,1.7 & $-$2.5\,to\,$-$1.5   & \tabularnewline
-%       261\,hPa           & $\pm$0.7  & $\pm$3.3   & 3.8    $\times$ 167 & $-$0.6\,$\pm$\,2.3      & $-$2\,to\,0   & \tabularnewline
-%       1000--316\,hPa & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\tabularnewline
-%       \bottomrule
-%     \end{tabular}
-%   \end{minipage}
-% \end{sidewaystable}
-
 \begin{table}
   \caption{Summary of Aura MLS \thisv Temperature Characteristics.}\vspace{0.5ex}
   \label{tab:TemperatureSummary}
@@ -179,19 +136,19 @@ Persistent vertically oscillating biases in \prevv temperature with respect to a
       $<$0.00022    & ---       & ---        &  ---             & --- & --- & Unsuitable for scientific use \tabularnewline
       0.00022       & $\pm$4.8  & ---        & 12     $\times$ 370 & --- & --- & Further validation needed.  Generally not useful. \tabularnewline
       0.00046       & $\pm$3.7  & ---        & 13     $\times$ 316 & --- & --- &  Further validation needed.  Use with caution. \tabularnewline
-      0.001         & $\pm$3.5  & $\pm$4.0   & 11.5   $\times$ 280 & $-$1.7\,$\pm$\,2.8      & $-$9     & \tabularnewline
-      0.01          & $\pm$3.2  & $\pm$3.7   & 10.5   $\times$ 250 & $-$1.4\,$\pm$\,1.8      & $-$2\,to\,0 & \tabularnewline
-      0.1           & $\pm$2.1  & $\pm$2.5   & 5.6    $\times$ 170 & $-$5.5\,$\pm$\,0.9    & $-$8\,to\,0 & \tabularnewline
-      0.316         & $\pm$1.0  & $\pm$1.3   & 6.2    $\times$ 170 & $-$2.7\,$\pm$\,0.7    & $-$7\,to\,$-$4& \tabularnewline
-      1             & $\pm$1.0  & $\pm$1.2   & 4.3    $\times$ 165 & $-$2.5\,$\pm$\,0.7    &  0\,to\,$+$5 & \tabularnewline
-      3.16          & $\pm$0.7  & $\pm$1.0   & 4.3    $\times$ 165 & $-$4.4\,$\pm$\,1.2    & $+$1 & \tabularnewline
-      10            & $\pm$0.6  & $\pm$0.9   & 3.8    $\times$ 165 & $-$2.2\,$\pm$\,0.5      & $-$1\,to\,0& \tabularnewline
-      14.7          & $\pm$0.6  & $\pm$0.9   & 3.7    $\times$ 165 & $-$2.0\,$\pm$\,0.5    &  0\,to\,$+$1 & \tabularnewline
-      31.6          & $\pm$0.6  & $\pm$0.8   & 3.6    $\times$ 165 & $-$1.7\,$\pm$\,0.6    & $-$2\,to\,0 & \tabularnewline
-      56.2          & $\pm$0.6  & $\pm$0.8   & 3.7    $\times$ 165 & $+$1.9\,$\pm$\,0.7    & $-$2\,to\,0 & \tabularnewline
-      100           & $\pm$0.7  & $\pm$1.3   & 4.6    $\times$ 165 & $-$2.0\,$\pm$\,1.5    &  0\,to\,$+$1  & \tabularnewline
-      215           & $\pm$0.8  & $\pm$2.3   & 3.3    $\times$ 165 & $+$0.7\,$\pm$\,1.7 & $-$2.5\,to\,$-$1.5   & \tabularnewline
-      261           & $\pm$0.7  & $\pm$3.3   & 3.8    $\times$ 167 & $-$0.6\,$\pm$\,2.3      & $-$2\,to\,0   & \tabularnewline
+      0.001         & $\pm$3.5  & $\pm$4.0   & 11.5   $\times$ 280 & 3.4 & $-$9 & \tabularnewline
+      0.01          & $\pm$3.2  & $\pm$3.7   & 10.5   $\times$ 250 & 2.7 & $-$2 & \tabularnewline
+      0.1           & $\pm$2.1  & $\pm$2.5   & 5.6    $\times$ 170 & 6.2 & $-$1 & \tabularnewline
+      0.316         & $\pm$1.0  & $\pm$1.3   & 6.2    $\times$ 170 & 2.7 & $-$4 & \tabularnewline
+      1             & $\pm$1.0  & $\pm$1.2   & 4.3    $\times$ 165 & 2.7 &    0 & \tabularnewline
+      3.16          & $\pm$0.7  & $\pm$1.0   & 4.3    $\times$ 165 & 4.2 & $-$0.6 & \tabularnewline
+      10            & $\pm$0.6  & $\pm$0.9   & 3.8    $\times$ 165 & 2.3 & $ -$0.5& \tabularnewline
+      14.7          & $\pm$0.6  & $\pm$0.9   & 3.7    $\times$ 165 & 2.1 &  $-$0.7& \tabularnewline
+      31.6          & $\pm$0.6  & $\pm$0.8   & 3.6    $\times$ 165 & 1.8 &  $-$0.9& \tabularnewline
+      56.2          & $\pm$0.6  & $\pm$0.8   & 3.7    $\times$ 165 & 2.1 & $-$1.5 & \tabularnewline
+      100           & $\pm$0.7  & $\pm$1.3   & 4.6    $\times$ 165 & 2.5 & $-$0.5 & \tabularnewline
+      215           & $\pm$0.8  & $\pm$2.3   & 3.3    $\times$ 165 & 1.9 & $-$2.0 & \tabularnewline
+      261           & $\pm$0.7  & $\pm$3.3   & 3.8    $\times$ 167 & 2.5 & $-$1.8 & \tabularnewline
       1000--316 & ---       & ---      & ---              & ---           & --- & Unsuitable for scientific use\tabularnewline
       \bottomrule
     \end{tabular}
