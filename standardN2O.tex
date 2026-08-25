@@ -4,7 +4,7 @@
 
 \subsection{Introduction}
 
-The standard product for \thisv \ch{N2O} is retrieved in the \texttt{CorePlusR2} phase, which also retrieves water vapor and other 190\nobreakdash-GHz products, and replaces the customized \prevv \ch{N2O} \texttt{NitrousOxide} retrieval phase. Improvements in the treatment of the \ch{N2O} retrieval in the \thisv \texttt{CorePlusR2} phase are described in detail in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
+The standard product for \thisv \ch{N2O} is retrieved in the \texttt{CorePlusR2} phase, which also retrieves water vapor and other 190\nobreakdash-GHz products and replaces the customized \prevv \ch{N2O} \texttt{NitrousOxide} retrieval phase. Improvements in the treatment of the \ch{N2O} retrieval in the \thisv \texttt{CorePlusR2} phase and the steps taken to mitigate the effect of the slow drift of the 190\nobreakdash-GHz radiometer are described in detail in Section~\ref{sec:V6N2OCorrectionDetails}. As noted in Section~\ref{sec:R2DutyCycling}, the 190\nobreakdash-GHz radiometer has been operated only intermittently since May 2024, typically for less than one week per month. When the \mbox{190-GHz} radiometer is turned off the \ch{N2O} status flags are set to indicate that the data should not be used.
 
 The decision to use the MLS ``Band~3'' 190\nobreakdash-GHz radiances in preference to the ``Band~12'' 640\nobreakdash-GHz measurements for \viv and later versions was undertaken in order to provide a continuous data product (\texttt{N2O-190}) for the entire mission. Earlier versions (prior to \viv) of the \ch{N2O} standard product relied on the ``Band~12'' 640\nobreakdash-GHz (\texttt{CorePlusR4B}) retrieval; however, a noticeable reduction in quality of the Band~12 radiance signals became evident during June--August 2013. Band~12 was finally turned off on 6~August 2013, and the data collected on and after 7~June 2013 for \texttt{N2O-640} are not recommended for scientific use.
 
@@ -60,9 +60,16 @@ The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for bot
 
 \subsection{Artifacts}
 
+
+
 There are occasional outliers at the largest pressures (lowest altitudes) in the \texttt{N2O-190} and \texttt{N2O-640} products. As with \prevv, very thick clouds in the tropics produce a low rate of artifacts in the \thisv \ch{N2O} products since improvements in the handling of radiances affected by clouds have reduced the frequency of outliers compared to older versions. The cloud bits of the \texttt{Status} field are too blunt a tool to identify these rare cases; rejecting profiles flagged with these bits would needlessly discard reasonable data. Screening using the \texttt{Convergence} and \texttt{Quality} fields (see above) is recommended to remove the majority of these data points.
 
 The retrieval restricts \ch{N2O} values to be greater than $-$40\,ppbv (approximately three times the retrieval noise level in the recommended pressure range) in order to prevent problems in the minimization search process. The low bound is applied at all levels, but it is only evident in the data for pressures less than 0.1\,hPa, where the vertical smoothing is relaxed and the retrieval noise becomes comparable to the magnitude of the low-bound value. Accordingly, statistical averaging of the data (zonal means or longer time periods) cannot be applied successfully for pressures of or less than 0.1\,hPa, as the $-$40\,ppbv hard limit introduces a positive bias in any average.
+
+% adapt this for N2O, note that v5 N2O had different retrieval phase to v6
+%As discussed in Section~\ref{sec:H2OChanges} (and~\ref{sec:R2Drift}), the MLS 190\nobreakdash-GHz %radiometer is slowly drifting.  While \thisv \ch{N2O} applies a correction for this drift, %some signature of it remains
+
+
 
 \subsection{Review of comparisons between MLS \ch{N2O} versions and other datasets}
 
@@ -81,6 +88,16 @@ The \thisv \ch{N2O} product shows significantly larger abundances (by up to 20\%
   \caption{MLS \prevv (upper) and \thisv (lower) \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2 in April 2019. Left: MLS and ACE-FTS averaged matching profiles. Middle: percent differences, observed standard deviation (SD) of the differences, and expected SD based on the retrieval uncertainties. Right: same as for the middle panel but in mixing ratio units. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
   \label{fig:N2OMLSACEComparison}
 \end{figure}
+
+ \begin{figure}
+  \includegraphics[width=0.98\linewidth]
+  {figures/MLS-ACE-DQD-DRIFT-N2O-20x10-matched-rob}
+  \caption{Drifts in the MLS \prevv and \thisv \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2 for 50\degsym S to 50\degsym N during 2005--2019. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
+  \label{fig:N2OMLSACEDrifts}
+\end{figure}
+
+%Comparisons of ACE-FTS \ch{N2O} with the v4 and v5 MLS \ch{N2O} \mbox{190-GHz} standard product %drifting towards smaller abundances \citep{LiveseyEtal:2021:Drifts} 
+%Vertical profiles of the drifts in the v5.0x and v6.0x 190-GHz \ch{N2O} compared to matching ACE-%FTS v5.2 profiles are shown in Figure~\ref{fig:N2OMLSACEDrifts}. Description to be added here -AL.
 
 Average values for \thisv 640\nobreakdash-GHz \ch{N2O} are 20\% larger than in \vii for the 100\,hPa pressure level, up to 10\% smaller at the 46--32\,hPa levels, and within 5\% for pressures greater than 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between \thisv and \prevv 640\nobreakdash-GHz \ch{N2O} are less than 10\% at all levels.
 Apart from the differences noted above, the MLS \thisv 640\nobreakdash-GHz \ch{N2O} is similar to the MLS \vii product described and validated by \citet{LambertEtal:2007}. Comparisons of \vii 640\nobreakdash-GHz \ch{N2O} with coincident measurements by ACE-FTS, Odin/SMR, and Envisat/MIPAS, as well as balloon-borne observations, are shown by \citet{LambertEtal:2007}. A revised validation paper for \ch{N2O} is not planned, and users are encouraged to read \citet{LambertEtal:2007} for more information.

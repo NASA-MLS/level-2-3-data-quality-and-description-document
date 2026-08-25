@@ -65,7 +65,7 @@
 \hyperref[sec:StandardClO]{\texttt{ClO}} & 147--1.0 & 1.3 & 1.05 & B,D,W & Michelle Santee
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardCldTopP]{\texttt{CloudTopPressure}} & 770-85 & N/A & N/A & & Frank Werner
+\hyperref[sec:StandardCldTopP]{\texttt{CloudTopPressure}} & 770-85 & N/A & N/A & U & Frank Werner
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardCO]{\texttt{CO}} &
@@ -89,23 +89,23 @@ O \newline C,O &
 83--0.001 \newline 316--100 &
 \tabnudge{0.7} &
 \tabnudge{2.0} &
-O,T \newline C,O,T &
+O,T,U \newline C,O,T,U &
 Alyn Lambert \newline William Read
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardHCl]{\texttt{HCl}} & 100--0.32 & 1.2 & 1.05 & R,T,W & Lucien Froidevaux
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardHCN]{\texttt{HCN}} & See \S\ref{sec:StandardHCN} & 0.2 & 2.0 & E,N,T & Hugh Pumphrey
+\hyperref[sec:StandardHCN]{\texttt{HCN}} & See \S\ref{sec:StandardHCN} & 0.2 & 2.0 & E,N,T,U & Hugh Pumphrey
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215--1.5 & See \S\ref{sec:HNO3Screening} & See \S\ref{sec:HNO3Screening} & C & Michelle Santee \tabularnewline\flipfloprow
+\hyperref[sec:StandardHNO3]{\texttt{HNO3}} & 215--1.5 & See \S\ref{sec:HNO3Screening} & See \S\ref{sec:HNO3Screening} & C,U & Michelle Santee \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardHO2]{\texttt{HO2}} & 22--0.046 & N/A & 1.1 & A,D,N &
 Luis Mill\'an
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardHOCl]{\texttt{HOCl}} & 10--2.2 & 1.2 & 1.05 & A,N &  Lucien Froidevaux
+\hyperref[sec:StandardHOCl]{\texttt{HOCl}} & 10--2.2 & 1.2 & 1.05 & A,N,W &  Lucien Froidevaux
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardIWC]{\texttt{IWC}} & 215--83 & See \S\ref{sec:IWCScreening} & See \S\ref{sec:IWCScreening} & B,W & Alyn Lambert
@@ -114,7 +114,7 @@ Luis Mill\'an
 \hyperref[sec:StandardIWP]{\texttt{IWP}} & N/A & See \S\ref{sec:IWPScreening} & See \S\ref{sec:IWPScreening} & B,W & Alyn Lambert
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardN2O]{\texttt{N2O}} & 100--0.46 & 0.8 & 2.0 & R,T & Alyn Lambert
+\hyperref[sec:StandardN2O]{\texttt{N2O}} & 100--0.46 & 0.8 & 2.0 & R,T,U & Alyn Lambert
 \tabularnewline\flipfloprow
 %
 \hyperref[sec:StandardO3]{\texttt{O3}\,\footnotemark[3]} &
@@ -129,7 +129,7 @@ Lucien Froidevaux \newline Michael Schwartz
 & Luis Mill\'an
 \tabularnewline\flipfloprow
 %
-\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316--0.001 & See \S\ref{sec:RHIScreening} & See \S\ref{sec:RHIScreening} & C,O,T & William Read
+\hyperref[sec:StandardRHI]{\texttt{RHI}\,\footnotemark[4]} & 316--0.001 & See \S\ref{sec:RHIScreening} & See \S\ref{sec:RHIScreening} & C,O,T,U & William Read
 \tabularnewline\flipfloprow 
 \hyperref[sec:StandardSO2]{\texttt{SO2}} & 215--10 & 0.95 & 1.03 & E & William Read
 \tabularnewline\flipfloprow 
@@ -158,7 +158,8 @@ O \newline C,O &
     \begin{tablenotes}
       \item[R] The spectral region(s) used to retrieve this product has been revised at some point in response to a change in instrument behavior. Earlier MLS data versions relied on the original region.
       \item[T] Care should be taken when considering long-term trends in measurements of this quantity. See Chapter~\ref{chap:Level2}.
-      \item[W] The radiances used to measure this product are also affected by atmospheric water vapor.  During periods when MLS water vapor observations are unavailable, climatological water vapor profiles are assumed in retrievals of this product instead, introducing artifacts. See \S\ref{sec:R2DutyCycling} and Chapter~\ref{chap:Level2} for details.
+      \item[U] This product is unavailable when the \mbox{190-GHz} radiometer is turned off. In the case of \ch{HNO3}, this applies only at pressures less than 22\,hPa. See \S\ref{sec:R2DutyCycling} and Chapter~\ref{chap:Level2} for details. 
+      \item[W] The radiances used to measure this product are also affected by atmospheric water vapor, leading to artifacts when MLS \ch{H2O} data are unavailable. See \S\ref{sec:R2DutyCycling} and Chapter~\ref{chap:Level2} for details.
     \end{tablenotes}
     \vspace{-1ex}\rule{\linewidth}{0.5pt}\par
     \vspace{-0.5ex}\begin{tablenotes}
