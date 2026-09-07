@@ -11,11 +11,11 @@ The decision to use the MLS ``Band~3'' 190\nobreakdash-GHz radiances in preferen
 \begin{figure}
   \centerline{\includegraphics[width=\linewidth-10pt]
   {figures/InspectZM_2009m04_N2O-190-v06-0x_N2O-640-v06-0x_userHeightRange}}
-  \caption{MLS \thisv \texttt{N2O-190} and \texttt{N2O-640} comparison for April 2009}
+  \caption{MLS \thisv \texttt{N2O-190} and \texttt{N2O-640} comparison for April 2009.}
   \label{fig:N2O190640Comparison}
 \end{figure}
 
-The 190\nobreakdash-GHz \ch{N2O} data product in general shows slightly worse precision and resolution compared to those of the 640\nobreakdash-GHz retrievals, although the 190\nobreakdash-GHz precision is substantially better at 100--68\,hPa. Data from \texttt{N2O-190} and \texttt{N2O-640} have been compared from launch until the end of Band~12 operations. A persistent, latitude-dependent, low bias over the pressure range 100 to 15\,hPa is seen in the \texttt{N2O-190} product compared to \texttt{N2O-640} (see Figure~\ref{fig:N2O190640Comparison}).  Other significant differences between the \thisv \texttt{N2O-190} and \texttt{N2O-640} data, such as the resolution, precision, recommended pressure levels, and quality and convergence criteria, are noted below. The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the period from launch until 6~June 2013 and is stored in the \texttt{L2GP-DGG} files in the \texttt{N2O-640} swath. Details of the retrieval method and validation results are presented by \citet{LambertEtal:2007}.
+The 190\nobreakdash-GHz \ch{N2O} data product in general shows slightly worse precision and resolution compared to those of the 640\nobreakdash-GHz retrievals, although the 190\nobreakdash-GHz precision is substantially better at 100--68\,hPa. Data from \texttt{N2O-190} and \texttt{N2O-640} have been compared from launch until the end of Band~12 operations. A persistent latitude-dependent low bias over the pressure range 100 to 15\,hPa is seen in the \texttt{N2O-190} product compared to \texttt{N2O-640} (see Figure~\ref{fig:N2O190640Comparison}).  Other significant differences between the \thisv \texttt{N2O-190} and \texttt{N2O-640} data, such as the resolution, precision, recommended pressure levels, and quality and convergence criteria, are noted below. The secondary \thisv \ch{N2O} 640\nobreakdash-GHz product is available for the period from launch until 6~June 2013 and is stored in the \texttt{L2GP-DGG} files in the \texttt{N2O-640} swath. Details of the retrieval method and validation results are presented by \citet{LambertEtal:2007}.
 
 \subsection{Resolution}
 
@@ -33,7 +33,7 @@ Precision as defined here is the 1$\sigma$ uncertainty in the retrieved value ca
 
 \subsection{Accuracy}
 
-The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products by employing the same analysis approach as described by \citet{LambertEtal:2007} for MLS \texttt{N2O-640} \vii data. These analyses quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation.
+The accuracy values given in Tables~\ref{tab:N2OSummary} and~\ref{tab:N2O640Summary} were obtained for both \thisv \ch{N2O} products by employing the same analysis approach as described by \citet{LambertEtal:2007} for MLS \texttt{N2O-640} \vii data. These analyses quantify the systematic uncertainties associated with the MLS instrument calibration, spectroscopic uncertainty, and approximations in the retrieval formulation and implementation.
 
 \begin{nofloatpages}
 \subsection{Data screening}
@@ -61,7 +61,6 @@ The accuracy values given in Table~\ref{tab:N2O640Summary} were obtained for bot
 \subsection{Artifacts}
 
 
-
 There are occasional outliers at the largest pressures (lowest altitudes) in the \texttt{N2O-190} and \texttt{N2O-640} products. As with \prevv, very thick clouds in the tropics produce a low rate of artifacts in the \thisv \ch{N2O} products since improvements in the handling of radiances affected by clouds have reduced the frequency of outliers compared to older versions. The cloud bits of the \texttt{Status} field are too blunt a tool to identify these rare cases; rejecting profiles flagged with these bits would needlessly discard reasonable data. Screening using the \texttt{Convergence} and \texttt{Quality} fields (see above) is recommended to remove the majority of these data points.
 
 The retrieval restricts \ch{N2O} values to be greater than $-$40\,ppbv (approximately three times the retrieval noise level in the recommended pressure range) in order to prevent problems in the minimization search process. The low bound is applied at all levels, but it is only evident in the data for pressures less than 0.1\,hPa, where the vertical smoothing is relaxed and the retrieval noise becomes comparable to the magnitude of the low-bound value. Accordingly, statistical averaging of the data (zonal means or longer time periods) cannot be applied successfully for pressures of or less than 0.1\,hPa, as the $-$40\,ppbv hard limit introduces a positive bias in any average.
@@ -76,28 +75,33 @@ The retrieval restricts \ch{N2O} values to be greater than $-$40\,ppbv (approxim
 \begin{figure}
   \centerline{\includegraphics[width=\linewidth-10pt]
   {figures/InspectZM_2009m04_N2O-190-v06-0x_N2O-NitrousOxide-v05-0x_N2O-190-v04-2x_N2O-190-v03-3x_N2O-190-v02-2x_userHeightRange}}
-  \caption{MLS \thisv 190\nobreakdash-GHz \ch{N2O} compared to \vii, \viii, \viv, and \vv for April 2009}
+  \caption{MLS \thisv 190\nobreakdash-GHz \ch{N2O} compared to \vii, \viii, \viv, and \vv for April 2009.}
   \label{fig:N2O190Comparison}
 \end{figure}
 
-The \thisv \ch{N2O} product shows significantly larger abundances (by up to 20\%) in the lower stratosphere (100--10\,hPa) than \prevv, especially in the tropics (see Figure~\ref{fig:N2O190Comparison}), improving agreement with expectations and other observations.  Averaged monthly vertical profiles of \prevv and \thisv 190\nobreakdash-GHz \ch{N2O} have been compared to matching ACE-FTS v5.2 profiles, and an example is shown for April 2019 in Figure~\ref{fig:N2OMLSACEComparison}, where the MLS \thisv \ch{N2O} values are seen to be in much better agreement with those from ACE-FTS throughout the stratosphere. These improvements for \thisv 190\nobreakdash-GHz \ch{N2O} are a result of the work described in Sections~\ref{sec:V6N2OCorrectionBriefSummary} and~\ref{sec:V6N2OCorrectionDetails}.
+The \thisv \mbox{190-GHz} standard product \ch{N2O} shows significantly larger abundances (by up to 20\%) in the lower stratosphere (100--10\,hPa) than \prevv, especially in the tropics (see Figure~\ref{fig:N2O190Comparison}), improving agreement with expectations and other observations.  Averaged monthly vertical profiles of \prevv and \thisv 190\nobreakdash-GHz \ch{N2O} have been compared to matching ACE-FTS v5.2/v5.3 profiles, and an example is shown for April 2019 in Figure~\ref{fig:N2OMLSACEComparison}, where the MLS \thisv \ch{N2O} values are seen to be in much better agreement with those from ACE-FTS throughout the stratosphere. Figure~\ref{fig:N2OMLSACEDrifts} shows the progressive reduction in the drifts relative to coincident ACE-FTS v5.2/v5.3 measurements of the MLS \viv, \prevv and \thisv \ch{N2O}. These improvements in the MLS 190\nobreakdash-GHz \ch{N2O} product are a result of the work described in Sections~\ref{sec:V6N2OCorrectionBriefSummary}, \ref{sec:V6N2OCorrectionDetails}, and \ref{sec:H2ODriftDetails}. However, significant drifts still persist in the MLS \thisv 190\nobreakdash-GHz \ch{N2O} product with respect to ACE-FTS v5.2/v5.3 for the post-2010 period, as shown for the 100\,hPa pressure level in Figure~\ref{fig:N2OMLSACETS}.
 
 \begin{figure}
   \includegraphics[width=0.98\linewidth]
   {figures/ACESRSSv5.2vsMLS_v5v6_N2OMatch_201904}
-  \caption{MLS \prevv (upper) and \thisv (lower) \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2 in April 2019. Left: MLS and ACE-FTS averaged matching profiles. Middle: percent differences, observed standard deviation (SD) of the differences, and expected SD based on the retrieval uncertainties. Right: same as for the middle panel but in mixing ratio units. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
+  \caption{MLS \prevv (upper) and \thisv (lower) \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2/v5.3 in April 2019. Left: MLS and ACE-FTS averaged matching profiles. Middle: percent differences, observed standard deviation (SD) of the differences, and expected SD based on the retrieval uncertainties. Right: same as for the middle panel but in mixing ratio units. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
   \label{fig:N2OMLSACEComparison}
 \end{figure}
 
  \begin{figure}
   \includegraphics[width=0.98\linewidth]
-  {figures/MLS-ACE-DQD-DRIFT-N2O-20x10-matched-rob}
-  \caption{Drifts in the MLS \prevv and \thisv \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2 for 50\degsym S to 50\degsym N during 2005--2019. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
+  {figures/MLS-ACE-DQD-DRIFT-N2O-2005-2019-50S-50N}
+  \caption{Drifts in the MLS \viv, \prevv and \thisv \mbox{190-GHz} standard product \ch{N2O} compared to matching profiles for ACE-FTS v5.2/v5.3 for 50\degsym S to 50\degsym N over the period 2005--2019. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
   \label{fig:N2OMLSACEDrifts}
 \end{figure}
 
-%Comparisons of ACE-FTS \ch{N2O} with the v4 and v5 MLS \ch{N2O} \mbox{190-GHz} standard product %drifting towards smaller abundances \citep{LiveseyEtal:2021:Drifts} 
-%Vertical profiles of the drifts in the v5.0x and v6.0x 190-GHz \ch{N2O} compared to matching ACE-%FTS v5.2 profiles are shown in Figure~\ref{fig:N2OMLSACEDrifts}. Description to be added here -AL.
+\begin{figure}
+  \includegraphics[width=0.98\linewidth]
+  {figures/MLSv6-ACEv5.3-DQD-DRIFT-N2O-06-TS}
+  \caption{Timeseries of the 100\,hPa MLS \thisv 190\nobreakdash-GHz standard product \ch{N2O} and ACE-FTS v5.2/v5.3 \ch{N2O} for 50\degsym S to 50\degsym N over the period 2005--2026. The upper two panels show the monthly averages and 12-month box-car smoothed values. The lower two panels show the absolute and percentage \ch{N2O} differences. The matching criteria are $\pm$1\degsym\ in latitude, $\pm$8\degsym\ in longitude, and $\pm$~12 hours in time.}
+  \label{fig:N2OMLSACETS}
+\end{figure}
+
 
 Average values for \thisv 640\nobreakdash-GHz \ch{N2O} are 20\% larger than in \vii for the 100\,hPa pressure level, up to 10\% smaller at the 46--32\,hPa levels, and within 5\% for pressures greater than 22\,hPa (see Figure~\ref{fig:N2O640Comparison}). Differences between \thisv and \prevv 640\nobreakdash-GHz \ch{N2O} are less than 10\% at all levels.
 Apart from the differences noted above, the MLS \thisv 640\nobreakdash-GHz \ch{N2O} is similar to the MLS \vii product described and validated by \citet{LambertEtal:2007}. Comparisons of \vii 640\nobreakdash-GHz \ch{N2O} with coincident measurements by ACE-FTS, Odin/SMR, and Envisat/MIPAS, as well as balloon-borne observations, are shown by \citet{LambertEtal:2007}. A revised validation paper for \ch{N2O} is not planned, and users are encouraged to read \citet{LambertEtal:2007} for more information.
@@ -105,11 +109,11 @@ Apart from the differences noted above, the MLS \thisv 640\nobreakdash-GHz \ch{N
 \begin{figure}
   \includegraphics[width=0.98\linewidth]
   {figures/InspectZM_2009m04_N2O-640-v06-0x_N2O-640-v05-0x_N2O-640-v04-2x_N2O-640-v03-3x_N2O-640-v02-2x_userHeightRange}
-  \caption{MLS \thisv 640\nobreakdash-GHz \ch{N2O} compared to \vii, \viii, \viv, and \vv for April 2009}
+  \caption{MLS \thisv 640\nobreakdash-GHz \ch{N2O} compared to \vii, \viii, \viv, and \vv for April 2009.}
   \label{fig:N2O640Comparison}
 \end{figure}
 
-\subsection{Desired improvements for future data version(s)}
+\subsection{Desired improvements should another data version be produced}
 
 Given the demonstrated utility of \ch{N2O} as a long-lived tracer in the lowermost stratosphere, should future development work on the 190\nobreakdash-GHz MLS \ch{N2O} retrieval be undertaken, a priority will be to attempt to extend the retrievals to pressures greater than 100\,hPa.
 
@@ -122,8 +126,8 @@ Given the demonstrated utility of \ch{N2O} as a long-lived tracer in the lowermo
 \textbf{Pressure} &
 \tableheaderbox{Resolution%
 \footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}\\V $\times$ H} &
-\multicolumn{2}{c}{\tableheaderbox{Single-Profile\\Precision}} &
-\multicolumn{2}{c}{\textbf{Accuracy}} &
+\multicolumn{2}{c}{\tableheaderbox{Single-Profile\\Precision\footnote{1$\sigma$ value}}} &
+\multicolumn{2}{c}{\textbf{Accuracy\footnote{2$\sigma$ value}}} &
 \textbf{Comments} \\
 \textbf{hPa} & \textbf{km} &  \textbf{ppbv} & \textbf{\%} & \textbf{ppbv} & \textbf{\%} & \\
 \midrule
@@ -153,8 +157,8 @@ $\geq$215    & ---                 & ---   & ---    & --- & ---& Unsuitable for 
 \parbox[m]{15mm}{\centering\textbf{Pressure}} &
 \parbox[m]{24mm}{\centering\textbf{Resolution%
 \\ V $\times$ H}\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde3\,km.}} &
-\multicolumn{2}{c}{\parbox[m]{22mm}{\centering\textbf{Single-Profile Precision}}} &
-\multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy}}} &
+\multicolumn{2}{c}{\parbox[m]{22mm}{\centering\textbf{Single-Profile Precision\footnote{1$\sigma$ value}}}} &
+\multicolumn{2}{c}{\parbox[m]{16mm}{\centering\textbf{Accuracy\footnote{2$\sigma$ value}}}} &
 \textbf{Comments} \\
 \textbf{hPa} & \textbf{km} &  \textbf{ppbv} & \textbf{\%} & \textbf{ppbv} & \textbf{\%} & \\
 \midrule
