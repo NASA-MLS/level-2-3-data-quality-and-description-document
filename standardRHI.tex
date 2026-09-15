@@ -74,6 +74,7 @@ The values for accuracy are the RSS accuracies for \ch{H2O} and temperature scal
     \end{description}
 
   \item[Additional screening for RHI based on \ch{H2O}:] Any RHI profiles for which the corresponding \ch{H2O} profiles contain values less than 0.101\,ppmv at any pressure greater than 1\,hPa should be rejected.  This step eliminates highly oscillatory RHI profiles.
+  \item[Exception to data quality screening threshold following the Hunga volcanic eruption:] From 15~January to 13~February 2022, for RHI profiles for which the corresponding \ch{H2O} profiles contain extremely high stratospheric water vapor values ($>$20\,ppmv) for pressures $\le$100\,hPa, the quality threshold can be reduced to 0.05. Although the radiometric fits are poorer for these extremely moist profiles, they are considered acceptable for scientific use.
 \end{description}
 \end{nofloatpages}
 
@@ -118,10 +119,13 @@ Figures~\ref{fig:RHIairsmlsjfm2009maps} and \ref{fig:RHIairsmlsjja2009maps} show
 \tableheaderbox{Pressure\\ \\ \\hPa} &
 \tableheaderbox{Resolution\footnote{Vertical and along-track horizontal resolutions; cross-track horizontal resolution is \mytexttilde9\,km.}\\ 
     V~$\times$~H\\ \\km} &
-\tableheaderbox{Single-\\Profile\\precision%
-  \footnote{Fractional error ([error in RHI] / RHI) in percent}\\%
-  \%} &
-\tableheaderbox{Accuracy$^b$\\ \\ \\\%} &
+\tableheaderbox{Single-\\Profile\\precision\footnote{1 $\sigma$ value}\\ \%
+%  \footnote{Fractional error ([error in RHI] / RHI) in percent}\\%
+%  \%
+} &
+%\tableheaderbox{Accuracy$^b$\\ \\ \\\%} &
+\tableheaderbox{Accuracy\footnote{2 $\sigma$ value}\\ \\ \\\%} &
+
 \tableheaderbox{Comments}\tabularnewline\midrule
 0.00046 & --- & ---  & --- & Unsuitable for scientific use \\  
 0.001 & 13.9 $\times$ 708 & 184  & 76 &  \\
