@@ -24,7 +24,8 @@
 *.so
 *.toc
 *.bak*
-**.pyc
+*.pyc
+**/__pycache__
 *~
 ,*
 .#*

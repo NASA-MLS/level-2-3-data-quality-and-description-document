@@ -79,12 +79,12 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(1000, 0.1),
         ),
-        "HO2": StandardKernelFigure(
+        "HO2": HorizontalOnlyKernelFigure(
             product="HO2",
             kernels=kernels,
             pressure_range=slice(100, 0.1),
         ),
-        "HOCl": StandardKernelFigure(
+        "HOCl": HorizontalOnlyKernelFigure(
             product="HOCl",
             kernels=kernels,
             pressure_range=slice(100, 0.1),
