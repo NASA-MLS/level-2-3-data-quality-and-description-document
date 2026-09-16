@@ -62,5 +62,12 @@
             ]
         }
     ],
-    "latex-workshop.latex.recipe.default": "first"
+    "latex-workshop.latex.recipe.default": "latexmk (latexmkrc)",
+    "python-envs.pythonProjects": [
+        {
+            "path": ".",
+            "envManager": "ms-python.python:conda",
+            "packageManager": "ms-python.python:conda"
+        }
+    ]
 }

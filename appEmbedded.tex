@@ -6,34 +6,39 @@ In part to comply with journal requirements for data availability and also to he
 At the time of writing, all the datasets embedded herein are also available from the MLS website at \url{https://mls.jpl.nasa.gov/eos-aura-mls/data-products/averaging-kernels}. They are also available from Zenodo at \url{https://zenodo.org/records/18988586}.
 
 \section{Averaging kernels}
-The averaging kernels described in Section~\ref{sec:AveragingKernels} can be extracted using the icons in the table below.
+The averaging kernels described in Section~\ref{sec:AveragingKernels} can be extracted using the icons in the table below. \mycomment{ADD NOTE ABOUT 78\degsym{}N night}
 
 \newcommand{\myattach}[1]{\textattachfile{\detokenize{#1}}{\faDownload}}
 \begin{center}
 \newlength{\attwidth}
 \setlength{\attwidth}{1.4cm}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
-\begin{tabular}{lx{\attwidth}x{\attwidth}x{\attwidth}x{\attwidth}x{\attwidth}}
+\begin{tabular}{lx{\attwidth}x{\attwidth}x{\attwidth}x{\attwidth}x{\attwidth}x{2\attwidth}}
   \toprule
   \null & 
   70\degsym S & 
   35\degsym S & 
   Equator & 
   35\degsym N & 
-  70\degsym N \tabularnewline
+  70\degsym N &
+  78\degsym N (night) \tabularnewline
   \midrule
   1D kernels & 
   \myattach{data/MLS_v6_1D_AVK_70S.nc4} &
   \myattach{data/MLS_v6_1D_AVK_35S.nc4} &
   \myattach{data/MLS_v6_1D_AVK_EQ.nc4} &
   \myattach{data/MLS_v6_1D_AVK_35N.nc4} &
-  \myattach{data/MLS_v6_1D_AVK_70N.nc4} \tabularnewline
+  \myattach{data/MLS_v6_1D_AVK_70N.nc4} &
+  \myattach{data/MLS_v6_1D_AVK_78N-night.nc4}
+  \tabularnewline
   2D kernels &
   \myattach{data/MLS_v6_2D_AVK_70S.nc4} &
   \myattach{data/MLS_v6_2D_AVK_35S.nc4} &
   \myattach{data/MLS_v6_2D_AVK_EQ.nc4} &
   \myattach{data/MLS_v6_2D_AVK_35N.nc4} &
-  \myattach{data/MLS_v6_2D_AVK_70N.nc4} \tabularnewline
+  \myattach{data/MLS_v6_2D_AVK_70N.nc4} &
+  \myattach{data/MLS_v6_1D_AVK_78N-night.nc4}
+  \tabularnewline
   \bottomrule
 \end{tabular}
 \end{center}
