@@ -28,7 +28,7 @@ DESTINATION_PATH = Path("../new_kernel_figures")
 def setup_figures() -> dict[str, BaseKernelFigure]:
     """Creates all the figures"""
     kernels = read_kernels()
-    figures = {
+    figures: dict[str, BaseKernelFigure] = {
         "BrO": HorizontalOnlyKernelFigure(
             product="BrO",
             kernels=kernels,
@@ -148,6 +148,7 @@ def draw_figures(
     **kwargs,
 ):
     """Draw all the figures"""
+    # Set up some plot defaults that apply to the indented block beneath
     with plt.rc_context(
         {
             "xtick.minor.visible": True,
@@ -158,6 +159,7 @@ def draw_figures(
         }
     ):
         print("Doing averaging kernel plots: ", end="")
+        # Loop over the figures and draw them.
         for key, figure in figures.items():
             print(f"{key}, ", end="")
             figure.draw(**kwargs)
@@ -250,11 +252,11 @@ class BaseKernelFigure:
         plt.close()
 
 
-class StandardKernelFigure(BaseKernelFigure):
-    """The most common kind of averaging kernel figure
+class TwoRowKernelFigure(BaseKernelFigure):
+    """A very typical kernel figure layout
 
-    Being a 2x2 array of plots, with rows showing the kernel for the equator and
-    70N, and the columns showing vertical and horizontal kernels.
+    Being a 2x2 array of plots, with rows showing for various bins, and the
+    columns showing vertical and horizontal kernels.
     """
 
     def __init__(
@@ -262,13 +264,14 @@ class StandardKernelFigure(BaseKernelFigure):
         product: str,
         kernels: xr.DataTree,
         pressure_range: slice,
+        bin_labels: dict[str, str],
         name: Optional[str] = None,
     ):
         # Create a suitable BaseKernelFigure entry.
-        bin_labels: dict[str, str] = {
-            "EQ": "Equator",
-            "70N": "70ºN",
-        }
+        # bin_labels: dict[str, str] = {
+        #     "EQ": "Equator",
+        #     "70N": "70ºN",
+        # }
         n_rows = 2
         n_columns = 2
         panels: list[KernelPanel] = []
@@ -298,15 +301,15 @@ class StandardKernelFigure(BaseKernelFigure):
             name = product
         # OK, now populate the BaseKernelFigure entry.
         super().__init__(
-            name=name,
             n_rows=n_rows,
             n_columns=n_columns,
             panels=panels,
             panel_titles=panel_titles,
+            name=name,
         )
 
 
-class DayNightKernelFigure(BaseKernelFigure):
+class StandardKernelFigure(TwoRowKernelFigure):
     """The most common kind of averaging kernel figure
 
     Being a 2x2 array of plots, with rows showing the kernel for the equator and
@@ -318,43 +321,45 @@ class DayNightKernelFigure(BaseKernelFigure):
         product: str,
         kernels: xr.DataTree,
         pressure_range: slice,
+        name: Optional[str] = None,
     ):
-        # Create a suitable BaseKernelFigure entry.
+        bin_labels: dict[str, str] = {
+            "EQ": "Equator",
+            "70N": "70ºN",
+        }
+        super().__init__(
+            product=product,
+            kernels=kernels,
+            pressure_range=pressure_range,
+            name=name,
+            bin_labels=bin_labels,
+        )
+
+
+class DayNightKernelFigure(TwoRowKernelFigure):
+    """The most common kind of averaging kernel figure
+
+    Being a 2x2 array of plots, with rows showing the kernel day and night, and
+    the columns showing vertical and horizontal kernels.
+    """
+
+    def __init__(
+        self,
+        product: str,
+        kernels: xr.DataTree,
+        pressure_range: slice,
+        name: Optional[str] = None,
+    ):
         bin_labels: dict[str, str] = {
             "EQ": "Day",
             "78N-night": "Night",
         }
-        n_rows = 2
-        n_columns = 2
-        panels: list[KernelPanel] = []
-        panel_titles = []
-        for bin, bin_label in bin_labels.items():
-            # Append the row title
-            panel_titles.append(bin_label)
-            # Append the relevant vertical kernel plot
-            panels.append(
-                KernelPanel(
-                    flavor="vertical",
-                    kernel=kernels[f"{bin}/{product}"].data_vars["avkv"],
-                    pressure_range=pressure_range,
-                )
-            )
-            # Now the relevant horizontal kernel plot (no title here)
-            panel_titles.append("")
-            panels.append(
-                KernelPanel(
-                    flavor="horizontal",
-                    kernel=kernels[f"{bin}/{product}"].data_vars["avkh"],
-                    pressure_range=pressure_range,
-                )
-            )
-        # OK, now populate the BaseKernelFigure entry.
         super().__init__(
-            name=product,
-            n_rows=n_rows,
-            n_columns=n_columns,
-            panels=panels,
-            panel_titles=panel_titles,
+            product=product,
+            kernels=kernels,
+            pressure_range=pressure_range,
+            name=name,
+            bin_labels=bin_labels,
         )
 
 
@@ -479,7 +484,8 @@ def draw_vertical_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice):
     top_axis.set_xlabel("FWHM / km")
     # Setup the y axis
     setup_y_axis(ax=ax, pressure_range=pressure_range)
-    # Now subset the kernel information appropriately (don't forget pressure runs backwards).
+    # Now subset the kernel information appropriately (don't forget pressure
+    # runs backwards, hence the specifics of the <= and >=).
     relevant = (
         (kernel["RetrievalLevel"] <= pressure_range.start)
         & (kernel["RetrievalLevel"] >= pressure_range.stop)
@@ -490,7 +496,7 @@ def draw_vertical_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice):
     # Pick colors
     n_levels = data.sizes["RetrievalLevel"]
     colors = plt.colormaps["rainbow"](np.linspace(0, 1, n_levels))
-    # Now show the lines (old-style loop for now).
+    # Now show the lines and the symbol at the "peak" (old-style loop is simplest).
     for i_level in range(n_levels):
         # Show the line
         ax.plot(
@@ -506,7 +512,7 @@ def draw_vertical_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice):
             marker="+",
             color=colors[i_level],
         )
-    # Show the integrated kernel
+    # Show the integrated kernel (xarray makes this so simple!)
     ax.plot(
         kernel.sum(dim="TruthLevel"),
         kernel["RetrievalLevel"],
@@ -567,6 +573,7 @@ def draw_horizontal_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice
     profile_selector = {
         "TruthPhi": slice(center_profile + x_lim[0], center_profile + x_lim[1] + 1)
     }
+    # Now show the lines and the symbol at the peak.
     for i_level in range(n_levels):
         level_selector = {"RetrievalLevel": i_level}
         # Show the line
