@@ -89,7 +89,7 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(100, 0.1),
         ),
-        "OH": StandardKernelFigure(
+        "OH": DayNightKernelFigure(
             product="OH",
             kernels=kernels,
             pressure_range=slice(100, 0.001),
@@ -236,6 +236,58 @@ class StandardKernelFigure(BaseKernelFigure):
         bin_labels: dict[str, str] = {
             "EQ": "Equator",
             "70N": "70ºN",
+        }
+        n_rows = 2
+        n_columns = 2
+        panels: list[KernelPanel] = []
+        panel_titles = []
+        for bin, bin_label in bin_labels.items():
+            # Append the row title
+            panel_titles.append(bin_label)
+            # Append the relevant vertical kernel plot
+            panels.append(
+                KernelPanel(
+                    flavor="vertical",
+                    kernel=kernels[f"{bin}/{product}"].data_vars["avkv"],
+                    pressure_range=pressure_range,
+                )
+            )
+            # Now the relevant horizontal kernel plot (no title here)
+            panel_titles.append("")
+            panels.append(
+                KernelPanel(
+                    flavor="horizontal",
+                    kernel=kernels[f"{bin}/{product}"].data_vars["avkh"],
+                    pressure_range=pressure_range,
+                )
+            )
+        # OK, now populate the BaseKernelFigure entry.
+        super().__init__(
+            name=product,
+            n_rows=n_rows,
+            n_columns=n_columns,
+            panels=panels,
+            panel_titles=panel_titles,
+        )
+
+
+class DayNightKernelFigure(BaseKernelFigure):
+    """The most common kind of averaging kernel figure
+
+    Being a 2x2 array of plots, with rows showing the kernel for the equator and
+    70N, and the columns showing vertical and horizontal kernels.
+    """
+
+    def __init__(
+        self,
+        product: str,
+        kernels: xr.DataTree,
+        pressure_range: slice,
+    ):
+        # Create a suitable BaseKernelFigure entry.
+        bin_labels: dict[str, str] = {
+            "EQ": "Day",
+            "78N-night": "Night",
         }
         n_rows = 2
         n_columns = 2
