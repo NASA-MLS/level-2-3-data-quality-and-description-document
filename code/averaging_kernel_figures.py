@@ -8,9 +8,9 @@ from them), so it can live in Overleaf and/or github relatively simply.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Literal, cast
+from typing import Any, Literal, cast, Optional
 
 from numpy.typing import NDArray
 import numpy as np
@@ -28,7 +28,7 @@ DESTINATION_PATH = Path("../new_kernel_figures")
 def setup_figures() -> dict[str, BaseKernelFigure]:
     """Creates all the figures"""
     kernels = read_kernels()
-    return {
+    figures = {
         "BrO": HorizontalOnlyKernelFigure(
             product="BrO",
             kernels=kernels,
@@ -59,7 +59,7 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(1000, 0.00046),
         ),
-        "H2O": StandardKernelFigure(
+        "H2O_HR": StandardKernelFigure(
             product="H2O",
             kernels=kernels,
             pressure_range=slice(1000, 0.000_01),
@@ -89,6 +89,26 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(100, 0.1),
         ),
+        "N2O": StandardKernelFigure(
+            product="N2O",
+            kernels=kernels,
+            pressure_range=slice(100, 0.1),
+        ),
+        # "N2O-640": StandardKernelFigure(
+        #     product="N2O-640",
+        #     kernels=kernels,
+        #     pressure_range=slice(100, 0.1),
+        # ),
+        "O3_HR-UTLS": StandardKernelFigure(
+            product="O3",
+            kernels=kernels,
+            pressure_range=slice(1000, 10),
+        ),
+        "O3_HR": StandardKernelFigure(
+            product="O3",
+            kernels=kernels,
+            pressure_range=slice(1000, 0.000_46),
+        ),
         "OH": DayNightKernelFigure(
             product="OH",
             kernels=kernels,
@@ -99,12 +119,17 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(1000, 1),
         ),
-        "Temperature": StandardKernelFigure(
+        "Temperature_HR": StandardKernelFigure(
             product="Temperature",
             kernels=kernels,
             pressure_range=slice(1000, 0.000_1),
         ),
     }
+    # Copy the key into the name
+    for name, figure in figures.items():
+        figure.name = name
+    # OK, done
+    return figures
 
 
 def read_kernels() -> xr.DataTree:
@@ -215,7 +240,13 @@ class BaseKernelFigure:
                 },
             )
         # Save the figure to a PDF file
-        figure.savefig(DESTINATION_PATH / f"avk-{self.name}.pdf")
+        figure.savefig(
+            DESTINATION_PATH / f"avk-{self.name}.pdf",
+            metadata={
+                "CreationDate": None,
+                "ModDate": None,
+            },
+        )
         plt.close()
 
 
@@ -231,6 +262,7 @@ class StandardKernelFigure(BaseKernelFigure):
         product: str,
         kernels: xr.DataTree,
         pressure_range: slice,
+        name: Optional[str] = None,
     ):
         # Create a suitable BaseKernelFigure entry.
         bin_labels: dict[str, str] = {
@@ -261,9 +293,12 @@ class StandardKernelFigure(BaseKernelFigure):
                     pressure_range=pressure_range,
                 )
             )
+        # If we don't have a name, use our product name as such.
+        if name is None:
+            name = product
         # OK, now populate the BaseKernelFigure entry.
         super().__init__(
-            name=product,
+            name=name,
             n_rows=n_rows,
             n_columns=n_columns,
             panels=panels,
