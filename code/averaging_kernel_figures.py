@@ -8,6 +8,9 @@ backwards capability of the old IDL code.)
 This uses xarray, netcdf, matplotlib etc., but attempts to be genuinely portable
 and future proof, so eschews some existing MLS libraries (though it does borrow
 from them), so it can live in Overleaf and/or github relatively simply.
+
+Note, this code expects to be run from the "code" folder within the Overleaf document.
+I've added some minimal checks to ensure that.
 """
 
 from __future__ import annotations
@@ -16,6 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal, cast, Optional
 
+import matplotlib
 from numpy.typing import NDArray
 import numpy as np
 import matplotlib.pyplot as plt
@@ -30,9 +34,13 @@ DESTINATION_PATH = Path("../new_kernel_figures")
 ALONG_TRACK_SPACING = 165.0
 
 
-def setup_figures() -> dict[str, BaseKernelFigure]:
+# This tells matplotlib we're just producing PDF files, so no need for X11 or
+# Mac, or whatever graphics.
+matplotlib.use("Agg")
+
+
+def setup_figures(kernels: xr.DataTree) -> dict[str, BaseKernelFigure]:
     """Creates all the figures"""
-    kernels = read_kernels()
     figures: dict[str, BaseKernelFigure] = {
         "BrO": HorizontalOnlyKernelFigure(
             product="BrO",
@@ -139,6 +147,7 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
 
 def read_kernels() -> xr.DataTree:
     """Read all the 1D averaging kernel NetCDF files into a DataTree"""
+    validate_environment()
     # Find all the files
     netcdf_files = list(SOURCE_PATH.glob("*1D*.nc4"))
     result = xr.DataTree()
@@ -150,6 +159,7 @@ def read_kernels() -> xr.DataTree:
 
 def draw_figures(figures: dict[str, BaseKernelFigure]):
     """Draw all the figures"""
+    validate_environment()
     # Set up some plot defaults that apply to the indented block beneath
     with plt.rc_context(
         {
@@ -160,10 +170,10 @@ def draw_figures(figures: dict[str, BaseKernelFigure]):
             "ytick.direction": "in",
         }
     ):
-        print("Doing averaging kernel plots: ", end="")
+        print("Doing averaging kernel plots: ", end="", flush=True)
         # Loop over the figures and draw them.
         for key, figure in figures.items():
-            print(f"{key}, ", end="")
+            print(f"{key}, ", end="", flush=True)
             figure.draw()
         print("done.")
 
@@ -657,6 +667,8 @@ def generate_ascii_summary_file(kernel: xr.Dataset, filename: str | Path, produc
 
 def generate_all_ascii_summary_files(kernels: xr.DataTree):
     """Generate all the ASCII summary files"""
+    validate_environment()
+    print("Generating ASCII summary files, ", end="", flush=True)
     destination = DESTINATION_PATH / "ascii-summaries"
     destination.mkdir(parents=True, exist_ok=True)
     for bin_name, bin in kernels.children.items():
@@ -667,6 +679,7 @@ def generate_all_ascii_summary_files(kernels: xr.DataTree):
                 filename=filename,
                 product=product,
             )
+    print("done.")
 
 
 def fwhm(z: NDArray, A: NDArray) -> NDArray:
@@ -709,10 +722,24 @@ def li(a1, a0, z1, z0, a):
     return z0 + (z1 - z0) / (a1 - a0) * (a - a0)
 
 
+def validate_environment():
+    """Raise an error if we're not in the right directory"""
+    if Path().cwd().name != "code":
+        raise RuntimeError(
+            'This program should be run from within the "code" directory'
+        )
+    if not SOURCE_PATH.exists():
+        raise RuntimeError(f"Unable to find the directory {SOURCE_PATH!r}")
+    if not DESTINATION_PATH.exists():
+        raise RuntimeError(f"Unable to find the directory {DESTINATION_PATH!r}")
+
+
 if __name__ == "__main__":
     """If we're just run on the command line, do all the work"""
-    figures = setup_figures()
+    kernels = read_kernels()
+    figures = setup_figures(kernels)
     draw_figures(figures)
+    generate_all_ascii_summary_files(kernels)
 
 
 # cspell: words avkh
