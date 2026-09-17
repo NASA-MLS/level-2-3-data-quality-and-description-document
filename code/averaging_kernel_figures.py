@@ -148,10 +148,7 @@ def read_kernels() -> xr.DataTree:
     return result
 
 
-def draw_figures(
-    figures: dict[str, BaseKernelFigure],
-    **kwargs,
-):
+def draw_figures(figures: dict[str, BaseKernelFigure]):
     """Draw all the figures"""
     # Set up some plot defaults that apply to the indented block beneath
     with plt.rc_context(
@@ -167,7 +164,7 @@ def draw_figures(
         # Loop over the figures and draw them.
         for key, figure in figures.items():
             print(f"{key}, ", end="")
-            figure.draw(**kwargs)
+            figure.draw()
         print("done.")
 
 
@@ -195,10 +192,8 @@ class BaseKernelFigure:
     panels: list[KernelPanel]
     panel_titles: list[str]
 
-    def draw(self, **kwargs):
-        """Draw the averaging kernel figure
-
-        kwargs are passed onto the drawing code."""
+    def draw(self):
+        """Draw the averaging kernel figure"""
         # Work out how big the figure is going to be, the size in cm is drawn
         # from the predecessor IDL code
         figsize_cm = [16, 2 + self.n_rows * 8]
@@ -214,7 +209,7 @@ class BaseKernelFigure:
         # Draw the panels
         for ax, panel in zip(axes.ravel(), self.panels):
             # Draw the panel
-            panel.draw(ax=ax, **kwargs)
+            panel.draw(ax=ax)
             # Suppress the y axes for all but the first columns
             assert isinstance(ax, Axes)
             if cast(SubplotSpec, ax.get_subplotspec()).colspan.start != 0:
@@ -431,33 +426,25 @@ class KernelPanel:
     kernel: xr.DataArray
     pressure_range: slice
 
-    def draw(
-        self,
-        ax: Axes,
-        **kwargs: dict[str, Any],
-    ):
+    def draw(self, ax: Axes):
         """Do the work to populate a panel in the averaging kernel figure
 
         Parameters
         ----------
         ax : Axes
             The matplotlib axes (aka panel itself) to populate
-        **kwargs : dict[str, Any]
-            Passed on to the drawing routine
         """
         if self.flavor == "vertical":
             draw_vertical_kernel(
                 ax=ax,
                 kernel=self.kernel,
                 pressure_range=self.pressure_range,
-                **kwargs,
             )
         elif self.flavor == "horizontal":
             draw_horizontal_kernel(
                 ax=ax,
                 kernel=self.kernel,
                 pressure_range=self.pressure_range,
-                **kwargs,
             )
         else:
             raise ValueError(
