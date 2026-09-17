@@ -1,6 +1,10 @@
 """A stand alone (from other MLS libraries) package for generating kernel plots
 in MLS quality document
 
+Note, this same module also produces summaries of each of the vertical and
+horizontal resolutions for each kernel file. (This is to retain something of the
+backwards capability of the old IDL code.)
+
 This uses xarray, netcdf, matplotlib etc., but attempts to be genuinely portable
 and future proof, so eschews some existing MLS libraries (though it does borrow
 from them), so it can live in Overleaf and/or github relatively simply.
@@ -23,6 +27,7 @@ from matplotlib.ticker import ScalarFormatter, FuncFormatter
 
 SOURCE_PATH = Path("../data")
 DESTINATION_PATH = Path("../new_kernel_figures")
+ALONG_TRACK_SPACING = 165.0
 
 
 def setup_figures() -> dict[str, BaseKernelFigure]:
@@ -57,7 +62,7 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
         "CO": StandardKernelFigure(
             product="CO",
             kernels=kernels,
-            pressure_range=slice(1000, 0.00046),
+            pressure_range=slice(1000, 0.000_46),
         ),
         "H2O_HR": StandardKernelFigure(
             product="H2O",
@@ -94,11 +99,11 @@ def setup_figures() -> dict[str, BaseKernelFigure]:
             kernels=kernels,
             pressure_range=slice(100, 0.1),
         ),
-        # "N2O-640": StandardKernelFigure(
-        #     product="N2O-640",
-        #     kernels=kernels,
-        #     pressure_range=slice(100, 0.1),
-        # ),
+        "N2O-640": StandardKernelFigure(
+            product="N2O_640",
+            kernels=kernels,
+            pressure_range=slice(100, 0.1),
+        ),
         "O3_HR-UTLS": StandardKernelFigure(
             product="O3",
             kernels=kernels,
@@ -520,11 +525,10 @@ def draw_vertical_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice):
         linewidth=2,
     )
     # Compute the vertical resolution
-    z = 16.0 * (3.0 - np.log10(kernel["RetrievalLevel"]))
-    vertical_resolution = fwhm(z, kernel.values)
+    vertical_resolution = compute_vertical_resolution(kernel)
     ax.plot(
-        vertical_resolution / 10,
-        kernel["RetrievalLevel"],
+        vertical_resolution.values / 10,
+        vertical_resolution["RetrievalLevel"],
         linestyle="dashed",
         color="black",
         linewidth=2,
@@ -553,7 +557,7 @@ def draw_horizontal_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice
     top_axis = ax.twiny()
     top_axis.set_xlabel("FWHM / km")
     # The range for this is scaled to match the 165-km along-track profile scaling
-    top_axis.set_xlim(0, (x_lim[1] - x_lim[0]) * 165.0)
+    top_axis.set_xlim(0, (x_lim[1] - x_lim[0]) * ALONG_TRACK_SPACING)
     top_axis.xaxis.set_major_locator(MultipleLocator(200))
     # Setup the y axis (note that this might later be suppressed by the calling
     # code, as the axis is shared with the plot to the left)
@@ -594,12 +598,11 @@ def draw_horizontal_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice
             marker="+",
             color=colors[i_level],
         )
-    # Compute the horizontal resolution
-    x = np.arange(n_profiles)
-    horizontal_resolution = fwhm(x, data.values.T)
+    # Show the horizontal resolution
+    horizontal_resolution = compute_horizontal_resolution(data)
     ax.plot(
         horizontal_resolution + x_lim[0],
-        data["RetrievalLevel"],
+        horizontal_resolution["RetrievalLevel"],
         linestyle="dashed",
         color="black",
         linewidth=2,
@@ -616,6 +619,67 @@ def setup_y_axis(ax: Axes, pressure_range: slice):
     ax.yaxis.set_major_formatter(
         FuncFormatter(lambda x, _: f"{x:.10f}".rstrip("0").rstrip("."))
     )
+
+
+def compute_vertical_resolution(avkv: xr.DataArray) -> xr.DataArray:
+    """Given a vertical kernel, compute the FWHM-based resolution"""
+    z = 16.0 * (3.0 - np.log10(avkv["RetrievalLevel"]))
+    return xr.DataArray(
+        fwhm(z, avkv.values),
+        coords={"RetrievalLevel": avkv["RetrievalLevel"]},
+    )
+
+
+def compute_horizontal_resolution(avkh: xr.DataArray) -> xr.DataArray:
+    """Given a horizontal kernel, compute the FWHM-based resolution"""
+    # Generate an x coordinate for the fwhm routine
+    x = np.arange(avkh.sizes["TruthPhi"])
+    return xr.DataArray(
+        fwhm(x, avkh.values.T),
+        coords={"RetrievalLevel": avkh["RetrievalLevel"]},
+    )
+
+
+def generate_ascii_summary_file(kernel: xr.Dataset, filename: str | Path, product: str):
+    """Generates an ascii file from a given 1D averaging kernel"""
+    # Compute the widths
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(f"Averaging kernel etc. information for: {product}\n")
+        vertical_resolution = compute_vertical_resolution(kernel.data_vars["avkv"])
+        horizontal_resolution = (
+            compute_horizontal_resolution(kernel.data_vars["avkh"])
+            * ALONG_TRACK_SPACING
+        )
+        integrated_kernel = kernel.data_vars["avkv"].sum(dim="TruthLevel")
+        # Setup the column widths
+        titles = ["p/hPa", "VR/km", "HR/km"]
+        widths = [12, 10, 10]
+        # Now loop over the levels and print out the resolutions where they make sense
+        file.write(" ".join([f"{t:>{w}}" for t, w in zip(titles, widths)]) + "\n")
+        for i_level in range(kernel.sizes["RetrievalLevel"]):
+            if integrated_kernel[i_level] < 1e-3:
+                continue
+            values = [
+                kernel["RetrievalLevel"][i_level],
+                vertical_resolution[i_level],
+                horizontal_resolution[i_level],
+            ]
+            file.write(" ".join([f"{v:{w}g}" for v, w in zip(values, widths)]) + "\n")
+
+
+def generate_all_ascii_summary_files(kernels: xr.DataTree):
+    """Generate all the ASCII summary files"""
+    destination = DESTINATION_PATH / "ascii-summaries"
+    destination.mkdir(parents=True, exist_ok=True)
+    for bin_name, bin in kernels.children.items():
+        for product, kernel in bin.children.items():
+            filename = destination / f"avk-{product}-{bin_name}-summary.txt"
+            generate_ascii_summary_file(
+                kernel=kernel,
+                filename=filename,
+                product=product,
+            )
 
 
 def fwhm(z: NDArray, A: NDArray) -> NDArray:
