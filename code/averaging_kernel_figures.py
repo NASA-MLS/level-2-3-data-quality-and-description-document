@@ -100,7 +100,7 @@ def setup_figures(kernels: xr.DataTree) -> dict[str, BaseKernelFigure]:
         "HOCl": HorizontalOnlyKernelFigure(
             product="HOCl",
             kernels=kernels,
-            pressure_range=slice(100, 0.1),
+            pressure_range=slice(100, 1.0),
         ),
         "N2O": StandardKernelFigure(
             product="N2O",
@@ -228,20 +228,41 @@ class BaseKernelFigure:
 
         # First pass establishes constrained layout
         figure.canvas.draw()
+        # Freeze that layout, then reserve space above each panel.
+        figure.set_layout_engine("none")
+        title_space = 0.01
+        for ax in axes.ravel():
+            pos = ax.get_position()
+            ax.set_position([pos.x0, pos.y0, pos.width, pos.height - title_space])
+        figure.canvas.draw()
+        # Use a common annotation height for each row.
+        row_tops = [
+            max(
+                ax.get_tightbbox().transformed(figure.transFigure.inverted()).y1
+                for ax in row
+            )
+            for row in axes.reshape(self.n_rows, self.n_columns)
+        ]
         # Build up the annotations
         annotations = []
-        for row_title, ax in zip(self.panel_titles, axes.ravel()):
-            if not row_title:
+        for i, (annotation_text, ax) in enumerate(zip(self.panel_titles, axes.ravel())):
+            if not annotation_text:
                 continue
-            bbox = ax.get_tightbbox()
-            bbox_fig = bbox.transformed(figure.transFigure.inverted())
-            annotations.append((bbox_fig.x0 + 0.01, bbox_fig.y1 + 0.015, row_title))
+            bbox_fig = ax.get_tightbbox().transformed(figure.transFigure.inverted())
+            # Some tweaking takes place on the title positions.
+            annotations.append(
+                (
+                    bbox_fig.x0 + 0.01,
+                    row_tops[i // self.n_columns] + 0.015 + 0.01 * (self.n_rows == 1),
+                    annotation_text,
+                )
+            )
         # Now geometry is settled. Add figure-level text LAST.
-        for x, y, row_title in annotations:
+        for x, y, annotation_text in annotations:
             figure.text(
                 x,
                 y,
-                row_title,
+                annotation_text,
                 ha="left",
                 va="bottom",
                 fontsize=12,
@@ -251,7 +272,10 @@ class BaseKernelFigure:
                     "edgecolor": "black",
                 },
             )
-        # Save the figure to a PDF file
+        # Save the figure to a PDF file.  The metadata entries here suppress the
+        # date information from the file, so that re-runs of the plot-generating
+        # code don't produce unnecessary new versions for git/Overleaf to
+        # store.
         figure.savefig(
             DESTINATION_PATH / f"avk-{self.name}.pdf",
             metadata={
@@ -302,7 +326,9 @@ class TwoRowKernelFigure(BaseKernelFigure):
             panels.append(
                 KernelPanel(
                     flavor="horizontal",
-                    kernel=kernels[f"{bin}/{product}"].data_vars["avkh"],
+                    kernel=kernels.children[f"{bin}"]
+                    .children[f"{product}"]
+                    .data_vars["avkh"],
                     pressure_range=pressure_range,
                 )
             )
@@ -484,6 +510,10 @@ def draw_vertical_kernel(ax: Axes, kernel: xr.DataArray, pressure_range: slice):
     top_axis.xaxis.set_major_locator(MultipleLocator(2))
     top_axis.set_xlim(-2, 12)
     top_axis.set_xlabel("FWHM / km")
+    # Suppress the first tick label in the top axis
+    top_axis.xaxis.set_major_formatter(
+        FuncFormatter(lambda x, _: "" if np.isclose(x, -2) else f"{x:g}")
+    )
     # Setup the y axis
     setup_y_axis(ax=ax, pressure_range=pressure_range)
     # Now subset the kernel information appropriately (don't forget pressure
