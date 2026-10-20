@@ -116,19 +116,19 @@ Extensive comparisons of MLS \vii \ch{ClO} data with measurements from a variety
 
     \standardprecisionrule
 
-  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is zero.}
+  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is an even number; profiles for which \texttt{Status} is even but nonzero should be discarded at and below (i.e., at pressures greater than or equal to) 100\,hPa because of the potential for cloud contamination but can be used without restriction at higher levels (smaller pressures), where clouds have negligible impact.}
 
-    We recommend that all profiles with nonzero values of \texttt{Status} be discarded, because of the potential impact of cloud artifacts at lower levels. Note, however, that rejecting in their entirety all profiles with nonzero \texttt{Status} may be unnecessarily severe at and above (i.e., at pressures equal to or smaller than) 46\,hPa, where clouds have negligible impact; thus otherwise good-quality profiles with nonzero but even \texttt{Status} values may be used without restriction at those levels as long as they are removed at larger pressures. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.
+    Odd values of \texttt{Status} indicate that the profile should not be used in scientific studies. In a typical month, nonzero but even values of the \texttt{Status} flag identify \mytexttilde5--10\% of ClO profiles as being potentially affected by clouds. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.
 
   \item[Quality:] \qualityrule{1.3}
 
-    In a typical month this threshold for \texttt{Quality} (unchanged from \prevv) discards few (0.2\% or less) of the \ch{ClO} profiles; note that it potentially discards some ``good'' data points while not necessarily identifying all ``bad'' ones.
+    In a typical month, this threshold for \texttt{Quality} (unchanged from \prevv) discards few (0.3\% or less) of the \ch{ClO} profiles; note that it potentially discards some ``good'' data points while not necessarily identifying all ``bad'' ones.
 
   \item[Convergence:] \convergencerule{1.05}
 
-    In a typical month this threshold for \texttt{Convergence} (unchanged from \prevv) discards few (0.2\% or less) of the \ch{ClO} profiles, many (but not all) of which are filtered out by the other quality control measures.
+    In a typical month, this threshold for \texttt{Convergence} (unchanged from \prevv) discards few (0.2\% or less) of the \ch{ClO} profiles, many (but not all) of which are filtered out by the other quality control measures.
 
-  \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, the quality of the \mbox{640\nobreakdash-GHz} \ch{ClO} retrievals is degraded at some levels when the \mbox{190\nobreakdash-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved \ch{ClO} values as large as 0.05\,ppbv ($>$50\% at some latitudes) are seen over 68--100\,hPa. These artifacts are not removed by the standard \ch{ClO} data filtering protocols. Thus, while the \ch{ClO} data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using \ch{ClO} data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the colocated \ch{H2O} profile is examined to remove affected \ch{ClO} retrievals. That is, only \ch{ClO} profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on \ch{ClO} measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all \ch{ClO} data points passing the standard quality screening measures may be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190\nobreakdash-GHz} radiometer is turned off can be intercompared.      
+  \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, the quality of the \mbox{640\nobreakdash-GHz} \ch{ClO} retrievals is degraded at some levels when the \mbox{190\nobreakdash-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved \ch{ClO} values as large as 0.05\,ppbv ($>$50\% at some latitudes) are seen over 68--100\,hPa. These artifacts are not removed by the standard \ch{ClO} data filtering protocols. Thus, while the \ch{ClO} data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190\nobreakdash-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using \ch{ClO} data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the colocated \ch{H2O} profile is examined to remove affected \ch{ClO} retrievals. That is, only \ch{ClO} profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on \ch{ClO} measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all \ch{ClO} data points passing the standard quality screening measures can be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190\nobreakdash-GHz} radiometer is turned off can be intercompared.      
 \end{description}
 \end{nofloatpages}
 
@@ -168,29 +168,29 @@ Extensive comparisons of MLS \vii \ch{ClO} data with measurements from a variety
 %
 0.68--0.001 & ---   & ---  & ---  &  Unsuitable for scientific use\\
 %
-1.0         & 3        $\times$ 500      & $\pm$0.3 & $\pm$0.02 & \\
+1.0         & 3        $\times$ 500     & $\pm$0.3 & $\pm$0.02 & \\
 %
 1.5         & 3.5      $\times$ 400     & $\pm$0.1 & $\pm$0.02 & \\
 %
 3.2--2.2    & 4        $\times$ 350     & $\pm$0.1 & $\pm$0.02 & \\
 %
-6.8--4.6         & 3.5      $\times$ 300      & $\pm$0.1 & $\pm$0.03 & \\
+6.8--4.6    & 3.5      $\times$ 300     & $\pm$0.1 & $\pm$0.03 & \\
 %
-15--10     & 3.5   $\times$ 300 & $\pm$0.1 & $\pm$0.04 & \\
+15--10      & 3.5      $\times$ 300     & $\pm$0.1 & $\pm$0.04 & \\
 %
-22          & 3        $\times$ 350      & $\pm$0.1 & $\pm$0.05  & \\
+22          & 3        $\times$ 350     & $\pm$0.1 & $\pm$0.05 & \\
 %
-46--32      & 3        $\times$ 400 & $\pm$0.1 & $\pm$0.15  & \\
+46--32      & 3        $\times$ 400     & $\pm$0.1 & $\pm$0.15 & \\
 %
-68 & 3 $\times$ 450 & $\pm$0.1 & $\pm$0.2 & Latitude-dependent
+68          & 3        $\times$ 450     & $\pm$0.1 & $\pm$0.2  & Latitude-dependent
 bias\footnote{Correct for the bias by subtracting from the individual
   measurements at this level the latitude-dependent bias estimates
   (see Section~\ref{sec:cloBias}).}\gdef\fnDirect{\value{mpfootnote}} \\
 %
-100         & 3.5        $\times$ 500      & $\pm$0.1 & $\pm$0.3  & 
+100         & 5        $\times$ 500     & $\pm$0.1 & $\pm$0.3  & 
 Latitude-dependent bias\footnotemark[\fnDirect] \\
 %
-147         & 4.5      $\times$ 650      & $\pm$0.3 & $\pm$0.4  & 
+147         & 3        $\times$ 700     & $\pm$0.3 & $\pm$0.4  & 
 Latitude-dependent bias\footnotemark[\fnDirect] \\
 %
 1000--215   & ---   & ---   & --- &  Not retrieved\\

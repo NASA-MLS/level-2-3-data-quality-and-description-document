@@ -63,7 +63,7 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
 
   \item[Clouds:] Thick clouds can induce significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5\,ppbv at 100\,hPa and even larger at 147\,hPa. The large positive \ch{HCl} bias at 147\,hPa at low and middle latitudes likely arises in part from unknown or improperly modeled systematic error sources and not just from clouds. At other pressures, the potential impact on \ch{HCl} from clouds is small or negligible.
   
-  \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, \ch{HCl} retrieval quality is degraded at some levels when the \mbox{190-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved \ch{HCl} values can reach more than 3\%  at 68\,hPa, with some biases as large as 50 to 100\% or more at 100 to 147 \,hPa, although the latter level is not recommended at extra-polar latitudes. These artifacts are not removed by the standard \ch{HCl} data filtering protocols. Thus, while the \ch{HCl} data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using \ch{HCl} data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the colocated \ch{H2O} profile is examined to remove affected \ch{HCl} retrievals. That is, only \ch{HCl} profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on \ch{HCl} measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all \ch{HCl} data points passing the standard quality screening measures may be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190-GHz} radiometer is turned off can be intercompared.
+  \item[Additional screening on \ch{H2O} \texttt{Status}:] As noted earlier, \ch{HCl} retrieval quality is degraded at some levels when the \mbox{190-GHz} radiometer is turned off and \ch{H2O} measurements are not available. In these circumstances, biases in the retrieved \ch{HCl} values can reach more than 3\%  at 68\,hPa, with some biases as large as 50 to 100\% or more at 100 to 147 \,hPa, although the latter level is not recommended at extra-polar latitudes. These artifacts are not removed by the standard \ch{HCl} data filtering protocols. Thus, while the \ch{HCl} data on affected days are still useful for purely morphological or qualitative purposes, they cannot be quantitatively compared to measurements taken on surrounding days or in previous years when the \mbox{190-GHz} radiometer was operational. The biases also have potential implications for the calculation of long-term trends. Therefore, for quantitative studies using \ch{HCl} data at those retrieval levels, an additional screening step is recommended, whereby the \texttt{Status} field in the colocated \ch{H2O} profile is examined to remove affected \ch{HCl} retrievals. That is, only \ch{HCl} profiles for which the \texttt{Status} flags of the corresponding \ch{H2O} profiles are an even number should be used in quantitative studies relying on \ch{HCl} measurements in the 68--147\,hPa range (at lower pressures / higher altitudes, all \ch{HCl} data points passing the standard quality screening measures can be used). We also note, however, that measurements taken during time periods since May 2024 when the \mbox{190-GHz} radiometer is turned off can be intercompared.
 \end{description}
 \end{nofloatpages}
 
@@ -96,15 +96,15 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
     \textbf{Comments}
     \tabularnewline\midrule
     0.22--0.001 & ---                & ---     & ---     & Unsuitable for scientific use \\
-    0.32        &   5.5 $\times$ 450 & 0.7     & 0.3     & Unsuitable for trend studies \\
-    0.5         &   5 $\times$ 400   & 0.6     & 0.3     & Unsuitable for trend studies \\
-    1           &   3.5 $\times$ 300 & 0.5     & 0.3     & Unsuitable for trend studies \\
-    2           &   3 $\times$ 250   & 0.4     & 0.3     & Unsuitable for trend studies \\
-    5           &   3 $\times$ 200   & 0.3     & 0.3     & Unsuitable for trend studies \\
+    0.32        &   6 $\times$ 450   & 0.7     & 0.3     & Unsuitable for trend studies \\
+    0.46        &   5 $\times$ 400   & 0.6     & 0.3     & Unsuitable for trend studies \\
+    1.0         &   3.5 $\times$ 300 & 0.5     & 0.3     & Unsuitable for trend studies \\
+    2.2         &   3 $\times$ 250   & 0.4     & 0.3     & Unsuitable for trend studies \\
+    4.6         &   3 $\times$ 200   & 0.3     & 0.3     & Unsuitable for trend studies \\
     10          &   3 $\times$ 200   & 0.2     & 0.2     & \\
     22          &   3 $\times$ 250   & 0.2     & 0.2     & \\
     46          &   3 $\times$ 300   & 0.2     & 0.2     & \\
-    68          &   3 $\times$ 300   & 0.2     & 0.2     & \\
+    68          &   3 $\times$ 350   & 0.2     & 0.2     & \\
     100         &   3 $\times$ 350   & 0.3     & 0.2     & \\
     147         &   3 $\times$ 400   & 0.4     & 0.4     & High bias at low lats (use with caution elsewhere) \\
     1000--215   & ---                & ---     & ---     & Unsuitable for scientific use \\
