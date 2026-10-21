@@ -54,8 +54,11 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
 \begin{description}
   \item[Pressure range:] \screeningrule{100--0.32\,hPa} \standardrangestatement\ MLS \ch{HCl} values at 147\,hPa are biased high, at least at low to middle latitudes (equatorward of about 40\degsym), and thus they are not recommended. In addition, although the top of the recommended vertical range is 0.32\,hPa, users are reminded about the issues relating to \ch{HCl} trend estimates in the upper stratosphere and lower mesosphere discussed earlier; average profiles in that region should only be used for studies that do not involve trends (or whose accuracy requirements are less stringent than about 0.3\,ppbv or 10\%).
 
-    \standardprecisionrule
-    \evenstatusrule
+  \standardprecisionrule
+    
+  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is an even number; profiles for which \texttt{Status} is even but nonzero should be discarded at and below (i.e., at pressures greater than or equal to) 100\,hPa because of the potential for cloud contamination but can be used without restriction at higher levels (smaller pressures), where clouds have negligible impact.}
+
+  Odd values of \texttt{Status} indicate that the profile should not be used in scientific studies. In a typical month, nonzero but even values of the \texttt{Status} flag identify \mytexttilde5--10\% of HCl profiles as being potentially affected by clouds. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.
 
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.} This criterion removes the profiles with the poorest radiance fits, typically less than 0.1\% of the daily profiles. For \ch{HCl} (as for other 640\,GHz MLS products), this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and the \texttt{Convergence} fields for data screening.
 

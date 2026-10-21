@@ -13,14 +13,6 @@ The standard \ch{SO2} product is taken from the 240\nobreakdash-GHz retrieval. M
 Changes in the 240\nobreakdash-GHz MLS products from \prevv to \thisv are minor. The standard \ch{SO2} product is retrieved from the \texttt{CorePlusR3} phase that simultaneously retrieves tangent pressure, temperature, and its targeted species from 118- and 240\nobreakdash-GHz signals. Changes made to improve the tangent pressure and temperature will have some impact on the \ch{SO2} retrieval. Similarly, the new approach to cloud flagging discussed in Section~\ref{sec:V6CloudWork} should be noted.
 
 
-\begin{figure}
-  \begin{center}
-    \includegraphics[ width=0.8\linewidth]{figures/so2comp.png}
-  \end{center}
-  \caption{A comparison of \vii, \viii, \viv, \prevv, and \thisv  \ch{SO2} for January-February-March 2005 in five latitude bands. Results from other time periods are similar. The left panel compares mean profiles. The center panel shows each version's mean difference relative to \thisv. The right panel shows the estimated retrieval precision.}
-  \label{fig:avgmlsso2prflcomp}
-\end{figure}
-
 % \begin{figure}
 %   \begin{center}
 %     \includegraphics[clip, width=0.8\linewidth]{figures/mls_so2_v2-v3-v4-v5-v6_prfl_60n-90n.pdf}
@@ -33,7 +25,15 @@ Changes in the 240\nobreakdash-GHz MLS products from \prevv to \thisv are minor.
 %   \label{fig:avgmlsso2prflcomp}
 % \end{figure}
 
-Figure~\ref{fig:avgmlsso2prflcomp} compares \ch{SO2} in MLS \vii, \viii, \viv, \prevv, and \thisv. The atmosphere typically has \mytexttilde0.1\,ppbv \ch{SO2}, which is far smaller than the MLS \ch{SO2} accuracy estimate. All versions (erroneously) report typical \ch{SO2} abundances of the order of a few ppbv, due to systematic errors in the MLS measurement system. Changes from \vii through to \thisv largely result from modifications in the handling of background radiance signals, which evolved from being modeled as an absorption continuum (\vii) to a continuum modeled as water vapor absorption retrieved as relative humidity (\viii) to an MLS limb-pointing-based absorption continuum with a frequency squared spectral dependence (\viv through \thisv). Versions~\viv through \thisv also use improved cloud detection and radiance screening. As shown in Figure ~\ref{fig:avgmlsso2prflcomp}, the \ch{SO2} abundances and precisions reported by \prev and \thisv are nearly identical.
+Figure~\ref{fig:avgmlsso2prflcomp} compares \ch{SO2} in MLS \vii, \viii, \viv, \prevv, and \thisv. The atmosphere typically has \mytexttilde0.1\,ppbv \ch{SO2}, which is far smaller than the MLS \ch{SO2} accuracy estimate. All versions (erroneously) report typical \ch{SO2} abundances of the order of a few ppbv, due to systematic errors in the MLS measurement system. Changes from \vii through to \thisv largely result from modifications in the handling of background radiance signals, which evolved from being modeled as an absorption continuum (\vii) to a continuum modeled as water vapor absorption retrieved as relative humidity (\viii) to an MLS limb-pointing-based absorption continuum with a frequency-squared spectral dependence (\viv through \thisv). Versions~\viv through \thisv also use improved cloud detection and radiance screening. As shown in Figure~\ref{fig:avgmlsso2prflcomp}, the \ch{SO2} abundances and precisions reported by \prevv and \thisv are nearly identical.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\linewidth]{figures/so2comp_trop.png}
+  \end{center}
+  \caption{A comparison of \vii, \viii, \viv, \prevv, and \thisv  \ch{SO2} for January-February-March 2005 in the tropics. Results for other time periods and other latitude bands are similar. \prevv and \thisv \ch{SO2} abundances and estimated precisions are almost identical.}
+  \label{fig:avgmlsso2prflcomp}
+\end{figure}
 
 \subsection{Resolution}
 \onestandardavk{SO2}{\ch{SO2}}%
@@ -42,7 +42,7 @@ Based on the width of the averaging kernels shown in Figure~\ref{fig:AvkSO2}, th
 
 \subsection{Precision}
 
-The estimated precision (1$\sigma$) for \ch{SO2} is \mytexttilde4\,ppbv for all heights between 215 and 10\,hPa (see Figure~\ref{fig:avgmlsso2prflcomp}. The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a~priori precision --- an indication that the data are biased toward the a~priori value. 
+The estimated precision (1$\sigma$) for \ch{SO2} is \mytexttilde4\,ppbv for all levels between 215 and 10\,hPa (see Figure~\ref{fig:avgmlsso2prflcomp}). The precisions are set to negative values (or zero in some cases) in situations when the retrieved precision is larger than 50\% of the a~priori precision --- an indication that the data are biased toward the a~priori value. 
 
 % The changes between \prevv and \thisv are minor and result in only small differences in the estimated precision. An example is shown in Figure~\ref{fig:so2prec} for 100\,hPa on 14~February 2009, a day when no eruptions were detected by MLS\@. \ch{SO2} precision estimates from \prevv and \thisv show much less variability and less latitude dependence than was present in \viv.  Similar behavior is seen on other dates and at other stratospheric levels, as well as in other species retrieved from the 240\nobreakdash-GHz radiances, such as \ch{HNO3}. This change in behavior occurred as a result of removing some approximations in the forward model in \prevv and \thisv.
 
@@ -56,17 +56,16 @@ The estimated precision (1$\sigma$) for \ch{SO2} is \mytexttilde4\,ppbv for all 
 
 \subsection{Accuracy}
 
-Based on comparisons with coincident OMI total column \ch{SO2} observations, the MLS \ch{SO2} retrievals at 215 and 147\,hPa occasionally exhibit spurious spikes and enhancements that are not reflected in the OMI measurements.  Accordingly, although the formal MLS systematic error assessment approach described by \citet{ReadEtal:2007} indicates smaller uncertainty, the MLS team recommends that the accuracy of the MLS \ch{SO2} at these pressure levels be considered to be 20 and 10\,ppbv at 215 and 147\,hPa, respectively.  Accuracies at other pressure levels are estimated using the approach taken by \citet{ReadEtal:2007}.
+Based on comparisons with coincident OMI total column \ch{SO2} observations, the MLS \ch{SO2} retrievals at 215 and 147\,hPa occasionally exhibit spurious spikes and enhancements that are not reflected in the OMI measurements.  Accordingly, although the formal MLS systematic error assessment approach described by \citet{ReadEtal:2007} indicates smaller uncertainty, the MLS team recommends that the accuracy of the MLS \ch{SO2} be considered to be 20 and 10\,ppbv at 215 and 147\,hPa, respectively.  Accuracies at other pressure levels are estimated using the approach taken by \citet{ReadEtal:2007}.
 
 \begin{nofloatpages}
 \subsection{Data screening}
 \label{sec:SO2Screening}
 \begin{description}
   \item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
-  \item[Estimated Precision:] As with other MLS species, retrieved \ch{SO2} values with negative precision should, in general, be excluded from scientific analyses. However, an exemption may be made for enhanced \ch{SO2} abundances (>20\,ppbv), particularly at higher pressures (e.g., 215 and 147\,hPa). At these levels, \ch{SO2} enhancements can also have large (i.e., poor) precision values that may trigger the negative-precision flag indicating excessive a priori influence. In such cases, the retrieved \ch{SO2} abundance are likely underestimated because the retrievals are pulled toward the a priori value of zero ppbv. Nevertheless, these elevated values may indicate the presence of a volcanic plume and may be used, provided that the profiles otherwise satisfy the Status, Quality, and Convergence criteria. Profiles with precision set to zero should always be excluded from scientific analyses.
+  \item[Estimated Precision:] \screeningrule{Profiles with precision set to zero should be excluded from scientific analyses.}
   
-  
-  
+  As with other MLS species, retrieved \ch{SO2} values with negative precision should, in general, be excluded from scientific analyses. However, an exemption can be made for strongly enhanced \ch{SO2} abundances ($>$20\,ppbv), particularly at larger pressures (e.g., 215 and 147\,hPa). At those levels, \ch{SO2} enhancements can have large (i.e., poor) precision values that trigger the negative-precision flag indicating excessive a~priori influence. In such cases, the retrieved \ch{SO2} values are likely underestimated because the retrievals are pulled toward the a~priori value of zero. Nevertheless, such elevated values likely indicate the presence of a volcanic plume and may be used, provided that the profiles satisfy the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} criteria.
   
   % \screeningrule{In general, as for other MLS species, retrieved \ch{SO2} values for which the associated precision is negative should not be used.  However, \ch{SO2} data showing strong ($>$20\,ppbv) enhancements that have negative precision may still be used.}
 
@@ -84,7 +83,7 @@ Based on comparisons with coincident OMI total column \ch{SO2} observations, the
 
 \subsection{Artifacts}
 
-High values of \ch{SO2} accompanied by negative precisions are likely to be underestimated due to the influence of the a~priori, which biases the retrieved abundances toward zero. The atmospheric background \ch{SO2} (\mytexttilde0.1\,ppbv) cannot be measured by MLS, even with extensive data averaging, as systematic errors will induce biases of a few ppbv.
+High values of \ch{SO2} accompanied by negative precisions are likely to be underestimated due to the influence of the a~priori, which biases the retrieved abundances toward zero. The atmospheric background \ch{SO2} (\mytexttilde0.1\,ppbv) cannot be measured by MLS, even with extensive data averaging, as systematic errors induce biases of a few ppbv.
 
 % \begin{figure}
 %   \begin{center}
@@ -119,7 +118,9 @@ High values of \ch{SO2} accompanied by negative precisions are likely to be unde
   \label{fig:so2overlay}
 \end{figure}
 
-Figure~\ref{fig:so2overlay} compares total column \ch{SO2} measured by OMI and stratospheric column \ch{SO2} calculated by MLS for two days following the Kasatochi and Sarychev eruption.   MLS detects the plume dispersal features. It also appears that MLS columns are often smaller than those from OMI\@. Interpreting the significance of this difference is not straightforward, given that OMI has to make assumptions regarding the profile shape and can observe \ch{SO2} down to the boundary layer. The MLS column begins at 215\,hPa and is integrated upward, thus neglecting tropospheric contributions. Another limitation is that OMI only makes measurements during the day, whereas MLS measures day and night. Since plumes generally move relatively quickly over the \mbox{12-hour} MLS ascending/descending measurement separation time, MLS nighttime measurements often miss those seen by OMI during the day (12 hours apart) or detect plume features differently.
+Figure~\ref{fig:so2overlay} compares \ch{SO2} column measurements from OMI and MLS following the Kasatochi and Sarychev eruptions. MLS detects the plume dispersal features, although its \ch{SO2} columns are often smaller than those from OMI\@. Interpreting these differences is not straightforward, given that assumptions have to be made about the profile shape for the OMI retrievals. In addition, OMI column measurements include contributions down to the boundary layer, whereas the MLS column is calculated from 215\,hPa upward and thus excludes tropospheric contributions. 
+
+% Another limitation is that OMI only makes measurements during the day, whereas MLS measures day and night. Since plumes generally move relatively quickly over the \mbox{12-hour} MLS ascending/descending measurement separation time, MLS nighttime measurements often miss those seen by OMI during the day (12 hours apart) or detect plume features differently.
 
 % Figure~\ref{fig:so2timeseries} shows a comparison between \viii, \viv, \prevv, and \thisv for the portion of an MLS orbit with the maximum \ch{SO2} measured on 16~June 2009. As expected, \prevv and \thisv show similar amounts of \ch{SO2} at 215--68\,hPa. The MLS retrieval shows that the \ch{SO2} is concentrated between 147 and 100\,hPa.
 
@@ -130,6 +131,23 @@ Figure~\ref{fig:so2overlay} compares total column \ch{SO2} measured by OMI and s
 %   \caption{Time series comparisons of MLS \ch{SO2} retrievals between several versions at 215, 147, 100, and 68\,hPa where MLS measures more than 500\,ppbv at 100\,hPa from the Sarychev eruption (16 June 2009). Dark blue shows \viii, light blue shows \viv, yellow shows \prevv, and red shows \thisv.}
 %   \label{fig:so2timeseries}
 % \end{figure}
+
+\subsection{Volcanic eruptions in the MLS record}
+
+Figure~\ref{fig:so2cols} shows a timeseries of MLS \ch{SO2} columns.  Values exceeding 2\,DU indicate potential \ch{SO2} enhancements. Large volcanic \ch{SO2} injections are  easily identifiable, whereas smaller enhancements require confirmation through independent eruption reports and/or co-located observations of elevated \ch{SO2} from other instruments.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.98\linewidth]{figures/mlsso2_cols.png}
+  \end{center}
+  \caption{Timeseries of \ch{SO2} MLS columns (215--10\,hPa). Values exceeding 2\,DU indicate potential \ch{SO2} enhancements. Major eruptions are labeled. }
+  \label{fig:so2cols}
+\end{figure}
+
+
+
+
+
 
 \begin{table}
   \caption{Summary of Aura MLS \thisv \ch{SO2} Characteristics.}
@@ -147,17 +165,20 @@ Figure~\ref{fig:so2overlay} compares total column \ch{SO2} measured by OMI and s
 \tableheaderbox{Comments} \tabularnewline
 \midrule
 $<$ 10 & --- & --- & --- &  Unsuitable for scientific use \\
-10  & 3.5 $\times$ 170 &  5.4 &  1 & \\
+10  & 3.5 $\times$ 170 &  4.2 &  1 & \\
 15  & 3.4 $\times$ 170 &  5.0 &  1 & \\
 22  & 3.3 $\times$ 170 &  4.3 &  2 & \\
-32  & 3.0 $\times$ 170 &  3.7 &  3 & \\
-46  & 3.0 $\times$ 170 &  3.4 &  3 & \\
-68  & 2.9 $\times$ 170 &  3.3 &  3 & \\
+32  & 3.0 $\times$ 170 &  3.8 &  3 & \\
+46  & 3.0 $\times$ 170 &  3.6 &  3 & \\
+68  & 2.9 $\times$ 170 &  3.4 &  3 & \\
 100 & 2.9 $\times$ 170 &  3.4 &  4 & \\
 147 & 2.9 $\times$ 170 &  3.5 & 10 & \\
-215 & 2.8 $\times$ 180 &  4.3 & 20 & \\
+215 & 2.8 $\times$ 180 &  3.8 & 20 & \\
 $>$215 & --- & --- & --- & Unsuitable for scientific use \\
 \bottomrule
 \end{tabular}
   \end{minipage}
 \end{table}
+
+
+

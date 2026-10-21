@@ -9,7 +9,7 @@
 MLS observes \ch{HCN} emission lines within the 190-GHz radiometer. As noted in Section~\ref{sec:R2DutyCycling}, the 190\nobreakdash-GHz radiometer has been operated only intermittently since May 2024, typically for less than one week per month. When the \mbox{190-GHz} radiometer is turned off the \ch{HCN} status flags are set to indicate that the data should not be used. The spectral signature of \ch{HCN} in the MLS radiances is weak, a relatively strong smoothing constraint is required to obtain meaningful retrievals, and averaging (e.g., weekly zonal means) is recommended.
 
 Table \ref{tab:HCNSummary} summarizes the precision, accuracy, and resolution of the MLS \ch{HCN} product. The MLS \thisv \ch{HCN} data are scientifically useful over the range 21
-to 0.1\,hPa. At 68–32\,hPa, the data may still be usable with caution for qualitative studies. More details on the \ch{HCN} measurement may be found in \cite{PumphreyEtal:2006}.
+to 0.1\,hPa. At 68--32\,hPa, the data may still be usable with caution for qualitative studies. More details on the \ch{HCN} measurement may be found in \cite{PumphreyEtal:2006}.
 
 % HCN is retrieved from bands encompassing, in the lower sideband, the 177.26\,GHz spectral line of HCN\@. Although the target line is in an uncluttered part of the spectrum, the upper sideband contains many interfering lines of \ch{O3} and \ch{HNO3}. As a result, the \thisv HCN product is not recommended for general use at altitudes below 21\,hPa. In the recommended range it is usable but has rather poor precision (necessitating averaging such as weekly zonal means) and resolution.
 
@@ -25,10 +25,18 @@ No changes specific to the HCN retrieval were made between \vii and \viii. For \
 
 Figure~\ref{fig:HCNPrecision} shows that the precisions in \thisv are essentially unchanged from earlier versions. The retrieved mixing ratios change very little in the region where use was recommended for earlier versions. Mixing ratios are considerably different between all five earlier versions in the lower stratosphere. However, the profile shape in \thisv appears less unrealistic than in any prior version.
 
+\begin{figure}
+  \centering%
+  \includegraphics[width=0.9\textwidth]{figures/hcn_prof}
+  \caption{Estimated precision ({\tt L2gpPrecision}, thin lines) and observed standard deviation (dashed lines) for MLS \thisv (black), \prevv (green), \viv (blue), \viii (purple) and \vii (red) HCN\@. The data shown are for 10\degsym\,S to 10\degsym\,N (left) and 70\degsym\,N--82\degsym\,N (right) for 28 January 2005.  Mean volume mixing ratio (VMR) profiles are shown for comparison. Between 3 and 10\,hPa, \thisv and \prevv depart from the three earlier versions. Below 10\,hPa, profiles from all five versions are different, but those in \vii and \viii are less realistic than in \viv, \prevv, and \thisv.}
+  \label{fig:HCNPrecision}
+\end{figure}
+
+
 \subsection{Vertical resolution}
 \onestandardavk{HCN}{HCN}%
 
-The HCN signal is fairly small, so a rather strong smoothing constraint has to be applied to ensure that the retrieval is at all useful. As Figure~\ref{fig:AvkHCN} shows, the vertical resolution is about 8--9\,km between 68--1\,hPa, degrading to more than 12\,km at 0.1\,hPa. The horizontal resolution along the measurement track is between 2 and 4 profile spacings.
+The HCN signal is fairly small, so a rather strong smoothing constraint has to be applied to ensure that the retrieval is at all useful. As Figure~\ref{fig:AvkHCN} shows, the vertical resolution is about 8--9\,km over 68--1\,hPa, degrading to more than 12\,km at 0.1\,hPa. The horizontal resolution along the measurement track is between 2 and 4 profile spacings.
 
 \subsection{Precision}
 
@@ -42,17 +50,9 @@ Figure~\ref{fig:HCNPrecision} shows the estimated precision (values of the field
 %   \label{fig:HCNPrecision}
 % \end{figure}
 
-\begin{figure}
-  \centering%
-  \includegraphics[width=0.9\textwidth]{figures/hcn_prof}
-  \caption{Estimated precision ({\tt L2gpPrecision}, thin lines) and observed standard deviation (dashed lines) for MLS \thisv (black), \prevv (green), \viv (blue), \viii (purple) and \vii (red) HCN\@. The data shown are for 10\degsym\,S to 10\degsym\,N (left) and 70\degsym\,N--82\degsym\,N (right) for 28 January 2005.  Mean volume mixing ratio (VMR) profiles are shown for comparison. Between 3 and 10\,hPa, \thisv and \prevv depart from the three earlier versions. Below 10\,hPa, profiles from all five versions are different, but those in \vii and \viii are less realistic than in \viv, \prevv, and \thisv.}
-  \label{fig:HCNPrecision}
-\end{figure}
-
-
 \subsection{Accuracy}
 
-There is no formal validation of the MLS HCN product because HCN had extremely large systematic errors in the lower stratosphere when initial validation efforts were undertaken (for \vii and \viii). In \prevv and \thisv, the errors are reduced over those in \viv in some places but are somewhat worse in others, while being far better than in earlier versions. Some comparisons with ACE-FTS data are shown in Figure~\ref{fig:HCNvsACE}. At 21\,hPa and smaller pressure levels the two instruments agree well, with MLS \prevv and \thisv agreeing better with ACE-FTS than \viv (Figure~\ref{fig:HCNvsACE}a, c). These values are consistent with the current understanding of HCN chemistry. 
+There is no formal validation of the MLS HCN product because HCN had extremely large systematic errors in the lower stratosphere when initial validation efforts were undertaken (for \vii and \viii). In \prevv and \thisv, the errors are reduced over those in \viv in some places but are somewhat worse in others, while being far better than in earlier versions. Some comparisons with ACE-FTS data are shown in Figure~\ref{fig:HCNvsACE}. At 21\,hPa and smaller pressures the two instruments agree well, with MLS \prevv and \thisv agreeing better with ACE-FTS than \viv (Figure~\ref{fig:HCNvsACE}a, c). These values are consistent with the current understanding of HCN chemistry. 
 Comparisons with historical measurements suggest an accuracy no worse than 50\%.
 
 In the 68--32\,hPa range at the tropics, the two instruments agree well, except for a small, nearly constant systematic bias (e.g., Figure~\ref{fig:HCNvsACE}b). In this pressure range at middle and high latitudes, however, the MLS data differ considerably from \mbox{ACE-FTS} (e.g., Figure~\ref{fig:HCNvsACE}d), displaying larger biases that are not constant in time.  That said, the seasonal and interannual variability shows many similarities between the two instruments. Thus, the MLS data in the lower stratosphere can be used with caution for qualitative studies, although comparison with \mbox{ACE-FTS} data is advisable.
@@ -109,10 +109,10 @@ There are no obvious artifacts within the 21--0.1\,hPa recommended pressure rang
   \textbf{Comments}\\
   \midrule
   $< 0.1$     & ---             &  --- &  ---      & Unsuitable for scientific use\\
-  1--0.1      & 12 $\times$ 600 & 50   & 5         & \\
-  21--1       & 9 $\times$ 400 & 40   & 15        & \\
-  68--21      & 8 $\times$ 500 & 40   & 60        &  Use with caution for qualitative studies\\
-  100         & 8 $\times$ 600 & 50   & 130       &  Unsuitable for scientific use\\
+  1--0.1      & 12 $\times$ 700 & 50   & 5         & \\
+  21--1       & 9 $\times$ 500  & 40   & 15        & \\
+  68--21      & 8 $\times$ 500  & 40   & 60        &  Use with caution for qualitative studies\\
+  100         & 4 $\times$ 800  & 50   & 130       &  Unsuitable for scientific use\\
   $> 100$     &                 &      &           &  Not Retrieved\\
   \bottomrule
 \end{tabular}
