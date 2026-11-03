@@ -56,13 +56,14 @@ The effects of various sources of systematic uncertainty (e.g., instrumental iss
 
   \standardprecisionrule
     
-  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is an even number; profiles for which \texttt{Status} is even but nonzero should be discarded at and below (i.e., at pressures greater than or equal to) 100\,hPa because of the potential for cloud contamination but can be used without restriction at higher levels (smaller pressures), where clouds have negligible impact.}
+  \item[Status flag:] \screeningrule{Only use profiles for which the \texttt{Status} field is an even number; profiles for which \texttt{Status} is even but nonzero should be discarded at and below (i.e., at pressures equal to or greater than) 100\,hPa because of the potential for cloud contamination but can be used without restriction at higher levels (smaller pressures), where clouds have negligible impact.}
 
   Odd values of \texttt{Status} indicate that the profile should not be used in scientific studies. In a typical month, nonzero but even values of the \texttt{Status} flag identify \mytexttilde5--10\% of HCl profiles as being potentially affected by clouds. See Section~\ref{sec:StatusQuality} for more information on the interpretation of the \texttt{Status} field.
 
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.} This criterion removes the profiles with the poorest radiance fits, typically less than 0.1\% of the daily profiles. For \ch{HCl} (as for other 640\,GHz MLS products), this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and the \texttt{Convergence} fields for data screening.
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field has values below 1.05. However, on occasion sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have the \texttt{Convergence} field set to larger values; such profiles should be discarded.
+  \item[Convergence field:] \convergencerule{1.05}
+  For the vast majority of profiles (99\% or more for most days), this field has values below 1.05. However, on occasion sets of profiles (typically one or more groups of ten profiles, retrieved as a ``chunk'') have the \texttt{Convergence} field set to larger values; such profiles should be discarded.
 
   \item[Clouds:] Thick clouds can induce significant artifacts (mainly in the tropics, statistically), with total systematic errors potentially as large as 0.5\,ppbv at 100\,hPa and even larger at 147\,hPa. The large positive \ch{HCl} bias at 147\,hPa at low and middle latitudes likely arises in part from unknown or improperly modeled systematic error sources and not just from clouds. At other pressures, the potential impact on \ch{HCl} from clouds is small or negligible.
   

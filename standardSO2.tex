@@ -65,7 +65,7 @@ Based on comparisons with coincident OMI total column \ch{SO2} observations, the
   \item[Pressure range:] \screeningrule{215--10.0\,hPa} \standardrangestatement
   \item[Estimated Precision:] \screeningrule{Profiles with precision set to zero should be excluded from scientific analyses.}
   
-  As with other MLS species, retrieved \ch{SO2} values with negative precision should, in general, be excluded from scientific analyses. However, an exemption can be made for strongly enhanced \ch{SO2} abundances ($>$20\,ppbv), particularly at larger pressures (e.g., 215 and 147\,hPa). At those levels, \ch{SO2} enhancements can have large (i.e., poor) precision values that trigger the negative-precision flag indicating excessive a~priori influence. In such cases, the retrieved \ch{SO2} values are likely underestimated because the retrievals are pulled toward the a~priori value of zero. Nevertheless, such elevated values likely indicate the presence of a volcanic plume and may be used, provided that the profiles satisfy the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} criteria.
+  As with other MLS species, retrieved \ch{SO2} values with negative precision should, in general, be excluded from scientific analyses. However, an exemption can be made for strongly enhanced \ch{SO2} abundances ($>$20\,ppbv) at larger pressures (215--100\,hPa). At those levels, \ch{SO2} enhancements can have large (i.e., poor) precision values that trigger the negative-precision flag indicating excessive a~priori influence. In such cases, the retrieved \ch{SO2} values are likely underestimated because the retrievals are pulled toward the a~priori value of zero. Nevertheless, such elevated values likely indicate the presence of a volcanic plume and can be used, provided that the profiles satisfy the \texttt{Status}, \texttt{Quality}, and \texttt{Convergence} criteria.
   
   % \screeningrule{In general, as for other MLS species, retrieved \ch{SO2} values for which the associated precision is negative should not be used.  However, \ch{SO2} data showing strong ($>$20\,ppbv) enhancements that have negative precision may still be used.}
 
@@ -77,7 +77,7 @@ Based on comparisons with coincident OMI total column \ch{SO2} observations, the
   
   % As with water vapor, this value is where the quality versus yield sharply drops, indicating the transition from well-fit profiles toward more poorly fit ones, as shown in Figure~\ref{fig:so2datayields}.
   
-  \item[Convergence field:] \screeningrule{Only profiles having \texttt{Convergence} \emph{less} than 1.03 should be used.}
+  \item[Convergence field:] \convergencerule{1.03} 
 \end{description}
 \end{nofloatpages}
 

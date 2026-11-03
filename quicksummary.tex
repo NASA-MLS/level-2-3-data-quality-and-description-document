@@ -29,7 +29,7 @@
     \item Always consider the precision of the data, as reported in the \texttt{L2gpPrecision} field.
     \item Do not use any data points for which the precision is zero or a negative number, as that indicates poor information yield from MLS.
     \item Do not use data for any profile for which the corresponding entry in the integer \texttt{Status} array is an odd number.
-    \item Data for profiles where \texttt{Status} is a non-zero even number should be approached with caution. See Section~\ref{sec:StatusQuality} on page~\pageref{sec:StatusQuality}, and the product descriptions in Chapter~\ref{chap:Level2} for details on how to interpret the \texttt{Status} information.
+    \item Data for profiles where \texttt{Status} is a nonzero even number should be approached with caution. See Section~\ref{sec:StatusQuality} on page~\pageref{sec:StatusQuality}, and the product descriptions in Chapter~\ref{chap:Level2} for details on how to interpret the \texttt{Status} information.
     \item Do not use any data for profiles for which the corresponding entry in the \texttt{Quality} array is \emph{smaller} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
     \item Do not use any data for profiles for which the corresponding value in the \texttt{Convergence} array is \emph{larger} than the threshold given in the section of Chapter~\ref{chap:Level2} describing your product of interest.
     \item Some products require additional screening to remove biases or outliers; see specific sections of Chapter~\ref{chap:Level2} for details.

@@ -75,7 +75,7 @@ In the 68--32\,hPa range at the tropics, the two instruments agree well, except 
   \standardprecisionrule 
   
   \evenstatusrule
-  \item[Clouds:] \screeningrule{Clouds have no impact; profiles with non-zero even values of \texttt{Status} are suitable for use.} As HCN is only generally recommended in regions unaffected by clouds, profiles which have either, both, or neither of the cloud flags set may be used.
+  \item[Clouds:] \screeningrule{Clouds have no impact; profiles with nonzero even values of \texttt{Status} are suitable for use.} HCN is generally recommended only in regions unaffected by clouds.
   \item[Quality:] \qualityrule{0.2} Values of \texttt{Quality} are usually near 1.5; occasional lower values do not seem correlated with unusual profiles, but we suggest as a precaution that only profiles with \texttt{Quality} $> 0.2$ be used. Typically this will eliminate only 1--2\% of profiles.
     %% Number of rejected profiles remains small in V5
   \item[Convergence:] \convergencerule{2.0} This should eliminate any chunks that failed to converge (typically only 1--2\% of the total).

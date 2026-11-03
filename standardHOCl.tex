@@ -53,7 +53,7 @@ The accuracy estimates shown in Table~\ref{tab:HOClSummary} come from a formal q
   \item[Quality field:] \screeningrule{Only profiles with a value of the \texttt{Quality} field \emph{greater} than 1.2 should be used.}
   This criterion removes profiles with the poorest radiance fits, typically less than 0.2\% of the daily profiles. For HOCl, this screening correlates well with the poorly converged sets of profiles (see below); we recommend the use of both the \texttt{Quality} and \texttt{Convergence} fields for data screening.
 
-  \item[Convergence field:] \screeningrule{Only profiles with a value of the \texttt{Convergence} field \emph{less} than 1.05 should be used.} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a `chunk') have the \texttt{Convergence} field set to larger values and should be discarded.
+  \item[Convergence field:] \convergencerule{1.05} For the vast majority of profiles (99\% or more for most days), this field is less than 1.05. Nevertheless, on occasion, sets of profiles (typically one or more groups of ten profiles, retrieved as a `chunk') have the \texttt{Convergence} field set to larger values and should be discarded.
 
   \item[Clouds:] \cloudsokrule
 
